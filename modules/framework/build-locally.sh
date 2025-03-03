@@ -54,6 +54,7 @@ blue=$(tput setaf 25)
 underline() { printf "${underline}${bold}%s${reset}\n" "$@" ;}
 h1() { printf "\n${underline}${bold}${blue}%s${reset}\n" "$@" ;}
 h2() { printf "\n${underline}${bold}${white}%s${reset}\n" "$@" ;}
+h3() { printf "\n${underline}${bold}${green}%s${reset}\n" "$@" ;}
 debug() { printf "${white}%s${reset}\n" "$@" ;}
 info() { printf "${white}➜ %s${reset}\n" "$@" ;}
 success() { printf "${green}✔ %s${reset}\n" "$@" ;}
@@ -256,6 +257,7 @@ function get_architecture() {
     esac
 }
 
+#-------------------------------------------------------------
 function generate_beans {
     check_openapi2beans_is_installed
 
@@ -295,6 +297,7 @@ function download_openapi2beans {
 
 }
 
+#-------------------------------------------------------------
 function check_secrets {
     h2 "updating secrets baseline"
     cd ${BASEDIR}
@@ -330,6 +333,7 @@ function check_secrets {
     success "secrets baseline timestamp content has been removed ok"
 }
 
+#-------------------------------------------------------------
 function update_release_yaml {
     h2 "Updating release.yaml"
 
@@ -345,6 +349,33 @@ function update_release_yaml {
     fi
 }
 
+#-------------------------------------------------------------
+function build_framework_uml_diagrams {
+
+    make_sure_plantuml_tool_is_available
+
+    h2 "Building plantuml diagrams for framework internal docs." 
+    java -jar $BASEDIR/temp/plantuml.jar -tpng "${BASEDIR}/docs/design/**.plantuml"
+    rc=$? ; if [[ "${rc}" != "0" ]]; then error "Failed to generate UML diagrams" ; exit 1 ; fi
+
+}
+
+function make_sure_plantuml_tool_is_available {
+    h2 "Making sure the plantuml tool is available"
+    mkdir -p temp || exit 1
+    if [[ -e $BASEDIR/temp/plantuml.jar ]]; then
+        info "Plantuml jar is already downloaded. No need to download it again"
+    else 
+        info "Downloading the plantuml tool..."
+        url=https://github.com/plantuml/plantuml/releases/download/v1.2024.3/plantuml-epl-1.2024.3.jar
+        cd "$BASEDIR/temp" || exit 1
+        curl -O $url
+        rc=$? ; if [[ "${rc}" != "0" ]]; then error "Failed to download the plantuml tool jar." ; exit 1 ; fi
+        mv plantuml-*.jar plantuml.jar
+        cd - || exit 1
+    fi
+    success "OK"
+}
 
 #-----------------------------------------------------------------------------------------
 # Process parameters
@@ -439,13 +470,15 @@ log_file=${LOGS_DIR}/${project}.txt
 info "Log will be placed at ${log_file}"
 
 
-
+build_framework_uml_diagrams
 
 cleaning_up_before_we_start
 
 # Currently the bean generation stuff doesn't work 100%
 # So I generated beans locally, fixed them up, and have started to use them.
 generate_beans
+
+
 
 build_code
 publish_to_maven

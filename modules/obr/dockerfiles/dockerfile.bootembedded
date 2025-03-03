@@ -13,6 +13,10 @@ ARG TARGETARCH
 ARG TARGETOS
 ARG TARGETARCH
 
+# Pre-defined arguments that Docker makes available for multi-platform builds
+ARG TARGETOS
+ARG TARGETARCH
+
 RUN touch /var/run/docker.sock && \
     chmod 666 /var/run/docker.sock
 

@@ -24,6 +24,7 @@ import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 
 import dev.galasa.framework.FrameworkInitialisation;
+import dev.galasa.framework.GalasaFactory;
 import dev.galasa.framework.spi.AbstractManager;
 import dev.galasa.framework.spi.DynamicStatusStoreException;
 import dev.galasa.framework.spi.FrameworkException;
@@ -81,7 +82,7 @@ public class ResourceManagement implements IResourceManagement {
             // *** Initialise the framework services
             FrameworkInitialisation frameworkInitialisation = null;
             try {
-                frameworkInitialisation = new FrameworkInitialisation(bootstrapProperties, overrideProperties);
+                frameworkInitialisation = new FrameworkInitialisation(bootstrapProperties, overrideProperties, GalasaFactory.getInstance().newResourceManagerInitStrategy());
             } catch (Exception e) {
                 throw new FrameworkException("Unable to initialise the Framework Services", e);
             }
@@ -201,7 +202,9 @@ public class ResourceManagement implements IResourceManagement {
 
             // *** Start the providers
             for (IResourceManagementProvider provider : resourceManagementProviders) {
+                logger.debug("starting provider "+provider.getClass().getCanonicalName());
                 provider.start();
+                logger.debug("started provider "+provider.getClass().getCanonicalName());
             }
 
             // *** Start the Run watch thread
@@ -243,6 +246,7 @@ public class ResourceManagement implements IResourceManagement {
             for (IResourceManagementProvider provider : resourceManagementProviders) {
                 logger.info("Requesting Resource Management Provider " + provider.getClass().getName() + " shutdown");
                 provider.shutdown();
+                logger.debug("Resource Management Provider " + provider.getClass().getName() + " shutdown OK");
             }
 
             // *** Stop the metics server
@@ -284,7 +288,9 @@ public class ResourceManagement implements IResourceManagement {
 
     public void runFinishedOrDeleted(String runName) {
         for (IResourceManagementProvider provider : resourceManagementProviders) {
+            logger.debug("About to call runFinishedOrDeleted() for provider "+provider.getClass().getCanonicalName());
             provider.runFinishedOrDeleted(runName);
+            logger.debug("Returned from call runFinishedOrDeleted() for provider "+provider.getClass().getCanonicalName());
         }
     }
 
