@@ -28,7 +28,7 @@ import dev.galasa.auth.couchdb.internal.beans.AuthDBNameViewDesign;
 import dev.galasa.auth.couchdb.internal.beans.FrontEndClient;
 import dev.galasa.auth.couchdb.internal.beans.UserDoc;
 import dev.galasa.extensions.common.api.HttpClientFactory;
-import org.apache.commons.logging.LogFactory;
+import dev.galasa.extensions.common.api.LogFactory;
 import dev.galasa.extensions.common.couchdb.CouchdbException;
 import dev.galasa.extensions.common.couchdb.CouchdbStore;
 import dev.galasa.extensions.common.couchdb.CouchdbValidator;
@@ -69,20 +69,22 @@ public class CouchdbAuthStore extends CouchdbStore implements IAuthStore {
     public static final String USERS_DB_VIEW_NAME = "loginId-view";
     public static final String USERS_DB_LOWERCASE_VIEW_NAME = "loginId-lowercase-view";
 
+    private Log logger;
+
     // Default token lifespan in days (90 days)
     public static final int DEFAULT_TOKEN_LIFESPAN_DAYS = 90;
 
-    private Log logger = LogFactory.getLog(getClass());
     private ITimeService timeService;
 
     public CouchdbAuthStore(
             URI authStoreUri,
             HttpClientFactory httpClientFactory,
             HttpRequestFactory requestFactory,
-            dev.galasa.extensions.common.api.LogFactory logFactory,
+            LogFactory logFactory,
             CouchdbValidator validator,
             ITimeService timeService) throws CouchdbException {
         super(authStoreUri, requestFactory, httpClientFactory);
+        this.logger = logFactory.getLog(getClass());
         this.timeService = timeService;
 
         validator.checkCouchdbDatabaseIsValid(this.storeUri, this.httpClient, this.httpRequestFactory, timeService);
