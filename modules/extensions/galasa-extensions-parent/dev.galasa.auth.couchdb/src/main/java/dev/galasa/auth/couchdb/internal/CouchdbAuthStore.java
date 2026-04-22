@@ -95,69 +95,77 @@ public class CouchdbAuthStore extends CouchdbStore implements IAuthStore {
         try {
             migrateLegacyTokens();
         } catch (Exception e) {
-            // Log but don't fail initialisation - migration is a best-effort operation
-            logger.warn("Token expiry migration encountered an error but auth store initialization will continue", e);
+            logger.warn("Token expiry migration encountered an error but auth store initialisation will continue", e);
         }
     }
 
     /**
      * One-off initialisation method that adds expiry times to legacy tokens that
-     * don't
-     * have them. This migration runs during auth store initialisation to ensure all
-     * tokens have expiry times set. If the migration fails, it logs the error but
-     * does not prevent the auth store from initializing.
+     * don't have them. This migration runs during auth store initialisation to 
+     * ensure all tokens have expiry times set. If the migration fails, it logs 
+     * the error but does not prevent the auth store from initialising.
      */
     private void migrateLegacyTokens() {
         logger.info("Starting token expiry migration during auth store initialisation");
 
-        try {
-            List<IUser> users = getAllUsers();
+        int tokensProcessed = 0;
+        int tokensMigrated = 0;
+        int tokensFailed = 0;
 
-            // If there are no users, skip migration
-            if (users == null || users.isEmpty()) {
-                logger.info("No users found, skipping token expiry migration");
-                return;
+        List<IUser> users = null;
+        try {
+            users = getAllUsers();
+        } catch (AuthStoreException e) {
+            logger.warn("Failed to get users during token migration: " + e.getMessage());
+        }
+
+        // If there are no users, skip migration
+        if (users == null || users.isEmpty()) {
+            logger.info("No users found, skipping token expiry migration");
+            return;
+        }
+
+        // For each user, get their tokens
+        for (IUser user : users) {
+            String loginId = user.getLoginId();
+
+            List<IInternalAuthToken> tokens = null;
+            try {
+                tokens = getTokensByLoginId(loginId);
+            } catch (Exception e) {
+                logger.warn("Failed to retrieve tokens for user " + loginId + ", skipping user and continuing with others: " + e.getMessage());
+                continue;
             }
 
-            int tokensProcessed = 0;
-            int tokensMigrated = 0;
+            for (IInternalAuthToken token : tokens) {
+                tokensProcessed++;
 
-            // For each user, get their tokens
-            for (IUser user : users) {
-                String loginId = user.getLoginId();
+                if (token.getExpiryTime() == null) {
+                    logger.info("Token " + token.getTokenId() + " for user " + loginId
+                            + " is missing expiryTime, migrating...");
 
-                List<IInternalAuthToken> tokens = getTokensByLoginId(loginId);
+                    // Calculate expiry time: current time + constant amount of days
+                    Instant newExpiryTime = timeService.now().plus(DEFAULT_TOKEN_LIFESPAN_DAYS, ChronoUnit.DAYS);
+                    logger.info("Setting expiry time to: " + newExpiryTime);
 
-                for (IInternalAuthToken token : tokens) {
-                    tokensProcessed++;
-
-                    if (token.getExpiryTime() == null) {
-                        logger.info("Token " + token.getTokenId() + " for user " + loginId
-                                + " is missing expiryTime, migrating...");
-
-                        // Calculate expiry time: current time + constant amount of days
-                        Instant newExpiryTime = timeService.now().plus(DEFAULT_TOKEN_LIFESPAN_DAYS, ChronoUnit.DAYS);
-                        logger.info("Setting expiry time to: " + newExpiryTime);
-
-                        // Update the token with the new expiry time
+                    // Update the token with the new expiry time
+                    try {
                         updateTokenWithExpiryTime(token.getTokenId(), newExpiryTime);
-                        tokensMigrated++;
-
-                        logger.info("Successfully migrated token " + token.getTokenId());
+                    } catch (AuthStoreException e) {
+                        tokensFailed++;
+                        logger.warn("Failed to migrate token " + token.getTokenId() + " for user " + loginId
+                                + ": " + e.getMessage());
+                        continue;
                     }
+                    tokensMigrated++;
+
+                    logger.info("Successfully migrated token " + token.getTokenId());
                 }
             }
-
-            logger.info("Token expiry migration complete. Processed " + tokensProcessed + " tokens, migrated "
-                    + tokensMigrated + " tokens");
-
-        } catch (AuthStoreException e) {
-            logger.warn("Failed to migrate token expiry times: " + e.getMessage());
-            throw new RuntimeException("Token migration failed", e);
-        } catch (Exception e) {
-            logger.warn("Unexpected error during token expiry migration: " + e.getMessage());
-            throw new RuntimeException("Token migration failed", e);
         }
+
+        logger.info("Token expiry migration complete. Processed " + tokensProcessed + " tokens, migrated "
+                + tokensMigrated + " tokens, " + tokensFailed + " tokens failed");
     }
 
     /**
