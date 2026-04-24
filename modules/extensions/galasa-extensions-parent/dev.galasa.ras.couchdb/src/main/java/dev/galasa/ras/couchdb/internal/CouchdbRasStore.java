@@ -96,6 +96,7 @@ public class CouchdbRasStore extends CouchdbStore implements IResultArchiveStore
     private LogFactory                         logFactory;
 
     private long                                runLogLineCount;
+    private long                                runLogSizeBytes;
 
     public CouchdbRasStore(IFramework framework, URI rasUri) throws CouchdbException, CouchdbRasException {
         this(
@@ -188,6 +189,7 @@ public class CouchdbRasStore extends CouchdbStore implements IResultArchiveStore
         }
 
         updateRunLogLineCountSoFar(lines.length);
+        updateRunLogSizeSoFar(message.getBytes(StandardCharsets.UTF_8).length);
 
     }
 
@@ -250,6 +252,19 @@ public class CouchdbRasStore extends CouchdbStore implements IResultArchiveStore
 
     public long retrieveRunLogLineCount() {
         return this.runLogLineCount;
+    }
+
+    /**
+     * Update the run log size in bytes so far into class variable.
+     * This is stored in TestStructure to avoid loading entire log for size calculation.
+     * @param newSizeBytes
+     */
+    private void updateRunLogSizeSoFar(long newSizeBytes) {
+        this.runLogSizeBytes += newSizeBytes;
+    }
+
+    public long retrieveRunLogSize() {
+        return this.runLogSizeBytes;
     }
 
     @Override
@@ -323,6 +338,7 @@ public class CouchdbRasStore extends CouchdbStore implements IResultArchiveStore
         this.lastTestStructure = testStructure;
         this.lastTestStructure.setLogRecordIds(this.logIds);
         this.lastTestStructure.setArtifactRecordIds(this.artifactDocumentId);
+        this.lastTestStructure.setLogSize(Long.valueOf(this.runLogSizeBytes));
         this.lastTestStructure.normalise();
 
         String jsonStructure = gson.toJson(testStructure);

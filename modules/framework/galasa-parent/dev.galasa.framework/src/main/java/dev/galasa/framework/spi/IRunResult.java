@@ -29,6 +29,18 @@ public interface IRunResult {
      */
     void streamLog(OutputStream outputStream) throws ResultArchiveStoreException;
 
+    /**
+     * Get the size of the run log in bytes without loading it into memory.
+     * This is useful for setting Content-Length headers without reading the entire log.
+     *
+     * @return The log size in bytes, or -1 if size is unknown or cannot be determined efficiently
+     * @throws ResultArchiveStoreException if there's an error accessing the log metadata
+     */
+    default long getLogSize() throws ResultArchiveStoreException {
+        // Default: size unknown
+        return -1;
+    }
+
     void discard() throws ResultArchiveStoreException;
 
     void loadArtifacts() throws ResultArchiveStoreException;

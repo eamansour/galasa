@@ -68,6 +68,27 @@ public class MockRunResult implements IRunResult {
     }
 
     @Override
+    public long getLogSize() throws ResultArchiveStoreException {
+        long size = 0;
+        
+        // First try to get size from TestStructure metadata
+        if (testStructure != null) {
+            Long logSize = testStructure.getLogSize();
+            if (logSize != null) {
+                size = logSize.longValue();
+            } else if (this.log != null) {
+                // Fall back to calculating size from log string
+                size = this.log.getBytes(StandardCharsets.UTF_8).length;
+            }
+        } else if (this.log != null) {
+            // No test structure, calculate from log string
+            size = this.log.getBytes(StandardCharsets.UTF_8).length;
+        }
+        
+        return size;
+    }
+
+    @Override
     public void discard() throws ResultArchiveStoreException {
         isDiscarded = true;
     }

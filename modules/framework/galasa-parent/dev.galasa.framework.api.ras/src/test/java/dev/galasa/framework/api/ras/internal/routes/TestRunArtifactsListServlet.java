@@ -579,7 +579,65 @@ public class TestRunArtifactsListServlet extends RasServletTest {
 
         checkRootArtifactsJson(jsonString);
         String expectedJson = generateExpectedJsonArtifacts(new ArrayList<>());
-		assertThat(jsonString).contains(expectedJson);
+  		assertThat(jsonString).contains(expectedJson);
+
+		assertThat(resp.getContentType()).isEqualTo("application/json");
+	}
+
+	@Test
+	public void testRunLogArtifactUsesContentSizeFromMetadata() throws Exception {
+		// Given...
+		String runName = "testLogSize";
+		String runLog = "This is a test log with some content";
+		String runId = "test-run-with-log-size";
+		
+		// Create test data with log size metadata
+		List<IRunResult> mockInputRunResults = generateTestData(runId, runName, runLog);
+		
+		// Set log size metadata on the test structure
+		IRunResult runResult = mockInputRunResults.get(0);
+		dev.galasa.framework.spi.teststructure.TestStructure testStructure = runResult.getTestStructure();
+		long expectedLogSize = runLog.getBytes(java.nio.charset.StandardCharsets.UTF_8).length;
+		testStructure.setLogSize(Long.valueOf(expectedLogSize));
+
+		Map<String, String[]> parameterMap = new HashMap<String,String[]>();
+		MockHttpServletRequest mockRequest = new MockHttpServletRequest(parameterMap, "/runs/" + runId + "/artifacts");
+		MockRasServletEnvironment mockServletEnvironment = new MockRasServletEnvironment(mockInputRunResults, mockRequest, mockFileSystem);
+
+		RasServlet servlet = mockServletEnvironment.getServlet();
+		HttpServletRequest req = mockServletEnvironment.getRequest();
+		HttpServletResponse resp = mockServletEnvironment.getResponse();
+		ServletOutputStream outStream = resp.getOutputStream();
+
+		// When...
+		servlet.init();
+		servlet.doGet(req,resp);
+
+		// Then...
+		assertThat(resp.getStatus()).isEqualTo(200);
+
+		String jsonString = outStream.toString();
+		JsonElement jsonElement = JsonParser.parseString(jsonString);
+		assertThat(jsonElement).isNotNull().as("Failed to parse the body to a json object.");
+
+		JsonArray jsonArray = jsonElement.getAsJsonArray();
+		assertThat(jsonArray.size()).isEqualTo(3); // run.log, structure.json, artifacts.json
+
+		// Verify that run.log artifact includes the size from metadata
+		boolean foundRunLog = false;
+		for (JsonElement element : jsonArray) {
+			if (element.isJsonObject()) {
+				com.google.gson.JsonObject artifact = element.getAsJsonObject();
+				if (artifact.has("path") && artifact.get("path").getAsString().equals("/run.log")) {
+					foundRunLog = true;
+					assertThat(artifact.has("size")).isTrue().as("run.log artifact should have a size field");
+					long actualSize = artifact.get("size").getAsLong();
+					assertThat(actualSize).isEqualTo(expectedLogSize).as("run.log size should match metadata");
+					break;
+				}
+			}
+		}
+		assertThat(foundRunLog).isTrue().as("run.log artifact should be present in the response");
 
 		assertThat(resp.getContentType()).isEqualTo("application/json");
 	}

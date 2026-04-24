@@ -114,4 +114,64 @@ public class CouchdbRunResultTest {
         // Then...
         assertThat(runId).isEqualTo("cdb-my-doc-id");
     }
+
+    @Test
+    public void testGetLogSizeReturnsMetadataSize() throws Exception {
+        // Given...
+        TestStructureCouchdb testStructure = new TestStructureCouchdb();
+        testStructure._id = "test-run-id";
+        testStructure._rev = "test-revision";
+        testStructure.setLogSize(Long.valueOf(12345L));
+
+        MockLogFactory mockLogFactory = new MockLogFactory();
+        List<HttpInteraction> interactions = new ArrayList<>();
+        CouchdbRasStore rasStore = fixtures.createCouchdbRasStore(interactions, mockLogFactory);
+        CouchdbRunResult runResult = new CouchdbRunResult(rasStore, testStructure, mockLogFactory);
+
+        // When...
+        long logSize = runResult.getLogSize();
+
+        // Then...
+        assertThat(logSize).isEqualTo(12345L);
+    }
+
+    @Test
+    public void testGetLogSizeReturnsMinusOneWhenNoMetadata() throws Exception {
+        // Given...
+        TestStructureCouchdb testStructure = new TestStructureCouchdb();
+        testStructure._id = "test-run-id";
+        testStructure._rev = "test-revision";
+        // No log size set (null)
+
+        MockLogFactory mockLogFactory = new MockLogFactory();
+        List<HttpInteraction> interactions = new ArrayList<>();
+        CouchdbRasStore rasStore = fixtures.createCouchdbRasStore(interactions, mockLogFactory);
+        CouchdbRunResult runResult = new CouchdbRunResult(rasStore, testStructure, mockLogFactory);
+
+        // When...
+        long logSize = runResult.getLogSize();
+
+        // Then...
+        assertThat(logSize).isEqualTo(-1L);
+    }
+
+    @Test
+    public void testGetLogSizeReturnsZeroForEmptyLog() throws Exception {
+        // Given...
+        TestStructureCouchdb testStructure = new TestStructureCouchdb();
+        testStructure._id = "test-run-id";
+        testStructure._rev = "test-revision";
+        testStructure.setLogSize(Long.valueOf(0L));
+
+        MockLogFactory mockLogFactory = new MockLogFactory();
+        List<HttpInteraction> interactions = new ArrayList<>();
+        CouchdbRasStore rasStore = fixtures.createCouchdbRasStore(interactions, mockLogFactory);
+        CouchdbRunResult runResult = new CouchdbRunResult(rasStore, testStructure, mockLogFactory);
+
+        // When...
+        long logSize = runResult.getLogSize();
+
+        // Then...
+        assertThat(logSize).isEqualTo(0L);
+    }
 }

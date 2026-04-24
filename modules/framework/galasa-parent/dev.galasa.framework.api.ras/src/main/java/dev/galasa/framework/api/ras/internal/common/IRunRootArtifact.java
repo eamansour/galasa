@@ -39,5 +39,18 @@ public interface IRunRootArtifact {
         return false;
     }
     
+    /**
+     * Get the size of the artifact content in bytes without loading it into memory.
+     * This is useful for setting Content-Length headers without reading the entire artifact.
+     *
+     * @param run The run result to get content size from
+     * @return The size in bytes, or -1 if size is unknown or cannot be determined efficiently
+     * @throws ResultArchiveStoreException if there's an error accessing the artifact metadata
+     */
+    default long getContentSize(IRunResult run) throws ResultArchiveStoreException {
+        // Default: size unknown
+        return -1;
+    }
+    
     String getContentType();
 }

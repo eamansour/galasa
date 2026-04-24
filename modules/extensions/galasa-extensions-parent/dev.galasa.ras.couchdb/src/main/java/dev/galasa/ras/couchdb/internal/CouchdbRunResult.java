@@ -59,8 +59,19 @@ public class CouchdbRunResult implements IRunResult {
         this.store.streamLog(this.testStructure, outputStream);
     }
 
-	@Override
-	public void discard() throws ResultArchiveStoreException {
+    @Override
+    public long getLogSize() throws ResultArchiveStoreException {
+        Long logSize = this.testStructure.getLogSize();
+        long logSizeToReturn = -1;
+        if (logSize != null) {
+            logSizeToReturn = logSize.longValue();
+        }
+
+        return logSizeToReturn;
+    }
+
+ @Override
+ public void discard() throws ResultArchiveStoreException {
         deleteRunService.discardRun(this.testStructure);
 	}
 

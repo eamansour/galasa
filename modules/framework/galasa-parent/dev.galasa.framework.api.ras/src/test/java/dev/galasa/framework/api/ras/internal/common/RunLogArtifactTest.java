@@ -200,4 +200,66 @@ public class RunLogArtifactTest {
             .hasMessageContaining("Test streaming exception");
     }
 
+    @Test
+    public void testGetContentSizeReturnsLogSize() throws Exception {
+        // Given...
+        String logContent = "Test log content";
+        TestStructure testStructure = new TestStructure();
+        testStructure.setLogSize(Long.valueOf(logContent.getBytes(StandardCharsets.UTF_8).length));
+        IRunResult mockRun = new MockRunResult("test-run-id", testStructure, null, logContent);
+        RunLogArtifact artifact = new RunLogArtifact();
+
+        // When...
+        long size = artifact.getContentSize(mockRun);
+
+        // Then...
+        assertThat(size).isEqualTo(logContent.getBytes(StandardCharsets.UTF_8).length);
+    }
+
+    @Test
+    public void testGetContentSizeWithNullLogSizeReturnsCalculatedSize() throws Exception {
+        // Given...
+        String logContent = "Test log content";
+        TestStructure testStructure = new TestStructure();
+        // logSize is null (not set)
+        IRunResult mockRun = new MockRunResult("test-run-id", testStructure, null, logContent);
+        RunLogArtifact artifact = new RunLogArtifact();
+
+        // When...
+        long size = artifact.getContentSize(mockRun);
+
+        // Then...
+        assertThat(size).isEqualTo(logContent.getBytes(StandardCharsets.UTF_8).length);
+    }
+
+    @Test
+    public void testGetContentSizeWithEmptyLogReturnsZero() throws Exception {
+        // Given...
+        TestStructure testStructure = new TestStructure();
+        testStructure.setLogSize(0L);
+        IRunResult mockRun = new MockRunResult("test-run-id", testStructure, null, "");
+        RunLogArtifact artifact = new RunLogArtifact();
+
+        // When...
+        long size = artifact.getContentSize(mockRun);
+
+        // Then...
+        assertThat(size).isEqualTo(0);
+    }
+
+    @Test
+    public void testGetContentSizeWithNullLogReturnsZero() throws Exception {
+        // Given...
+        TestStructure testStructure = new TestStructure();
+        testStructure.setLogSize(0L);
+        IRunResult mockRun = new MockRunResult("test-run-id", testStructure, null, null);
+        RunLogArtifact artifact = new RunLogArtifact();
+
+        // When...
+        long size = artifact.getContentSize(mockRun);
+
+        // Then...
+        assertThat(size).isEqualTo(0);
+    }
+
 }

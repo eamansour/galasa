@@ -31,6 +31,11 @@ public class RunLogArtifact implements IRunRootArtifact {
     }
 
     @Override
+    public long getContentSize(IRunResult run) throws ResultArchiveStoreException {
+        return run.getLogSize();
+    }
+
+    @Override
     public String getContentType() {
         return "text/plain";
     }

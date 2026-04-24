@@ -15,6 +15,8 @@ import java.nio.file.Path;
 import com.google.gson.JsonIOException;
 import com.google.gson.JsonSyntaxException;
 
+import dev.galasa.framework.FileSystem;
+import dev.galasa.framework.IFileSystem;
 import dev.galasa.framework.spi.IRunResult;
 import dev.galasa.framework.spi.ResultArchiveStoreException;
 import dev.galasa.framework.spi.teststructure.TestStructure;
@@ -28,20 +30,32 @@ public class DirectoryRASRunResult implements IRunResult {
     private final TestStructure                  testStructure;
     private final DirectoryRASFileSystemProvider fileSystemProvider;
     private final String                         id;
+    private final IFileSystem                    fileSystem;
 
     protected DirectoryRASRunResult(Path runDirectory, GalasaGson gson, String id)
             throws JsonSyntaxException, JsonIOException, IOException {
+        this(runDirectory, gson, id, new FileSystem(), new DirectoryRASFileSystemProvider(runDirectory));
+    }
+
+    protected DirectoryRASRunResult(
+        Path runDirectory,
+        GalasaGson gson,
+        String id,
+        IFileSystem fileSystem,
+        DirectoryRASFileSystemProvider fileSystemProvider
+    )
+            throws JsonSyntaxException, JsonIOException, IOException {
         this.runDirectory = runDirectory;
         this.id           = id;
+        this.fileSystem   = fileSystem;
 
         Path structureFile = this.runDirectory.resolve("structure.json");
         
-        try (InputStreamReader in = new InputStreamReader(Files.newInputStream(structureFile))){
+        try (InputStreamReader in = new InputStreamReader(fileSystem.newInputStream(structureFile))){
            this.testStructure = gson.fromJson(in, TestStructure.class);
         }
-    
 
-        this.fileSystemProvider = new DirectoryRASFileSystemProvider(this.runDirectory);
+        this.fileSystemProvider = fileSystemProvider;
     }
     
     //for testing purposes
@@ -50,6 +64,7 @@ public class DirectoryRASRunResult implements IRunResult {
     	this.runDirectory = null;
     	this.fileSystemProvider = null;
     	this.id                 = null;
+        this.fileSystem = null;
     }
 
     @Override
@@ -80,8 +95,8 @@ public class DirectoryRASRunResult implements IRunResult {
     @Override
     public void streamLog(OutputStream outputStream) throws ResultArchiveStoreException {
         Path runLog = runDirectory.resolve("run.log");
-        if (Files.exists(runLog)) {
-            try (InputStream inputStream = Files.newInputStream(runLog)) {
+        if (fileSystem.exists(runLog)) {
+            try (InputStream inputStream = fileSystem.newInputStream(runLog)) {
                 byte[] buffer = new byte[LOG_STREAM_BUFFER_BYTES];
                 int bytesRead;
                 while ((bytesRead = inputStream.read(buffer)) != -1) {
@@ -92,6 +107,31 @@ public class DirectoryRASRunResult implements IRunResult {
                 throw new ResultArchiveStoreException("Unable to stream the run log at " + runLog.toString(), e);
             }
         }
+    }
+
+    @Override
+    public long getLogSize() throws ResultArchiveStoreException {
+        long size = 0;
+        
+        // First try to get size from TestStructure metadata
+        if (testStructure != null) {
+            Long logSize = testStructure.getLogSize();
+            if (logSize != null) {
+                size = logSize.longValue();
+            } else {
+                // Fall back to checking file size for legacy runs
+                Path runLog = runDirectory.resolve("run.log");
+                if (fileSystem.exists(runLog)) {
+                    try {
+                        size = fileSystem.size(runLog);
+                    } catch (IOException e) {
+                        throw new ResultArchiveStoreException("Unable to get size of run log at " + runLog.toString(), e);
+                    }
+                }
+            }
+        }
+        
+        return size;
     }
 
     public void discard() throws ResultArchiveStoreException {
