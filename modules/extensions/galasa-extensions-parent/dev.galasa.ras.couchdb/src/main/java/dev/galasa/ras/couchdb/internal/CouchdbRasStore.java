@@ -388,6 +388,48 @@ public class CouchdbRasStore extends CouchdbStore implements IResultArchiveStore
         return sb.toString();
     }
 
+    /**
+     * Stream the run log content directly to an OutputStream.
+     * This method processes log documents one at a time and writes directly to the stream,
+     * avoiding the need to load the entire log into memory.
+     *
+     * @param ts The test structure containing log record IDs
+     * @param outputStream The stream to write log content to
+     * @throws ResultArchiveStoreException if there's an error accessing the log
+     */
+    public void streamLog(TestStructure ts, java.io.OutputStream outputStream)
+        throws ResultArchiveStoreException {
+        
+        boolean isAtFirstLine = true;
+        
+        for (String logRecordId : ts.getLogRecordIds()) {
+            HttpGet httpGet = httpRequestFactory.getHttpGetRequest(this.storeUri + "/"+LOG_DB+"/" + logRecordId);
+            
+            try {
+                String entity = sendHttpRequest(httpGet, HttpStatus.SC_OK);
+                LogLines logLines = gson.fromJson(entity, LogLines.class);
+                
+                if (logLines.lines != null) {
+                    for (String line : logLines.lines) {
+                        if (!isAtFirstLine) {
+                            outputStream.write('\n');
+                        }
+                        outputStream.write(line.getBytes(StandardCharsets.UTF_8));
+                        isAtFirstLine = false;
+                    }
+                }
+                
+                // Flush periodically to ensure data is sent progressively
+                outputStream.flush();
+                
+            } catch (CouchdbException e) {
+                throw new ResultArchiveStoreException(e);
+            } catch (IOException e) {
+                throw new ResultArchiveStoreException("Unable to stream log", e);
+            }
+        }
+    }
+
     @Override
     public Path getStoredArtifactsRoot() {
         if (this.run == null) {

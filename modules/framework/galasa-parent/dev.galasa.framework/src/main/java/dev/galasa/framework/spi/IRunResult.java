@@ -5,6 +5,7 @@
  */
 package dev.galasa.framework.spi;
 
+import java.io.OutputStream;
 import java.nio.file.Path;
 
 import dev.galasa.framework.spi.teststructure.TestStructure;
@@ -18,6 +19,15 @@ public interface IRunResult {
     Path getArtifactsRoot() throws ResultArchiveStoreException;
 
     String getLog() throws ResultArchiveStoreException;
+
+    /**
+     * Stream the run log content directly to an OutputStream.
+     * This method is preferred for large logs to avoid memory issues.
+     *
+     * @param outputStream The stream to write log content to
+     * @throws ResultArchiveStoreException if there's an error accessing the log
+     */
+    void streamLog(OutputStream outputStream) throws ResultArchiveStoreException;
 
     void discard() throws ResultArchiveStoreException;
 

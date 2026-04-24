@@ -6,7 +6,9 @@
 package dev.galasa.framework.internal.ras.directory;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
@@ -19,6 +21,8 @@ import dev.galasa.framework.spi.teststructure.TestStructure;
 import dev.galasa.framework.spi.utils.GalasaGson;
 
 public class DirectoryRASRunResult implements IRunResult {
+
+    private static final int LOG_STREAM_BUFFER_BYTES = 8192;
 
     private final Path                           runDirectory;
     private final TestStructure                  testStructure;
@@ -71,6 +75,23 @@ public class DirectoryRASRunResult implements IRunResult {
         }
 
         return "";
+    }
+
+    @Override
+    public void streamLog(OutputStream outputStream) throws ResultArchiveStoreException {
+        Path runLog = runDirectory.resolve("run.log");
+        if (Files.exists(runLog)) {
+            try (InputStream inputStream = Files.newInputStream(runLog)) {
+                byte[] buffer = new byte[LOG_STREAM_BUFFER_BYTES];
+                int bytesRead;
+                while ((bytesRead = inputStream.read(buffer)) != -1) {
+                    outputStream.write(buffer, 0, bytesRead);
+                }
+                outputStream.flush();
+            } catch (IOException e) {
+                throw new ResultArchiveStoreException("Unable to stream the run log at " + runLog.toString(), e);
+            }
+        }
     }
 
     public void discard() throws ResultArchiveStoreException {

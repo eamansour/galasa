@@ -115,7 +115,7 @@ public class RunArtifactsDownloadRoute extends RunArtifactsRoute {
         try {
             IRunRootArtifact artifact = rootArtifacts.get(artifactPath);
             if (artifact != null) {
-                res = setDownloadResponse(res, artifact.getContent(run), artifact.getContentType());
+                res = setDownloadResponse(res, run, artifact);
             } else if (artifactPath.startsWith(artifactsPrefix)) {
                 res = downloadStoredArtifact(res, run, artifactPath.substring(artifactsPrefix.length() - 1));
             } else {
@@ -199,13 +199,21 @@ public class RunArtifactsDownloadRoute extends RunArtifactsRoute {
         }
     }
 
-    private HttpServletResponse setDownloadResponse(HttpServletResponse res, byte[] content, String contentType) throws IOException {
-        OutputStream outStream = res.getOutputStream();
+    private HttpServletResponse setDownloadResponse(HttpServletResponse res, IRunResult run, IRunRootArtifact artifact) throws IOException, ResultArchiveStoreException {
         res.setStatus(HttpServletResponse.SC_OK);
-        res.setContentType(contentType);
+        res.setContentType(artifact.getContentType());
         res.setHeader("Content-Disposition", "attachment");
-        outStream.write(content);
-        outStream.close();
+        
+        try (OutputStream outStream = res.getOutputStream()) {
+            // Try streaming first for better memory efficiency
+            boolean isContentStreamed = artifact.streamContent(run, outStream);
+            
+            if (!isContentStreamed) {
+                // Fall back to in-memory approach for artifacts that don't support streaming
+                byte[] content = artifact.getContent(run);
+                outStream.write(content);
+            }
+        }
         return res;
     }
 

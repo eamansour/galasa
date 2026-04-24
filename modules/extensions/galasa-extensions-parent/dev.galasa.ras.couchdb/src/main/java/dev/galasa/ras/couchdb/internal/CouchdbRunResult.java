@@ -5,6 +5,7 @@
  */
 package dev.galasa.ras.couchdb.internal;
 
+import java.io.OutputStream;
 import java.nio.file.Path;
 
 import dev.galasa.extensions.common.api.LogFactory;
@@ -51,6 +52,11 @@ public class CouchdbRunResult implements IRunResult {
     @Override
     public String getLog() throws ResultArchiveStoreException {
         return this.store.getLog(this.testStructure);
+    }
+
+    @Override
+    public void streamLog(OutputStream outputStream) throws ResultArchiveStoreException {
+        this.store.streamLog(this.testStructure, outputStream);
     }
 
 	@Override
