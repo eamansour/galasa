@@ -6,6 +6,7 @@
 package dev.galasa.ras.couchdb.internal;
 
 import java.io.IOException;
+import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.URI;
 import java.net.URLEncoder;
@@ -413,31 +414,32 @@ public class CouchdbRasStore extends CouchdbStore implements IResultArchiveStore
      * @param outputStream The stream to write log content to
      * @throws ResultArchiveStoreException if there's an error accessing the log
      */
-    public void streamLog(TestStructure ts, java.io.OutputStream outputStream)
+    public void streamLog(TestStructure ts, OutputStream outputStream)
         throws ResultArchiveStoreException {
-        
+
         boolean isAtFirstLine = true;
-        
+
         for (String logRecordId : ts.getLogRecordIds()) {
             HttpGet httpGet = httpRequestFactory.getHttpGetRequest(this.storeUri + "/"+LOG_DB+"/" + logRecordId);
-            
+
             try {
                 String entity = sendHttpRequest(httpGet, HttpStatus.SC_OK);
                 LogLines logLines = gson.fromJson(entity, LogLines.class);
-                
-                if (logLines.lines != null) {
+
+                if (logLines.lines != null && !logLines.lines.isEmpty()) {
+                    StringBuilder documentContent = new StringBuilder();
+
                     for (String line : logLines.lines) {
                         if (!isAtFirstLine) {
-                            outputStream.write('\n');
+                            documentContent.append('\n');
                         }
-                        outputStream.write(line.getBytes(StandardCharsets.UTF_8));
+                        documentContent.append(line);
                         isAtFirstLine = false;
                     }
+
+                    outputStream.write(documentContent.toString().getBytes(StandardCharsets.UTF_8));
                 }
-                
-                // Flush periodically to ensure data is sent progressively
-                outputStream.flush();
-                
+
             } catch (CouchdbException e) {
                 throw new ResultArchiveStoreException(e);
             } catch (IOException e) {

@@ -55,6 +55,8 @@ import dev.galasa.framework.spi.utils.GalasaGson;
  */
 public class RunArtifactsDownloadRoute extends RunArtifactsRoute {
 
+    private static final int DOWNLOAD_BUFFER_SIZE_BYTES = 8 * 1024;
+
     private static final Log logger = LogFactory.getLog(RunArtifactsDownloadRoute.class);
 
     static final GalasaGson gson = new GalasaGson();
@@ -151,7 +153,7 @@ public class RunArtifactsDownloadRoute extends RunArtifactsRoute {
             OutputStream outStream = res.getOutputStream()) {
 
             // Create a buffer to read small amounts of data into to avoid out-of-memory issues
-            int bufferCapacity = 1024;
+            int bufferCapacity = DOWNLOAD_BUFFER_SIZE_BYTES;
             ByteBuffer buffer = ByteBuffer.allocate(bufferCapacity);
 
             // Read the artifact and write it to the response's output stream

@@ -248,7 +248,7 @@ public class RunLogArtifactTest {
     }
 
     @Test
-    public void testGetContentSizeWithNullLogReturnsZero() throws Exception {
+    public void testGetContentSizeWithNullLogReturnsMinusOne() throws Exception {
         // Given...
         TestStructure testStructure = new TestStructure();
         testStructure.setLogSize(0L);
@@ -259,7 +259,7 @@ public class RunLogArtifactTest {
         long size = artifact.getContentSize(mockRun);
 
         // Then...
-        assertThat(size).isEqualTo(0);
+        assertThat(size).isEqualTo(-1);
     }
 
 }
