@@ -25,7 +25,6 @@ import org.apache.commons.io.IOUtils;
 
 import dev.galasa.framework.IFileSystem;
 import dev.galasa.framework.spi.IRunResult;
-import dev.galasa.framework.spi.ResultArchiveStoreException;
 
 import java.nio.file.DirectoryStream.Filter;
 import java.nio.charset.StandardCharsets;
@@ -148,7 +147,12 @@ public class MockFileSystem extends FileSystem implements IFileSystem {
 
     @Override
     public long size(Path folderPath) throws IOException {
-        return 0;
+        long size = 0;
+        Node node = files.get(folderPath.toString());
+        if (node != null && node.contents != null) {
+            size = node.contents.length;
+        }
+        return size;
     }
 
     @Override

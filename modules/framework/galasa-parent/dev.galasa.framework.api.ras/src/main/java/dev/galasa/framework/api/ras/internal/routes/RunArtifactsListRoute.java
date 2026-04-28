@@ -95,9 +95,18 @@ public class RunArtifactsListRoute extends RunArtifactsRoute {
     private JsonArray getRootArtifacts(IRunResult run) throws ResultArchiveStoreException, IOException {
         JsonArray artifactRecords = new JsonArray();
         for (IRunRootArtifact rootArtifact : virtualRootArtifacts) {
-            byte[] content = rootArtifact.getContent(run);
-            if (content != null) {
-                artifactRecords.add(getArtifactAsJsonObject(rootArtifact.getPathName(), rootArtifact.getContentType(), content.length));
+            // Try to get size without loading content into memory
+            long size = rootArtifact.getContentSize(run);
+            
+            if (size >= 0) {
+                // Size is available from metadata, use it directly
+                artifactRecords.add(getArtifactAsJsonObject(rootArtifact.getPathName(), rootArtifact.getContentType(), (int)size));
+            } else {
+                // Fall back to calculating the content size for legacy artifacts by loading it into memory
+                byte[] content = rootArtifact.getContent(run);
+                if (content != null) {
+                    artifactRecords.add(getArtifactAsJsonObject(rootArtifact.getPathName(), rootArtifact.getContentType(), content.length));
+                }
             }
         }
         return artifactRecords;
