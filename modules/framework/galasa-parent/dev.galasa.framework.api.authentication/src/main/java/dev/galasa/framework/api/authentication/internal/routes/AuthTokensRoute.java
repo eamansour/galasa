@@ -245,7 +245,8 @@ public class AuthTokensRoute extends PublicRoute {
                 // We only want to store tokens in the tokens database when they are created.
                 String tokenDescription = requestPayload.getDescription();
                 if (requestPayload.getRefreshToken() == null && tokenDescription != null) {
-                    addTokenToAuthStore(requestPayload.getClientId(), jwt, tokenDescription);
+                    addTokenToAuthStore(requestPayload.getClientId(), jwt, tokenDescription,
+                            requestPayload.getTokenLifespanDays());
                     isNewAccessTokenBeingCreated = true;
                 }
 
@@ -330,19 +331,25 @@ public class AuthTokensRoute extends PublicRoute {
     /**
      * Records a new Galasa token in the auth store.
      *
-     * @param clientId    the ID of the client that a user has authenticated with
-     * @param jwt         the JWT that was returned after authenticating with the
-     *                    client, identifying the user
-     * @param description the description of the Galasa token provided by the user
+     * @param clientId          the ID of the client that a user has authenticated with
+     * @param jwt               the JWT that was returned after authenticating with the
+     *                          client, identifying the user
+     * @param description       the description of the Galasa token provided by the user
+     * @param tokenLifespanDays the number of days until the token expires (defaults
+     *                          to 90 if null)
      * @throws InternalServletException
      */
-    private void addTokenToAuthStore(String clientId, String jwt, String description) throws InternalServletException {
+    private void addTokenToAuthStore(String clientId, String jwt, String description, Integer tokenLifespanDays)
+            throws InternalServletException {
         logger.info("Storing new token record in the auth store");
         JwtWrapper jwtWrapper = new JwtWrapper(jwt, env);
         IInternalUser user = new InternalUser(jwtWrapper.getUsername(), jwtWrapper.getSubject());
 
+        // Default to 90 days if not provided
+        int lifespanDays = (tokenLifespanDays != null) ? tokenLifespanDays : 90;
+
         try {
-            authStoreService.storeToken(clientId, description, user);
+            authStoreService.storeToken(clientId, description, user, lifespanDays);
         } catch (AuthStoreException e) {
             ServletError error = new ServletError(GAL5056_FAILED_TO_STORE_TOKEN_IN_AUTH_STORE, description);
             throw new InternalServletException(error, HttpServletResponse.SC_INTERNAL_SERVER_ERROR, e);

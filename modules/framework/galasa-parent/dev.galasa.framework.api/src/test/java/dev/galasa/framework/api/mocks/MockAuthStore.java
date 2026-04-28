@@ -33,7 +33,8 @@ public class MockAuthStore implements IAuthStore, IAuthStoreService {
     }
 
     @Override
-    public void storeToken(String clientId, String description, IInternalUser owner) throws AuthStoreException {
+    public void storeToken(String clientId, String description, IInternalUser owner, int tokenLifespanDays)
+            throws AuthStoreException {
         throw new UnsupportedOperationException("Unimplemented method 'storeToken'");
     }
 

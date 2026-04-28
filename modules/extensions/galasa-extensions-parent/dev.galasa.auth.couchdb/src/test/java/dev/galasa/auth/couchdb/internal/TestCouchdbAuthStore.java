@@ -303,7 +303,7 @@ public class TestCouchdbAuthStore {
                 logFactory, new MockCouchdbValidator(), mockTimeService);
 
         // When...
-        authStore.storeToken("this-is-a-dex-id", "my token", new CouchdbUser("user1", "user1-id"));
+        authStore.storeToken("this-is-a-dex-id", "my token", new CouchdbUser("user1", "user1-id"), 90);
 
         // Then the assertions made in the create token document interaction shouldn't
         // have failed.
@@ -330,7 +330,7 @@ public class TestCouchdbAuthStore {
 
         // When...
         AuthStoreException thrown = catchThrowableOfType(
-                () -> authStore.storeToken("this-is-a-dex-id", "my token", new CouchdbUser("user1", "user1-id")),
+                () -> authStore.storeToken("this-is-a-dex-id", "my token", new CouchdbUser("user1", "user1-id"), 90),
                 AuthStoreException.class);
 
         // Then...

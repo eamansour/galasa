@@ -2956,6 +2956,12 @@ components:
         description:
           type: string
           description: Optional. A single-line description to be associated with the Galasa personal access token being created for the first time.
+        token_lifespan_days:
+          type: integer
+          description: Optional. The number of days until the token expires. Must be between 1 and 365. Defaults to 90 days if not provided.
+          minimum: 1
+          maximum: 365
+          default: 90
     AuthTokens:
       type: object
       properties:

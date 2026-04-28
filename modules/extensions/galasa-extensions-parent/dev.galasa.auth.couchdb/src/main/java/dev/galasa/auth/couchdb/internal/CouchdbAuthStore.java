@@ -278,11 +278,12 @@ public class CouchdbAuthStore extends CouchdbStore implements IAuthStore {
     }
 
     @Override
-    public void storeToken(String clientId, String description, IInternalUser owner) throws AuthStoreException {
+    public void storeToken(String clientId, String description, IInternalUser owner, int tokenLifespanDays)
+            throws AuthStoreException {
         // Create the JSON payload representing the token to store
         CouchdbUser couchdbUser = new CouchdbUser(owner);
         Instant now = timeService.now();
-        Instant expiryTime = now.plus(DEFAULT_TOKEN_LIFESPAN_DAYS, ChronoUnit.DAYS);
+        Instant expiryTime = now.plus(tokenLifespanDays, ChronoUnit.DAYS);
         String tokenJson = gson.toJson(new CouchdbAuthToken(clientId, description, now, expiryTime, couchdbUser));
 
         try {

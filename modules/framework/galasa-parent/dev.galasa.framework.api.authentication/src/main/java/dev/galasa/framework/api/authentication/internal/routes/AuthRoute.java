@@ -246,7 +246,8 @@ public class AuthRoute extends AbstractAuthRoute {
         IInternalUser user = new InternalUser(jwtWrapper.getUsername(), jwtWrapper.getSubject());
 
         try {
-            authStoreService.storeToken(clientId, description, user);
+            // Default to 90 days for deprecated route
+            authStoreService.storeToken(clientId, description, user, 90);
         } catch (AuthStoreException e) {
             ServletError error = new ServletError(GAL5056_FAILED_TO_STORE_TOKEN_IN_AUTH_STORE, description);
             throw new InternalServletException(error, HttpServletResponse.SC_INTERNAL_SERVER_ERROR, e);

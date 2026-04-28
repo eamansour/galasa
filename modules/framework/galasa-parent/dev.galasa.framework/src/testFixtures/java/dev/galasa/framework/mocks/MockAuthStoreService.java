@@ -57,12 +57,13 @@ public class MockAuthStoreService implements IAuthStoreService {
     }
 
     @Override
-    public void storeToken(String clientId, String description, IInternalUser owner) throws AuthStoreException {
+    public void storeToken(String clientId, String description, IInternalUser owner, int tokenLifespanDays)
+            throws AuthStoreException {
         if (throwException) {
             throwAuthStoreException();
         }
         Instant now = timeService.now();
-        Instant expiryTime = now.plus(90, java.time.temporal.ChronoUnit.DAYS);
+        Instant expiryTime = now.plus(tokenLifespanDays, java.time.temporal.ChronoUnit.DAYS);
         tokens.add(new MockInternalAuthToken("token-" + tokenIdCounter, description, now, expiryTime, owner, clientId));
         tokenIdCounter++;
     }

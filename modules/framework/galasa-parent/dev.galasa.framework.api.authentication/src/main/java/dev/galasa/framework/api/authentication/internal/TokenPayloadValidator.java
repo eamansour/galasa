@@ -24,11 +24,17 @@ public class TokenPayloadValidator extends AbstractValidator implements IBeanVal
             String clientId = tokenPayload.getClientId();
             String refreshToken = tokenPayload.getRefreshToken();
             String authCode = tokenPayload.getCode();
+            Integer tokenLifespanDays = tokenPayload.getTokenLifespanDays();
     
             if (clientId != null && isAlphanumWithDashes(clientId)) {
                 // The refresh token and authorization code parameters are mutually exclusive
                 isValid = ((refreshToken != null && isAlphanumWithDashes(refreshToken) && authCode == null)
                     || (authCode != null && isAlphanumWithDashes(authCode) && refreshToken == null));
+
+                // Validate token_lifespan_days if provided
+                if (isValid && tokenLifespanDays != null) {
+                    isValid = (tokenLifespanDays >= 1 && tokenLifespanDays <= 365);
+                }
             }
         }
 
