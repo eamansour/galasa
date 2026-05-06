@@ -84,6 +84,7 @@ public class AuthTokensRoute extends PublicRoute {
     private Log logger = LogFactory.getLog(this.getClass());
     private ITimeService timeService;
     private RBACService rbacService;
+    private IAuthService authService;
 
     // CPS property for token expiry warning threshold
     private static final String CPS_PROPERTY_TOKEN_EXPIRY_WARNING_DAYS = "service.tokens.lifespan.nearly.expired.warning.days";
@@ -101,6 +102,7 @@ public class AuthTokensRoute extends PublicRoute {
             IFramework framework) {
         super(responseBuilder, PATH_PATTERN);
         this.oidcProvider = oidcProvider;
+        this.authService = authService;
         this.dexGrpcClient = authService.getDexGrpcClient();
         this.authStoreService = authService.getAuthStoreService();
         this.env = env;
@@ -208,7 +210,7 @@ public class AuthTokensRoute extends PublicRoute {
         // If this is a refresh token request (not a new token creation), check if the
         // personal access token has expired
         if (requestPayload.getRefreshToken() != null) {
-            validateTokenNotExpired(requestPayload.getClientId());
+            validateTokenNotExpired(requestPayload.getClientId(), requestContext.getUsername());
         }
 
         JsonObject responseJson = new JsonObject();
@@ -500,7 +502,7 @@ public class AuthTokensRoute extends PublicRoute {
      * @throws InternalServletException if the token has expired or there was an
      *                                  error accessing the auth store
      */
-    private void validateTokenNotExpired(String clientId) throws InternalServletException {
+    private void validateTokenNotExpired(String clientId, String userId) throws InternalServletException {
         try {
             IInternalAuthToken token = authStoreService.getTokenByDexClientId(clientId);
 
@@ -513,7 +515,7 @@ public class AuthTokensRoute extends PublicRoute {
                     logger.info("Personal access token has expired. Deleting token from auth store.");
 
                     // Delete the expired token
-                    authStoreService.deleteToken(token.getTokenId());
+                    authService.revokeToken(token.getTokenId(), userId);
 
                     ServletError error = new ServletError(GAL5454_TOKEN_EXPIRED);
                     throw new InternalServletException(error, HttpServletResponse.SC_UNAUTHORIZED);
