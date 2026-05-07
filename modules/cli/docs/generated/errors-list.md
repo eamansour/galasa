@@ -291,6 +291,7 @@ The `galasactl` tool can generate the following errors:
 - GAL1289E: An attempt to set stream '{}' failed. Unexpected http status code {} received from the server. Error details from the server are: '{}'
 - GAL1290E: An attempt to set stream '{}' failed. Unexpected http status code {} received from the server. Error details from the server are not in the json format.
 - GAL2000W: Warning: Maven configuration file settings.xml should contain a reference to a Galasa repository so that the galasa OBR can be resolved. The official release repository is '{}', and 'pre-release' repository is '{}'
+- GAL2001W: Your personal access token will expire soon. Once it expires, you will no longer be able to use it to contact your Galasa service. Create a new personal access token on your Galasa service's web user interface to continue to authenticate with the Galasa service.
 - GAL2501I: Downloaded {} artifacts to folder '{}'
 
 - GAL2503I: The request to reset run '{}' has been accepted by the server.

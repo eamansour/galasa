@@ -191,7 +191,7 @@ func (authenticator *authenticatorImpl) checkTokenExpiryAndWarn(expiryTimeStr st
 	daysUntilExpiry := expiryTime.Sub(now).Hours() / 24
 
 	if daysUntilExpiry <= float64(warningThresholdDays) && daysUntilExpiry > 0 {
-		warningMessage := "GAL1200W: Your personal access token will expire soon. Once it expires, you will no longer be able to use it to contact your Galasa service. Create a new personal access token on your Galasa service's web user interface to continue to authenticate with the Galasa service."
+		warningMessage := galasaErrors.NewGalasaError(galasaErrors.GALASA_WARNING_PERSONAL_ACCESS_TOKEN_EXPIRING_SOON).Error()
 
 		if authenticator.console != nil {
 			authenticator.console.WriteString(warningMessage + "\n")
