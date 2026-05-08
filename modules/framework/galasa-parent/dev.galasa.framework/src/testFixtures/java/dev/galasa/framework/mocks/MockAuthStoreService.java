@@ -5,6 +5,7 @@
 */
 package dev.galasa.framework.mocks;
 
+
 import java.time.Instant;
 import java.util.*;
 
@@ -29,7 +30,7 @@ public class MockAuthStoreService implements IAuthStoreService {
     private int tokenIdCounter = 0;
 
     private boolean throwException = false;
-    private boolean isThrowExceptionOnDeleteToken = false;
+    private boolean isThrowExceptionOnDeleteToken = false ;
 
     public MockAuthStoreService(List<IInternalAuthToken> tokens) {
         this.tokens = tokens;
@@ -41,7 +42,7 @@ public class MockAuthStoreService implements IAuthStoreService {
     }
 
     public void setThrowExceptionOnDeleteToken(boolean isThrowExceptionOnDeleteToken) {
-        this.isThrowExceptionOnDeleteToken = isThrowExceptionOnDeleteToken;
+        this.isThrowExceptionOnDeleteToken = isThrowExceptionOnDeleteToken ;
     }
 
     public void setThrowException(boolean throwException) {
@@ -57,8 +58,7 @@ public class MockAuthStoreService implements IAuthStoreService {
     }
 
     @Override
-    public void storeToken(String clientId, String description, IInternalUser owner, int tokenLifespanDays)
-            throws AuthStoreException {
+    public void storeToken(String clientId, String description, IInternalUser owner, int tokenLifespanDays) throws AuthStoreException {
         if (throwException) {
             throwAuthStoreException();
         }
@@ -118,7 +118,7 @@ public class MockAuthStoreService implements IAuthStoreService {
 
     @Override
     public Collection<IUser> getAllUsers() throws AuthStoreException {
-
+        
         return usersByLoginId.values();
 
     }
@@ -126,17 +126,18 @@ public class MockAuthStoreService implements IAuthStoreService {
     @Override
     public void deleteUser(IUser user) throws AuthStoreException {
 
-        if (usersByLoginId.containsKey(user.getLoginId())) {
+        if(usersByLoginId.containsKey(user.getLoginId())) {
             usersByLoginId.remove(user.getLoginId());
         }
 
     }
 
+
     private Map<String, IUser> usersByLoginId = new HashMap<String, IUser>();
 
     public void addUser(IUser user) {
         String loginId = user.getLoginId();
-        usersByLoginId.put(loginId, user);
+        usersByLoginId.put(loginId,user);
     }
 
     @Override
@@ -166,7 +167,7 @@ public class MockAuthStoreService implements IAuthStoreService {
 
         IUser userOut = null;
 
-        for (IUser possibleUserMatch : usersByLoginId.values()) {
+        for( IUser possibleUserMatch : usersByLoginId.values()) {
             if (possibleUserMatch.getUserNumber().equals(userNumber)) {
                 userOut = possibleUserMatch;
                 break;
@@ -182,7 +183,7 @@ public class MockAuthStoreService implements IAuthStoreService {
         String loginId = userToUpdate.getLoginId();
         IUser userGot = usersByLoginId.get(loginId);
         assertThat(userGot).isNotNull();
-        usersByLoginId.put(loginId, userToUpdate);
+        usersByLoginId.put(loginId,userToUpdate);
 
         return userToUpdate;
     }
@@ -190,11 +191,11 @@ public class MockAuthStoreService implements IAuthStoreService {
     @Override
     public void createUser(String loginId, String clientName, String roleId) throws AuthStoreException {
         MockUser user = new MockUser();
-        user.loginId = loginId;
+        user.loginId = loginId ;
         MockFrontEndClient client = new MockFrontEndClient(clientName);
         client.lastLoginTime = timeService.now();
         user.addClient(client);
-        user.version = DEFAULT_USER_VERSION_NUMBER;
+        user.version = DEFAULT_USER_VERSION_NUMBER ;
         user.userNumber = DEFAULT_USER_NUMBER;
         user.roleId = DEFAULT_USER_ROLE_ID;
 
@@ -202,7 +203,7 @@ public class MockAuthStoreService implements IAuthStoreService {
     }
 
     @Override
-    public IFrontEndClient createClient(String clientName) {
+    public IFrontEndClient createClient (String clientName) {
         return new MockFrontEndClient(clientName);
     }
 

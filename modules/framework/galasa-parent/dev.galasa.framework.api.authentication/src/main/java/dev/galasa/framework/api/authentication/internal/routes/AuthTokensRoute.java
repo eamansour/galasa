@@ -392,7 +392,6 @@ public class AuthTokensRoute extends PublicRoute {
         try {
             IConfigurationPropertyStoreService cps = framework.getConfigurationPropertyService("service");
             // CPS property format: service.tokens.lifespan.nearly.expired.warning.days
-            // Split into: prefix="tokens.lifespan.nearly.expired.warning", suffix="days"
             String warningDaysStr = cps.getProperty("tokens.lifespan.nearly.expired.warning", "days");
 
             if (warningDaysStr != null && !warningDaysStr.trim().isEmpty()) {
@@ -451,8 +450,7 @@ public class AuthTokensRoute extends PublicRoute {
             authStoreService.createUser(loginId, clientName, newUserRoleId);
         } else {
 
-            // Only update the document if the user has not created a new Galasa Access
-            // Token
+            // Only update the document if the user has not created a new Galasa Access Token
             // or is using the web-ui
             if (!isNewAccessTokenBeingCreated || clientName.equals(WEB_UI_CLIENT)) {
                 IFrontEndClient client = user.getClient(clientName);
@@ -471,7 +469,7 @@ public class AuthTokensRoute extends PublicRoute {
         String defaultRoleId;
         try {
             defaultRoleId = rbacService.getDefaultRoleId();
-        } catch (RBACException ex) {
+        } catch( RBACException ex ){
             throw new AuthStoreException(ex);
         }
         return defaultRoleId;

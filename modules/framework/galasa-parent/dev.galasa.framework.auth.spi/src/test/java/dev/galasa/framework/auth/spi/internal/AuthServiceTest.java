@@ -86,8 +86,9 @@ public class AuthServiceTest {
 
         // When...
         InternalServletException thrown = catchThrowableOfType(
-                () -> authService.revokeToken(tokenId, userIdDeletingTokens),
-                InternalServletException.class);
+            () -> authService.revokeToken(tokenId, userIdDeletingTokens),
+            InternalServletException.class
+        );
 
         // Then...
         assertThat(thrown).isNotNull();

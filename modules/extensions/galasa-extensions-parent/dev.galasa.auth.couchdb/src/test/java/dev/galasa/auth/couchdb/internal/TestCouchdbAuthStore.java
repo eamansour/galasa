@@ -823,13 +823,12 @@ public class TestCouchdbAuthStore {
         assertThat(user).isNull();
     }
 
-        @Test
-        public void testUpdateUserUpdatesExisitingClientOK() throws Exception {
-                // Given...
-                UserImpl mockUser = new UserImpl(
-                                new UserDoc("johndoe", List.of(new FrontEndClient("web-ui", Instant.MIN)), "2"));
-                mockUser.setVersion("1");
-                mockUser.setUserNumber("user1");
+    @Test
+    public void testUpdateUserUpdatesExisitingClientOK() throws Exception {
+        // Given...
+        UserImpl mockUser = new UserImpl(new UserDoc("johndoe", List.of(new FrontEndClient("web-ui", Instant.MIN)), "2"));
+        mockUser.setVersion("1");
+        mockUser.setUserNumber("user1");
 
         List<HttpInteraction> interactions = new ArrayList<HttpInteraction>();
         addMigrationMockInteractions(interactions, "https://my-auth-store");

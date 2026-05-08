@@ -18,8 +18,7 @@ public interface IAuthStore {
     List<IInternalAuthToken> getTokens() throws AuthStoreException;
 
     /**
-     * Returns a list of token records stored in the auth store that match a given
-     * login ID.
+     * Returns a list of token records stored in the auth store that match a given login ID.
      *
      * @return a list of all token records stored in the auth store by login ID.
      * @throws AuthStoreException if there is an issue accessing the auth store.
@@ -68,8 +67,7 @@ public interface IAuthStore {
      *
      * @param loginId    the loginId of the user trying to access Galasa API
      * @param clientName the name of the frontend client being used.
-     * @param roleId     the id of the role this user has been assigned. A numeric
-     *                   value.
+     * @param roleId     the id of the role this user has been assigned. A numeric value.
      * @throws AuthStoreException if there is an issue accessing the users store.
      */
     void createUser(String loginId, String clientName, String roleId) throws AuthStoreException;
@@ -77,7 +75,7 @@ public interface IAuthStore {
     /**
      * Retrieves a user record in the users store's database.
      *
-     * @param loginId the loginId of the user trying to access Galasa API
+     * @param loginId    the loginId of the user trying to access Galasa API
      * @throws AuthStoreException if there is an issue accessing the users store.
      */
     IUser getUserByLoginId(String loginId) throws AuthStoreException;
@@ -96,7 +94,7 @@ public interface IAuthStore {
     /**
      * Retrieves a user record in the users store's database.
      *
-     * @param userNumber the ID of the user record to retrieve
+     * @param userNumber    the ID of the user record to retrieve
      * @throws AuthStoreException if there is an issue accessing the users store.
      */
     IUser getUser(String userNumber) throws AuthStoreException;
@@ -104,7 +102,7 @@ public interface IAuthStore {
     /**
      * Updates a user record in the users store's database.
      *
-     * @param user The user that needs to be updated
+     * @param user    The user that needs to be updated
      * @throws AuthStoreException if there is an issue accessing the users store.
      */
     IUser updateUser(IUser user) throws AuthStoreException;

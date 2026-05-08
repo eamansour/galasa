@@ -15,7 +15,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
-type AuthLoginCmdValues struct{}
+type AuthLoginCmdValues struct {}
 
 type AuthLoginComamnd struct {
 	values       *AuthLoginCmdValues
@@ -115,7 +115,7 @@ func (cmd *AuthLoginComamnd) executeAuthLogin(
 		if err != nil {
 			panic(err)
 		}
-
+		
 		var commsClient api.APICommsClient
 		commsClient, err = api.NewAPICommsClient(
 			commsFlagSetValues.bootstrap,
