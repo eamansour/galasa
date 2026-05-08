@@ -688,7 +688,7 @@ public class TestCouchdbAuthStore {
         List<HttpInteraction> interactions = new ArrayList<HttpInteraction>();
         addMigrationMockInteractions(interactions, authStoreUri.getSchemeSpecificPart());
         interactions.add(new GetAllDocumentsInteraction(
-                "https://my-auth-store/galasa_users/_design/docs/_view/loginId-view?key=%22notJohndoe%22",
+                "https://my-auth-store/galasa_users/_design/docs/_view/loginId-view?key=%22notjohndoe%22",
                 HttpStatus.SC_OK, mockAllDocsResponse));
         interactions.add(new GetDocumentInteraction<UserDoc>("https://my-auth-store/galasa_users/user1",
                 HttpStatus.SC_OK, mockUser));
@@ -772,10 +772,7 @@ public class TestCouchdbAuthStore {
         UserDoc mockUser = new UserDoc("JohnDoe", List.of(client), "2");
 
         List<HttpInteraction> interactions = new ArrayList<HttpInteraction>();
-        // The lowercase view should be queried with the lowercase version of the loginId
-        interactions.add(new GetAllDocumentsInteraction(
-                "https://my-auth-store/galasa_users/_design/docs/_view/loginId-view?key=%22johndoe%22",
-                HttpStatus.SC_OK, mockAllDocsResponse));
+        addMigrationMockInteractions(interactions, authStoreUri.getSchemeSpecificPart());
         // The lowercase view should be queried with the lowercase version of the loginId
         interactions.add(new GetAllDocumentsInteraction(
                 "https://my-auth-store/galasa_users/_design/docs/_view/loginId-view?key=%22johndoe%22",
