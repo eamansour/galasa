@@ -24,8 +24,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.KeyManagerFactory;
@@ -35,15 +33,20 @@ import javax.net.ssl.TrustManagerFactory;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.logging.Log;
+import org.apache.hc.client5.http.auth.AuthCache;
 import org.apache.hc.client5.http.auth.AuthScope;
+import org.apache.hc.client5.http.auth.Credentials;
 import org.apache.hc.client5.http.auth.CredentialsProvider;
 import org.apache.hc.client5.http.auth.UsernamePasswordCredentials;
 import org.apache.hc.client5.http.classic.methods.HttpPost;
 import org.apache.hc.client5.http.classic.methods.HttpPut;
 import org.apache.hc.client5.http.config.RequestConfig;
+import org.apache.hc.client5.http.cookie.BasicCookieStore;
 import org.apache.hc.client5.http.cookie.StandardCookieSpec;
 import org.apache.hc.client5.http.entity.UrlEncodedFormEntity;
+import org.apache.hc.client5.http.impl.auth.BasicAuthCache;
 import org.apache.hc.client5.http.impl.auth.BasicCredentialsProvider;
+import org.apache.hc.client5.http.impl.auth.BasicScheme;
 import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
 import org.apache.hc.client5.http.impl.classic.HttpClientBuilder;
 import org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManagerBuilder;
@@ -57,6 +60,7 @@ import org.apache.hc.core5.http.ClassicHttpResponse;
 import org.apache.hc.core5.http.Header;
 import org.apache.hc.core5.http.HttpEntity;
 import org.apache.hc.core5.http.HttpHeaders;
+import org.apache.hc.core5.http.HttpHost;
 import org.apache.hc.core5.http.HttpStatus;
 import org.apache.hc.core5.http.NameValuePair;
 import org.apache.hc.core5.http.io.entity.ByteArrayEntity;
@@ -89,19 +93,55 @@ public class HttpClientImpl implements IHttpClient {
 
     private final int           timeout;
 
+    private BasicCookieStore    cookieStore;
     private SSLContext          sslContext;
     private HostnameVerifier    hostnameVerifier     = NoopHostnameVerifier.INSTANCE;
     private CredentialsProvider credentialsProvider  = new BasicCredentialsProvider();
     private HttpClientContext   httpContext          = null;
     private Set<Integer>        okResponseCodes      = new HashSet<>();
 
+    private IHttpRequestExecutor httpRequestExecutor;
+
     private Log                 logger;
 
     private SSLTLSContextNameSelector nameSelector = new SSLTLSContextNameSelector();
 
     public HttpClientImpl(int timeout, Log log) {
+        this(timeout, log, new HttpRequestExecutor());
+    }
+
+    public HttpClientImpl(int timeout, Log log, IHttpRequestExecutor httpRequestExecutor) {
         this.timeout = timeout;
         this.logger = log;
+        this.cookieStore = new BasicCookieStore();
+        this.httpRequestExecutor = httpRequestExecutor;
+    }
+
+    /**
+     * Enables an auth cache for preemptive basic authentication
+     * @param authScope the auth scope that contains the credentials to populate the cache with
+     */
+    public void enableAuthCache(AuthScope authScope) {
+        if (host != null) {
+            // Create AuthCache instance
+            AuthCache authCache = new BasicAuthCache();
+
+            // Generate BASIC scheme object and add it to the local auth cache
+            BasicScheme basicAuth = new BasicScheme();
+
+            Credentials credentials = credentialsProvider.getCredentials(authScope, null);
+            if (credentials != null) {
+                basicAuth.initPreemptive(credentials);
+            }
+
+            authCache.put(new HttpHost(host.getScheme(), host.getHost(), host.getPort()), basicAuth);
+            
+            // Add AuthCache to the execution context
+            httpContext = HttpClientContext.create();
+            
+            httpContext.setCredentialsProvider(credentialsProvider);
+            httpContext.setAuthCache(authCache);
+        }
     }
 
     @Override
@@ -554,10 +594,13 @@ public class HttpClientImpl implements IHttpClient {
      * @return the updated client
      */
     public IHttpClient setAuthorisation(String username, String password) {
-        // Create a new credentials provider to clear existing credentials
-        credentialsProvider = new BasicCredentialsProvider();
-        ((BasicCredentialsProvider)credentialsProvider).setCredentials(new AuthScope(null, -1),
+        BasicCredentialsProvider basicCredentialsProvider = (BasicCredentialsProvider)credentialsProvider;
+        AuthScope authScope = new AuthScope(null, -1);
+
+        basicCredentialsProvider.clear();
+        basicCredentialsProvider.setCredentials(authScope,
                 new UsernamePasswordCredentials(username, password.toCharArray()));
+        enableAuthCache(authScope);
         return this;
     }
 
@@ -570,9 +613,11 @@ public class HttpClientImpl implements IHttpClient {
      * @return the updated client
      */
     public IHttpClient setAuthorisation(String username, String password, URI scope) {
+        AuthScope authScope = new AuthScope(scope.getHost(), scope.getPort());
         ((BasicCredentialsProvider)credentialsProvider).setCredentials(
-                new AuthScope(scope.getHost(), scope.getPort()),
+                authScope,
                 new UsernamePasswordCredentials(username, password.toCharArray()));
+        enableAuthCache(authScope);
         return this;
     }
 
@@ -584,6 +629,7 @@ public class HttpClientImpl implements IHttpClient {
     public IHttpClient build() {
         RequestConfig.Builder requestBuilder = RequestConfig.custom();
         HttpClientBuilder builder = HttpClientBuilder.create();
+        builder.setDefaultCookieStore(cookieStore);
         requestBuilder.setCookieSpec(StandardCookieSpec.STRICT);
         builder.setDefaultCredentialsProvider(credentialsProvider);
         builder.setDefaultHeaders(commonHeaders);
@@ -684,59 +730,73 @@ public class HttpClientImpl implements IHttpClient {
         }
     }
 
-    private URI buildUri(String path, Map<String, String> queryParams) throws HttpClientException {
-
-        if (queryParams == null) {
-            queryParams = new HashMap<>();
+    private URI buildUri(String pathOrUri, Map<String, String> queryParams) throws HttpClientException {
+        // Split path and query string if present
+        String pathPart = pathOrUri;
+        String queryPart = null;
+        int queryIndex = pathOrUri.indexOf('?');
+        if (queryIndex != -1) {
+            pathPart = pathOrUri.substring(0, queryIndex);
+            queryPart = pathOrUri.substring(queryIndex + 1);
         }
 
-        // Create a multi-valued map since we can have more than one value for each
-        // param in the path
-        Map<String, List<String>> multiMap = new HashMap<>();
-        for (Entry<String, String> entry : queryParams.entrySet()) {
-            List<String> list = new ArrayList<>();
-            list.add(entry.getValue());
-            multiMap.put(entry.getKey(), list);
+        URI inputUri = null;
+        boolean isCompleteUri = false;
+        try {
+            String encodedPathPart = pathPart.trim().replaceAll(" ", "%20");
+            inputUri = new URI(encodedPathPart);
+            isCompleteUri = (inputUri.getScheme() != null && inputUri.getHost() != null);
+        } catch (URISyntaxException e) {
+            // Treat as a path that needs encoding
+            isCompleteUri = false;
         }
 
-        Pattern p = Pattern.compile("^(.*)\\?((?:.+=.*&?)+)$", Pattern.MULTILINE);
-        Matcher m = p.matcher(path);
-        if (m.find()) {
-            path = m.group(1);
-
-            String[] pairs = m.group(2).split("&");
-            for (String pair : pairs) {
-                String[] parts = pair.split("=");
-                if (parts.length != 2) {
-                    throw new HttpClientException("Illegal query parameter found: '" + pair + "'");
-                }
-
-                String param = URLDecoder.decode(parts[0], StandardCharsets.UTF_8);
-                String value = URLDecoder.decode(parts[1], StandardCharsets.UTF_8);
-                if (multiMap.containsKey(param)) {
-                    multiMap.get(param).add(value);
-                } else {
-                    List<String> list = new ArrayList<>();
-                    list.add(value);
-                    multiMap.put(param, list);
-                }
-            }
+        URIBuilder ub;
+        if (isCompleteUri) {
+            // Path contains a complete URI - use URIBuilder to parse it
+            // This preserves the encoding of the original URI
+            ub = new URIBuilder(inputUri);
+        } else {
+            // Path is relative or contains characters that need encoding
+            ub = new URIBuilder(host);
+            appendPath(ub, pathPart);
         }
 
-        URIBuilder ub = new URIBuilder(host);
-        appendPath(ub, path);
+        if (queryPart != null && !queryPart.isEmpty()) {
+            parseAndAddQueryParameters(ub, queryPart);
+        }
 
-        // Iterate through the multi-value map to add all the parameters
-        for (Entry<String, List<String>> entry : multiMap.entrySet()) {
-            for (String value : entry.getValue()) {
-                ub.addParameter(entry.getKey(), value);
+        // Add additional query parameters if provided
+        if (queryParams != null) {
+            for (Entry<String, String> entry : queryParams.entrySet()) {
+                ub.addParameter(entry.getKey(), entry.getValue());
             }
         }
 
         try {
             return ub.build();
         } catch (URISyntaxException e) {
-            throw new HttpClientException("Cannot construct URI using path: '" + path + "'", e);
+            throw new HttpClientException("Cannot construct URI using path: '" + pathOrUri + "'", e);
+        }
+    }
+
+    private void parseAndAddQueryParameters(URIBuilder ub, String queryString) {
+        String[] params = queryString.split("&");
+        for (String param : params) {
+            int eqIndex = param.indexOf('=');
+            if (eqIndex != -1) {
+                String key = param.substring(0, eqIndex);
+                String value = param.substring(eqIndex + 1);
+
+                String decodedKey = URLDecoder.decode(key, StandardCharsets.UTF_8);
+                String decodedValue = URLDecoder.decode(value, StandardCharsets.UTF_8);
+
+                ub.addParameter(decodedKey, decodedValue);
+            } else {
+                // Parameter with no value
+                String decodedKey = URLDecoder.decode(param, StandardCharsets.UTF_8);
+                ub.addParameter(decodedKey, null);
+            }
         }
     }
 
@@ -891,11 +951,7 @@ public class HttpClientImpl implements IHttpClient {
 
     private ClassicHttpResponse execute(ClassicHttpRequest request) throws HttpClientException {
         this.build();
-        try {
-            return httpClient.executeOpen(null, request, httpContext);
-        } catch (IOException e) {
-            throw new HttpClientException("Error executing http request", e);
-        }
+        return httpRequestExecutor.execute(httpClient, httpContext, request);
     }
 
     @Override

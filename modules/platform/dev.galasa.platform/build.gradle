@@ -120,9 +120,9 @@ dependencies {
 
         api 'io.gsonfire:gson-fire:1.9.0'
 
-        api 'io.kubernetes:client-java:25.0.0'
-        api 'io.kubernetes:client-java-api:25.0.0'
-        api 'io.kubernetes:client-java-proto:25.0.0'
+        api 'io.kubernetes:client-java:26.0.0'
+        api 'io.kubernetes:client-java-api:26.0.0'
+        api 'io.kubernetes:client-java-proto:26.0.0'
 
         api 'io.netty:netty-buffer:4.1.124.Final'
         api 'io.netty:netty-codec:4.1.124.Final'
@@ -216,7 +216,7 @@ dependencies {
         api 'org.apache.felix:org.apache.felix.http.servlet-api:2.1.0'
         api 'org.apache.felix:org.apache.felix.scr:2.1.14' // If updating, also update in galasa-boot build.gradle.
 
-        api 'org.apache.httpcomponents.client5:httpclient5:5.6'
+        api 'org.apache.httpcomponents.client5:httpclient5:5.6.1'
         api 'org.apache.httpcomponents.core5:httpcore5:5.4'
         api 'org.apache.httpcomponents.core5:httpcore5-h2:5.4'
 
@@ -233,10 +233,10 @@ dependencies {
         api 'org.apache.kafka:kafka-clients:3.9.0'
         api 'org.apache.kafka:kafka-server-common:3.9.0'
 
-        api 'org.apache.logging.log4j:log4j-api:2.25.3' // If updating, also update in galasa-boot build.gradle.
-        api 'org.apache.logging.log4j:log4j-core:2.25.3' // If updating, also update in galasa-boot build.gradle.
-        api 'org.apache.logging.log4j:log4j-layout-template-json:2.25.3' // If updating, also update in galasa-boot build.gradle.
-        api 'org.apache.logging.log4j:log4j-slf4j-impl:2.25.3'
+        api 'org.apache.logging.log4j:log4j-api:2.25.4' // If updating, also update in galasa-boot build.gradle.
+        api 'org.apache.logging.log4j:log4j-core:2.25.4' // If updating, also update in galasa-boot build.gradle.
+        api 'org.apache.logging.log4j:log4j-layout-template-json:2.25.4' // If updating, also update in galasa-boot build.gradle.
+        api 'org.apache.logging.log4j:log4j-slf4j-impl:2.25.4'
 
         api 'org.apache.maven:maven-core:3.9.9'
         api 'org.apache.maven:maven-artifact:3.9.6'
@@ -259,9 +259,9 @@ dependencies {
 
         api 'org.bitbucket.b_c:jose4j:0.9.6'
 
-        api 'org.bouncycastle:bcpkix-jdk18on:1.83'
-        api 'org.bouncycastle:bcprov-jdk18on:1.83'
-        api 'org.bouncycastle:bcutil-jdk18on:1.83'
+        api 'org.bouncycastle:bcpkix-jdk18on:1.84'
+        api 'org.bouncycastle:bcprov-jdk18on:1.84'
+        api 'org.bouncycastle:bcutil-jdk18on:1.84'
 
         api 'org.checkerframework:checker-qual:3.43.0'
         api 'org.codehaus.mojo:animal-sniffer-annotations:1.24'

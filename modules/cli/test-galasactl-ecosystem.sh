@@ -83,7 +83,7 @@ done
 
 # Can't really verify that the bootstrap provided is a valid one, but galasactl will pick this up later if not
 if [[ "${bootstrap}" == "" ]]; then
-    export bootstrap="https://galasa-service1.galasa.dev/api/bootstrap"
+    export bootstrap="https://galasa-service-main.galasa.dev/api/bootstrap"
     info "No bootstrap supplied. Defaulting the --bootstrap to be ${bootstrap}"
 fi
 
@@ -95,8 +95,8 @@ info "Running tests against ecosystem bootstrap ${bootstrap}"
 export GALASA_TEST_NAME_SHORT="core.CoreManagerIVT"   
 export GALASA_TEST_NAME_LONG="dev.galasa.ivts.${GALASA_TEST_NAME_SHORT}" 
 export GALASA_TEST_RUN_GET_EXPECTED_SUMMARY_LINE_COUNT="4"
-export GALASA_TEST_RUN_GET_EXPECTED_DETAILS_LINE_COUNT="14"
-export GALASA_TEST_RUN_GET_EXPECTED_RAW_PIPE_COUNT="11"
+export GALASA_TEST_RUN_GET_EXPECTED_DETAILS_LINE_COUNT="18"
+export GALASA_TEST_RUN_GET_EXPECTED_RAW_PIPE_COUNT="14"
 export GALASA_TEST_RUN_GET_EXPECTED_NUMBER_ARTIFACT_RUNNING_COUNT="10"
 
 CALLED_BY_MAIN="true"

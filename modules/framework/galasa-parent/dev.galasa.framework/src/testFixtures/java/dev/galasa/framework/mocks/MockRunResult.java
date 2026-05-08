@@ -5,6 +5,9 @@
  */
 package dev.galasa.framework.mocks;
 
+import java.io.IOException;
+import java.io.OutputStream;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 
 import dev.galasa.framework.spi.IRunResult;
@@ -20,7 +23,7 @@ public class MockRunResult implements IRunResult {
     private boolean isDiscarded = false;
     private boolean isLoadingArtifactsEnabled = false;
 
-    public MockRunResult( 
+    public MockRunResult(
         String runId,
         TestStructure testStructure,
         Path artifactRoot,
@@ -50,6 +53,44 @@ public class MockRunResult implements IRunResult {
     @Override
     public String getLog() throws ResultArchiveStoreException {
         return this.log;
+    }
+
+    @Override
+    public void streamLog(OutputStream outputStream) throws ResultArchiveStoreException {
+        try {
+            if (this.log != null) {
+                outputStream.write(this.log.getBytes(StandardCharsets.UTF_8));
+                outputStream.flush();
+            }
+        } catch (IOException e) {
+            throw new ResultArchiveStoreException("Error streaming log content", e);
+        }
+    }
+
+    @Override
+    public long getLogSize() throws ResultArchiveStoreException {
+    	// Return -1 if log doesn't exist (null)
+    	if (this.log == null) {
+    		return -1;
+    	}
+
+    	long size = 0;
+
+    	// First try to get size from TestStructure metadata
+    	if (testStructure != null) {
+    		Long logSize = testStructure.getLogSize();
+    		if (logSize != null) {
+    			size = logSize.longValue();
+    		} else {
+    			// Fall back to calculating size from log string
+    			size = this.log.getBytes(StandardCharsets.UTF_8).length;
+    		}
+    	} else {
+    		// No test structure, calculate from log string
+    		size = this.log.getBytes(StandardCharsets.UTF_8).length;
+    	}
+
+    	return size;
     }
 
     @Override

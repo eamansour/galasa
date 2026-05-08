@@ -6,6 +6,7 @@
 package dev.galasa.ras.couchdb.internal;
 
 import java.io.IOException;
+import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.URI;
 import java.net.URLEncoder;
@@ -96,6 +97,7 @@ public class CouchdbRasStore extends CouchdbStore implements IResultArchiveStore
     private LogFactory                         logFactory;
 
     private long                                runLogLineCount;
+    private long                                runLogSizeBytes;
 
     public CouchdbRasStore(IFramework framework, URI rasUri) throws CouchdbException, CouchdbRasException {
         this(
@@ -188,6 +190,7 @@ public class CouchdbRasStore extends CouchdbStore implements IResultArchiveStore
         }
 
         updateRunLogLineCountSoFar(lines.length);
+        updateRunLogSizeSoFar(message.getBytes(StandardCharsets.UTF_8).length);
 
     }
 
@@ -250,6 +253,19 @@ public class CouchdbRasStore extends CouchdbStore implements IResultArchiveStore
 
     public long retrieveRunLogLineCount() {
         return this.runLogLineCount;
+    }
+
+    /**
+     * Update the run log size in bytes so far into class variable.
+     * This is stored in TestStructure to avoid loading entire log for size calculation.
+     * @param newSizeBytes
+     */
+    private void updateRunLogSizeSoFar(long newSizeBytes) {
+        this.runLogSizeBytes += newSizeBytes;
+    }
+
+    public long retrieveRunLogSize() {
+        return this.runLogSizeBytes;
     }
 
     @Override
@@ -323,6 +339,7 @@ public class CouchdbRasStore extends CouchdbStore implements IResultArchiveStore
         this.lastTestStructure = testStructure;
         this.lastTestStructure.setLogRecordIds(this.logIds);
         this.lastTestStructure.setArtifactRecordIds(this.artifactDocumentId);
+        this.lastTestStructure.setLogSize(Long.valueOf(this.runLogSizeBytes));
         this.lastTestStructure.normalise();
 
         String jsonStructure = gson.toJson(testStructure);
@@ -362,30 +379,86 @@ public class CouchdbRasStore extends CouchdbStore implements IResultArchiveStore
         retrieveArtifactFromDatabase(artifactURI, cachePath,StandardCopyOption.REPLACE_EXISTING);
     }
 
+    /**
+     * Fetch a log document from CouchDB and return the parsed LogLines object.
+     *
+     * @param logRecordId The ID of the log document to fetch
+     * @return The parsed LogLines object
+     * @throws ResultArchiveStoreException if there's an error fetching or parsing the document
+     */
+    private LogLines fetchLogDocument(String logRecordId) throws ResultArchiveStoreException {
+    	HttpGet httpGet = httpRequestFactory.getHttpGetRequest(this.storeUri + "/"+LOG_DB+"/" + logRecordId);
+
+    	try {
+    		String entity = sendHttpRequest(httpGet, HttpStatus.SC_OK);
+    		LogLines logLines = gson.fromJson(entity, LogLines.class);
+    		return logLines;
+    	} catch (CouchdbException e) {
+    		throw new ResultArchiveStoreException(e);
+    	} catch (Exception e) {
+            throw new ResultArchiveStoreException("Unable to fetch log", e);
+        }
+    }
+
     public String getLog(TestStructure ts) throws ResultArchiveStoreException {
         StringBuilder sb = new StringBuilder();
 
         for (String logRecordId : ts.getLogRecordIds()) {
-            HttpGet httpGet = httpRequestFactory.getHttpGetRequest(this.storeUri + "/"+LOG_DB+"/" + logRecordId);
+            LogLines logLines = fetchLogDocument(logRecordId);
 
-            try{
-                String entity = sendHttpRequest(httpGet, HttpStatus.SC_OK);
-                LogLines logLines = gson.fromJson(entity, LogLines.class);
-                if (logLines.lines != null) {
-                    for (String line : logLines.lines) {
-                        if (sb.length() > 0) {
-                            sb.append("\n");
-                        }
-                        sb.append(line);
+            if (logLines.lines != null) {
+                for (String line : logLines.lines) {
+                    if (sb.length() > 0) {
+                        sb.append("\n");
                     }
+                    sb.append(line);
                 }
-            } catch (CouchdbException e) {
-                throw new ResultArchiveStoreException(e);
-            } catch (Exception e) {
-                throw new ResultArchiveStoreException("Unable to find runs", e);
             }
         }
         return sb.toString();
+    }
+
+    /**
+     * Stream the run log content directly to an OutputStream.
+     * This method processes log documents one at a time and writes directly to the stream,
+     * avoiding the need to load the entire log into memory.
+     *
+     * @param ts The test structure containing log record IDs
+     * @param outputStream The stream to write log content to
+     * @throws ResultArchiveStoreException if there's an error accessing the log
+     */
+    public void streamLog(TestStructure ts, OutputStream outputStream) throws ResultArchiveStoreException {
+
+    	boolean isFirstLine = true;
+
+    	for (String logRecordId : ts.getLogRecordIds()) {
+    		LogLines logLines = fetchLogDocument(logRecordId);
+
+    		if (logLines.lines != null && !logLines.lines.isEmpty()) {
+    			StringBuilder documentContent = new StringBuilder();
+
+    			for (String line : logLines.lines) {
+    				if (!isFirstLine) {
+    					documentContent.append('\n');
+    				}
+    				documentContent.append(line);
+    				isFirstLine = false;
+    			}
+
+    			// Write the entire document's content in one operation
+    			try {
+    				outputStream.write(documentContent.toString().getBytes(StandardCharsets.UTF_8));
+    			} catch (IOException e) {
+    				throw new ResultArchiveStoreException("Unable to stream log", e);
+    			}
+    		}
+    	}
+
+    	try {
+    		outputStream.flush();
+    	} catch (IOException e) {
+    		throw new ResultArchiveStoreException("Unable to flush stream", e);
+    	}
     }
 
     @Override

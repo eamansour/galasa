@@ -6,6 +6,7 @@
 package dev.galasa.framework.api.ras.internal.common;
 
 import java.io.IOException;
+import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
 
 import dev.galasa.framework.spi.IRunResult;
@@ -20,6 +21,18 @@ public class RunLogArtifact implements IRunRootArtifact {
             return runLog.getBytes(StandardCharsets.UTF_8);
         }
         return "".getBytes(StandardCharsets.UTF_8);
+    }
+
+    @Override
+    public boolean streamContent(IRunResult run, OutputStream outputStream)
+        throws ResultArchiveStoreException {
+        run.streamLog(outputStream);
+        return true;
+    }
+
+    @Override
+    public long getContentSize(IRunResult run) throws ResultArchiveStoreException {
+        return run.getLogSize();
     }
 
     @Override

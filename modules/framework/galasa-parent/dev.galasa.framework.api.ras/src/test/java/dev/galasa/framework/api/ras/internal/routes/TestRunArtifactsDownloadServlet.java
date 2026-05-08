@@ -31,12 +31,12 @@ import com.google.gson.JsonObject;
 
 public class TestRunArtifactsDownloadServlet extends RasServletTest {
 
-	private String generateExpectedArtifactsJson(String path, String contentType) {
+	private String generateExpectedArtifactsJson(String path, String contentType, long size) {
 		JsonArray artifactsJson = new JsonArray();
 		JsonObject artifactInfo = new JsonObject();
 		artifactInfo.addProperty("path", path);
 		artifactInfo.addProperty("contentType", contentType);
-		artifactInfo.addProperty("size", 0); // MockFileSystem returns 0 for file.size()
+		artifactInfo.addProperty("size", size);
 		artifactsJson.add(artifactInfo);
 		return gson.toJson(artifactsJson);
 	}
@@ -545,7 +545,7 @@ public class TestRunArtifactsDownloadServlet extends RasServletTest {
 		// Then...
 		// Expecting:
 		assertThat(resp.getStatus()).isEqualTo(200);
-        assertThat(outStream.toString()).isEqualTo(generateExpectedArtifactsJson("/artifacts" + existingPath, "application/x-gzip"));
+        assertThat(outStream.toString()).isEqualTo(generateExpectedArtifactsJson("/artifacts" + existingPath, "application/x-gzip", 13));
 		assertThat(resp.getContentType()).isEqualTo("application/json");
 		assertThat(resp.getHeader("Content-Disposition")).isEqualTo("attachment");
 	}
@@ -578,7 +578,7 @@ public class TestRunArtifactsDownloadServlet extends RasServletTest {
 		// Then...
 		// Expecting:
 		assertThat(resp.getStatus()).isEqualTo(200);
-        assertThat(outStream.toString()).isEqualTo(generateExpectedArtifactsJson("/artifacts" + existingPath.toString(), "application/octet-stream"));
+        assertThat(outStream.toString()).isEqualTo(generateExpectedArtifactsJson("/artifacts" + existingPath.toString(), "application/octet-stream", 13));
 		assertThat(resp.getContentType()).isEqualTo("application/json");
 		assertThat(resp.getHeader("Content-Disposition")).isEqualTo("attachment");
 	}

@@ -44,6 +44,8 @@ public class TestStructure {
     private List<String>     logRecordIds;
 
     private List<String>     artifactRecordIds;
+    
+    private Long             logSize;
 
     private Set<String>      tags = new HashSet<String>();
 
@@ -84,6 +86,7 @@ public class TestStructure {
                 this.artifactRecordIds = new ArrayList<String>();
                 this.artifactRecordIds.addAll(source.artifactRecordIds);
             }
+            this.logSize = source.logSize;
             if (source.tags != null ) {
                 this.tags = new HashSet<String>();
                 this.tags.addAll(source.tags);
@@ -304,6 +307,14 @@ public class TestStructure {
 
     public void setArtifactRecordIds(List<String> artifactRecordIds) {
         this.artifactRecordIds = artifactRecordIds;
+    }
+
+    public Long getLogSize() {
+        return logSize;
+    }
+
+    public void setLogSize(Long logSize) {
+        this.logSize = logSize;
     }
 
     public void normalise() {
