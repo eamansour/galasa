@@ -28,7 +28,7 @@ The `galasactl` tool will login implicitly when it needs to contact the remote G
 
 On a successful login using the `galasactl` tool, the `GALASA_TOKEN` will be used to create a new temporary bearer token, which is stored in the `bearer-tokens` folder in the Galasa home directory. This file contains a bearer token that galasactl uses to authenticate requests when communicating with a Galasa Ecosystem. If the bearer token expires, galasactl automatically attempts to re-authenticate with the Galasa Ecosystem using the configured `GALASA_TOKEN`.
 
-If your personal access token is approaching its expiry date, the CLI will display a warning message (GAL2001W) when you use it to authenticate. This gives you time to create a new token before the current one expires. Once a token expires, it can no longer be used to exchange for a JWT and becomes unusable. Note: JWTs last for 24 hours, so you might find your token will still work for a short while after it expires.
+If your personal access token is approaching its expiry date, the CLI will display a warning message when you use it to authenticate. This gives you time to create a new token before the current one expires. Once a token expires, it can no longer be used to exchange for a JWT and becomes unusable. Note: JWTs may continue to be valid for a period of time determined by your Galasa service administrator, so you might find your token will still work for a short while after it expires.
 
 
 ### Logging in to a Galasa Ecosystem using the auth login command
@@ -77,7 +77,7 @@ id: m.smith@gmail.com
 
 ### Revoking personal access tokens
 
-If a user moves to a new role, or loses a laptop with their personal access token on it, you can log into the Galasa Ecosystem and revoke their access token by using the `galasactl auth tokens delete` command. This ensures that the Ecosystem and systems-under-test remain secure. Tokens are also automatically disabled when they reach their expiry date.
+If a user moves to a new role, or loses a laptop with their personal access token on it, you can log into the Galasa Ecosystem and revoke their access token by using the `galasactl auth tokens delete` command. This ensures that the Ecosystem and systems-under-test remain secure. Tokens are automatically revoked when they reach their expiry date.
 
 You can retrieve a list of available personal access tokens that have been created, along with their token IDs, by running the `galasactl auth tokens get` command, as described in the previous section. 
 

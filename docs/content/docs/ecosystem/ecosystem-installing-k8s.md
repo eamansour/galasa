@@ -279,7 +279,7 @@ Update the `expiry` section to configure the expiry of JSON Web Tokens (JWTs) an
 
 #### Optional: Configure Personal Access Token Expiry Warning
 
-You can configure when users receive warnings about their personal access tokens approaching expiry by setting the CPS property `service.tokens.lifespan.nearly.expired.warning.days`. This property defines how many days before expiry the CLI will display a warning message (GAL2001W) when the token is used.
+You can configure when users receive warnings about their personal access tokens approaching expiry by setting the CPS property `service.tokens.lifespan.nearly.expired.warning.days`. This property defines how many days before expiry the CLI will display a warning message when the token is used.
 
 The property can be set with a minimum value of 1 day and a maximum value of 30 days. For example, if set to 7 days, users will receive a warning when their token has 7 or fewer days remaining before it expires. If not set, it will default to 14 days.
 
