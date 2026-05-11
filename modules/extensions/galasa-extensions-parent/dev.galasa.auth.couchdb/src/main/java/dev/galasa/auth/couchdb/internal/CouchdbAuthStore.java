@@ -70,7 +70,6 @@ public class CouchdbAuthStore extends CouchdbStore implements IAuthStore {
 
     private Log logger;
 
-    // Default token lifespan in days (90 days)
     public static final int DEFAULT_TOKEN_LIFESPAN_DAYS = 90;
 
     private ITimeService timeService;
@@ -127,12 +126,14 @@ public class CouchdbAuthStore extends CouchdbStore implements IAuthStore {
         // For each user, get their tokens
         for (IUser user : users) {
             String loginId = user.getLoginId();
+            String userNumber = user.getUserNumber();
 
             List<IInternalAuthToken> tokens = null;
             try {
                 tokens = getTokensByLoginId(loginId);
             } catch (Exception e) {
-                logger.warn("Failed to retrieve tokens for user " + loginId + ", skipping user and continuing with others: " + e.getMessage());
+                logger.warn("Failed to retrieve tokens for user " + userNumber
+                        + ", skipping user and continuing with others: " + e.getMessage());
                 continue;
             }
 
@@ -140,9 +141,6 @@ public class CouchdbAuthStore extends CouchdbStore implements IAuthStore {
                 tokensProcessed++;
 
                 if (token.getExpiryTime() == null) {
-                    logger.info("Token " + token.getTokenId() + " for user " + loginId
-                            + " is missing expiryTime, migrating...");
-
                     // Calculate expiry time: current time + constant amount of days
                     Instant newExpiryTime = timeService.now().plus(DEFAULT_TOKEN_LIFESPAN_DAYS, ChronoUnit.DAYS);
                     logger.info("Setting expiry time to: " + newExpiryTime);
@@ -152,7 +150,7 @@ public class CouchdbAuthStore extends CouchdbStore implements IAuthStore {
                         updateTokenWithExpiryTime(token.getTokenId(), newExpiryTime);
                     } catch (AuthStoreException e) {
                         tokensFailed++;
-                        logger.warn("Failed to migrate token " + token.getTokenId() + " for user " + loginId
+                        logger.warn("Failed to migrate token " + token.getTokenId() + " for user " + userNumber
                                 + ": " + e.getMessage());
                         continue;
                     }
@@ -178,7 +176,7 @@ public class CouchdbAuthStore extends CouchdbStore implements IAuthStore {
                     CouchdbAuthToken.class);
 
             if (existingToken == null) {
-                String errorMessage = ERROR_FAILED_TO_RETRIEVE_TOKENS.getMessage("Token not found: " + tokenId);
+                String errorMessage = ERROR_TOKEN_NOT_FOUND.getMessage("Token not found: " + tokenId);
                 throw new AuthStoreException(errorMessage);
             }
 
@@ -325,27 +323,24 @@ public class CouchdbAuthStore extends CouchdbStore implements IAuthStore {
     public IInternalAuthToken getTokenByDexClientId(String clientId) throws AuthStoreException {
         logger.info("Retrieving token by Dex client ID from CouchDB");
 
+        IInternalAuthToken result = null;
         try {
             // Get all tokens and search for one with matching clientId
             List<IInternalAuthToken> allTokens = getTokens();
 
             for (IInternalAuthToken token : allTokens) {
-                if (token instanceof CouchdbAuthToken) {
-                    CouchdbAuthToken couchdbToken = (CouchdbAuthToken) token;
-                    if (clientId.equals(couchdbToken.getDexClientId())) {
-                        logger.info("Token found for Dex client ID: " + clientId);
-                        return token;
-                    }
+                if (clientId.equals(token.getDexClientId())) {
+                    result = token;
+                    break;
                 }
             }
-
-            logger.info("No token found for Dex client ID: " + clientId);
-            return null;
 
         } catch (AuthStoreException e) {
             String errorMessage = ERROR_FAILED_TO_RETRIEVE_TOKENS.getMessage(e.getMessage());
             throw new AuthStoreException(errorMessage, e);
         }
+
+        return result;
     }
 
     @Override
