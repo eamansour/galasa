@@ -131,11 +131,12 @@ public class AuthTokensRouteTest extends BaseServletTest {
         ITimeService timeService = null ;
         MockRBACService mockRBACService = createTestRBACKService();
         Environment env = null;
+        MockFramework mockFramework = new MockFramework();
 
         String tokensRoutePath;
         try {
             tokensRoutePath = new AuthTokensRoute(responseBuilder, oidcProvider, authService, timeService,
-                    mockRBACService, env, null).getPathRegex().toString();
+                    mockRBACService, env, mockFramework).getPathRegex().toString();
         } catch (Exception e) {
             throw new RuntimeException("Failed to create AuthTokensRoute in test", e);
         }
@@ -979,6 +980,7 @@ public class AuthTokensRouteTest extends BaseServletTest {
         IAuthService authService = new AuthService(authStoreService, mockDexGrpcClient, rbacService);
 
         MockRBACService mockRBACService = createTestRBACKService();
+        MockFramework mockFramework = new MockFramework();
 
         AuthTokensRoute route = new AuthTokensRoute(
             responseBuilder,
@@ -987,7 +989,7 @@ public class AuthTokensRouteTest extends BaseServletTest {
             mockTimeService,
             mockRBACService,
             mockEnv,
-            null);
+            mockFramework);
 
         boolean isWebUiJustLoggedIn = true ;
 
@@ -1052,6 +1054,7 @@ public class AuthTokensRouteTest extends BaseServletTest {
         IAuthService authService = new AuthService(authStoreService, mockDexGrpcClient, rbacService);
 
         MockRBACService mockRBACService = createTestRBACKService();
+        MockFramework mockFramework = new MockFramework();
 
         AuthTokensRoute route = new AuthTokensRoute(
             responseBuilder,
@@ -1060,7 +1063,7 @@ public class AuthTokensRouteTest extends BaseServletTest {
             mockTimeService,
             mockRBACService,
             mockEnv,
-            null);
+            mockFramework);
 
         // When...
         route.recordUserJustLoggedIn(isWebUiJustLoggedIn,dummyJwt, mockTimeService,mockEnv, false);
@@ -1103,6 +1106,7 @@ public class AuthTokensRouteTest extends BaseServletTest {
         IAuthService authService = new AuthService(authStoreService, mockDexGrpcClient, rbacService);
 
         MockRBACService mockRBACService = createTestRBACKService();
+        MockFramework mockFramework = new MockFramework();
 
         AuthTokensRoute route = new AuthTokensRoute(
             responseBuilder,
@@ -1111,7 +1115,7 @@ public class AuthTokensRouteTest extends BaseServletTest {
             mockTimeService,
             mockRBACService,
             mockEnv,
-            null);
+            mockFramework);
 
         boolean isWebUiJustLoggedIn = true ;
 

@@ -113,6 +113,18 @@ paths:
                     error_code: 5400
                     error_message: "E: Error occurred when trying to execute request '/auth'. Check your request parameters or report the problem to your Galasa Ecosystem owner."
                   summary: One or more required body properties are missing
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIError'
+              examples:
+                tokenexpired:
+                  value:
+                    error_code: 5454
+                    error_message: "E: Your personal access token has expired. Create a new personal access token on your Galasa service's web user interface to continue to authenticate with the Galasa service."
+                  summary: The personal access token used for refresh has expired
         '500':
           $ref: '#/components/responses/InternalServerError'
   /auth/callback:

@@ -90,6 +90,7 @@ public class AuthTokensRoute extends PublicRoute {
 
     // CPS property for token expiry warning threshold
     private static final String CPS_PROPERTY_TOKEN_EXPIRY_WARNING_DAYS = "service.tokens.lifespan.nearly.expired.warning.days";
+    private static final String CPS_PROPERTY_TOKEN_EXPIRY_WARNING_PREFIX = "tokens.lifespan.nearly.expired.warning";
     private static final int DEFAULT_TOKEN_EXPIRY_WARNING_DAYS = 14;
     private static final int MIN_TOKEN_EXPIRY_WARNING_DAYS = 1;
     private static final int MAX_TOKEN_EXPIRY_WARNING_DAYS = 30;
@@ -110,9 +111,7 @@ public class AuthTokensRoute extends PublicRoute {
         this.env = env;
         this.rbacService = rbacService;
         this.timeService = timeService;
-        this.configurationPropertyStoreService = (framework != null)
-                ? framework.getConfigurationPropertyService("service")
-                : null;
+        this.configurationPropertyStoreService = framework.getConfigurationPropertyService("service");
     }
 
     @Override
@@ -397,7 +396,7 @@ public class AuthTokensRoute extends PublicRoute {
         try {
             // CPS property format: service.tokens.lifespan.nearly.expired.warning.days
             String warningDaysStr = configurationPropertyStoreService
-                    .getProperty("tokens.lifespan.nearly.expired.warning", "days");
+                    .getProperty(CPS_PROPERTY_TOKEN_EXPIRY_WARNING_PREFIX, "days");
 
             if (warningDaysStr != null && !warningDaysStr.trim().isEmpty()) {
                 try {
