@@ -132,8 +132,13 @@ public class AuthTokensRouteTest extends BaseServletTest {
         MockRBACService mockRBACService = createTestRBACKService();
         Environment env = null;
 
-        String tokensRoutePath = new AuthTokensRoute(responseBuilder, oidcProvider, authService, timeService,
-                mockRBACService, env, null).getPathRegex().toString();
+        String tokensRoutePath;
+        try {
+            tokensRoutePath = new AuthTokensRoute(responseBuilder, oidcProvider, authService, timeService,
+                    mockRBACService, env, null).getPathRegex().toString();
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to create AuthTokensRoute in test", e);
+        }
 
         //When...
         Pattern tokensRoutePattern = Pattern.compile(tokensRoutePath);

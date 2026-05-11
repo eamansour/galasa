@@ -17,6 +17,10 @@ import javax.servlet.http.HttpServletResponse;
 
 public class TokenPayloadValidator extends AbstractValidator implements IBeanValidator<TokenPayload> {
 
+    // CPS property for token expiry warning threshold
+    private static final int MIN_TOKEN_LIFESPAN_DAYS = 1;
+    private static final int MAX_TOKEN_LIFESPAN_DAYS = 365;
+
     @Override
     public void validate(TokenPayload tokenPayload) throws InternalServletException {
         boolean isValid = false;
@@ -33,7 +37,7 @@ public class TokenPayloadValidator extends AbstractValidator implements IBeanVal
 
                 // Validate token_lifespan_days if provided
                 if (isValid && tokenLifespanDays != null) {
-                    isValid = (tokenLifespanDays >= 1 && tokenLifespanDays <= 365);
+                    isValid = (tokenLifespanDays >= MIN_TOKEN_LIFESPAN_DAYS && tokenLifespanDays <= MAX_TOKEN_LIFESPAN_DAYS);
                 }
             }
         }

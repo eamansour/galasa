@@ -64,7 +64,7 @@ public class AuthTokensRoute extends PublicRoute {
     private IOidcProvider oidcProvider;
     private IDexGrpcClient dexGrpcClient;
     private Environment env;
-    private IFramework framework;
+    private IConfigurationPropertyStoreService configurationPropertyStoreService;
 
     private static final String POST_BODY_FIELD_ID_TOKEN_KEY = "id_token";
     private static final String POST_BODY_FIELD_REFRESH_TOKEN_KEY = "refresh_token";
@@ -86,6 +86,8 @@ public class AuthTokensRoute extends PublicRoute {
     private RBACService rbacService;
     private IAuthService authService;
 
+    private static final int DEFAULT_TOKEN_EXPIRY_TIME_DAYS = 90;
+
     // CPS property for token expiry warning threshold
     private static final String CPS_PROPERTY_TOKEN_EXPIRY_WARNING_DAYS = "service.tokens.lifespan.nearly.expired.warning.days";
     private static final int DEFAULT_TOKEN_EXPIRY_WARNING_DAYS = 14;
@@ -99,7 +101,7 @@ public class AuthTokensRoute extends PublicRoute {
             ITimeService timeService,
             RBACService rbacService,
             Environment env,
-            IFramework framework) {
+            IFramework framework) throws ConfigurationPropertyStoreException {
         super(responseBuilder, PATH_PATTERN);
         this.oidcProvider = oidcProvider;
         this.authService = authService;
@@ -108,7 +110,9 @@ public class AuthTokensRoute extends PublicRoute {
         this.env = env;
         this.rbacService = rbacService;
         this.timeService = timeService;
-        this.framework = framework;
+        this.configurationPropertyStoreService = (framework != null)
+                ? framework.getConfigurationPropertyService("service")
+                : null;
     }
 
     @Override
@@ -229,8 +233,7 @@ public class AuthTokensRoute extends PublicRoute {
                         tokenResponseBodyJson.get(POST_BODY_FIELD_REFRESH_TOKEN_KEY).getAsString());
 
                 // If we're refreshing an existing token, include the token's expiry time and
-                // warning threshold in the
-                // response
+                // warning threshold in the response
                 if (requestPayload.getRefreshToken() != null) {
                     IInternalAuthToken token = authStoreService.getTokenByDexClientId(requestPayload.getClientId());
                     if (token != null && token.getExpiryTime() != null) {
@@ -261,10 +264,6 @@ public class AuthTokensRoute extends PublicRoute {
                 ServletError error = new ServletError(GAL5055_FAILED_TO_GET_TOKENS_FROM_ISSUER);
                 throw new InternalServletException(error, HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             }
-
-        } catch (InternalServletException e) {
-            // Re-throw InternalServletException to preserve the specific error code
-            throw e;
         } catch (InterruptedException e) {
             logger.error("POST request to the OpenID Connect provider's token endpoint was interrupted.", e);
 
@@ -337,8 +336,8 @@ public class AuthTokensRoute extends PublicRoute {
      * @param jwt               the JWT that was returned after authenticating with the
      *                          client, identifying the user
      * @param description       the description of the Galasa token provided by the user
-     * @param tokenLifespanDays the number of days until the token expires (defaults
-     *                          to 90 if null)
+     * @param tokenLifespanDays the number of days until the token expires 
+     * 
      * @throws InternalServletException
      */
     private void addTokenToAuthStore(String clientId, String jwt, String description, Integer tokenLifespanDays)
@@ -347,8 +346,7 @@ public class AuthTokensRoute extends PublicRoute {
         JwtWrapper jwtWrapper = new JwtWrapper(jwt, env);
         IInternalUser user = new InternalUser(jwtWrapper.getUsername(), jwtWrapper.getSubject());
 
-        // Default to 90 days if not provided
-        int lifespanDays = (tokenLifespanDays != null) ? tokenLifespanDays : 90;
+        int lifespanDays = (tokenLifespanDays != null) ? tokenLifespanDays : DEFAULT_TOKEN_EXPIRY_TIME_DAYS;
 
         try {
             authStoreService.storeToken(clientId, description, user, lifespanDays);
@@ -389,10 +387,17 @@ public class AuthTokensRoute extends PublicRoute {
     private int getTokenExpiryWarningDays() {
         int warningDays = DEFAULT_TOKEN_EXPIRY_WARNING_DAYS;
 
+        // If configurationPropertyStoreService is null (e.g., in tests), return the default value
+        if (configurationPropertyStoreService == null) {
+            logger.debug("Configuration property store service is not available. Using default value "
+                    + DEFAULT_TOKEN_EXPIRY_WARNING_DAYS + " days.");
+            return warningDays;
+        }
+
         try {
-            IConfigurationPropertyStoreService cps = framework.getConfigurationPropertyService("service");
             // CPS property format: service.tokens.lifespan.nearly.expired.warning.days
-            String warningDaysStr = cps.getProperty("tokens.lifespan.nearly.expired.warning", "days");
+            String warningDaysStr = configurationPropertyStoreService
+                    .getProperty("tokens.lifespan.nearly.expired.warning", "days");
 
             if (warningDaysStr != null && !warningDaysStr.trim().isEmpty()) {
                 try {
@@ -520,7 +525,7 @@ public class AuthTokensRoute extends PublicRoute {
                 }
             }
         } catch (AuthStoreException e) {
-            ServletError error = new ServletError(GAL5000_GENERIC_API_ERROR);
+            ServletError error = new ServletError(GAL5053_FAILED_TO_RETRIEVE_TOKENS);
             throw new InternalServletException(error, HttpServletResponse.SC_INTERNAL_SERVER_ERROR, e);
         }
     }
