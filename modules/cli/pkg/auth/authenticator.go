@@ -18,6 +18,8 @@ import (
 	"github.com/galasa-dev/cli/pkg/spi"
 )
 
+const DEFAULT_TOKEN_EXPIRY_WARNING_DAYS = 14
+
 type authenticatorImpl struct {
 	apiServerUrl string
 	fileSystem   spi.FileSystem
@@ -35,6 +37,7 @@ func NewAuthenticator(
 	timeService spi.TimeService,
 	env spi.Environment,
 	jwtCache JwtCache,
+	console spi.Console,
 ) spi.Authenticator {
 
 	authenticator := new(authenticatorImpl)
@@ -44,15 +47,10 @@ func NewAuthenticator(
 	authenticator.galasaHome = galasaHome
 	authenticator.fileSystem = fileSystem
 	authenticator.env = env
-
 	authenticator.cache = jwtCache
+	authenticator.console = console
 
 	return authenticator
-}
-
-// SetConsole allows setting the console for displaying warnings
-func (authenticator *authenticatorImpl) SetConsole(console spi.Console) {
-	authenticator.console = console
 }
 
 func (authenticator *authenticatorImpl) GetBearerToken() (string, error) {
@@ -166,7 +164,7 @@ func (authenticator *authenticatorImpl) getJwtFromRestApi(apiServerUrl string, a
 
 			// Check if the token is approaching expiry and display a warning
 			if tokenResponse.HasTokenExpiryTime() {
-				warningDays := 14 // Default value
+				warningDays := DEFAULT_TOKEN_EXPIRY_WARNING_DAYS
 				if tokenResponse.HasTokenExpiryWarningDays() {
 					warningDays = int(tokenResponse.GetTokenExpiryWarningDays())
 				}
@@ -188,9 +186,9 @@ func (authenticator *authenticatorImpl) checkTokenExpiryAndWarn(expiryTimeStr st
 	}
 
 	now := authenticator.timeService.Now()
-	daysUntilExpiry := expiryTime.Sub(now).Hours() / 24
+	daysUntilExpiry := int(expiryTime.Sub(now).Hours() / 24)
 
-	if daysUntilExpiry <= float64(warningThresholdDays) && daysUntilExpiry > 0 {
+	if daysUntilExpiry <= warningThresholdDays && daysUntilExpiry > 0 {
 		warningMessage := galasaErrors.NewGalasaError(galasaErrors.GALASA_WARNING_PERSONAL_ACCESS_TOKEN_EXPIRING_SOON).Error()
 
 		if authenticator.console != nil {

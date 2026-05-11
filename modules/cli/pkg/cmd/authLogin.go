@@ -128,12 +128,6 @@ func (cmd *AuthLoginComamnd) executeAuthLogin(
 		if err == nil {
 			authenticator := commsClient.GetAuthenticator()
 
-			// Set the console on the authenticator so it can display warnings
-			console := factory.GetStdOutConsole()
-			if authImpl, ok := authenticator.(interface{ SetConsole(spi.Console) }); ok {
-				authImpl.SetConsole(console)
-			}
-
 			err = commsClient.RunCommandWithRateLimitRetries(func() error {
 				return authenticator.Login()
 			})
