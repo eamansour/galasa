@@ -188,6 +188,12 @@ jobs:
           name: cli
           path: modules/cli/repo
 
+      - name: Upload Windows galasactl executable
+        uses: actions/upload-artifact@v4
+        with:
+          name: galasactl-windows-x86_64
+          path: modules/cli/bin/galasactl-windows-x86_64.exe
+
       - name: Set up JDK
         uses: actions/setup-java@v4
         with:

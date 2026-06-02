@@ -1,0 +1,107 @@
+#
+# Copyright contributors to the Galasa project
+#
+# SPDX-License-Identifier: EPL-2.0
+#
+name: Test Windows Credentials Store IVT
+
+on:
+  workflow_call:
+  workflow_dispatch:
+
+jobs:
+  test-windows-credentials-store:
+    name: Run TestCredentialsStoreAccess on Windows Runner
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            build.properties
+            modules/ivts
+
+      - name: Download Windows galasactl executable
+        uses: actions/download-artifact@v4
+        with:
+          name: galasactl-windows-x86_64
+          path: tools/galasactl
+
+      - name: Download All 'dev.galasa' Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: all-artifacts
+          path: modules/artifacts/dev/galasa
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'semeru'
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: 9.0.0
+          cache-disabled: true
+
+      - name: Setup galasactl
+        shell: powershell
+        run: |
+          Copy-Item "tools/galasactl/galasactl-windows-x86_64.exe" "tools/galasactl/galasactl.exe"
+          Add-Content $env:GITHUB_PATH "$pwd\tools\galasactl"
+
+      - name: Create test credentials in Windows Credential Manager
+        shell: powershell
+        run: |
+          Write-Host "Creating test credentials in Windows Credential Manager..."
+
+          cmdkey /generic:"galasa.credentials.TEST_USERNAME_PASSWORD" /user:"testuser1" /pass:"testpass1"
+          cmdkey /generic:"galasa.credentials.TEST_USERNAME" /user:"username:useronly" /pass:""
+          cmdkey /generic:"galasa.credentials.TEST_TOKEN" /user:"token" /pass:"ghp_test123token456"
+          cmdkey /generic:"galasa.credentials.TEST_USERNAME_TOKEN" /user:"username-token:tokenuser" /pass:"tokenvalue123"
+
+          Write-Host "Test credentials created successfully"
+
+      - name: Build IVTs
+        working-directory: modules/ivts/galasa-ivts-parent
+        shell: bash
+        run: |
+          set -o pipefail
+          gradle build publishToMavenLocal --info --no-daemon --console plain \
+            -PsourceMaven=${{ github.workspace }}/modules/artifacts
+
+      - name: Initialise Galasa local environment
+        shell: powershell
+        run: |
+          galasactl.exe local init --development --log -
+
+      - name: Configure Galasa bootstrap for OS credentials store
+        shell: powershell
+        run: |
+          $galasaDir = Join-Path $env:USERPROFILE ".galasa"
+          New-Item -ItemType Directory -Force -Path $galasaDir | Out-Null
+          @"
+          framework.credentials.store=os:auto
+          framework.extra.bundles=dev.galasa.creds.os
+          "@ | Out-File -FilePath (Join-Path $galasaDir "bootstrap.properties") -Encoding utf8
+
+      - name: Run TestCredentialsStoreAccess
+        shell: powershell
+        run: |
+          $galasaVersion = (Get-Content build.properties | Select-String '^GALASA_VERSION=').ToString().Split('=')[1]
+          galasactl.exe runs submit local --log - --class dev.galasa.ivts/dev.galasa.ivts.core.TestCredentialsStoreAccess --obr "mvn:dev.galasa/dev.galasa.ivts.obr/$galasaVersion/obr"
+
+  # report-failure:
+  #   if: ${{ failure() && github.repository_owner == 'galasa-dev' }}
+  #   name: Report failure in workflow
+  #   runs-on: ubuntu-latest
+  #   needs: [test-windows-credentials-store]
+
+  #   steps:
+  #     - name: Report failure in workflow to Slack
+  #       env:
+  #         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+  #       run: |
+  #         docker run --rm ghcr.io/galasa-dev/galasabld-ibm:main slackpost workflows --repo "galasa" --module "ivts-windows-creds" --workflowName "${{ github.workflow }}" --workflowRunNum "${{ github.run_id }}" --ref "${{ github.ref_name }}" --hook "${{ env.SLACK_WEBHOOK }}"

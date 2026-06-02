@@ -249,9 +249,15 @@ jobs:
     uses: ./.github/workflows/cli.yaml
     secrets: inherit
 
+  test-windows-creds:
+    name: Test Windows credentials store IVT
+    needs: [build-ivts, build-cli]
+    uses: ./.github/workflows/test-windows-creds.yaml
+    secrets: inherit
+
   build-docs:
-    name: Build the Galasa documentation 
-    needs: [build-cli]
+    name: Build the Galasa documentation
+    needs: [build-cli, test-windows-creds]
     uses: ./.github/workflows/docs.yaml
     secrets: inherit
 
