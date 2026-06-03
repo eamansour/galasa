@@ -23,7 +23,7 @@ import dev.galasa.core.manager.Logger;
 
 @Test
 @Summary("Verify the core manager can retrieve credentials store entries")
-@Tags({"core","ivt"})
+@Tags({"core","ivt","framework"})
 public class TestCredentialsStoreAccess {
 
     private static final String USERNAME_PASSWORD_CREDENTIALS_ID = "TEST_USERNAME_PASSWORD";
