@@ -3,10 +3,15 @@
 #
 # SPDX-License-Identifier: EPL-2.0
 #
-name: Test Windows Credentials Store IVT
+name: Test Credentials Store Implementations
 
 on:
   workflow_call:
+    inputs:
+      artifact-id:
+        description: 'The Workflow Run ID of the last workflow containing artifacts to download'
+        required: false
+        type: string
   workflow_dispatch:
 
 jobs:
@@ -22,11 +27,22 @@ jobs:
             build.properties
             modules/ivts
 
-      - name: Download Windows galasactl executable
+      - name: Download CLI binaries from this workflow
+        id: download-cli-binaries
+        continue-on-error: true
         uses: actions/download-artifact@v4
         with:
-          name: galasactl-windows-x86_64
-          path: tools/galasactl
+          name: cli-binaries
+          path: tools
+
+      - name: Download CLI binaries from last successful workflow
+        if: ${{ steps.download-cli-binaries.outcome == 'failure' }}
+        uses: actions/download-artifact@v4
+        with:
+          name: cli-binaries
+          path: tools
+          github-token: ${{ github.token }}
+          run-id: ${{ inputs.artifact-id }}
 
       - name: Download All 'dev.galasa' Artifacts
         uses: actions/download-artifact@v4
@@ -49,8 +65,8 @@ jobs:
       - name: Setup galasactl
         shell: powershell
         run: |
-          Copy-Item "tools/galasactl/galasactl-windows-x86_64.exe" "tools/galasactl/galasactl.exe"
-          Add-Content $env:GITHUB_PATH "$pwd\tools\galasactl"
+          Copy-Item "tools/bin/galasactl-windows-x86_64.exe" "tools/bin/galasactl.exe"
+          Add-Content $env:GITHUB_PATH "$pwd\tools\bin"
 
       - name: Create test credentials in Windows Credential Manager
         shell: powershell
@@ -64,44 +80,29 @@ jobs:
 
           Write-Host "Test credentials created successfully"
 
-      - name: Build IVTs
-        working-directory: modules/ivts/galasa-ivts-parent
-        shell: bash
-        run: |
-          set -o pipefail
-          gradle build publishToMavenLocal --info --no-daemon --console plain \
-            -PsourceMaven=${{ github.workspace }}/modules/artifacts
-
       - name: Initialise Galasa local environment
         shell: powershell
         run: |
           galasactl.exe local init --development --log -
 
-      - name: Configure Galasa bootstrap for OS credentials store
-        shell: powershell
-        run: |
-          $galasaDir = Join-Path $env:USERPROFILE ".galasa"
-          New-Item -ItemType Directory -Force -Path $galasaDir | Out-Null
-          @"
-          framework.credentials.store=os:auto
-          framework.extra.bundles=dev.galasa.creds.os
-          "@ | Out-File -FilePath (Join-Path $galasaDir "bootstrap.properties") -Encoding utf8
-
       - name: Run TestCredentialsStoreAccess
         shell: powershell
+        env:
+          GALASA_CREDENTIALS_STORE: os:auto
+          GALASA_EXTRA_BUNDLES: dev.galasa.creds.os
         run: |
           $galasaVersion = (Get-Content build.properties | Select-String '^GALASA_VERSION=').ToString().Split('=')[1]
-          galasactl.exe runs submit local --log - --class dev.galasa.ivts/dev.galasa.ivts.core.TestCredentialsStoreAccess --obr "mvn:dev.galasa/dev.galasa.ivts.obr/$galasaVersion/obr"
+          galasactl.exe runs submit local --localMaven file:///${{ github.workspace }}/modules/artifacts --class dev.galasa.ivts/dev.galasa.ivts.framework.TestCredentialsStoreAccess --obr "mvn:dev.galasa/dev.galasa.ivts.obr/$galasaVersion/obr" --log -
 
-  # report-failure:
-  #   if: ${{ failure() && github.repository_owner == 'galasa-dev' }}
-  #   name: Report failure in workflow
-  #   runs-on: ubuntu-latest
-  #   needs: [test-windows-credentials-store]
+  report-failure:
+    if: ${{ failure() && github.repository_owner == 'galasa-dev' }}
+    name: Report failure in workflow
+    runs-on: ubuntu-latest
+    needs: [test-windows-credentials-store]
 
-  #   steps:
-  #     - name: Report failure in workflow to Slack
-  #       env:
-  #         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-  #       run: |
-  #         docker run --rm ghcr.io/galasa-dev/galasabld-ibm:main slackpost workflows --repo "galasa" --module "ivts-windows-creds" --workflowName "${{ github.workflow }}" --workflowRunNum "${{ github.run_id }}" --ref "${{ github.ref_name }}" --hook "${{ env.SLACK_WEBHOOK }}"
+    steps:
+      - name: Report failure in workflow to Slack
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+        run: |
+          docker run --rm ghcr.io/galasa-dev/galasabld-ibm:main slackpost workflows --repo "galasa" --module "ivts-windows-creds" --workflowName "${{ github.workflow }}" --workflowRunNum "${{ github.run_id }}" --ref "${{ github.ref_name }}" --hook "${{ env.SLACK_WEBHOOK }}"
