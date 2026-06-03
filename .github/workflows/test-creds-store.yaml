@@ -33,14 +33,14 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: cli-binaries
-          path: tools
+          path: tools/galasactl
 
       - name: Download CLI binaries from last successful workflow
         if: ${{ steps.download-cli-binaries.outcome == 'failure' }}
         uses: actions/download-artifact@v4
         with:
           name: cli-binaries
-          path: tools
+          path: tools/galasactl
           github-token: ${{ github.token }}
           run-id: ${{ inputs.artifact-id }}
 
@@ -65,8 +65,8 @@ jobs:
       - name: Setup galasactl
         shell: powershell
         run: |
-          Copy-Item "tools/bin/galasactl-windows-x86_64.exe" "tools/bin/galasactl.exe"
-          Add-Content $env:GITHUB_PATH "$pwd\tools\bin"
+          Copy-Item "tools/galasactl/galasactl-windows-x86_64.exe" "tools/galasactl/galasactl.exe"
+          Add-Content $env:GITHUB_PATH "$pwd\tools\galasactl"
 
       - name: Create test credentials in Windows Credential Manager
         shell: powershell

@@ -405,7 +405,7 @@ jobs:
 
   pr-test-creds-store:
     name: Test credentials store implementations
-    needs: [find-artifacts, pr-build-ivts, pr-build-cli]
+    needs: [find-artifacts, download-artifacts-for-codeql, pr-build-cli]
     uses: ./.github/workflows/test-creds-store.yaml
     secrets: inherit
     with:
