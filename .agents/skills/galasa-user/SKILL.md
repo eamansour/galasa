@@ -28,11 +28,18 @@ This skill contains individual skill references that explain how the various asp
 - [Galasa architecture](./references/galasa-architecture.md) - Framework components, managers, test runner
 - [Galasa ecosystem](./references/galasa-ecosystem.md) - Running at scale, stores, services
 
-**CLI Operations** (creating projects, running tests, viewing results):
-- [Galasa CLI tool](./references/galasa-cli-tool.md) - Detailed command syntax and flags
+**Authentication & Ecosystem Access** (connecting to an Ecosystem, tokens, secrets):
+- [Galasa auth and secrets](./references/galasa-auth-and-secrets.md) - GALASA_TOKEN setup, auth login/logout, token management, secrets
+
+**Ecosystem Operations** (remote test submission, run management, CPS properties, resources, streams):
+- [Galasa auth and secrets](./references/galasa-auth-and-secrets.md) - Load first for auth setup
+- [Galasa ecosystem management](./references/galasa-ecosystem-management.md) - Remote runs, properties, resources, streams
+
+**CLI Operations** (creating projects, running tests locally, viewing results):
+- [Galasa CLI tool](./references/galasa-cli-tool.md) - Local CLI operations — project creation (including manager projects), `runs submit local`, debugging (`--debug`, `--debugMode`, `--debugPort`), viewing local RAS results
 
 **Test Development** (writing test classes, configuring environments):
-- [Writing Galasa tests](./references/writing-galasa-tests.md) - Test structure, build commands, CPS/credentials
+- [Writing Galasa tests](./references/writing-galasa-tests.md) - Test structure, build commands, CPS/credentials, `ITestResultProvider`, `@ContinueOnTestFailure`, clustering, hybrid mode, debug mode
 - [Test development best practices](./references/test-development-best-practices.md) - Design principles for scalable tests
 - [Galasa CLI tool](./references/galasa-cli-tool.md) - For project creation context
 
@@ -71,6 +78,8 @@ This skill contains individual skill references that explain how the various asp
 - [Writing Galasa tests](./references/writing-galasa-tests.md) - Test structure, build commands, environment configuration
 - [Test development best practices](./references/test-development-best-practices.md) - Design principles for scalable, maintainable tests
 - [Using Galasa managers](./references/using-galasa-managers.md) - Manager dependencies, injection patterns, basic terminal usage
+- [Galasa auth and secrets](./references/galasa-auth-and-secrets.md) - Authentication, tokens, and secrets management
+- [Galasa ecosystem management](./references/galasa-ecosystem-management.md) - Remote run submission, run management, CPS properties, resources, streams
 
 ### Advanced Topics
 - [Terminal Interaction Reference](./references/terminal-interaction-reference.md) - **Load only when needed** - Detailed terminal timing and navigation

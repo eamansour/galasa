@@ -24,6 +24,21 @@ galasactl local init
 galasactl --version
 ```
 
+### Ecosystem Authentication
+```bash
+# Log in to a Galasa Ecosystem
+galasactl auth login --bootstrap https://my.ecosystem.url/api/bootstrap
+
+# Log out
+galasactl auth logout
+
+# List personal access tokens
+galasactl auth tokens get
+
+# Set a secret in the Ecosystem
+galasactl secrets set --name MY_SECRET --username myuser --password mypassword
+```
+
 ### Project Creation
 ```bash
 # Create new Galasa project (Gradle example - recommended)

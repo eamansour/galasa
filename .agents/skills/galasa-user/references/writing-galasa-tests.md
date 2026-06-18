@@ -144,3 +144,150 @@ zos.image.MYZOSSYSTEM.credentials=SYSTEM1
 **Note:** The first time Galasa accesses a credential, macOS will prompt you to allow access.
 
 For complete documentation on using the macOS Keychain store, including all credential types and troubleshooting, see: https://raw.githubusercontent.com/galasa-dev/galasa/refs/heads/main/docs/content/docs/configuring-local-credentials/macos-keychain-store.md
+
+## Controlling test execution flow
+
+By default, if a `@Test` method fails, Galasa skips all subsequent `@Test` methods in the same class. Two class-level annotations let you change this behaviour.
+
+**`@ContinueOnTestFailure`** — Place on the class declaration to keep executing subsequent `@Test` methods even after one fails. Useful when you want to collect as many failure signals as possible in a single run.
+
+```java
+@Test
+@Summary("All login scenarios")
+@ContinueOnTestFailure
+public class LoginTests {
+    // All @Test methods run even if an earlier one fails
+}
+```
+
+**`@RunName`** — Inject the unique run identifier (e.g. `L12`, `U42`) assigned by Galasa for this execution. Useful for constructing unique resource or artifact names that will not clash with concurrent runs.
+
+```java
+@RunName
+public String runName;   // populated by Core Manager before any @Test runs
+```
+
+Failures in `@BeforeClass` / `@AfterClass` are reported as `ENVIRONMENT_FAILURE`, indicating setup rather than test logic failed. Failures in `@Before` / `@After` are reported as `FAILED`.
+
+Full docs: https://galasa.dev/docs/writing-own-tests/writing-test-classes/
+
+## Inspecting test results programmatically
+
+`ITestResultProvider` gives a test access to the overall test-class result and the result of each method that has already run. Inject it with `@TestResultProvider`:
+
+```java
+@TestResultProvider
+public ITestResultProvider testResultProvider;
+```
+
+The Core Manager updates the provider after every lifecycle method (`@BeforeClass`, `@Before`, `@Test`, `@After`, `@AfterClass`).
+
+**Typical pattern — conditional cleanup in `@AfterClass`:**
+
+```java
+@AfterClass
+public void afterClass() throws FrameworkException {
+    if (testResultProvider.getResult().isFailed()) {
+        runDiagnostics(); // only incur cost on failure
+    }
+}
+```
+
+**Inspecting individual method results (useful with `@ContinueOnTestFailure`):**
+
+```java
+@After
+public void afterEachTest() throws FrameworkException {
+    List<ITestMethodResult> results = testResultProvider.getTestMethodResults();
+    ITestMethodResult last = results.get(results.size() - 1);
+    if (last.isFailed()) {
+        logger.error("Method failed: " + last.getFailureReason());
+    }
+}
+```
+
+Full docs: https://galasa.dev/docs/writing-own-tests/test-result-provider/
+
+## Binding tests to environments (image tags and clustering)
+
+Hard-coding hostnames in test code means the test only works against one environment. Instead, use an `imageTag` in the annotation and store the actual connection details in CPS. Galasa resolves the tag at runtime.
+
+**Single image — define CPS properties, reference by tag in the test:**
+
+```properties
+# cps.properties
+zos.image.SYSA.ipv4.hostname=sysa.example.com
+zos.image.SYSA.telnet.port=23
+zos.image.SYSA.credentials=SYSA
+```
+
+```java
+@ZosImage(imageTag="SYSA")
+public IZosImage image;
+```
+
+**Cluster — define a named pool of images; Galasa picks an available one dynamically:**
+
+```properties
+# cps.properties
+zos.cluster.CLUSTER1.images=IMAGEA,IMAGEB
+
+zos.image.IMAGEA.ipv4.hostname=imagea.example.com
+zos.image.IMAGEA.max.slots=1
+zos.image.IMAGEA.clusterid=CLUSTER1
+zos.tag.IMAGEA.clusterid=CLUSTER1
+
+zos.image.IMAGEB.ipv4.hostname=imageb.example.com
+zos.image.IMAGEB.max.slots=1
+zos.image.IMAGEB.clusterid=CLUSTER1
+zos.tag.IMAGEB.clusterid=CLUSTER1
+```
+
+```java
+@ZosImage(imageTag="CLUSTER1")
+public IZosImage image;  // Galasa selects IMAGEA or IMAGEB based on slot availability
+```
+
+Images can be added to the cluster by updating CPS without recompiling the test.
+
+Full docs: https://galasa.dev/docs/writing-own-tests/binding-tests/
+
+## Running modes: local, hybrid, and remote
+
+Galasa supports three run modes:
+
+| Mode | Where the JVM runs | Where config comes from | Command |
+|---|---|---|---|
+| **Local** | Local machine | Local `~/.galasa/` files | `runs submit local` |
+| **Hybrid** | Local machine | Remote Ecosystem CPS | `runs submit local` |
+| **Remote** | Ecosystem container | Remote Ecosystem | `runs submit` |
+
+**Hybrid mode setup** — add the following to `~/.galasa/bootstrap.properties`, then authenticate:
+
+```properties
+framework.config.store=galasacps://my.ecosystem.url/api
+framework.extra.bundles=dev.galasa.cps.rest
+```
+
+```bash
+galasactl auth login
+galasactl runs submit local --class dev.example/MyTest ...
+```
+
+In hybrid mode the test still runs in the local JVM and results are stored locally, but CPS properties are read from the remote Ecosystem. Credentials are still read from the local credentials file.
+
+**Remote mode** — set `bootstrap` to the Ecosystem URL and use `runs submit` (see `galasa-ecosystem-management.md` in this skill for details).
+
+Full docs: https://galasa.dev/docs/writing-own-tests/running-test-modes/
+
+## Debugging tests locally
+
+Pass `--debug` to `runs submit local` to suspend the JVM and wait for a Java debugger to connect on port `2970` (default):
+
+```bash
+galasactl runs submit local --debug --class dev.example/MyTest --bundle my-tests.jar
+```
+
+Override the port with `--debugPort <port>` or with `galasactl.jvm.local.launch.debug.port` in `bootstrap.properties`. Use `--debugMode attach` if you prefer the test to attach to an already-listening debugger rather than wait for one.
+
+For full IDE setup instructions (VSCode `launch.json`, IntelliJ _Attach to Process_, Eclipse _Remote Java Application_), see `galasa-cli-tool.md` in this skill or https://galasa.dev/docs/cli-command-reference/runs-local-debug/

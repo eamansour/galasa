@@ -29,6 +29,8 @@ description: Provides information about how to use the Galasa CLI tool to set up
   -  `--features {FEATURES_TO_TEST}`: One or more application features to be tested in the Galasa project. If multiple features are specified, the `--features` command can be supplied with commas to separate different features (e.g. `--features customer,account`).
   -  `--gradle` or `--maven`: The build tool to be used for the Galasa project, either Gradle or Maven. Only one of these flags is needed. Prefer Gradle wherever possible.
   -  `--obr`: Tells Galasa to create an OBR project
+  -  `--force` *(optional)*: Force-overwrite any files that already exist on disk. Without this flag, a pre-existing file causes the command to fail and the original file is preserved. Use with care.
+  -  `--development` *(optional)*: Use bleeding-edge (unreleased) Galasa versions and repositories instead of the latest stable release. Only use this when explicitly asked.
 
 **Note**: OBR (OSGi Bundle Repository) projects package test bundles for distribution and execution. The `--obr` flag is recommended for most projects.
 
@@ -79,6 +81,35 @@ Where:
 
 If the user asks to create a Galasa project with a specific test class, you **MUST** replace the templated test class files and associated resources with a new test class that the user asked for.
 
+## Creating a Galasa manager project
+
+A **Galasa manager** is a reusable piece of test infrastructure that can inject resources (connections, clients, data objects, etc.) into test classes via annotations. Manager projects are separate OSGi bundles that sit alongside test projects inside the same parent package.
+
+Use the `--manager` flag when the user explicitly wants to create a manager project rather than (or in addition to) a standard test project. Do **NOT** add `--manager` for ordinary test projects.
+
+- `--manager`: Tells `galasactl project create` to generate a manager sub-project instead of a test sub-project.
+- `--managerName {NAME}` *(optional)*: The name of the manager. Must be a valid Java identifier (letters, digits, underscores — no dots or hyphens). Defaults to the last segment of the package name (e.g. `example` for `--package dev.galasa.example`).
+- A manager project and one or more test projects can be created together in the same `--package` by running `galasactl project create` multiple times with the same `--package` value — once with `--manager` and once (or more) with `--features`.
+
+Example — create a manager project:
+```
+galasactl project create --package dev.galasa.example --manager --gradle --obr
+```
+
+This produces a structure similar to:
+```
+.
+└── dev.galasa.example
+    ├── dev.galasa.example.example        ← manager bundle (named after last package segment)
+    │   ├── src/main/java/...
+    │   ├── build.gradle
+    │   └── bnd.bnd
+    └── dev.galasa.example.obr
+        └── build.gradle
+```
+
+For full details of the generated project structure and how managers relate to test projects, see [Creating a Galasa project](https://galasa.dev/docs/cli-command-reference/setting-up-galasa-project/).
+
 ## Running Galasa tests
 
 To run Galasa tests in a local Java Virtual Machine (JVM), you can use the `galasactl runs submit local` command. This command **MUST** have the following flags supplied to it:
@@ -92,6 +123,16 @@ To run Galasa tests in a local Java Virtual Machine (JVM), you can use the `gala
 Optionally, the `--trace` flag can be supplied if you would like to enable trace-level logging for the test run.
 
 - If a user would like to run specific test methods, the `--methods` flag can be supplied any number of times with the name of the test method or test methods to run. Alternatively, a comma-separated list of methods can be supplied in a single `--methods` flag. For example: `--methods testMethod1 --methods testMethod2`, or `--methods testMethod1,testMethod2`.
+
+### Optional flags
+
+The following flags are optional and can be supplied to `galasactl runs submit local` as needed:
+
+- `--galasaVersion {VERSION}` — version of Galasa to use when running tests (default: `0.48.0`). Must match the Galasa OBR version the tests were built against.
+- `--localMaven {URL}` — URL of a local Maven repository (e.g. `file:///Users/myuserid/.m2/repository`). Defaults to `~/.m2/repository`. Use when your Maven repository is in a non-standard location.
+- `--remoteMaven {URL}` — URL of the remote Maven repository to fetch Galasa artefacts from. Defaults to Maven Central (`https://repo.maven.apache.org/maven2`).
+- `--overridefile {PATH}` — path to a properties file containing override properties. Defaults to `overrides.properties` in the Galasa home folder if it exists. Use `-` to disable. Multiple files can be specified by repeating this flag.
+- `--noexitcodeontestfailures` — do not return a non-zero exit code when a test fails. Useful in CI pipelines where test failures are handled separately.
 
 - **IMPORTANT**: Every Galasa test run is assigned a unique run name, in the form `XY` where `X` is a single capital letter (example: `L` for local) and `Y` is a number (example: `12`). You **MUST** retain knowledge of this run name for context in case the user want information about the test run's result.
 
@@ -111,3 +152,30 @@ Optionally, the `--trace` flag can be supplied if you would like to enable trace
     - `run.log`: The log file for the test run.
     - `artifacts/`: A directory containing artifacts associated with the test run.
     - `artifacts.properties`: A file containing key-value pairs, where the keys correspond to the individual artifact paths that have been saved and the values correspond to the artifact's content type.
+
+## Debugging tests locally
+
+You can run a test locally in debug mode by adding the `--debug` flag to `galasactl runs submit local`. When `--debug` is set, the test JVM pauses on startup and waits for a Java debugger to connect before executing any test code.
+
+### Debug flags
+
+- `--debug` — enables debug mode. The test JVM pauses at startup and waits for a Java debugger connection.
+- `--debugPort {PORT}` — the port number the debugger uses (default: `2970`). Must be an unsigned integer.
+- `--debugMode {MODE}` — controls how the test JVM connects to the debugger:
+  - `listen` *(default)* — the test JVM opens the debug port and waits for a debugger to connect to it.
+  - `attach` — the test JVM connects to a debugger that is already listening on the debug port.
+
+**Note**: The IDE must be configured with the *opposite* mode to the testcase. For example, if `galasactl` uses `listen` (the default), configure your IDE to `attach` to the port. If `galasactl` uses `attach`, start the IDE debugger first so it is already listening when the test launches.
+
+### Setting defaults in bootstrap.properties
+
+To avoid passing debug flags on every run, you can set default values in `~/.galasa/bootstrap.properties`:
+
+```properties
+galasactl.jvm.local.launch.debug.port=2970
+galasactl.jvm.local.launch.debug.mode=listen
+```
+
+These properties are ignored if `--debug` is not supplied to `galasactl runs submit local`.
+
+For full details including IDE-specific setup (VSCode, IntelliJ, Eclipse), see the [Debugging a test locally](https://galasa.dev/docs/cli-command-reference/runs-local-debug/) documentation.
