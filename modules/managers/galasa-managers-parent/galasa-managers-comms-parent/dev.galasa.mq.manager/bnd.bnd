@@ -14,9 +14,4 @@ Import-Package: !javax.validation.constraints,\
         javax.naming,\
         javax.net.ssl,\
         javax.security.cert
-Embed-Transitive: true
-Embed-Dependency: *;scope=compile
--includeresource: com.ibm.mq.allclient-*.jar; lib:=true,\
-    javax.jms-api-*.jar; lib:=true,\
-    json-*.jar; lib:=true
-    
+-conditionalpackage: com.ibm.msg.client.*, com.ibm.mq.*
