@@ -227,6 +227,11 @@ public enum ServletErrorMessage {
     GAL5459_ERROR_FAILED_TO_FETCH_TEST_CATALOG        (5459, "E: Failed to fetch the test catalog from the configured URL. The remote server may be unavailable or experiencing issues."),
     GAL5460_ERROR_TEST_CATALOG_TOO_LARGE              (5460, "E: Failed to fetch the test catalog. The response size exceeds the maximum allowed size of 10MB."),
     GAL5461_ERROR_TEST_CATALOG_INVALID_CONTENT_TYPE   (5461, "E: Failed to fetch the test catalog. The response content type ''{0}'' is not valid JSON. Expected content type to contain ''{1}''."),
+
+    // Service tokens API...
+    GAL5463_INVALID_SERVICE_TOKEN_REQUEST_BODY        (5463, "E: Invalid request body provided for service token creation. Ensure that ''connector_id'', ''subject_token'', and ''subject_token_type'' are present, that ''subject_token_type'' is one of the accepted URN values, and that ''token_lifespan_days'' is between 1 and 365 if provided. Check your request payload and try again."),
+    GAL5464_FAILED_TO_CREATE_DEX_CLIENT_FOR_SERVICE_TOKEN (5464, "E: Internal server error. Failed to create a Dex client for the new service token. The Dex component of Galasa could be badly configured or experiencing a temporary issue. Report the problem to your Galasa Ecosystem owner."),
+    GAL5465_TOKEN_EXCHANGE_MISSING_REFRESH_TOKEN      (5465, "E: Internal server error. The Dex token exchange succeeded but did not return a refresh token. Ensure that the Dex OIDC connector for the specified ''connector_id'' is configured to support ''offline_access'' scope. Report the problem to your Galasa Ecosystem owner."),
     ;
 
     // >>>
@@ -235,7 +240,7 @@ public enum ServletErrorMessage {
     // >>>       Unit tests guarantee that this number is 'free' to use for a new error message.
     // >>>       If you do use this number for a new error template, please incriment this value.
     // >>>
-    public static final int GALxxx_NEXT_MESSAGE_NUMBER_TO_USE = 5463;
+    public static final int GALxxx_NEXT_MESSAGE_NUMBER_TO_USE = 5466;
 
 
     private String template ;

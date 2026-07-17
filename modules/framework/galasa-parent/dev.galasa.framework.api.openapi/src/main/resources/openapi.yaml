@@ -313,6 +313,53 @@ paths:
         '500':
           $ref: '#/components/responses/InternalServerError'
 
+  /auth/service-tokens:
+    parameters:
+      - $ref: '#/components/parameters/ClientApiVersion'
+    post:
+      operationId: createServiceToken
+      summary: Exchange an upstream OIDC token for a Galasa service token.
+      description: |
+        Creates a new Galasa service token for use by machine/CI callers by performing an
+        OAuth2 Token Exchange (RFC 8693) with the configured Dex identity provider. The
+        caller provides an upstream OIDC token (e.g. a GitHub Actions JWT) and the ID of
+        the Dex connector that can validate it. On success, a Galasa token string is
+        returned that can be stored in a CI secret vault and used in subsequent API calls.
+
+        This endpoint does not require an existing Galasa JWT in the Authorization header.
+      tags:
+      - Authentication API
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ServiceTokenRequest'
+      responses:
+        '201':
+          description: Returns a JSON object containing the new Galasa service token
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceToken'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIError'
+              examples:
+                missingparametererror:
+                  value:
+                    error_code: 5100
+                    error_message: "GAL5100E: Invalid request body provided for service token creation. Ensure that connector_id, subject_token, and subject_token_type are present and that subject_token_type is one of the accepted values."
+                  summary: One or more required body properties are missing or invalid
+        '401':
+          $ref: "#/components/responses/Unauthorized"
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
 ##################################################################################
 # Users API
 ##################################################################################
@@ -3085,6 +3132,39 @@ components:
         token_expiry_warning_days:
           type: integer
           description: The number of days before token expiry when a warning should be displayed. Only returned when exchanging a refresh token for a JWT.
+    ServiceTokenRequest:
+      type: object
+      required:
+        - connector_id
+        - subject_token
+        - subject_token_type
+      properties:
+        connector_id:
+          type: string
+          description: The ID of the Dex OIDC connector that will validate the subject token (e.g. "github-actions").
+        subject_token:
+          type: string
+          description: The upstream OIDC token to exchange (e.g. a GitHub Actions JWT).
+        subject_token_type:
+          type: string
+          description: |
+            The type of the subject token. Must be one of:
+            - `id_token`: Maps to `urn:ietf:params:oauth:token-type:id_token` — use this for GitHub Actions,
+              GitLab CI, GCP, and other platforms that issue OIDC ID tokens
+            - `access_token`: Maps to `urn:ietf:params:oauth:token-type:access_token` — use this for platforms
+              that issue opaque or structured access tokens
+            - `jwt`: Maps to `urn:ietf:params:oauth:token-type:jwt` — use this for generic JWTs that
+              are not OIDC ID tokens
+          enum:
+            - id_token
+            - access_token
+            - jwt
+    ServiceToken:
+      type: object
+      properties:
+        jwt:
+          type: string
+          description: The Dex-issued ID token returned by the token exchange. Store this value as a CI secret and supply it as the GALASA_TOKEN environment variable.
     CpsProperty:
       type: object
       properties:

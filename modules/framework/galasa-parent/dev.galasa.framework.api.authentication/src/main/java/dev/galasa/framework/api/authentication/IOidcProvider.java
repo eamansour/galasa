@@ -42,6 +42,12 @@ public interface IOidcProvider {
     public HttpResponse<String> sendTokenPost(String clientId, String clientSecret, String authCode, String redirectUri) throws IOException, InterruptedException;
 
     /**
+     * Sends a POST request to an OpenID Connect /token endpoint performing an OAuth2 Token Exchange
+     * (RFC 8693), returning the received response.
+     */
+    public HttpResponse<String> sendTokenExchangePost(String clientId, String clientSecret, String subjectToken, String subjectTokenType, String connectorId) throws IOException, InterruptedException;
+
+    /**
      * Checks if a given JWT is valid or not
      */
     public boolean isJwtValid(String jwt) throws NoSuchAlgorithmException, InvalidKeySpecException, IOException, InterruptedException;

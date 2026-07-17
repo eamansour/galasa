@@ -84,6 +84,15 @@ public class MockOidcProvider implements IOidcProvider {
     }
 
     @Override
+    public HttpResponse<String> sendTokenExchangePost(String clientId, String clientSecret, String subjectToken, String subjectTokenType, String connectorId)
+            throws IOException, InterruptedException {
+        if (throwException) {
+            throwIOException();
+        }
+        return mockResponse;
+    }
+
+    @Override
     public HttpResponse<String> sendAuthorizationGet(String clientId, String callbackUrl, String stateId)
             throws IOException, InterruptedException {
         if (throwException) {

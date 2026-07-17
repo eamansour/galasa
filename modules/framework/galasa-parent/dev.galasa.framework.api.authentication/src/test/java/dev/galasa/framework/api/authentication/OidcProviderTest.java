@@ -143,7 +143,7 @@ public class OidcProviderTest {
     @Test
     public void testCreateOidcProviderWithInvalidIssuerUrlThrowsError() throws Exception {
         // When...
-        ServletException thrown = catchThrowableOfType(() -> new OidcProvider("not a valid issuer url", null), ServletException.class);
+        ServletException thrown = catchThrowableOfType(ServletException.class, () -> new OidcProvider("not a valid issuer url", null));
 
         // Then...
         assertThat(thrown).isNotNull();
@@ -161,7 +161,7 @@ public class OidcProviderTest {
         MockHttpClient mockHttpClient = new MockHttpClient(mockResponse);
 
         // When...
-        ServletException thrown = catchThrowableOfType(() -> new OidcProvider("http://my.server", mockHttpClient), ServletException.class);
+        ServletException thrown = catchThrowableOfType(ServletException.class, () -> new OidcProvider("http://my.server", mockHttpClient));
 
         // Then...
         assertThat(thrown).isNotNull();
@@ -179,7 +179,7 @@ public class OidcProviderTest {
         MockHttpClient mockHttpClient = new MockHttpClient(mockResponse);
 
         // When...
-        ServletException thrown = catchThrowableOfType(() -> new OidcProvider("http://my.server", mockHttpClient), ServletException.class);
+        ServletException thrown = catchThrowableOfType(ServletException.class, () -> new OidcProvider("http://my.server", mockHttpClient));
 
         // Then...
         assertThat(thrown).isNotNull();
@@ -197,7 +197,7 @@ public class OidcProviderTest {
         MockHttpClient mockHttpClient = new MockHttpClient(mockResponse);
 
         // When...
-        ServletException thrown = catchThrowableOfType(() -> new OidcProvider("http://my.server", mockHttpClient), ServletException.class);
+        ServletException thrown = catchThrowableOfType(ServletException.class, () -> new OidcProvider("http://my.server", mockHttpClient));
 
         // Then...
         assertThat(thrown).isNotNull();
@@ -216,7 +216,7 @@ public class OidcProviderTest {
         MockHttpClient mockHttpClient = new MockHttpClient(mockResponse);
 
         // When...
-        ServletException thrown = catchThrowableOfType(() -> new OidcProvider("http://my.server", mockHttpClient), ServletException.class);
+        ServletException thrown = catchThrowableOfType(ServletException.class, () -> new OidcProvider("http://my.server", mockHttpClient));
 
         // Then...
         assertThat(thrown).isNotNull();
@@ -236,7 +236,7 @@ public class OidcProviderTest {
         MockHttpClient mockHttpClient = new MockHttpClient(mockResponse);
 
         // When...
-        ServletException thrown = catchThrowableOfType(() -> new OidcProvider("http://my.server", mockHttpClient), ServletException.class);
+        ServletException thrown = catchThrowableOfType(ServletException.class, () -> new OidcProvider("http://my.server", mockHttpClient));
 
         // Then...
         assertThat(thrown).isNotNull();
@@ -623,6 +623,36 @@ public class OidcProviderTest {
 
         // Then...
         assertThat(redirectUrl).isNull();
+    }
+
+    @Test
+    public void testGetConnectorRedirectUrlReturnsLoginSelectorUrlWhenDexResponds200WithNoLocationHeader() throws Exception {
+        // Given...
+        // Simulate Dex returning 200 with a login-selector page when multiple connectors are configured.
+        // There is no Location header; the redirect target is the final response URI.
+        String mockLoginSelectorUrl = "http://dummy-issuer/auth?req=abc123";
+        Map<String, List<String>> headers = new HashMap<>();
+        BiPredicate<String, String> defaultFilter = (a, b) -> true;
+        MockHttpResponse<Object> mockResponse = new MockHttpResponse<Object>(
+            URI.create(mockLoginSelectorUrl),
+            HttpHeaders.of(headers, defaultFilter)
+        );
+        mockResponse.setStatusCode(200);
+
+        MockHttpClient mockHttpClient = new MockHttpClient(createMockOidcDiscoveryResponse());
+
+        OidcProvider oidcProvider = new OidcProvider("http://dummy-issuer", mockHttpClient);
+
+        mockHttpClient.setMockResponse(mockResponse);
+
+        String mockState = "this-is-a-random-id";
+
+        // When...
+        String redirectUrl = oidcProvider.getConnectorRedirectUrl("my-client-id", "http://my.server/callback", mockState);
+
+        // Then...
+        assertThat(redirectUrl).isNotNull();
+        assertThat(redirectUrl).isEqualTo(mockLoginSelectorUrl);
     }
 
     @Test

@@ -58,6 +58,8 @@ import static dev.galasa.framework.api.common.ServletErrorMessage.*;
  */
 public class OidcProvider implements IOidcProvider {
 
+    private static final String TOKEN_EXCHANGE_GRANT_TYPE = "urn:ietf:params:oauth:grant-type:token-exchange";
+
     private final Log logger = LogFactory.getLog(getClass());
 
     private static final GalasaGson gson = new GalasaGson();
@@ -133,6 +135,13 @@ public class OidcProvider implements IOidcProvider {
     /**
      * Gets the URL of the upstream connector to authenticate with (e.g. a
      * github.com URL to authenticate with an OAuth application in GitHub).
+     *
+     * When Dex has a single connector configured it responds with a 302 redirect and
+     * a {@code Location} header pointing directly at the upstream IdP. When multiple
+     * connectors are configured, Dex responds with 200 and serves an HTML
+     * login-selector page instead. In that case this method returns the final
+     * response URI (the login-selector page URL) so the client can be redirected to
+     * it to choose a connector.
      */
     public String getConnectorRedirectUrl(String clientId, String callbackUrl, String stateId) throws IOException, InterruptedException {
         logger.info("Sending GET request to " + authorizationEndpoint);
@@ -140,9 +149,14 @@ public class OidcProvider implements IOidcProvider {
         HttpResponse<String> authResponse = sendAuthorizationGet(clientId, callbackUrl, stateId);
         String redirectUrl = getLocationHeaderFromResponse(authResponse);
 
-        // In case the "Location" header contains a relative URI, get an absolute URI from the response
         if (redirectUrl != null && redirectUrl.startsWith("/")) {
+            // Location header contains a relative URI — convert to absolute using the response URI
             logger.info("Relative redirect URL found, converting to absolute URL");
+            redirectUrl = authResponse.uri().toString();
+        } else if (redirectUrl == null && authResponse.statusCode() == HttpServletResponse.SC_OK) {
+            // No Location header and Dex responded 200 — this is the multi-connector case where
+            // Dex serves a login-selector page. Redirect the client to that page.
+            logger.info("No Location header in 200 response, using response URI as login-selector redirect URL");
             redirectUrl = authResponse.uri().toString();
         }
         logger.info("Retrieved redirect URL: " + redirectUrl);
@@ -182,6 +196,39 @@ public class OidcProvider implements IOidcProvider {
 
         // Create a POST request to the /token endpoint
         return sendPostRequest(sbRequestBody.toString(), "application/x-www-form-urlencoded", tokenEndpoint);
+    }
+
+    /**
+     * Sends a POST request to an OpenID Connect /token endpoint performing an OAuth2 Token Exchange
+     * (RFC 8693). Requests an ID token via requested_token_type so that the returned token carries
+     * the user's identity claims and can be used directly as a Galasa bearer token.
+     *
+     * Note: Dex's token exchange implementation always places the result in the `access_token`
+     * response field regardless of requested_token_type (RFC 8693 section 2.2.1). The
+     * `issued_token_type` field confirms what was actually issued.
+     */
+    public HttpResponse<String> sendTokenExchangePost(String clientId, String clientSecret, String subjectToken, String subjectTokenType, String connectorId) throws IOException, InterruptedException {
+        String credentials = clientId + ":" + clientSecret;
+        String encodedCredentials = Base64.getEncoder().encodeToString(credentials.getBytes(StandardCharsets.UTF_8));
+
+        StringBuilder sbRequestBody = new StringBuilder();
+        sbRequestBody.append("grant_type=" + URLEncoder.encode(TOKEN_EXCHANGE_GRANT_TYPE, StandardCharsets.UTF_8));
+        sbRequestBody.append("&subject_token=" + URLEncoder.encode(subjectToken, StandardCharsets.UTF_8));
+        sbRequestBody.append("&subject_token_type=" + URLEncoder.encode(subjectTokenType, StandardCharsets.UTF_8));
+        sbRequestBody.append("&connector_id=" + URLEncoder.encode(connectorId, StandardCharsets.UTF_8));
+        sbRequestBody.append("&requested_token_type=" + URLEncoder.encode("urn:ietf:params:oauth:token-type:id_token", StandardCharsets.UTF_8));
+        sbRequestBody.append("&scope=" + URLEncoder.encode("openid profile email", StandardCharsets.UTF_8));
+
+        logger.info("Sending token exchange POST request to '" + tokenEndpoint + "' using connector '" + connectorId + "'");
+
+        HttpRequest postRequest = HttpRequest.newBuilder()
+            .POST(BodyPublishers.ofString(sbRequestBody.toString()))
+            .header("Content-Type", "application/x-www-form-urlencoded")
+            .header("Authorization", "Basic " + encodedCredentials)
+            .uri(tokenEndpoint)
+            .build();
+
+        return httpClient.send(postRequest, BodyHandlers.ofString());
     }
 
     /**

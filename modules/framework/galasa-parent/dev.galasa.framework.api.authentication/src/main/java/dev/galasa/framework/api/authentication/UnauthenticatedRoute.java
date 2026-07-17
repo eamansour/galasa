@@ -22,6 +22,7 @@ public enum UnauthenticatedRoute {
 
     AUTH("/auth", HttpMethod.GET, HttpMethod.POST),
     AUTH_TOKENS("/auth/tokens", HttpMethod.POST),
+    AUTH_SERVICE_TOKENS("/auth/service-tokens", HttpMethod.POST),
     AUTH_CALLBACK("/auth/callback", HttpMethod.GET),
     BOOTSTRAP_EXTERNAL("/bootstrap", HttpMethod.GET),
     HEALTH("/health", HttpMethod.GET),

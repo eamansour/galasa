@@ -20,6 +20,7 @@ import dev.galasa.framework.api.authentication.internal.OidcProvider;
 import dev.galasa.framework.api.authentication.internal.routes.AuthCallbackRoute;
 import dev.galasa.framework.api.authentication.internal.routes.AuthClientsRoute;
 import dev.galasa.framework.api.authentication.internal.routes.AuthRoute;
+import dev.galasa.framework.api.authentication.internal.routes.AuthServiceTokensRoute;
 import dev.galasa.framework.api.authentication.internal.routes.AuthTokensDetailsRoute;
 import dev.galasa.framework.api.authentication.internal.routes.AuthTokensRoute;
 import dev.galasa.framework.api.common.BaseServlet;
@@ -115,6 +116,7 @@ public class AuthenticationServlet extends BaseServlet {
         }
 
         addRoute(new AuthTokensDetailsRoute(getResponseBuilder(), authService, rbacService));
+        addRoute(new AuthServiceTokensRoute(getResponseBuilder(), oidcProvider, authService, rbacService, timeService, env));
 
         logger.info("Galasa Authentication API initialised");
     }
