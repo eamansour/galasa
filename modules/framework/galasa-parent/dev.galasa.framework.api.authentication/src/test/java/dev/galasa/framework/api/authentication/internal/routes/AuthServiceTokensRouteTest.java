@@ -61,6 +61,7 @@ public class AuthServiceTokensRouteTest extends BaseServletTest {
         MockDexGrpcClient dexGrpcClient = new MockDexGrpcClient("https://my-issuer/dex", clientId, clientSecret, "http://callback");
         String dexResponse = buildDexTokenExchangeResponse(TEST_JWT);
         MockOidcProvider oidcProvider = new MockOidcProvider(new MockHttpResponse<String>(dexResponse, 200));
+        oidcProvider.setJwtValid(true);
 
         MockAuthStoreService authStoreService = new MockAuthStoreService(new ArrayList<>());
         MockAuthenticationServlet servlet = new MockAuthenticationServlet(oidcProvider, dexGrpcClient,
@@ -200,6 +201,33 @@ public class AuthServiceTokensRouteTest extends BaseServletTest {
         // Then...
         assertThat(servletResponse.getStatus()).isEqualTo(500);
         // The client created for the exchange should have been deleted
+        assertThat(dexGrpcClient.getDexClients()).isEmpty();
+    }
+
+    @Test
+    public void testPostServiceTokensInvalidJwtReturns500AndCleansUpClient() throws Exception {
+        // Given...
+        String clientId = "new-client-id";
+        String clientSecret = "new-client-secret";
+
+        MockDexGrpcClient dexGrpcClient = new MockDexGrpcClient("https://my-issuer/dex", clientId, clientSecret, "http://callback");
+        String dexResponse = buildDexTokenExchangeResponse(TEST_JWT);
+        MockOidcProvider oidcProvider = new MockOidcProvider(new MockHttpResponse<String>(dexResponse, 200));
+        // isJwtValid defaults to false — JWT validation fails
+
+        MockAuthenticationServlet servlet = new MockAuthenticationServlet(oidcProvider, dexGrpcClient);
+
+        String requestBody = buildRequestPayload("github-actions", "upstream-token", "id_token");
+        MockHttpServletRequest mockRequest = new MockHttpServletRequest("/service-tokens", requestBody, "POST");
+        MockHttpServletResponse servletResponse = new MockHttpServletResponse();
+
+        // When...
+        servlet.init();
+        servlet.doPost(mockRequest, servletResponse);
+
+        // Then...
+        assertThat(servletResponse.getStatus()).isEqualTo(500);
+        // The client should have been deleted after validation failure
         assertThat(dexGrpcClient.getDexClients()).isEmpty();
     }
 }

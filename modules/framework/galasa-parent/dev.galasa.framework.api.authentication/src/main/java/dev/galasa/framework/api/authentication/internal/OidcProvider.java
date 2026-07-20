@@ -319,7 +319,7 @@ public class OidcProvider implements IOidcProvider {
 
         } catch (JWTVerificationException e) {
             // The JWT is not valid
-            logger.error("Invalid JWT '" + jwt + "'. Reason: " + e.getMessage(), e);
+            logger.error("Invalid JWT. Reason: " + e.getMessage(), e);
         }
         return isValid;
     }

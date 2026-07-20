@@ -17,6 +17,9 @@ import dev.galasa.framework.api.common.ResponseBuilder;
  */
 public abstract class AbstractAuthRoute extends PublicRoute {
 
+    public static final String REST_API_CLIENT = "rest-api";
+    public static final String WEB_UI_CLIENT = "web-ui";
+
     // Suffix for the DSS auth property 'dss.auth.STATEID.callback.url'
     public static final String DSS_CALLBACK_URL_PROPERTY_SUFFIX = ".callback.url";
 

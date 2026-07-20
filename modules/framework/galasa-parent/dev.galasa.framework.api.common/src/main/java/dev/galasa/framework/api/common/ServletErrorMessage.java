@@ -229,9 +229,12 @@ public enum ServletErrorMessage {
     GAL5461_ERROR_TEST_CATALOG_INVALID_CONTENT_TYPE   (5461, "E: Failed to fetch the test catalog. The response content type ''{0}'' is not valid JSON. Expected content type to contain ''{1}''."),
 
     // Service tokens API...
-    GAL5463_INVALID_SERVICE_TOKEN_REQUEST_BODY        (5463, "E: Invalid request body provided for service token creation. Ensure that ''connector_id'', ''subject_token'', and ''subject_token_type'' are present, that ''subject_token_type'' is one of the accepted URN values, and that ''token_lifespan_days'' is between 1 and 365 if provided. Check your request payload and try again."),
-    GAL5464_FAILED_TO_CREATE_DEX_CLIENT_FOR_SERVICE_TOKEN (5464, "E: Internal server error. Failed to create a Dex client for the new service token. The Dex component of Galasa could be badly configured or experiencing a temporary issue. Report the problem to your Galasa Ecosystem owner."),
-    GAL5465_TOKEN_EXCHANGE_MISSING_REFRESH_TOKEN      (5465, "E: Internal server error. The Dex token exchange succeeded but did not return a refresh token. Ensure that the Dex OIDC connector for the specified ''connector_id'' is configured to support ''offline_access'' scope. Report the problem to your Galasa Ecosystem owner."),
+    GAL5463_INVALID_SERVICE_TOKEN_REQUEST_BODY            (5463, "E: Invalid request body provided for service token creation. Ensure that ''connector_id'', ''subject_token'', and ''subject_token_type'' are present, that ''subject_token_type'' is one of the accepted URN values, and that ''token_lifespan_days'' is between 1 and 365 if provided. Check your request payload and try again."),
+    GAL5464_FAILED_TO_CREATE_DEX_CLIENT_FOR_SERVICE_TOKEN (5464, "E: Internal server error. Failed to create a Dex client for the new service token. The Dex component of Galasa could be badly configured or experiencing a temporary issue. Report the problem to your Galasa service owner."),
+    GAL5465_TOKEN_EXCHANGE_MISSING_REQUESTED_TOKEN        (5465, "E: Internal server error. The Dex token exchange succeeded but did not return the requested token. Report the problem to your Galasa service owner so that they can ensure that the Dex connector for the specified ''connector_id'' is correctly configured and check the Dex server logs."),
+    GAL5466_INVALID_JWT_FROM_TOKEN_EXCHANGE               (5466, "E: Internal server error. The JWT returned by the Dex token exchange is invalid or could not be verified. Report the problem to your Galasa service owner so that they can ensure that the Dex connector for the specified ''connector_id'' is correctly configured and check the Dex server logs."),
+    GAL5467_FAILED_TO_EXCHANGE_TOKENS_WITH_ISSUER         (5467, "E: Failed to exchange tokens with the Galasa Dex server. The Dex server did not respond with a JWT or access token. This could be because the Dex server is experiencing an outage or other temporary issues. Report the problem to your Galasa Ecosystem owner."),
+
     ;
 
     // >>>
@@ -240,7 +243,7 @@ public enum ServletErrorMessage {
     // >>>       Unit tests guarantee that this number is 'free' to use for a new error message.
     // >>>       If you do use this number for a new error template, please incriment this value.
     // >>>
-    public static final int GALxxx_NEXT_MESSAGE_NUMBER_TO_USE = 5466;
+    public static final int GALxxx_NEXT_MESSAGE_NUMBER_TO_USE = 5468;
 
 
     private String template ;

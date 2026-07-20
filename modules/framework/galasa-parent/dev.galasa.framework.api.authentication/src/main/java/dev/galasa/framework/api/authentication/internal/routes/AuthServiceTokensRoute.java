@@ -9,6 +9,8 @@ import static dev.galasa.framework.api.common.ServletErrorMessage.*;
 
 import java.io.IOException;
 import java.net.http.HttpResponse;
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -29,7 +31,6 @@ import dev.galasa.framework.api.common.IBeanValidator;
 import dev.galasa.framework.api.common.InternalServletException;
 import dev.galasa.framework.api.common.JwtWrapper;
 import dev.galasa.framework.api.common.MimeType;
-import dev.galasa.framework.api.common.PublicRoute;
 import dev.galasa.framework.api.common.ResponseBuilder;
 import dev.galasa.framework.api.common.ServletError;
 import dev.galasa.framework.auth.spi.IAuthService;
@@ -43,12 +44,11 @@ import dev.galasa.framework.spi.rbac.RBACException;
 import dev.galasa.framework.spi.rbac.RBACService;
 import dev.galasa.framework.spi.utils.ITimeService;
 
-public class AuthServiceTokensRoute extends PublicRoute {
+public class AuthServiceTokensRoute extends AbstractAuthRoute {
 
     private static final String PATH_PATTERN = "\\/service-tokens\\/?";
 
     private static final String RESPONSE_FIELD_ACCESS_TOKEN = "access_token";
-    private static final String CLIENT_NAME = "rest-api";
 
     private static final IBeanValidator<ServiceTokenRequest> validator = new ServiceTokenRequestValidator();
 
@@ -102,7 +102,37 @@ public class AuthServiceTokensRoute extends PublicRoute {
         String newClientId = dexClient.getId();
         String newClientSecret = dexClient.getSecret();
 
-        JsonObject tokenResponseJson;
+        try {
+            String idToken = performTokenExchange(requestPayload, newClientId, newClientSecret);
+
+            // Validate the JWT before trusting it
+            try {
+                if (!oidcProvider.isJwtValid(idToken)) {
+                    ServletError error = new ServletError(GAL5466_INVALID_JWT_FROM_TOKEN_EXCHANGE);
+                    throw new InternalServletException(error, HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+                }
+            } catch (NoSuchAlgorithmException | InvalidKeySpecException | IOException | InterruptedException e) {
+                ServletError error = new ServletError(GAL5466_INVALID_JWT_FROM_TOKEN_EXCHANGE);
+                throw new InternalServletException(error, HttpServletResponse.SC_INTERNAL_SERVER_ERROR, e);
+            }
+
+            // Create or update the user record
+            JwtWrapper jwtWrapper = new JwtWrapper(idToken, env);
+            recordUserLogin(jwtWrapper.getUsername());
+
+            JsonObject responseBody = new JsonObject();
+            responseBody.addProperty("jwt", idToken);
+
+            return getResponseBuilder().buildResponse(request, response, MimeType.APPLICATION_JSON.toString(),
+                    gson.toJson(responseBody), HttpServletResponse.SC_CREATED);
+        } finally {
+            cleanUpDexClient(newClientId);
+        }
+    }
+
+    private String performTokenExchange(ServiceTokenRequest requestPayload, String newClientId, String newClientSecret) throws IOException, InternalServletException {
+        JsonObject tokenResponseJson = null;
+
         try {
             HttpResponse<String> tokenResponse = oidcProvider.sendTokenExchangePost(
                 newClientId,
@@ -113,41 +143,24 @@ public class AuthServiceTokensRoute extends PublicRoute {
             );
 
             if (tokenResponse == null || tokenResponse.statusCode() != HttpServletResponse.SC_OK) {
-                // Dex rejected the exchange — clean up the Dex client before returning
-                cleanUpDexClient(newClientId);
-                ServletError error = new ServletError(GAL5055_FAILED_TO_GET_TOKENS_FROM_ISSUER);
+                ServletError error = new ServletError(GAL5467_FAILED_TO_EXCHANGE_TOKENS_WITH_ISSUER);
                 throw new InternalServletException(error, HttpServletResponse.SC_UNAUTHORIZED);
             }
 
             tokenResponseJson = gson.fromJson(tokenResponse.body(), JsonObject.class);
 
         } catch (InterruptedException e) {
-            cleanUpDexClient(newClientId);
             ServletError error = new ServletError(GAL5000_GENERIC_API_ERROR);
             throw new InternalServletException(error, HttpServletResponse.SC_INTERNAL_SERVER_ERROR, e);
         }
 
         // Validate that Dex returned an ID token in the access_token field
         if (tokenResponseJson == null || !tokenResponseJson.has(RESPONSE_FIELD_ACCESS_TOKEN)) {
-            cleanUpDexClient(newClientId);
-            ServletError error = new ServletError(GAL5465_TOKEN_EXCHANGE_MISSING_REFRESH_TOKEN);
+            ServletError error = new ServletError(GAL5465_TOKEN_EXCHANGE_MISSING_REQUESTED_TOKEN);
             throw new InternalServletException(error, HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
         }
 
-        String idToken = tokenResponseJson.get(RESPONSE_FIELD_ACCESS_TOKEN).getAsString();
-
-        // The Dex client was only needed for the token exchange — delete it now to avoid accumulation
-        cleanUpDexClient(newClientId);
-
-        // Create or update the user record
-        JwtWrapper jwtWrapper = new JwtWrapper(idToken, env);
-        recordUserLogin(jwtWrapper.getUsername());
-
-        JsonObject responseBody = new JsonObject();
-        responseBody.addProperty("jwt", idToken);
-
-        return getResponseBuilder().buildResponse(request, response, MimeType.APPLICATION_JSON.toString(),
-                gson.toJson(responseBody), HttpServletResponse.SC_CREATED);
+        return tokenResponseJson.get(RESPONSE_FIELD_ACCESS_TOKEN).getAsString();
     }
 
     private void cleanUpDexClient(String clientId) {
@@ -163,11 +176,11 @@ public class AuthServiceTokensRoute extends PublicRoute {
             IUser user = authStoreService.getUserByLoginId(loginId);
             if (user == null) {
                 String defaultRoleId = rbacService.getDefaultRoleId();
-                authStoreService.createUser(loginId, CLIENT_NAME, defaultRoleId);
+                authStoreService.createUser(loginId, REST_API_CLIENT, defaultRoleId);
             } else {
-                IFrontEndClient client = user.getClient(CLIENT_NAME);
+                IFrontEndClient client = user.getClient(REST_API_CLIENT);
                 if (client == null) {
-                    client = authStoreService.createClient(CLIENT_NAME);
+                    client = authStoreService.createClient(REST_API_CLIENT);
                     user.addClient(client);
                 }
                 client.setLastLogin(timeService.now());

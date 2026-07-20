@@ -35,7 +35,6 @@ import dev.galasa.framework.api.common.Environment;
 import dev.galasa.framework.api.common.HttpRequestContext;
 import dev.galasa.framework.api.common.IBeanValidator;
 import dev.galasa.framework.api.common.JwtWrapper;
-import dev.galasa.framework.api.common.PublicRoute;
 import dev.galasa.framework.api.common.InternalServletException;
 import dev.galasa.framework.api.common.InternalUser;
 import dev.galasa.framework.api.common.QueryParameters;
@@ -58,7 +57,7 @@ import dev.galasa.framework.spi.rbac.RBACService;
 import dev.galasa.framework.spi.utils.ITimeService;
 import dev.galasa.framework.spi.auth.AuthStoreException;
 
-public class AuthTokensRoute extends PublicRoute {
+public class AuthTokensRoute extends AbstractAuthRoute {
 
     private IAuthStoreService authStoreService;
     private IOidcProvider oidcProvider;
@@ -71,9 +70,6 @@ public class AuthTokensRoute extends PublicRoute {
 
     // Regex to match /auth/tokens and /auth/tokens/ only
     private static final String PATH_PATTERN = "\\/tokens\\/?";
-
-    private static final String REST_API_CLIENT = "rest-api";
-    private static final String WEB_UI_CLIENT = "web-ui";
 
     private static final IBeanValidator<TokenPayload> validator = new TokenPayloadValidator();
 
