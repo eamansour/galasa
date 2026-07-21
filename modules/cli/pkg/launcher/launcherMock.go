@@ -11,6 +11,7 @@ import (
 	"strings"
 
 	"github.com/galasa-dev/cli/pkg/galasaapi"
+	"github.com/galasa-dev/cli/pkg/utils"
 )
 
 // Structure used to collect parameters which are sent to the mock, so we can get them back in the
@@ -30,10 +31,11 @@ type LaunchParameters struct {
 }
 
 type MockLauncher struct {
-	allTestRuns  *galasaapi.TestRuns
-	nextRunId    int
-	launches     []LaunchParameters
-	submissionId int
+	allTestRuns          *galasaapi.TestRuns
+	nextRunId            int
+	launches             []LaunchParameters
+	submissionId         int
+	mockPortfolioToReturn *galasaapi.RunsPortfolio
 }
 
 func NewMockLauncher() *MockLauncher {
@@ -43,6 +45,10 @@ func NewMockLauncher() *MockLauncher {
 	launcher.nextRunId = 100
 	launcher.submissionId = 0
 	return launcher
+}
+
+func (launcher *MockLauncher) SetPortfolioToReturn(portfolio *galasaapi.RunsPortfolio) {
+	launcher.mockPortfolioToReturn = portfolio
 }
 
 //-------------------------------------------------------------------
@@ -144,6 +150,14 @@ func (launcher *MockLauncher) GetStreams() ([]string, error) {
 // GetTestCatalog gets the test catalog for a given stream.
 func (launcher *MockLauncher) GetTestCatalog(stream string) (TestCatalog, error) {
 	return nil, nil
+}
+
+// CreateRunsPortfolio returns the configured mock portfolio, or an empty one if not set.
+func (launcher *MockLauncher) CreateRunsPortfolio(flags *utils.TestSelectionFlagValues, overrides map[string]string) (*galasaapi.RunsPortfolio, error) {
+	if launcher.mockPortfolioToReturn != nil {
+		return launcher.mockPortfolioToReturn, nil
+	}
+	return galasaapi.NewRunsPortfolioWithDefaults(), nil
 }
 
 // IsLocal returns false for the mock launcher

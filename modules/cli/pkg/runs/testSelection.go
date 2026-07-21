@@ -149,6 +149,29 @@ func AreSelectionFlagsProvided(flags *utils.TestSelectionFlagValues) bool {
 	return false
 }
 
+// SelectTestsViaPortfolioEndpoint calls POST /runs/portfolios on the API server and converts
+// the response into a TestSelection. This is the implementation used by `runs prepare`.
+func SelectTestsViaPortfolioEndpoint(launcherInstance launcher.Launcher, flags *utils.TestSelectionFlagValues, overrides map[string]string) (TestSelection, error) {
+	var testSelection TestSelection
+
+	portfolio, err := launcherInstance.CreateRunsPortfolio(flags, overrides)
+	if err == nil {
+		testSelection = TestSelection{Classes: make([]TestClass, 0)}
+		if portfolio != nil {
+			for _, portfolioClass := range portfolio.GetClasses() {
+				testSelection.Classes = append(testSelection.Classes, TestClass{
+					Bundle: portfolioClass.GetBundle(),
+					Class:  portfolioClass.GetClass(),
+					Stream: portfolioClass.GetStream(),
+					Obr:    portfolioClass.GetObr(),
+				})
+			}
+		}
+	}
+
+	return testSelection, err
+}
+
 func SelectTests(launcherInstance launcher.Launcher, flags *utils.TestSelectionFlagValues) (TestSelection, error) {
 
 	var testSelection TestSelection

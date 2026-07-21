@@ -11,6 +11,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
+	"github.com/galasa-dev/cli/pkg/galasaapi"
 	"github.com/galasa-dev/cli/pkg/launcher"
 )
 
@@ -117,4 +118,56 @@ func TestSelectTestMultiplesFromGherkinUrlArrayReturnsTests(t *testing.T) {
 	assert.Equal(t, testSelection.Classes[0].GherkinUrl, "gherkin.feature")
 	assert.Equal(t, testSelection.Classes[1].GherkinUrl, "test.feature")
 	assert.Equal(t, testSelection.Classes[2].GherkinUrl, "excellent.feature")
+}
+
+func TestSelectTestsViaPortfolioEndpointReturnsClassesFromResponse(t *testing.T) {
+	// Given...
+	mockLauncher := launcher.NewMockLauncher()
+
+	bundle := "com.example.bundle"
+	class := "com.example.tests.MyTest"
+	stream := "myStream"
+	obr := "mvn:com.example/my-obr/1.0.0/obr"
+
+	portfolioClass := galasaapi.NewRunsPortfolioClass()
+	portfolioClass.SetBundle(bundle)
+	portfolioClass.SetClass(class)
+	portfolioClass.SetStream(stream)
+	portfolioClass.SetObr(obr)
+
+	portfolio := galasaapi.NewRunsPortfolioWithDefaults()
+	portfolio.SetClasses([]galasaapi.RunsPortfolioClass{*portfolioClass})
+	mockLauncher.SetPortfolioToReturn(portfolio)
+
+	flags := NewTestSelectionFlagValues()
+	flags.Stream = stream
+	overrides := map[string]string{}
+
+	// When...
+	testSelection, err := SelectTestsViaPortfolioEndpoint(mockLauncher, flags, overrides)
+
+	// Then...
+	assert.Nil(t, err)
+	assert.Len(t, testSelection.Classes, 1)
+	assert.Equal(t, bundle, testSelection.Classes[0].Bundle)
+	assert.Equal(t, class, testSelection.Classes[0].Class)
+	assert.Equal(t, stream, testSelection.Classes[0].Stream)
+	assert.Equal(t, obr, testSelection.Classes[0].Obr)
+}
+
+func TestSelectTestsViaPortfolioEndpointWithEmptyResponseReturnsEmptySelection(t *testing.T) {
+	// Given...
+	mockLauncher := launcher.NewMockLauncher()
+	// MockLauncher returns empty portfolio by default
+
+	flags := NewTestSelectionFlagValues()
+	flags.Stream = "myStream"
+	overrides := map[string]string{}
+
+	// When...
+	testSelection, err := SelectTestsViaPortfolioEndpoint(mockLauncher, flags, overrides)
+
+	// Then...
+	assert.Nil(t, err)
+	assert.Empty(t, testSelection.Classes)
 }
