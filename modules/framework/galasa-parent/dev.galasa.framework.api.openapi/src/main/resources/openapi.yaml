@@ -318,15 +318,15 @@ paths:
       - $ref: '#/components/parameters/ClientApiVersion'
     post:
       operationId: createServiceToken
-      summary: Exchange an upstream OIDC token for a Galasa service token.
+      summary: Exchange an upstream OIDC token for a JWT.
       description: |
-        Creates a new Galasa service token for use by machine/CI callers by performing an
+        Creates a new JWT for use by machine/CI callers by performing an
         OAuth2 Token Exchange (RFC 8693) with the configured Dex identity provider. The
         caller provides an upstream OIDC token (e.g. a GitHub Actions JWT) and the ID of
-        the Dex connector that can validate it. On success, a Galasa token string is
-        returned that can be stored in a CI secret vault and used in subsequent API calls.
+        the Dex connector that can validate it. On success, a JWT is returned that can 
+        be used in subsequent API calls.
 
-        This endpoint does not require an existing Galasa JWT in the Authorization header.
+        This endpoint does not require an existing JWT in the Authorization header.
       tags:
       - Authentication API
       security: []
@@ -338,23 +338,13 @@ paths:
               $ref: '#/components/schemas/ServiceTokenRequest'
       responses:
         '201':
-          description: Returns a JSON object containing the new Galasa service token
+          description: Returns a JSON object containing the new JWT
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ServiceToken'
         '400':
-          description: Bad Request
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/APIError'
-              examples:
-                missingparametererror:
-                  value:
-                    error_code: 5100
-                    error_message: "GAL5100E: Invalid request body provided for service token creation. Ensure that connector_id, subject_token, and subject_token_type are present and that subject_token_type is one of the accepted values."
-                  summary: One or more required body properties are missing or invalid
+          $ref: "#/components/responses/BadRequest"
         '401':
           $ref: "#/components/responses/Unauthorized"
         '500':
@@ -3149,11 +3139,11 @@ components:
           type: string
           description: |
             The type of the subject token. Must be one of:
-            - `id_token`: Maps to `urn:ietf:params:oauth:token-type:id_token` — use this for GitHub Actions,
+            - `id_token`: Maps to `urn:ietf:params:oauth:token-type:id_token` - use this for GitHub Actions,
               GitLab CI, GCP, and other platforms that issue OIDC ID tokens
-            - `access_token`: Maps to `urn:ietf:params:oauth:token-type:access_token` — use this for platforms
+            - `access_token`: Maps to `urn:ietf:params:oauth:token-type:access_token` - use this for platforms
               that issue opaque or structured access tokens
-            - `jwt`: Maps to `urn:ietf:params:oauth:token-type:jwt` — use this for generic JWTs that
+            - `jwt`: Maps to `urn:ietf:params:oauth:token-type:jwt` - use this for generic JWTs that
               are not OIDC ID tokens
           enum:
             - id_token
@@ -3164,7 +3154,7 @@ components:
       properties:
         jwt:
           type: string
-          description: The Dex-issued ID token returned by the token exchange. Store this value as a CI secret and supply it as the GALASA_TOKEN environment variable.
+          description: The Dex-issued ID token returned by the token exchange.
     CpsProperty:
       type: object
       properties:
