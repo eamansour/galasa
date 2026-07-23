@@ -289,7 +289,6 @@ public class RunsPortfoliosRoute extends ProtectedRoute {
             classEntry.put("class", className);
             classEntry.put("stream", stream);
             classEntry.put("overrides", new LinkedHashMap<>(overrides));
-            classEntry.put("gherkin", "");
             resolvedClasses.add(classEntry);
         }
     }

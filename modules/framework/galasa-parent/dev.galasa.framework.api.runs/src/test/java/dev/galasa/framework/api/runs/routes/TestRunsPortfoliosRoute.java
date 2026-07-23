@@ -171,7 +171,6 @@ public class TestRunsPortfoliosRoute extends BaseServletTest {
         assertThat(classEntry.get("class").getAsString()).isEqualTo(className);
         assertThat(classEntry.get("stream").getAsString()).isEqualTo(streamName);
         assertThat(classEntry.has("overrides")).isTrue();
-        assertThat(classEntry.get("gherkin").getAsString()).isEmpty();
     }
 
     @Test
@@ -475,7 +474,6 @@ public class TestRunsPortfoliosRoute extends BaseServletTest {
         assertThat(classes.get(0).get("bundle")).isEqualTo(bundle);
         assertThat(classes.get(0).get("class")).isEqualTo(className);
         assertThat(classes.get(0).get("stream")).isEqualTo(streamName);
-        assertThat(classes.get(0).get("gherkin")).isEqualTo("");
     }
 
     @Test

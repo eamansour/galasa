@@ -4202,9 +4202,6 @@ components:
           description: The request's top-level overrides, echoed per class. Empty object if none were supplied.
           additionalProperties:
             type: string
-        gherkin:
-          type: string
-          description: Gherkin URL for the test. Always empty string for server-resolved classes.
 
 ##################################################################################
 # Security Schemas
