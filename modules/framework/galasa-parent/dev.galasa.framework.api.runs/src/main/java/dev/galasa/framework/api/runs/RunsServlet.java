@@ -42,19 +42,18 @@ public class RunsServlet extends BaseServlet {
 
     private Log logger = LogFactory.getLog(this.getClass());
 
-    private final HttpClient httpClientOverride;
+    private final HttpClient httpClient;
 
     public RunsServlet() {
-        this(new SystemEnvironment(), null);
-    }
-
-    public RunsServlet(Environment env) {
-        this(env, null);
+        this(new SystemEnvironment(), HttpClient.newBuilder()
+                .connectTimeout(CONNECTION_TIMEOUT)
+                .followRedirects(HttpClient.Redirect.NEVER)
+                .build());
     }
 
     public RunsServlet(Environment env, HttpClient httpClient) {
         super(env);
-        this.httpClientOverride = httpClient;
+        this.httpClient = httpClient;
     }
 
     @Override
@@ -63,18 +62,13 @@ public class RunsServlet extends BaseServlet {
 
         super.init();
         try {
-            HttpClient httpClient = (httpClientOverride != null) ? httpClientOverride
-                : HttpClient.newBuilder()
-                    .connectTimeout(CONNECTION_TIMEOUT)
-                    .followRedirects(HttpClient.Redirect.NEVER)
-                    .build();
 
             IStreamsService streamsService = framework.getStreamsService();
             ICredentialsService credentialsService = framework.getCredentialsService();
 
-            addRoute(new GroupRunsRoute(getResponseBuilder(), framework, env));
             addRoute(new RunsPortfoliosRoute(getResponseBuilder(), streamsService, credentialsService,
                 framework.getRBACService(), httpClient));
+            addRoute(new GroupRunsRoute(getResponseBuilder(), framework, env));
         } catch (RBACException e) {
             throw new ServletException("Failed to initialise schedule runs servlet");
         } catch (Exception e) {

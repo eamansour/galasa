@@ -10,6 +10,8 @@ dependencies {
     implementation project(':dev.galasa.framework.api.beans')
     implementation project(':dev.galasa.framework.api.common')
     implementation project(':dev.galasa.framework.api.authentication')
+    implementation 'org.yaml:snakeyaml'
+
     testImplementation(testFixtures(project(':dev.galasa.framework.api.common')))
     testImplementation(testFixtures(project(':dev.galasa.framework')))
 }

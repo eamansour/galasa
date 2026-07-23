@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.junit.Test;
+import org.yaml.snakeyaml.Yaml;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -119,8 +120,12 @@ public class TestRunsPortfoliosRoute extends BaseServletTest {
      * test covers that via the full servlet stack.
      */
     private MockHttpServletResponse invokePost(RunsPortfoliosRoute route, String body) throws Exception {
+        return invokePost(route, body, AUTH_HEADERS);
+    }
+
+    private MockHttpServletResponse invokePost(RunsPortfoliosRoute route, String body, Map<String, String> headers) throws Exception {
         MockEnvironment env = FilledMockEnvironment.createTestEnvironment();
-        MockHttpServletRequest request = new MockHttpServletRequest("/portfolios", body, "POST", AUTH_HEADERS);
+        MockHttpServletRequest request = new MockHttpServletRequest("/portfolios", body, "POST", headers);
         MockHttpServletResponse response = new MockHttpServletResponse();
         HttpRequestContext requestContext = new HttpRequestContext(request, env);
         route.handlePostRequest("/portfolios", requestContext, response);
@@ -156,13 +161,17 @@ public class TestRunsPortfoliosRoute extends BaseServletTest {
         // Then...
         assertThat(response.getStatus()).isEqualTo(200);
         JsonObject responseJson = JsonParser.parseString(response.getOutputStream().toString()).getAsJsonObject();
+        assertThat(responseJson.get("apiVersion").getAsString()).isEqualTo("v1alpha");
+        assertThat(responseJson.get("kind").getAsString()).isEqualTo("galasa.dev/testPortfolio");
+        assertThat(responseJson.getAsJsonObject("metadata").get("name").getAsString()).isEqualTo("adhoc");
         JsonArray classes = responseJson.getAsJsonArray("classes");
         assertThat(classes).hasSize(1);
-        assertThat(classes.get(0).getAsJsonObject().get("bundle").getAsString()).isEqualTo(bundle);
-        assertThat(classes.get(0).getAsJsonObject().get("class").getAsString()).isEqualTo(className);
-        assertThat(classes.get(0).getAsJsonObject().get("stream").getAsString()).isEqualTo(streamName);
-        assertThat(classes.get(0).getAsJsonObject().get("obr").getAsString())
-            .isEqualTo("mvn:com.example/my-obr/1.0.0/obr");
+        JsonObject classEntry = classes.get(0).getAsJsonObject();
+        assertThat(classEntry.get("bundle").getAsString()).isEqualTo(bundle);
+        assertThat(classEntry.get("class").getAsString()).isEqualTo(className);
+        assertThat(classEntry.get("stream").getAsString()).isEqualTo(streamName);
+        assertThat(classEntry.has("overrides")).isTrue();
+        assertThat(classEntry.get("gherkin").getAsString()).isEmpty();
     }
 
     @Test
@@ -198,6 +207,7 @@ public class TestRunsPortfoliosRoute extends BaseServletTest {
         // Then...
         assertThat(response.getStatus()).isEqualTo(200);
         JsonObject responseJson = JsonParser.parseString(response.getOutputStream().toString()).getAsJsonObject();
+        assertThat(responseJson.get("apiVersion").getAsString()).isEqualTo("v1alpha");
         JsonArray classes = responseJson.getAsJsonArray("classes");
         // Same catalog content for both streams — the mock always returns the same JSON.
         // The same bundle/class pair appears once per stream, so we expect >= 1 result.
@@ -366,36 +376,7 @@ public class TestRunsPortfoliosRoute extends BaseServletTest {
     }
 
     @Test
-    public void testObrPopulatedFromStreamConfiguration() throws Exception {
-        // Given...
-        String streamName = "myStream";
-        String bundle = "com.example";
-        String className = "com.example.TestA";
-        String catalogJson = createCatalogJson(bundle, className, "com.example", "smoke");
-        List<IStream> streams = List.of(makeStream(streamName,
-            "http://repo.com/catalog.json", "com.example.group", "my-obr", "2.5.0"));
-        RunsPortfoliosRoute route = createRoute(streams, catalogJson);
-
-        JsonObject filters = new JsonObject();
-        JsonArray tags = new JsonArray();
-        tags.add("smoke");
-        filters.add("tags", tags);
-        String body = buildRequestBody(streamName, filters);
-
-        // When...
-        MockHttpServletResponse response = invokePost(route, body);
-
-        // Then...
-        assertThat(response.getStatus()).isEqualTo(200);
-        JsonArray classes = JsonParser.parseString(response.getOutputStream().toString())
-            .getAsJsonObject().getAsJsonArray("classes");
-        assertThat(classes).hasSize(1);
-        assertThat(classes.get(0).getAsJsonObject().get("obr").getAsString())
-            .isEqualTo("mvn:com.example.group/my-obr/2.5.0/obr");
-    }
-
-    @Test
-    public void testOverridesAreEchoedInResponse() throws Exception {
+    public void testOverridesAreAppliedPerClass() throws Exception {
         // Given...
         String streamName = "myStream";
         String catalogJson = createCatalogJson("com.example", "com.example.TestA", "com.example", "smoke");
@@ -422,7 +403,218 @@ public class TestRunsPortfoliosRoute extends BaseServletTest {
         // Then...
         assertThat(response.getStatus()).isEqualTo(200);
         JsonObject responseJson = JsonParser.parseString(response.getOutputStream().toString()).getAsJsonObject();
-        assertThat(responseJson.has("overrides")).isTrue();
-        assertThat(responseJson.getAsJsonObject("overrides").get("zos.image").getAsString()).isEqualTo("SYSA");
+        // No top-level overrides field
+        assertThat(responseJson.has("overrides")).isFalse();
+        // Overrides are present on each class entry
+        JsonObject classEntry = responseJson.getAsJsonArray("classes").get(0).getAsJsonObject();
+        assertThat(classEntry.getAsJsonObject("overrides").get("zos.image").getAsString()).isEqualTo("SYSA");
+    }
+
+    @Test
+    public void testPerClassOverridesIsEmptyObjectWhenNoOverridesInRequest() throws Exception {
+        // Given...
+        String streamName = "myStream";
+        String catalogJson = createCatalogJson("com.example", "com.example.TestA", "com.example", "smoke");
+        List<IStream> streams = List.of(makeStream(streamName,
+            "http://repo.com/catalog.json", "com.example", "obr", "1.0.0"));
+        RunsPortfoliosRoute route = createRoute(streams, catalogJson);
+
+        JsonObject filters = new JsonObject();
+        JsonArray tags = new JsonArray();
+        tags.add("smoke");
+        filters.add("tags", tags);
+        String body = buildRequestBody(streamName, filters);
+
+        // When...
+        MockHttpServletResponse response = invokePost(route, body);
+
+        // Then...
+        assertThat(response.getStatus()).isEqualTo(200);
+        JsonObject responseJson = JsonParser.parseString(response.getOutputStream().toString()).getAsJsonObject();
+        JsonObject classEntry = responseJson.getAsJsonArray("classes").get(0).getAsJsonObject();
+        assertThat(classEntry.has("overrides")).isTrue();
+        assertThat(classEntry.getAsJsonObject("overrides").size()).isEqualTo(0);
+    }
+
+    @Test
+    @SuppressWarnings("unchecked")
+    public void testAcceptYamlReturnsValidYamlWithPortfolioStructure() throws Exception {
+        // Given...
+        String streamName = "myStream";
+        String bundle = "com.example";
+        String className = "com.example.TestA";
+        String catalogJson = createCatalogJson(bundle, className, "com.example", "smoke");
+        List<IStream> streams = List.of(makeStream(streamName,
+            "http://repo.com/catalog.json", "com.example", "my-obr", "1.0.0"));
+        RunsPortfoliosRoute route = createRoute(streams, catalogJson);
+
+        JsonObject filters = new JsonObject();
+        JsonArray tags = new JsonArray();
+        tags.add("smoke");
+        filters.add("tags", tags);
+        String body = buildRequestBody(streamName, filters);
+
+        Map<String, String> headers = Map.of(
+            "Authorization", "Bearer " + DUMMY_JWT,
+            "Accept", "application/yaml"
+        );
+
+        // When...
+        MockHttpServletResponse response = invokePost(route, body, headers);
+
+        // Then...
+        assertThat(response.getStatus()).isEqualTo(200);
+        assertThat(response.getContentType()).isEqualTo("application/yaml");
+        String yamlBody = response.getOutputStream().toString();
+        Map<String, Object> parsed = new Yaml().load(yamlBody);
+        assertThat(parsed.get("apiVersion")).isEqualTo("v1alpha");
+        assertThat(parsed.get("kind")).isEqualTo("galasa.dev/testPortfolio");
+        assertThat(((Map<String, Object>) parsed.get("metadata")).get("name")).isEqualTo("adhoc");
+        List<Map<String, Object>> classes = (List<Map<String, Object>>) parsed.get("classes");
+        assertThat(classes).hasSize(1);
+        assertThat(classes.get(0).get("bundle")).isEqualTo(bundle);
+        assertThat(classes.get(0).get("class")).isEqualTo(className);
+        assertThat(classes.get(0).get("stream")).isEqualTo(streamName);
+        assertThat(classes.get(0).get("gherkin")).isEqualTo("");
+    }
+
+    @Test
+    public void testNoAcceptHeaderReturnsJson() throws Exception {
+        // Given...
+        String streamName = "myStream";
+        String catalogJson = createCatalogJson("com.example", "com.example.TestA", "com.example", "smoke");
+        List<IStream> streams = List.of(makeStream(streamName,
+            "http://repo.com/catalog.json", "com.example", "obr", "1.0.0"));
+        RunsPortfoliosRoute route = createRoute(streams, catalogJson);
+
+        JsonObject filters = new JsonObject();
+        JsonArray tags = new JsonArray();
+        tags.add("smoke");
+        filters.add("tags", tags);
+        String body = buildRequestBody(streamName, filters);
+
+        // No Accept header (only auth)
+        // When...
+        MockHttpServletResponse response = invokePost(route, body);
+
+        // Then...
+        assertThat(response.getStatus()).isEqualTo(200);
+        assertThat(response.getContentType()).isEqualTo("application/json");
+        // Must be valid JSON
+        JsonObject responseJson = JsonParser.parseString(response.getOutputStream().toString()).getAsJsonObject();
+        assertThat(responseJson.get("apiVersion").getAsString()).isEqualTo("v1alpha");
+    }
+
+    @Test
+    public void testUnsupportedAcceptTypeReturns406() throws Exception {
+        // Given...
+        String streamName = "myStream";
+        String catalogJson = createCatalogJson("com.example", "com.example.TestA", "com.example", "smoke");
+        List<IStream> streams = List.of(makeStream(streamName,
+            "http://repo.com/catalog.json", "com.example", "obr", "1.0.0"));
+        RunsPortfoliosRoute route = createRoute(streams, catalogJson);
+
+        JsonObject filters = new JsonObject();
+        JsonArray tags = new JsonArray();
+        tags.add("smoke");
+        filters.add("tags", tags);
+        String body = buildRequestBody(streamName, filters);
+
+        Map<String, String> headers = Map.of(
+            "Authorization", "Bearer " + DUMMY_JWT,
+            "Accept", "text/plain"
+        );
+
+        // When / Then...
+        assertThatThrownBy(() -> invokePost(route, body, headers))
+            .isInstanceOfSatisfying(InternalServletException.class, thrown -> {
+                assertThat(thrown.getHttpFailureCode()).isEqualTo(406);
+            });
+    }
+
+    @Test
+    public void testWildcardAcceptReturnsJson() throws Exception {
+        // Given...
+        String streamName = "myStream";
+        String catalogJson = createCatalogJson("com.example", "com.example.TestA", "com.example", "smoke");
+        List<IStream> streams = List.of(makeStream(streamName,
+            "http://repo.com/catalog.json", "com.example", "obr", "1.0.0"));
+        RunsPortfoliosRoute route = createRoute(streams, catalogJson);
+
+        JsonObject filters = new JsonObject();
+        JsonArray tags = new JsonArray();
+        tags.add("smoke");
+        filters.add("tags", tags);
+        String body = buildRequestBody(streamName, filters);
+
+        Map<String, String> headers = Map.of(
+            "Authorization", "Bearer " + DUMMY_JWT,
+            "Accept", "application/*"
+        );
+
+        // When...
+        MockHttpServletResponse response = invokePost(route, body, headers);
+
+        // Then...
+        assertThat(response.getStatus()).isEqualTo(200);
+        assertThat(response.getContentType()).isEqualTo("application/json");
+        JsonObject responseJson = JsonParser.parseString(response.getOutputStream().toString()).getAsJsonObject();
+        assertThat(responseJson.get("apiVersion").getAsString()).isEqualTo("v1alpha");
+    }
+
+    @Test
+    public void testInvalidOverrideKeyReturns400() throws Exception {
+        // Given...
+        RunsPortfoliosRoute route = createRoute(List.of(), null);
+
+        JsonObject request = new JsonObject();
+        JsonArray selections = new JsonArray();
+        JsonObject sel = new JsonObject();
+        sel.addProperty("stream", "myStream");
+        selections.add(sel);
+        request.add("selections", selections);
+        JsonObject overrides = new JsonObject();
+        overrides.addProperty("!!bad key with spaces!!", "value");
+        request.add("overrides", overrides);
+
+        // When / Then...
+        assertThatThrownBy(() -> invokePost(route, request.toString()))
+            .isInstanceOfSatisfying(InternalServletException.class, thrown -> {
+                assertThat(thrown.getHttpFailureCode()).isEqualTo(400);
+                try {
+                    checkErrorStructure(thrown.getMessage(), 5470, "GAL5470E");
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+            });
+    }
+
+    @Test
+    public void testValidOverrideKeyPassesValidation() throws Exception {
+        // Given...
+        String streamName = "myStream";
+        String catalogJson = createCatalogJson("com.example", "com.example.TestA", "com.example", "smoke");
+        List<IStream> streams = List.of(makeStream(streamName,
+            "http://repo.com/catalog.json", "com.example", "obr", "1.0.0"));
+        RunsPortfoliosRoute route = createRoute(streams, catalogJson);
+
+        JsonObject request = new JsonObject();
+        JsonArray selections = new JsonArray();
+        JsonObject sel = new JsonObject();
+        sel.addProperty("stream", streamName);
+        JsonArray tags = new JsonArray();
+        tags.add("smoke");
+        sel.add("tags", tags);
+        selections.add(sel);
+        request.add("selections", selections);
+        JsonObject overrides = new JsonObject();
+        overrides.addProperty("zos.default.credentials.id", "SYS1");
+        request.add("overrides", overrides);
+
+        // When...
+        MockHttpServletResponse response = invokePost(route, request.toString());
+
+        // Then - valid key must not cause a 400
+        assertThat(response.getStatus()).isEqualTo(200);
     }
 }

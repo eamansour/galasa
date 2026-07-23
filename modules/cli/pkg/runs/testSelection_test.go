@@ -127,13 +127,11 @@ func TestSelectTestsViaPortfolioEndpointReturnsClassesFromResponse(t *testing.T)
 	bundle := "com.example.bundle"
 	class := "com.example.tests.MyTest"
 	stream := "myStream"
-	obr := "mvn:com.example/my-obr/1.0.0/obr"
 
 	portfolioClass := galasaapi.NewRunsPortfolioClass()
 	portfolioClass.SetBundle(bundle)
 	portfolioClass.SetClass(class)
 	portfolioClass.SetStream(stream)
-	portfolioClass.SetObr(obr)
 
 	portfolio := galasaapi.NewRunsPortfolioWithDefaults()
 	portfolio.SetClasses([]galasaapi.RunsPortfolioClass{*portfolioClass})
@@ -152,7 +150,7 @@ func TestSelectTestsViaPortfolioEndpointReturnsClassesFromResponse(t *testing.T)
 	assert.Equal(t, bundle, testSelection.Classes[0].Bundle)
 	assert.Equal(t, class, testSelection.Classes[0].Class)
 	assert.Equal(t, stream, testSelection.Classes[0].Stream)
-	assert.Equal(t, obr, testSelection.Classes[0].Obr)
+	assert.Equal(t, "", testSelection.Classes[0].Obr)
 }
 
 func TestSelectTestsViaPortfolioEndpointWithEmptyResponseReturnsEmptySelection(t *testing.T) {

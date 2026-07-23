@@ -5,6 +5,7 @@
  */
 package dev.galasa.framework.api.runs.routes;
 
+import static dev.galasa.framework.api.common.MimeType.*;
 import static dev.galasa.framework.api.common.ServletErrorMessage.*;
 
 import java.io.IOException;
@@ -13,6 +14,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -23,12 +25,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.google.gson.JsonArray;
+import org.yaml.snakeyaml.DumperOptions;
+import org.yaml.snakeyaml.Yaml;
+
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
-import dev.galasa.framework.api.beans.generated.RunsPortfolioClass;
 import dev.galasa.framework.api.beans.generated.RunsPortfolioRequest;
 import dev.galasa.framework.api.beans.generated.RunsPortfolioSelection;
 import dev.galasa.framework.api.common.HttpRequestContext;
@@ -43,7 +46,6 @@ import dev.galasa.framework.api.runs.validators.RunsPortfolioRequestValidator;
 import dev.galasa.framework.spi.FrameworkException;
 import dev.galasa.framework.spi.creds.ICredentialsService;
 import dev.galasa.framework.spi.rbac.RBACService;
-import dev.galasa.framework.spi.streams.IOBR;
 import dev.galasa.framework.spi.streams.IStream;
 import dev.galasa.framework.spi.streams.IStreamsService;
 import dev.galasa.framework.spi.streams.StreamsException;
@@ -59,6 +61,12 @@ public class RunsPortfoliosRoute extends ProtectedRoute {
 
     // Regex to match exactly /portfolios or /portfolios/
     protected static final String path = "\\/portfolios\\/?";
+
+    private static final List<MimeType> SUPPORTED_CONTENT_TYPES = List.of(APPLICATION_JSON, APPLICATION_YAML);
+
+    private static final String PORTFOLIO_API_VERSION = "v1alpha";
+    private static final String PORTFOLIO_KIND = "galasa.dev/testPortfolio";
+    private static final String PORTFOLIO_METADATA_NAME = "adhoc";
 
     private final IStreamsService streamsService;
     private final ITestCatalogFetcher catalogFetcher;
@@ -100,17 +108,18 @@ public class RunsPortfoliosRoute extends ProtectedRoute {
         RunsPortfolioRequest portfolioRequest = gson.fromJson(body, RunsPortfolioRequest.class);
         validator.validate(portfolioRequest);
 
+        String responseContentType = getResponseType(request.getHeader("Accept"), APPLICATION_JSON, SUPPORTED_CONTENT_TYPES);
         Map<String, String> overrides = parseOverrides(body);
+        validator.validateOverrideKeys(overrides);
 
         // Create deduplication keys in the form "stream/bundle/class" to avoid adding the same test again
         Set<String> seenClasses = new HashSet<>();
-        List<RunsPortfolioClass> resolvedClasses = new ArrayList<>();
+        List<Map<String, Object>> resolvedClasses = new ArrayList<>();
 
         for (RunsPortfolioSelection selection : portfolioRequest.getselections()) {
             String streamName = selection.getstream();
 
             IStream stream = getStreamByName(streamName);
-            String obr = resolveObr(stream);
             boolean isRegexEnabled = selection.getregex();
 
             List<Pattern> bundlePatterns = buildPatterns(selection.getbundles(), isRegexEnabled);
@@ -127,7 +136,7 @@ public class RunsPortfoliosRoute extends ProtectedRoute {
                         throw new InternalServletException(error, HttpServletResponse.SC_BAD_REQUEST);
                     }
                     addResolvedClass(resolvedClasses, seenClasses,
-                        classSelector.substring(0, slash), classSelector.substring(slash + 1), streamName, obr);
+                        classSelector.substring(0, slash), classSelector.substring(slash + 1), streamName, overrides);
                 }
             }
 
@@ -152,7 +161,7 @@ public class RunsPortfoliosRoute extends ProtectedRoute {
                                 || !testPatterns.isEmpty() && matchesAnyPattern(className, testPatterns)
                                 || !tagPatterns.isEmpty() && matchesAnyTag(classDef, tagPatterns)
                             ) {
-                                addResolvedClass(resolvedClasses, seenClasses, bundle, className, streamName, obr);
+                                addResolvedClass(resolvedClasses, seenClasses, bundle, className, streamName, overrides);
                             }
                         }
                     }
@@ -160,8 +169,12 @@ public class RunsPortfoliosRoute extends ProtectedRoute {
             }
         }
 
-        String responseBody = buildResponseJson(resolvedClasses, overrides);
-        return getResponseBuilder().buildResponse(request, response, MimeType.APPLICATION_JSON.toString(),
+        Map<String, Object> doc = buildPortfolioDocument(resolvedClasses);
+        String responseBody = responseContentType.equals(APPLICATION_YAML.toString())
+            ? serialiseToYaml(doc)
+            : serialiseToJson(doc);
+
+        return getResponseBuilder().buildResponse(request, response, responseContentType,
             responseBody, HttpServletResponse.SC_OK);
     }
 
@@ -179,20 +192,28 @@ public class RunsPortfoliosRoute extends ProtectedRoute {
         return overrides;
     }
 
-    private String buildResponseJson(List<RunsPortfolioClass> resolvedClasses, Map<String, String> overrides) {
-        JsonArray classesArray = gson.toJsonTree(resolvedClasses.toArray(new RunsPortfolioClass[0])).getAsJsonArray();
-        JsonObject responseJson = new JsonObject();
-        responseJson.add("classes", classesArray);
+    private Map<String, Object> buildPortfolioDocument(List<Map<String, Object>> resolvedClasses) {
+        Map<String, Object> metadata = new LinkedHashMap<>();
+        metadata.put("name", PORTFOLIO_METADATA_NAME);
 
-        if (!overrides.isEmpty()) {
-            JsonObject overridesJson = new JsonObject();
-            for (Map.Entry<String, String> entry : overrides.entrySet()) {
-                overridesJson.addProperty(entry.getKey(), entry.getValue());
-            }
-            responseJson.add("overrides", overridesJson);
-        }
+        Map<String, Object> doc = new LinkedHashMap<>();
+        doc.put("apiVersion", PORTFOLIO_API_VERSION);
+        doc.put("kind", PORTFOLIO_KIND);
+        doc.put("metadata", metadata);
+        doc.put("classes", resolvedClasses);
 
-        return gson.toJson(responseJson);
+        return doc;
+    }
+
+    private String serialiseToJson(Map<String, Object> doc) {
+        return gson.toJson(doc);
+    }
+
+    private String serialiseToYaml(Map<String, Object> doc) {
+        DumperOptions options = new DumperOptions();
+        options.setDefaultFlowStyle(DumperOptions.FlowStyle.BLOCK);
+        options.setPrettyFlow(true);
+        return new Yaml(options).dump(doc);
     }
 
     private IStream getStreamByName(String streamName) throws InternalServletException, FrameworkException {
@@ -207,15 +228,6 @@ public class RunsPortfoliosRoute extends ProtectedRoute {
             ServletError error = new ServletError(GAL5468_RUNS_PORTFOLIO_STREAM_NOT_FOUND, streamName);
             throw new InternalServletException(error, HttpServletResponse.SC_NOT_FOUND, e);
         }
-    }
-
-    private String resolveObr(IStream stream) {
-        List<IOBR> obrs = stream.getObrs();
-        if (obrs == null || obrs.isEmpty()) {
-            return null;
-        }
-        IOBR obr = obrs.get(0);
-        return obr.toString();
     }
 
     private List<Pattern> buildPatterns(String[] values, boolean isRegexEnabled) throws InternalServletException {
@@ -236,8 +248,8 @@ public class RunsPortfoliosRoute extends ProtectedRoute {
 
     private boolean matchesAnyPattern(String value, List<Pattern> patterns) {
         boolean isMatchFound = false;
-        for (Pattern p : patterns) {
-            if (p.matcher(value).find()) {
+        for (Pattern pattern : patterns) {
+            if (pattern.matcher(value).find()) {
                 isMatchFound = true;
                 break;
             }
@@ -249,7 +261,7 @@ public class RunsPortfoliosRoute extends ProtectedRoute {
         if (classDef.has("tags") && classDef.get("tags").isJsonNull()) {
             return false;
         }
-        
+
         boolean isMatchFound = false;
         for (JsonElement tagElem : classDef.getAsJsonArray("tags")) {
             if (matchesAnyPattern(tagElem.getAsString(), tagPatterns)) {
@@ -261,22 +273,24 @@ public class RunsPortfoliosRoute extends ProtectedRoute {
     }
 
     private void addResolvedClass(
-        List<RunsPortfolioClass> resolvedClasses,
+        List<Map<String, Object>> resolvedClasses,
         Set<String> seenClasses,
         String bundle,
         String className,
         String stream,
-        String obr
+        Map<String, String> overrides
     ) {
         String key = stream + "/" + bundle + "/" + className;
         if (!seenClasses.contains(key)) {
             seenClasses.add(key);
-            RunsPortfolioClass classObj = new RunsPortfolioClass();
-            classObj.setbundle(bundle);
-            classObj.setClassValue(className);
-            classObj.setstream(stream);
-            classObj.setobr(obr);
-            resolvedClasses.add(classObj);
+
+            Map<String, Object> classEntry = new LinkedHashMap<>();
+            classEntry.put("bundle", bundle);
+            classEntry.put("class", className);
+            classEntry.put("stream", stream);
+            classEntry.put("overrides", new LinkedHashMap<>(overrides));
+            classEntry.put("gherkin", "");
+            resolvedClasses.add(classEntry);
         }
     }
 }

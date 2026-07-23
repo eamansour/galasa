@@ -17,7 +17,7 @@ import dev.galasa.framework.spi.IFramework;
 public class MockRunsServlet extends RunsServlet implements IServletUnderTest {
 
     public MockRunsServlet(Environment env, IFramework framework) {
-        super(env);
+        super.env = env;
         setResponseBuilder(new ResponseBuilder(env));
         super.framework = framework;
     }

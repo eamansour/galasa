@@ -2318,6 +2318,10 @@ paths:
         array targets one named stream and carries its own filter criteria. Results
         from all entries are merged and deduplicated before being returned.
 
+        The response format is controlled by the `Accept` request header. Supported
+        formats are `application/json` and `application/yaml`. When no `Accept` header
+        is supplied, the response defaults to `application/json`.
+
         Requests to this endpoint require a valid bearer token in JWT format to be
         provided in the 'Authorization' header (e.g. 'Authorization: Bearer <bearer-token>').
       operationId: createRunsPortfolio
@@ -2337,6 +2341,9 @@ paths:
             an error condition.
           content:
             application/json:
+              schema:
+                $ref: '#/components/schemas/RunsPortfolio'
+            application/yaml:
               schema:
                 $ref: '#/components/schemas/RunsPortfolio'
         '400':
@@ -4156,16 +4163,27 @@ components:
     RunsPortfolio:
       type: object
       properties:
+        apiVersion:
+          type: string
+          description: The portfolio document format version.
+          example: v1alpha
+        kind:
+          type: string
+          description: The resource kind.
+          enum: [galasa.dev/testPortfolio]
+        metadata:
+          type: object
+          description: Portfolio document metadata.
+          properties:
+            name:
+              type: string
+              description: The portfolio name. Always `adhoc` for server-resolved portfolios.
+              example: adhoc
         classes:
           type: array
           description: The resolved set of test classes matching all selection criteria.
           items:
             $ref: '#/components/schemas/RunsPortfolioClass'
-        overrides:
-          type: object
-          description: The overrides provided in the request, echoed back unchanged.
-          additionalProperties:
-            type: string
 
     RunsPortfolioClass:
       type: object
@@ -4179,9 +4197,14 @@ components:
         stream:
           type: string
           description: The name of the stream this class was resolved from.
-        obr:
+        overrides:
+          type: object
+          description: The request's top-level overrides, echoed per class. Empty object if none were supplied.
+          additionalProperties:
+            type: string
+        gherkin:
           type: string
-          description: The OBR Maven coordinate for the stream, e.g. mvn:group/artifact/version/obr.
+          description: Gherkin URL for the test. Always empty string for server-resolved classes.
 
 ##################################################################################
 # Security Schemas

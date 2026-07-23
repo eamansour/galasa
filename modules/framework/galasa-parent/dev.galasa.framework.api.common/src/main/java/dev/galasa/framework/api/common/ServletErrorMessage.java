@@ -236,6 +236,7 @@ public enum ServletErrorMessage {
     GAL5467_RUNS_PORTFOLIO_INVALID_REGEX              (5467, "E: Invalid regular expression ''{0}'' in runs portfolio request. Check your request payload and try again."),
     GAL5468_RUNS_PORTFOLIO_STREAM_NOT_FOUND           (5468, "E: Unable to resolve portfolio. No stream named ''{0}'' exists. Check your request payload and try again."),
     GAL5469_RUNS_PORTFOLIO_CATALOG_FETCH_FAILED       (5469, "E: Failed to fetch the test catalog for stream ''{0}''. The remote server may be unavailable or experiencing issues."),
+    GAL5470_RUNS_PORTFOLIO_INVALID_OVERRIDE_KEY       (5470, "E: Invalid override key ''{0}''. Override keys must be valid CPS property names: starting with a letter, containing only letters, digits, and the separators ''.'' ''-'' ''_'' ''@'', with at least one dot and no trailing dot. Check your request payload and try again."),
     ;
 
     // >>>
@@ -244,7 +245,7 @@ public enum ServletErrorMessage {
     // >>>       Unit tests guarantee that this number is 'free' to use for a new error message.
     // >>>       If you do use this number for a new error template, please incriment this value.
     // >>>
-    public static final int GALxxx_NEXT_MESSAGE_NUMBER_TO_USE = 5470;
+    public static final int GALxxx_NEXT_MESSAGE_NUMBER_TO_USE = 5471;
 
 
     private String template ;

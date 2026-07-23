@@ -163,7 +163,7 @@ func SelectTestsViaPortfolioEndpoint(launcherInstance launcher.Launcher, flags *
 					Bundle: portfolioClass.GetBundle(),
 					Class:  portfolioClass.GetClass(),
 					Stream: portfolioClass.GetStream(),
-					Obr:    portfolioClass.GetObr(),
+					Obr:    "",
 				})
 			}
 		}
