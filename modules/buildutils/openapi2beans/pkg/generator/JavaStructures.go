@@ -30,8 +30,6 @@ var javaReservedKeywords = map[string]bool{
 	"switch": true, "synchronized": true, "this": true, "throw": true,
 	"throws": true, "transient": true, "try": true, "void": true,
 	"volatile": true, "while": true,
-	// literals
-	"true": true, "false": true, "null": true,
 }
 
 type JavaPackage struct {

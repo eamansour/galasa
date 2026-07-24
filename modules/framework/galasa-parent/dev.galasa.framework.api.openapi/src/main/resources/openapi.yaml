@@ -4149,8 +4149,9 @@ components:
         classes:
           type: array
           description: >
-            Explicit class selectors in `bundle/fully.qualified.ClassName` format.
-            Classes listed here are included directly without catalog lookup.
+            Class name filters. A class is included if its fully qualified class name contains
+            any of these values (substring match) or matches any as a regex when
+            `regex` is true.
           items:
             type: string
         regex:

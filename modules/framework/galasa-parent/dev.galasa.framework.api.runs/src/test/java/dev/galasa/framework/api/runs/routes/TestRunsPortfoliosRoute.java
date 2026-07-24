@@ -250,6 +250,36 @@ public class TestRunsPortfoliosRoute extends BaseServletTest {
     }
 
     @Test
+    public void testClassesFilterMatchesAgainstCatalog() throws Exception {
+        // Given...
+        String streamName = "myStream";
+        String bundle = "com.example";
+        String className = "com.example.tests.HttpManagerIVT";
+        String pkg = "com.example.tests";
+        String catalogJson = createCatalogJson(bundle, className, pkg, "smoke");
+        List<IStream> streams = List.of(makeStream(streamName,
+            "http://repo.com/catalog.json", "com.example", "obr", "1.0.0"));
+        RunsPortfoliosRoute route = createRoute(streams, catalogJson);
+
+        JsonObject filters = new JsonObject();
+        JsonArray classes = new JsonArray();
+        classes.add("HttpManagerIVT");
+        filters.add("classes", classes);
+        String body = buildRequestBody(streamName, filters);
+
+        // When...
+        MockHttpServletResponse response = invokePost(route, body);
+
+        // Then...
+        assertThat(response.getStatus()).isEqualTo(200);
+        JsonArray resultClasses = JsonParser.parseString(response.getOutputStream().toString())
+            .getAsJsonObject().getAsJsonArray("classes");
+        assertThat(resultClasses).hasSize(1);
+        assertThat(resultClasses.get(0).getAsJsonObject().get("class").getAsString()).isEqualTo(className);
+        assertThat(resultClasses.get(0).getAsJsonObject().get("bundle").getAsString()).isEqualTo(bundle);
+    }
+
+    @Test
     public void testEmptyResultSetReturns200WithEmptyArray() throws Exception {
         // Given...
         String streamName = "myStream";
@@ -614,5 +644,142 @@ public class TestRunsPortfoliosRoute extends BaseServletTest {
 
         // Then - valid key must not cause a 400
         assertThat(response.getStatus()).isEqualTo(200);
+    }
+
+    @Test
+    public void testNestedQuantifierRegexReturns400() throws Exception {
+        // Given — "(a+)+" is a classic ReDoS pattern
+        String streamName = "myStream";
+        String catalogJson = createCatalogJson("com.example", "com.example.TestA", "com.example");
+        List<IStream> streams = List.of(makeStream(streamName,
+            "http://repo.com/catalog.json", "com.example", "obr", "1.0.0"));
+        RunsPortfoliosRoute route = createRoute(streams, catalogJson);
+
+        JsonObject filters = new JsonObject();
+        JsonArray bundles = new JsonArray();
+        bundles.add("(a+)+");
+        filters.add("bundles", bundles);
+        filters.addProperty("regex", true);
+        String body = buildRequestBody(streamName, filters);
+
+        // When / Then...
+        assertThatThrownBy(() -> invokePost(route, body))
+            .isInstanceOfSatisfying(InternalServletException.class, thrown -> {
+                assertThat(thrown.getHttpFailureCode()).isEqualTo(400);
+                try {
+                    checkErrorStructure(thrown.getMessage(), 5471, "GAL5471E");
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+            });
+    }
+
+    @Test
+    public void testNestedStarQuantifierRegexReturns400() throws Exception {
+        // Given — "(a*)* triggers catastrophic backtracking
+        String streamName = "myStream";
+        String catalogJson = createCatalogJson("com.example", "com.example.TestA", "com.example");
+        List<IStream> streams = List.of(makeStream(streamName,
+            "http://repo.com/catalog.json", "com.example", "obr", "1.0.0"));
+        RunsPortfoliosRoute route = createRoute(streams, catalogJson);
+
+        JsonObject filters = new JsonObject();
+        JsonArray tags = new JsonArray();
+        tags.add("(a*)*");
+        filters.add("tags", tags);
+        filters.addProperty("regex", true);
+        String body = buildRequestBody(streamName, filters);
+
+        // When / Then...
+        assertThatThrownBy(() -> invokePost(route, body))
+            .isInstanceOfSatisfying(InternalServletException.class, thrown -> {
+                assertThat(thrown.getHttpFailureCode()).isEqualTo(400);
+                try {
+                    checkErrorStructure(thrown.getMessage(), 5471, "GAL5471E");
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+            });
+    }
+
+    @Test
+    public void testSafeRegexWithQuantifierPassesValidation() throws Exception {
+        // Given — "com\.example\.\w+" is safe: quantifier is not inside a group with a quantifier
+        String streamName = "myStream";
+        String catalogJson = createCatalogJson("com.example", "com.example.TestA", "com.example");
+        List<IStream> streams = List.of(makeStream(streamName,
+            "http://repo.com/catalog.json", "com.example", "obr", "1.0.0"));
+        RunsPortfoliosRoute route = createRoute(streams, catalogJson);
+
+        JsonObject filters = new JsonObject();
+        JsonArray bundles = new JsonArray();
+        bundles.add("com\\.example\\.\\w+");
+        filters.add("bundles", bundles);
+        filters.addProperty("regex", true);
+        String body = buildRequestBody(streamName, filters);
+
+        // When...
+        MockHttpServletResponse response = invokePost(route, body);
+
+        // Then — no 400 from the complexity check
+        assertThat(response.getStatus()).isEqualTo(200);
+    }
+
+    @Test
+    public void testComplexityCheckOnlyAppliesToRegexMode() throws Exception {
+        // Given — "(a+)+" is a literal string in non-regex mode; must not be rejected
+        String streamName = "myStream";
+        String catalogJson = createCatalogJson("com.example", "com.example.TestA", "com.example");
+        List<IStream> streams = List.of(makeStream(streamName,
+            "http://repo.com/catalog.json", "com.example", "obr", "1.0.0"));
+        RunsPortfoliosRoute route = createRoute(streams, catalogJson);
+
+        JsonObject filters = new JsonObject();
+        JsonArray bundles = new JsonArray();
+        bundles.add("(a+)+");
+        filters.add("bundles", bundles);
+        // regex defaults to false — no complexity check should run
+        String body = buildRequestBody(streamName, filters);
+
+        // When...
+        MockHttpServletResponse response = invokePost(route, body);
+
+        // Then — treated as a literal substring filter, no error
+        assertThat(response.getStatus()).isEqualTo(200);
+    }
+
+    @Test
+    public void testNoFiltersReturnsAllClassesInStream() throws Exception {
+        // Given — catalog contains two classes; selection specifies only a stream name with no filters
+        String streamName = "myStream";
+        String bundle = "com.example";
+        String pkg = "com.example";
+        JsonObject catalog = new JsonObject();
+        JsonObject classes = new JsonObject();
+        for (String cls : List.of("com.example.TestA", "com.example.TestB")) {
+            JsonObject classDef = new JsonObject();
+            classDef.addProperty("bundle", bundle);
+            classDef.addProperty("name", cls);
+            classDef.addProperty("package", pkg);
+            classDef.add("tags", new JsonArray());
+            classes.add(bundle + "/" + cls, classDef);
+        }
+        catalog.add("classes", classes);
+
+        List<IStream> streams = List.of(makeStream(streamName,
+            "http://repo.com/catalog.json", "com.example", "obr", "1.0.0"));
+        RunsPortfoliosRoute route = createRoute(streams, catalog.toString());
+
+        // No filters — stream name only
+        String body = buildRequestBody(streamName, null);
+
+        // When...
+        MockHttpServletResponse response = invokePost(route, body);
+
+        // Then — both classes are returned
+        assertThat(response.getStatus()).isEqualTo(200);
+        JsonArray resultClasses = JsonParser.parseString(response.getOutputStream().toString())
+            .getAsJsonObject().getAsJsonArray("classes");
+        assertThat(resultClasses).hasSize(2);
     }
 }

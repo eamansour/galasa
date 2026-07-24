@@ -68,6 +68,8 @@ public class RunsPortfoliosRoute extends ProtectedRoute {
     private static final String PORTFOLIO_KIND = "galasa.dev/testPortfolio";
     private static final String PORTFOLIO_METADATA_NAME = "adhoc";
 
+    private static final String REGEX_QUANTIFIER_CHARS = "+*?{";
+
     private final IStreamsService streamsService;
     private final ITestCatalogFetcher catalogFetcher;
     private final RunsPortfolioRequestValidator validator;
@@ -125,44 +127,32 @@ public class RunsPortfoliosRoute extends ProtectedRoute {
             List<Pattern> bundlePatterns = buildPatterns(selection.getbundles(), isRegexEnabled);
             List<Pattern> packagePatterns = buildPatterns(selection.getpackages(), isRegexEnabled);
             List<Pattern> testPatterns = buildPatterns(selection.gettests(), isRegexEnabled);
+            List<Pattern> classPatterns = buildPatterns(selection.getclasses(), isRegexEnabled);
             List<Pattern> tagPatterns = buildPatterns(selection.gettags(), isRegexEnabled);
 
-            // Explicit classes — bypass catalog
-            if (selection.getclasses() != null) {
-                for (String classSelector : selection.getclasses()) {
-                    int slash = classSelector.indexOf('/');
-                    if (slash < 1 || slash == classSelector.length() - 1) {
-                        ServletError error = new ServletError(GAL5466_RUNS_PORTFOLIO_INVALID_CLASS_FORMAT, classSelector);
-                        throw new InternalServletException(error, HttpServletResponse.SC_BAD_REQUEST);
-                    }
-                    addResolvedClass(resolvedClasses, seenClasses,
-                        classSelector.substring(0, slash), classSelector.substring(slash + 1), streamName, overrides);
-                }
-            }
-
             boolean hasTestCatalogFilter = !bundlePatterns.isEmpty() || !packagePatterns.isEmpty()
-                || !testPatterns.isEmpty() || !tagPatterns.isEmpty();
+                || !testPatterns.isEmpty() || !classPatterns.isEmpty() || !tagPatterns.isEmpty();
 
-            if (hasTestCatalogFilter) {
-                String testCatalogJson = catalogFetcher.fetchTestCatalog(stream);
+            String testCatalogJson = catalogFetcher.fetchTestCatalog(stream);
 
-                if (testCatalogJson != null) {
+            if (testCatalogJson != null) {
 
-                    JsonObject testCatalog = JsonParser.parseString(testCatalogJson).getAsJsonObject();
-                    if (testCatalog.has("classes")) {
-                        for (Map.Entry<String, JsonElement> entry : testCatalog.getAsJsonObject("classes").entrySet()) {
-                            JsonObject classDef = entry.getValue().getAsJsonObject();
-                            String bundle = classDef.has("bundle") ? classDef.get("bundle").getAsString() : "";
-                            String className = classDef.has("name") ? classDef.get("name").getAsString() : "";
-                            String pkg = classDef.has("package") ? classDef.get("package").getAsString() : "";
+                JsonObject testCatalog = JsonParser.parseString(testCatalogJson).getAsJsonObject();
+                if (testCatalog.has("classes")) {
+                    for (Map.Entry<String, JsonElement> entry : testCatalog.getAsJsonObject("classes").entrySet()) {
+                        JsonObject classDef = entry.getValue().getAsJsonObject();
+                        String bundle = classDef.has("bundle") ? classDef.get("bundle").getAsString() : "";
+                        String className = classDef.has("name") ? classDef.get("name").getAsString() : "";
+                        String pkg = classDef.has("package") ? classDef.get("package").getAsString() : "";
 
-                            if (!bundlePatterns.isEmpty() && matchesAnyPattern(bundle, bundlePatterns)
-                                || !packagePatterns.isEmpty() && matchesAnyPattern(pkg, packagePatterns)
-                                || !testPatterns.isEmpty() && matchesAnyPattern(className, testPatterns)
-                                || !tagPatterns.isEmpty() && matchesAnyTag(classDef, tagPatterns)
-                            ) {
-                                addResolvedClass(resolvedClasses, seenClasses, bundle, className, streamName, overrides);
-                            }
+                        if (!hasTestCatalogFilter
+                            || !bundlePatterns.isEmpty() && matchesAnyPattern(bundle, bundlePatterns)
+                            || !packagePatterns.isEmpty() && matchesAnyPattern(pkg, packagePatterns)
+                            || !testPatterns.isEmpty() && matchesAnyPattern(className, testPatterns)
+                            || !classPatterns.isEmpty() && matchesAnyPattern(className, classPatterns)
+                            || !tagPatterns.isEmpty() && matchesAnyTag(classDef, tagPatterns)
+                        ) {
+                            addResolvedClass(resolvedClasses, seenClasses, bundle, className, streamName, overrides);
                         }
                     }
                 }
@@ -235,6 +225,9 @@ public class RunsPortfoliosRoute extends ProtectedRoute {
 
         if (values != null) {
             for (String value : values) {
+                if (isRegexEnabled) {
+                    checkRegexComplexity(value);
+                }
                 try {
                     patterns.add(isRegexEnabled ? Pattern.compile(value) : Pattern.compile(Pattern.quote(value)));
                 } catch (PatternSyntaxException e) {
@@ -244,6 +237,59 @@ public class RunsPortfoliosRoute extends ProtectedRoute {
             }
         }
         return patterns;
+    }
+
+    /**
+     * Rejects regex patterns that contain nested quantifiers, which can cause
+     * catastrophic backtracking (ReDoS). A nested quantifier is a quantifier
+     * ({@code +}, {@code *}, {@code ?}, or {@code {n,m}}) applied directly to a
+     * group that itself contains a quantifier, e.g. {@code (a+)+}.
+     *
+     * The check walks the pattern character by character, tracking the nesting
+     * depth of capturing and non-capturing groups. For each group it records
+     * whether that group's body contained a quantifier. When the group is closed
+     * and immediately followed by a quantifier, and the body flag is set, the
+     * pattern is rejected.
+     *
+     * Escaped characters (preceded by {@code \}) are skipped so that literal
+     * {@code \+}, {@code \*}, etc. do not trigger a false positive.
+     * 
+     * @param pattern the regex pattern to validate
+     */
+    private void checkRegexComplexity(String pattern) throws InternalServletException {
+        // Stack entry: whether the group at this depth has seen a quantifier in its body
+        List<Boolean> groupHasQuantifier = new ArrayList<>();
+        boolean isEscaped = false;
+
+        for (int i = 0; i < pattern.length(); i++) {
+            char patternChar = pattern.charAt(i);
+
+            if (isEscaped) {
+                isEscaped = false;
+            } else if (patternChar == '\\') {
+                isEscaped = true;
+            } else if (patternChar == '(') {
+                groupHasQuantifier.add(false);
+            } else if (patternChar == ')') {
+                if (!groupHasQuantifier.isEmpty()) {
+                    boolean bodyHadQuantifier = groupHasQuantifier.remove(groupHasQuantifier.size() - 1);
+
+                    // Check if the character after ')' is a quantifier
+                    if (bodyHadQuantifier && i + 1 < pattern.length()) {
+                        char nextChar = pattern.charAt(i + 1);
+                        if (REGEX_QUANTIFIER_CHARS.indexOf(nextChar) >= 0) {
+                            ServletError error = new ServletError(GAL5471_RUNS_PORTFOLIO_REGEX_TOO_COMPLEX, pattern);
+                            throw new InternalServletException(error, HttpServletResponse.SC_BAD_REQUEST);
+                        }
+                    }
+                }
+            } else if (REGEX_QUANTIFIER_CHARS.indexOf(patternChar) >= 0) {
+                // Mark every enclosing group as having seen a quantifier
+                for (int groupIndex = 0; groupIndex < groupHasQuantifier.size(); groupIndex++) {
+                    groupHasQuantifier.set(groupIndex, true);
+                }
+            }
+        }
     }
 
     private boolean matchesAnyPattern(String value, List<Pattern> patterns) {
@@ -258,15 +304,14 @@ public class RunsPortfoliosRoute extends ProtectedRoute {
     }
 
     private boolean matchesAnyTag(JsonObject classDef, List<Pattern> tagPatterns) {
-        if (classDef.has("tags") && classDef.get("tags").isJsonNull()) {
-            return false;
-        }
-
         boolean isMatchFound = false;
-        for (JsonElement tagElem : classDef.getAsJsonArray("tags")) {
-            if (matchesAnyPattern(tagElem.getAsString(), tagPatterns)) {
-                isMatchFound = true;
-                break;
+
+        if (classDef.has("tags") && classDef.get("tags").isJsonArray()) {
+            for (JsonElement tagElem : classDef.get("tags").getAsJsonArray()) {
+                if (matchesAnyPattern(tagElem.getAsString(), tagPatterns)) {
+                    isMatchFound = true;
+                    break;
+                }
             }
         }
         return isMatchFound;
