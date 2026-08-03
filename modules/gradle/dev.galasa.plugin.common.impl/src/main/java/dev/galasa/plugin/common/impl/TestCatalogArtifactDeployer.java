@@ -12,8 +12,8 @@ import java.net.URL;
 import java.util.Properties;
 
 import org.apache.commons.io.IOUtils;
-import org.apache.http.client.HttpClient;
-import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
+import org.apache.hc.client5.http.impl.classic.HttpClientBuilder;
 
 import dev.galasa.plugin.common.AuthenticationService;
 import dev.galasa.plugin.common.PluginCommonFactory;
@@ -156,7 +156,7 @@ public class TestCatalogArtifactDeployer<Ex extends Exception> {
     private String getAuthenticatedJwt(PluginCommonFactory<Ex> authFactory, String galasaAccessToken, String apiServerUrlString) throws Ex {
         String jwt = null ;
         try {
-            HttpClient httpClient = HttpClientBuilder.create().build();
+            CloseableHttpClient httpClient = HttpClientBuilder.create().build();
             URL apiServerUrl = new URL(apiServerUrlString);
             AuthenticationService authTokenService = authFactory.newAuthenticationService(apiServerUrl,galasaAccessToken,httpClient);
             this.log.info("Turning the galasa access token into a JWT");
