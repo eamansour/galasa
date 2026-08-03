@@ -14,11 +14,11 @@ import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.http.HttpHost;
-import org.apache.http.HttpRequest;
-import org.apache.http.HttpStatus;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.util.EntityUtils;
+import org.apache.hc.core5.http.HttpHost;
+import org.apache.hc.core5.http.ClassicHttpRequest;
+import org.apache.hc.core5.http.HttpStatus;
+import org.apache.hc.client5.http.classic.methods.HttpPost;
+import org.apache.hc.core5.http.io.entity.EntityUtils;
 import org.junit.Test;
 
 import com.google.gson.JsonObject;
@@ -31,7 +31,7 @@ import dev.galasa.extensions.common.mocks.HttpInteraction;
 import dev.galasa.extensions.common.mocks.MockCloseableHttpClient;
 import dev.galasa.extensions.common.mocks.MockCloseableHttpResponse;
 import dev.galasa.extensions.common.mocks.MockHttpEntity;
-import dev.galasa.extensions.common.mocks.MockStatusLine;
+
 import dev.galasa.framework.TestRunLifecycleStatus;
 import dev.galasa.framework.spi.IRunResult;
 import dev.galasa.framework.spi.ResultArchiveStoreException;
@@ -70,9 +70,9 @@ public class CouchdbDirectoryServiceTest extends BaseCouchdbOperationTest {
         }
 
         @Override
-        public void validateRequest(HttpHost host, HttpRequest request) throws RuntimeException {
+        public void validateRequest(HttpHost host, ClassicHttpRequest request) throws RuntimeException {
             super.validateRequest(host,request);
-            assertThat(request.getRequestLine().getMethod()).isEqualTo("POST");
+            assertThat(request.getMethod()).isEqualTo("POST");
             if (expectedRequestBodyParts.length > 0) {
                 validatePostRequestBody((HttpPost) request);
             }
@@ -83,7 +83,7 @@ public class CouchdbDirectoryServiceTest extends BaseCouchdbOperationTest {
                 String requestBody = EntityUtils.toString(postRequest.getEntity());
                 assertThat(requestBody).contains(expectedRequestBodyParts);
 
-            } catch (IOException ex) {
+            } catch (IOException | org.apache.hc.core5.http.ParseException ex) {
                 fail("Failed to parse POST request body");
             }
         }
@@ -97,9 +97,9 @@ public class CouchdbDirectoryServiceTest extends BaseCouchdbOperationTest {
         }
 
         @Override
-        public void validateRequest(HttpHost host, HttpRequest request) throws RuntimeException {
+        public void validateRequest(HttpHost host, ClassicHttpRequest request) throws RuntimeException {
             super.validateRequest(host,request);
-            assertThat(request.getRequestLine().getMethod()).isEqualTo("GET");
+            assertThat(request.getMethod()).isEqualTo("GET");
         }
     }
 
@@ -770,9 +770,9 @@ public class CouchdbDirectoryServiceTest extends BaseCouchdbOperationTest {
         List<HttpInteraction> interactions = List.of(
             new BaseHttpInteraction(expectedUri, HttpStatus.SC_NOT_FOUND) {
                 @Override
-                public void validateRequest(HttpHost host, HttpRequest request) throws RuntimeException {
+                public void validateRequest(HttpHost host, ClassicHttpRequest request) throws RuntimeException {
                     super.validateRequest(host, request);
-                    assertThat(request.getRequestLine().getMethod()).isEqualTo("GET");
+                    assertThat(request.getMethod()).isEqualTo("GET");
                 }
             }
         );
@@ -799,9 +799,9 @@ public class CouchdbDirectoryServiceTest extends BaseCouchdbOperationTest {
         List<HttpInteraction> interactions = List.of(
             new BaseHttpInteraction(expectedUri, HttpStatus.SC_NOT_FOUND) {
                 @Override
-                public void validateRequest(HttpHost host, HttpRequest request) throws RuntimeException {
+                public void validateRequest(HttpHost host, ClassicHttpRequest request) throws RuntimeException {
                     super.validateRequest(host, request);
-                    assertThat(request.getRequestLine().getMethod()).isEqualTo("GET");
+                    assertThat(request.getMethod()).isEqualTo("GET");
                 }
             }
         );
@@ -828,9 +828,9 @@ public class CouchdbDirectoryServiceTest extends BaseCouchdbOperationTest {
         List<HttpInteraction> interactions = List.of(
             new BaseHttpInteraction(expectedUri, HttpStatus.SC_INTERNAL_SERVER_ERROR) {
                 @Override
-                public void validateRequest(HttpHost host, HttpRequest request) throws RuntimeException {
+                public void validateRequest(HttpHost host, ClassicHttpRequest request) throws RuntimeException {
                     super.validateRequest(host, request);
-                    assertThat(request.getRequestLine().getMethod()).isEqualTo("GET");
+                    assertThat(request.getMethod()).isEqualTo("GET");
                 }
             }
         );
@@ -880,17 +880,15 @@ public class CouchdbDirectoryServiceTest extends BaseCouchdbOperationTest {
         List<HttpInteraction> interactions = List.of(
             new BaseHttpInteraction("http://my.uri/galasa_artifacts/artifact-id-1", HttpStatus.SC_OK) {
                 @Override
-                public void validateRequest(HttpHost host, HttpRequest request) throws RuntimeException {
+                public void validateRequest(HttpHost host, ClassicHttpRequest request) throws RuntimeException {
                     super.validateRequest(host, request);
-                    assertThat(request.getRequestLine().getMethod()).isEqualTo("GET");
+                    assertThat(request.getMethod()).isEqualTo("GET");
                 }
 
                 @Override
                 public MockCloseableHttpResponse getResponse() {
                     MockCloseableHttpResponse response = new MockCloseableHttpResponse();
-                    MockStatusLine statusLine = new MockStatusLine();
-                    statusLine.setStatusCode(HttpStatus.SC_OK);
-                    response.setStatusLine(statusLine);
+                response.setCode(HttpStatus.SC_OK);
                     response.setEntity(new MockHttpEntity(artifactRecord1Json));
                     return response;
                 }
@@ -947,34 +945,30 @@ public class CouchdbDirectoryServiceTest extends BaseCouchdbOperationTest {
         List<HttpInteraction> interactions = List.of(
             new BaseHttpInteraction("http://my.uri/galasa_artifacts/artifact-id-1", HttpStatus.SC_OK) {
                 @Override
-                public void validateRequest(HttpHost host, HttpRequest request) throws RuntimeException {
+                public void validateRequest(HttpHost host, ClassicHttpRequest request) throws RuntimeException {
                     super.validateRequest(host, request);
-                    assertThat(request.getRequestLine().getMethod()).isEqualTo("GET");
+                    assertThat(request.getMethod()).isEqualTo("GET");
                 }
 
                 @Override
                 public MockCloseableHttpResponse getResponse() {
                     MockCloseableHttpResponse response = new MockCloseableHttpResponse();
-                    MockStatusLine statusLine = new MockStatusLine();
-                    statusLine.setStatusCode(HttpStatus.SC_OK);
-                    response.setStatusLine(statusLine);
+                response.setCode(HttpStatus.SC_OK);
                     response.setEntity(new MockHttpEntity(artifactRecord1Json));
                     return response;
                 }
             },
             new BaseHttpInteraction("http://my.uri/galasa_artifacts/artifact-id-2", HttpStatus.SC_OK) {
                 @Override
-                public void validateRequest(HttpHost host, HttpRequest request) throws RuntimeException {
+                public void validateRequest(HttpHost host, ClassicHttpRequest request) throws RuntimeException {
                     super.validateRequest(host, request);
-                    assertThat(request.getRequestLine().getMethod()).isEqualTo("GET");
+                    assertThat(request.getMethod()).isEqualTo("GET");
                 }
 
                 @Override
                 public MockCloseableHttpResponse getResponse() {
                     MockCloseableHttpResponse response = new MockCloseableHttpResponse();
-                    MockStatusLine statusLine = new MockStatusLine();
-                    statusLine.setStatusCode(HttpStatus.SC_OK);
-                    response.setStatusLine(statusLine);
+                response.setCode(HttpStatus.SC_OK);
                     response.setEntity(new MockHttpEntity(artifactRecord2Json));
                     return response;
                 }
@@ -1030,34 +1024,30 @@ public class CouchdbDirectoryServiceTest extends BaseCouchdbOperationTest {
         List<HttpInteraction> interactions = List.of(
             new BaseHttpInteraction("http://my.uri/galasa_artifacts/artifact-id-1", HttpStatus.SC_OK) {
                 @Override
-                public void validateRequest(HttpHost host, HttpRequest request) throws RuntimeException {
+                public void validateRequest(HttpHost host, ClassicHttpRequest request) throws RuntimeException {
                     super.validateRequest(host, request);
-                    assertThat(request.getRequestLine().getMethod()).isEqualTo("GET");
+                    assertThat(request.getMethod()).isEqualTo("GET");
                 }
 
                 @Override
                 public MockCloseableHttpResponse getResponse() {
                     MockCloseableHttpResponse response = new MockCloseableHttpResponse();
-                    MockStatusLine statusLine = new MockStatusLine();
-                    statusLine.setStatusCode(HttpStatus.SC_OK);
-                    response.setStatusLine(statusLine);
+                response.setCode(HttpStatus.SC_OK);
                     response.setEntity(new MockHttpEntity(artifactRecord1Json));
                     return response;
                 }
             },
             new BaseHttpInteraction("http://my.uri/galasa_artifacts/artifact-id-2", HttpStatus.SC_OK) {
                 @Override
-                public void validateRequest(HttpHost host, HttpRequest request) throws RuntimeException {
+                public void validateRequest(HttpHost host, ClassicHttpRequest request) throws RuntimeException {
                     super.validateRequest(host, request);
-                    assertThat(request.getRequestLine().getMethod()).isEqualTo("GET");
+                    assertThat(request.getMethod()).isEqualTo("GET");
                 }
 
                 @Override
                 public MockCloseableHttpResponse getResponse() {
                     MockCloseableHttpResponse response = new MockCloseableHttpResponse();
-                    MockStatusLine statusLine = new MockStatusLine();
-                    statusLine.setStatusCode(HttpStatus.SC_OK);
-                    response.setStatusLine(statusLine);
+                response.setCode(HttpStatus.SC_OK);
                     response.setEntity(new MockHttpEntity(artifactRecord2Json));
                     return response;
                 }

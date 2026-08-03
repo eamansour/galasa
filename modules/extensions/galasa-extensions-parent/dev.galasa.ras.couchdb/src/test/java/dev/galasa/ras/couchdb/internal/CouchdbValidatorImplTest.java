@@ -8,8 +8,11 @@ package dev.galasa.ras.couchdb.internal;
 import java.util.*;
 import static org.assertj.core.api.Assertions.*;
 
-import org.apache.http.*;
-import org.apache.http.client.methods.HttpPost;
+import org.apache.hc.client5.http.classic.methods.HttpPost;
+import org.apache.hc.core5.http.ClassicHttpRequest;
+import org.apache.hc.core5.http.HttpEntity;
+import org.apache.hc.core5.http.HttpHost;
+import org.apache.hc.core5.http.HttpStatus;
 import org.junit.*;
 import org.junit.rules.TestName;
 
@@ -38,19 +41,19 @@ public class CouchdbValidatorImplTest {
         }
 
         @Override
-        public void validateRequest(HttpHost host, HttpRequest request) throws RuntimeException {
+        public void validateRequest(HttpHost host, ClassicHttpRequest request) throws RuntimeException {
             super.validateRequest(host,request);
-            assertThat(request.getRequestLine().getMethod()).isEqualTo("GET");
+            assertThat(request.getMethod()).isEqualTo("GET");
         }
 
-        public void validateRequest(HttpHost host, HttpRequest request, String method) throws RuntimeException {
+        public void validateRequest(HttpHost host, ClassicHttpRequest request, String method) throws RuntimeException {
             super.validateRequest(host,request);
-            assertThat(request.getRequestLine().getMethod()).isEqualTo(method);
+            assertThat(request.getMethod()).isEqualTo(method);
         }
 
 
         @Override
-        public void validateRequestContentType(HttpRequest request) {
+        public void validateRequestContentType(ClassicHttpRequest request) {
             // We don't expect a Content-type header as there is no payload sent to the server
         }
        
@@ -71,10 +74,7 @@ public class CouchdbValidatorImplTest {
             HttpEntity entity = new MockHttpEntity(updateMessagePayload); 
 
             MockCloseableHttpResponse response = new MockCloseableHttpResponse();
-
-            MockStatusLine statusLine = new MockStatusLine();
-            statusLine.setStatusCode(HttpStatus.SC_OK);
-            response.setStatusLine(statusLine);
+                response.setCode(HttpStatus.SC_OK);
             response.setEntity(entity);
 
             return response;
@@ -103,10 +103,7 @@ public class CouchdbValidatorImplTest {
             HttpEntity entity = new MockHttpEntity(updateMessagePayload); 
 
             MockCloseableHttpResponse response = new MockCloseableHttpResponse();
-
-            MockStatusLine statusLine = new MockStatusLine();
-            statusLine.setStatusCode(HttpStatus.SC_CREATED);
-            response.setStatusLine(statusLine);
+                response.setCode(HttpStatus.SC_CREATED);
             response.setEntity(entity);
 
             return response;
@@ -120,16 +117,14 @@ public class CouchdbValidatorImplTest {
         }
 
         @Override
-        public void validateRequest(HttpHost host, HttpRequest request) throws RuntimeException {
+        public void validateRequest(HttpHost host, ClassicHttpRequest request) throws RuntimeException {
             super.validateRequest(host,request,"HEAD");
         }
 
         @Override
         public MockCloseableHttpResponse getResponse() {
             MockCloseableHttpResponse response = new MockCloseableHttpResponse();
-            MockStatusLine statusLine = new MockStatusLine();
-            statusLine.setStatusCode(HttpStatus.SC_OK);
-            response.setStatusLine(statusLine);
+                response.setCode(HttpStatus.SC_OK);
 
             return response;
         }
@@ -142,16 +137,14 @@ public class CouchdbValidatorImplTest {
         }
 
         @Override
-        public void validateRequest(HttpHost host, HttpRequest request) throws RuntimeException {
+        public void validateRequest(HttpHost host, ClassicHttpRequest request) throws RuntimeException {
             super.validateRequest(host,request,"HEAD");
         }
 
         @Override
             public MockCloseableHttpResponse getResponse() {
             MockCloseableHttpResponse response = new MockCloseableHttpResponse();
-            MockStatusLine statusLine = new MockStatusLine();
-            statusLine.setStatusCode(HttpStatus.SC_NOT_FOUND);
-            response.setStatusLine(statusLine);
+                response.setCode(HttpStatus.SC_NOT_FOUND);
             return response;
         }
     }
@@ -163,16 +156,14 @@ public class CouchdbValidatorImplTest {
         }
 
         @Override
-        public void validateRequest(HttpHost host, HttpRequest request) throws RuntimeException {
+        public void validateRequest(HttpHost host, ClassicHttpRequest request) throws RuntimeException {
             super.validateRequest(host,request,"PUT");
         }
 
         @Override
             public MockCloseableHttpResponse getResponse() {
             MockCloseableHttpResponse response = new MockCloseableHttpResponse();
-            MockStatusLine statusLine = new MockStatusLine();
-            statusLine.setStatusCode(HttpStatus.SC_CONFLICT);
-            response.setStatusLine(statusLine);
+                response.setCode(HttpStatus.SC_CONFLICT);
             return response;
         }
     }
@@ -184,7 +175,7 @@ public class CouchdbValidatorImplTest {
         }
         
         @Override
-        public void validateRequest(HttpHost host, HttpRequest request) throws RuntimeException {
+        public void validateRequest(HttpHost host, ClassicHttpRequest request) throws RuntimeException {
             super.validateRequest(host,request,"GET");
         }
 
@@ -204,10 +195,7 @@ public class CouchdbValidatorImplTest {
             HttpEntity entity = new MockHttpEntity(updateMessagePayload); 
 
             MockCloseableHttpResponse response = new MockCloseableHttpResponse();
-
-            MockStatusLine statusLine = new MockStatusLine();
-            statusLine.setStatusCode(HttpStatus.SC_OK);
-            response.setStatusLine(statusLine);
+                response.setCode(HttpStatus.SC_OK);
             response.setEntity(entity);
 
             return response;
@@ -222,16 +210,14 @@ public class CouchdbValidatorImplTest {
         }
         
         @Override
-        public void validateRequest(HttpHost host, HttpRequest request) throws RuntimeException {
+        public void validateRequest(HttpHost host, ClassicHttpRequest request) throws RuntimeException {
             super.validateRequest(host,request,"PUT");
         }
 
         @Override
         public MockCloseableHttpResponse getResponse() {
             MockCloseableHttpResponse response = new MockCloseableHttpResponse();
-            MockStatusLine statusLine = new MockStatusLine();
-            statusLine.setStatusCode(HttpStatus.SC_CREATED);
-            response.setStatusLine(statusLine);
+                response.setCode(HttpStatus.SC_CREATED);
             return response;
         }
     }
@@ -246,7 +232,7 @@ public class CouchdbValidatorImplTest {
         }
         
         @Override
-        public void validateRequest(HttpHost host, HttpRequest request) throws RuntimeException {
+        public void validateRequest(HttpHost host, ClassicHttpRequest request) throws RuntimeException {
             super.validateRequest(host,request,"POST");
             validatePostRequestBody((HttpPost) request, expectedIndexFields);
         }
@@ -254,9 +240,7 @@ public class CouchdbValidatorImplTest {
         @Override
         public MockCloseableHttpResponse getResponse() {
             MockCloseableHttpResponse response = new MockCloseableHttpResponse();
-            MockStatusLine statusLine = new MockStatusLine();
-            statusLine.setStatusCode(HttpStatus.SC_OK);
-            response.setStatusLine(statusLine);
+                response.setCode(HttpStatus.SC_OK);
             return response;
         }
 
@@ -373,10 +357,7 @@ public class CouchdbValidatorImplTest {
                 HttpEntity entity = new MockHttpEntity(updateMessagePayload); 
     
                 MockCloseableHttpResponse response = new MockCloseableHttpResponse();
-    
-                MockStatusLine statusLine = new MockStatusLine();
-                statusLine.setStatusCode(HttpStatus.SC_OK);
-                response.setStatusLine(statusLine);
+                response.setCode(HttpStatus.SC_OK);
                 response.setEntity(entity);
 
                 return response;
@@ -390,10 +371,7 @@ public class CouchdbValidatorImplTest {
                 public MockCloseableHttpResponse getResponse() {
 
                 MockCloseableHttpResponse response = new MockCloseableHttpResponse();
-    
-                MockStatusLine statusLine = new MockStatusLine();
-                statusLine.setStatusCode(HttpStatus.SC_BAD_REQUEST);
-                response.setStatusLine(statusLine);
+                response.setCode(HttpStatus.SC_BAD_REQUEST);
 
                 return response;
             }
@@ -434,10 +412,7 @@ public class CouchdbValidatorImplTest {
                 HttpEntity entity = new MockHttpEntity(updateMessagePayload); 
     
                 MockCloseableHttpResponse response = new MockCloseableHttpResponse();
-    
-                MockStatusLine statusLine = new MockStatusLine();
-                statusLine.setStatusCode(HttpStatus.SC_OK);
-                response.setStatusLine(statusLine);
+                response.setCode(HttpStatus.SC_OK);
                 response.setEntity(entity);
 
                 return response;

@@ -5,10 +5,15 @@
  */
 package dev.galasa.cps.rest;
 
-import org.apache.http.*;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.junit.Test;
 import static org.assertj.core.api.Assertions.*;
+
+import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
+import org.apache.hc.core5.http.ClassicHttpRequest;
+import org.apache.hc.core5.http.Header;
+import org.apache.hc.core5.http.HttpEntity;
+import org.apache.hc.core5.http.HttpHost;
+import org.apache.hc.core5.http.HttpStatus;
+import org.junit.Test;
 
 import dev.galasa.cps.rest.mocks.MockJwtProvider;
 import dev.galasa.extensions.common.mocks.*;
@@ -159,16 +164,16 @@ public class TestRestCPS {
         }
 
         @Override
-        public void validateRequest(HttpHost host, HttpRequest request) throws RuntimeException {
+        public void validateRequest(HttpHost host, ClassicHttpRequest request) throws RuntimeException {
             super.validateRequest(host,request);
-            assertThat(request.getRequestLine().getMethod()).isEqualTo("GET");
+            assertThat(request.getMethod()).isEqualTo("GET");
             Header[] headers = request.getHeaders("Authorization");
             assertThat(headers).as("There is no bearer token header being passed to the server side.").hasSize(1);
             assertThat(headers[0].getValue()).as("The bearer token is not being passed correctly to the REST API.").isEqualTo("Bearer "+JWT1);
         }
 
         @Override
-        public void validateRequestContentType(HttpRequest request) {
+        public void validateRequestContentType(ClassicHttpRequest request) {
             // We don't expect a Content-type header as there is no payload sent to the server
         }
 
@@ -195,10 +200,7 @@ public class TestRestCPS {
             HttpEntity entity = new MockHttpEntity(updateMessagePayload); 
 
             MockCloseableHttpResponse response = new MockCloseableHttpResponse();
-
-            MockStatusLine statusLine = new MockStatusLine();
-            statusLine.setStatusCode(HttpStatus.SC_OK);
-            response.setStatusLine(statusLine);
+                response.setCode(HttpStatus.SC_OK);
             response.setEntity(entity);
 
             return response;
@@ -339,14 +341,14 @@ public class TestRestCPS {
             }
   
             @Override
-            public void validateRequest(HttpHost host, HttpRequest request) throws RuntimeException {
+            public void validateRequest(HttpHost host, ClassicHttpRequest request) throws RuntimeException {
                 super.validateRequest(host,request);
-                assertThat(request.getRequestLine().getMethod()).isEqualTo("GET");
+                assertThat(request.getMethod()).isEqualTo("GET");
             }
     
 
             @Override
-            public void validateRequestContentType(HttpRequest request) {
+            public void validateRequestContentType(ClassicHttpRequest request) {
                 // We don't expect a Content-type header as there is no payload sent to the server
             }
     
@@ -359,10 +361,7 @@ public class TestRestCPS {
                 HttpEntity entity = new MockHttpEntity(msgPayload); 
     
                 MockCloseableHttpResponse response = new MockCloseableHttpResponse();
-    
-                MockStatusLine statusLine = new MockStatusLine();
-                statusLine.setStatusCode(HttpStatus.SC_OK);
-                response.setStatusLine(statusLine);
+                response.setCode(HttpStatus.SC_OK);
                 response.setEntity(entity);
     
                 return response;
