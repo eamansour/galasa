@@ -6,7 +6,28 @@
 
 version: 2
 updates:
- - package-ecosystem: "devcontainers"
-   directory: "/"
-   schedule:
-     interval: weekly
+- package-ecosystem: "devcontainers"
+  directory: "/"
+  schedule:
+    interval: weekly
+- package-ecosystem: "gomod"
+  directories:
+    - "/modules/buildutils"
+    - "/modules/cli"
+  schedule:
+    interval: daily
+- package-ecosystem: "gradle"
+  directories:
+    - "/modules/platform"
+    - "/modules/gradle"
+    - "/modules/framework/galasa-parent"
+    - "/modules/extensions/galasa-extensions-parent"
+    - "/modules/managers/galasa-managers-parent"
+  schedule:
+    interval: daily
+- package-ecosystem: "maven"
+  directories:
+    - "/modules/wrapping"
+    - "/modules/maven/galasa-maven-plugin"
+  schedule:
+    interval: daily
