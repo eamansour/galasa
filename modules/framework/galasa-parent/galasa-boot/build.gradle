@@ -59,7 +59,7 @@ dependencies {
     embedImplementation 'org.apache.logging.log4j:log4j-layout-template-json:2.25.5'
 
     bundleDependency 'org.apache.felix:org.apache.felix.bundlerepository:2.0.10'
-    bundleDependency 'org.apache.felix:org.apache.felix.scr:2.1.14'
+    bundleDependency 'org.apache.felix:org.apache.felix.scr:2.2.18'
     bundleDependency 'org.apache.logging.log4j:log4j-api:2.25.5'
     bundleDependency 'org.apache.logging.log4j:log4j-core:2.25.5'
     bundleDependency 'org.apache.logging.log4j:log4j-layout-template-json:2.25.5'
