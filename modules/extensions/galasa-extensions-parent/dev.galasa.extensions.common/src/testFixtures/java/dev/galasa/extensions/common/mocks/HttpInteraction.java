@@ -5,11 +5,11 @@
  */
 package dev.galasa.extensions.common.mocks;
 
-import org.apache.http.HttpHost;
-import org.apache.http.HttpRequest;
+import org.apache.hc.core5.http.ClassicHttpRequest;
+import org.apache.hc.core5.http.HttpHost;
 
 // An expected request and mock response delivered over the http interface.
 public interface HttpInteraction {
-    void validateRequest(HttpHost target, HttpRequest request) throws RuntimeException;
+    void validateRequest(HttpHost target, ClassicHttpRequest request) throws RuntimeException;
     public MockCloseableHttpResponse getResponse();
 }

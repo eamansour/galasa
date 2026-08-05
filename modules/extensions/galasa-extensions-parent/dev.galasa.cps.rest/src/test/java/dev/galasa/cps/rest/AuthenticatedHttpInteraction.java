@@ -5,8 +5,12 @@
  */
 package dev.galasa.cps.rest;
 
-import org.apache.http.*;
+
 import static org.assertj.core.api.Assertions.*;
+
+import org.apache.hc.core5.http.ClassicHttpRequest;
+import org.apache.hc.core5.http.Header;
+import org.apache.hc.core5.http.HttpHost;
 
 import dev.galasa.extensions.common.mocks.*;
 
@@ -27,7 +31,7 @@ public abstract class AuthenticatedHttpInteraction extends BaseHttpInteraction {
     }
     
     @Override
-    public void validateRequest(HttpHost host, HttpRequest request) throws RuntimeException {
+    public void validateRequest(HttpHost host, ClassicHttpRequest request) throws RuntimeException {
         super.validateRequest(host,request);
         Header[] headers = request.getHeaders("Authorization");
         assertThat(headers).as("There is no bearer token header being passed to the server side.").hasSize(1);

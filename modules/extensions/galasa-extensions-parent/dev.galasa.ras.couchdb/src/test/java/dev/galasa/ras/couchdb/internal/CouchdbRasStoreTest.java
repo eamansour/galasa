@@ -13,12 +13,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.http.HttpHost;
-import org.apache.http.HttpRequest;
-import org.apache.http.HttpStatus;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.client.methods.HttpPut;
-import org.apache.http.util.EntityUtils;
+import org.apache.hc.core5.http.HttpHost;
+import org.apache.hc.core5.http.ClassicHttpRequest;
+import org.apache.hc.core5.http.HttpStatus;
+import org.apache.hc.client5.http.classic.methods.HttpPost;
+import org.apache.hc.client5.http.classic.methods.HttpPut;
+import org.apache.hc.core5.http.io.entity.EntityUtils;
 import org.junit.Test;
 
 import dev.galasa.extensions.common.couchdb.CouchdbException;
@@ -44,9 +44,9 @@ public class CouchdbRasStoreTest {
         }
 
         @Override
-        public void validateRequest(HttpHost host, HttpRequest request) throws RuntimeException {
+        public void validateRequest(HttpHost host, ClassicHttpRequest request) throws RuntimeException {
             super.validateRequest(host,request);
-            assertThat(request.getRequestLine().getMethod()).isEqualTo("GET");
+            assertThat(request.getMethod()).isEqualTo("GET");
         }
     }
 
@@ -61,9 +61,9 @@ public class CouchdbRasStoreTest {
         }
 
         @Override
-        public void validateRequest(HttpHost host, HttpRequest request) throws RuntimeException {
+        public void validateRequest(HttpHost host, ClassicHttpRequest request) throws RuntimeException {
             super.validateRequest(host,request);
-            assertThat(request.getRequestLine().getMethod()).isEqualTo("POST");
+            assertThat(request.getMethod()).isEqualTo("POST");
             if (expectedRequestBodyParts.length > 0) {
                 validatePostRequestBody((HttpPost) request);
             }
@@ -74,7 +74,7 @@ public class CouchdbRasStoreTest {
                 String requestBody = EntityUtils.toString(postRequest.getEntity());
                 assertThat(requestBody).contains(expectedRequestBodyParts);
 
-            } catch (IOException ex) {
+            } catch (IOException | org.apache.hc.core5.http.ParseException ex) {
                 fail("Failed to parse POST request body");
             }
         }
@@ -91,9 +91,9 @@ public class CouchdbRasStoreTest {
         }
 
         @Override
-        public void validateRequest(HttpHost host, HttpRequest request) throws RuntimeException {
+        public void validateRequest(HttpHost host, ClassicHttpRequest request) throws RuntimeException {
             super.validateRequest(host,request);
-            assertThat(request.getRequestLine().getMethod()).isEqualTo("PUT");
+            assertThat(request.getMethod()).isEqualTo("PUT");
             if (expectedRequestBodyParts.length > 0) {
                 validatePutRequestBody((HttpPut) request);
             }
@@ -104,7 +104,7 @@ public class CouchdbRasStoreTest {
                 String requestBody = EntityUtils.toString(putRequest.getEntity());
                 assertThat(requestBody).contains(expectedRequestBodyParts);
 
-            } catch (IOException ex) {
+            } catch (IOException | org.apache.hc.core5.http.ParseException ex) {
                 fail("Failed to parse PUT request body");
             }
         }

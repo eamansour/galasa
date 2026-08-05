@@ -15,10 +15,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.time.Instant;
 
-import org.apache.http.HttpHost;
-import org.apache.http.HttpRequest;
-import org.apache.http.HttpStatus;
-import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.hc.core5.http.HttpHost;
+import org.apache.hc.core5.http.ClassicHttpRequest;
+import org.apache.hc.core5.http.HttpStatus;
+import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
 import org.junit.Test;
 
 import dev.galasa.auth.couchdb.internal.beans.*;
@@ -47,9 +47,9 @@ public class TestCouchdbAuthStoreValidator {
         }
 
         @Override
-        public void validateRequest(HttpHost host, HttpRequest request) throws RuntimeException {
+        public void validateRequest(HttpHost host, ClassicHttpRequest request) throws RuntimeException {
             super.validateRequest(host,request);
-            assertThat(request.getRequestLine().getMethod()).isEqualTo("PUT");
+            assertThat(request.getMethod()).isEqualTo("PUT");
         }
     }
 
@@ -61,9 +61,9 @@ public class TestCouchdbAuthStoreValidator {
         }
 
         @Override
-        public void validateRequest(HttpHost host, HttpRequest request) throws RuntimeException {
+        public void validateRequest(HttpHost host, ClassicHttpRequest request) throws RuntimeException {
             super.validateRequest(host,request);
-            assertThat(request.getRequestLine().getMethod()).isEqualTo("GET");
+            assertThat(request.getMethod()).isEqualTo("GET");
         }
     }
 
@@ -74,9 +74,9 @@ public class TestCouchdbAuthStoreValidator {
         }
 
         @Override
-        public void validateRequest(HttpHost host, HttpRequest request) throws RuntimeException {
+        public void validateRequest(HttpHost host, ClassicHttpRequest request) throws RuntimeException {
             super.validateRequest(host,request);
-            assertThat(request.getRequestLine().getMethod()).isEqualTo("HEAD");
+            assertThat(request.getMethod()).isEqualTo("HEAD");
         }
     }
 
@@ -90,9 +90,9 @@ public class TestCouchdbAuthStoreValidator {
         }
 
         @Override
-        public void validateRequest(HttpHost host, HttpRequest request) throws RuntimeException {
+        public void validateRequest(HttpHost host, ClassicHttpRequest request) throws RuntimeException {
             super.validateRequest(host,request);
-            assertThat(request.getRequestLine().getMethod()).isEqualTo("GET");
+            assertThat(request.getMethod()).isEqualTo("GET");
         }
     }
 
@@ -103,9 +103,9 @@ public class TestCouchdbAuthStoreValidator {
         }
 
         @Override
-        public void validateRequest(HttpHost host, HttpRequest request) throws RuntimeException {
+        public void validateRequest(HttpHost host, ClassicHttpRequest request) throws RuntimeException {
             super.validateRequest(host,request);
-            assertThat(request.getRequestLine().getMethod()).isEqualTo("PUT");
+            assertThat(request.getMethod()).isEqualTo("PUT");
         }
     }
 

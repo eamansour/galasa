@@ -7,10 +7,9 @@ package dev.galasa.extensions.common.mocks;
 
 import static org.assertj.core.api.Assertions.*;
 
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpHost;
-import org.apache.http.HttpRequest;
-import org.apache.http.HttpStatus;
+import org.apache.hc.core5.http.ClassicHttpRequest;
+import org.apache.hc.core5.http.HttpHost;
+import org.apache.hc.core5.http.HttpStatus;
 
 import dev.galasa.framework.spi.utils.GalasaGson;
 
@@ -18,7 +17,7 @@ public abstract class BaseHttpInteraction implements HttpInteraction {
 
     private GalasaGson gson = new GalasaGson();
 
-    private String expectedBaseUri ;
+    private String expectedBaseUri;
 
     private String responsePayload = "";
     private int responseStatusCode = HttpStatus.SC_OK;
@@ -50,30 +49,25 @@ public abstract class BaseHttpInteraction implements HttpInteraction {
     }
 
     @Override
-    public void validateRequest(HttpHost host, HttpRequest request) throws RuntimeException {
+    public void validateRequest(HttpHost host, ClassicHttpRequest request) throws RuntimeException {
 
-        String uri = request.getRequestLine().getUri();
+        String requestUri = request.getRequestUri();
+        String uri = "/".equals(requestUri) ? host.toURI() : host.toURI() + requestUri;
         assertThat(uri).isEqualTo(this.expectedBaseUri);
 
         validateRequestContentType(request);
     }
 
-    public void validateRequestContentType(HttpRequest request) {
+    public void validateRequestContentType(ClassicHttpRequest request) {
         assertThat(request.containsHeader("Content-Type")).as("Missing Content-Type header!").isTrue();
         assertThat(request.getHeaders("Content-Type")[0].getValue()).isEqualTo(getExpectedHttpContentType());
     }
 
     @Override
     public MockCloseableHttpResponse getResponse() {
-        HttpEntity entity = new MockHttpEntity(responsePayload);
-
         MockCloseableHttpResponse response = new MockCloseableHttpResponse();
-
-        MockStatusLine statusLine = new MockStatusLine();
-        statusLine.setStatusCode(responseStatusCode);
-        response.setStatusLine(statusLine);
-        response.setEntity(entity);
-
+        response.setCode(responseStatusCode);
+        response.setEntity(new MockHttpEntity(responsePayload));
         return response;
     }
 }
