@@ -1155,10 +1155,20 @@ public class KubernetesEcosystemImpl extends AbstractEcosystemImpl implements IK
         tests.add(bundleName + "/" + testName);
         request.add("classNames", tests);
 
+        Properties effectiveOverrides = new Properties();
+        String parentRunName = getEcosystemManager().getFramework().getTestRunName();
+        if (parentRunName != null) {
+            effectiveOverrides.setProperty("framework.run.name", parentRunName);
+        }
+
         if (overrides != null) {
+            effectiveOverrides.putAll(overrides);
+        }
+
+        if (!effectiveOverrides.isEmpty()) {
             JsonArray runProperties = new JsonArray();
             request.add("runProperties", runProperties);
-            for(Entry<Object, Object> entry : overrides.entrySet()) {
+            for(Entry<Object, Object> entry : effectiveOverrides.entrySet()) {
                 JsonObject property = new JsonObject();
                 property.addProperty("key", entry.getKey().toString());
                 property.addProperty("value", entry.getValue().toString());

@@ -40,7 +40,7 @@ public class LocalLinuxEcosystemImpl extends LocalEcosystemImpl {
     private final Log                        logger = LogFactory.getLog(getClass());
 
     private final static Pattern processPattern = Pattern.compile("^\\QPROCESS=\\E(\\d+)$", Pattern.MULTILINE);
-    private final static Pattern runnamePattern = Pattern.compile("Allocated Run Name (\\w+) to this run");
+    private final static Pattern runnamePattern = Pattern.compile("(?:Allocated Run Name|Run name is) (\\w+)");
 
     private final ILinuxImage linuxImage;
 
@@ -190,6 +190,13 @@ public class LocalLinuxEcosystemImpl extends LocalEcosystemImpl {
                 runCommand.append(" --overrides ");
                 runCommand.append(overridesFile.toString());
             }
+
+            String parentRunName = getEcosystemManager().getFramework().getTestRunName();
+            if (parentRunName != null) {
+                runCommand.append(" --run ");
+                runCommand.append(parentRunName);
+            }
+
             runCommand.append(" --test ");
             runCommand.append(bundleName);
             runCommand.append("/");
