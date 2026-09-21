@@ -1,0 +1,262 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:2fd8ace8f805dff85001a6ff871502f07da63c42d117e398ec17bc8be78b849e",
+  "claims": [
+    {
+      "id": "claim_f4fb2ba5310a490e9ceea6eeca4187e4",
+      "statement": "Galasa uses three primary build tools: Gradle for most modules (platform, gradle, framework, extensions, managers, ivts, cli), Maven for wrapping, maven plugin, and obr modules, and Go for buildutils and cli implementation.",
+      "evidence": [
+        {
+          "resource": "repo://CONTRIBUTING.md#L71-L84",
+          "version": "repo-lines-v1:sha256:b57f2d3d5ce6616614a1d51a3c99ebdd799e7c32adb03751d4c5fe2420e5c477:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ0ZDQxM2UxOTBmZjAzNDRlOWZmZGZkMThkYzkwZTJlZWM2Y2JjMzEwNzc0NWNiOTA5ODk0NDEwZjk4Nzc0MTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZTMyNTBlZjE3OGI4OTk5MTc0YzA4ZDllYTdmY2UzYzQ3NjEyM2NhNzM2NzNkZDMwMGEyZTkzZWM2MjFmMWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU3ZmJlZGQ3MGQ5YzYzOGZiNGM1OTZlMmIwZGJhZmJkZDhhZmI4OTdlOTA5ZDYwZTc3YjQ1MjlmMGJlNjU0OTQifQ"
+        },
+        {
+          "resource": "repo://modules/buildutils/go.mod#L1-L3",
+          "version": "repo-lines-v1:sha256:8c1f90dd53d38dcf88ba90927f977b56ed42e1c9f1f352ce7f248e210ef59f15:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjEzYjdmNjZiNWEwODZkOTEyY2VhOGQ5NjNkNDgzYjVlOTdmY2VkMGFmZjg2OGYwMmIzNTM2OGViNDc3ODg0MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGZlOGQ0OTMyZTc4ZTBjM2M5NzFiYjE2ZTY5ZTZkMWE2YmQ0ZGQ1YjdlYTVkNzMxMzJiMDZkY2YxZjJiNzkwYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTUzZTI0ZTRiN2FjMDFkYjNhZjc1NmRmMTFiNjY5NjlhNDExMTVhNGZlYWRkOWQxZWMxNjBhODI4NjdjOGNiMiJ9"
+        },
+        {
+          "resource": "repo://modules/platform/dev.galasa.platform/build.gradle#L1-L7",
+          "version": "repo-lines-v1:sha256:6ed6091dcfc44466b03a2ca44a7c9e1c15acf1f70368572876c067039029c7f4:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDQwNDAxMDMxNWJkYmIwZmVhMGZkNmZmMDIxNGQ4YmM5MjFjZTI4MzZkMWNjNmJjYjg4NDlmMzU3NmNmNWE2NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODcwYzdhMzkyMTAxODA0M2RjZWVmNDdhOTI5NGYxYjA5ZWExMGQ3MTczYmExOWYwNmY4OTdjMTJiN2VjZTYxOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWNkOTAwZWZiMWRiNWEyMmYyZjFlMGNlYjE1NTRkZWJkMjJkNjJjMjhjZmJhNTE3NWU0NmU2YTEyNDNmM2U5OSJ9"
+        },
+        {
+          "resource": "repo://modules/wrapping/pom.xml#L1-L9",
+          "version": "repo-lines-v1:sha256:5101a53e04fbeb0ecbf060ed79e2b749736d52d09d668496993b7c432106a61a:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTI2NzlkZjY0NGUwZDJlNGFlOTY1NDkwYjJjN2Y0ZTU2NmVlMTc5ODVhN2U4MzhkMzBhOTMzYTM4ODYwNjQ0NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2FlMzg1ZTk2ODU1NWJmNjM0MWIwMWE4ZGQzMTk1MTU2NTA3MDgxYjMxN2NmZGJkNzM0NmU2NDQ4MWQ5MWY3NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTBmMjgwODQyMmYzYzY5M2M1YTcyNjgyZmU1ZjlmYzM1MTUxYWRhYTRmYmMzOWJjOGY5YzRjNzY3MmIyMDRjOSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_aeba7c2099ab4be5b53b97d8c5da8acc",
+      "statement": "The platform module (dev.galasa.platform) serves as a centralized dependency management platform using Gradle's java-platform plugin, defining over 200 version constraints for external dependencies used across all Galasa modules.",
+      "evidence": [
+        {
+          "resource": "repo://modules/platform/dev.galasa.platform/build.gradle#L1-L11",
+          "version": "repo-lines-v1:sha256:e567264091884914b3adee4f033a8b0a7e8183f31b37207b2430aae771b814f9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ0MDQwMTAzMTViZGJiMGZlYTBmZDZmZjAyMTRkOGJjOTIxY2UyODM2ZDFjYzZiY2I4ODQ5ZjM1NzZjZjVhNjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFiMDZkYTA3ODFhODI3YmYwYmI1OWFhMDQ3Yjc5YjFjZjQwZTM0ZDkwMTBhZGFkMzk3MmM0YmIwNjA4ODRmMGEifQ"
+        },
+        {
+          "resource": "repo://modules/platform/dev.galasa.platform/build.gradle#L26-L67",
+          "version": "repo-lines-v1:sha256:10e018d3b6b048395b34d6e4a6d500eed80796340ab1baa89a75a1c97841eeb6:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlmYmU1ODI0YThiNjJhODk2YTZhZTY4YTExZDU2ZDk0ZDE4NmQ4MGQ1ZjQ5NjczMDg4MjAyN2I2ZDg4YjQ1NTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNlOTk2MTg2NjYzNmU2YTVhOGZmNGZlMzIwMDQ3YWE1ODljMjVhYjk4YzAyNWI5YzMxOWMxOTU5Zjc5ZWYxNzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEwN2RkOWI4Y2VhYTcwYjUzN2ExNWY3ODJhMGYxMGYxZjA2ZTJlMGY3Yjc3ZTgyMWY3OGExMTVlMDI2N2M5NmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdjYzFmZDQzYzRjMGYzODdjOWZjMzVmOWY3NTcxMjFiNWVmODZlMDBhZDEyZTMxMGQ0NjExMzk0NjhmZmFmYjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f3d185b487414b878ece7856926911a3",
+      "statement": "Build dependency resolution follows a strict repository order: mavenLocal() for local cache, sourceMaven for configurable development repository, gradlePluginPortal() for Gradle plugins, and mavenCentral() for public artifacts.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/build.gradle#L50-L57",
+          "version": "repo-lines-v1:sha256:5fd9bfbc1b92a101a4faea0fa8a6166f73365d699f5467054e7a35e16d50388e:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWU5NmFkNTJlMzg1MjllM2ZhNzZiMjZiNWM4YTkxZTA3MTYzYzA5Yjk5YzMzMDQyYTY3ZDMzNDdhMGEyOWVkYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDMyOWQ2M2I0MjJiZmM0NDhmODY1ZGEzODBmZjUyYjkzMDdjMzBmZGU5Y2RjN2VhNDYzNmMzZjY2Y2NkYjZkMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzg5NmFhYTQxNTBlNjNkMjNiOWRhZDlkNWYyOTgwZTAxYThiNGE2NTZiNjY0ZTFhM2NkZjUzZjE0NDRjMmVlNyJ9"
+        },
+        {
+          "resource": "repo://modules/gradle/build.gradle#L36-L43",
+          "version": "repo-lines-v1:sha256:6883964e3e87216cdca264e698fad7b5bd8ba59ecc2088291a726d6566b93357:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWMyM2E2NzI2M2Y4MGJhNmQyYzcxYjU2MDFjODE4NDQyYzYxNWEzZTJjNWQwNzJiOGY4NWZiY2NhZjQ0NDUzYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmRiNzlhNDcxZjkwYjZlMGZmNzJjYWFkYmJmMDE2YzAxOTcxNGNkMmE0MWEwMTQ1MTg5ZjJkOWI2MWE1ZGU3MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2Y4YWY2ODgxZmViMTY0MmZhODAyODMyMDlhOWE4YTg1ODcyZDY2OWI0MTJiNzZjNzg2ZWNmZmJiYWQ1ZDEzZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_f32e2a7783a947b3a6b75bed0a859d22",
+      "statement": "Modules build in a strict dependency chain: platform and buildutils are independent, wrapping and gradle depend on platform, maven depends on gradle, framework depends on wrapping and maven, extensions and managers depend on framework, obr depends on extensions and managers, and ivts depends on obr.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/pushes.yaml#L52-L147",
+          "version": "repo-lines-v1:sha256:56cd9b349d126d96caa3b4accbbae577b40f65418f5519d983a1bb4013bf6787:eyJzZWxlY3RlZExpbmVDb3VudCI6OTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg0YmRlZmVkNDc4Y2EzOTA0NGU2ZDFhMzIxNDFlY2NhYzUyZTdmZGQyZDExZjUwZThlYTI4NzM1ZDBjMzY1ZjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5ZDVkZDNlOGEyNGQ1Y2VlMjhlYTIzZjdiNTRlYWY1MjQ2OGZmMWVkY2FhNWVmNTg5NzBmMWQ5NWYxMjRmNWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYzZTM0MjVjYmE5OWUyZTEwYjkwM2FkYzY1NDIwM2U2NzY0OGEzZWM3ODMxOTMyZjIyNmJjODdhM2RiMzJmYWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYwODAzYjMyZDNiODg4NGJmYzlhZmM3NjQ4M2NhNTg1OGQxNWE0OWI2NWU5OWMwYjI4YzJkZTVmYTJkZmQ0Y2QifQ"
+        },
+        {
+          "resource": "repo://tools/build-locally.sh#L192-L207",
+          "version": "repo-lines-v1:sha256:3a673441d50ab91dec3438ff4bad56a18d5f1184af83132fd851d44e30d95e3e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQzYjA0YjRmYzIyNjZkNTRiMjcxZTBiNmEzYWYzYTZiYjVjODg1MjdjYmFlZGVjNmRjODRlZjU1YWEyMDE2NmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyZDVkZTI3MWU1ODNjNjVkNzcxYzk3MTZkYjJjOWY2YjdjNmY5NjNhMDU0MTQwOGRmMjJjMTQ1Y2Q5ODA2ZTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFhOWM3YjU3ODlkNWE1M2JlZDRhZmQ5ZTRmY2U2YmMzZTI3ZGIwNTIzOTg0YmZjOGJkOGIzNWI0MDUzMGZhZmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI1NjY5MmI1M2M1MWY0ZmU0YThmM2MwOWViY2NjZDRmZGVjY2IxNjdkYzZhNjJiMWM4MjZiYjViNzJkMmQ2ZTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b176442e948c4e559b04b4dd15b8a3e3",
+      "statement": "The galasabld utility from the buildutils module provides version management commands: 'versioning list' to display module versions, 'versioning suffix set' to add version suffixes starting with - or _, and 'versioning suffix remove' to strip suffixes.",
+      "evidence": [
+        {
+          "resource": "repo://modules/buildutils/README.md#L8-L40",
+          "version": "repo-lines-v1:sha256:c418858191d4f1935d4664f41fc39dd35263d8c9154d8404ef10225ac79320e5:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA3MTM3Yzg1NjAzNGU2YjQzYTI4MTZkMmY3YWZlYWRkMTJhMDZiYTdmOWI1NzVjYmZhYWZjZWQyZGY5MzNlYzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMxYTE4OTlmYTczODAyMTliMjdlZDhhNjI5Zjk1MWNkMGJkZTU2YmQ3YzNhYTYyYTQ4NjIwYmFmMTllMmE3N2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMwNTBjYTU0YTBkODNhNzA1NDFlNjQxNjFkYjliNjgxZTVjYWJmYjg4ZmFjMzg1YzM3MWFhZmZlYjRkMzE3MDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA4NmUwMzhkYjUxMTVjOTkyNDFiN2FlZTQ0ZDlmOTg0N2I1NGE4ZmVlZmIzY2I1MjlhZTE4NWJmZjg1NjUzYjcifQ"
+        },
+        {
+          "resource": "repo://modules/buildutils/pkg/versioning/list.go#L22-L36",
+          "version": "repo-lines-v1:sha256:6d55af3a4724deaf26c0ab97f4ce2261be217cd4275da275194250f3b01551fa:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjExZmU5ZmEyYmQ1MzQ3YTlmNmJlOWIyYWI3YzJkY2I3MzRlNzM5ZGQzZGQyZTcxZGRlMzM4ZTNmYThkNWJkM2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk2ZThmNTM0MTI0MjVlMzUwNmQyNDFlNzJmZjU3ZmQyMDAzNTExMmEwNjIzZWIzZGNlMTNhYTk1OTk1MGIwOTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJlMjRlMzdmM2RjMjY5YWUwMzg3ZWZlMTE5MWQzMzE2YWNmZjU3MzBjOWU5NzQxNDIzNGE3Zjk5Y2Y4OTMyNzUifQ"
+        },
+        {
+          "resource": "repo://modules/buildutils/pkg/versioning/suffixSet.go#L17-L31",
+          "version": "repo-lines-v1:sha256:4471853bc15e44b76b2da69bce9452b8fce88e5fdcfb46527642a559ff8c9352:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY4MDJlOTA5ODhlZjdiZjg1NTJiOGQyYjhjNTYzNzJiYmU0NzZhMzIzZTBjMzMxM2FjMTgzYzNkMjQ3ZTJmZDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk2ZThmNTM0MTI0MjVlMzUwNmQyNDFlNzJmZjU3ZmQyMDAzNTExMmEwNjIzZWIzZGNlMTNhYTk1OTk1MGIwOTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJhN2YzMGZiZDVlYTc5YjkzMWQ2YjdmNTZhZmUxNjlmYmNlNWM0YjJjOTc1MTZhZWZhNTEyYTQ4Y2ZjNDIzZTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7350fcc8911d43d781ea21f89da0708e",
+      "statement": "galasabld identifies Gradle modules by scanning for directories containing both a build.gradle file with a version line and a settings.gradle file with a rootProject.name declaration.",
+      "evidence": [
+        {
+          "resource": "repo://modules/buildutils/README.md#L19-L23",
+          "version": "repo-lines-v1:sha256:a25f16cccb33bab80604f443bf495030ecfbbce9268dbbc64702794b9a44ab70:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzI5ZjJhZTQzMDNlZjdmZjUyYjgzYTQyMjg1YWYxYzg1OThhYjRkYWRhYjVjYjc2MWRiMzI3MmQ0MzY3ZWNjNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmM1NjUzODA3NjY5ODIzMzFhMWZiNGZjMTRkMzZkNzQ5NjE2NjIwZWMwOTIxZmIyOTA2OGNiZGRmMTY4Mzc3YyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjhmMmI0YjUzZjI2MDE0YjE0NTY0ZTRhMWVlYjUyNWIxNDk3OWI4NjFjN2ExNTMzMDE3Y2JmZWZjZWI2M2ZhMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDc3Nzc5MDhmOTUxMDljYzFiMzU2MDQ4NmY1MDZkM2QzZTIwNGI3OWQ3MmVlOTUzZWE1MjM5ZTRhNzRjYjhkZSJ9"
+        },
+        {
+          "resource": "repo://modules/buildutils/pkg/versioning/list.go#L101-L130",
+          "version": "repo-lines-v1:sha256:5504fa351529c582247a5ac3cf84ade7f64abdb3970d008e40b25a869dc9d5fb:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY4ZjBjMzJkODFhY2UyMjZkYWI5OTQzNWNjMGNjNTA5YTgzMmFjYzg0ODI0ZWU0M2QzYWNiMjg2MmFkNTg4OGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBkZGY1Zjg1M2EyZWJkZDc5NDcxYjhmM2Q0YjRlMDMyZmQ4M2I5ODYzNTRmNGI3ZWFjNzBlZDkxMTI4NDIxMjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZhZjE2OWQ3NDQ2ODAyNGIzODU2MTVlMzdiOGY4YTNiZDRhNmZjMDJkODQyZmMyNmM2NDM0ODdhMjU4MWI4ZTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_37088b0e52414c6da4d771cbc1a53132",
+      "statement": "The repository-wide set-version.sh script synchronizes versions across all modules by calling individual module set-version.sh scripts, updating build.properties with GALASA_VERSION, and updating README.md and documentation.",
+      "evidence": [
+        {
+          "resource": "repo://tools/set-version.sh#L107-L153",
+          "version": "repo-lines-v1:sha256:014f2f7b3e33348d6f41f896501aa02258eeaf151d576444b80f8186f1aeb8cc:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJkNmQ4NDI2YmRiZDZlMWYzY2Q0Y2IxMWY0NTZiZmU2YjQ2MDAwY2M4OWZiOGFkMjVjMjk3ZDVkMzg0NTYwYTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMyNDUwNzhhYWU3ODY3NzZlMDI0ZWNmMzZmZTFhYWQ5ZjZhZjM3NTkwZWVmMWM3MWExNWFmN2FlNDQyMWE5NmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVlM2IyNzNiMzg2Y2NlYjNhZmVkMzc4YTA4NzM4ODI4MDFkOTM4ZTdhZWMxMjljMDk0ODVkMTY5MDQ5ZTI2ZGYifQ"
+        },
+        {
+          "resource": "repo://tools/set-version.sh#L137-L143",
+          "version": "repo-lines-v1:sha256:292e02919605ad4e0190505060796731e57ca4628ce18bf25c7b6647b136731f:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDA3YWRlMTdmYTg1ODA3YzQyNGExMmE1ZWQyM2FjNDEyZWQ5YWQxZWZhYTk2NmMzODNhNmE5ODY1YjQ2ZmY5NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzIyY2FmMjBkYmJjNWM3MWNjMWU0NmQ3NDNjYjliOGQzMzM0OTRiM2U3MTk3YTI4YjQ3ZTBmMjQ5MWQ1M2FiNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2I4ZmVhY2ZhNzhkNDQ0ZTZjNDQ4MmI2ZDQ5NmQwMjE1NWVhMWZmMjUxYjFhMmU1ZjNiMGI4N2E5OGU4OTkyNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_0a5ce8335ea84c918211ebee9e95fcc5",
+      "statement": "All Galasa artifacts require GPG signing before publishing. Gradle builds use signingKeyId, signingKey, and signingPassword properties with the signing plugin's useInMemoryPgpKeys method, while Maven builds use GPG_KEYID, GPG_KEY, and GPG_PASSPHRASE with maven-gpg-plugin.",
+      "evidence": [
+        {
+          "resource": "repo://CONTRIBUTING.md#L105-L116",
+          "version": "repo-lines-v1:sha256:a4ca4bcaba799adeb3075c1565e19ad06861e12142b2ed80475f0fce0a60d384:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY1YjhlNGRmNjY2MmQ3MjI1NDVmNjYzMmYwOTc4NjhhZmY1MTdiMGVmOTAxYTYwNGFmMWJmNzBhODdjNzVhNGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJlZmVmMjEyNjQ4MGI2Y2FmYzFmNDhjMDY3MzUwMzE5NmI5Y2EyYzQ0ZjRmMGFmMDdhZTkzZTk1MmM1ODIwNDkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhiOTZkZjgyNGUwNWIyNzQzYjI4YWE3ZTE2MzJkMDQ2MTc3YjUxMmMyNDJjZWEwYjA1MjJhNjU0Nzg3NTU4NjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMxMzQ3OTY5MTg1M2FhMDk1YTMwMTQxZTMyY2IxY2YyODk5MTc5MTdhNWJhNTcyMWNmNjE4ZWZlNWM1YWEzNjgifQ"
+        },
+        {
+          "resource": "repo://modules/gradle/build.gradle#L19-L29",
+          "version": "repo-lines-v1:sha256:665e0bc998d481b2e119b8735d75f2c38d9250b1d2c4c72fd45de8d005b513af:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM0OTk4MzNjZWMwZTY0OWU2MGZkNTUxOWIyOGQ2ZjkzOGUwMTY0ZjE5MjAzNWQ0NmQ4Njc3YmFlMzM3OGEyNTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk0ZmQ2MGRkZGQ0MDZjZTg1ZGIwMTJkMzA5ZmFmNGU3ZjU2YzY3MWFlYTBkODBjMTdlOWY4YzYxZmJiYTAxNjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUxMTZkZjhmMWM0YjQzZjQzYzM2NzQwMGYyYjM1Njg0YTk4MTkwNjMzMTQyNzI1YzFmMDBiMzAxN2IwOTk5YWUifQ"
+        },
+        {
+          "resource": "repo://modules/wrapping/pom.xml#L120-L138",
+          "version": "repo-lines-v1:sha256:860441aba5e6b907ac6f435e01d0faf57b17cfa789b1bb3a286dd3449543ab80:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjViZTUxOGNkYWQxNTgyZTM3YTJhNDE4OGI1NGY5Nzg2ZDRiZWQzMzg4NjQ2M2UzOTM5ZjRiNGM4NzYwNTViM2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMxNzQzNWI3YjdkODI4MTdmMDFhMjg3NTQ0ODEwZmM5NjdkZmMzYmFiN2M0MGRkOGJjMDIwYTBiMzNiZjllMDYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ2Yjg1NjNmYTc3NmIyZTU3NDU3N2QzYmU3NWUxZjYyNWM0MmZjNTM4ZGQzMjg3NDZmMTIzNjVlMWJmYzQwNGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdmMzU1NDYzY2E2ZTgzN2Q5NjAzODg5MGMwYWYxN2MyNTc0YTc1YTgzZDU4NDI0MTdjZmVhNThkMTk2ZTZmOTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9bef209f545944b998e426819c2cc3c6",
+      "statement": "Gradle modules publish artifacts to repositories specified by the targetMaven property, using GitHub credentials (GITHUB_ACTOR and GITHUB_TOKEN) for HTTP repositories and direct file access for local repositories.",
+      "evidence": [
+        {
+          "resource": "repo://modules/gradle/build.gradle#L97-L109",
+          "version": "repo-lines-v1:sha256:6a1921b5141692e4c34d3b5b19f4eab6d7337ce25bf6ee9e50cac0e3312b596e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFjMjNhNjcyNjNmODBiYTZkMmM3MWI1NjAxYzgxODQ0MmM2MTVhM2UyYzVkMDcyYjhmODVmYmNjYWY0NDQ1M2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJmM2UzN2Y2NzljZDY2NzAyYjcxZjNmOThkN2IyYjYyZTAwMGEzM2FkYjQ4OTE1NDdjNjZhOTJkNDEyNGIxNzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA5ZjkzMDgzYzE5NzEyMWI5ODI3MDBiYThhZmFiZDE3MjJjZjFkM2U3NDA0NTA5ZTgwZWZhMjcyNDdmNjJmMDcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ff74e9d289c6454d80af7bdd84062f43",
+      "statement": "Maven modules use distributionManagement with separate galasa.release.repo and galasa.snapshot.repo URLs for publishing releases and snapshots respectively.",
+      "evidence": [
+        {
+          "resource": "repo://modules/maven/galasa-maven-plugin/pom.xml#L43-L52",
+          "version": "repo-lines-v1:sha256:6024d40e92fb985d1bf99d3b839b73c6f2030684ddbf628ac3bbf1ce195767a1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1ZmMzZTQxZGE3YTFmY2Q1MmM2ZTExZTJhYjUyOGU4NGRiYmY5ZDgxMjBjYzVhNmUwMTRkMzU4OWZhMTQ1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImViYjI2NjQ2ZjI3NTMzYTU4Njg0YWMxNWZiMWEyZTgyZTA1MzYwY2IwZGI0OTYzNDM2YjEzODgxMjJmYzM1YTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY1YWM4YjcyOTM3NjdmMTFiMmE2NDk4Yjc1Y2I3Y2JkMjJmMDczYjI1ZThhMmE1NDIzNDkyOWVlMzEzMjE4NTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA4NTUzNmIxNmQyZmEwNDA2MGUwMTI5ZmUzMzc3YzJkNjlhNDM3MzdiZTMyOWRhYTIzZjYzOTYxYjZiOGVjZTEifQ"
+        },
+        {
+          "resource": "repo://modules/wrapping/pom.xml#L71-L80",
+          "version": "repo-lines-v1:sha256:22786115902fa1ac1743997d992809216713f66d104a88fffd7279b348a1f6a5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNjMDE3ODA1NzI2NTA3OGVhNjM1ZmZjZWMzNDU2YTFiYzIwYjVmZTY0NzZlM2MzNDEyZmRiYzhmZDIxNmE3NDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU0ZThlNDc1ZmZmMmRjOTA0NWE2NjI2ZjZhZGYwMjgyNjRmNGRkYWViYzI0YmM4ZWE4ZWVmNjM4OWQzODE5ZjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk2ODE0Mjc1NWJiMTdjZDVmYzAzZDE5YjQ1N2FjYmMzMGZlN2MyNGU2N2I5OTJmMmUxZjNlMDI0ZjhiZTZkYTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdjMGUzYThmN2Y2MTgzMGNhZDEyZmQ4MTI4YWU1N2RlNWM4YjIxZjFmZmM2NDQxOGUyZWExY2IzZTUyMmNmNDgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6064e5e1f0f744009b28147638118f9e",
+      "statement": "GitHub Actions workflows require WRITE_GITHUB_PACKAGES_USERNAME and WRITE_GITHUB_PACKAGES_TOKEN for authenticating to GitHub Container Registry and pushing Docker images and Maven artifacts to GitHub Packages.",
+      "evidence": [
+        {
+          "resource": "repo://CONTRIBUTING.md#L93-L110",
+          "version": "repo-lines-v1:sha256:7a81c9f62fb5ba2ecf988bf7a808ff713d6ea756b98a92092fca59a4b51047a0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI0M2Y1OTNmMTNiMWRjMWZjOGRiMjgwYWUyYWQ3OGE2MGM0MDUzOGZlNDMxZWM5NTlmMzNjNjg5ZTk5ZDQyZDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFjMjA2NGNmZjFkMTk3OTA2NGFkY2Q1ODhkNzkzNTliZmQxN2ViMDAyNDZjNmUyYjBhZTEwYzg4ZjBlOTJkZTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE0ZGVmMjVlMGE4ODkzMzNhODQzMTNhODZlNTE3YTkyMzUyYjAzMmJkYjU1NGNlYTM1MzNiYmU1NGUwYWUxNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVhMmQ3MjMzZDI5MzI1NTQxNzVmMTlmMzEwZmRmZWI3MWNlMjYzMTc4MDllZWJjMzBmODhhZGY3NjY4ZDliNTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_569d353e3cbb4dc6883bb4f80246a890",
+      "statement": "The sourceMaven environment variable configures where builds pull dependencies from, defaulting to https://development.galasa.dev/main/maven-repo/obr/ for most modules or file:// paths to local maven repository for CLI builds.",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/build-locally.sh#L130-L139",
+          "version": "repo-lines-v1:sha256:e1912ccd792e98b33eca446b812514552bd119b941477d765699f46a62f32304:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyODMzM2FmMDJkMDFkYWZiMjgyNWY4ZWQ2NTgzZjU0YmE3NDc1MzEwMDAxZDJkOWFmNzhjYjA2ZmI2MDEzYzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRhYTY4MmNkMTlkYjNkYWE4NjZhMzMwMGQ1NTU0MTg2OTkxYzAwYzI5NDkzYzQ4MWU4MWRiOTIyOTUyNjJkNTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM4ODllNGI4NjQ4NGNmZmJhZjI2NWQyY2NlNjNmNzZhNjRiOTBiODMxZWQyM2QzODI2OGQ3ZDZjZDg5MmRkNDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNjZDY4ZGZkZWZmNjkwMmYwYTQ1MzcyMjc2OGZmODliMDg2NGZmMzQxNzJkMTk1N2Q0ZTkwOTE5NTJjNGRiZjgifQ"
+        },
+        {
+          "resource": "repo://modules/extensions/build-locally.sh#L147-L153",
+          "version": "repo-lines-v1:sha256:769e6b515c0147582c872de345dc9be06512024070260255d79b81c0376057b2:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTI4MzMzYWYwMmQwMWRhZmIyODI1ZjhlZDY1ODNmNTRiYTc0NzUzMTAwMDFkMmQ5YWY3OGNiMDZmYjYwMTNjOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGFhNjgyY2QxOWRiM2RhYTg2NmEzMzAwZDU1NTQxODY5OTFjMDBjMjk0OTNjNDgxZTgxZGI5MjI5NTI2MmQ1MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDc0YTVhOGQ0MThhOTAzMzQxNDVjOWQ1MmYzOWE2ZTVhYTU5YmUzNWVlOWQ0ZjBjOTI1N2I2NDc5MDBlZDBlNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2E3NTRjZmJiNWNmNDcxNzBmN2VlMjEwYjc0ZjA0ZDUxZjdjZTNmNGQxYjU5Y2E4ZDhkNjE1ODg0NTdkMWI0NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a6a38e3837304cf49f2f2b02ffd9ab7e",
+      "statement": "The top-level build-locally.sh script orchestrates building multiple modules with options for --module to specify start point, --chain to enable/disable dependent module builds, --docker to build Docker images, and --minikube to push to minikube registry.",
+      "evidence": [
+        {
+          "resource": "repo://tools/build-locally.sh#L138-L164",
+          "version": "repo-lines-v1:sha256:a939a44392a92b5879c42330a6ee3362d82e6251ebfe2b158c51155d59fa5fd6:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxNzkxNDBmMmJjNWU3OTNhYmY5MmQzOWIxZWRlYTA5NWIxY2M4YzdkOGY1Zjc3MjhmNjA0NTNmMmU0Njk1ODkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQxMTdmYTAwNmJhOTIwODUwMGIyOTMwY2U2OWNiZGU0MzZjNjQ3YWZhOTE3Y2I3Mzk2YTliYzkxMTFhNDZkZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjliMjg4Nzc5NDRhZDk2NzI3ZGQzNzEzOGQ4ODE1ZjgxMDIxNTJjYTA3ZTk1ZmVhYjJlMzdlMjg4OTFhMmQxNjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkyNjkxM2NiOWU4ZDQ2MDU4OTNhMjNmNWIxNjQwZDVhYjMzNzdiYjAyNzQ0MDNlNzUxY2E1ZWE4Y2E0ZDUzZWYifQ"
+        },
+        {
+          "resource": "repo://tools/build-locally.sh#L57-L67",
+          "version": "repo-lines-v1:sha256:389d9268f4aed80d6774f176e5e4aac4cbd3e13d69691a7cd8668edfc7d5efc9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE0YTBiZjgwNWMwY2EzZDAzMjhiM2UyMTQ0M2IyOTVjMzc2MWQzNmZhMDQ2ZTEyYmZiYmQ3ZjU2Mjc5ODgyZWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYxZWU4NDg0NzAyMzFkZDk0NTU2MjkyYTllNGQ2YTE4YzQ2OWI3NTRkNzRjOTk2YWQ3ZTJhZTNlZDQxNDZlOGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI2MDgxOTI5ODNhZWU5ZmMxMGI3NzdhMjM0NzM0YWQ4NmI4YzRlNTA2ODBhMjUzNDFhNzFkOTc4NjVhYTA5Y2YifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_152531be3e4a45a09d7e09834c8d2198",
+      "statement": "The build-locally.sh script cleans the local Maven cache by removing ~/.m2/repository/dev/galasa directories before building modules in dependency order.",
+      "evidence": [
+        {
+          "resource": "repo://tools/build-locally.sh#L177-L181",
+          "version": "repo-lines-v1:sha256:e2da74e7d58e5f107694ef2a76927abb0b9642695127d451586776e3fcc900f4:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWZmMDJjMzRmOTRmZjFlNDlhNmNkNThlOTkwY2M5NTFiY2NhYWVlMmQwNWYzNWVlMWUyMzljNDU1NWRmNWJlMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGQwODNlYWNkY2MxMjU1NzlmZjNlZmI4ODVkMDczYzM2NTY2ZDJhNzI4NzE4ZDc2MGEzYzU0ODM2MDI4Njk4OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzBjMzdhNWRiYjA2MDA3Y2FlMzg5MTRjODViZTgzOWU0YWNhYjY1ZWJkM2M2N2Q3NTA5Y2FmODhhN2Q5ZWE5ZSJ9"
+        },
+        {
+          "resource": "repo://tools/build-locally.sh#L277-L278",
+          "version": "repo-lines-v1:sha256:22cf90b9b7ddc9bccd1f21268d6aae75de5689e55e55cc87cc9e0bd23c595e35:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmVjMzViNjFhMmYyNjRiM2RmZjUyMTkyYjVjYjFiMGM3NTU1NmFmODg5MDc5ZWRmZDhhY2E0ODgyYzcwNDNkZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGRhZTI0MjlmZGRiODc5ODBhMGRhZDkzZDc5MDk5NGUyMmRlZjU5YjVjN2RlM2FkNDUzOTg1MjM2ZjNjYTA0OSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2I4OWJjODc2NjgxZjkzOWUyNDU1NmY3YWNkYjQyZGI5MDRiZGI1ZjI2MTc3MzM1ZjQ0MDkyNDZlZTU2ODE5MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGQyZjJiODMzODQ2NmU1ODNjZjc0YTY3ZThkYWM4OTg1MDQwMzBlYTkxOWRkMmYzYWJlMzNhMjVhNDcxNjBhNyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_473a6ec7420349ab9d7a1e93534ceecc",
+      "statement": "Contributors working with forked repositories must configure GPG secrets (GPG_KEY, GPG_KEYID, GPG_PASSPHRASE) and GitHub tokens (WRITE_GITHUB_PACKAGES_USERNAME, WRITE_GITHUB_PACKAGES_TOKEN) before manually triggering the Main Build Orchestrator workflow to establish baseline artifacts.",
+      "evidence": [
+        {
+          "resource": "repo://CONTRIBUTING.md#L171-L181",
+          "version": "repo-lines-v1:sha256:b79a45eb31ff9e3c83cfd1a79152dd4cb953fb626d157774762767f96aa0713a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2OTk5MTExY2M1NTg4ZGY2ZDhkNDYyNTM4YWNjZGJjZDMyNDI4YzNjNjdlZjQ1NWIyZTgwMzc3ZjhhMzNkNGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAyNjY1ZDU0N2Q4OTkwNmQ0YTcxNDkwY2JhMGJlY2E0ZDY1ZjRkYzQyZTkwY2I3OGZhNTNiZThjNzI2ZDhhMjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI5ZmFhODAzMmJmNzc0YmU5YzM3Y2RkNmI4MzE1MjY0NzFkOWUzMTFiN2Y3YTAyODU1YWM2MThlY2RkZDQwZjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI1NGE3NzFmN2E5MzIwZjk5NGVjYzJjNmU4MTY0YjlkZDYwMTg0MDgzOTIwZDM4ZTZkOTFmMGE1MmI2ZjE2NmQifQ"
+        },
+        {
+          "resource": "repo://CONTRIBUTING.md#L65-L84",
+          "version": "repo-lines-v1:sha256:b23b79dca0b47c93f76ca39c055aae8e5cfa7068d8f4dd8e57058180dbebc454:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA5MmVjOTA0NzIyMDMzOTYxNTcxYWZkNzcxNDU3NGU5NTgyYmViMTdiZjY5YTRmZTQxNTJkM2MxMTMyNWFjZmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVhMmI1M2JlNzAwNDZhNGQ1ZDlkNDZjNDg2ZWQxZDJlMTQ3Y2UwMDZjODdkY2U1MmUyYWM2MmUxMTU2OTc2YzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU3ZmJlZGQ3MGQ5YzYzOGZiNGM1OTZlMmIwZGJhZmJkZDhhZmI4OTdlOTA5ZDYwZTc3YjQ1MjlmMGJlNjU0OTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_60da17a843bc4d07bfebca5a8c198793",
+      "statement": "The Main Build Orchestrator workflow downloads Maven artifacts from prerequisite jobs using GitHub Actions artifact storage, extracts them to temporary locations, and provides them to builds via the sourceMaven property.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/framework.yaml#L87-L108",
+          "version": "repo-lines-v1:sha256:f41d0b7090e09404c85ff0a5805808ac5427086fed87d99f4bc19516aabe544d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg2ZWExMmFmYWJhMWM4ODAwNGMzMmMwNjQwODk1OWMxNGQ3NmQ4ODE0ZGIxM2ZhYTFmZjMwNDc2OWU3MDg5YmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBhOWE1MzViYjY3Mzc4YTdlN2ZjYzIwNjI5MjYwZTg0YWVlZTVlYWM2ODkwZTAyMTBhN2U2MDJjMWQyZTE1NmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY1ZTExNmMwYTc3NjZjMjJlNTMxODZmMTkwMTlkODRkNTY5ODQ4NjMxOWQ4YTk5ZjllYzIzMmExNGEzNzA0NTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE2Yjk3OTAzZTk1ZGZmNGJlYThkYThlOGI4NWVmYmZlMzg1YTg5ZGJhZjVkMGRkN2RhYzAwOGVhNWU1MzkwOTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_51691a70c21843c9a255d43935a084e5",
+      "statement": "The wrapping module converts non-OSGi JARs into OSGi bundles using Maven's bundle plugin, enabling Galasa's OSGi framework to consume libraries like java-jwt, client-java, jetcd-core, kafka-clients, Selenium, gRPC, and HttpClient 5.",
+      "evidence": [
+        {
+          "resource": "repo://modules/wrapping/pom.xml#L105-L110",
+          "version": "repo-lines-v1:sha256:b77a5e05359a923bf6823aedde43db773fb7bc4c6ff9e0118bc0ca2c0c795570:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNThkMTZmODE3MGYzYzQyMDdhZDhhOGMyMTk4MzZkMDU5MmZiODM4ZGQwY2FiZDFhMjk5Y2IyZGFlMThlNTlhMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzE3NDM1YjdiN2Q4MjgxN2YwMWEyODc1NDQ4MTBmYzk2N2RmYzNiYWI3YzQwZGQ4YmMwMjBhMGIzM2JmOWUwNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmEzY2Y1MTkyMzU0ZjcxNjE1YWM1MTAzNGIzZTk3YzIwZWRhOTk2NDNmY2FmNWJiZTZkNDFhZDU5YmQxMjE2NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjhhOTVlNTk5YTEyMThmOWU5ODkxNWEwYmNjMjY5ZDIxYzFiYjliMjM2NzNhNjExODc3NWQ1NjFlY2RjYWE3ZSJ9"
+        },
+        {
+          "resource": "repo://modules/wrapping/pom.xml#L37-L45",
+          "version": "repo-lines-v1:sha256:0e1240820895aef0575a958b1cab3d3d239bcbf32308df8a797f1cac19f77003:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTU5MTk5OWM1M2MxYWYzNTJkOTlhZDI3OWM1NTk0ZGI5MGEyZDQ3N2EwMTY0MDY5M2ZkYTdlYzUzZTM3M2UxNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2QwOTY2NGIwNjY4YjBiYjBmYjhiMzM4MTBjMmUyNWI5MmJhMmFiYTlhMzk5ZmQyYWQ1ZGJlMzhlMThjMDc4YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmIxMGYzZGIyM2M2ZTRiZTQ1MWIzZjdjYWY4NjQ2OTgzMmIzZjA5OWFlNzQwMGM2MzFlNTEyYzc4MTNhNWVjMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTEwY2EzODg0MjYzZDZkMGU3NGM4Nzc5MWU0ZTBhM2Q3MzU1YTUwZDQ5ZDM3NWY1ZDU3OTczZTQ2NDkwZjg5YSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_56455d60b1fc41cbb32cc16ba74c1c4e",
+      "statement": "Signing is conditionally enabled in Gradle builds using onlyIf with isMainOrRelease boolean property to control whether artifacts are signed during the build.",
+      "evidence": [
+        {
+          "resource": "repo://modules/gradle/build.gradle#L27-L29",
+          "version": "repo-lines-v1:sha256:38c0db845eaae085b507e83f00cb9eb57ec7e5a6c69154eb7e3535c4f7a7730f:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmM0YjM1OGZmYWVlYWE4MmE0MjYzMGJkNTMwNmNlZDA2YTMwZDZhNDRiMDc2NGNkOTRmYTQ1OThlNzNlMGMzZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTM2YTEzMDcyMjMwMTc0MmY3ZmQ2MGM4ZTlmMTQ2NWIwMTdmMWExZTUxZjUwZmY2Njk2NjkxOGU1OTliZmQ5NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTExNmRmOGYxYzRiNDNmNDNjMzY3NDAwZjJiMzU2ODRhOTgxOTA2MzMxNDI3MjVjMWYwMGIzMDE3YjA5OTlhZSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.2",
+    "at": "2026-09-21T12:35:12.771Z"
+  }
+}

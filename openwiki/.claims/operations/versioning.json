@@ -1,0 +1,182 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:74be0b92aedf15560859e958d202c1961c905c2088840750ddec369ab5260605",
+  "claims": [
+    {
+      "id": "claim_299f764b1b1c4bf0a4a35a28fdd8983e",
+      "statement": "Galasa versions follow semantic versioning with optional suffixes, using the format X.Y.Z or X.Y.Z-SUFFIX/X.Y.Z_SUFFIX, where suffixes are separated by hyphen or underscore",
+      "evidence": [
+        {
+          "resource": "repo://modules/buildutils/pkg/versioning/suffixSet.go#L84-L96",
+          "version": "repo-lines-v1:sha256:f463dea1ea9c4d1c53a52aa138a505387724c85cb59c41fff5b3e57d4e0db2bc:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRlZjcyNTFiZTA1NDBjMGU3OTgyMmVjNjI0ZGU3NjViODBlMmZkYzk4ZjJhYzYxY2IzYzk3MTE3ZWI0YWM5ZWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU1N2QzMTBlZTg3NWJiMGM2MDFkM2Y2YThhYjA5NDlkY2UwYTZjODZjMjI4YTMzNDhiNWE5ODhhMGEyYjcwZTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRjNmMzMDliZTUxZDY2MDhhMDEyM2Y1YzhkZjlkOTYwNzRjMjdhY2U3N2FiYTEyYmEzMjRjZjdiMTBlOWEzZjAifQ"
+        },
+        {
+          "resource": "repo://modules/buildutils/pkg/versioning/suffixSet_test.go#L15-L33",
+          "version": "repo-lines-v1:sha256:ec007271c4a3c365c4364a29c1663f86a69dc90f3910ed4fe60228fe98e657b5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyNjA3OWVlYWJhOTU0NGQ2ZDFlMTg2MDQ0ZDFhMTAwNDNhNGM0YTlkYWRkM2VjYzllNmZjODI0ZDA4MWJkNDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5MmRhM2NhZTEyZjIwMzMyYTIzMzA3NTJhMjZkMjZiOTg0ZGM2MjM4Zjg4NjA1NGM3YmIzNTFkZmZjYTg0MzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVkYzM5YTAzYTFjZjE4ODY1ZmI0Mjc0Yzg5NTZiM2Y4YjJhMzExYWQwNDUwOTJkM2VkMzJlMjY2ZDdiZjA5MDAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_40b73a04732f4452b4f3d6c5d96d8089",
+      "statement": "The top-level set-version.sh script orchestrates version updates by calling module-specific set-version.sh scripts for each module, and updating docs, README.md, and build.properties",
+      "evidence": [
+        {
+          "resource": "repo://tools/set-version.sh#L107-L153",
+          "version": "repo-lines-v1:sha256:014f2f7b3e33348d6f41f896501aa02258eeaf151d576444b80f8186f1aeb8cc:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJkNmQ4NDI2YmRiZDZlMWYzY2Q0Y2IxMWY0NTZiZmU2YjQ2MDAwY2M4OWZiOGFkMjVjMjk3ZDVkMzg0NTYwYTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMyNDUwNzhhYWU3ODY3NzZlMDI0ZWNmMzZmZTFhYWQ5ZjZhZjM3NTkwZWVmMWM3MWExNWFmN2FlNDQyMWE5NmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVlM2IyNzNiMzg2Y2NlYjNhZmVkMzc4YTA4NzM4ODI4MDFkOTM4ZTdhZWMxMjljMDk0ODVkMTY5MDQ5ZTI2ZGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_86aa7cccc2424f92809b8aa5f68aa513",
+      "statement": "Each module under modules/ has its own set-version.sh script that updates version-specific content within that module including build.gradle, settings.gradle, pom.xml, and release.yaml files",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/set-version.sh#L132-L181",
+          "version": "repo-lines-v1:sha256:a0bf2bf20e746e02691486d76e80e31a329f761beae163a6d58c6968f2b1d974:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0MGIyMzc3OGFkZWIzYzI1NTQzYmQwM2QyNzJkZjJjYmQyNmQwNGE5OTI0MTY3NTdlYWY2YTUxZTI0ODdkZWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJmNjk5OGZlZGY0ZWEwOTg2Njc3OWM3MGUwMmUxNzczNjZiNGRjNjY3OTQ4NTNjYjRlNzU5YTc0MDY0ZDFiYTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg5NjdiNzUxMjU1NzY2NzI2MGY5ZmY5OWRlMmIyZGFlODc3ZDcyMjE3ZTg1NmNhZmY2YjczNGI0YjQ2MWFlZDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://modules/gradle/set-version.sh#L104-L143",
+          "version": "repo-lines-v1:sha256:bb1bfdcb5a71ed8ab7ac7fe6b4e3a9db08a54cb32c106e427f678e96ec934a74:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM4ZTQwMjYyMTNhNjIyZjUzYWM2Yzk3NGVkNTc1YzhmOWIyMmVkOGY3N2NmMjQxNmNhNWJmYWQwYzE4ZDUwM2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY5Y2Q3N2ZlNDkwMzM3Yjg2N2NhMmYwOGIyMGZlYTdhOGY3YTc2NjI5NGViNzI2MmY2ZjQyMGRlZDE1MmRhZDAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMyNzNjN2EyNTk4OGMzNjMxZjA0Y2ZmZmQ1MmYxM2RmOGRlOTRhNzA2ZmQ0NmUwNDk3MTJmOTU0MDM2ODJkOWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://modules/maven/set-version.sh#L155-L164",
+          "version": "repo-lines-v1:sha256:a6bf26332042c05021fdd0baa2afcf0959c63927810da5e854058339ded19224:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1ZmEwOTdjOWUxODFmZjMzMWRkN2FhMjg3YzNjODFiYjMwMTk0NTZhMjQwNDdmNDYwZTcyOTMwNWNhNTE1ZmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYyMzQ5NjFmMjRmNTQxZTBlZDJhOWE4MTA5NmRmOTJkZGQ0ZDk5NGZkM2IzMDIyNDM0NjQ0ZmMwZTE5YmEyMTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://tools/set-version.sh#L107-L117",
+          "version": "repo-lines-v1:sha256:63d4dce8ec4fcb257ec34420a7902492cb1d18dad1044281d0d42534b64a7316:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJkNmQ4NDI2YmRiZDZlMWYzY2Q0Y2IxMWY0NTZiZmU2YjQ2MDAwY2M4OWZiOGFkMjVjMjk3ZDVkMzg0NTYwYTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcwMWFkYTBkODBhM2JhZjY2ZWY4ODQ5MjBmNWYyMTNhNjdkMmZhN2QxMjFlMzE5NTQwNDE3NWJmNjRmNDQ3NTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMyNDUwNzhhYWU3ODY3NzZlMDI0ZWNmMzZmZTFhYWQ5ZjZhZjM3NTkwZWVmMWM3MWExNWFmN2FlNDQyMWE5NmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQwMzUzM2IxNTBiZDNiYmE0YzAyMWRiMzRiYzRhMTM1YjhjYjY3ZGIxOGM2NTVlOGFkZjA2NTgxMmYwZjQ0ZDcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_06bd2739ac7241b0a9b6ad421e5680b3",
+      "statement": "The galasabld versioning list command discovers Gradle modules by scanning for directories containing both a build.gradle file with a version line and a settings.gradle file with a rootProject.name line",
+      "evidence": [
+        {
+          "resource": "repo://modules/buildutils/README.md#L11-L24",
+          "version": "repo-lines-v1:sha256:61dd934d37f58aa1823b68d609b4d207f25bfb311ff5638c04c5d347844dc9d2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMzN2EzZGQxNzEyZDgxYjliYjY1YjczMjE2OWJiODY5N2FlNTNhZGUyNjY3YTc1NGM5YTMxMzlkZWRhMzA3MjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFjMTQwYWQwZDgyOWUwMjFiYjhjOWZlMzhlNzFjYzlmMTIwODUzYmQ3YmE5YzJlMzNjNDE2Yjk0ODM5YmEzZjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMwMWJhY2JiOTU0ZmI3ZTVlN2I5YTM3YWJjOTYxMDUxN2U5ZmViN2MwMGQxZGYwZTExMGE0NDljZTcxOWE1NDQifQ"
+        },
+        {
+          "resource": "repo://modules/buildutils/pkg/versioning/list.go#L101-L130",
+          "version": "repo-lines-v1:sha256:5504fa351529c582247a5ac3cf84ade7f64abdb3970d008e40b25a869dc9d5fb:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY4ZjBjMzJkODFhY2UyMjZkYWI5OTQzNWNjMGNjNTA5YTgzMmFjYzg0ODI0ZWU0M2QzYWNiMjg2MmFkNTg4OGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBkZGY1Zjg1M2EyZWJkZDc5NDcxYjhmM2Q0YjRlMDMyZmQ4M2I5ODYzNTRmNGI3ZWFjNzBlZDkxMTI4NDIxMjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZhZjE2OWQ3NDQ2ODAyNGIzODU2MTVlMzdiOGY4YTNiZDRhNmZjMDJkODQyZmMyNmM2NDM0ODdhMjU4MWI4ZTcifQ"
+        },
+        {
+          "resource": "repo://modules/buildutils/pkg/versioning/list.go#L132-L157",
+          "version": "repo-lines-v1:sha256:6d2a4b67aa2b9042c6bc6cdffafe461bafb42ae285186b1895233cbe92aab27b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ2NGU5YWViMmNlMDJiM2M1NjQ2MGE4NGQxYzMyY2EzY2U1ODFmYzRhMGJkNTNhZTg0ZWM0ZjQ0ZjFiY2IyOGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJhZmNjZmViOTRkMThkMDUzYmE2YzZkOGExZjI3YmEyYjBmMWU5NzNjNTFlOTczYjc5YmVkM2EwNWE4ODZiYTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFmOTc2MzY5YWU4MDdiNTM2ODJlY2VmYWJjNTcyYjliZDRhMGZmNjQ0OTFkNThlYzMyNjU0YmY0MmZiYWNkMTkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_294f101d69c141d0b71d1a0818fe15b4",
+      "statement": "The galasabld versioning suffix set command requires the --suffix parameter to start with either '-' or '_', and strips any existing suffix before appending the new one",
+      "evidence": [
+        {
+          "resource": "repo://modules/buildutils/README.md#L25-L33",
+          "version": "repo-lines-v1:sha256:9d0e256b65d1b4f05b22b3df6e3e6f73ce8de67f8ca9678069c8b136fd206777:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWZkNmU0YzA3YmI0YzQ3YWI2MDNiMGE4ZjZkZWJjNWYxYjliYjExYTMxMjhmZWJiZmMyNGYwYWFhZmQyY2RmOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTFmOTAxMWZlODBiNmU5NGQzNzNmYTNiMDQwYWJmY2M1MTY3OTYxZTJlMWNhODIyMGE0YWE2YThmOWI4ZDc2ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODU5ZDdiNGY5NTE2YTg1YmVlYzQ2ZjYwNWRiODUzMmM1YjdmM2MxNjc2ODdlMjNlYWM4ZDE4MWRhNDMwOWU1YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDVjOTIyMTljOWYyZGQwMDBmMDYxODg2MTcyYWViYzI3ZDYzYmM5ODM0ZDU4N2E0Y2QyMTI1ZWQ2ZTY2OWVlNyJ9"
+        },
+        {
+          "resource": "repo://modules/buildutils/pkg/cmd/versioningSuffixSet.go#L27-L31",
+          "version": "repo-lines-v1:sha256:e9d2d5a42e8585f95ecad1f8d6529e0ac38592046f52ca4e0bda10e7a13d6cef:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGZmODRkZGUxYzI1N2MyNGFjNmUyNGY5Y2M4NWI4MTdkZjcxM2UxNTQ4MTE0YWZjYzVhNWI2NTMwMGViNDNmOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWRhNGQyMTk0MDBmODZmNTY5NDYwNzYyMTRmMzNjZmZhNzc1MTgyYTgyZGMxZTE3ZmNlYWE0NmM1YTBiNjA2MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODVkYjEyMjgxZGJiMTAxMzdhY2U4NDliYmM0OWI1NmJlMzIwNWZmNGNlNWRjMWVhYmYyMjVkOTZjMTMwMDFiMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjQ4OTE2NTBiZjliZGVkZjc0MzI2OTVlYTc5MmVhZDc1NGY1NDgyNzVhNGY1MmRmMTBmYjZhMmU0OWUwYzJmNSJ9"
+        },
+        {
+          "resource": "repo://modules/buildutils/pkg/versioning/suffixSet.go#L33-L43",
+          "version": "repo-lines-v1:sha256:fe62812e6ea2307dcbc7d515ce36d36e7ed0a1f4b724119d31560661c7ca8516:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYzNTIyYzRhYjNkNmE2NzZmMjM0ZGFkMzJhZjhkMGY3OWFjZTY1NmYxZDFjYjk1NGIyZjJmM2RmMzliMjdkY2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU1N2QzMTBlZTg3NWJiMGM2MDFkM2Y2YThhYjA5NDlkY2UwYTZjODZjMjI4YTMzNDhiNWE5ODhhMGEyYjcwZTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI3NGRmZmEwNWQzNTVjYjMzZGM5MGZhYjVkNTcyZDkwMmU4ZDdjZDA0YmFkZGUzYjJmNmE1ODkyZTNhYjFmNDQifQ"
+        },
+        {
+          "resource": "repo://modules/buildutils/pkg/versioning/suffixSet.go#L84-L96",
+          "version": "repo-lines-v1:sha256:f463dea1ea9c4d1c53a52aa138a505387724c85cb59c41fff5b3e57d4e0db2bc:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRlZjcyNTFiZTA1NDBjMGU3OTgyMmVjNjI0ZGU3NjViODBlMmZkYzk4ZjJhYzYxY2IzYzk3MTE3ZWI0YWM5ZWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU1N2QzMTBlZTg3NWJiMGM2MDFkM2Y2YThhYjA5NDlkY2UwYTZjODZjMjI4YTMzNDhiNWE5ODhhMGEyYjcwZTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRjNmMzMDliZTUxZDY2MDhhMDEyM2Y1YzhkZjlkOTYwNzRjMjdhY2U3N2FiYTEyYmEzMjRjZjdiMTBlOWEzZjAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c875303547094ceea7ae20132c9be47d",
+      "statement": "The galasabld versioning suffix remove command removes all suffixes by stripping everything after the first '-' or '_' character in version strings",
+      "evidence": [
+        {
+          "resource": "repo://modules/buildutils/README.md#L35-L40",
+          "version": "repo-lines-v1:sha256:682764cc653884677d8033e558d9249daa234be0ba1693e55bcde2f66c7a7ab8:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTBmZGJkMmU3NTdlODc2Y2JkM2JiMWUzMDViZjE3YTc2YjE3OThhY2ZiNjYzYTdmYzdiYTQ1NWQxNTM2YzFkOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzFhMTg5OWZhNzM4MDIxOWIyN2VkOGE2MjlmOTUxY2QwYmRlNTZiZDdjM2FhNjJhNDg2MjBiYWYxOWUyYTc3ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODU5YWFjZjUwYzA2YThhMTVmNzllZWQ2NzViY2Y1YjIwYTRjYWQ5Y2M5YjQzYjFkMDkxZmNmNzJjMDI3NThhNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDg2ZTAzOGRiNTExNWM5OTI0MWI3YWVlNDRkOWY5ODQ3YjU0YThmZWVmYjNjYjUyOWFlMTg1YmZmODU2NTNiNyJ9"
+        },
+        {
+          "resource": "repo://modules/buildutils/pkg/versioning/suffixRemove.go#L13-L23",
+          "version": "repo-lines-v1:sha256:2ef89aeb3d5f8e10cbb2f21a146d90d8d9be5d2cd4a38debdc58f8df665cf55b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MmRlMGI3NWQ0MmEyMGUzNTRmMGQxNmE4N2Q2OTBlZmJkNzk1ZmFhYjM3Zjg4NTBiNDViY2MxM2Q4YWRiMGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk2ZThmNTM0MTI0MjVlMzUwNmQyNDFlNzJmZjU3ZmQyMDAzNTExMmEwNjIzZWIzZGNlMTNhYTk1OTk1MGIwOTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://modules/buildutils/pkg/versioning/suffixSet.go#L84-L106",
+          "version": "repo-lines-v1:sha256:5f5f3dd00bc341a189ae6128467dfebbcdcf3ab13b7500fd9fed529e8ac586b6:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRlZjcyNTFiZTA1NDBjMGU3OTgyMmVjNjI0ZGU3NjViODBlMmZkYzk4ZjJhYzYxY2IzYzk3MTE3ZWI0YWM5ZWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUwZTJhMjQyNDUwZmJmMWFlN2VlNzdjYzFmYWQ0ZTZmNmFjMzM0MTBjOWU3ODNjNmQ3ZDkxZGFmYTM5ZTU1NDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU1N2QzMTBlZTg3NWJiMGM2MDFkM2Y2YThhYjA5NDlkY2UwYTZjODZjMjI4YTMzNDhiNWE5ODhhMGEyYjcwZTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3c074a62c1b046558540bae7f7698c13",
+      "statement": "The versioning utility uses a regex pattern to match version lines in build.gradle files that follow the format 'version = \"X.Y.Z\"' or variations with single quotes and optional whitespace",
+      "evidence": [
+        {
+          "resource": "repo://modules/buildutils/pkg/versioning/list.go#L101-L129",
+          "version": "repo-lines-v1:sha256:eebe83f96e8f4e1ac0667c617ec5c3599c58ce85497f48c92a6ff116c12f8ed5:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY4ZjBjMzJkODFhY2UyMjZkYWI5OTQzNWNjMGNjNTA5YTgzMmFjYzg0ODI0ZWU0M2QzYWNiMjg2MmFkNTg4OGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQwMzM4NDM4NjRhNGFjZWExNmU4ZTA4NDg5MmMyNDAzNjRmZDEwMjE2NWQzZTI1NmQxMWIwMTA4NDljZDQ5M2UiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBkZGY1Zjg1M2EyZWJkZDc5NDcxYjhmM2Q0YjRlMDMyZmQ4M2I5ODYzNTRmNGI3ZWFjNzBlZDkxMTI4NDIxMjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE3Y2I0MDA0ZmExYzQwYWUzMjVmZjIwMjNiZWFkOGRkMThiNjcwM2NlZGYwYmIyNjMxYTExYzVkYjI5ZmVjNDIifQ"
+        },
+        {
+          "resource": "repo://modules/buildutils/pkg/versioning/list.go#L22-L24",
+          "version": "repo-lines-v1:sha256:8781915f7d6bbd9f683d1d220869dcca33788b92a12466636a0941e9c3d1c84f:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTFmZTlmYTJiZDUzNDdhOWY2YmU5YjJhYjdjMmRjYjczNGU3MzlkZDNkZDJlNzFkZGUzMzhlM2ZhOGQ1YmQzZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDg2MTRlYmI1NTA1NTIyYjk4NDc2ZDM1MDNkMTU0ODYyZjc2YzNkMjQzNWVjOGYyM2MyZmRjY2JmZDM0M2VmZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTZlOGY1MzQxMjQyNWUzNTA2ZDI0MWU3MmZmNTdmZDIwMDM1MTEyYTA2MjNlYjNkY2UxM2FhOTU5OTUwYjA5MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmE4MTQ3ZDQyMmI1ZDAzZTI0NGZjNDIyOTJjMjY4ZjhjOTkxMDliYTViZmUyZTI4OThhOGI3ZWNiZjRlOWNjNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_4a354319975f4ec0a7835086ba2f9a2c",
+      "statement": "Module project names are extracted from settings.gradle files using a regex that matches 'rootProject.name = \"project.name\"' pattern",
+      "evidence": [
+        {
+          "resource": "repo://modules/buildutils/pkg/versioning/list.go#L132-L157",
+          "version": "repo-lines-v1:sha256:6d2a4b67aa2b9042c6bc6cdffafe461bafb42ae285186b1895233cbe92aab27b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ2NGU5YWViMmNlMDJiM2M1NjQ2MGE4NGQxYzMyY2EzY2U1ODFmYzRhMGJkNTNhZTg0ZWM0ZjQ0ZjFiY2IyOGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJhZmNjZmViOTRkMThkMDUzYmE2YzZkOGExZjI3YmEyYjBmMWU5NzNjNTFlOTczYjc5YmVkM2EwNWE4ODZiYTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFmOTc2MzY5YWU4MDdiNTM2ODJlY2VmYWJjNTcyYjliZDRhMGZmNjQ0OTFkNThlYzMyNjU0YmY0MmZiYWNkMTkifQ"
+        },
+        {
+          "resource": "repo://modules/buildutils/pkg/versioning/list.go#L25-L25",
+          "version": "repo-lines-v1:sha256:c02692eb123dc2dcdde13f88530c80c07d4a356e05ed9d82a26a579ce1d0251d:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzAyNjkyZWIxMjNkYzJkY2RkZTEzZjg4NTMwYzgwYzA3ZDRhMzU2ZTA1ZWQ5ZDgyYTI2YTU3OWNlMWQwMjUxZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzAyNjkyZWIxMjNkYzJkY2RkZTEzZjg4NTMwYzgwYzA3ZDRhMzU2ZTA1ZWQ5ZDgyYTI2YTU3OWNlMWQwMjUxZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODc4MTkxNWY3ZDZiYmQ5ZjY4M2QxZDIyMDg2OWRjY2EzMzc4OGI5MmExMjQ2NjYzNmEwOTQxZTljM2QxYzg0ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWQ5NjJmNTZkMDY3ODE2NTA5ZmVmZjI2NjNmYTYyYTBmNWNmNzczZDA0NWY3OThmN2FiNTM3YjdmOTk3ZjQ4NyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_fe330dba9fe34a8d82dbc4521ee1854b",
+      "statement": "The build.properties file at the repository root stores the central GALASA_VERSION property that is maintained by set-version.sh and used by GitHub Actions workflows",
+      "evidence": [
+        {
+          "resource": "repo://build.properties#L1-L3",
+          "version": "repo-lines-v1:sha256:f7c41f25f6d8d320f3a7191af573ef92595ee24e84e3e416c753d70624f79dab:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjNlYWMwZjg2NDEyNzMwMTkyMDE0YjRkZDA5NjIxZjI4Njk5NzJiNGUyNzhjYjU0MGFiZWMyMjE5YmIyYThlMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGU1YWFhNjlkZDc4MGJkN2Y0ZGUxZTY4ZWExNzBiMzNiN2RlYTBhZDhkZjhjZDEzOTgzMTYzMTAxYjAwMTU1ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://tools/set-version.sh#L137-L143",
+          "version": "repo-lines-v1:sha256:292e02919605ad4e0190505060796731e57ca4628ce18bf25c7b6647b136731f:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDA3YWRlMTdmYTg1ODA3YzQyNGExMmE1ZWQyM2FjNDEyZWQ5YWQxZWZhYTk2NmMzODNhNmE5ODY1YjQ2ZmY5NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzIyY2FmMjBkYmJjNWM3MWNjMWU0NmQ3NDNjYjliOGQzMzM0OTRiM2U3MTk3YTI4YjQ3ZTBmMjQ5MWQ1M2FiNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2I4ZmVhY2ZhNzhkNDQ0ZTZjNDQ4MmI2ZDQ5NmQwMjE1NWVhMWZmMjUxYjFhMmU1ZjNiMGI4N2E5OGU4OTkyNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_65cf7a1950d04ff1a02a6fe99c75339c",
+      "statement": "The galasabld versioning command structure includes three subcommands: list for displaying versions, suffix set for adding/replacing suffixes, and suffix remove for stripping suffixes",
+      "evidence": [
+        {
+          "resource": "repo://modules/buildutils/pkg/cmd/versioning.go#L16-L31",
+          "version": "repo-lines-v1:sha256:13614288f2be74554325848ca00bb098cb154f98d0d8bc116bc16d996547e934:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVmOGY5OWNmOWVmNTFjZTNlZTEzZjRlMWViYTc0M2FkY2JkNzk4MmExODQ0NTY4OWFjZTgwYmI4NTU4MmZjYWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlhODUxZjA1YmVlMjYzNjhiOTM5YWZmYzcyNzU4MTVkM2Y3ZmIzMDg3MzgxZDFlN2UzNjRhMWE5MTFjYWRiNTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://modules/buildutils/pkg/cmd/versioningList.go#L16-L26",
+          "version": "repo-lines-v1:sha256:9d6306d79d6cbb4457d0a6ac905d25d781cedfb5eff98fd686985fd2d409c09e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA5M2NmMjg0MmI4YjZjNTAxMDhlOGJjYmU4OGI2MDJkZTg3YzAyNTQ2OWJlM2RiYzk4MTQ5NDA5YjVlNTAyNjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM3Mzk2MGFmZThjZWNkMGJjMGQyYTYyNDllMTM4OThjMzIxZjYwZjcyN2YyY2YwZGIxNGI1MmJlMzA4YWZiMmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk0M2I4YjFjMTFiMGIxOTY4OTk2ODg1NjY0NGMxMWYwZjY3ZTExYTc0NWEwMjZiMDg3NGQ5OTg1ZjgwNWEzNGYifQ"
+        },
+        {
+          "resource": "repo://modules/buildutils/pkg/cmd/versioningSuffix.go#L14-L23",
+          "version": "repo-lines-v1:sha256:76b24eaea0788bf17053e37bdba71adb5aa776d9b73ebd8100b56e23f07926cc:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA5Zjg3YmVmNjBiMTUzMmI0NjJhNWRjOTFlN2FlNGNjZmM5OTg4OTQxZGQ1NzBmZTEzOGJhMWNlM2I5OWY2NGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM3Mzk2MGFmZThjZWNkMGJjMGQyYTYyNDllMTM4OThjMzIxZjYwZjcyN2YyY2YwZGIxNGI1MmJlMzA4YWZiMmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://modules/buildutils/pkg/cmd/versioningSuffixRemove.go#L16-L26",
+          "version": "repo-lines-v1:sha256:ca067d42fe9fa90007808e428caad835997e76247fbfdcf53dfbc38a661f75fd:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJlZThhNWNhNzNkMjI5MWI4NWZmZWNhZTgyOWUwZjQ5MmZiYmE5NDBmNTQyNWMzZGM0NTgwZGIxNzAxMzg5ZWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM3Mzk2MGFmZThjZWNkMGJjMGQyYTYyNDllMTM4OThjMzIxZjYwZjcyN2YyY2YwZGIxNGI1MmJlMzA4YWZiMmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM5MDY3ZTQ0MTYwYTQ1NTdlMGQ1OGY1ZjgxNjkzNzEwZGYyMTc0ZDVhZDIyMThhYmVmNTUzMjBmMGM2NTYyYjcifQ"
+        },
+        {
+          "resource": "repo://modules/buildutils/pkg/cmd/versioningSuffixSet.go#L18-L34",
+          "version": "repo-lines-v1:sha256:bf38f306f1eb4a2f91662f92456ee3b04b449e87066ffba7df47cde14f7a8048:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImViN2E5YTBkOTRhNmQ3NWRhYzg0NjUzMWJhMmE5MjA5OTdkNjVhYWRkMTU0NzgzOGM5YmNiNGViNDcyMmZlNzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ0YmFhN2IzNTdmZjI4NzBiZTg1Mjc5ZmJjNTVmNjAwYTk3M2MyNDhkM2RhNDgxNjRhYjY0OTBhNmEyMzAzMzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdjMzZjZWNmYjJkNDBhYTk4OTliNjI4ZDA2ZTM5NTcxYmMyNTBhMTc0MTBhZDJmMzNhZDA5MzE1OTRlMjQyOWEifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.2",
+    "at": "2026-09-21T12:35:12.771Z"
+  }
+}

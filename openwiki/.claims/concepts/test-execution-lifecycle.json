@@ -1,0 +1,266 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:16e09ddcb0bbbaaa1ce192f0df51af1f6331e5bbeb8aaf8e5f225ec3b1601f86",
+  "claims": [
+    {
+      "id": "claim_7baa5a03e71447a8af922bb7e6a0a1b5",
+      "statement": "A test run transitions through states in the following order: queued → allocated → started → building → provstart → generating → up → running → rundone → ending → finished",
+      "evidence": [
+        {
+          "resource": "repo://developer-docs/test-run-lifecycle.md#L5-L29",
+          "version": "repo-lines-v1:sha256:3d1fd026b6b385f83d8ddfd7c99f3fe9ffb554b42df12295baa8506ce7bc76ad:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJjMzdkMjVlM2FiMDEzMDNhMDhjOTExNzJjYjQ1YjcxMjA0OWEyZmRhZDcxNjcyZDMzMWIyODUyOTIwMTE5OGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY1MzM1M2RhYWQ5NzdmNTJiNjgxMjJiMmUyZjU2YzgzNDY5MjBiNGExM2NlMjFhZDNlYWQzMGViMzc4ZTE0OGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYwYjZlYjI5Njk5ZDVhNjM5M2RmNTQ4ZmUwM2U1ODYyYThhMGU3MTE1MTZjNDdjYTAyYjNjY2ZiZGViNDJlZTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNhODliOWY3ZDZjMTk0MTE2ZDFhNzdjODNjMWE0OGIxNTQyNjhhOGI1ZDc4ZDM2MjVjNmEzZGExNTEyMjhiYmMifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/TestRunLifecycleStatus.java#L17-L50",
+          "version": "repo-lines-v1:sha256:4340655e51ff9fe4c3a850e962a72d5c1aa514183aa10ab3c1d1ca1ac5670ebe:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY0N2Q1NDA3ZTc0MjM4Y2EzYzEyYzgxNDQ1NWFjZGFjYTMzNzE0NjZlNDFkYjEzMjgyYmYyZjYzMDJlNTRlMWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjczNDE5NGE0ZmFiY2IyZWFhNTZlM2JjZjQwMmM3ZWUxYzE0NDMwODg4NWQ2OGZmMThkZGUzYjg4NjEzMDBhMDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI0YjZmODg3YjdhYzk3ZGU3YTM3NDMxMzkxOGYyNmI4NmYxYjk0NmRiZjUyZDZjODQ5ODNlOTViYjA4MjU0ZmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQwNWI4ODNiMTZlNjQ4OTBhYmM1YTc0ZGNiY2M2NGYxY2YxMWNmZjRhN2JhODcyZjU4MzJjYjRiYjQ5MDZkYWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fd43303f9fb540e993663d3157bb5c1b",
+      "statement": "TestRunner orchestrates the test lifecycle by updating status at phase transitions, coordinating provisioning phases (generate, build, start), executing test methods, and coordinating cleanup phases (stop, discard)",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/TestRunner.java#L392-L514",
+          "version": "repo-lines-v1:sha256:769cf0fc5bf0e9ad285acf79d2dffe452183658b0b4b8f8ffb89795dc39d4390:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIzLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJhMDg5NmE0NzIxMjAwMTcyODdkNDJiMmQ2Y2QyOWFlZTgyMWZiOWQ2N2U1MzgwZmRlMWYyZmQ1Zjc0NWE2NzMxIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0ODkzZjQwZTM3ODFlYjg5NmM4MmQwNDZhMDgwNjdhMTFlMzVjZGYyZjFkZmFmMjZmZWE5MGI4ZGI2Njc2NDEzIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI2MTllM2M4YWNkZmZjZTI5OTU2NGYzMjM5YTJhOTdhNmZlYTVkMmMzMWE4MGY2NTE0YWVjNzk3YjJhZDhlOWU0IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI2YjY5ZGJlYTllMDVhZGQxNGU0ZjMwZjM0Nzc4NDNkNmUzZGYyNWI0ZDIyOTgwODZjOGFkNTk4ODQ0ZmFjNTliIn0"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/TestRunner.java#L42-L195",
+          "version": "repo-lines-v1:sha256:9ac3c190d6c70ba7350ef8f23ee3e0db629fb2297cc53c8abe6f43b5ee634e21:eyJzZWxlY3RlZExpbmVDb3VudCI6MTU0LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJlYWYyMmNmMDczMjU5MmMyNDcxNDFjYmU2MWVmYTExMDEyNjEyZjVhMzEyMmI5YWY5YmJhZjUyZjU3MjRkMTk0IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0ODkzZjQwZTM3ODFlYjg5NmM4MmQwNDZhMDgwNjdhMTFlMzVjZGYyZjFkZmFmMjZmZWE5MGI4ZGI2Njc2NDEzIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI2NjUzYjE1MmI4ZjkwNzFhNDUzZjQ2YTE2MjNhMWM0NWI0NmQ3ZGNiN2U5NGZmNWExNzNhNjk4NTRmY2FlMmZmIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI1NWEyM2Q3MWY4Y2IzNWEwY2M0ZDhmOTk1Njk2YmJiZTFmN2FhOGE5MzY3YTM0MThiNzZkMTUxMDUyZWE1OGI3In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_6577b941a2624b53bb78b56908ff5877",
+      "statement": "TestRunManagers manages the collection of active managers, resolves provisioning dependencies, and delegates lifecycle method calls to managers in dependency order",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/TestRunManagers.java#L42-L72",
+          "version": "repo-lines-v1:sha256:a822478db6c1d0bbaa9d8adb7c5c704021e6e6346e0a5698b6080ee78bc94a54:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5YTFlM2U1N2I4NWUzZjdmODVmNTVhNjhlOWE4OTkwNWJkZGI4ZjdmZmFkZTY4YzYxY2Q4NTViNDdiOTYxZTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgzZjliNTYxZDcxMGRhZWEzOTQ1NDQ2NzhjOWViNGQ4YjYyNDU0OTAxOWQ1NzVmYjYzZWQzMDRmZTc5NTEwZTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFjOTJiNTJhMmMzMDI2NWRiYWE0Yzg1MTZjMjUzMGI0ZWMyNTgxZmE0NTQwNGUzY2VkMWZlM2E5MWE1YTU3MDEifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/TestRunManagers.java#L79-L148",
+          "version": "repo-lines-v1:sha256:7464ec9cdda076e06ec71e390350c4e9464561817c3947fff34e8ea29b02bfac:eyJzZWxlY3RlZExpbmVDb3VudCI6NzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYwMTQyMTM2OTQ2YWQyMTZjMmZhMmE3OTYxMTZjMTM1ZjBkOTk3MDY3ZWYwZDc0ZTlkY2Y4YmYyYWYwZDRkNjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA3MWJiY2FhMjVkMTY4YjI0MjA3MmMzYjA0YWE0ZDM2MTBhMDAxOTBlOTM4ZTFkZWIwZmE3OGVhNmIzMzc2OTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM3MDZiZDA3MTU3NzU2Y2U5ZjJmZjdlZTBiYmMzMGU2NmI1ZThjYmE5ZTY3YWViMWY2MzE5ZjI2ZDY2NzQ5MTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_910164d492b54c3e94d3b2a617b6c23d",
+      "statement": "The provisionGenerate phase determines what resources managers need without building anything, allowing all managers to validate resource availability before committing resources",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/TestRunner.java#L392-L415",
+          "version": "repo-lines-v1:sha256:d448931be7db92632a70db123cf1c1e8da12243d0b91433f93fff9ddd4fd52dc:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEwODk2YTQ3MjEyMDAxNzI4N2Q0MmIyZDZjZDI5YWVlODIxZmI5ZDY3ZTUzODBmZGUxZjJmZDVmNzQ1YTY3MzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYxOWUzYzhhY2RmZmNlMjk5NTY0ZjMyMzlhMmE5N2E2ZmVhNWQyYzMxYTgwZjY1MTRhZWM3OTdiMmFkOGU5ZTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFlMzRlMjQ2ODY1ZGE2MzZlNGRhOTExNzgxNjY0NzIzODVhODgyMzBmNDQ0ZDc1Mzc0NzA2MDI2NGEyMzdlMjkifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/IManager.java#L144-L161",
+          "version": "repo-lines-v1:sha256:3e5d72a4a47db7bf855b94f214e935fd39876edbdf924bbf4ab2ac6f5035433e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5Y2JiYzY1NDY5ZGIxY2EyODQyZWZkOTdkZjdlZTJjZTZjYzE1NzE0ODJkMDFhMThiNzkwYTEwYzdjNTEwZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJhYTIwMjA4YTA5ZTYwODZlY2ZjYzcyNTc3MjQ1YTdkMDZjYThmMTc5NmI3MWIxY2M0MWM4MDUyY2ZmNTY3OGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc0ZWJiNjVmY2VmOTVmMjcwNTZiMDUyM2E2NmExYWM3ZTQ3OTQ5NDUwYzg0ZWFjMmJkZGJhZWVhNTY0NDZjNTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgzNTk5NzMxM2Y3ZTc5NGE4MWNmOTIzNDYzYjYyOTBhYTQ0ZDBiNGFlNTBjYzVjZmZmYzk5YjA5YjlmNDI4ZGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_34998867998d4284b79b784936582dd5",
+      "statement": "The provisionBuild phase creates and allocates resources, executing managers in dependency order as resolved by areYouProvisionalDependentOn",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/TestRunner.java#L417-L452",
+          "version": "repo-lines-v1:sha256:31348efa2ed07946cda100d1e9de7ddfe37f421d0f210a26a58fbba60653e820:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZmZTYzMjkxYzg0YjYxZmViOWNiZmMzMzg2YjUwNzhiNDg1ZmM2MWIzZGY2MzQ1ZjFjZmUwOTU2NTM1MmVjMmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYxOWUzYzhhY2RmZmNlMjk5NTY0ZjMyMzlhMmE5N2E2ZmVhNWQyYzMxYTgwZjY1MTRhZWM3OTdiMmFkOGU5ZTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI0NThiMDAwYjAxOGNhOGY4YmM5MDk2ZjNmOTdhYWY1MTdkMDBiOWQ4YjRiOGQ5MDM0N2YwODdiNGMzNjdiY2QifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/IManager.java#L163-L178",
+          "version": "repo-lines-v1:sha256:7cc2508658edc129d110967f25df396ab4bf9ae041e00a24f90d111fa922a9dc:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5Y2JiYzY1NDY5ZGIxY2EyODQyZWZkOTdkZjdlZTJjZTZjYzE1NzE0ODJkMDFhMThiNzkwYTEwYzdjNTEwZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA4Nzc4MWYwNmQxMTUwMGY0OWExZmZmZWI0YzhkYzY0MDU3ZjY3MjZkYjI5N2U2ODRjMjk2MjE0N2Y1YWQ0NDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhlMWFlNzI3NDdjY2VlN2ZmNTgyMjM0Y2M4YmZmZjA2NDUxODE5YjE4NDdiNDllZWFiM2NkOGU4YmJiZjI4MjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgzNTk5NzMxM2Y3ZTc5NGE4MWNmOTIzNDYzYjYyOTBhYTQ0ZDBiNGFlNTBjYzVjZmZmYzk5YjA5YjlmNDI4ZGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_31933c4e35c54da1a864e59a21844270",
+      "statement": "The provisionStart phase initializes and configures provisioned resources to make them ready for test execution",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/TestRunner.java#L461-L488",
+          "version": "repo-lines-v1:sha256:6872ecf31c3515f7bed4d1a9018e02ec770356daf0fe1524c7c9949dd8210f65:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2Mzg2ZmViOTljOGM5ODZhZDc4Y2Y2MjY2NGIxNTZhYmM0NjQ5NjYxZWUzZGU1YjgyM2Q3MzM0ZDZjZmE0MmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5OWJkZWZlZWFjYTYzNDBlMDI5MGRjODZlODg5Yzg5ZDVlMTg5YWE1YmE0NGI1ODViM2I3MDczNGY0YTYyZDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFmZDNhYzQ0OGI3MjA2NzNkYWQ0ZDJlNjczNWI5NmNmYjA3ZmMyOGNkMjQ4YTJlMjdhYTZmYjBiNTUxMDBmMWUifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/IManager.java#L180-L195",
+          "version": "repo-lines-v1:sha256:67bd2888b73db3b1d26c407b0e2a6a200babf1ce4ae6b367460128db6d1cefbc:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5Y2JiYzY1NDY5ZGIxY2EyODQyZWZkOTdkZjdlZTJjZTZjYzE1NzE0ODJkMDFhMThiNzkwYTEwYzdjNTEwZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU0YjRiMTdhZmM0MmE0NTYwMzFlOTk0NzljZWEyZjlmMmQ0MjcxZTYyYTMzYjkzYzAxMzNjMzY4OWIyODJlYzMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM1ZmY4MjkwZGIxYjhkMTYxNzg3NDYwZTQyZTUxZjFkMjRlNzViNjM5Njg3ZjcxNWEyMGI1MzRmNDYwNDQzMzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgzNTk5NzMxM2Y3ZTc5NGE4MWNmOTIzNDYzYjYyOTBhYTQ0ZDBiNGFlNTBjYzVjZmZmYzk5YjA5YjlmNDI4ZGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4760577866434a12a6fbe1db91f3fdfd",
+      "statement": "The provisionStop phase gracefully stops resources in reverse dependency order",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/TestRunManagers.java#L515-L519",
+          "version": "repo-lines-v1:sha256:99427a874ab1506b3d821a02680b9028c7f9ff1670a06b25ab498c467480ba51:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmY1ZTcyOTFmYzc1NjY1YjI2OTZlMjMzOTE4MzhkOWM5N2ZhNzkxOTNhY2QwM2JmZjgyYjc0YmIxZWEzOGUxNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzY5NDZlMTAxZTVlNzhkOTBhNTEwYzY5ZjI2NmVmNzY1NDBkMzA5YjFiODIyNjk1YjUzMTcyZWQyY2FhMDI1OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjJhZGIxZmQ2MmI5M2Y5N2RiMDkxNmI4Y2M3MTM1NTE4OWQzZTczN2Q0Y2MzNjZhOGYwZmRhMTYzMDQ1NTgyYSJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/IManager.java#L301-L311",
+          "version": "repo-lines-v1:sha256:9448afdea8cd51a67bf4817d3b18b162832e0aa989db9525f0c49bf7a3a6ebce:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5Y2JiYzY1NDY5ZGIxY2EyODQyZWZkOTdkZjdlZTJjZTZjYzE1NzE0ODJkMDFhMThiNzkwYTEwYzdjNTEwZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkOTZmODU1NTJkYWQ0MjcyMWZlNjQ0ODU1OWZlMDU1MjdjMjIwYjg5M2JiZGZiM2I3MDUzZDg3NWY4MTZiNDkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYxMWNlYWU5ZGJmMjU2YjkxNGYxZTkxNDJlYjk4NjIyOGRmYTU1YTUwYmJlYzUxMzc1MjE3MTdmNjM5MmY4ZWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgzNTk5NzMxM2Y3ZTc5NGE4MWNmOTIzNDYzYjYyOTBhYTQ0ZDBiNGFlNTBjYzVjZmZmYzk5YjA5YjlmNDI4ZGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9df85aefc5ac4ef499bfdde4a94cd770",
+      "statement": "The provisionDiscard phase releases or deletes resources in reverse dependency order",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/TestRunManagers.java#L522-L526",
+          "version": "repo-lines-v1:sha256:cca58ab06720e9451ca27c52aa6acbedba16505996f046e6f8dce72d19bc9147:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2Q3YWZkYmE5MjQ1ZGFmMWIzMWFiYjUyYWQ2ZWMyY2ZjMTIzNjkxYjg0ODZhNmFkMzUyMjI4ZjY4NDdiZGU2NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzY5NDZlMTAxZTVlNzhkOTBhNTEwYzY5ZjI2NmVmNzY1NDBkMzA5YjFiODIyNjk1YjUzMTcyZWQyY2FhMDI1OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2M3Mjc5YjljZDI4ODIzYmVlMGQ4NTVlMDgyZTBlOWIzZDgzODA4YzcwNWIxN2EzNGEyYWIyY2Q1ZDI5NGQ1YyJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/IManager.java#L313-L325",
+          "version": "repo-lines-v1:sha256:66da3794e4b484f6a323e5086d04712488a4b3aa5b8738670ae916f9d5a12fb1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5Y2JiYzY1NDY5ZGIxY2EyODQyZWZkOTdkZjdlZTJjZTZjYzE1NzE0ODJkMDFhMThiNzkwYTEwYzdjNTEwZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc5NWQwYWMyNWE5ZGQxYjUxYWMxZWQ2MjBhOGQ3N2QzMWFlYWQ3Y2UzZWIwOTliNWRiODEyNTZkNDA1N2ViMDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNmYWI2ZDk4ODZlYTM3YmY1ZjJhZDUxMjVkZTU1MDhhNjBkZGNlNDNjNzc0NmM4OGNhZDc3ZjhkODViMTBiMWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgzNTk5NzMxM2Y3ZTc5NGE4MWNmOTIzNDYzYjYyOTBhYTQ0ZDBiNGFlNTBjYzVjZmZmYzk5YjA5YjlmNDI4ZGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0b64a816b4f84589bd7af139b5a0b791",
+      "statement": "When a manager throws ResourceUnavailableException during provisioning, the test transitions to waiting state rather than failing",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/BaseTestRunner.java#L294-L328",
+          "version": "repo-lines-v1:sha256:dac79bf78e2b9ffc00b43786b401d53a6d8789587d8cccf8ac4d3db35618c44f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMyZmQyZTJkNzcxNzExYTZmZWIxYzNmYTFkYjhjODRhMjEyOTAyNWYwMGYwZDgxOWRlNjhjZDllNzVmNGU4NDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUwN2Y1NDA0MzVkNmU3NmEzNWJhYTMwMzVmMTc4MjU3OWVhZjE1YjE1ODBhNzdhNTg0NzcwODUyOTljMjU0NWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVkMmQzYzYxOTc0NTUzNjczNjE0YzNhMzcyMGE4OGQ5YjFhNGRkZDlhYTM3NzMwYzVhNzY5NTZlNDNiNjg3M2QifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/TestRunner.java#L401-L415",
+          "version": "repo-lines-v1:sha256:6eb90e609731c252733103eebfd4e36e63c007e83c5ee5c2e4ec855a6368c14c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJjMmI1YTc5Mjc4ODUzYmNlNmE4MWZlMWI5ZDFiMmNiOGI1NWIzODA0M2UxYTU4NmQ1NjkwNjg2YzAwMjFjODIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ2Yzc4NmRhOGNmMjM3NmM3ZDhmODVkMTU2ZDU0MzZlMzE2ZjdiOWY0M2RhYmQwNzI3OWExNDJmNWU0YjNhZjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFlMzRlMjQ2ODY1ZGE2MzZlNGRhOTExNzgxNjY0NzIzODVhODgyMzBmNDQ0ZDc1Mzc0NzA2MDI2NGEyMzdlMjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_409ed1e976ce4040b93f1373a647debf",
+      "statement": "Tests in waiting state are re-queued after a wait time calculated as initial delay (default 600 seconds) plus random delay (default 0-180 seconds)",
+      "evidence": [
+        {
+          "resource": "repo://developer-docs/test-run-lifecycle.md#L10-L34",
+          "version": "repo-lines-v1:sha256:0b6067c10ba7fe479dc053fa089962bf3543a625b39d12c8a9e1cbc32b5c3e3a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc1YzViMTgzNzUwZjZiZTRlNzg2ZTc5YzM2OWMzMTJhNDdjOThmYjZlMWMyZTg3NjQ5NGY4NmRkMGY3N2Q4M2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI5ZTRlYTZmYjM5MDQzMWJkM2I1MWY5ZDRjY2EyMGY0Y2I3NDQ4YjMzM2UwYmMwMWY5ZDQ1OTg1ZGQ4NzVkZDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/BaseTestRunner.java#L294-L328",
+          "version": "repo-lines-v1:sha256:dac79bf78e2b9ffc00b43786b401d53a6d8789587d8cccf8ac4d3db35618c44f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMyZmQyZTJkNzcxNzExYTZmZWIxYzNmYTFkYjhjODRhMjEyOTAyNWYwMGYwZDgxOWRlNjhjZDllNzVmNGU4NDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUwN2Y1NDA0MzVkNmU3NmEzNWJhYTMwMzVmMTc4MjU3OWVhZjE1YjE1ODBhNzdhNTg0NzcwODUyOTljMjU0NWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVkMmQzYzYxOTc0NTUzNjczNjE0YzNhMzcyMGE4OGQ5YjFhNGRkZDlhYTM3NzMwYzVhNzY5NTZlNDNiNjg3M2QifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2ca2723de0e241ec8ee06ae659a72f1d",
+      "statement": "TestRunner updates test run status in the DSS at key lifecycle transitions using the pattern run.<runName>.status",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/BaseTestRunner.java#L349-L377",
+          "version": "repo-lines-v1:sha256:267d762323312b1fdc66e8439bb5502b4ade897df85a38b94604ae08dfb9cac6:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1YjcxMDViOWEwN2Q2YjBkZjUwNGJhMGIxMDQ3YzhiMWU2OGQ0MTYzZTIyYzY0YTZhZGRmZjFhNTllNDUxY2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMzOWFjZGJkNjk4NjJkMzAxNzA2YzU0ZDFjM2ZiMTdjYWY4OTI0MzUyZjU5ZDhmZTlmMTFlYjAxOThlNzg4Y2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgzMGM4NzY0MWJiNDljNDcxMTUzNGI4ZGVhMjhhNTRhOTdmZmE5ZTRlYTMwNGQwYzRjZDBlZGIyM2JhZTk3M2QifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d14fe432088640b8ab4cc7a86303a55f",
+      "statement": "The test run state enumeration defines states: QUEUED, ALLOCATED, STARTED, BUILDING, PROVSTART, GENERATING, UP, RUNNING, RUNDONE, ENDING, FINISHED, CANCELLING, WAITING",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/TestRunLifecycleStatus.java#L17-L50",
+          "version": "repo-lines-v1:sha256:4340655e51ff9fe4c3a850e962a72d5c1aa514183aa10ab3c1d1ca1ac5670ebe:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY0N2Q1NDA3ZTc0MjM4Y2EzYzEyYzgxNDQ1NWFjZGFjYTMzNzE0NjZlNDFkYjEzMjgyYmYyZjYzMDJlNTRlMWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjczNDE5NGE0ZmFiY2IyZWFhNTZlM2JjZjQwMmM3ZWUxYzE0NDMwODg4NWQ2OGZmMThkZGUzYjg4NjEzMDBhMDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI0YjZmODg3YjdhYzk3ZGU3YTM3NDMxMzkxOGYyNmI4NmYxYjk0NmRiZjUyZDZjODQ5ODNlOTViYjA4MjU0ZmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQwNWI4ODNiMTZlNjQ4OTBhYmM1YTc0ZGNiY2M2NGYxY2YxMWNmZjRhN2JhODcyZjU4MzJjYjRiYjQ5MDZkYWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ce702004c1794ad5a444f85d630884ad",
+      "statement": "For shared environment builds, provisioning phases execute normally but test execution is skipped, cleanup phases are skipped, and the test remains in UP state",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/TestRunner.java#L163-L186",
+          "version": "repo-lines-v1:sha256:005fbb92d148bf5a0c99ba5a943d7f43e1c150a4de89baaf05b8fd7b13e98d26:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg0OGQ5MWU5ZTBkZDNmNDlhOWNiMjBjMGFiYmJmYjI4MDFkMzU3MGM2NGIzMzJkYTcwODg1OWQyODY1MWU4NmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBjNjQ3OWNjMjMwNDQwZmQ0MWU4MjI0MjE4Njc5Njk4NTU5ZDI4OTNiZDY3YjQzODBhZmFiODExYjM4YTU1YWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJmNjVhYmVhMDY1ZWUzZjFjZjUxNmNlZDg0OTljYmJkYWI4N2I5ODZkZmU0ODQzNThjYjNiNWIxNTYzYWQ3NDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg2Y2Y0YjA4ZjUzMjM5NWFkNDU1NGQyZjMzMWVlZWQ1MTY5ZDAzMTkzNTBjNDhmY2MxNWZmMjhkMmJiY2UyOWUifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/TestRunner.java#L256-L263",
+          "version": "repo-lines-v1:sha256:00ad48518cfb76b4d6122c9c28a4807ac85cf07d7b4061440217077a729597dd:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWQyYTczOWM5NGQzOTIwMjg3NjBiNTg5ZmUxZGYwMzJkNGMzMjk2MWMxZjVlNDE3NzI2MTVjZWM5ODhiZWQ5YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWE5MWMzYTIyOTI5YmExNDE1MzI4MTYyZTI0ZWI5MjMzNDk2YzI3ZWYxMTZlNTc5YTFlN2U3ZWZkNDI1NzJmNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjMzYzg1MTI4MGYyMmE4OGUzMzYzNzkwY2JlMTc4ODdmNGQ4YjliZjU2MDU2ZjE1MTdmNzY2NzIyYzIyYWY4OSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_b2d476ae9f8642e9b57d1139e3e57f04",
+      "statement": "TestRunManagers sorts active managers into provisioning order using a bubble sort algorithm that respects areYouProvisionalDependentOn dependencies",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/TestRunManagers.java#L74-L148",
+          "version": "repo-lines-v1:sha256:b53c287ac1c0be59b4cf3a62dd59f9caf40beaf510fbb1e5253e9aec2f2b40f0:eyJzZWxlY3RlZExpbmVDb3VudCI6NzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5Y2JiYzY1NDY5ZGIxY2EyODQyZWZkOTdkZjdlZTJjZTZjYzE1NzE0ODJkMDFhMThiNzkwYTEwYzdjNTEwZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVhOTFjM2EyMjkyOWJhMTQxNTMyODE2MmUyNGViOTIzMzQ5NmMyN2VmMTE2ZTU3OWExZTdlN2VmZDQyNTcyZjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM3MDZiZDA3MTU3NzU2Y2U5ZjJmZjdlZTBiYmMzMGU2NmI1ZThjYmE5ZTY3YWViMWY2MzE5ZjI2ZDY2NzQ5MTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1baf457663a34d9390c7502435949c64",
+      "statement": "Manager lifecycle methods are called in sequence: initialise, provisionGenerate, provisionBuild, provisionStart, fillAnnotatedFields, startOfTestClass, startOfTestMethod, endOfTestMethod, endOfTestClass, provisionStop, provisionDiscard, endOfTestRun",
+      "evidence": [
+        {
+          "resource": "repo://developer-docs/test-execution-lifecycle.md#L89-L124",
+          "version": "repo-lines-v1:sha256:b33488efce6e9a546558943db9fc58c5ec4601c464b5f5c4d69aa990d3e9bcfb:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJjMzdkMjVlM2FiMDEzMDNhMDhjOTExNzJjYjQ1YjcxMjA0OWEyZmRhZDcxNjcyZDMzMWIyODUyOTIwMTE5OGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YzA2YzU2MWQ1YzMyNzM0MzY4NTI2OGE0NmIzMzkxZjM5OThlZWU4OTBkMmJlNTFmMGQyMWNjNGE1M2FlNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRkMDNhY2NhZmFjNTM2MGZkYjQ3ZjMwZGY2ODlmYTU4NTk3MGY0Y2NjOGE4NWQwZDZkYWZiZGUwYzU3MzIyZDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMzNjg5ZTM2ZWMwZjUxNzk4OWYwZGQxYzEyYjk3MzFlNjM0YzQ4YjJhZTRkMTQyOTA2YWFmMmM4NmRlMGZmNTgifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/IManager.java#L33-L346",
+          "version": "repo-lines-v1:sha256:78b1c87c053ec0cf2e4fa2bb849b523cde179840589c94813042a84d6d02809a:eyJzZWxlY3RlZExpbmVDb3VudCI6MzE0LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIwYTM3NTY1MjY1YzE4YzIwZWRjZWNlYWVlNzQzYzk5NWU3NTc5Y2M5ZTk5MzIxNDI4NTFmMzc2ZWM1MzQzZWJmIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIyMmFkM2M1MzFlZjQwZTYxY2E5NjczMmE2YTczM2I0Yzc2ZGNlOWQ0MDdiYTI1NjU4ODMzYThiNDg2OWQwYTE2IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIxOTQ3MjNkMjAzMGQ3M2Q5MjhhYjBlMTAxYzBlNWEwZTM0YmVkZWQwNzAzNjMyOTg3NjM0YzgyYjg3ZTA4ZWVlIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI2Y2Q3ZjdjNDE2M2ZkMGU2ZDA2ODY2MzY0NGE2ZWU3NmFiMGQwMGNmNGIxNjg5NDMyNzBjMGVhN2Y1YWQyOTkyIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_c13f1e733e524a7e9614312205d18f5a",
+      "statement": "When queued tests are cancelled, they transition to CANCELLING state and then directly to FINISHED without executing test code or cleanup",
+      "evidence": [
+        {
+          "resource": "repo://developer-docs/test-run-lifecycle.md#L15-L17",
+          "version": "repo-lines-v1:sha256:168256d18213763abe4d8ebd65525aa50ceebbf8617e3750fc722c831d80314a:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmNlNDU0Y2ZlNzlmYzNhZjRhZTcyZTFlNmVhOTViZDY5NGE0MTg0NDllN2QyNzA5NGJkZTZiZDM0M2I1Y2Y5YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTY5ZjBkN2Q2OTlmZWMyNGE5YjNlMzg1MzEyNGMzNTg1YTIwNmVmYWNkNmE5NDZlMzc3YTZkZWM0MmFjOTFjOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzY5NTVlNTRjZTVjM2Y5YmNmYTQyYzI3NjhjZTBjNWQ1ZjE1NjRkNmM0YzIwMzY1YWMzN2U3OTI0MjhhNGNkMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGUwNzJjMTIyMDdmYjZmNTRiN2E4NjBiYzY1ZjQ0NWI3NjcyODE0Y2YyODFmMjc5N2EwNzU0YmJhMzAwZTMxMCJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/TestRunLifecycleStatus.java#L39-L43",
+          "version": "repo-lines-v1:sha256:df73fc423764b4a70e764528067456f18343e2a70f736556138b1ade0bc8ada5:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzljYmJjNjU0NjlkYjFjYTI4NDJlZmQ5N2RmN2VlMmNlNmNjMTU3MTQ4MmQwMWExOGI3OTBhMTBjN2M1MTBmMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzNkNmZiZDIxNDVmMjdkNGExZDRiMDVhM2QxMWZkYjYwMmNiMzIxMTIwZmQwMTVlMDg3MDQ5NWYzOWMwYmUwOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmE5MGQxNjY0NmU5YmIyNDlhZmE1YzYzZmMwZmVhOGYyMTU2YTkyMjNmNTNiZWFmYTNkYTBkMDg0NGRhYjg1ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODEyNWU4Zjg1NTI3OTIxMDdhMmYwMGFjMGUxOWNhODkwYzY3MDlhOWNiNTJmMjE3MDhmZGU2MTQwNGEyOWViMyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ccdf0e4bc1c34a7bbc954520da8f78ee",
+      "statement": "TestRunner calls managers.provisionGenerate() during the GENERATING state, managers.provisionBuild() during BUILDING state, and managers.provisionStart() during PROVSTART state",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/TestRunner.java#L392-L488",
+          "version": "repo-lines-v1:sha256:3eeb071c277c17c6cc4d79bf0942266af39a10719f92b249f293184949699a43:eyJzZWxlY3RlZExpbmVDb3VudCI6OTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEwODk2YTQ3MjEyMDAxNzI4N2Q0MmIyZDZjZDI5YWVlODIxZmI5ZDY3ZTUzODBmZGUxZjJmZDVmNzQ1YTY3MzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYxOWUzYzhhY2RmZmNlMjk5NTY0ZjMyMzlhMmE5N2E2ZmVhNWQyYzMxYTgwZjY1MTRhZWM3OTdiMmFkOGU5ZTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFmZDNhYzQ0OGI3MjA2NzNkYWQ0ZDJlNjczNWI5NmNmYjA3ZmMyOGNkMjQ4YTJlMjdhYTZmYjBiNTUxMDBmMWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2b743db97eb94f878083dd2ffbb043d4",
+      "statement": "Cleanup occurs in the ENDING state where the framework calls endOfTestRun, provisionStop, and provisionDiscard on managers",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/TestRunner.java#L203-L254",
+          "version": "repo-lines-v1:sha256:a32e51de99fd870ed6dcc7b48f1035af2bf1318da74762dc92294cc87246a06d:eyJzZWxlY3RlZExpbmVDb3VudCI6NTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM4NTRiYTJjYzhkZGQwYWY1NmU0OGY4ZTJhN2RjZmNhNzI2YjA4ZjA0Nzk1Yzk1MjEyYjA4YzdjZWFhZjIwMWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI3OGJmZWVkOTFmYTE0MmJjNjExZWM4MDNjNzIyM2U3YTgxZWJkYjJmNGRiYTM3ODZiMDgzMzE5YmZlMmI1ZTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ0Mjc4ZDA5YjBkY2E1ZGMwNzFhZTRkMzVlMWQwOGMwZjc3ZjIyZDkzMGRiNzdlZmRlYmM4MWNhMzA3YTA1MGMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_28a092ca4dc345559d458cf01f731eff",
+      "statement": "TestRunManagers delegates provisionGenerate to all active managers and wraps ResourceUnavailableException in FrameworkResourceUnavailableException",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/TestRunManagers.java#L476-L487",
+          "version": "repo-lines-v1:sha256:6b837464e1e09bfe50b0fe050f522fc5b8b6e956204a4d3d2af971d38c64d000:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJkNTY4ZTE1Mjc3ODk5NjAwNzUwNzI4Nzc5ZDIzMTgwYzFkMDg0NWQ5MmNlMjRhZWM0N2Q4ZDkzZmQ0N2M0NGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM2OTQ2ZTEwMWU1ZTc4ZDkwYTUxMGM2OWYyNjZlZjc2NTQwZDMwOWIxYjgyMjY5NWI1MzE3MmVkMmNhYTAyNTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUwZGU5ZDFmZjNmNzJhMmMwZWI1MGM2NTFmNGY4MDViZDQ5NzhkZjMxNzIxYjQ1ZjUzZDE1ODc4MjBiNDlkMTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bd6566d796da40ddb5df8260b25495e7",
+      "statement": "The test transitions from RUNNING to RUNDONE after test methods complete, then to ENDING to begin cleanup, then to FINISHED when cleanup completes",
+      "evidence": [
+        {
+          "resource": "repo://developer-docs/test-run-lifecycle.md#L5-L29",
+          "version": "repo-lines-v1:sha256:3d1fd026b6b385f83d8ddfd7c99f3fe9ffb554b42df12295baa8506ce7bc76ad:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJjMzdkMjVlM2FiMDEzMDNhMDhjOTExNzJjYjQ1YjcxMjA0OWEyZmRhZDcxNjcyZDMzMWIyODUyOTIwMTE5OGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY1MzM1M2RhYWQ5NzdmNTJiNjgxMjJiMmUyZjU2YzgzNDY5MjBiNGExM2NlMjFhZDNlYWQzMGViMzc4ZTE0OGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYwYjZlYjI5Njk5ZDVhNjM5M2RmNTQ4ZmUwM2U1ODYyYThhMGU3MTE1MTZjNDdjYTAyYjNjY2ZiZGViNDJlZTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNhODliOWY3ZDZjMTk0MTE2ZDFhNzdjODNjMWE0OGIxNTQyNjhhOGI1ZDc4ZDM2MjVjNmEzZGExNTEyMjhiYmMifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/TestRunner.java#L497-L514",
+          "version": "repo-lines-v1:sha256:83df1bb0e3e93b144b0899ced9dc9f3cd13a28c73c6f4d662be79d3d97914f55:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdiMzBiYmE5YWExYjY1YTNmNDdlNDRlMTRlYWE3ZGZkY2M1MjBlMmZhOWE2OTM1OTg5ZDg3NGU5NWUxZTg1M2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5OWJkZWZlZWFjYTYzNDBlMDI5MGRjODZlODg5Yzg5ZDVlMTg5YWE1YmE0NGI1ODViM2I3MDczNGY0YTYyZDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZiNjlkYmVhOWUwNWFkZDE0ZTRmMzBmMzQ3Nzg0M2Q2ZTNkZjI1YjRkMjI5ODA4NmM4YWQ1OTg4NDRmYWM1OWIifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.2",
+    "at": "2026-09-21T12:35:12.771Z"
+  }
+}

@@ -1,0 +1,242 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:fc208af4cad9ab03fb36b305ead05f25be3e3c28ba461745796911e48f06366d",
+  "claims": [
+    {
+      "id": "claim_5b3f91907c2a4ea6b4bf759b733bda63",
+      "statement": "Managers are pluggable components responsible for provisioning resources, providing test interfaces, handling cleanup, and implementing test annotations.",
+      "evidence": [
+        {
+          "resource": "repo://developer-docs/manager-architecture.md#L6-L13",
+          "version": "repo-lines-v1:sha256:52585c3cd06e0f65dc925b9e12b74b01239db0b91577358d7f3ef4074dcb08ee:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzEyZWFjOGRjMDk3MjRiMmY5YjM2MDk2MWRhODQ5MjNhZmE3MzQzY2MxYzE0ODIwMjQ2ZDY5MzdlMDFhZTIxMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTJmNmUzM2M3ZTI4MzU1ZjhiYzA0NGJmNWVmN2NiNTczMmMwMmI4NWY1NzE4ZWIzYmMyYjlhOGQzNGQ0NGRmZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_96df2de8ee214c3787fde1267aca40da",
+      "statement": "All Managers implement the IManager interface, which defines lifecycle methods including initialise, youAreRequired, provisionGenerate, provisionBuild, provisionStart, fillAnnotatedFields, startOfTestClass, startOfTestMethod, endOfTestMethod, endOfTestClass, provisionStop, provisionDiscard, and shutdown.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/IManager.java#L33-L346",
+          "version": "repo-lines-v1:sha256:78b1c87c053ec0cf2e4fa2bb849b523cde179840589c94813042a84d6d02809a:eyJzZWxlY3RlZExpbmVDb3VudCI6MzE0LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIwYTM3NTY1MjY1YzE4YzIwZWRjZWNlYWVlNzQzYzk5NWU3NTc5Y2M5ZTk5MzIxNDI4NTFmMzc2ZWM1MzQzZWJmIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIyMmFkM2M1MzFlZjQwZTYxY2E5NjczMmE2YTczM2I0Yzc2ZGNlOWQ0MDdiYTI1NjU4ODMzYThiNDg2OWQwYTE2IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIxOTQ3MjNkMjAzMGQ3M2Q5MjhhYjBlMTAxYzBlNWEwZTM0YmVkZWQwNzAzNjMyOTg3NjM0YzgyYjg3ZTA4ZWVlIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI2Y2Q3ZjdjNDE2M2ZkMGU2ZDA2ODY2MzY0NGE2ZWU3NmFiMGQwMGNmNGIxNjg5NDMyNzBjMGVhN2Y1YWQyOTkyIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_f953f3ed4bd545a6a53d21bf65d23615",
+      "statement": "AbstractManager provides base implementations of IManager methods and utility methods including registerAnnotatedField, getAnnotatedField, findAnnotatedFields, generateAnnotatedFields, and addDependentManager.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/AbstractManager.java#L35-L569",
+          "version": "repo-lines-v1:sha256:1c3de311b92faddaf2b3220668bfec336c19ae7da4dc953af00e52526717863d:eyJzZWxlY3RlZExpbmVDb3VudCI6NTM1LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJkZGEyODc2ZWMxYjRjN2I4N2I2NGEyOTQ0OGY5NjgwYjQ0NjgxNzNmZWM2NTc1MDk4NGMxYTgzNzIyYTE2YTUzIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJkMTBiMzZhYTc0YTU5YmNmNGE4ODE4NTgzN2Y2NThhZmFmMzY0NmVmZjJiYjE2YzM5MjhkMGU5MzM1ZTk0NWQyIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIxOTQ3MjNkMjAzMGQ3M2Q5MjhhYjBlMTAxYzBlNWEwZTM0YmVkZWQwNzAzNjMyOTg3NjM0YzgyYjg3ZTA4ZWVlIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_1c4ce793e9b64456b5fe37c6f2822002",
+      "statement": "Managers register as OSGi services using the @Component annotation, allowing the Framework to discover them via the OSGi service registry.",
+      "evidence": [
+        {
+          "resource": "repo://modules/managers/galasa-managers-parent/galasa-managers-core-parent/dev.galasa.core.manager/src/main/java/dev/galasa/core/manager/internal/CoreManagerImpl.java#L55-L56",
+          "version": "repo-lines-v1:sha256:81842cff84d15b1147ac1836babdbfb7efe82b659d770594f7b2ff0afbd844ba:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzE0YzE3MzY4MjEwNmZkYzhjZWQ3MGEyZTZiNWI2YTY2MWZlZmUwMzRkOGZiMzNhMDM5NDNhZTQzMjFjODY4NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmQ1MmU1NmE3YTU1ZTA5ZjEwNDJhMjY3ODhmNGIwNjNhZDUyZjM0OTYyMDkwMzJmMzI2NDI5NTYzYmUzNDRjOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWZjYzVhNzgzNDI1MzFjMjM3NTJhZjE5NGY0YmQ0OWI2ZTM2ZWYzMzUxOGZiMmY4MTVhMTY5Y2Y2M2VkYWExZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDYwODc1ODZkM2NmZjY1YWE5NDg5ZWJmOTEyODk3MzExMTlmODUyZmRjNTM5NjkyMzk1Zjc1Y2Q0NTFlNTQxNiJ9"
+        },
+        {
+          "resource": "repo://modules/managers/galasa-managers-parent/galasa-managers-zos-parent/dev.galasa.zos.manager/src/main/java/dev/galasa/zos/internal/ZosManagerImpl.java#L95-L96",
+          "version": "repo-lines-v1:sha256:9b696828fbe5ba453f962909a5eaaa28f776dd9eb54dadf52dbcc400f4be8fbd:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTQ1YTQ5NDZiZjlkNGNmYTE4MzQ1YzUxYzM3YTY1YTI5NGNkOTNlYzM1ZmRlNzM3MzUxZjllZTU1ZjUzYzhjNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTFhMWZiNzcyODBiZGNlNWEwMDg5MjIyNjIwYmEzZDZjNTNmNzY2ODNmYTEwZjcwNjk3MDUxMDhkNWMxODZlNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODg4YzVlZjdiNmJiZmY3MGYyMmU4YTQzNzg2OTQ1ZDhjMDJmZTA0MmEwZjA0M2RkY2ZhOWRhNGVjOTE4YTFiMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWU4NDc4ODBlOWVlMjBkOTcxZGIyMjhiNDJkYTNmZjQ1NThhYTJkNTRmZWY4NTdiMDQxZjlmZWYzMTYxZGI1NyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_e82f2fa82b7741d3a074dfc6716e48ea",
+      "statement": "The Framework discovers Managers by querying the OSGi service registry for all services implementing IManager.class.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/TestRunManagers.java#L233-L261",
+          "version": "repo-lines-v1:sha256:e11e60c68d4e423f8a22e5f94597593e616fd2b9b612127a8f85884bb85af08c:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg4ZjRhNTdkZGU3MmMxMWYzNjJlMjM4NDdiMWQxYjNjZTRkZTllYmZiOTQ5NDlmNDhkZDczNzU0MGRlZDZmMjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxMmUxOWJkYTBmMTk4MmYzZGJiZjM3OWNiYzI4ZWVhNDgxZDRlNGEwZTE0NTM4ZTY5Zjk2MDUxNDZiMmMxZjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI0NzkwOGU1YTc3ODkzYTNhYmIwNjMzMTBlZTE4OWU4MjMxNDVmZGEzMmMzMDlkNGNmNmQ3MWIyMmUyNjkxMTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVlMmI5ZTIxZmRjODZmYzJjMmVlNDQ3MjE4NWQ2NzY0NjdiZGQxY2JmMmUyNGI0ZGM2NDRhYjFhYmIzMzI1NDcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_724d8513eb824af7830580c416c26f3a",
+      "statement": "Manager initialization involves examining the test class for relevant annotations and calling youAreRequired if the Manager should participate in the test run.",
+      "evidence": [
+        {
+          "resource": "repo://modules/managers/galasa-managers-parent/galasa-managers-zos-parent/dev.galasa.zos.manager/src/main/java/dev/galasa/zos/internal/ZosManagerImpl.java#L154-L173",
+          "version": "repo-lines-v1:sha256:20c9e99a258e08b662a0964f7131cedb4df47155ecee58774c0bc3f269f4c193:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlMDY1NDIwOWIyYmU1MmVmYmYxZTE4MmNlOGFkMmJiZTA4YWMxZGQ3Y2I2YmY1ZjY5MzMwM2IyYzA4YTljM2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0MTlhNmRjYzA0ZTIxM2EzYzdhNzdhNDU2YjAxZTc2ZDFlZjc4Y2QwMGJiZWMxZDhmODE0NThmZTkzZWRjNTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI4NjM3ODA0NjgwMWVkZGMxMDUyMjI4YjdkZTM5ZDIwOTE5NmViM2IzYmJhMTM2YjlmYTIyZDdhMzUyZWI5MDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFlM2U5YWU2OGY5ZTBmNGYyYmQyZjc1Y2I2OWQ2ZjhmZTI1NGRhMTY5NTk0NDk4MzE3MGE0YTQxY2RjMWU0NzQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c2d32ce393bb4002b5a9cfa6dd3925c5",
+      "statement": "Managers declare dependencies on other Managers through the youAreRequired method, which activates dependent Managers by calling their youAreRequired method.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/IManager.java#L102-L120",
+          "version": "repo-lines-v1:sha256:e436b0cf966ab769a88f7c627b6d7ba0340ecf91de433a57b50a23fd93139c9b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5Y2JiYzY1NDY5ZGIxY2EyODQyZWZkOTdkZjdlZTJjZTZjYzE1NzE0ODJkMDFhMThiNzkwYTEwYzdjNTEwZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjczMGRjNDEyZGNmZGU1MWQxOGNjNzEzNTRmOGE4YWE4M2NkNDdlNDhjMTFmYTkzN2RlZTA5MzE4NGFhMzJjZTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU4NTNjY2VkNmE5ZTA3ZWQ5MjY3ZDRjNWY0NzU1OTc5MjliMGFkZDM4MDM0MjNjNjJlN2I5ZGU5M2JlNjU5NGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIzYWQ2ODg2ODNiY2Y0ZDY1NTIzYzYxODQ0MWYyODU0MGM4MDQ4OGUyN2UyYTFkN2Y0MzIxMTQ3YTkyNGVhZGEifQ"
+        },
+        {
+          "resource": "repo://modules/managers/galasa-managers-parent/galasa-managers-zos-parent/dev.galasa.zos.manager/src/main/java/dev/galasa/zos/internal/ZosManagerImpl.java#L176-L188",
+          "version": "repo-lines-v1:sha256:a248c9faaf92251dc7e32ebd4b3ac6f97d3006c0cc953c1815ea54c1dfeab758:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk0YjBhMjUzM2JkNjg3YmIwMTk2NTA4MTM3MDcyNjcwMjdmNGNmOWU5MGVmOTM0ODRjZGIzNjFlNGUzZGM2MTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0MTlhNmRjYzA0ZTIxM2EzYzdhNzdhNDU2YjAxZTc2ZDFlZjc4Y2QwMGJiZWMxZDhmODE0NThmZTkzZWRjNTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU5MzdmYjA3OGMyODFhN2I5NDNhZTNhNzE2YmNjNjNjYjRlZWQ2ZGNiY2E3NTZkNTc2ODNiMWNlMjA4ODUzNjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNhZjYxYzhmNTlhNTM0NmVlM2MwYzdlNGEyMzljNjJhYjRhNTM2ZWZiNTgyYTBiZGJkMTdmNDg1MjEyYTdmY2UifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_126a1a3c5ece4c92a29d062f95c85d1e",
+      "statement": "The Framework sorts Managers into provisioning order based on the areYouProvisionalDependentOn method using a bubble-sort-based algorithm.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/TestRunManagers.java#L79-L148",
+          "version": "repo-lines-v1:sha256:7464ec9cdda076e06ec71e390350c4e9464561817c3947fff34e8ea29b02bfac:eyJzZWxlY3RlZExpbmVDb3VudCI6NzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYwMTQyMTM2OTQ2YWQyMTZjMmZhMmE3OTYxMTZjMTM1ZjBkOTk3MDY3ZWYwZDc0ZTlkY2Y4YmYyYWYwZDRkNjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA3MWJiY2FhMjVkMTY4YjI0MjA3MmMzYjA0YWE0ZDM2MTBhMDAxOTBlOTM4ZTFkZWIwZmE3OGVhNmIzMzc2OTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM3MDZiZDA3MTU3NzU2Y2U5ZjJmZjdlZTBiYmMzMGU2NmI1ZThjYmE5ZTY3YWViMWY2MzE5ZjI2ZDY2NzQ5MTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_47638184f54d43a6a8e7355e3e6bafcb",
+      "statement": "Managers can request additional OSGi bundles to be loaded via the extraBundles method, enabling fragment implementations based on configuration properties.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/IManager.java#L35-L58",
+          "version": "repo-lines-v1:sha256:555e0dc863bc92c9367b63649696dc270d32773a85e58f4d25bccb66b749ea79:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5Y2JiYzY1NDY5ZGIxY2EyODQyZWZkOTdkZjdlZTJjZTZjYzE1NzE0ODJkMDFhMThiNzkwYTEwYzdjNTEwZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk4Y2Y2Zjg5ZGExMTYwYzE2Nzc4NmI0ZDM5YmFhY2E5MzA2OWUyODZjNWU1NmMxZjMzZjk3M2Q4YmIyZjhjMzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcwNDQ3ZGM4MjI3YTdkYjJiMzNiMWQzMWIyNWYyMzliYzAxMWQzNzhkZWYzMDQ4YzIwOTQ0MDc3MDU2OGY1NTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhiMzdhNWRjZjkzYjdhZDhkOWZiNzUxZGMyN2E5NmIzNmU3Yjk2NTEyMjUyMTVmYTFkYmIzZjk0ZWUyYzhiMGIifQ"
+        },
+        {
+          "resource": "repo://modules/managers/galasa-managers-parent/galasa-managers-zos-parent/dev.galasa.zos.manager/src/main/java/dev/galasa/zos/internal/ZosManagerImpl.java#L128-L148",
+          "version": "repo-lines-v1:sha256:5711ed4532400077e2b38e224c23e1d1d78a8a7667278ca5192973b155a54d5d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk0YjBhMjUzM2JkNjg3YmIwMTk2NTA4MTM3MDcyNjcwMjdmNGNmOWU5MGVmOTM0ODRjZGIzNjFlNGUzZGM2MTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0MTlhNmRjYzA0ZTIxM2EzYzdhNzdhNDU2YjAxZTc2ZDFlZjc4Y2QwMGJiZWMxZDhmODE0NThmZTkzZWRjNTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU3MTM4MWU3ZWE1MDhiYjdkYTc0YjlkMWQ0NDlkNTJjNWJhZmMxZTMxMmYwMjEzM2ZmM2NkMTA5MzgzNDdlOGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI5M2FmMjAzYmZiNWY0YWQ4M2Y5YjVmZjU5MmUzMWY4OGI4MzI2ZTQwMWU4MWM2YzRlYzYzNjI4ZmYxNDdlOTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1abe17ec1c684ecd93dd2aabc413dc23",
+      "statement": "The provisioning lifecycle consists of three phases executed in dependency order: provisionGenerate allocates resource names without creating resources, provisionBuild creates and configures resources, and provisionStart initializes resources for test use.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/TestRunManagers.java#L476-L512",
+          "version": "repo-lines-v1:sha256:b715b45c56251f68aaadd5f8a03c0eed2e5f8fd3ab91288fd6e9854143e94c72:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJkNTY4ZTE1Mjc3ODk5NjAwNzUwNzI4Nzc5ZDIzMTgwYzFkMDg0NWQ5MmNlMjRhZWM0N2Q4ZDkzZmQ0N2M0NGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM2OTQ2ZTEwMWU1ZTc4ZDkwYTUxMGM2OWYyNjZlZjc2NTQwZDMwOWIxYjgyMjY5NWI1MzE3MmVkMmNhYTAyNTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNjYWM5NjcxM2VlZGI2NTk0NDk4MDFkMzg0YzkxYzRiYmI3YjkxYzEwZjc5ZmZjYzE5ZDA1OGQyNDlkMWNiYTYifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/IManager.java#L144-L195",
+          "version": "repo-lines-v1:sha256:de2e91eca9b26f3d57d520e78a21433d159341614947d4a51bd68ed613c92b91:eyJzZWxlY3RlZExpbmVDb3VudCI6NTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5Y2JiYzY1NDY5ZGIxY2EyODQyZWZkOTdkZjdlZTJjZTZjYzE1NzE0ODJkMDFhMThiNzkwYTEwYzdjNTEwZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU0YjRiMTdhZmM0MmE0NTYwMzFlOTk0NzljZWEyZjlmMmQ0MjcxZTYyYTMzYjkzYzAxMzNjMzY4OWIyODJlYzMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc0ZWJiNjVmY2VmOTVmMjcwNTZiMDUyM2E2NmExYWM3ZTQ3OTQ5NDUwYzg0ZWFjMmJkZGJhZWVhNTY0NDZjNTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgzNTk5NzMxM2Y3ZTc5NGE4MWNmOTIzNDYzYjYyOTBhYTQ0ZDBiNGFlNTBjYzVjZmZmYzk5YjA5YjlmNDI4ZGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_da4f37b9a523493a892e0bc6d6ec09e9",
+      "statement": "The Framework calls fillAnnotatedFields on each Manager before test methods to inject Manager-generated values into test class fields.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/TestRunManagers.java#L556-L565",
+          "version": "repo-lines-v1:sha256:f2143e02ad7af7eb813860bdf386a92b134f264a999f145bb6310a25a59310ca:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzZDM2OGVjMDgwMWU1NDA3MDkyOWYxZmE2ZGVjNjE2ZTcxMjM0NTdmNjhkZTY5YzhjNTJhNmU0Y2I2YTdhMDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM2OTQ2ZTEwMWU1ZTc4ZDkwYTUxMGM2OWYyNjZlZjc2NTQwZDMwOWIxYjgyMjY5NWI1MzE3MmVkMmNhYTAyNTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVjY2IyZDM1M2E1ZWY0MzliMDVjNzVjNWI5YTNlNjRkOTIwMTk2OTU5MDUyMWVhNzRjZGEwNWYxN2U2M2I3NWEifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/AbstractManager.java#L358-L370",
+          "version": "repo-lines-v1:sha256:968beb7ae3f786d8af72f609703154b4e79841ead2fd12751effcc351eb1e18a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVkYzJiMzExYWJlODc1NzJlOGE3Y2MwZDk5NmE2NTg0NDA3NmU1MjMyZDIxYjdhODU0NzVmOWI0MDU1Yjc0OTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFmMDg3ZGE5MTNlYzNjZWYyZDJjNThkOTlmMzc0NzNiYjU1MTI1MzMwZGYyNTZhNTIwMDJjOTVhYTRkMTRmNWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk4ODk2ODYzYmZlNzE5NTMxZmZhZDc5MWEzMjFmYWVlMzBkZmM0NTRkNjcxOGFhOWEzNDU2MDM0MDk0NmM5YWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f7c71a5e53bc491c9f67bb79bdad706b",
+      "statement": "Cleanup phases provisionStop and provisionDiscard execute in reverse dependency order to tear down resources gracefully.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/TestRunManagers.java#L515-L526",
+          "version": "repo-lines-v1:sha256:cf9f03089b3cb8eae48cb9253b367ebf3140b812e5a97d06e34f8d54d03f78a8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZmNWU3MjkxZmM3NTY2NWIyNjk2ZTIzMzkxODM4ZDljOTdmYTc5MTkzYWNkMDNiZmY4MmI3NGJiMWVhMzhlMTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM2OTQ2ZTEwMWU1ZTc4ZDkwYTUxMGM2OWYyNjZlZjc2NTQwZDMwOWIxYjgyMjY5NWI1MzE3MmVkMmNhYTAyNTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNjNzI3OWI5Y2QyODgyM2JlZTBkODU1ZTA4MmUwZTliM2Q4MzgwOGM3MDViMTdhMzRhMmFiMmNkNWQyOTRkNWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e4c55be9d20a46028971df7ae7d549ea",
+      "statement": "Managers use the @GenerateAnnotatedField annotation to mark methods that generate values for annotated test fields, which AbstractManager.generateAnnotatedFields invokes automatically.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/AbstractManager.java#L123-L196",
+          "version": "repo-lines-v1:sha256:58cc1e3a3c427b85e1ad2a5b39d7a6ae4febfe47efca45c5e742b131c9ad30c3:eyJzZWxlY3RlZExpbmVDb3VudCI6NzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5Y2JiYzY1NDY5ZGIxY2EyODQyZWZkOTdkZjdlZTJjZTZjYzE1NzE0ODJkMDFhMThiNzkwYTEwYzdjNTEwZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhkYjU4YjNmOGVlYWI1NWZkYWQ1OTcyMDYyNjg0NmVhZDFkY2U5ZTMwZTYzOTUxNGMzODViMWU2Mzc4YTExZjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVjY2MwM2RjNzgwZjExN2UxYTE5NTQ0ZjAzYzVkZGNhY2RmNDU2NDI0ODExNTQ3YjUxZjcxZjQ5ZDA3MzAzYTgifQ"
+        },
+        {
+          "resource": "repo://modules/managers/galasa-managers-parent/galasa-managers-core-parent/dev.galasa.core.manager/src/main/java/dev/galasa/core/manager/internal/CoreManagerImpl.java#L137-L140",
+          "version": "repo-lines-v1:sha256:c1e69272735bb383a36df0e426e071cc67afc798c40559d7db2ef2371a3fa1a4:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWJmYzM2ODNlYzZhZWY1ZDllMzBmZGVjNjUxMDA2NDNhZjdhMzRhYTk5Zjk1ZjJhZTg0Yjk4OWFlY2Y2YWNiMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjdjZGE4MmRhNjA2MjM4ZTA1ZTYyMzk5NTY5YzVlZTAzOTkzNDE5NjQ4YWU1ZDQzYTJiZjhjZDYzNDdmODI2MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjRjMjg2MmIxMGQ3MTg4MGY5ZmQzNmE1NTkxYzU2ZGYzNTI0OWFhZjE2ZTYzMmVmOTMxOWYwMTliYzI4YjA0YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2VmOWIzMWJkOTU3NDdhNDUwZTQ2ODE4NDI2Mjk2YWI2ZmY5Nzc0YTFiNmIxYjA2NGIwNDU0OWY4MjAxNTI1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_fd1c3ba2db744fd2bc122e341b07f53d",
+      "statement": "Managers can override test results in endOfTestMethod and endOfTestClass by returning a Result object, allowing classification of failures as environmental issues.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/TestRunManagers.java#L580-L617",
+          "version": "repo-lines-v1:sha256:7b14f21c5cb52efc2b08079c5bb7e42aad6e43b3c186efccd865cde86af6bec2:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYxYTliNzJlZjBmMDk0ZmYwZWJmMjE2NWJkZjA0MWRjYTBlYjE0ZDhiNjIyOTIzZmVjM2QyYmI3OWE1ODZjM2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM2OTQ2ZTEwMWU1ZTc4ZDkwYTUxMGM2OWYyNjZlZjc2NTQwZDMwOWIxYjgyMjY5NWI1MzE3MmVkMmNhYTAyNTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJiMzg5MjlmZDI5M2ZiNGNjNjI0MTkyMWUzYWY3MjUzMzgyMGRmMWUxYTFhNTdmZTZhMTJlNDZiMGUwYTY2OWQifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/IManager.java#L239-L287",
+          "version": "repo-lines-v1:sha256:4faa98bf9f633abf3f3be0256d54128d9d1e21df18ca68eadd5934ad6764c40e:eyJzZWxlY3RlZExpbmVDb3VudCI6NDksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5Y2JiYzY1NDY5ZGIxY2EyODQyZWZkOTdkZjdlZTJjZTZjYzE1NzE0ODJkMDFhMThiNzkwYTEwYzdjNTEwZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlZTE0MjE5N2Q5ZmIzODUxNDQ0YTRiNWZjNDUwZTdlMDFhMmNlMjdkNTA2NWZhMmYwZDEwNmYzNjcyMjc3M2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg1MjllNDhkNzJlOGE5ZDhjYmI4MmRlMjg2YzRiODczN2UyZTYwZTdjOThlYzgzZGRkMzRlN2QxYjNkMWViZTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgzNTk5NzMxM2Y3ZTc5NGE4MWNmOTIzNDYzYjYyOTBhYTQ0ZDBiNGFlNTBjYzVjZmZmYzk5YjA5YjlmNDI4ZGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_948d8f8e64384010aebfc43f1992d1af",
+      "statement": "Galasa organizes Managers into categories including Core, Platform, Technology, Cloud, Communication, Test Tool, Workflow, and Utility managers.",
+      "evidence": [
+        {
+          "resource": "repo://developer-docs/manager-architecture.md#L115-L123",
+          "version": "repo-lines-v1:sha256:ca112e467a6ab377a46e4f9bed3e50ec6d7842e5cd5646b1d93d48f6c3936142:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjZmNmJjOTQ5ODhkZDdiMzg1ZTk1NjdhZDdiNWI3Y2JkODNlMTIxODA3NGYyOGRmYTkwYWM3MzZjMDk2YmIzYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmUyMDEyNWZkZjUwZDQ2NjY5Mzk5OGJhNWUwYmQ4YTRkYzI4YzMxZTJlZWUyYzNkYTFkMjJlYjEwM2JmMDFiZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzA0NWNiNjk3YTBlNWMzYzFkZDdmNzVhMjc1NWEwODU5ZTM2NzdjNmFmYTJjNGRkODNhOTg1YzE2YzE5MDI0YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_960c67550f5947b78fa9191b803ad993",
+      "statement": "Manager readiness indicators are Alpha for active development, Beta for nearly ready with stable TPI, and Release for feature complete and production grade.",
+      "evidence": [
+        {
+          "resource": "repo://modules/managers/README.md#L38-L42",
+          "version": "repo-lines-v1:sha256:9ed33f963bb0f7227f75580909adf3c66e80f096d39b844652634aea88e0e2b4:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDgxMDM2NjcwMzFlMTgxMGVjNzkwOTAyYmI4NGMxZmRhN2JjZGU3NDE2Mzk1Mjk2NWU3ZjQ0ZDlmZTMyZWNmZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGI5MDVlNzA3YzAzMTE0ZWJlZjIwMWQ4ZTYwNDA5YTA5ZTBjOWI1NGU2MjM1NTU4NDkxMGQ0NmQxOWEwMmJmZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTc2MjkyM2EzM2FhOTMzY2MyODI5YmYwNmUyMDdjZTMyYTUwNDM1MDA4MTVkNTY0NmVhNjJlNjU5YTMzMGJhYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODkyODM4YjQ5ZGQ2YTQwMzJjY2IwMjFlNWNiMGE2OWI5MzkxZTVjOTY1M2FjNmNlN2FjZjNkNjI4MjE2Y2M0YSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_336099f7761a4e9ebcf97ce3dd9c21bd",
+      "statement": "Manager testing levels include IVT for local development testing, Local for local ecosystem testing, Isolated for isolated ecosystem configuration, MVP for MVP configuration testing, and Other Managers for managers used in provisioning other tests.",
+      "evidence": [
+        {
+          "resource": "repo://modules/managers/README.md#L44-L50",
+          "version": "repo-lines-v1:sha256:ec14171c2228950064e3e162f8b47770bea7d05213dd86fa32572febd48cd04d:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzJhNzNjMzM4OWU1MTRjZmM0NmNjMDRlY2EwMGIyMTE2Mzc5MWQ4ZWM4NjA2OTliZDE2NTJiZTViMGQ0ODA5NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmNhYzM3MWIyOTQxMzk2NWEwZDI3ODdjZWJlNGY2YjU1OWViY2U2ZDBlMTlkODY1ZTg3ZGMwMzM1ZDc1NjZkMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjBjYTcyMmUxZjdlNTFhMjI0OGJjOGQ0OGZiN2ZkMmZjYTcwYjBlOTg3ZmQxNDM5NDVjNWUwNzRkMDA4NTBjYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2JmOGE2OTE3MTFjOTAwOTExZmExYjM0NjQwYjk2NjA1ZWU5MDhhMDFjYTc4NGZkMjI0YWMwYzY5YjI4NzU0YyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ad9c79bd0ba4425293261e2962c6a524",
+      "statement": "The addDependentManager helper method locates a Manager implementing a specific interface and calls its youAreRequired method to activate it.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/AbstractManager.java#L483-L492",
+          "version": "repo-lines-v1:sha256:a7a66004e58afd4ca10f3592c5dbca9283c18aa25cf282e0b14db0e1063808f9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYxYjk2NDhmNzI0ZjZiNjgzZDg0OTVjMWI3YmYxMGU3MmU2MGY1OWNhNWQ5YTlmMjMxZmIzZmFmZjI2OGViMjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVkMDZlOTU4YjQ1MzA3MmE4NDMzZjI3NmMwOWFjNWM5OTVjMjA4NzNkZTQxMzI1NDE3ODI4Mjc0NDBjZDExMmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZlMzdkMmQ1Mjk5YzRkMWFjMTVjODFmMDMzZTFlMzI5Mjg0ZWM5ODIyOWJlMTgxZjI3ZDE2MzIzOTQ4ZmNlMTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_219edadfb0df42059945df02abd74187",
+      "statement": "Managers declare support for shared environments by overriding doYouSupportSharedEnvironments to return true, with AbstractManager returning false by default.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/AbstractManager.java#L564-L567",
+          "version": "repo-lines-v1:sha256:0b772541a6325e68744079bc6cf88c72c9e2e248c2609fcd932654dcb786ec5e:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWRjMmIzMTFhYmU4NzU3MmU4YTdjYzBkOTk2YTY1ODQ0MDc2ZTUyMzJkMjFiN2E4NTQ3NWY5YjQwNTViNzQ5MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzI4Y2Y0OTljOGNiYzBmMGQ4YzIzMGI3M2MxNzkzZDU1ZDdmZWU2NTFlZGEyYTI3NWFhM2JiOTYzMmYyZTk3YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjIsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmVmYTBhZWJmZWY4ZGViYWRhNTUzYzk0MGVlNzk5NjIxMmI0NDRjNTQwNzBlMWE4MGJlOGFhNWE3ZDQ1MzQ5YSJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/IManager.java#L93-L100",
+          "version": "repo-lines-v1:sha256:bffc50993601c704eb113dab49b9cd266904a980e3331a1c25b7f45c128751fb:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDUwZDVkNDU4Njc0NWYxZmNhZGNjMDljODhiNzdlZDgxODY4YTEyYjU3MWFkNWNlYzIxYmFiYjQ0ODkyZDllMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGM0ODEyZDg4NWU0MTg0YjMxN2NhMGM3N2UyY2Q1Nzk0MDc5Y2U2OWJmMzY4MWIzMjc4NWMzNTY4YzllNjhiYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2Y2MGJmNzNjZTYxMTdmNmE1ZmI2N2ExYjBiOGE1NTRhYmEyZjYxOWIwNDRjYzM3YzNhZjQ5ZmY1YmVkNzk0MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODM1OTk3MzEzZjdlNzk0YTgxY2Y5MjM0NjNiNjI5MGFhNDRkMGI0YWU1MGNjNWNmZmZjOTliMDliOWY0MjhkZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_d2f24551113f44778c020cb7c3c7065f",
+      "statement": "The findProvisionDependentAnnotatedFieldTags method locates tags used in annotations that indicate a dependency on a Manager, enabling managers to provision resources even without explicit annotations.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/AbstractManager.java#L199-L242",
+          "version": "repo-lines-v1:sha256:64265593db30b902f21fd6be109b3185fcef140843591701f1b5c13465aa0f83:eyJzZWxlY3RlZExpbmVDb3VudCI6NDQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYyYjUzMjZkNzE4ZGNiNjRkZWU2MWQwNGQ4NGEyM2ZmYTRhZjMxOGYwNzU3OTg5YzBmNmU1ZThjMDFmZWIzNDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVlMmI5ZTIxZmRjODZmYzJjMmVlNDQ3MjE4NWQ2NzY0NjdiZGQxY2JmMmUyNGI0ZGM2NDRhYjFhYmIzMzI1NDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk4ODk2ODYzYmZlNzE5NTMxZmZhZDc5MWEzMjFmYWVlMzBkZmM0NTRkNjcxOGFhOWEzNDU2MDM0MDk0NmM5YWUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.2",
+    "at": "2026-09-21T12:35:12.771Z"
+  }
+}

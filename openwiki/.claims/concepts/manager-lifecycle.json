@@ -1,0 +1,334 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:cea1b681fd58d6d8d096f79b6f275ea0729ad4e07672eb2901acc37f6599a807",
+  "claims": [
+    {
+      "id": "claim_e8d82832a6754bf59ec1d899dfd1dfd3",
+      "statement": "The IManager interface defines the complete lifecycle methods that all managers must implement: extraBundles(), initialise(), youAreRequired(), provisionGenerate(), provisionBuild(), provisionStart(), fillAnnotatedFields(), startOfTestClass(), startOfTestMethod(), endOfTestMethod(), endOfTestClass(), provisionStop(), provisionDiscard(), endOfTestRun(), and shutdown().",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/IManager.java#L33-L369",
+          "version": "repo-lines-v1:sha256:5c6e9e56272237eb474c9f1d6c1867cd3ff68a2fc288746e0ad016a4f90a83f1:eyJzZWxlY3RlZExpbmVDb3VudCI6MzM3LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIwYTM3NTY1MjY1YzE4YzIwZWRjZWNlYWVlNzQzYzk5NWU3NTc5Y2M5ZTk5MzIxNDI4NTFmMzc2ZWM1MzQzZWJmIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJkMTBiMzZhYTc0YTU5YmNmNGE4ODE4NTgzN2Y2NThhZmFmMzY0NmVmZjJiYjE2YzM5MjhkMGU5MzM1ZTk0NWQyIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIxOTQ3MjNkMjAzMGQ3M2Q5MjhhYjBlMTAxYzBlNWEwZTM0YmVkZWQwNzAzNjMyOTg3NjM0YzgyYjg3ZTA4ZWVlIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_50155c2ba54c4969935f19b89ad0e7f8",
+      "statement": "Manager lifecycle methods are invoked by TestRunManagers, which coordinates calling each active manager's methods in the correct order, with provisioning methods called in dependency order and cleanup methods called in reverse dependency order.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/TestRunManagers.java#L42-L147",
+          "version": "repo-lines-v1:sha256:5df66eafc061b3efc06e4c5f1f5806382c06f6392f800dca91e260f4325b5394:eyJzZWxlY3RlZExpbmVDb3VudCI6MTA2LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJmOWExZTNlNTdiODVlM2Y3Zjg1ZjU1YTY4ZTlhODk5MDViZGRiOGY3ZmZhZGU2OGM2MWNkODU1YjQ3Yjk2MWU2IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJkMzQ3MTE4M2MyMjMzMjBmMjYwOTE2MDQ3Mjg2NDVkMWQxY2E4MDFjZGUyOGE0YmQzZDVmY2Q1ZGY4NTg0ZTVkIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI4M2Y5YjU2MWQ3MTBkYWVhMzk0NTQ0Njc4YzllYjRkOGI2MjQ1NDkwMTlkNTc1ZmI2M2VkMzA0ZmU3OTUxMGU0IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJjMDYzZWQ1NTZlOTZiZTcxYTFkNzVhM2RlNTk5MWQ3N2E0MTI5YmNjY2U3ZDkzZjY4YjQ2ZjMxN2ZhMWY4N2YxIn0"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/TestRunManagers.java#L476-L642",
+          "version": "repo-lines-v1:sha256:55eae032e41969a26e1fd8ae8288da7f675049ec3702a867cb4aebe4abf9e441:eyJzZWxlY3RlZExpbmVDb3VudCI6MTY3LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJiZDU2OGUxNTI3Nzg5OTYwMDc1MDcyODc3OWQyMzE4MGMxZDA4NDVkOTJjZTI0YWVjNDdkOGQ5M2ZkNDdjNDRmIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0ODkzZjQwZTM3ODFlYjg5NmM4MmQwNDZhMDgwNjdhMTFlMzVjZGYyZjFkZmFmMjZmZWE5MGI4ZGI2Njc2NDEzIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIzNjk0NmUxMDFlNWU3OGQ5MGE1MTBjNjlmMjY2ZWY3NjU0MGQzMDliMWI4MjI2OTViNTMxNzJlZDJjYWEwMjU5IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJiMTkzMmE3NDY2MzU0M2JlNzM4ZDVjY2E0ZmUyZGVhNmM3MWI3ZjdjMzJmMmEwMWRjZjEyMGJiMGVkNGQ3MGNiIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_1f9adea9cf47412da847df630af4bb06",
+      "statement": "extraBundles() is called once during manager discovery to allow managers to request additional OSGi bundles based on CPS properties, enabling dynamic loading of implementation fragments.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/IManager.java#L35-L58",
+          "version": "repo-lines-v1:sha256:555e0dc863bc92c9367b63649696dc270d32773a85e58f4d25bccb66b749ea79:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5Y2JiYzY1NDY5ZGIxY2EyODQyZWZkOTdkZjdlZTJjZTZjYzE1NzE0ODJkMDFhMThiNzkwYTEwYzdjNTEwZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk4Y2Y2Zjg5ZGExMTYwYzE2Nzc4NmI0ZDM5YmFhY2E5MzA2OWUyODZjNWU1NmMxZjMzZjk3M2Q4YmIyZjhjMzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcwNDQ3ZGM4MjI3YTdkYjJiMzNiMWQzMWIyNWYyMzliYzAxMWQzNzhkZWYzMDQ4YzIwOTQ0MDc3MDU2OGY1NTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhiMzdhNWRjZjkzYjdhZDhkOWZiNzUxZGMyN2E5NmIzNmU3Yjk2NTEyMjUyMTVmYTFkYmIzZjk0ZWUyYzhiMGIifQ"
+        },
+        {
+          "resource": "repo://modules/managers/galasa-managers-parent/galasa-managers-zos-parent/dev.galasa.zos.manager/src/main/java/dev/galasa/zos/internal/ZosManagerImpl.java#L128-L148",
+          "version": "repo-lines-v1:sha256:5711ed4532400077e2b38e224c23e1d1d78a8a7667278ca5192973b155a54d5d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk0YjBhMjUzM2JkNjg3YmIwMTk2NTA4MTM3MDcyNjcwMjdmNGNmOWU5MGVmOTM0ODRjZGIzNjFlNGUzZGM2MTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0MTlhNmRjYzA0ZTIxM2EzYzdhNzdhNDU2YjAxZTc2ZDFlZjc4Y2QwMGJiZWMxZDhmODE0NThmZTkzZWRjNTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU3MTM4MWU3ZWE1MDhiYjdkYTc0YjlkMWQ0NDlkNTJjNWJhZmMxZTMxMmYwMjEzM2ZmM2NkMTA5MzgzNDdlOGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI5M2FmMjAzYmZiNWY0YWQ4M2Y5YjVmZjU5MmUzMWY4OGI4MzI2ZTQwMWU4MWM2YzRlYzYzNjI4ZmYxNDdlOTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2c85e44b61cf43fda42abafdc11e61e1",
+      "statement": "initialise() is called to allow managers to examine the test class for relevant annotations and activate themselves by adding to the activeManagers list, and should preserve the framework and test class references for later use.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/AbstractManager.java#L261-L268",
+          "version": "repo-lines-v1:sha256:b7888a276ca964ca3e79bfd57b575784d4f57f5a51f4ff91e556ee44221417aa:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWRjMmIzMTFhYmU4NzU3MmU4YTdjYzBkOTk2YTY1ODQ0MDc2ZTUyMzJkMjFiN2E4NTQ3NWY5YjQwNTViNzQ5MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzkyYjcyNTMyNjk0ZWM4MzI0MGNmYjNkNGUwMDA5NTRiZDBiNWFjNTgxMjQyMGVlODdiNDgwYjEwN2YxYjg5ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmJlNDg1ZjJiNzRhNzgzNGFiNzEzYmM4M2Y3NTk1NzNmMzI0OGE1N2Y0NTg4YWQwNjQzZTYwOTM5MjA3ZWE5YSJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/IManager.java#L60-L90",
+          "version": "repo-lines-v1:sha256:e681b2241b4fa88678de5e87105c9845412e1dc4633020c14db5e8f0bcd5186e:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5Y2JiYzY1NDY5ZGIxY2EyODQyZWZkOTdkZjdlZTJjZTZjYzE1NzE0ODJkMDFhMThiNzkwYTEwYzdjNTEwZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUwYTIyZjRmYjA4NGVlYWZlNzM3NDY2Yzk4OWNmMWE3NGJhMDU5ZTE3NWY2M2NmZWI3YTBmZjMxYzIxYjg4YWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYzYzgyMzcxOTdlNDYwMTk1YTZjYWYzZTdkNzFmYzlmMGU5MjRhMWI1MmJjMzI1MWY3ODczNTFhYTNhMzIyZmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUxZTkwZGQ3MjBkNjIwNjMzMzgzYWZlMGJjYTUxNjQ1ODQ3MTE0ZTI1N2UwMmM1ZmQzZDExOTg1YzE1NzcyMGIifQ"
+        },
+        {
+          "resource": "repo://modules/managers/galasa-managers-parent/galasa-managers-comms-parent/dev.galasa.http.manager/src/main/java/dev/galasa/http/internal/HttpManagerImpl.java#L66-L76",
+          "version": "repo-lines-v1:sha256:2baea98cd74de47716f495c12ced093506926f54985becb0c38664ac9a0b98d5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM4MTIyNzk3OWU1NDFmZmQ1ZTllNmNlZjMzZWJkZjJjYWRmNGViOGUwYjIwZDUwNTQ2NWI4MDhmNGEzZjEyMmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM2OTQ2ZTEwMWU1ZTc4ZDkwYTUxMGM2OWYyNjZlZjc2NTQwZDMwOWIxYjgyMjY5NWI1MzE3MmVkMmNhYTAyNTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYwZTA2N2MyNzY0NmM2YWY3NjEwNzk4MWU5YTE0NWRmNTVmMTAzYzQxYTVhOWVkMTgwOGI4YjIwYjZiNjEyN2YifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7e8e08d69f5f42ae91faf73f472db6a6",
+      "statement": "youAreRequired() is called when another manager declares a dependency on this manager, and the manager should activate itself if not already in the activeManagers list.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/IManager.java#L102-L120",
+          "version": "repo-lines-v1:sha256:e436b0cf966ab769a88f7c627b6d7ba0340ecf91de433a57b50a23fd93139c9b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5Y2JiYzY1NDY5ZGIxY2EyODQyZWZkOTdkZjdlZTJjZTZjYzE1NzE0ODJkMDFhMThiNzkwYTEwYzdjNTEwZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjczMGRjNDEyZGNmZGU1MWQxOGNjNzEzNTRmOGE4YWE4M2NkNDdlNDhjMTFmYTkzN2RlZTA5MzE4NGFhMzJjZTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU4NTNjY2VkNmE5ZTA3ZWQ5MjY3ZDRjNWY0NzU1OTc5MjliMGFkZDM4MDM0MjNjNjJlN2I5ZGU5M2JlNjU5NGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIzYWQ2ODg2ODNiY2Y0ZDY1NTIzYzYxODQ0MWYyODU0MGM4MDQ4OGUyN2UyYTFkN2Y0MzIxMTQ3YTkyNGVhZGEifQ"
+        },
+        {
+          "resource": "repo://modules/managers/galasa-managers-parent/galasa-managers-zos-parent/dev.galasa.zos.manager/src/main/java/dev/galasa/zos/internal/ZosManagerImpl.java#L176-L188",
+          "version": "repo-lines-v1:sha256:a248c9faaf92251dc7e32ebd4b3ac6f97d3006c0cc953c1815ea54c1dfeab758:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk0YjBhMjUzM2JkNjg3YmIwMTk2NTA4MTM3MDcyNjcwMjdmNGNmOWU5MGVmOTM0ODRjZGIzNjFlNGUzZGM2MTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0MTlhNmRjYzA0ZTIxM2EzYzdhNzdhNDU2YjAxZTc2ZDFlZjc4Y2QwMGJiZWMxZDhmODE0NThmZTkzZWRjNTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU5MzdmYjA3OGMyODFhN2I5NDNhZTNhNzE2YmNjNjNjYjRlZWQ2ZGNiY2E3NTZkNTc2ODNiMWNlMjA4ODUzNjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNhZjYxYzhmNTlhNTM0NmVlM2MwYzdlNGEyMzljNjJhYjRhNTM2ZWZiNTgyYTBiZGJkMTdmNDg1MjEyYTdmY2UifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7ee1aecc704a49e1939fb75af00dd3ec",
+      "statement": "provisionGenerate() determines required resources and reserves them from pools without creating actual resources, and should throw ResourceUnavailableException if resources are unavailable to trigger test wait/retry.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/TestRunManagers.java#L476-L487",
+          "version": "repo-lines-v1:sha256:6b837464e1e09bfe50b0fe050f522fc5b8b6e956204a4d3d2af971d38c64d000:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJkNTY4ZTE1Mjc3ODk5NjAwNzUwNzI4Nzc5ZDIzMTgwYzFkMDg0NWQ5MmNlMjRhZWM0N2Q4ZDkzZmQ0N2M0NGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM2OTQ2ZTEwMWU1ZTc4ZDkwYTUxMGM2OWYyNjZlZjc2NTQwZDMwOWIxYjgyMjY5NWI1MzE3MmVkMmNhYTAyNTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUwZGU5ZDFmZjNmNzJhMmMwZWI1MGM2NTFmNGY4MDViZDQ5NzhkZjMxNzIxYjQ1ZjUzZDE1ODc4MjBiNDlkMTIifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/IManager.java#L144-L161",
+          "version": "repo-lines-v1:sha256:3e5d72a4a47db7bf855b94f214e935fd39876edbdf924bbf4ab2ac6f5035433e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5Y2JiYzY1NDY5ZGIxY2EyODQyZWZkOTdkZjdlZTJjZTZjYzE1NzE0ODJkMDFhMThiNzkwYTEwYzdjNTEwZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJhYTIwMjA4YTA5ZTYwODZlY2ZjYzcyNTc3MjQ1YTdkMDZjYThmMTc5NmI3MWIxY2M0MWM4MDUyY2ZmNTY3OGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc0ZWJiNjVmY2VmOTVmMjcwNTZiMDUyM2E2NmExYWM3ZTQ3OTQ5NDUwYzg0ZWFjMmJkZGJhZWVhNTY0NDZjNTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgzNTk5NzMxM2Y3ZTc5NGE4MWNmOTIzNDYzYjYyOTBhYTQ0ZDBiNGFlNTBjYzVjZmZmYzk5YjA5YjlmNDI4ZGYifQ"
+        },
+        {
+          "resource": "repo://modules/managers/galasa-managers-parent/galasa-managers-zos-parent/dev.galasa.zos.manager/src/main/java/dev/galasa/zos/internal/ZosManagerImpl.java#L193-L253",
+          "version": "repo-lines-v1:sha256:caa839b4838b45c537c491cbb27163279007f82d184b00826f176e52959a32b0:eyJzZWxlY3RlZExpbmVDb3VudCI6NjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk0YjBhMjUzM2JkNjg3YmIwMTk2NTA4MTM3MDcyNjcwMjdmNGNmOWU5MGVmOTM0ODRjZGIzNjFlNGUzZGM2MTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0MTlhNmRjYzA0ZTIxM2EzYzdhNzdhNDU2YjAxZTc2ZDFlZjc4Y2QwMGJiZWMxZDhmODE0NThmZTkzZWRjNTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA2NjNmMGM2N2FkYjgwN2JhYzNkYWJjMDVhMTRjNTJmYTA4OWMwZDM0OGI4Y2E0MzFiYzBjNDkxZTQ0YzA5ZTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA2NWRkZTdjOWUyYjJkOTRhYmQ3ZWZjYzUxNmMxMTNiZjZjYzY2ZjQ1OWFlMDgzZTFhZTQxYzUwOTcxOWQ0NWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9c53dddb2ae141efb40b723ce3e9c594",
+      "statement": "provisionBuild() creates and configures resources that were planned during Generate phase, and managers are called in dependency order resolved by areYouProvisionalDependentOn().",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/TestRunManagers.java#L490-L499",
+          "version": "repo-lines-v1:sha256:a9ee91fd90060e8fff2b61249132218ae18512844aba66b2df48dde9d548abda:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZiYjk0YzA4YjMxMjBhZGE0MDNkYzEzZTUwMzYwYWIwMTBmZTQ4YzYwYjFmZjYyNTlmNzkwODQxZDQ3MDkwZWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM2OTQ2ZTEwMWU1ZTc4ZDkwYTUxMGM2OWYyNjZlZjc2NTQwZDMwOWIxYjgyMjY5NWI1MzE3MmVkMmNhYTAyNTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU1ZmE2ODUxM2M2Nzg2NmJkMmQ4OWU1OGEzMzVmMDJhMWUzZjliNmY0YWU2NTE3NzYyZDgxOGJlMjVlMmZiMDAifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/TestRunner.java#L427-L444",
+          "version": "repo-lines-v1:sha256:d27b031046cc9491a97301697b46373211a43f5c4a2140a5f37d087670c44579:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMyZWFlNDcyNGUxNWE0ZGY5OTdiMGRhYmFhNDA2NzYyOTYxODkyYWZiNzljMjI3ZTE4M2Y5MDBjMTBhNWUwMDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhkYjMzOWMxN2Q0Y2M1NGU3MGM0ZmNmZWNiNjExYmI5ZTdkMzYzZjI1YjE4ZTA5MjNhMWQzMDZjYzk1OTI0ZTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFhMGVlODIwM2NlZjcxYWFiNDEyODYzYWY4NmFkZTc5ODU5MzRlYTFlYmVlOGU3ZjcxOTExYTY2Mjk0OTJiMGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcwMGQzYzlmNmFkNDNhMjFjOGQzNWM3N2VhYmU4ZDhkZmM2ZWUzZDA0NjM5Y2Q5NmEzOWZjNTY4MmQwYWE3NjYifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/IManager.java#L163-L178",
+          "version": "repo-lines-v1:sha256:7cc2508658edc129d110967f25df396ab4bf9ae041e00a24f90d111fa922a9dc:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5Y2JiYzY1NDY5ZGIxY2EyODQyZWZkOTdkZjdlZTJjZTZjYzE1NzE0ODJkMDFhMThiNzkwYTEwYzdjNTEwZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA4Nzc4MWYwNmQxMTUwMGY0OWExZmZmZWI0YzhkYzY0MDU3ZjY3MjZkYjI5N2U2ODRjMjk2MjE0N2Y1YWQ0NDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhlMWFlNzI3NDdjY2VlN2ZmNTgyMjM0Y2M4YmZmZjA2NDUxODE5YjE4NDdiNDllZWFiM2NkOGU4YmJiZjI4MjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgzNTk5NzMxM2Y3ZTc5NGE4MWNmOTIzNDYzYjYyOTBhYTQ0ZDBiNGFlNTBjYzVjZmZmYzk5YjA5YjlmNDI4ZGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bc467611800641d6a54a23fe304eeab4",
+      "statement": "provisionStart() starts and initializes resources built during the Build phase, making them active and ready for test execution.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/TestRunManagers.java#L502-L512",
+          "version": "repo-lines-v1:sha256:7587d63fc22962bd9b985c4f73a45f28184170a9b764c6d5224eee9f9a4fabd9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFmMTI0MDFkNmU3NjUwZmJjNjRjZTgyOTUwNTAyYjg4YTkyM2QxODU3MWI4OThmMjE4NGQ0YzhiNGI4MjMzZGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM2OTQ2ZTEwMWU1ZTc4ZDkwYTUxMGM2OWYyNjZlZjc2NTQwZDMwOWIxYjgyMjY5NWI1MzE3MmVkMmNhYTAyNTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNjYWM5NjcxM2VlZGI2NTk0NDk4MDFkMzg0YzkxYzRiYmI3YjkxYzEwZjc5ZmZjYzE5ZDA1OGQyNDlkMWNiYTYifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/TestRunner.java#L466-L479",
+          "version": "repo-lines-v1:sha256:c320e7d59fb4c94916d05650309fe1a0d671b4e90ce25bb3dc25c0822873a038:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNlZGM5MDMxYjMyNDI2ZTVkMWE0MzAwNWYwNmY3ZTYwMmNiOTY0NzQ0YjUwZmYxMmI0YTQ0MmI5NzZhZGJmNDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhkYjMzOWMxN2Q0Y2M1NGU3MGM0ZmNmZWNiNjExYmI5ZTdkMzYzZjI1YjE4ZTA5MjNhMWQzMDZjYzk1OTI0ZTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk0ZjQ4MWUzMzVjZDQzMjdlOWZiMjlmMTZiZGYyYTgzZjg5NTczMjA2YmM1MWVlODkzOGZjZmIwYWVhNmJkMWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEzMWZmMzMwN2ZhMTkzMjBkZGE5YWJjODhmYWE5MTYyZjBhNzFkNDAyMDk1YmVhYTM0MmIyNWJiMDlhNjYyMmEifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/IManager.java#L180-L195",
+          "version": "repo-lines-v1:sha256:67bd2888b73db3b1d26c407b0e2a6a200babf1ce4ae6b367460128db6d1cefbc:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5Y2JiYzY1NDY5ZGIxY2EyODQyZWZkOTdkZjdlZTJjZTZjYzE1NzE0ODJkMDFhMThiNzkwYTEwYzdjNTEwZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU0YjRiMTdhZmM0MmE0NTYwMzFlOTk0NzljZWEyZjlmMmQ0MjcxZTYyYTMzYjkzYzAxMzNjMzY4OWIyODJlYzMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM1ZmY4MjkwZGIxYjhkMTYxNzg3NDYwZTQyZTUxZjFkMjRlNzViNjM5Njg3ZjcxNWEyMGI1MzRmNDYwNDQzMzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgzNTk5NzMxM2Y3ZTc5NGE4MWNmOTIzNDYzYjYyOTBhYTQ0ZDBiNGFlNTBjYzVjZmZmYzk5YjA5YjlmNDI4ZGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1b57d2c15ef442c4b17273ab0d75d79a",
+      "statement": "fillAnnotatedFields() injects manager-generated objects into test class fields and is called before each test method to reset fields that may have been modified, with AbstractManager providing automatic implementation for registered fields.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/TestRunManagers.java#L556-L565",
+          "version": "repo-lines-v1:sha256:f2143e02ad7af7eb813860bdf386a92b134f264a999f145bb6310a25a59310ca:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzZDM2OGVjMDgwMWU1NDA3MDkyOWYxZmE2ZGVjNjE2ZTcxMjM0NTdmNjhkZTY5YzhjNTJhNmU0Y2I2YTdhMDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM2OTQ2ZTEwMWU1ZTc4ZDkwYTUxMGM2OWYyNjZlZjc2NTQwZDMwOWIxYjgyMjY5NWI1MzE3MmVkMmNhYTAyNTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVjY2IyZDM1M2E1ZWY0MzliMDVjNzVjNWI5YTNlNjRkOTIwMTk2OTU5MDUyMWVhNzRjZGEwNWYxN2U2M2I3NWEifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/AbstractManager.java#L358-L370",
+          "version": "repo-lines-v1:sha256:968beb7ae3f786d8af72f609703154b4e79841ead2fd12751effcc351eb1e18a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVkYzJiMzExYWJlODc1NzJlOGE3Y2MwZDk5NmE2NTg0NDA3NmU1MjMyZDIxYjdhODU0NzVmOWI0MDU1Yjc0OTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFmMDg3ZGE5MTNlYzNjZWYyZDJjNThkOTlmMzc0NzNiYjU1MTI1MzMwZGYyNTZhNTIwMDJjOTVhYTRkMTRmNWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk4ODk2ODYzYmZlNzE5NTMxZmZhZDc5MWEzMjFmYWVlMzBkZmM0NTRkNjcxOGFhOWEzNDU2MDM0MDk0NmM5YWUifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/IManager.java#L207-L215",
+          "version": "repo-lines-v1:sha256:f70bd0393ed21c51f265be14c431ab94f58fbc99819a638755e94a0938f7887e:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzljYmJjNjU0NjlkYjFjYTI4NDJlZmQ5N2RmN2VlMmNlNmNjMTU3MTQ4MmQwMWExOGI3OTBhMTBjN2M1MTBmMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGQyMTRiZTNjOWY1OGU2MjM4NmY4YjliNTUxMzczYzZlNjM2M2YyMTIzOWZiZGVjYjUxM2Q3YjIyMTUyZTMxNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmIxMTVmZmQ4NTA1NDNmMDYzNzJjOTgzOTg5MWI1ZDgwY2Q3M2VkMzEyNjE0N2NjMzE1YzAwNzI0ZGM3YjJiYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODM1OTk3MzEzZjdlNzk0YTgxY2Y5MjM0NjNiNjI5MGFhNDRkMGI0YWU1MGNjNWNmZmZjOTliMDliOWY0MjhkZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_8b29b91adaee4fe1874e48986dbf21db",
+      "statement": "startOfTestClass() is called when the test class is instantiated and ready to run, allowing managers to perform class-level setup before any test methods execute.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/TestClassWrapper.java#L255-L259",
+          "version": "repo-lines-v1:sha256:b80237f6fc1dbec2b2a7c2efa677a94e1a858f87b16c528e5c7e2d225c75ca9d:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzEyNTM3YmQzOTJkMDE3OTMxZGU5ZDUyNGFiNGQxZDViNzhhNzVhZTY4YzBkOWU5NGQ1ODY0MDZmOGM1ODYwMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTUyMmM0MmNkMTljNmQwM2Q4MDhjNDUyNzIwNTUyODI1YjdlYTFjNWI0OTFiMjE4NTExY2FjNzQxNWNmOWQ5YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTk1YjU4YTljZTBhMTZiZjk2OThiZGZhZjM5NjAyM2IxNWQ5NzhjMzRlODE1YmFhMTQzOGMyZWNkOGVkMDUwMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWRmZTgwNTZhZWJiODlkNjhmM2E1YjZjNGEzZGJhNDMxZjQ0MmJkYzYxN2U3OWJkYmQ4ZmI2YzY2YTQ1ZWE1MiJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/TestRunManagers.java#L529-L538",
+          "version": "repo-lines-v1:sha256:e11ed009a538a682d62befef56dacca8ee7fa88fdceac93c89b52bb119da2b78:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZlMzVlYjgxNmRmN2ZhZDM1YmJlYTYwOTRkMTJhZDA4MzVlNjA4ZWM1M2IwNDVlYmNmNTc0YjVhNzA3YmUwZGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM2OTQ2ZTEwMWU1ZTc4ZDkwYTUxMGM2OWYyNjZlZjc2NTQwZDMwOWIxYjgyMjY5NWI1MzE3MmVkMmNhYTAyNTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQyNzdmZTk3NDY1ZTFiZjI0NTVjYzg0MTIyYjk4ZTk2NWEyZWM4ZjA0NWZlY2UwMmE2MzBhNDY0YTRmMmI0N2EifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/IManager.java#L197-L205",
+          "version": "repo-lines-v1:sha256:728ef1f3f3fc5fcad72b335feef238b67c0527d97d33ccc0e7398bfe31110302:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzljYmJjNjU0NjlkYjFjYTI4NDJlZmQ5N2RmN2VlMmNlNmNjMTU3MTQ4MmQwMWExOGI3OTBhMTBjN2M1MTBmMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmFiYjY5NDZmYzU4NzIwYjVkMWFkYTE4N2FjY2RhY2M3NjAwZjk3MjEzYjhiNjI4ZDNmNmRhMThhNTU0MGExYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmMxOWY4MGNhNzMxMWI0Y2Y4OGRlYjU5YzQzNDFhYzQ3NGYxYzc1MWQ1YWRhMTIyMTY3ZWRkZGEyOGUzYjQxNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWEzZjEwMjIxYzg0NDM2NmFjYzU2ZDM3YTFhNTg1Njg2OGE2NDA4YzhiZWUwZjQ4YzA3NTNkOGY4NjQyOWJlMiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_0441dbc895f244b59eabdbb27a232d47",
+      "statement": "startOfTestMethod() is called before each test method executes to perform method-specific setup, with access to the method details via the GalasaMethod parameter.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/TestRunManagers.java#L568-L577",
+          "version": "repo-lines-v1:sha256:a1b6fe924c3fbfce5ccec02d2dca8d7bba7b59ca027d4f2b9c60041eab1e1a89:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcxY2I4NGMxMjhiNGZmMDMwNmJjYTE4ZmZlZjMxMDU4ODc5Y2MwZTUzNmIzNzQ5MjhiNjE2ZjQ2NTY3NjFmYWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM2OTQ2ZTEwMWU1ZTc4ZDkwYTUxMGM2OWYyNjZlZjc2NTQwZDMwOWIxYjgyMjY5NWI1MzE3MmVkMmNhYTAyNTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA4NjQxMzk5OGY5ZDEzMzA2MmZhODdhYThlNzg3MDUzYWYzOGViMzhjY2FkY2M5NjFlZTc2YTZjYTczODljODEifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/IManager.java#L230-L237",
+          "version": "repo-lines-v1:sha256:1122bb1e65e65e7c3311ec75c78e67f7515820e037e7228244af5cd8e753f62a:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzljYmJjNjU0NjlkYjFjYTI4NDJlZmQ5N2RmN2VlMmNlNmNjMTU3MTQ4MmQwMWExOGI3OTBhMTBjN2M1MTBmMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjY1MjAxMjlmYzcxODI4OTIxZTg2ZGNjYmI0NWI4NDNjMWNmYmYzNDllZjkzZjU2Mzg4ZmJlYzc1NDI1YzhiMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjEyOWI4ZmRiYTY4MjdjNzcxMGI0MmI2NmI1YTc3NzQyN2JiMTVhOTg3ZGFlMDM0OTMzNTk3NTRlZDFjNjkxYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODM1OTk3MzEzZjdlNzk0YTgxY2Y5MjM0NjNiNjI5MGFhNDRkMGI0YWU1MGNjNWNmZmZjOTliMDliOWY0MjhkZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_9157b86a451c4e9e8d236e35b575ae14",
+      "statement": "endOfTestMethod() is called after each test method completes and can return a Result to override the test method outcome, with null meaning accept the current result.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/TestRunManagers.java#L580-L597",
+          "version": "repo-lines-v1:sha256:507f378df85c7d1519b162d027fdcb34d16f1da8f69b6320506aa069fb0173dc:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYxYTliNzJlZjBmMDk0ZmYwZWJmMjE2NWJkZjA0MWRjYTBlYjE0ZDhiNjIyOTIzZmVjM2QyYmI3OWE1ODZjM2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM2OTQ2ZTEwMWU1ZTc4ZDkwYTUxMGM2OWYyNjZlZjc2NTQwZDMwOWIxYjgyMjY5NWI1MzE3MmVkMmNhYTAyNTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVlNzk1YWIzMWU3NzIzYmQxZDZiMjQ4MjQ1YTQyOGQ0ODgyNWQwMGI2MjMzZjE3MjdkZmI0ZWJiZjY5ZTU1MDYifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/IManager.java#L239-L257",
+          "version": "repo-lines-v1:sha256:4cf6e5d4c30ae6973dc36ef1042be75250806552df6bc8eafbe19f7a121aa14d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5Y2JiYzY1NDY5ZGIxY2EyODQyZWZkOTdkZjdlZTJjZTZjYzE1NzE0ODJkMDFhMThiNzkwYTEwYzdjNTEwZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjczMGRjNDEyZGNmZGU1MWQxOGNjNzEzNTRmOGE4YWE4M2NkNDdlNDhjMTFmYTkzN2RlZTA5MzE4NGFhMzJjZTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg1MjllNDhkNzJlOGE5ZDhjYmI4MmRlMjg2YzRiODczN2UyZTYwZTdjOThlYzgzZGRkMzRlN2QxYjNkMWViZTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgzNTk5NzMxM2Y3ZTc5NGE4MWNmOTIzNDYzYjYyOTBhYTQ0ZDBiNGFlNTBjYzVjZmZmYzk5YjA5YjlmNDI4ZGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c5403ebd2ae143a5a021dffaaccabd94",
+      "statement": "endOfTestClass() is called after all test methods complete and can return a Result to override the overall test class outcome, with null meaning accept the current result.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/TestClassWrapper.java#L271-L291",
+          "version": "repo-lines-v1:sha256:2f7e0b2154d177a4f1988c9144cff3139ddac3584ae051f1125b4a37282e5c4b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlYzY5NDNmYWE0YmJmNjRhMWI5M2Y3MjgwZGZiMDI5YzA1YjFkYjc2YzA5MDVmZGRmNzEzMmU5OGU3ZDhjMGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIxNGQ2ZTNhOGUwOWNmOGVhMWVjZDdlNzhkZGZhZDdkODkzMzA2YzczNzgxNDM4NmI1OGM3NGYyYWU2ZGQzODkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY5M2E0YmQ2OGU5NmJiZjVlZDg1YTQ0YWQ1MDA0Yzc0MTQwZjIyMjdiOTZjM2JlNmRhY2M3ZjQzMDZkN2ViYWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI5YzVkNDRmNDMyMTYzMzgwZGNmOTRmMWU3NzQwNTYxYjM4OGE5ZDE4YmI2YTQ1NzliOGU0OGZhMjQzNDg1YjUifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/TestRunManagers.java#L600-L617",
+          "version": "repo-lines-v1:sha256:bd6e090320a9059d95db1e046c40507d030a37b80c1cebff6c96df2787b7e358:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMwNTk1NWQ0ODE1NTE4N2I2ZTczMzRmMjNlODg0MTFiMzUxM2MyMzU5N2NlZDU2N2M3Yjg5ZTQ0MGI2Zjk4Y2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM2OTQ2ZTEwMWU1ZTc4ZDkwYTUxMGM2OWYyNjZlZjc2NTQwZDMwOWIxYjgyMjY5NWI1MzE3MmVkMmNhYTAyNTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJiMzg5MjlmZDI5M2ZiNGNjNjI0MTkyMWUzYWY3MjUzMzgyMGRmMWUxYTFhNTdmZTZhMTJlNDZiMGUwYTY2OWQifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/IManager.java#L271-L287",
+          "version": "repo-lines-v1:sha256:f2e7f7cca9068bf631b12885ff0bfaffb200ac6db1b58fa30b59c117e2fc40ed:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5Y2JiYzY1NDY5ZGIxY2EyODQyZWZkOTdkZjdlZTJjZTZjYzE1NzE0ODJkMDFhMThiNzkwYTEwYzdjNTEwZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlZTE0MjE5N2Q5ZmIzODUxNDQ0YTRiNWZjNDUwZTdlMDFhMmNlMjdkNTA2NWZhMmYwZDEwNmYzNjcyMjc3M2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJmMTY3ZTJkNWU4N2JiZTdiMGYzNzk1N2FhMTQ0MjJkMDliNjRhYTNiZjliNTI4ZDBiNGJiZDQ5ZWNiMWVkOGMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgzNTk5NzMxM2Y3ZTc5NGE4MWNmOTIzNDYzYjYyOTBhYTQ0ZDBiNGFlNTBjYzVjZmZmYzk5YjA5YjlmNDI4ZGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d4cd2c1f94844ab6a735893c0e1206c1",
+      "statement": "provisionStop() gracefully stops provisioned resources and is called in reverse dependency order after test result recording, and should not throw exceptions.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/TestRunManagers.java#L515-L519",
+          "version": "repo-lines-v1:sha256:99427a874ab1506b3d821a02680b9028c7f9ff1670a06b25ab498c467480ba51:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmY1ZTcyOTFmYzc1NjY1YjI2OTZlMjMzOTE4MzhkOWM5N2ZhNzkxOTNhY2QwM2JmZjgyYjc0YmIxZWEzOGUxNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzY5NDZlMTAxZTVlNzhkOTBhNTEwYzY5ZjI2NmVmNzY1NDBkMzA5YjFiODIyNjk1YjUzMTcyZWQyY2FhMDI1OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjJhZGIxZmQ2MmI5M2Y5N2RiMDkxNmI4Y2M3MTM1NTE4OWQzZTczN2Q0Y2MzNjZhOGYwZmRhMTYzMDQ1NTgyYSJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/TestRunner.java#L490-L495",
+          "version": "repo-lines-v1:sha256:73ec4022ede76bf8d4389fc4e8ec4377245e8c9705bbbffc607fb378ff66d425:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzUzMjdjM2QxMzFiYWEzODA4NjY4YTljZWU3ZTI0OGQ3ZDM2Y2M1M2MyZjY1NTBjNTdlMjNmNjhkZmYwOWRlMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTQ3MzVmMWY2NGVjMTllYzMzZmYyNWVlM2JkMjc0YjEzMzQyNzQxNjE1YmM4NTNiY2IyZjhlNTkyZDhjYTA5YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWM2MmIzMTkwNTZjZTM1OWRiYzFkMjNhNWZhNjhlMjdkMDg5YThkMTU5OWU3MTZmNjFjNTYwOWU5MjkwNmY2NiJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/IManager.java#L301-L311",
+          "version": "repo-lines-v1:sha256:9448afdea8cd51a67bf4817d3b18b162832e0aa989db9525f0c49bf7a3a6ebce:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5Y2JiYzY1NDY5ZGIxY2EyODQyZWZkOTdkZjdlZTJjZTZjYzE1NzE0ODJkMDFhMThiNzkwYTEwYzdjNTEwZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkOTZmODU1NTJkYWQ0MjcyMWZlNjQ0ODU1OWZlMDU1MjdjMjIwYjg5M2JiZGZiM2I3MDUzZDg3NWY4MTZiNDkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYxMWNlYWU5ZGJmMjU2YjkxNGYxZTkxNDJlYjk4NjIyOGRmYTU1YTUwYmJlYzUxMzc1MjE3MTdmNjM5MmY4ZWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgzNTk5NzMxM2Y3ZTc5NGE4MWNmOTIzNDYzYjYyOTBhYTQ0ZDBiNGFlNTBjYzVjZmZmYzk5YjA5YjlmNDI4ZGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6527de9168cf48618da21f147c7771eb",
+      "statement": "provisionDiscard() deletes provisioned resources and frees resource pool slots, called in reverse dependency order, and should be quick to avoid slowing test throughput.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/TestRunManagers.java#L522-L526",
+          "version": "repo-lines-v1:sha256:cca58ab06720e9451ca27c52aa6acbedba16505996f046e6f8dce72d19bc9147:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2Q3YWZkYmE5MjQ1ZGFmMWIzMWFiYjUyYWQ2ZWMyY2ZjMTIzNjkxYjg0ODZhNmFkMzUyMjI4ZjY4NDdiZGU2NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzY5NDZlMTAxZTVlNzhkOTBhNTEwYzY5ZjI2NmVmNzY1NDBkMzA5YjFiODIyNjk1YjUzMTcyZWQyY2FhMDI1OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2M3Mjc5YjljZDI4ODIzYmVlMGQ4NTVlMDgyZTBlOWIzZDgzODA4YzcwNWIxN2EzNGEyYWIyY2Q1ZDI5NGQ1YyJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/IManager.java#L313-L325",
+          "version": "repo-lines-v1:sha256:66da3794e4b484f6a323e5086d04712488a4b3aa5b8738670ae916f9d5a12fb1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5Y2JiYzY1NDY5ZGIxY2EyODQyZWZkOTdkZjdlZTJjZTZjYzE1NzE0ODJkMDFhMThiNzkwYTEwYzdjNTEwZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc5NWQwYWMyNWE5ZGQxYjUxYWMxZWQ2MjBhOGQ3N2QzMWFlYWQ3Y2UzZWIwOTliNWRiODEyNTZkNDA1N2ViMDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNmYWI2ZDk4ODZlYTM3YmY1ZjJhZDUxMjVkZTU1MDhhNjBkZGNlNDNjNzc0NmM4OGNhZDc3ZjhkODViMTBiMWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgzNTk5NzMxM2Y3ZTc5NGE4MWNmOTIzNDYzYjYyOTBhYTQ0ZDBiNGFlNTBjYzVjZmZmYzk5YjA5YjlmNDI4ZGYifQ"
+        },
+        {
+          "resource": "repo://modules/managers/galasa-managers-parent/galasa-managers-zos-parent/dev.galasa.zos.manager/src/main/java/dev/galasa/zos/internal/ZosManagerImpl.java#L258-L267",
+          "version": "repo-lines-v1:sha256:9da399bc63d7575712f41c23c8e7ba1f9bf82d2dc37c0bd2889ccc82fd92f4f5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk0YjBhMjUzM2JkNjg3YmIwMTk2NTA4MTM3MDcyNjcwMjdmNGNmOWU5MGVmOTM0ODRjZGIzNjFlNGUzZGM2MTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0MTlhNmRjYzA0ZTIxM2EzYzdhNzdhNDU2YjAxZTc2ZDFlZjc4Y2QwMGJiZWMxZDhmODE0NThmZTkzZWRjNTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMwYWI5MDE4OTNhNjM4MTBiNDYzMzdlZDVhODI3NjQ4MjZlNGRkNjRkYTYyMDI4YmNiMGI3OGRkYjY1NDVkYTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBlMGZkNzFiMzhjM2JiNjUwNDIyYTNkMTFhZWFhNTNmMjBhOTI0NzE3MzJiMzk4MDEwNTA3MjUyNjQ2NzY3MWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9c089335cda3444ca7ea7268dcd59f25",
+      "statement": "endOfTestRun() is called after provisionDiscard() to allow managers to perform final test run activities like storing artifacts or emitting results, and should not throw exceptions.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/TestRunManagers.java#L631-L635",
+          "version": "repo-lines-v1:sha256:c91127055f1898a22670404ffe63834c3f92e83a8b7868943bb78b4894c1061f:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTIwMDU4MTYyODUwZWFkYzVlMmMzYzJlOTNlMWI1ZGNhOGI4ZWU5ZDM4MGFiZDEzYzIyYzdiZjU0ZjA4ODhmMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzY5NDZlMTAxZTVlNzhkOTBhNTEwYzY5ZjI2NmVmNzY1NDBkMzA5YjFiODIyNjk1YjUzMTcyZWQyY2FhMDI1OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODM2MDQ3Y2RiMzVmOTVmMmI3NWY5ZDllYzg2NDEyOGM1NjA4MzM3MzkyMGI1MTdkNGY4Y2FkMTBhZTU0MTUwZiJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/TestRunner.java#L203-L205",
+          "version": "repo-lines-v1:sha256:8d40708619ac0eaf62725054bdf99dc2eb9baa4bdb65bd2510a4689c5f21b4b7:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzg1NGJhMmNjOGRkZDBhZjU2ZTQ4ZjhlMmE3ZGNmY2E3MjZiMDhmMDQ3OTVjOTUyMTJiMDhjN2NlYWFmMjAxYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzQ5N2VkY2I2ZWQxMzQ4ZTU2OTNiOTAzM2ZkNjA2MmE4NWY0Zjk4MzMzMzdjOTMwMzY5ZDIwN2E3MjY5OTdlZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjc4YmZlZWQ5MWZhMTQyYmM2MTFlYzgwM2M3MjIzZTdhODFlYmRiMmY0ZGJhMzc4NmIwODMzMTliZmUyYjVlOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjViMTYzODI4ZDU0NjJhYzg4NzcyYzAzZWE3OGM4OWJhNDBkZDg5Mjg1MjViMTk4MzVjMGVhNzgwM2FiMGI1ZSJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/IManager.java#L327-L340",
+          "version": "repo-lines-v1:sha256:913f921dc82008f2c47d81ea038665f43b41458b0ff17ceb62d706e0bcb86a7a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5Y2JiYzY1NDY5ZGIxY2EyODQyZWZkOTdkZjdlZTJjZTZjYzE1NzE0ODJkMDFhMThiNzkwYTEwYzdjNTEwZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJmYTA4MWIxZWM3ZTdjYjg5YTVlZmFiMzc0ZGEzYTMwNTliMjRlZWFkY2YzMzc1MGIzOTI2MjU4MDQzYTQ0MTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI3OGY2ZGY5YTEwNTFhYTY5NmNhNGQ5MTE1Mzk4M2EwY2RjNjYxMWZiMjNhZWQ5NmQwZWExZTYzMGY1MTQyM2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJlMWY0NzJkNjQzOTE5ZTAwOWY4ZTJiNGJlOTIyYjVmY2YxZTBlNTcyNzdmZTA4YzVmOTc5Zjc1YzljZTVlZDAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_56dbb96166f6473b9b475ebcc1e04dd8",
+      "statement": "shutdown() is the final cleanup method where managers close manager-owned resources like HTTP clients and connections, and must not call other managers as they may already be shut down.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/TestRunManagers.java#L638-L642",
+          "version": "repo-lines-v1:sha256:eee1a37b8c841dfa5908f6cd7d231b96874cfa4e8f03502c63aa300032931db9:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjNmYzllOGJiZWFiYTRhOTM2YzZmYmU2Y2MwZTU2MTY1N2QzNzVlZGFkYTlhMTQzOTgwNDMzYWRjN2Y3NWVhYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWM3ZDg1OWQ0Yjc0MjQxM2U4OTk1NWUzYWY1MzhmYjlkMjhjOGQxZTBjMTc5NzExMjYxMWQ0NThiZmE2OGJjMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjE5MzJhNzQ2NjM1NDNiZTczOGQ1Y2NhNGZlMmRlYTZjNzFiN2Y3YzMyZjJhMDFkY2YxMjBiYjBlZDRkNzBjYiJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/TestRunner.java#L275-L283",
+          "version": "repo-lines-v1:sha256:128c9363229901f79eb840bf1ae7e13bcf6aef10ee3fb396d40e64eab4e30675:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGU3YWNkZWRjYmFhMTVjZTBlNDA4MGE2NTM1MjY3YTZiY2YzMzBmNGI1ZWRmYmRmYTc0ZTg2MjNlMWUwZjFmOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTZiMDQ0OTE0Njk3MjJlODM2M2E5NGU0MDQ0NTM4ZTAxM2EyYTIxN2UzNmIxZTU2OGJhNjBhY2I3YjRjOGYyZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTk5YmRlZmVlYWNhNjM0MGUwMjkwZGM4NmU4ODljODlkNWUxODlhYTViYTQ0YjU4NWIzYjcwNzM0ZjRhNjJkOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGZiZDAwOTMxNGJjMjcwODQxNjczNGEwMmFlNWZmMzlhMWU0OGEwNTBiZTkxZjQzYjJmYWE5MjAwMmM2MmJmYyJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/IManager.java#L342-L346",
+          "version": "repo-lines-v1:sha256:0e86e95ac69077c9a9039e7b5044f4b6573543c88d19172320ecb15998ba7303:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzljYmJjNjU0NjlkYjFjYTI4NDJlZmQ5N2RmN2VlMmNlNmNjMTU3MTQ4MmQwMWExOGI3OTBhMTBjN2M1MTBmMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjJhZDNjNTMxZWY0MGU2MWNhOTY3MzJhNmE3MzNiNGM3NmRjZTlkNDA3YmEyNTY1ODgzM2E4YjQ4NjlkMGExNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGEzMWZhNWIxY2JmYjIyZjE1OGEwODI2NDVkZjVmYWQxNGYyYjg0NjEyNzQ0NDU0OGI1M2Q3YmFlN2U3OTQ5OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmNkN2Y3YzQxNjNmZDBlNmQwNjg2NjM2NDRhNmVlNzZhYjBkMDBjZjRiMTY4OTQzMjcwYzBlYTdmNWFkMjk5MiJ9"
+        },
+        {
+          "resource": "repo://modules/managers/galasa-managers-parent/galasa-managers-comms-parent/dev.galasa.http.manager/src/main/java/dev/galasa/http/internal/HttpManagerImpl.java#L59-L63",
+          "version": "repo-lines-v1:sha256:8f0c40d158b9b6273b0d81a3379e9b8c60ac4108454b438a95f03f25b7bc8cfb:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjNmYzllOGJiZWFiYTRhOTM2YzZmYmU2Y2MwZTU2MTY1N2QzNzVlZGFkYTlhMTQzOTgwNDMzYWRjN2Y3NWVhYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzY5NDZlMTAxZTVlNzhkOTBhNTEwYzY5ZjI2NmVmNzY1NDBkMzA5YjFiODIyNjk1YjUzMTcyZWQyY2FhMDI1OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmVlY2FhOTJlOWYwZDBhNzZiNjU5YWQxN2U5YTc2ZDgzZGFhZTg4MzI0MDEyZWRhNzQ1Y2RhN2VjNjFiOGExNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_354168f811d745a2a96ea9e3ed2483ad",
+      "statement": "AbstractManager provides default no-op implementations for all lifecycle methods except initialise(), allowing concrete managers to override only the methods they need.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/AbstractManager.java#L35-L569",
+          "version": "repo-lines-v1:sha256:1c3de311b92faddaf2b3220668bfec336c19ae7da4dc953af00e52526717863d:eyJzZWxlY3RlZExpbmVDb3VudCI6NTM1LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJkZGEyODc2ZWMxYjRjN2I4N2I2NGEyOTQ0OGY5NjgwYjQ0NjgxNzNmZWM2NTc1MDk4NGMxYTgzNzIyYTE2YTUzIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJkMTBiMzZhYTc0YTU5YmNmNGE4ODE4NTgzN2Y2NThhZmFmMzY0NmVmZjJiYjE2YzM5MjhkMGU5MzM1ZTk0NWQyIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIxOTQ3MjNkMjAzMGQ3M2Q5MjhhYjBlMTAxYzBlNWEwZTM0YmVkZWQwNzAzNjMyOTg3NjM0YzgyYjg3ZTA4ZWVlIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_32ef49f2289047d78353c114b55c16bb",
+      "statement": "Manager provisioning dependencies are resolved by the areYouProvisionalDependentOn() method and TestRunManagers sorts active managers into dependency order using a bubble sort algorithm that detects circular dependencies.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/TestRunManagers.java#L74-L148",
+          "version": "repo-lines-v1:sha256:b53c287ac1c0be59b4cf3a62dd59f9caf40beaf510fbb1e5253e9aec2f2b40f0:eyJzZWxlY3RlZExpbmVDb3VudCI6NzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5Y2JiYzY1NDY5ZGIxY2EyODQyZWZkOTdkZjdlZTJjZTZjYzE1NzE0ODJkMDFhMThiNzkwYTEwYzdjNTEwZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVhOTFjM2EyMjkyOWJhMTQxNTMyODE2MmUyNGViOTIzMzQ5NmMyN2VmMTE2ZTU3OWExZTdlN2VmZDQyNTcyZjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM3MDZiZDA3MTU3NzU2Y2U5ZjJmZjdlZTBiYmMzMGU2NmI1ZThjYmE5ZTY3YWViMWY2MzE5ZjI2ZDY2NzQ5MTMifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/IManager.java#L122-L129",
+          "version": "repo-lines-v1:sha256:5cd240001cb9fd6053081e7cd282faf4be5649e4e50e29227433a1d40a8db722:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzljYmJjNjU0NjlkYjFjYTI4NDJlZmQ5N2RmN2VlMmNlNmNjMTU3MTQ4MmQwMWExOGI3OTBhMTBjN2M1MTBmMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzE0YmYxYjIwODUxM2QxNzcxY2VmNjgzNTQ1OGQ2MWJkN2IwYzhiMTMwMDgzZTEwZDU1YjA5ZmQxOGQzMTZiMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZThhMTI1YzE0N2UxZTEyMjhmZGQ3OGY5M2E4OGJlNzYzMGExZDNmMTAyN2ZlNjQzM2FiYmE2NDkzMjA0ZGU0MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODM1OTk3MzEzZjdlNzk0YTgxY2Y5MjM0NjNiNjI5MGFhNDRkMGI0YWU1MGNjNWNmZmZjOTliMDliOWY0MjhkZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_57631a09a808486aa3529945b6fe50a1",
+      "statement": "Managers can implement doYouSupportSharedEnvironments() returning true if they do not provision resources that would conflict in shared environments, with AbstractManager defaulting to false.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/AbstractManager.java#L564-L567",
+          "version": "repo-lines-v1:sha256:0b772541a6325e68744079bc6cf88c72c9e2e248c2609fcd932654dcb786ec5e:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWRjMmIzMTFhYmU4NzU3MmU4YTdjYzBkOTk2YTY1ODQ0MDc2ZTUyMzJkMjFiN2E4NTQ3NWY5YjQwNTViNzQ5MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzI4Y2Y0OTljOGNiYzBmMGQ4YzIzMGI3M2MxNzkzZDU1ZDdmZWU2NTFlZGEyYTI3NWFhM2JiOTYzMmYyZTk3YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjIsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmVmYTBhZWJmZWY4ZGViYWRhNTUzYzk0MGVlNzk5NjIxMmI0NDRjNTQwNzBlMWE4MGJlOGFhNWE3ZDQ1MzQ5YSJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/IManager.java#L92-L100",
+          "version": "repo-lines-v1:sha256:d3276d59eec892e95764a4232414a55a882a2293c70bc3d3e20211b6b70990ca:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzljYmJjNjU0NjlkYjFjYTI4NDJlZmQ5N2RmN2VlMmNlNmNjMTU3MTQ4MmQwMWExOGI3OTBhMTBjN2M1MTBmMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGM0ODEyZDg4NWU0MTg0YjMxN2NhMGM3N2UyY2Q1Nzk0MDc5Y2U2OWJmMzY4MWIzMjc4NWMzNTY4YzllNjhiYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODAyNzg3NWFhNTQxYzU4ZjdhY2U2MTgyZjc1NWYzMzIyYmQ2OGQ2NmYwZGE3ZjQzMDRhZDVlZDQyMzNhM2QyZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODM1OTk3MzEzZjdlNzk0YTgxY2Y5MjM0NjNiNjI5MGFhNDRkMGI0YWU1MGNjNWNmZmZjOTliMDliOWY0MjhkZiJ9"
+        },
+        {
+          "resource": "repo://modules/managers/galasa-managers-parent/galasa-managers-comms-parent/dev.galasa.http.manager/src/main/java/dev/galasa/http/internal/HttpManagerImpl.java#L103-L105",
+          "version": "repo-lines-v1:sha256:477e7f197d7672bc0e1bcf2d40d1a4558fb4ed7fe99d486fbcc1d662082f385a:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWQwZDdlMTAxODgwOGQxMWQ1MDJmYmYzNjk0MmExMTYxODBhOThmNWQ4MTY5OWYwYWU4ZmY1Mzc0NDIxNmMxZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWM3ZDg1OWQ0Yjc0MjQxM2U4OTk1NWUzYWY1MzhmYjlkMjhjOGQxZTBjMTc5NzExMjYxMWQ0NThiZmE2OGJjMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjIsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODA0Zjg5ZmMwZWM5OGM5ODI0MTgzZTc5NWQzZWRkMTllOTMwZjdiYzQ3MWY5MDEyYWEzZDUwM2JlMmY4OTc0YiJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.2",
+    "at": "2026-09-21T12:35:12.771Z"
+  }
+}

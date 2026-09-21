@@ -32,3 +32,20 @@ Each module has its own `AGENTS.md` with module-specific coding conventions, pat
 - **GPG Signing**: Commits should be GPG-signed where feasible (`git commit -S`).
 - **Conventional Commits**: Commit messages should follow `type(scope): description` (e.g., `feat(cli): add command`, `fix(framework): resolve lifecycle issue`, `docs: update guides`).
 - Pull requests target `main` and should follow [`.github/pull_request_template.md`](.github/pull_request_template.md).
+
+## Agent Constraints & Safety
+- Do not edit generated OpenWiki pages in `openwiki/` directly; let the scheduled OpenWiki workflow regenerate them.
+- Reference `.agents/skills/galasa-user/` for domain knowledge on Galasa concepts and CLI usage.
+
+<!-- OPENWIKI:START -->
+
+## OpenWiki
+
+This repository has a generated `openwiki/` evidence index. It is optional just-in-time context, not required startup reading.
+
+- Treat source code and tests as authoritative. A brief's unknowns and review items are verification gaps, not automatic requirements.
+- Prefer the narrowest quiet validation that proves the changed behavior. Preserve complete failure output.
+
+The scheduled OpenWiki GitHub Actions workflow refreshes the repository wiki. Do not hand-edit generated OpenWiki pages unless explicitly asked; prefer updating source code/docs and letting OpenWiki regenerate.
+
+<!-- OPENWIKI:END -->

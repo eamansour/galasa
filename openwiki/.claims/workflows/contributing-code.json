@@ -1,0 +1,236 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:03cf44fa54cb8bcecee6e7622cfdfa7ef19b425b9c8051cd5bf87371f25bf890",
+  "claims": [
+    {
+      "id": "claim_75ffc2651293425ebeb1381de40e5efb",
+      "statement": "All contributions to Galasa must comply with the Developer Certificate of Origin (DCO) version 1.1, which requires contributors to certify they have the right to submit their contributions under the project's open source license",
+      "evidence": [
+        {
+          "resource": "repo://CONTRIBUTING.md#L26-L27",
+          "version": "repo-lines-v1:sha256:dc722d5006dead2a955b9b647b94b9634f92f1822ba68c3d083a51f77bc02d68:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTY5MjgwYzMyOTU5Yzg1ZGRiNjIwMWM5NjQ5ZjFhMGVhZGI3ZmZhNjgxM2YzNmFhNjEwOGU1YmM3MWUxZDcwNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzQxOWY1ZmIyNjBmNGY1YTY4MWJjNzczZGZlNWEyOGI3ZGNlOWM3ZGM2M2I3YWJmYTc3MTg1Yzg5ZDUwZjJmOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzhjOGYzNDA4MGRjZGNlMjdjY2JlMWI5NGJkZjVjMzFhYTNjMjhiOTRjYzZkYTcxZTAxMGE0YTQyZjg4MjY1OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTA4MzExMmE4NmEyZGVhMmU5NjA0YTgxOWY0ODVhMDViOWQxYjc2ZmFlNTRkZTI2ZWQzM2FjOTVkNjcxZmRjZCJ9"
+        },
+        {
+          "resource": "repo://CONTRIBUTIONS.md#L1-L38",
+          "version": "repo-lines-v1:sha256:209e6088ae7cdd0943d4dce64911079f245534d16caff6a04fe13af88f959627:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2YzFjOTUyZjQxYzBiNzg5NzFkNDg0ZWExMDVmZGFhYjZlYzlhM2ExYWU5NzM4Njc0M2IzNTRmZTAzNmYzYzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://README.md#L81-L81",
+          "version": "repo-lines-v1:sha256:5354c9aeb1845d74d226d17b6553c7afd98cf3cd161228ffcffe526f20eebb51:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTM1NGM5YWViMTg0NWQ3NGQyMjZkMTdiNjU1M2M3YWZkOThjZjNjZDE2MTIyOGZmY2ZmZTUyNmYyMGVlYmI1MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTM1NGM5YWViMTg0NWQ3NGQyMjZkMTdiNjU1M2M3YWZkOThjZjNjZDE2MTIyOGZmY2ZmZTUyNmYyMGVlYmI1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjc2ZGQ3ODE2OGY1ZmFiMDVmN2FlMzg5YjVlNDg4NmEyOGUxNTUzZjQ3MDRhOTIzN2MwNTg4YmI3YjZlOWIwYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_16703a23ed3943c69832403c19655df3",
+      "statement": "Contributors must sign commits with both DCO sign-off (using git commit -s flag) and GPG signature (using git commit -S flag) to prove legal agreement and cryptographic authenticity",
+      "evidence": [
+        {
+          "resource": "repo://CONTRIBUTING.md#L35-L46",
+          "version": "repo-lines-v1:sha256:535e14f9b25ae76f7ea45896e8c0ec1dd1673741fa304dc212e75a0000a83726:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM1YzQ0NDQ0NzBjNTQzMzk0NGQ0NWNmZmFmYTM3NjY1YWM2MTVlNGQ0YjhkZWE2NWJmYjAxZDBmMjE2MmRkYjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRkOWU1MmZlNzJiZjc0ZDBhNjRmOWNmOTA1YzBkOWZkYTZmY2ViZGM0NmYyZWY0OWIxZjQ5Y2RiNWQ4YmM1NzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZmNGE5M2VmYzBhOWM5ZDk3MDQxMTU4NmEzNjdiZDZhYjBjNGY1OTBhZTNjNWNjNDVkZjdjMzI0NWVmMzU3ODQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_08e5e1284d0a483bac0ffa4d323205ad",
+      "statement": "The fork and pull request workflow requires contributors to add the upstream repository as a remote with push disabled using 'git remote set-url --push upstream no_push' to prevent accidental pushes to the main repository",
+      "evidence": [
+        {
+          "resource": "repo://CONTRIBUTING.md#L208-L217",
+          "version": "repo-lines-v1:sha256:da33f71c5e66d46a17de985cd9fd9c177779874f06550c4d06101af35a929c7f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMxYTVhMTdiZDU0MTNiOWQyYzQ4YWM2ODRiNTJlNDcwM2U4MzE3MGFhM2ViNTRhZWY0Y2Q2YWYxZDc0YTRkMWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YzA2YzU2MWQ1YzMyNzM0MzY4NTI2OGE0NmIzMzkxZjM5OThlZWU4OTBkMmJlNTFmMGQyMWNjNGE1M2FlNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ2NjhmY2RmMjdhYjUxYzA4ZmI4Y2E4ZTM3ZTA5NmE3NjI0N2Y2NDQ0ZmY2MWZmMzM0ZDdiZTE5NDQzMzBjNzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU5ZjA4ZGM5ZjMxZjNlY2E2Yjc5NmMyMDk4YzQ5OTcwZWM0YTU2YTYwMGU1N2Y5ZTYyNjE1Y2ZkMGQwZmEyYjAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_107b57f58c8546c7aa08b744a2aa7800",
+      "statement": "Before opening pull requests on a fork, contributors must run the Main Build Orchestrator workflow at least once to prime build caches and create baseline artifacts for PR builds",
+      "evidence": [
+        {
+          "resource": "repo://CONTRIBUTING.md#L171-L181",
+          "version": "repo-lines-v1:sha256:b79a45eb31ff9e3c83cfd1a79152dd4cb953fb626d157774762767f96aa0713a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2OTk5MTExY2M1NTg4ZGY2ZDhkNDYyNTM4YWNjZGJjZDMyNDI4YzNjNjdlZjQ1NWIyZTgwMzc3ZjhhMzNkNGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAyNjY1ZDU0N2Q4OTkwNmQ0YTcxNDkwY2JhMGJlY2E0ZDY1ZjRkYzQyZTkwY2I3OGZhNTNiZThjNzI2ZDhhMjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI5ZmFhODAzMmJmNzc0YmU5YzM3Y2RkNmI4MzE1MjY0NzFkOWUzMTFiN2Y3YTAyODU1YWM2MThlY2RkZDQwZjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI1NGE3NzFmN2E5MzIwZjk5NGVjYzJjNmU4MTY0YjlkZDYwMTg0MDgzOTIwZDM4ZTZkOTFmMGE1MmI2ZjE2NmQifQ"
+        },
+        {
+          "resource": "repo://CONTRIBUTING.md#L57-L59",
+          "version": "repo-lines-v1:sha256:ef5ba970cba59b6a8a0d4b1936c084fdc7d6af80610a4da2d816caebe1aaa96d:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGFlNGM1NGFiZWY3NjE4ZmMxZmI2NDFkNWY0YzE4ZmUxYjc0ZGUzNTg5ZTc2MDgyNTY4ZWU1YzAwNDIzYmVjZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODk4YjE3YTY3MGJjYmNjMDJhNzc1YzAxYzY4YTBhYzVlYTFlM2EwNmExODdkMDdlMmUwOTQ2MTA3YTVmMTkxNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2Q1MWM3M2JlZDZhOTY0YTA3MzkyY2YzNmNkMDA1MTNhMWUxMWY4OGNkMTNhMTQxZTg4OWM2NDVkN2M2ZTllOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTQ3ZTM0NGU2M2U2OTZjNGI1ZTVmZDRiM2I2NDJmN2NjNTI4MmI0YjEwYWMxYjU3NDk4NzkzZTVkM2RhNzkxMyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_d9e5158da81c4c30972e57e64222073e",
+      "statement": "Repository secrets required for fork builds include GPG_KEY (Base64-encoded GPG key), GPG_KEYID (plain text key ID), GPG_PASSPHRASE (plain text passphrase), WRITE_GITHUB_PACKAGES_USERNAME (GitHub username), and WRITE_GITHUB_PACKAGES_TOKEN (GitHub Personal Access Token with write:packages scope)",
+      "evidence": [
+        {
+          "resource": "repo://CONTRIBUTING.md#L149-L152",
+          "version": "repo-lines-v1:sha256:9748a9a2823ff387404bfa5ae2b4ac427ffef1264f9a3f9f5fcd6aeaa6952ebe:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTFkY2Y1NTAwOGJiMGEyM2RmNzIyNGM4YWNiMGI5Njg3ZmQyZTIyMzc0NWNhZDdmZTFmODEzYTY3NjY2NzNlYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzc3YjFlMWUwNWY1NGU5NGM1NDMyZWIyZDQwOGE3OGUxZjNlMjkyYjgzMWRjYmU3OTk5Y2RhODc2MGI1MTIyMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzFhY2ZkMjdkN2FmZjczOTA0YjlkZGRmNWQ2MTE5NDU3MmI3OTE0ZTlmMTA5NThlMzNlOWQ3ZmU3MTMwNGE2MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDcwZjk1MmE3MGYxYTY1NGU5ODYxYWE1NjI4YWRiMjAyN2E3Y2Y0YmM4MGVjNzkxMDdkMTU4ZGY1ODAxOTc2MiJ9"
+        },
+        {
+          "resource": "repo://CONTRIBUTING.md#L154-L169",
+          "version": "repo-lines-v1:sha256:bb9afaf946ff94903a9d190c67e562e6866406a1319ebdbb4a766238b2351f6e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc1YjNhNmExNjcxMGViNjEzNmY3Zjc2YmVhMzgwMTU0YzMzYjU5Yjk3MmZiNGM0YmM2N2YzYmZiNmRhNWY1MzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU4NjkyYWJjYTBmMGE1MzMyODU5MTEwNjI2NmJlNzUzZGRiZmU5MzRkMDEyMGViN2M3MWJlOWJlMjJkMGFlNjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEwNzM4Y2JjMmIyNDZhNGZmNDY4NmFlZDg3ZmZlZTkxYWU0M2ZmYmEzOTc2OTg4OWZkYzhjOWZiZjRiNmQ5ODAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMyNmYwZmVhZjZmZWI1OWM4NjAwZDJiNjllZjRlYzI5YjQ1MTExODhlMGE1YTZjNDU5MmZjYzU3ZGNkZjY2YjgifQ"
+        },
+        {
+          "resource": "repo://CONTRIBUTING.md#L66-L111",
+          "version": "repo-lines-v1:sha256:70debb3cd54bdc495b67df4d3edc5e9d535b1d838d3c934b3ccec5eb03144811:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU1OTRjNDVmOGNkYjkwYmQxNzk0OTIzOTQ2MjU0Yzg0ODI3ODRkNTI4ZWVlN2FlN2U0MzE5NDg2MDM4MTU4MDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVkMWYwZmQ1ZWY3ZTAwOTQ0ODVlYTgwN2Y0Y2FmNGRjN2IxNTMxZGZjOTJiODY3OGE0ODlmN2M1YTY1NWVmMjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_48477176f03547918a3ac79d5774d175",
+      "statement": "Different modules require different combinations of secrets: platform, wrapping, gradle, maven, extensions, and managers require GPG secrets; buildutils and cli require GitHub Packages credentials; framework, obr, and ivts require both GPG and GitHub Packages credentials",
+      "evidence": [
+        {
+          "resource": "repo://CONTRIBUTING.md#L69-L83",
+          "version": "repo-lines-v1:sha256:a568e082803231b6bf4270b9865d45bc86e4b3257ccd2e98bd6646f723b44807:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIxZDE2MjVkNWIxZTYyZGE4ZWMxYzM1YzFmZTU1YmMyNDVlNDMxYzNhOTQ2NzE0NjQ2NTBiYTRiMDM0MzNmZGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI3ZDY4ZWU2MDA1NWRlZDk1OGE3M2JhMDk5ZDBiM2FiOTVlMjY2ZDQ2YjA0YTgwZjc1MDY5M2I1MmM2ZDYyNjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ4M2ExYTZkOTc3ZjY2ZTk4MWJjNTk1MTQ2YWNlMzVhMGViODM0ZDcyNjIxOWVjZjE3MWQ4MjczMjAwNjE2NmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU2MDM3MjUwODliMzFlOGU0NjNhZjI0N2QwNzNmZWY0OTA1ZjAzMzExMzQzMzUxYTg2NjgzNzRmNjRmNGMxYWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6e0d1fa25d76495f961dcaf5b38981df",
+      "statement": "The check-required-secrets-configured.yaml workflow validates the presence of required repository secrets and variables before build workflows execute, reporting all missing secrets if any are not configured",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/check-required-secrets-configured.yaml#L1-L161",
+          "version": "repo-lines-v1:sha256:c72ef4b9eb09795b385b9a08eee8e800b9dcd3dee571c88550b5feaf6a1634a9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYxLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIzMmM0ODU4ZTIyY2MyYzk2N2I0MjE1MGZhNTUwNTYyYTJjODM5YzJjZWJjYWFiOTFjYWJkZjZmNGRhMDIwMDIyIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIyMTg3Y2U0ZjAyYWI0ZmNmN2NkODE3NjgzMTU4MzQ1YzdmYzUyNDk3OTMxMDFjMWFlZDVjODRjMTRlYjI4N2ZiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        },
+        {
+          "resource": "repo://.github/workflows/pushes.yaml#L37-L50",
+          "version": "repo-lines-v1:sha256:8426206a8f03b5a12d72f58949e92ccbdc774122ca6c4fba90c2e9855eecd100:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk5NmY3NzliOWU4MTcyZjc2ODhlM2YxODMzNjQ0YjkxYTFlZGE5MDY3YzYwNjhiODc0YWVhZmVmMjk5ZTY2ZmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNhMmEwZDAyYmJlYWM1OGZkNWQ2MGRmYjNhMDNkNjA2NGFmMGRkZDVjODA2OThkMjQxMTY5MTE3ZjRmYTQ4OGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY5ZmRlMjYzNTE0M2RiMmUwOGFhZThlMGJlYjEwMjNiZjJmOWNjMDk5ZGYyMWRkZDJmNjE5ZGYzODNhMjc5MDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEwNzdkYmI2ZGQ5NWFkN2FmOTg3NWU3NTZiN2FkZmU1OGMxZDY2OTUzMzk0NWJiOGI3MjAzZThmOTM0ZTI0ZjIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8de7b4efa77e4e90b8999f2fd79a7a22",
+      "statement": "Commits must follow Conventional Commits format with types including feat, fix, docs, style, refactor, test, build, and ci, and breaking changes are indicated with an exclamation mark after the type or scope",
+      "evidence": [
+        {
+          "resource": "repo://CONTRIBUTING.md#L227-L236",
+          "version": "repo-lines-v1:sha256:7c1f8756efe20fc5fcfa15d24e074737b6fff1bc975457e517cf035844428072:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE5YjI3YjhjZjlkNmI1NjZiMzdmZTI3YjQ4MzMwNzZiYTAxNWViNjY3MmFiOWE5NzY2Njc3YjAyZWVlN2RmZWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQxMDc5OTVhZWIyOTJiMzUyOGExOGRhYjYwNDAyODA3ZjhiOTg5ZGE1OTlhY2IzZDgwMGE2NGUwMDMyNmMwMDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZhNDkzMTVkOWNiMmU1MzZmZDI1OGM4MWFmYjQyMGU4MWViYjlmYTU4YjVhMjRhNmJmOGIwMzY2ZDk1Njk1N2YifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_434a3587e73b4ec18ea7ab00bae4c1e5",
+      "statement": "The Pull Request Build Orchestrator detects changed modules using .github/scripts/get-changed-modules-pull-request.sh, downloads unchanged module artifacts from the last successful Main Build run, and selectively rebuilds only changed modules and their dependents",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/pull-requests.yaml#L50-L82",
+          "version": "repo-lines-v1:sha256:59dc3cef3c1487d24e02b5677a2dffed87573b65fb05b0ba1c6958d6288a625d:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZjMGRlNzM3OWFhNDQ5YTYwNDU3NzgzM2ZmNzExYjZkYTA5NjRmMjI1Y2RiYmQ0MzlmNTgxNjVmOGExOWE5ZTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZlYmI5ZDVhOWQzY2U3M2ZlNjI3MzQ1ZGJlNDJmMjQxOWNiOTk3NjI4NTNiNGUwYjBmNDMyOGVkYjFhMTRmOTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUxOTk3MDgxNTQ5M2Y4MTA4Y2RiNGI1M2RhYTZjYmUzMzI4Y2Q1NDhhZDQwNjViOTg1ZjY2MWFkMWVhMjAzYWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhhZjI5ZjkyODBkNjIzZWJjZjg2NDY0YWY4YWYwNWRmMjU1MDI0ZmNjYTljMjFkMTM1MzBkMzFmNGI0NjIzZGYifQ"
+        },
+        {
+          "resource": "repo://.github/workflows/pull-requests.yaml#L84-L103",
+          "version": "repo-lines-v1:sha256:06d7410bdee30566cebded69530252d6b519c187d3aafd22b450ac9be705080c:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIzOTY2ZDM2MWVmNjIyZWYyZjBlNjlmNzlhYmRhYzE4OTVkNmE5OWFkZjM1YTBlNzQ3NGUyMmI5YWZjZjBiMjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZmZDFiZGU2ODFmZmQ0OTcyMWFhNTZhMDgwMDQwMTJkYzZlMjJlY2NiY2Y0ZTU5ZTFjZmQzODZhYjY0NTY4NWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY1MDEzMzkwYjU0OWM3ZGY0ZjdiODI4ZDA3YzY4ZjM3YmE2MmVlNDE4NmE3NDE3YTgwOTIzYTVmNGEwNzYyY2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlkYzJhY2I2NWQ3ZDk0MWFhZTkwZDAwYzg1MDExNDUxMWMyMjhkOTY5MzFhMzYyNTg2OTZhYzA2MTAwY2UwZDUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_edea5db4e4974c0cb4359899e6de2761",
+      "statement": "Two jobs serve as required branch protection checks for merging pull requests: 'Pull Request build was successful' (end-pull-request-build) and 'CodeQL scanning was successful' (end-codeql-scanning)",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/pull-requests.yaml#L424-L445",
+          "version": "repo-lines-v1:sha256:4699d1e36e5834cb093ab5a6b0db6d89a2d7a7b39949910d0dd88b48a7e83f4d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxZTM0OTE5N2NjYWVjODcyYTc2YzZkYjgwM2E1OGVkZDZlYzhmZGFhODExNGM1YzU2ZDFmY2I5NGU3Y2ZmOWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRhYTg1NDM5NmIwNGUzMWY4NTNkNjJkNTVkMGVjZWJmYmY1MjQ2ZjEyMGMyMTg3YWIxM2Y0YjM1OTliNjczYjIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJlOGUyOGNmYTYzYTMyODgyMDVkN2Y3NGUxMzAzNmYwMTM2OGViYmE5OWE2OGYyOGFiMTQ3YjVjNzdlNzJkZTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6914f05fe5f64005805a44b0ebedbcc8",
+      "statement": "The Pull Request Build Orchestrator runs detect-secrets.sh on every pull request to prevent accidental secret commits, and executes CodeQL security scanning for Java when Java modules change and for Go when buildutils or cli modules change",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/pull-requests.yaml#L34-L48",
+          "version": "repo-lines-v1:sha256:2e57e120e5a6342a87f99d8a616d37d677f7f4070466011e23a0bfa53f472bd4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzMWUxMWZjYzkwMjUyY2RmMWU5Njc0MDJjMDhiZjIyZDM2ZjdkNjFhOGY5NWUxMzBmOWQ0ZDdkMWJhMmM2MDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNiOTc3ZTE4NjE0YjY0OTBmMTAzODMyYmYyMmJhMDI4OTM4MDA5NTRlZjY1NjAyOGVjYTRjNTBjMDVkM2Q1ZjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg0NjQ2MDA0ZDY1NDg0YTllOGM1ZmMyNTVmZTg5Njg2Yzg4ODczMzdjMDFlNmVjM2NiNDdhOWU0NjFlZWM1ZjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY0YjNlZjMzNDk1ODUwZmM1OTA1MjE1YmNjM2NmYjA3YWUwN2U5YTI5OTgxNzJhMWM2M2Y1YzMyZGQ2ZjlmZGIifQ"
+        },
+        {
+          "resource": "repo://.github/workflows/pull-requests.yaml#L360-L395",
+          "version": "repo-lines-v1:sha256:b6c207eee50f15588991df3585553b6919892f7f49539ab1bc31ce3f315a822d:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY1ZDk3MDg3OTYwNWY2YmViZWYyZTZkMDRkY2EzNjc3YzNlOTMwMWI3MmFlMTAyOGY0MmVmZTBhNmZlZDEwMGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYyMmU1Yjc5YjJhNWUyMTA1YmE3NWQ2ZDlmY2VlYzBlNDA3OWZhN2U5ZmNlOTcyYWIzYzMxNGUxZDU1MGNiNWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImExOTA2N2UxNWIyZWY4ODZlYjYyY2RlMTA4Y2JmZWFhODk3OWUzYTQ3ZmE1NTBlZTNhYjc4NzBmOWU4NTExMWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk5YmJmZTA5ODg3Yzc0MTE3ZDYxNDQzMWUwMmY5MTBiNzZjYjQ2NzNjNWUwYTIzYWYxYzMxNTMwZTYxMTI3MzMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_05f1745f95514987b6ba776f5401f3f0",
+      "statement": "Contributors are directed to check the Galasa Kanban board at https://github.com/orgs/galasa-dev/projects/3 for open issues, with special labels including 'good first issue' for new contributors, 'webui', 'cli', and 'REST API' for specific domains",
+      "evidence": [
+        {
+          "resource": "repo://CONTRIBUTING.md#L21-L24",
+          "version": "repo-lines-v1:sha256:4f0b71c4374807f79d3065c4826e66f4e48a729fa64a026a764d3ac95bc74ca4:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWVhNTU0M2M0MTNiN2FlM2VjZTlhNzBlNjE1MDA0NGMxMzU5ZThkODYzMjQ2ZTUyMTRhNDIxNjA3ZTczOGU4YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTY2MTJhYTdhZDk2N2ZmMTM3MTNjNGI4NzVhZjhhYjZmNTI0M2I0MGQ5YTk5NGY5OWE5ZmZkOTY5YWM1YzFmNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDgwYTE1ZDk0ODZlOGU5ZDk0MTU0MmRlOTZlYTY2OTA5NjZiYjVjNWIyM2EyMjZiMGMwYzNmZTIxZTBmOWIwMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTkyYmVhMzVjMTZlYmZhMjA3Mzk2ZTU1NTNlZTM5Mjc1YTI0YjgwZGY2YzIyZmM4YjI3NzBjYTg5N2E2YjA2MCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_61c7a574b0834ae5b31accd28812a3ce",
+      "statement": "Bug reports should be raised at https://github.com/galasa-dev/projectmanagement/issues and must include clear reproduction steps, environment details, and a search for existing duplicates",
+      "evidence": [
+        {
+          "resource": "repo://CONTRIBUTING.md#L7-L12",
+          "version": "repo-lines-v1:sha256:d049611508bf55101f0f49f5fe60389b850aaaeab2efb76a9e418ca62e688b1f:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODc5MThhY2FiZDFhZWY1ZmQzNDMyMGM0ZjlmY2I0Y2I5NTcxODUxMGE0ZjE5ZjIwZDgwMTc2ZjQzNzEzMTY4NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzk1YTdmZjZkOWEyMWRiMWNjZTYyMzQ1OTMwZjViODI3ZThmNzMwM2Y3MjJjMzZlMGRiMWQxNjgwYzBlYzhjNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzVjNTc4YmJiMDUzMGM2MzkwNjg0NzcxYzBjNDY0MTE0MDc3MmIzMWQ1YWYxYmE3YWRmMzRjNDU3OTdjYWRiYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjE2ZTk4NmJhMjQyNWVmNTBjYzljZGZmZThmZDU3N2IxNTRhZWMyZDg1OGFjNGYyMzVmNDUwOGNjYWQ0OTdkYiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_22ada64957ce4372ab2c9fc86f299795",
+      "statement": "Feature requests should be submitted as user stories at https://github.com/galasa-dev/projectmanagement/issues with clear descriptions, benefits explanation, and alignment with project goals",
+      "evidence": [
+        {
+          "resource": "repo://CONTRIBUTING.md#L14-L19",
+          "version": "repo-lines-v1:sha256:b8591430cd63b503fb78c5bd7359c70ef19f61a89a493bdd0e0b6e837c88d952:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzdkMzU2NTQzNGUwODJkZDIwMjY5YmMyNDI1M2VkYjYwMTRiMzRhYTMzMGRlMWZiZGU5NjgzNTJmYjU2M2ExZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjNlZWE0OTE1MGNjZGNjMjBjZGRjYjIxYTczYjFiMzllM2FhYmM2Y2Q4ZDk2MDcyZjNmZjViYjRkYjYyNTAwMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2I2M2JhYWJhOGJkOGY5MGY2ZTRiMmQzOWE3ZjZmMzU5ZGExNzgzMzdkNWM2OTViNzQ5ZTIzZDAzYjczMDRiNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzk2MDU0ZGEyMmQ2MTE5ZGI3Yjc1NTRiYTRlMWIwM2Y2ZDVhZjc2NWM1OGM3ZWI1MDExMDQxN2I0NTI1YWYzYSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_99341df1f2844d459229be9f308bc379",
+      "statement": "The Main Build Orchestrator workflow takes approximately 15-20 minutes to complete as it builds eleven modules sequentially according to their dependency relationships",
+      "evidence": [
+        {
+          "resource": "repo://CONTRIBUTING.md#L179-L179",
+          "version": "repo-lines-v1:sha256:26ab99ebf69275c82d5882ba64d814a371c9b97218866462108fdad464dd3610:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjZhYjk5ZWJmNjkyNzVjODJkNTg4MmJhNjRkODE0YTM3MWM5Yjk3MjE4ODY2NDYyMTA4ZmRhZDQ2NGRkMzYxMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjZhYjk5ZWJmNjkyNzVjODJkNTg4MmJhNjRkODE0YTM3MWM5Yjk3MjE4ODY2NDYyMTA4ZmRhZDQ2NGRkMzYxMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2RlOWRlYjFiMmE1MzJiZjgyNjQxMjYxNzcwNDIxY2I0YjBmOWUwZDNjNWM0OWI0NzViYjU1MzNlM2I5Y2VkMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjgzN2RlNjQzZjBmNjEyODJkMGIyMzdiOWNlN2E0Mzc2NjdmNDQzMzU3NTZhM2Q5OGQxNTg3M2Q5ZjQ2ZWYxMCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_8471bf0e1e1c44428ce284d67828ff21",
+      "statement": "Pull request descriptions should include summary, motivation, changes, testing approach, and related issues linked using 'Fixes #123' or 'Relates to #456' format",
+      "evidence": [
+        {
+          "resource": "repo://CONTRIBUTING.md#L245-L245",
+          "version": "repo-lines-v1:sha256:5aa672e9111ab1ab7f83d6e68a83bc93ebcc72bf754b128c7fb01951607247b1:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWFhNjcyZTkxMTFhYjFhYjdmODNkNmU2OGE4M2JjOTNlYmNjNzJiZjc1NGIxMjhjN2ZiMDE5NTE2MDcyNDdiMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWFhNjcyZTkxMTFhYjFhYjdmODNkNmU2OGE4M2JjOTNlYmNjNzJiZjc1NGIxMjhjN2ZiMDE5NTE2MDcyNDdiMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjY2M2RlOTcxN2E5NzcwZmI0OGEzZmJkMGEwMWJhNzg1NDI0ODFkMjhhN2M2YWIzOTcwM2NkN2JiMmU1YTgwNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_687da477b829412a9219576118c34860",
+      "statement": "The Galasa project is governed by the Contributor Covenant 3.0 Code of Conduct, which defines encouraged behaviors, restricted behaviors, reporting procedures, and enforcement actions including warnings, limited activities, temporary suspension, and permanent bans",
+      "evidence": [
+        {
+          "resource": "repo://CODE_OF_CONDUCT.md#L1-L90",
+          "version": "repo-lines-v1:sha256:7c961ac103e0e05151f383eb3f3e6425038839c1db6c6568010c57509cf7f539:eyJzZWxlY3RlZExpbmVDb3VudCI6OTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI5OGUzNmU2MWJkMDNmZTI3MDQ0ZWVhMjJjZmVmZDEyMWQ1YTAyYWY1NmU2YjY5ZTMwYWFjZWY4ZDYwNTc5YjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA1ZjI3OGQyYWYyYjAzZTQ4MjdjN2UzYzJkMTU2ZjlkNWI1NzBkYjc0YTMwZDYzMzlkOTlmZWE2OWUxOTBmZTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://CONTRIBUTING.md#L26-L27",
+          "version": "repo-lines-v1:sha256:dc722d5006dead2a955b9b647b94b9634f92f1822ba68c3d083a51f77bc02d68:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTY5MjgwYzMyOTU5Yzg1ZGRiNjIwMWM5NjQ5ZjFhMGVhZGI3ZmZhNjgxM2YzNmFhNjEwOGU1YmM3MWUxZDcwNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzQxOWY1ZmIyNjBmNGY1YTY4MWJjNzczZGZlNWEyOGI3ZGNlOWM3ZGM2M2I3YWJmYTc3MTg1Yzg5ZDUwZjJmOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzhjOGYzNDA4MGRjZGNlMjdjY2JlMWI5NGJkZjVjMzFhYTNjMjhiOTRjYzZkYTcxZTAxMGE0YTQyZjg4MjY1OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTA4MzExMmE4NmEyZGVhMmU5NjA0YTgxOWY0ODVhMDViOWQxYjc2ZmFlNTRkZTI2ZWQzM2FjOTVkNjcxZmRjZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ef0b2a27594640a88f09062d507cc361",
+      "statement": "To create a GPG key for signing, contributors should use 'gpg --full-generate-key' with RSA 4096-bit keys, and configure Git using 'git config --global user.signingkey KEYID' to enable automatic signing",
+      "evidence": [
+        {
+          "resource": "repo://CONTRIBUTING.md#L122-L133",
+          "version": "repo-lines-v1:sha256:a12b8fbd10c6bd5b27f92866684b8856c59a493c36f4019b634d87f26cebdb40:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNjOWNhY2VjMjJhMGQ5YTdmMzBlN2VlN2NlNjFlMzVkMTlmMjc1NTQyNWY1ZjNkMmIxMjlkNjRlNmIwM2JjMjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUyYmVmYzBiODJjNjMyYzA3OWNlMTAwYTVjOTc1MmY5NjZkYmM4ODY1N2RlMzMyYTk0ZjVmNmRjNmM4Y2E0ODgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZiZWU3ZTY4MTkyZDg1NThlNTVhZTA5MDEyZTBmNWQ1OTk2MjMyOTQwMzdjNzYyZGQwMjRiNTBiYTI0NzU4Y2MifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1e57152e39b748b0a19cbf6f12f6ea60",
+      "statement": "The repository fork workflow requires enabling GitHub Actions by clicking 'I understand my workflows, go ahead and enable them' in the Actions tab, as GitHub disables Actions on forks by default",
+      "evidence": [
+        {
+          "resource": "repo://CONTRIBUTING.md#L62-L63",
+          "version": "repo-lines-v1:sha256:6e90d04b3fbdfa253eef85ffdb274b9dcc9f1090e916ad5c88210d497ef6c626:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzIyZDJhMGQ0ZDgxMWUxODcyYzJlZTJkMTc0NTIwNWZjODAyZGNlMGI4M2QzZjNiYzFhMTk0YzcyYzBhMWFmMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGU2OTAxMjk5YmRlNDQzMWI0MGE5NzNjZDg1MTY0ZTAzZmUyYmU0YjMxOTU4OWY4Y2RkNWY3NTBmYjk3NTdlZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTlkY2YyNzA0MzcwMGYyYWFkMTIzMTk0MjEyM2Y4YzI5Mzk1ZWUwNWNjZTQ3MmM4NjhlMWZhN2NiNTE3ZWJhMSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.2",
+    "at": "2026-09-21T12:35:12.771Z"
+  }
+}

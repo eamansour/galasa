@@ -1,0 +1,482 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:20e9fe1dd693055b18135c6eeca495613b20be7152d5a0729a202aa354b7ed2d",
+  "claims": [
+    {
+      "id": "claim_49a7a13e7a13452c8af10f67e0b8432a",
+      "statement": "The galasa-boot JAR is the primary entry point for launching Galasa in various operational modes including test execution, API server, metrics server, resource management, Kubernetes controller, and ecosystem setup.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/Launcher.java#L183-L230",
+          "version": "repo-lines-v1:sha256:97b8572a09432ea51e7f198ad6d2b97df122c59c23686400324aea10dafd8626:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkxZjg0NjFiMTNjZDVlMGYyYWNhY2VmZjY5NDkyZjVkODIyNjg4MDE2OWM5MjJmZDExZGRjNWVlYTgzNjA0Y2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1MjJjNDJjZDE5YzZkMDNkODA4YzQ1MjcyMDU1MjgyNWI3ZWExYzViNDkxYjIxODUxMWNhYzc0MTVjZjlkOWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg2ZDYwODYzOWVmZjZjZWQ3M2MzMjBkZDdkYmVhMDNhZTIyNzAyN2RkNzYyNWUwNTNlNWQ1ZTk3NTQ2MGUxODciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM5MDQwZWU5MWVmNjgyZGM2ZGJmMjQ1YWJkN2UzYjEwYjBiMDM3YmMxYWJmN2ZiODE3ZWU0NTc2M2Y0NWVjYjgifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/Launcher.java#L34-L49",
+          "version": "repo-lines-v1:sha256:dec725f6e7cdb183670644a1a8ce877670f06e91c1095760531e46c00183b54e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3MmE0MjkzODJiMmUxNDcxOGUwZTM3YjA1NzBhOGExNzAyOTkxZmNkODQ5OGNkODQwNjBhOGJmNGYwNTAxN2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJjZmQ3YmE0ODQ5MThmMjRlNjhjZmM1NGJkMmJlMjI0NjMxNWM1ZjJmMGVjMzY2NGZkNjI4MGIzNmE2Y2I3OGMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEzMWFiN2MyMTFiZDQwYmM1MDVjMTE3MWFkMWI1MDgxNDRiMjhlMjQxYjhiMWZlYzFiNWU5NjZkNTdlOThhMTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a97d9e5352b54571b91fc7a4ee092b8b",
+      "statement": "After building the framework locally, the galasa-boot JAR is located at galasa/modules/framework/galasa-parent/galasa-boot/build/libs/galasa-boot-{version}.jar.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/README.md#L45-L45",
+          "version": "repo-lines-v1:sha256:b8e14cfb40e449b1dec782a7602a9d76450da9681025616860101d88ca59210c:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjhlMTRjZmI0MGU0NDliMWRlYzc4MmE3NjAyYTlkNzY0NTBkYTk2ODEwMjU2MTY4NjAxMDFkODhjYTU5MjEwYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjhlMTRjZmI0MGU0NDliMWRlYzc4MmE3NjAyYTlkNzY0NTBkYTk2ODEwMjU2MTY4NjAxMDFkODhjYTU5MjEwYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGYyNjhjZmRmY2JiMjg3MDUwODFiMDY1NDZkM2NkNDgzZWFkZDhkYTVhZjVlMzIzNGMwZGUwOTZhMGYzMTMwYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDc3N2YxZWU3YzQ5MWU3YjM3ODY2M2FjMTlkZDA1OWJiMjg3MDU3ZDQzYTBmYTY2OGQyOThjMWU4Yjg0ZjQzMSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c23535e3192c41198150f3e09df6425e",
+      "statement": "The boot JAR validates that Java 17 is available on startup and exits with an error if an incompatible Java version is detected.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/Launcher.java#L660-L676",
+          "version": "repo-lines-v1:sha256:925277dcb2edcb80c753c972cd15fc47ec54a33dcd30d26d39acf5083586a3ff:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI4ZDc2NjA0M2FmMGUxMjVhZTc2ODZiNDEzNWVjZDViZDM3NDFhNjg0MWE3M2NiNzhkMTIxODU0MDRmMGEyNjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY3YjRiYjBiZDA2YjJmZmNkOTk4ZjI1M2QyMzY4ODZiOGViOGY5NDc3ODMxOGYxMWU2YzY3MTBhZTEzYTY0Y2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRhOGFhMjM2YzBiMDJmZmE5MDI3NGQ5MGEzOGIwODI5ZGY2OTU2MjU4ODJhMmYyNjBlMThlYjdmYmNlN2MxNmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cd6c924473684649a98e5d97d88c67c6",
+      "statement": "The --obr option specifies OSGi Bundle Repositories to load, supporting multiple repositories through repeated use of the flag.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/README.md#L58-L58",
+          "version": "repo-lines-v1:sha256:01a6797c765a22044f5c180273aa0d07d8b6fa11ea4e3b8435315ee680709f22:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFhNjc5N2M3NjVhMjIwNDRmNWMxODAyNzNhYTBkMDdkOGI2ZmExMWVhNGUzYjg0MzUzMTVlZTY4MDcwOWYyMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFhNjc5N2M3NjVhMjIwNDRmNWMxODAyNzNhYTBkMDdkOGI2ZmExMWVhNGUzYjg0MzUzMTVlZTY4MDcwOWYyMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjY2NmQyNjZmNTgxM2NkZjlhMTZlMzdkMGUzZmNlMDA3NTIzYTc3Yzc1NWM0YTNkYTkzMTY4ZGU0ZDM0MmZlOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTBkNjU3MTczZTA3NjU3NzhkNjhkZWFiZDBmMzdiYWFmZTQ2NjEzZDdlMGQ4YzFiODA3ODc1ZWNiZmNmMzk1MSJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/Launcher.java#L346-L350",
+          "version": "repo-lines-v1:sha256:522a4bc9aa3edc7dad9946af2f34201370af49e4442ad850e23e50aff06b1b37:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjQxYWRiYzZiNDJhODQ5MmQ3NDk4YTEzNzVlYjVmM2UzNGM0MjY3NDRjZjM4MWQ4YTEzYWFiMDU0ODU1ODEyYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTZiMDQ0OTE0Njk3MjJlODM2M2E5NGU0MDQ0NTM4ZTAxM2EyYTIxN2UzNmIxZTU2OGJhNjBhY2I3YjRjOGYyZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGIxMGE4NzkwMjgzYTAzMGQ3YTU2YjQyM2I1NGQwNDUyYTY5M2IxMjlmMzFjZmUzMDUwZDRhMDc0MWY4MjI0NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTAxYzdkYmJkZDUxZTIxNjRlN2VjODgxZTg2ZmUyODQxNDg1OWE1NDY5YjIxMDE0MzMxNmUyYjA5NzI3NWQxYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ba9180380bd94dc59e0b8dcd396159f4",
+      "statement": "The --bootstrap option accepts a URL to bootstrap properties starting with http:// or file://, with a 30-second connection and read timeout.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/README.md#L59-L59",
+          "version": "repo-lines-v1:sha256:81d842d89a07a25610153c93a404d1708bfd06b79fb2e9be74884d908b2b9d1a:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODFkODQyZDg5YTA3YTI1NjEwMTUzYzkzYTQwNGQxNzA4YmZkMDZiNzlmYjJlOWJlNzQ4ODRkOTA4YjJiOWQxYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODFkODQyZDg5YTA3YTI1NjEwMTUzYzkzYTQwNGQxNzA4YmZkMDZiNzlmYjJlOWJlNzQ4ODRkOTA4YjJiOWQxYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjRjZTNkNmNmNjk3YjcyMzdiZmY5YTk5Njc2NTZmNDVlYjVmM2I4YTNkNDczZjBkMTg5NWI1NDQyNDJhZDBiMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTg1MjdjOWMxNmVjYjY1MzNjMmMxNTU5NzQ1MWM0OGU5ODMzYjVlNzdjMTM5YzIxYzA2MWVlYjdhZjMzNGQ3NyJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/Launcher.java#L524-L552",
+          "version": "repo-lines-v1:sha256:4f24389323687d1c4a4a7a910fbceb777e6185ccb5b08c99d0a6d11a31f12e4d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyZjM1NDI3ZmU3ZmRjYzRhZWQ1ZmMzY2YwNTZlN2Y5M2ExYzM2ZjJkMWYyZjkzNWFhMDRjNmQ2YjVhOTYwYzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEwNmNiZjM1YzJjN2ZkZDIwMzIyMGJiNzhiOTNkNTNhMThiNjhmMzI0ZTQ3ZjU4YzhjZjgyN2UzOGM1MTE5YjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRiNjFiZjA5ZDY2YTA0NjVjYTg3YjI0NWJjNjNhNWI3MjY3ODMwM2I4MzMxYTIzZjEyODAxZWJjMGViZTYzOTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_288123f538664536a9279285e7094fe5",
+      "statement": "The --overrides option accepts a URL to overrides properties starting with http:// or file://, and defaults to ${GALASA_HOME}/overrides.properties if the file exists.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/README.md#L60-L60",
+          "version": "repo-lines-v1:sha256:c5f94b6a1ae4729283c0d7e72b4e9a5b662c13c96b95388ae40b3de62cce0eb6:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzVmOTRiNmExYWU0NzI5MjgzYzBkN2U3MmI0ZTlhNWI2NjJjMTNjOTZiOTUzODhhZTQwYjNkZTYyY2NlMGViNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzVmOTRiNmExYWU0NzI5MjgzYzBkN2U3MmI0ZTlhNWI2NjJjMTNjOTZiOTUzODhhZTQwYjNkZTYyY2NlMGViNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGIxMDFiZmVkNmJiYzQxZTNjNDQ4YWQ4ZmJhOWYwNTBiNzE2MDQwMmJlNDc3YTczMmUwZTRkYTM0ZDliNDFkMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDYzOGE1MmFmN2QyZGE0YzdmZmE4MTk2NzYzNmY0MmNiMjc4MTgxNTY5NDk2ZWM1MzYwN2I3MzBmYzUyMjM5NCJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/Launcher.java#L561-L587",
+          "version": "repo-lines-v1:sha256:d9f629b43ac12886aa412eb8e835520d5917ef45f7e93001fbf4d3fb61dae0d1:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyODgwYWQ2ZDAzMjcxYWZiM2RlN2Q4YWYyYzQ2NjdkZGU0YTdiODQ3MTliODUyMDk5YzUxNDgxNjBjYTFkZWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEwNmNiZjM1YzJjN2ZkZDIwMzIyMGJiNzhiOTNkNTNhMThiNjhmMzI0ZTQ3ZjU4YzhjZjgyN2UzOGM1MTE5YjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYzZDkyNDc1MDkyYTcxY2UwOTRjOTI3NTI3OTQ5ZDkwM2IyMDliY2VkN2VmMmQxYTkxNzVjZGE0MDBlYmZiYWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b88263808030451cbf871904b96cb1d5",
+      "statement": "The --test option executes a specific test class using the format {osgi-bundle-name}/{fully-qualified-class-name}.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/README.md#L65-L65",
+          "version": "repo-lines-v1:sha256:541ea4d2a2e7b3c571b672b759eeac1b06929f2d60009d9f5795575e26700d0e:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTQxZWE0ZDJhMmU3YjNjNTcxYjY3MmI3NTllZWFjMWIwNjkyOWYyZDYwMDA5ZDlmNTc5NTU3NWUyNjcwMGQwZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTQxZWE0ZDJhMmU3YjNjNTcxYjY3MmI3NTllZWFjMWIwNjkyOWYyZDYwMDA5ZDlmNTc5NTU3NWUyNjcwMGQwZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWU5OTk3OTgwYThhYTRmMTc0N2E0MDA1YmM5ZmY4OTVjMGZhY2I0M2JjMzIxNjBjZDg0Y2ZkMzZlMWY5NjlkZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjcxYzRhYzY0MDgyOTZkOWU4ZWJiZDM1N2ZhYjY1MDJiZmJkMjRiODkwNGYyNTNkMDk3ZDViZDk3NTgyOWZjNCJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/Launcher.java#L381-L399",
+          "version": "repo-lines-v1:sha256:fda601deb239e01e8da2654be66bc54f64d194d12dd002f95ec4ac6c5b4f039c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJiZGUyMjQ3YmFlMDI5MzU0MTIyMzg3MWMyZDAxYjY5YzBkZjc5ZTQ4YjllZmM2ZGZhNjdlNTNiMzJjMTVkOWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZkODYwYjk4ZGE3Y2Q1NzE0N2Y5MWZiNmUyZTYxNGZiNGM2NDJhYTQzYmFjZDM0OWZjODkxZGFkNjFkYmQ4OTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc0OTY3ZGJjMjg3NDVjZjhjN2M1YTBmMmY4YWI0NjEwMDdlZjMxN2I2ZWFlMTNlNzRjYTYwOTdhNjlmNDZjMTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUxMzJjODA3MzQyNTlkMTNmZWU3ZjU2Nzk5OTgxYjQwN2NkMWYxMjVmNDY4YzJmYzA3Y2IxYTdjZTVlMzUyNjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fa049b554f884965b4edfbf3a4beb142",
+      "statement": "The --methods option allows specifying which test methods to run and can be provided multiple times or as a comma-separated list.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/Launcher.java#L191-L195",
+          "version": "repo-lines-v1:sha256:0d004cda621fbb5eb8abbe5e130a6ce2b5067432289479ee2821b28142c22b7d:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWIwMzlmMDU4MGY5NTE4MmM3ZmZlZjI0MzIzM2IyZDNkNjA0YzRmMDAzYjczMTJiOWIxYmZiNTA3NWQ1NWY5MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGRiMzM5YzE3ZDRjYzU0ZTcwYzRmY2ZlY2I2MTFiYjllN2QzNjNmMjViMThlMDkyM2ExZDMwNmNjOTU5MjRlNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjcwYjQxOGFkNzU1OWUxMmU4ZmE3MDYyMjYzOGU5NzYzMjdmYWE5NjdlNWNlZDNjZjI5YTE2MmYxZTRjMWRlOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDNiYjg3YWIwOWNjMzljMWIyNWM0OTI1MDgwMWRmZTEyYWQ5NTE1MDhmNDc5ZGYzZGI3YzNmMmNjNzRlZjIxNCJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/Launcher.java#L317-L321",
+          "version": "repo-lines-v1:sha256:fb834a92f50bda6e3d4ec8f1db4e28f989efa5b23aef619f0f115b3183562d49:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmVjNTU2M2JhYmE3NmVhOWM0OGZjNDZkZTRiYzgzODQ1ZWY0MmRmNWY4OGM4NWY5MmUwNWJiYTY3MzcyYzk3ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWU3NWM3MGQ5NDYzNjI1ZTEwNzlmZDhmYzhlZTYyYWQyZTkyYzQyYmVhYWJmZDg1Yjc4ZDhlMGE0OTc5Yjk0YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmExMWI5NDc2Y2VlYmVhNDQyNzBmMmJiZGM0ZmZhN2Y5NzgxMjkxYmZiODg1MTE1NWUyNWQ3MmQ4MDgzMjdkNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODk3OGE5ODJhZmVmM2NhZGEyZjkwMmU1MmQ2MjMzYWJhMmRlMjIxMjdlYzE0ZGFiOWE4YTljNzk3MmJhNGFkMyJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/Launcher.java#L601-L615",
+          "version": "repo-lines-v1:sha256:79ce36c56c9df9a20241b13b013a4a228f04373692be7ec6e9edddea7ccaa27c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNiMGI4NTBkZTE5ZjM2NmE4ZGE5YTdiN2ZhZGIwMzg4MGQzMDY5YTUyMDMyZTU5MTgxMmU5YTNiMGMzODE2NTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5OWJkZWZlZWFjYTYzNDBlMDI5MGRjODZlODg5Yzg5ZDVlMTg5YWE1YmE0NGI1ODViM2I3MDczNGY0YTYyZDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEyYmFlOTQ4YzY0NjBiN2JiYTM5NGY4NjM1NjM5NTlkOGQyMWUyOWQwNGRiOGU1NWEzNDJhNGFhMWMzN2FkZDIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_135894123efb485ebb4867be716695a7",
+      "statement": "The --run option executes a test by run name, converting the name to uppercase automatically.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/README.md#L66-L66",
+          "version": "repo-lines-v1:sha256:585017b586eed8635664dd13e9858a3fae229e4c2bfa6b6d63824813470e3f97:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTg1MDE3YjU4NmVlZDg2MzU2NjRkZDEzZTk4NThhM2ZhZTIyOWU0YzJiZmE2YjZkNjM4MjQ4MTM0NzBlM2Y5NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTg1MDE3YjU4NmVlZDg2MzU2NjRkZDEzZTk4NThhM2ZhZTIyOWU0YzJiZmE2YjZkNjM4MjQ4MTM0NzBlM2Y5NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2UwNGY1NDFmZGU2OWY1MmUzZjJmZWRkNmEzZTJjNWRlZmM4ZjJhNDMxM2VlZTc2OGJhZmMyMWNkMTM5ZmM5NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjI2YTYyMWRlYzg2YjFiMTU2ODgzMmQwNGE4NjNmZjNjMWY0MDczMzFkNTkzNTMxYjkzOWZmMTRjOWQzZmJiOSJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/Launcher.java#L382-L387",
+          "version": "repo-lines-v1:sha256:1337295b8c8eb04f039e01e55cd6a2a6ea89e91e12f208bf25ed6661eafda52a:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTcwNTkwMWFjNTgyYTI0N2MxNWVlOTYwNmM4ZDRhMWFkMDBmNTk5MGJjMGRkNDU0NjQ1NzA0NTIyYWM2YzUzOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDg4ZWJmYmUzYjg2MDA0YWU3NTMzMmJlMTdiMGZhYTE4NzFlNWQwOGQyNmZmNTI1ZTg4ODRjMzg1ZTY1YjRlNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTA5Y2E0Y2FhMTQwMGU4ZWY0NDljNGY1OGRlN2M2MGMwMGFmMzBlZTk2OTI4Y2IxMGFjZDMxZWM4MjAzYzUwYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGE5NjljMmEyNjYyZDNlYjgwZmM0MDY1ZTAwZDAwYmUwNmVmYzk5MGQ2ZTljZTliMmQzZDcwYmM2M2M0NzMwOCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_e2571636b0764273a5a5f421ff47a3c5",
+      "statement": "The --gherkin option runs a Gherkin test specification from a file:// URL.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/README.md#L67-L67",
+          "version": "repo-lines-v1:sha256:7d430ef41f16fe84de8d0143452d445d92b411b20b09a2edff1bf1544550b812:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2Q0MzBlZjQxZjE2ZmU4NGRlOGQwMTQzNDUyZDQ0NWQ5MmI0MTFiMjBiMDlhMmVkZmYxYmYxNTQ0NTUwYjgxMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2Q0MzBlZjQxZjE2ZmU4NGRlOGQwMTQzNDUyZDQ0NWQ5MmI0MTFiMjBiMDlhMmVkZmYxYmYxNTQ0NTUwYjgxMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGNhZTI4MjUxNmVlM2NlY2FjMjVmNGQ1NmFmNzYzZWVkMWM3YmYyZmE2ZmFkN2FjMjM1NmJhNGQxMjA1N2JkNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDdlNGM4ODk2ZmY3ZTZmZmIxMzVhNTUwYTgyYWY1N2M1YzE1YjIxNjQ1M2M4NzJhMGZmMmUyZmQyMmY4MjA5OSJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/Launcher.java#L200-L201",
+          "version": "repo-lines-v1:sha256:76236212156153e8035ad56fa0cdceb69e6e6cab9fb91acf262136a258c6e2c0:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGJlNTU2M2M5YjQzNTRhNmQ2M2FhYzE5MDJjY2M4ZDc1YWI2MjVmMjE0YWNkNmQyNzJlNGIwMjk1ZDgyYjdjNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2JhYTZiZDYzODhlNWVmZjAzMDUzNDhmM2I4ZGZlNzBhNWRmZWQ1OTY1Y2MyZjU2OTY2NmU1Njk3MTk1Zjc0YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYThkYTUzNmE3ZGQ3ODgwN2RhMTIyOGI3MTZjMzRkM2Q1M2EwNmNmNmI0YjZhYzk2NmFjMzYxMTkyNmFmMzU0MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODhhODE5YzA0NTY4ODMwNGIyMWRmNjkyMDYwZTgyOGM2YzdmY2E5OTE2NWIwYmMwOWQ2OTY5ZWIxMGUyYTdjNSJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/Launcher.java#L384-L384",
+          "version": "repo-lines-v1:sha256:35dcdf55c85c0f4f2c8b6b8b4907ad5aa50d4f15df174de3286e2410aa454574:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzVkY2RmNTVjODVjMGY0ZjJjOGI2YjhiNDkwN2FkNWFhNTBkNGYxNWRmMTc0ZGUzMjg2ZTI0MTBhYTQ1NDU3NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzVkY2RmNTVjODVjMGY0ZjJjOGI2YjhiNDkwN2FkNWFhNTBkNGYxNWRmMTc0ZGUzMjg2ZTI0MTBhYTQ1NDU3NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGI2OTM1ODIyZmVjZmY1NmJkY2YwMmY5YjE0ZjkxYmM3ODljZDZmYWUwMWExNjg3NTJjYjRjYzIwMjBiYTUzNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGE1M2E2MDYzMzc4NGRjMGZiNjkxYzVkOTkwNjJjZmUyMTAyNGM1Y2JkZjliMGYxOTllNjFhNWJiMDc2MzczZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_3f8f03fda9384a118629d2ceb242d2c2",
+      "statement": "The --api option starts the Galasa REST API server by loading Jetty bundles and invoking ApiStartup.run().",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/README.md#L63-L63",
+          "version": "repo-lines-v1:sha256:3e83d5760f39603ff1f25f18a91a8c5a10d8f57a7b1a6926fd764d929dc57d9e:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2U4M2Q1NzYwZjM5NjAzZmYxZjI1ZjE4YTkxYThjNWExMGQ4ZjU3YTdiMWE2OTI2ZmQ3NjRkOTI5ZGM1N2Q5ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2U4M2Q1NzYwZjM5NjAzZmYxZjI1ZjE4YTkxYThjNWExMGQ4ZjU3YTdiMWE2OTI2ZmQ3NjRkOTI5ZGM1N2Q5ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTg1MjdjOWMxNmVjYjY1MzNjMmMxNTU5NzQ1MWM0OGU5ODMzYjVlNzdjMTM5YzIxYzA2MWVlYjdhZjMzNGQ3NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGNhZTI4MjUxNmVlM2NlY2FjMjVmNGQ1NmFmNzYzZWVkMWM3YmYyZmE2ZmFkN2FjMjM1NmJhNGQxMjA1N2JkNiJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/felix/FelixFramework.java#L740-L789",
+          "version": "repo-lines-v1:sha256:1d62461d50abda0821e5de9c20842e328ad1f2cb2bf2dd10221dd543b1d0bdf1:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhYTUwMjhhMDg5ZDAzZjM5YjhhZDUxODAwNmJmOThjMjZhMDE2ODUxZmI1YzlhODVmNGZhMjgzZGFmYjEwMmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVhOTFjM2EyMjkyOWJhMTQxNTMyODE2MmUyNGViOTIzMzQ5NmMyN2VmMTE2ZTU3OWExZTdlN2VmZDQyNTcyZjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRkNjU5NDZhN2RiYzAxMGFjMWEzNmU5ZDZiZmMyNjdhZTJkNzI4Y2ZkZWEyOTM0ZTAzNThkMTU3ZTQ3ZTg2ZmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_953da0611ee44a548ddec5ed28d13b3c",
+      "statement": "The --resourcemanagement option starts the resource management server which monitors and manages resource allocation.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/README.md#L61-L61",
+          "version": "repo-lines-v1:sha256:0b3d6a4ab70aecbad1e454531d6ac5d2e6416cab035d52a95292d9c9d0851031:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGIzZDZhNGFiNzBhZWNiYWQxZTQ1NDUzMWQ2YWM1ZDJlNjQxNmNhYjAzNWQ1MmE5NTI5MmQ5YzlkMDg1MTAzMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGIzZDZhNGFiNzBhZWNiYWQxZTQ1NDUzMWQ2YWM1ZDJlNjQxNmNhYjAzNWQ1MmE5NTI5MmQ5YzlkMDg1MTAzMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWY5MDBkOGQ5NTFkZWFjOWIyZjAwNzU2YmM2Y2VlNTE5YjQwMzkxY2Q0ZjM2MmU1YzdkZjk3N2RiZmVjMDdiNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWU5OTk3OTgwYThhYTRmMTc0N2E0MDA1YmM5ZmY4OTVjMGZhY2I0M2JjMzIxNjBjZDg0Y2ZkMzZlMWY5NjlkZCJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/felix/FelixFramework.java#L297-L373",
+          "version": "repo-lines-v1:sha256:8c597d84afc135c229c0ca89e7dc6518b1a9aa1f01ad1c525cfe1e64b97422b2:eyJzZWxlY3RlZExpbmVDb3VudCI6NzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2M2EyOTExNjAzZGVlZTNiODM3OGVlMTljMzI4OThiNWU1MmY5MGJlODQ1ZmRkYjAwZTA0NDMxMTkwZjA0NDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFjZDI5MzMzNTc3ODc2ZGVhM2VjNzAwMGY0MjFmOWVlYTFkYjFlMmEwODNiMjU3YWVmN2RjMjM3YjZkOTI0MzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ2YTBiZjZjMGNmOTYxYzE2MjA3NzU3NWUxZWY4MzcwYjk0NzJiMzY3ZTY3MmEwMjk2OWY0YTFkN2FmNWJkNWIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3f95b620840c498ea4b0799288914cf7",
+      "statement": "The --local-resource-management option starts a local resource management process supporting includes and excludes glob patterns for resource monitors.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/Launcher.java#L304-L316",
+          "version": "repo-lines-v1:sha256:6943393d79080365fd0186d18f1b6247016c8b75939fbbcdeb1d4d00db43e537:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZjM2NzA1ZTExZWVkZDBlYjQ5MTNlYWZkNjg3ZTlhMWE2ZTZkYTJjMTJhYzFiZTlmZjNjOWE1MjFmYjlkNTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlNzVjNzBkOTQ2MzYyNWUxMDc5ZmQ4ZmM4ZWU2MmFkMmU5MmM0MmJlYWFiZmQ4NWI3OGQ4ZTBhNDk3OWI5NGEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMxNDRiYWFmMGUxMWMyNjAxNDU2NDY5YWIzYWE3MzZkZDE5OTFkYTY2MzBlYjA3YjkwZDk2NGY3MjU5NDVlNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQyOTFiZWFlMmFiZGQ1NDNjNmVjNmE0ZTQ4YTgwZjBlZDJhMjFlNDQ4NzM4YmE1MDYzNDJmNmM4MDRhZjlkN2YifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/felix/FelixFramework.java#L384-L454",
+          "version": "repo-lines-v1:sha256:fc28bc1f83690a79ce36107e4f37b9ede1175d9bd680e4df7277f7163d87d75b:eyJzZWxlY3RlZExpbmVDb3VudCI6NzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc4MWZlZjBlNjZlY2MxY2E3NjJiMGUyZTFmMjNmZGIxYTIwNzQ2YmU0YTY3MWY0NjFkOWU5MzI3NGMyOTkzYjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQzNWVmMDYxMWRlZTM1YmVlNjQxNjk5ODNmNDQ3MWI3ODMxYTE1YjQ1MzQzNTljNDIzN2U0MGJmMGMzNDE0NWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMzN2M1MTJjNmYzMzliMmQyNGE0MmFmYzQyNDFkM2IzNTMwM2Y1Y2E1MTJhZTY5YTdiYjk5NjQ3NDdlODRiYjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f992b37da40148d4a6d2b8c4089ea086",
+      "statement": "The --k8scontroller option starts the Kubernetes-based engine controller service by loading dev.galasa.framework.k8s.controller and invoking K8sController.run().",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/README.md#L62-L62",
+          "version": "repo-lines-v1:sha256:6eec54e3791daff5f057414857dfd9321a204534db922807f63d2e851bcf9e18:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmVlYzU0ZTM3OTFkYWZmNWYwNTc0MTQ4NTdkZmQ5MzIxYTIwNDUzNGRiOTIyODA3ZjYzZDJlODUxYmNmOWUxOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmVlYzU0ZTM3OTFkYWZmNWYwNTc0MTQ4NTdkZmQ5MzIxYTIwNDUzNGRiOTIyODA3ZjYzZDJlODUxYmNmOWUxOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTBkNjU3MTczZTA3NjU3NzhkNjhkZWFiZDBmMzdiYWFmZTQ2NjEzZDdlMGQ4YzFiODA3ODc1ZWNiZmNmMzk1MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2UwNGY1NDFmZGU2OWY1MmUzZjJmZWRkNmEzZTJjNWRlZmM4ZjJhNDMxM2VlZTc2OGJhZmMyMWNkMTM5ZmM5NiJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/felix/FelixFramework.java#L801-L849",
+          "version": "repo-lines-v1:sha256:8cd53f8a4985ad774b71741384f9c2917adc93373a4c6d4404c045903cc3a69f:eyJzZWxlY3RlZExpbmVDb3VudCI6NDksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRkMWY0MjgyMDY5NzNhNDRmZWY2MjM0YjM2ZGE0MDI1YWJkMTkwOGQxNmY5YjM2ZTliOTlmNjMxMTM0NDZiY2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFjZDI5MzMzNTc3ODc2ZGVhM2VjNzAwMGY0MjFmOWVlYTFkYjFlMmEwODNiMjU3YWVmN2RjMjM3YjZkOTI0MzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVlMmI5ZTIxZmRjODZmYzJjMmVlNDQ3MjE4NWQ2NzY0NjdiZGQxY2JmMmUyNGI0ZGM2NDRhYjFhYmIzMzI1NDcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_120553a771f04f8e865a4bfb9c817923",
+      "statement": "The --metricserver option starts the metrics collection service, automatically loading all bundles providing IMetricsProvider services from the OBR.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/README.md#L64-L64",
+          "version": "repo-lines-v1:sha256:650d55261de9e15aabd343537c01a70d8fb512b5c1dae68bcdf8dd5232ae7ce6:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjUwZDU1MjYxZGU5ZTE1YWFiZDM0MzUzN2MwMWE3MGQ4ZmI1MTJiNWMxZGFlNjhiY2RmOGRkNTIzMmFlN2NlNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjUwZDU1MjYxZGU5ZTE1YWFiZDM0MzUzN2MwMWE3MGQ4ZmI1MTJiNWMxZGFlNjhiY2RmOGRkNTIzMmFlN2NlNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDYzOGE1MmFmN2QyZGE0YzdmZmE4MTk2NzYzNmY0MmNiMjc4MTgxNTY5NDk2ZWM1MzYwN2I3MzBmYzUyMjM5NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2MwYzU4MGJjYmQ0ZDI1NzQ4MjMzNWE5ZjI4NjFiZTRlNjYyMjNhMGZjMTI0ZDA5NjIwMjE5OTgwZGJjYWVmNCJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/felix/FelixFramework.java#L540-L637",
+          "version": "repo-lines-v1:sha256:a2f145ad987cfdc7a45047a4d5358cce9ef34b266200ffc23bac582e76279343:eyJzZWxlY3RlZExpbmVDb3VudCI6OTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxMzAxN2NjYjYxZTQ0YjRlMWE4MmI4Mjk0NGFlNGI0ZWI4MDI2MTEzYzZkMWZlOTEwZjhlZmZjOGFhN2Y5YmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFjZDI5MzMzNTc3ODc2ZGVhM2VjNzAwMGY0MjFmOWVlYTFkYjFlMmEwODNiMjU3YWVmN2RjMjM3YjZkOTI0MzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRlOWQ1NzE0ODlhNTI0NGQxNGM2Mzc1OTdiZDBlNGQxYjY2M2NmMjg5Zjk0OThkYjE4MWI5ODA1NWRhZWJmNmMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cbd90a248b3244499f4046c3b0ef56b9",
+      "statement": "The --setupeco option sets up a Galasa ecosystem by invoking SetupEcosystem.setup().",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/README.md#L76-L76",
+          "version": "repo-lines-v1:sha256:d6a888316271c3807a58ee1a6197cc67b13ca318f4b1bccf9e14605f09cb0c3b:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDZhODg4MzE2MjcxYzM4MDdhNThlZTFhNjE5N2NjNjdiMTNjYTMxOGY0YjFiY2NmOWUxNDYwNWYwOWNiMGMzYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDZhODg4MzE2MjcxYzM4MDdhNThlZTFhNjE5N2NjNjdiMTNjYTMxOGY0YjFiY2NmOWUxNDYwNWYwOWNiMGMzYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjA2NGY2NmI5NDgyY2ZhMjIyYjQ3Y2MyMmJiOWIzYzY1ZWZjNzFjZGIxOWRmM2M4ZjU3ZGQ3MTEwZTI2NTIyNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjVkMWM0NGMxYjRlMzQ3ZTBmN2IyNGE2ZmJjNDFmZDBhNGJkNjQ1M2E4NjM0ZjYzY2JjNmM3YTBhODhiMjk5OCJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/felix/FelixFramework.java#L647-L688",
+          "version": "repo-lines-v1:sha256:ee46f327cea286077efe149d3ea7a151091e62d303307b5184a92c113561339f:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIwMTYyMTZjZGNkZmMyYTNiOWYyOTVkZTJiZDZlNjY5YjVkMDYzZWZhYzEyMmRlY2JmMDk1YmRmYjdkNWFiZTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZhYzJhNTRkMjk1NDEwOGU4ZGE0NWFiZmQ2Y2Y5YTI4YWViZGM2NGNiOGFkM2E4NTE3ZTQ4N2I2MTM2YmIzNGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM5ZmY5ZDc1MmE0YjgwMDEwOTRlYzFhZDY3NTcxYTA0OTJkOWIzMWViNTBlYTdlNGMzNTU0MzU4NDk2YjM4M2UifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8c6be654641748c9b3d6a59f83a8a524",
+      "statement": "The --validateeco option validates a Galasa ecosystem by submitting a CoreManagerIVT test run through ValidateEcosystem.setup().",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/README.md#L77-L77",
+          "version": "repo-lines-v1:sha256:836f1c105d1341576f2b79e9a80bcf3adc19e59fdff1a50f2f155fa3981da5c8:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODM2ZjFjMTA1ZDEzNDE1NzZmMmI3OWU5YTgwYmNmM2FkYzE5ZTU5ZmRmZjFhNTBmMmYxNTVmYTM5ODFkYTVjOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODM2ZjFjMTA1ZDEzNDE1NzZmMmI3OWU5YTgwYmNmM2FkYzE5ZTU5ZmRmZjFhNTBmMmYxNTVmYTM5ODFkYTVjOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjQ5NDg1OTJkYjFjYjVlZGU5YjFjNDc1YTUzYmM4NDdiZjg4NTFiMWJhZDIyZjkzNmZjNWQ4ZTJiNmIyMmY3NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2Y5ZWRkZTI2NzU2YThkNTQ2OTM3YzVjM2M4YmM0MjBmMWIwMDg2Zjc2YTViYjNiODVmNWZhM2YxNzQ2NTA3MSJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/felix/FelixFramework.java#L697-L738",
+          "version": "repo-lines-v1:sha256:f2610de5cab40ec1e8d289dace2a95b191ab83c6f2f969b9aa10e72682e6038c:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE4YTgwMTY5MTEzYmUxMjRhYWJlNTg0N2UwNDYyZWIzMTljZDZmZGVmYzhkNWU5Njc1ZjAwYWNmYmZkZjcwNzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZhYzJhNTRkMjk1NDEwOGU4ZGE0NWFiZmQ2Y2Y5YTI4YWViZGM2NGNiOGFkM2E4NTE3ZTQ4N2I2MTM2YmIzNGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVjYmE2Yzg1MmJiOWY1ZTg4NTUwMmJlNmFkMGEwNDc1NjZjMjk2ZmYyYzMxZjAzYmVmNGQyNGE2OTlkMjZiOWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e3ab37043ced48269e83f71ac6ef6cdd",
+      "statement": "The --prepare option downloads all OBR bundle dependencies to the local Maven cache without running tests by resolving non-uber OBR bundles and installing them to trigger the Maven URL handler.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/Launcher.java#L306-L306",
+          "version": "repo-lines-v1:sha256:66b5e1de8e57ed9146a55cd3d200977092119820c1a91bdf6e3ad9fcbdca8c3f:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjZiNWUxZGU4ZTU3ZWQ5MTQ2YTU1Y2QzZDIwMDk3NzA5MjExOTgyMGMxYTkxYmRmNmUzYWQ5ZmNiZGNhOGMzZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjZiNWUxZGU4ZTU3ZWQ5MTQ2YTU1Y2QzZDIwMDk3NzA5MjExOTgyMGMxYTkxYmRmNmUzYWQ5ZmNiZGNhOGMzZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGEyZWQxYzlkNWYzNDliMmZkMTBlMDljNjU1YmFhOTAxNTAxNTllOWZkMjljOGU0MTE1YTQ3ODhkYWE5YTk1MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmVkYzQ1N2UwNDA1NmFjYjQxNWU3MDYzNWU5Y2ZjMDRiNzFlZGI2ZDkzMzMyMGVjOWFlYWVlZGZkZDhjMzM4OCJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/felix/FelixFramework.java#L456-L534",
+          "version": "repo-lines-v1:sha256:8cd7526d16a47898add05d0b02aa30d0ee3ae1b2afbd2e69d951b5da2c09f326:eyJzZWxlY3RlZExpbmVDb3VudCI6NzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5Y2JiYzY1NDY5ZGIxY2EyODQyZWZkOTdkZjdlZTJjZTZjYzE1NzE0ODJkMDFhMThiNzkwYTEwYzdjNTEwZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhOGNkOGNiZTFkM2Q0OWI2MTMxMTJiYjA3NDJiNzkzZDdjNzA2MjgzNTgxZmQ3NDU5NDc3OTQxNWM5Yjc5ZjgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5OWJkZWZlZWFjYTYzNDBlMDI5MGRjODZlODg5Yzg5ZDVlMTg5YWE1YmE0NGI1ODViM2I3MDczNGY0YTYyZDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc1NDQwMDMyMDY0MmE5MTExOWM0YzkyOWQ0MWQwZTk5YWM2ZjA0NTY5MjQyMWM0Njk0NThiMmQ5MzFmY2NlYTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_391630824ab54284bcd6e8009f13ea6c",
+      "statement": "The --localmaven option specifies the local Maven repository URL, defaulting to ~/.m2/repository, and supports --localmaven disable to disable local Maven.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/README.md#L71-L71",
+          "version": "repo-lines-v1:sha256:70d1cbb865f078c53acea11ec9869196c72146d155ae349a7e1d8f3f902629b0:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzBkMWNiYjg2NWYwNzhjNTNhY2VhMTFlYzk4NjkxOTZjNzIxNDZkMTU1YWUzNDlhN2UxZDhmM2Y5MDI2MjliMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzBkMWNiYjg2NWYwNzhjNTNhY2VhMTFlYzk4NjkxOTZjNzIxNDZkMTU1YWUzNDlhN2UxZDhmM2Y5MDI2MjliMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDdlNGM4ODk2ZmY3ZTZmZmIxMzVhNTUwYTgyYWY1N2M1YzE1YjIxNjQ1M2M4NzJhMGZmMmUyZmQyMmY4MjA5OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2JiNWYzM2I3MjYxNDY0MTQ4YjhhY2ExMzQzYzM3OTUxNTVmZjgzZWE1NDRjNGQ3ODU0MGIyYWY0NDYzNDI0ZiJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/Launcher.java#L465-L493",
+          "version": "repo-lines-v1:sha256:767c4eb060099c7ee5f39c56a89ac7646890732eb0fd9a9c26aac95468e39419:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI2ZWJiMDQwNzUyODEyMGI4NjhjNjI2OGE0YjhjYTFiYTgyMzdhN2UyZjFkNzg0MmFhYTk0MDAyYmRhYzg0MjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVhOTFjM2EyMjkyOWJhMTQxNTMyODE2MmUyNGViOTIzMzQ5NmMyN2VmMTE2ZTU3OWExZTdlN2VmZDQyNTcyZjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEyZjc0ZTdiMzVhOGU3NzhjMzkwZjI3MWUzOGU0ODdhMmUwZjYwZWM3YTA3YmM4MWExOGJkZjYxNDJmNmZmMWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_11ef4e7a8403483cb4b34764544465b7",
+      "statement": "The --remotemaven option specifies remote Maven repository URLs, can be provided multiple times, and defaults to Maven Central.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/README.md#L72-L72",
+          "version": "repo-lines-v1:sha256:7eefe67f0426817f391218344857d207c7c901ed3f8940d0004b89eede91d45b:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2VlZmU2N2YwNDI2ODE3ZjM5MTIxODM0NDg1N2QyMDdjN2M5MDFlZDNmODk0MGQwMDA0Yjg5ZWVkZTkxZDQ1YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2VlZmU2N2YwNDI2ODE3ZjM5MTIxODM0NDg1N2QyMDdjN2M5MDFlZDNmODk0MGQwMDA0Yjg5ZWVkZTkxZDQ1YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzNhMDgwYzUxMWY2MTk1NTk0ZDU0NGUxMmUyZGQ2YzE2YmYyNTRmNTYzZmFjZjNlNDQ0YmM5MzQ3YjEzYWE0NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjA2NGY2NmI5NDgyY2ZhMjIyYjQ3Y2MyMmJiOWIzYzY1ZWZjNzFjZGIxOWRmM2M4ZjU3ZGQ3MTEwZTI2NTIyNiJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/Launcher.java#L449-L463",
+          "version": "repo-lines-v1:sha256:f4d91be19b9f1d06cbb35a3bf4386addef01f32d8a94697941e14baf21d9eb15:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyMzA5NjU0ODFkZDFlYjgyZGVhN2U0N2NhYWYzNTcxOWZiMjVhMWY5ZWM5MTlmMTY1MTY4MTIxMTliY2NiMDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ3NjdmNjY3NjAyMjU4MjRiNzdmNWFlNWRlOGRiYTZjNzdiYjBjMWQyMjQ2OTFjMTI1OTQ2ZjM2ZDIwMWMwZWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBiM2UyYmJiMjhiOGE0NGQxOTNkY2IwYTA2MTA1YmEzM2QyYzA3ZjYxN2Y1M2I3YzI2OWNkNjAxNTc4NTg4MzgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b55798ca7d0a4b229e666f7947ee675e",
+      "statement": "The --offline option disables all remote Maven repository access and cannot be used with --remotemaven.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/Launcher.java#L305-L305",
+          "version": "repo-lines-v1:sha256:69941b46f7d222443560b0e854cc6d81247fe9d24a02276c6a130e3b62390b28:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjk5NDFiNDZmN2QyMjI0NDM1NjBiMGU4NTRjYzZkODEyNDdmZTlkMjRhMDIyNzZjNmExMzBlM2I2MjM5MGIyOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjk5NDFiNDZmN2QyMjI0NDM1NjBiMGU4NTRjYzZkODEyNDdmZTlkMjRhMDIyNzZjNmExMzBlM2I2MjM5MGIyOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTZjNDg2Y2MxNmE1MTZhMmY1NjQzN2RhZGMyMzVlZTRiZTE5N2E5ODU1NDU1MTlmYTQ0NTI3ODRjMTVmOWQ3ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzUzZjhhM2VkZjBkODQ1MzUxMmMyYzc4MTczOTNmZWY0NmFhMTA2MmU0NDExYTM1N2Y0NmRmOGE0YTFhMTRiOCJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/Launcher.java#L361-L366",
+          "version": "repo-lines-v1:sha256:e3f37c89b47e5b04c7b4d9f3794566f62bc219201320ad1a0dae76dfb7e2b265:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGNhYTI1YTk0MzEyZjA5NjI1MjcyMjVhZjI1YTE2MTJmYWJmYTFiNzliM2ZkOGNiNjM3ZjYzY2VjMDZjZWFlOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTZiMDQ0OTE0Njk3MjJlODM2M2E5NGU0MDQ0NTM4ZTAxM2EyYTIxN2UzNmIxZTU2OGJhNjBhY2I3YjRjOGYyZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmE0ZWNkYTBlYmRmMTg3NzBmNWIxMTUyNDljYmY0NWE5NTllYzYxNjZmODNjMTU2OTczZGMzYWIyZTJlMDdlYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTcwZjc4YThjNmIzYmM0ZjE4YWUxNWMxNzNhNzQwODA5YWYxZTE1NmRiZmRjYjc1YzVlZGVlN2ZmZWM0NjQ0NiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_1a80b727bcdd472a830374c6167553f9",
+      "statement": "The --bundle option loads extra bundles beyond those in the OBR and can be provided multiple times.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/README.md#L68-L68",
+          "version": "repo-lines-v1:sha256:9bbbc43912fb20c6dc73e5e2788332128a65ce4de5a2caabb9ea028a78829106:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWJiYmM0MzkxMmZiMjBjNmRjNzNlNWUyNzg4MzMyMTI4YTY1Y2U0ZGU1YTJjYWFiYjllYTAyOGE3ODgyOTEwNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWJiYmM0MzkxMmZiMjBjNmRjNzNlNWUyNzg4MzMyMTI4YTY1Y2U0ZGU1YTJjYWFiYjllYTAyOGE3ODgyOTEwNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2MwYzU4MGJjYmQ0ZDI1NzQ4MjMzNWE5ZjI4NjFiZTRlNjYyMjNhMGZjMTI0ZDA5NjIwMjE5OTgwZGJjYWVmNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzNhMDgwYzUxMWY2MTk1NTk0ZDU0NGUxMmUyZGQ2YzE2YmYyNTRmNTYzZmFjZjNlNDQ0YmM5MzQ3YjEzYWE0NSJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/Launcher.java#L509-L515",
+          "version": "repo-lines-v1:sha256:061aacbc3970465f835ad9a30b41d335e04c14ac4a09f9de380472bc0382807f:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGMzMDk3ZDg3MGNkNTZkMzhmMWY5YzNkZTQyMTRmNzYwODRlY2U4OGU4YmFlOWUzOGMyYjhhNjYzZjZhODM5MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTk5YmRlZmVlYWNhNjM0MGUwMjkwZGM4NmU4ODljODlkNWUxODlhYTViYTQ0YjU4NWIzYjcwNzM0ZjRhNjJkOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjhjYTkxNTQxNWIzODFiOWYxNWViMjZlYjE0NWIwZjEyMGQ5ZmM5NTJkZGNiNDY4MzhhMGRmMWZkMjJhY2Q1YSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_e6e0975852344a999e5c99336ffd92a5",
+      "statement": "The --metrics option specifies the metrics server port, with 0 disabling metrics.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/README.md#L69-L69",
+          "version": "repo-lines-v1:sha256:ac53e7a9c1d7f22b46a94a5a4bab2fb7e4cd5e8d8b1984e57e0b63b446e1f22f:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWM1M2U3YTljMWQ3ZjIyYjQ2YTk0YTVhNGJhYjJmYjdlNGNkNWU4ZDhiMTk4NGU1N2UwYjYzYjQ0NmUxZjIyZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWM1M2U3YTljMWQ3ZjIyYjQ2YTk0YTVhNGJhYjJmYjdlNGNkNWU4ZDhiMTk4NGU1N2UwYjYzYjQ0NmUxZjIyZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjcxYzRhYzY0MDgyOTZkOWU4ZWJiZDM1N2ZhYjY1MDJiZmJkMjRiODkwNGYyNTNkMDk3ZDViZDk3NTgyOWZjNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzIyYjc3MGUyNDUyMDI0YWVmZTVlMDBiMDljODJmNWM0MmU1ZTkwYTQzNjRiMzU3ODk5MTQ3ZTI5MjZiMjUxNiJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/Launcher.java#L495-L500",
+          "version": "repo-lines-v1:sha256:668f918c11048c65a7ccd7111fb2440b57ae7f1687c94fef9a5bd5caf63a231f:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjRiZjczNzU5Nzk0ZTllOTMyM2I2MjhlZjA0YTI5YTg0N2IyZDhlZTk0NWRjYmJjMTZiNjIxNWM5MDAxMzJjNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTk5YmRlZmVlYWNhNjM0MGUwMjkwZGM4NmU4ODljODlkNWUxODlhYTViYTQ0YjU4NWIzYjcwNzM0ZjRhNjJkOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDE5MjkwOTY3NTE1YzdhMDBmYWIwYTQwNDA0NWQ4NDIxMjk0NDQ0MmFkYzhmMjcyNGYyYTVkN2MxNjFkODc1OSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_d12051f6569041fd9b56c7d7f7075504",
+      "statement": "The --health option specifies the health check server port, with 0 disabling health checks.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/README.md#L70-L70",
+          "version": "repo-lines-v1:sha256:31b49f8e11c497cad685818ea9214a31fefcd794bd6e45abb5b355bddb18e3e1:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzFiNDlmOGUxMWM0OTdjYWQ2ODU4MThlYTkyMTRhMzFmZWZjZDc5NGJkNmU0NWFiYjViMzU1YmRkYjE4ZTNlMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzFiNDlmOGUxMWM0OTdjYWQ2ODU4MThlYTkyMTRhMzFmZWZjZDc5NGJkNmU0NWFiYjViMzU1YmRkYjE4ZTNlMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjI2YTYyMWRlYzg2YjFiMTU2ODgzMmQwNGE4NjNmZjNjMWY0MDczMzFkNTkzNTMxYjkzOWZmMTRjOWQzZmJiOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWYwM2UzZjlmNzE1MDlkYmJkMzdjNGFhNTBkMTcxNjNmODVjMzZjM2Y2MDk2ODQyYmMwZTAyZjA2OGJmZmE2NiJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/Launcher.java#L502-L507",
+          "version": "repo-lines-v1:sha256:a3e37ce6ec7037aed9089661a95b8aecbb873fd0e43f95da66f56bc369184aae:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTc4MjUzMDAwM2ZiYTM3N2NkYjllMDQ1MDEzN2Q1YTU3Yzg1ZDAwOTIzNmM0YTFiNGZjOTNmMzU3YjVmNjU2ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTk5YmRlZmVlYWNhNjM0MGUwMjkwZGM4NmU4ODljODlkNWUxODlhYTViYTQ0YjU4NWIzYjcwNzM0ZjRhNjJkOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTZlYTdkNGQyMzg4ZjhlNjBkNDg0YTI2MDg5NjM5OGE0YmY5OTM0MTU3OTM5NTUxYzY3NDRmMDIwNDIyNDJiYiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_8f8db7528f9344c088eb36a9ace69fc2",
+      "statement": "The --trace option enables TRACE-level logging and sets log4j2.configurationFile to trace-log4j2.properties.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/README.md#L73-L73",
+          "version": "repo-lines-v1:sha256:f6622bdddbbbfa770ff11bfd5741a810bd42e172c84b2690b5445c232b47d9d4:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjY2MjJiZGRkYmJiZmE3NzBmZjExYmZkNTc0MWE4MTBiZDQyZTE3MmM4NGIyNjkwYjU0NDVjMjMyYjQ3ZDlkNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjY2MjJiZGRkYmJiZmE3NzBmZjExYmZkNTc0MWE4MTBiZDQyZTE3MmM4NGIyNjkwYjU0NDVjMjMyYjQ3ZDlkNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzIyYjc3MGUyNDUyMDI0YWVmZTVlMDBiMDljODJmNWM0MmU1ZTkwYTQzNjRiMzU3ODk5MTQ3ZTI5MjZiMjUxNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjQ5NDg1OTJkYjFjYjVlZGU5YjFjNDc1YTUzYmM4NDdiZjg4NTFiMWJhZDIyZjkzNmZjNWQ4ZTJiNmIyMmY3NiJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/Launcher.java#L336-L339",
+          "version": "repo-lines-v1:sha256:6a7b754550d8654e1934d5e78b36a415e002b845b7d277800cf38ada866bd735:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGM2M2MyNzA1Y2Y3ZjJjNjIyY2VmMTVlYzk5OGExNzVhNmUxMmE1Y2U0ZjBmYzU2ZThiNjFjYTljOTE2MGVjNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTZiMDQ0OTE0Njk3MjJlODM2M2E5NGU0MDQ0NTM4ZTAxM2EyYTIxN2UzNmIxZTU2OGJhNjBhY2I3YjRjOGYyZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGE5Zjg2ZDI4ZTc4NGY5ZmQzMWZiNzJkMTVmNjBjYmNlYWFmZGQ2NjljYmQ1YjZkYTc4ODhhMDIzMzIxZWJiOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGNkYjk4MDFjYmY4MzBiMGY1MmNjNzFhZTE3M2U0MmZmZDM0Yjg3NWYwZmIzZDUwMGU4MzhiMDA2Mzg3N2NkZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_18eb2a8a368a4973ae6989babb91442d",
+      "statement": "The --log4j2-properties-file option accepts a file:// URL or filesystem path to a custom log4j2 properties file and overrides the --trace option.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/Launcher.java#L303-L303",
+          "version": "repo-lines-v1:sha256:7348337951b3a0d91d93ca3029cb1bea0a10a1abd758817c71df0cc95688c091:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzM0ODMzNzk1MWIzYTBkOTFkOTNjYTMwMjljYjFiZWEwYTEwYTFhYmQ3NTg4MTdjNzFkZjBjYzk1Njg4YzA5MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzM0ODMzNzk1MWIzYTBkOTFkOTNjYTMwMjljYjFiZWEwYTEwYTFhYmQ3NTg4MTdjNzFkZjBjYzk1Njg4YzA5MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTA5N2EzNzVjNWEzZmEwZDhjYTI3N2I1MTI3ZmRmYmFiM2UzMzg5NjA4MTQwZWFiNTI1NGE5ZDE0NWIxNjQ3NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWZiZTIwNjIxNmYyOTQzNzY1N2I1YjQ1YmI2MzkzY2FmMzAxMmRiOWE2NjZmY2UxYjRjNDJlOGVhOTBiNWY1MSJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/Launcher.java#L617-L644",
+          "version": "repo-lines-v1:sha256:e300c0f71085fe7257c7baddcb625ff11fc5c2774a4e6ee340174de72ba0f24c:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRiZjk4ZjliMWMwN2E3OTIxZjk2ZDU0YjhhOGE0MGYyNzZiM2VhMWI5Mzc1ZWU3YTljYTI5ZTEwZDRmZmQzZDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5OWJkZWZlZWFjYTYzNDBlMDI5MGRjODZlODg5Yzg5ZDVlMTg5YWE1YmE0NGI1ODViM2I3MDczNGY0YTYyZDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjliNTY0YzJmNmRhNWZiOTAzZWE1NjQ3ODRiNDNjNDRhYmQ5NTg2N2JiZmUxNjg2MWM0YzZiMDE1Zjg0MjZmYTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5692624e21324e6983366de9362bf7e3",
+      "statement": "The GALASA_HOME environment variable or system property controls the Galasa home directory, with precedence order: system property, environment variable, then ${HOME}/.galasa default.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/README.md#L32-L32",
+          "version": "repo-lines-v1:sha256:e20716c5da207ce77cd8c157cf101a1c875b164a51d6817cb6cc6c404d66af19:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTIwNzE2YzVkYTIwN2NlNzdjZDhjMTU3Y2YxMDFhMWM4NzViMTY0YTUxZDY4MTdjYjZjYzZjNDA0ZDY2YWYxOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTIwNzE2YzVkYTIwN2NlNzdjZDhjMTU3Y2YxMDFhMWM4NzViMTY0YTUxZDY4MTdjYjZjYzZjNDA0ZDY2YWYxOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjQzYjIwZGFmZTk4NTQyNGJmOGQ1OGRjYzQ4OTIzOGRlNzA2MmUyZjk1N2QwOTE0NTY4Y2U0ZTUwYjI1OGIxNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTBlZDlmN2Y2ZTM5OWJjYjE5MGU5M2FjMjc3MmQzYjc1OTBhYzcxNzVkMTQ3YjNiMzYxNDFmNzg2MTMyNTk5NiJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/Launcher.java#L682-L707",
+          "version": "repo-lines-v1:sha256:51d107e39aa16b977cc88d1cc7833983b9cffab2fb3b30f7ecce083e9d8c67ba:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhiZDdjMmVmODcwNTc0OGRiMTFjYmE3ZTVkMmFiYzc3YzFjMGJiZTdlZTcyZjA0NTA2MGExN2U2MWM3Y2U3MzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQzN2FiZWIwNGIyODkxNTI0ZTdlNTJlZWNiMmUzMmQ3NGNjNjliNzY5Zjc4MmUwMTI5MWRhMDNmOGY1YThkY2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRhYzJlMmNjYThmMmU1ZTVjN2I4NDA0NDRkNjMyNGJkZDYxNGI0MmJhZTZmMDFlOWU2ZjJiYjE5YjFhYjU4MzEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_10eff30f59b34863a280433059a1b583",
+      "statement": "Environment variables GALASA_CONFIG_STORE, GALASA_DYNAMICSTATUS_STORE, GALASA_RESULTARCHIVE_STORE, GALASA_CREDENTIALS_STORE, and GALASA_AUTH_STORE override bootstrap properties for store locations.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/Launcher.java#L731-L773",
+          "version": "repo-lines-v1:sha256:d1ce3b829a69f6710275296550ca6862ffa3765b22f4c93a8a15bcde60206aba:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhhZjNiZjJkYzE3MjEwMmM0MzU0YmE5N2JlN2Q4MjRhOWIyNWZmYTE0OTIyNWQ2Y2NmOTNhMDA4NmI5NjRmYWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdmODg4MDM0YWY2OWVjMTQ4ZTkxZjdlZTI4NDA5NzZmYzgyYTI0MGZkODQ2YjE5NjQxMjA3NGM5NzVlZmNlYWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk2YzViNTgwOGRjMTM5OWQ5YjhmODBkZjNlNGU0MmQzYmM3NDQ2NDljODZiMjZkODQ1ODU5MmFiNGYxMjM1NDIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_41174f3510334beda2c37d4f64b41faf",
+      "statement": "Environment variables GALASA_MAVEN_USERNAME and GALASA_MAVEN_PASSWORD set Maven repository credentials in bootstrap properties as maven.repository.username and maven.repository.password.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/Launcher.java#L798-L815",
+          "version": "repo-lines-v1:sha256:634fad7d648a18a2eb18bec7e80c7e00bfc1a7e4b65e4b2189f8aac05582467a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxNzQ0ZWM0OGZiNGI3MDFmNWU5MjQwNWMxMjk3YjQyMjA1ODJhMGY0MWE2ODM3NDU5NThjODQwZGMxMmFiNDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJjODg4OGVlYmI0MzlmM2U2OWMxNDkxMTgyNTFiZjcxODVlYTkwMDQzYjYwMTk5ZGMxZDg3NzMzNjgzZWMyMzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQxMGIzNmFhNzRhNTliY2Y0YTg4MTg1ODM3ZjY1OGFmYWYzNjQ2ZWZmMmJiMTZjMzkyOGQwZTkzMzVlOTQ1ZDIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9a8cc0c2b58e4e468ef8c093859e2e0f",
+      "statement": "The GALASA_EXTRA_BUNDLES environment variable specifies a comma-separated list of extra bundles to load, written to framework.extra.bundles in bootstrap properties.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/Launcher.java#L775-L784",
+          "version": "repo-lines-v1:sha256:c2ac6987fdb488fd7ef0884ddb2df9d0f02b31908de0316340883458881c9ee5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzMGE1MzFkYjYxM2FiMmMxNTc4ZTAwMmFlMGZmN2Y1YmEzMjVjOWUxNzg5MzE3YjE0NTI5Y2ExMDE0ZDU0YjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5OWJkZWZlZWFjYTYzNDBlMDI5MGRjODZlODg5Yzg5ZDVlMTg5YWE1YmE0NGI1ODViM2I3MDczNGY0YTYyZDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBmOTQzZTIzMGQ4Y2M0Y2IxZjE5MzA4MTliOTRmYzU1MGY4NGExYzJmZTVhNGFhNzkyM2Y2ZTllNzNjMTg1Y2QifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_eb7810a123404039b7c208b1cfa419a0",
+      "statement": "Environment variables GALASA_MONITOR_STREAM, GALASA_MONITOR_INCLUDES_GLOB_PATTERNS, and GALASA_MONITOR_EXCLUDES_GLOB_PATTERNS configure resource management behavior.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/ResourceManagementConfiguration.java#L13-L29",
+          "version": "repo-lines-v1:sha256:5f6c89b317c3b63acdd63db6febffd7b10626858f26a971a9acecaeca7ae0b60:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhjYjMzZTc1ZjUwMDg2ODJkNmI5OWE1NTg3MTUzOTdkMGZlZjU5YjIxNGNlMDIxN2VhZDE4MGMwZmE2MmI0OWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjViNjAzNjY5ZDI3ZWFlMDNiODY2MjI0ZmY0MTBmNTUwNjhiOTVkYzNjMWIxYjJiMzk2Y2JiZGMyZTFkNDc2MWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY1ZGY4MzkzYTE0M2MwOGU2MTI0OGM0MjA2ZDBlYjFjZjEwOWE1ZDY4YjVmNWIyMDE3ZWE3MzM2ZWI4ZDBiNjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI4OWQ3N2QyMGU1MWU0ZDUwYTIyODJhMjRiMmQyYWRjY2RjMTBkZTBiM2MzMjgyZTcyMWFjZDYyZjgzNTg5N2YifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a18c4f021ecb492784b5c82a5a49a1bd",
+      "statement": "The boot JAR initializes Apache Felix OSGi framework with a unique cache directory under ${GALASA_HOME}/cache/felix-cache-{uuid}, which is automatically deleted when the framework stops.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/felix/FelixFramework.java#L84-L112",
+          "version": "repo-lines-v1:sha256:892ddb0046316d3834b9211d5b3f5dcac149a48b1986b0c03468ebaaf7084dd6:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzMTJkMjJjYTgyODUyNDc0ZGExYjdmMWQxYTJlYzY2YjIwMWNmYWEyNjRlYTRkODQ4NjI2Y2Y4MmYwZTdhZTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlMzA3NjFjNzQ2N2YzZGU5OGE5OGFmZTkxZTNjZmEwYjExZTliY2JiMTcxYWMyMWRiMGY0MmE5MGVlYjU4MDUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzNTA2MjlmNWEwYzg5YzNjNGJmZTg1OGZkMzQyZDUwODNiMTRhN2E2ZGFhZjBkZWY3ZDk4MDhkMzlkZGU4ODciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE5ZDVlN2UzNzMyOTk4NWIxOTQxMzRkMjljZTc5YTI5MmVkYjlkM2U0NTU5ZjViNGVhODViNDUyNDgxNWExYmQifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/felix/FelixFramework.java#L858-L877",
+          "version": "repo-lines-v1:sha256:ea35cd20806843737e482f5f2dd1276bc87f41e2d64fa28665635005ef810224:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE1NTQ0Njg3NTRjOGVjZGU1ODgwOTBkN2Q5MjY0OTgwMmUzNTIwZWVmMTYzODE3MjRlZTQxMTFhYmFmMmRhMTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFiNmU1ODBiYmE0MWE0OGZlZGRiODljMTkwNzU2ZDljZDlmZWZmMjUyNmRlZDQ0MjJlNDUxNDA1NDBkMjliNWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI1NGEwYTQzZGQyMmJkNzNlYWI3OGZjNzA0NDE1ZTQ0MmVmM2MwYTU0MGIxYzk3Y2VhZDM0M2E0YzQ3ZmFlM2MifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7eddc0946e1e460f86e9fffb034eb490",
+      "statement": "The boot JAR embeds core dependencies including Felix framework, Felix Bundle Repository, Commons CLI, Commons IO, and log4j2 layout template JSON.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/build.gradle#L43-L59",
+          "version": "repo-lines-v1:sha256:08cee4a8d22ad676f84a33fe3ba2259782c6a3fb0219389b44c2adcc1ca4363f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNiYTMxNDVhZWUwZGEwNTkyNGQzYWQwYjFlZWI0YWRlNzc2MWI2NjdkOGE5NjE0NmRlZWYzOWFiZDFjZTQ4Y2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhiMTU4Njk2MmQzZmVhZGJlNWRkMWZhNWNiNGRhYjRkODcwOWVlNGQxY2QzNTU3MWMzNTBhMGVjOGFmM2FhY2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBmYzVkOGVjN2Q1M2E5MTkzMzI1NjYzZGMwZTdjYmZiZDgzZTg3ZGY3N2UxYzk2NmI2NjU3ZmU2NTc4NDBlMGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNiMTY4ZDg5NmQ3MDEzZTllMDIzZjNhZTBjZjM5ZmFmOGMwN2ViMjVmNzYzYzE4MDMzYjBiMDE3NTcwNDRkMjAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bb4f4eeb095945459b2337940aa0bfdd",
+      "statement": "The launcher loads core bundles in a specific order: Felix SCR, log4j2 components, Maven repository handlers, then Felix OBR bundle.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/felix/FelixFramework.java#L114-L134",
+          "version": "repo-lines-v1:sha256:63567b4033770091a191557cd84b5b3b2fbb1631a15be235ef87de7be20f50c6:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ4ZjhhZDZlYjk5MWU3YzQ2YTllZDI5ZTc0NGI4MDU3MjRlZGNjOWUxMzY5NDQzNzEwY2NjMTA3MmFjZjZmMzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJkNjYxYTdmZTY0NzQzMTFmMmFhN2I0N2RiYWNjYmY0NjZhOGY4NmNkZTQzNTRmZWI5NjExOWNhMjcyNGYzY2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY4NTFjNzkwOGJhZTI5NTZjNjA4MDAyMTI3ODM5MWQ1MGUwNjYxZjc1ZmVlNWFkZDMxYTY0NmYzMDFiZWE2MjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM1NzE2YzNlY2VjNmUyZTkwYWUzYzEyMjkyYTkzY2M4Y2QwZWM3MTAzNTZlY2Q4YjIxZDkzMTEyZGM3YjlhNGMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b28551e7b42e4f1fab93e1d6a5de1521",
+      "statement": "The launcher masks DGALASA_JWT values in command-line log output for security.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/Launcher.java#L255-L267",
+          "version": "repo-lines-v1:sha256:9187d5cfa53d7077d791ba7c5e0fd72f56abf80a9ad73e49cdf19987340b2eb5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImViMTc1NDFmZjMyMGViYzhiMzM2Njk1NzcxOWQyNmY1ZmNhMGNhMzUwZWM1YjQxN2FlMWNjOWY3MjNkNTRmYWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRmYmQwMDkzMTRiYzI3MDg0MTY3MzRhMDJhZTVmZjM5YTFlNDhhMDUwYmU5MWY0M2IyZmFhOTIwMDJjNjJiZmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE4ODFmNDcxYzQwODk0MzkzMmIyODk3NGNlMTM4MjViMWQ3ZTVkMjc1YTYyZmZkOTQ0NTcwMGQzYTU0NDkwMjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e522d2ceec9a4b5f997cb9bb15705aa4",
+      "statement": "Service invocation uses OSGi service references and Java reflection to locate and call appropriate service methods with Properties parameters.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/felix/FelixFramework.java#L243-L285",
+          "version": "repo-lines-v1:sha256:bb6f12bf2b01b83d17062d9d51be6d3c6fbf6fdf706332a581c152f74eb531b2:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg1ZGZhOTI1ZjI0NmQ5NmFmNTIwMmE2MmJmOGFhZmY4MTJjMmJmNzhlMDBjZjFkNTg4MThlMjJkZTQ0N2FjY2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZhYzJhNTRkMjk1NDEwOGU4ZGE0NWFiZmQ2Y2Y5YTI4YWViZGM2NGNiOGFkM2E4NTE3ZTQ4N2I2MTM2YmIzNGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNlYWJiZjQ1MmRlMDZkYWZiMGM0M2UxNDgwZDUzNTYyYTNlN2YzZGIyNzE0YTI5MDNjNGVmNTBlYzYyYTJiMjEifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.2",
+    "at": "2026-09-21T12:35:12.771Z"
+  }
+}

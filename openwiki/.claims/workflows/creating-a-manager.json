@@ -1,0 +1,258 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:fffc0d6c940128417071fa66d01082dbf0228a6ac311f25e83f423408c375773",
+  "claims": [
+    {
+      "id": "claim_e4d8014beeb5415299df3ac11306c0e0",
+      "statement": "The galasactl project create command with --manager flag generates a complete Manager skeleton including interface, implementation, annotation, field handler, resource interface/implementation, exception, and build files.",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/pkg/cmd/projectCreate.go#L133-L138",
+          "version": "repo-lines-v1:sha256:f9b99722b69cec8d182fbf6522dacd9ef5a29e4196ba701f76192fce628b50ab:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWIzNTA3Yjg1ZjYxMjUwY2E5NjUxZjljMmJiNWVmZmVmZTM3NjIwNGZhNmEwZjUxZTExMDM4OGM4OGI2NDUyNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWEzZDM2OTFlZTZlZjA2MWViZTNlMmE2Nzc0ZWU5MzMxZmM2NDMxNDU1NWFjY2RiMTEwMzliYzdmYmNhZjU4OSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmMyMDgxNjBmOTc0Yzc1NDBkNGMwNjFkYjQ3MzM0NzY4YTE5MmRmZDVmZWQ5NzQ2NjE4YzU3OTBiNTg4NGVlMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGE3NzIwMDUzNGFlNGY2MWMzMWMzODFlYTMyYTk4ZTI0NTlkMGQ5ZWE5MmQyYWU4ZDExZDI1YjljYzNiNzAwYyJ9"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/projectCreate.go#L297-L300",
+          "version": "repo-lines-v1:sha256:c9ad648d7333c2eaf41f673ac0c3efc5fa0ef684a432d09d49064b16a4fb2608:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWU5ODliNTkyNWVmM2IyMTZkMmRiZDM2MTFhNzFiYTMzNGI5YWMwZDJmYmRiZDcwY2U0N2RlZDc1MjE3ODgxMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODAxOTJjMmI1NTc1YTM2Y2ZjZDUwMTUwYTNiMmJhNGRiNzc0YWJmNTU2ZTk1ZjVlMTAxOWI1MmUyMDk3ZmQwZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjNhMWU5YWFmODA1ZjlkNzM3YWI2N2RlNWFhNTU0NjllNGEwNzhlNjU2ZjUyYzcwNDY0NzY0ZGIxMDRiMDgyZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTUzYWM2ODlmNjcxMjEzNTMyZmFkNzc3MzJjM2NkYmM1OWI5Yjg3ODIzYmRhNzE5NGZmNzg5NDA2ODg5NWE0YiJ9"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/projectCreate.go#L809-L873",
+          "version": "repo-lines-v1:sha256:80032970a8ec318df41d4d4258752d5bb24996991b04bb59545d977be2571ddd:eyJzZWxlY3RlZExpbmVDb3VudCI6NjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVkMDIyZjNlNDY5Y2U3ZDBkMjlmNzRhYzRhYWU4MjE3YzRjYzAwODUyNjIyNGM3OThhZTAzYTk0MWYwNDI5M2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU1N2QzMTBlZTg3NWJiMGM2MDFkM2Y2YThhYjA5NDlkY2UwYTZjODZjMjI4YTMzNDhiNWE5ODhhMGEyYjcwZTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY3OGQ2MjI3YjM4ZTM2ODhlYWEyMGUzMjg0YmEyNzZlMzBmZTU3M2E1MzYzYmZkZTJlYjQ1ZDFjYWMyZjBlOTgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8ea730e18fb4403bbde9bc2e752f49c9",
+      "statement": "The generated Manager implementation extends AbstractManager and is annotated with @Component(service = { IManager.class }) to register as an OSGi service for automatic framework discovery.",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/pkg/embedded/templates/projectCreate/parent-project/manager-project/internal/ManagerImpl.java#L50-L51",
+          "version": "repo-lines-v1:sha256:641f24e433074187708c0c9055b512bfcd93b3c8971acc33dfac13e99f2f0413:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjMzZGQ2ZjU2MGU4MTlmOGQzNjA1OTQzN2JjM2YzMzgzNjk0NTAwYmY2ZTIxYTliYWE5OGRmOGE3YjM4ZjIzOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDIwZDU0MTNmNGU1ZGI5Y2RkMzNhZWFhYTEzZDcyNzg0ZmNjYzZlZjM1ZGZkODhkNTdkNjBmNzdjMWZmNTdhMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTJhODc1MTc3ZTEwZDAxYTgwMjAxZDI4MmEzMDAzNmNiOTIwZjc3OWVhYjlhZWZhYTI3Y2RhNTg2ODIzNmU2OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTQzYjBhODQxNTJlOGFkZDc5NTk1M2U2YjNhZmEzODQ0ZmY0MTZkMTQzZGE1ODA5ZTFmMDRhNTY4NWE5Zjk3NCJ9"
+        },
+        {
+          "resource": "repo://modules/managers/galasa-managers-parent/galasa-managers-comms-parent/dev.galasa.http.manager/src/main/java/dev/galasa/http/internal/HttpManagerImpl.java#L31-L32",
+          "version": "repo-lines-v1:sha256:0d72923965e08ab26d38ff91c1fe41aa1ed27429b30a26f72c5d99c1b01fbc55:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjMzZGQ2ZjU2MGU4MTlmOGQzNjA1OTQzN2JjM2YzMzgzNjk0NTAwYmY2ZTIxYTliYWE5OGRmOGE3YjM4ZjIzOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDhhNDMyYzllYjE5NDFjNWE0NDllNzI2YjE2YjZkNWMyY2JjNTZhZGMzOWY3MDFkNDIxNmEzNThlMzJlYmVjZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTFlOWUzOWZmY2RmNWMxMmY5NDI4OTliOGM4ZDliYTkwYzhhMTE4YTE5OGQ1NjA1NzIwMmVmMmRkOGMxNDA3NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDI0ZDRjMzAxZWZiMmI4OTEwZWViN2RjMmRjMWVkYjU1YmFjYTA3MjJkOWMzMGExODQ0ZTYxYTcxMmRlMjY3ZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_3109988f99794cb7a0388bf423a714c9",
+      "statement": "Manager implementations must implement the initialise lifecycle method to check test class fields for manager annotations and call youAreRequired if any are found.",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/pkg/embedded/templates/projectCreate/parent-project/manager-project/internal/ManagerImpl.java#L75-L93",
+          "version": "repo-lines-v1:sha256:42bd5f00f8024b180e4cca5d56f6388f6e3d810c6eec05eb18df881c45ece1d6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVkYzJiMzExYWJlODc1NzJlOGE3Y2MwZDk5NmE2NTg0NDA3NmU1MjMyZDIxYjdhODU0NzVmOWI0MDU1Yjc0OTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdkMThjZDdlNjU3MGVmOWJmYzUwNWJhYTFhZmRhMDk2NzdhY2Y5NTIxMzRhYWJkZTRjMmFhYjEyOWJjZjI0YTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYwN2Y2MTExMzFlMTFiNjdlNTYyODA4NmQ3YWQ4MTE0ZTI3NjJmOWM3ZDljYzMyN2U2NmFkMDNjMGRhZjBlYzQifQ"
+        },
+        {
+          "resource": "repo://modules/managers/galasa-managers-parent/galasa-managers-comms-parent/dev.galasa.http.manager/src/main/java/dev/galasa/http/internal/HttpManagerImpl.java#L66-L76",
+          "version": "repo-lines-v1:sha256:2baea98cd74de47716f495c12ced093506926f54985becb0c38664ac9a0b98d5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM4MTIyNzk3OWU1NDFmZmQ1ZTllNmNlZjMzZWJkZjJjYWRmNGViOGUwYjIwZDUwNTQ2NWI4MDhmNGEzZjEyMmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM2OTQ2ZTEwMWU1ZTc4ZDkwYTUxMGM2OWYyNjZlZjc2NTQwZDMwOWIxYjgyMjY5NWI1MzE3MmVkMmNhYTAyNTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYwZTA2N2MyNzY0NmM2YWY3NjEwNzk4MWU5YTE0NWRmNTVmMTAzYzQxYTVhOWVkMTgwOGI4YjIwYjZiNjEyN2YifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4f8e2e08f6ae47e2892030de6591f122",
+      "statement": "The youAreRequired method adds the Manager to the activeManagers list and uses addDependentManager to locate and activate required dependency Managers.",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/pkg/embedded/templates/projectCreate/parent-project/manager-project/internal/ManagerImpl.java#L109-L116",
+          "version": "repo-lines-v1:sha256:409120f5498ca0fde91e6260e3ef3da7f8b4a38a5905184771ec68214b7b883b:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWRjMmIzMTFhYmU4NzU3MmU4YTdjYzBkOTk2YTY1ODQ0MDc2ZTUyMzJkMjFiN2E4NTQ3NWY5YjQwNTViNzQ5MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODgxYjAyNDgxNmFhMGY1ZmQyNzk2N2QwYjdlNzk5MjkxYWNkYWU5NzZlOWVkOTI1ZTQ4ZGVlZTZkOTVkZjBkMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmIzZDkxN2UwNDRkZGM2ZmZlMGYxODIwZjg1MDJiYTIxMzgzNmExODAyMmViMTA5ODA4MWNkYTcwNmI5ZDFjYyJ9"
+        },
+        {
+          "resource": "repo://modules/managers/galasa-managers-parent/galasa-managers-cloud-parent/dev.galasa.docker.manager/src/main/java/dev/galasa/docker/internal/DockerManagerImpl.java#L112-L128",
+          "version": "repo-lines-v1:sha256:76c4895c250fbc64d24b755702b80e976f34d0ed0169c27c2fedd80eb25a240d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhmYjJmOTg5NTY2NzI5MmE3NTViMWZkZDQyNzRiMGU4MTQxMDdhYjc5M2ZhOTU2YWRlZTc5NzUwODNkNDNmNWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI5OWQ4OTk0ZWQ0YzgzYjQ3NjdlYmI2Y2JhN2M4YzJlYTdjZTE3ZGNjM2Y0ZjQwYTkwZjRlNWM0ZmE3ZGNiYzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjliZWM1ZDFjNjcyMjhjNTQ2YmM5YTNkYzI3MTdhMTE3MTQzZGM1NjMzYTMzYjkzZDMxMDYzM2I1ODc5ZmZmYjAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_11a97ea3b26646d1bdc032583e383346",
+      "statement": "Methods annotated with @GenerateAnnotatedField are invoked by the framework to create resource instances for annotated test fields, accepting Field and List<Annotation> parameters.",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/pkg/embedded/templates/projectCreate/parent-project/manager-project/internal/ManagerImpl.java#L139-L144",
+          "version": "repo-lines-v1:sha256:087ba1abd9dcd56ddd6fb178b636941dbda789d3c408ffcc1953b0bbab363288:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTRlZTQxYTM1MTQ0ZTZlYzU2NjJkZDg5M2E1OGNjMDJhNzEyMjU2Y2NjMmU0NzE0YWFmZTFmNjcxMDU2OGQ3NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDIyMmM0OThjNzNhNjg4YjYzZmZiNDRhNDVlMzAwNjQ2ZTM2ZWIxNjU2YzUyNDA0Yzc0NDI0ZGUzNDMzMTljOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTRhOTliYTBmZWE4MmQwYzIzYmQ1OTRkOGViZTM2NzY0NjVmNGJhMzA3NmRiMTI2ZjRiN2JiNWJmMjE4NDAzOCJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/AbstractManager.java#L138-L196",
+          "version": "repo-lines-v1:sha256:0d0c9dce76d5022d2d9a5ac586c461639a412900df53e8409f452d086cf6f128:eyJzZWxlY3RlZExpbmVDb3VudCI6NTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVjMDIzMzZkZjkzZThkNTVlYmE3ZDFkOTdiNWI5YjZjY2M3ZWUyYzYxMWExZmRmNDRhZDY2NDY0YTkzNmVkYjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ1M2JmNDM4NGVlYjg1ZGM3YzIyMTRlNzQ4MTJjODljODg5NTA1ZDg0OTA0NzM3MWM5YWM3NTY3M2UzZjZiYjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVjY2MwM2RjNzgwZjExN2UxYTE5NTQ0ZjAzYzVkZGNhY2RmNDU2NDI0ODExNTQ3YjUxZjcxZjQ5ZDA3MzAzYTgifQ"
+        },
+        {
+          "resource": "repo://modules/managers/galasa-managers-parent/galasa-managers-comms-parent/dev.galasa.http.manager/src/main/java/dev/galasa/http/internal/HttpManagerImpl.java#L37-L51",
+          "version": "repo-lines-v1:sha256:0dee0e8fc5dc8101caa6ed5b129cec41c9dac8153c024e5c6ccc60cf49a4da1f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3YjU5ZmFiNGI3MGRjY2UxOTY0OGY1MzMxODlkYjBiMjNjOWZhYjM4ZDNlYmIwOTY2M2ZiMzI0ODhlZGVhNGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU0ZTZiOGRiZmVhYjFhZTk2ZDQ2NDE1MGUxMWM1MWYzODI5NGZiNWM3NDg3NDQyZDA5Nzg4ZGIyNDA4YjUyM2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY4MTZlOGViYjlmMGE2N2NiYmY0NWU4ZDFjN2JjMGI2NjlmNmNkYzRkOGJlN2I4MzAwMTNjNzk4NzBlN2U5NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7e1610c96b5843f8a1e65e33ced6618b",
+      "statement": "The provisionGenerate lifecycle method must call generateAnnotatedFields to trigger invocation of all @GenerateAnnotatedField methods and populate test class fields.",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/pkg/embedded/templates/projectCreate/parent-project/manager-project/internal/ManagerImpl.java#L164-L167",
+          "version": "repo-lines-v1:sha256:16ba2ec3959f1d71f6e739e556c5ab7e5608ba9535b62a03d7b4962e3d4fc6f7:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWRjMmIzMTFhYmU4NzU3MmU4YTdjYzBkOTk2YTY1ODQ0MDc2ZTUyMzJkMjFiN2E4NTQ3NWY5YjQwNTViNzQ5MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTgwNDAwODI5ZDQ5YzFmZDM0MmI3MjVkNzM0OTU3MWJiNzgwZmIxOGIxODcyNzY0ODEzYmI4YmUxYjZhMjQyOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2IwMjA0ZmEyZDMwMGU3MmE0NWQwYTA0MjYwYjIxY2M2ODA5OTA4M2FmNGJlNzY3MGUxOTA5OGNjMTM3ZDVmNyJ9"
+        },
+        {
+          "resource": "repo://modules/managers/galasa-managers-parent/galasa-managers-comms-parent/dev.galasa.http.manager/src/main/java/dev/galasa/http/internal/HttpManagerImpl.java#L54-L56",
+          "version": "repo-lines-v1:sha256:90e057a82269d55af995989656e0bb91c6b09373d884d60c67d4e80360884fb7:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmQwNzYyNjkwYTE2NDhiNDdiYjQ5NDg0MzhjYjc5YjA2MjBmZGEzNTJjMGNiMGU5MTg0MjRlYzQyYTNlNjQ3YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzY5NDZlMTAxZTVlNzhkOTBhNTEwYzY5ZjI2NmVmNzY1NDBkMzA5YjFiODIyNjk1YjUzMTcyZWQyY2FhMDI1OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGRiYWIzZTNmYjcwN2MzMjVlNGQ2NmM4ZWJjNGNlZmUwYzJmMTQ2NmY0YzU5NzZlMTE2MmYyNzJlM2ZkNDc5MSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_65146a8bb26945a4ae5c51b3c29968ee",
+      "statement": "The provisionDiscard lifecycle method cleans up resources after test execution and should not throw exceptions.",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/pkg/embedded/templates/projectCreate/parent-project/manager-project/internal/ManagerImpl.java#L184-L188",
+          "version": "repo-lines-v1:sha256:662b60277cf855ba7c927f31702af6d49cba20518a7dc6f454254d932ea61dd6:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWRjMmIzMTFhYmU4NzU3MmU4YTdjYzBkOTk2YTY1ODQ0MDc2ZTUyMzJkMjFiN2E4NTQ3NWY5YjQwNTViNzQ5MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDJhNTE5OWU4N2JmNTMzYTczMGU0MWQwYjMyZmU0ZTI1ZDFiZWNlNmMyZWY2ODUzYmVmMmMzMWM0NTMxYTkzNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjIsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTM4ZGU3NGJlOTdiZjNhYmE3ODcyYTYxYmEwZTQyMDg0MDA4YzgxZThhMjAyYTYxMjEzNGM3NTVhYWY3ZmEwNiJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/IManager.java#L291-L307",
+          "version": "repo-lines-v1:sha256:9bc5ed8cb96c1c9b6c86d573a3640903fcaf8bdb0bbdf946412f4890380b23be:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM0YjQzNTM5YWUyYjBiZTE5ZDhlMzE1OTVjMzQyMjcyYzlhN2YyMGZhMzc0YWMyMDQ3OWFmZmEzYjhhNmNkYzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM0N2E1MDc3MzdkYTEwNWNjNDI1ZDBlY2JjZDA0Y2FjYWZmMTQ2NTdjYjBjZTQ3NTU0Y2UyZTZjMmI2MWQxMTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgzNTk5NzMxM2Y3ZTc5NGE4MWNmOTIzNDYzYjYyOTBhYTQ0ZDBiNGFlNTBjYzVjZmZmYzk5YjA5YjlmNDI4ZGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYyODM2N2EzNjc3NWNkOGY0YWU0MGMzYWY1OGU4OTg1NGMxNWM5ZjY2OTVhNTc2YWE3OTk3OWNmNGY0NTRmMTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_861ff5b60de84373b94478d30a8c8653",
+      "statement": "Manager public annotations must be meta-annotated with the internal ManagerField annotation and @ValidAnnotatedFields to link them to the Manager and validate field types.",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/pkg/embedded/templates/projectCreate/parent-project/manager-project/ManagerAnnotation.java#L27-L31",
+          "version": "repo-lines-v1:sha256:e1799c1f98332da90ea99f785dee1e5a4bdc1bc7b9b850ab59bbe6612c90f1b9:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGY3MDE5OTc2MDZmZTE3ZDNmOTVjMDExNjNlNmEwYTRiMjg5ZTI3YTFhYjZhNGM4OTE5M2QzNzExNjU2MGZkNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMThkZWQwMTY5MjFkMDRkZmI2ODI5MGRlOGYxOTkzZTBiODMzOThmNWI1ZmE3YTk5YmEwODZmYWM0MTc2ZmE3ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGMxZTc1ZDRkOTRlZTUwMGQ5OWE2YTAxYTAwOWYwZTYzZTZhNzk0MGVjZTA5NmE3NjdlMjVhNmRlNjk5YjM5NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTc0NzdkNjQzNmM5M2VhMDM3NmRlYzEzNzc4NThjMWY3OTk3YjFmYzY3OWU5OGFiNGNmZTc3NDkxOTRlZDQ1NiJ9"
+        },
+        {
+          "resource": "repo://modules/managers/galasa-managers-parent/galasa-managers-comms-parent/dev.galasa.http.manager/src/main/java/dev/galasa/http/HttpClient.java#L23-L27",
+          "version": "repo-lines-v1:sha256:3b3199e7c66be6a1e1f3f24f59a83da4334b4715e7b53139b93b92add385d626:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGY3MDE5OTc2MDZmZTE3ZDNmOTVjMDExNjNlNmEwYTRiMjg5ZTI3YTFhYjZhNGM4OTE5M2QzNzExNjU2MGZkNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWJlNmQ5OTkyMjgzNDEyNGYyNTNmYjE0MjU0M2Y5MDYyYzkwMjNjYWMyZjUwMmJkOGY3MTExNThmNTJjZWZiZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmY4YWUyMzRkZTAzNmZiODI1OTEyZDVjZjg5ZTU3Mjg2NzVlMzVlODEwNDcwMDA3NDYxZmNlNjc5YmZlMDFkNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWZhNmJkNTFiMmMyODY0MGUxYzgxZWRmYzFiYjljZGMzY2I1ZmQxMTdiMjBkZjY5NmI2ZmNhMzY1NzE0ZjY4YSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ec2df09aab8d45d7ae01260fbb572e1e",
+      "statement": "The internal ManagerField annotation is a marker annotation with ElementType.TYPE retention used to identify which Manager handles a public annotation.",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/pkg/embedded/templates/projectCreate/parent-project/manager-project/internal/ManagerField.java#L20-L23",
+          "version": "repo-lines-v1:sha256:87cd5b2e2d7ffe954f1a4be6955d59ff2df007050fb1a65779d5d4324e3881e4:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGY3MDE5OTc2MDZmZTE3ZDNmOTVjMDExNjNlNmEwYTRiMjg5ZTI3YTFhYjZhNGM4OTE5M2QzNzExNjU2MGZkNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjRhNzY1NmJlMzhlZGEzY2M4MWRmNmU2YzVjOGJhZTY4NzhkYjE1YTI2MTVhMzk4ZWVjMmM1OGM1NmEwMGQ2YyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTIxY2NjYzNlMmNiYTY1MWQyZjE3ZmUxMDhiMzk3OGZmZGM5M2E5NzI5MDMzY2E0YjQ1MzdjMDNjNGJkOTYyYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjIsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTM4ZGU3NGJlOTdiZjNhYmE3ODcyYTYxYmEwZTQyMDg0MDA4YzgxZThhMjAyYTYxMjEzNGM3NTVhYWY3ZmEwNiJ9"
+        },
+        {
+          "resource": "repo://modules/managers/galasa-managers-parent/galasa-managers-comms-parent/dev.galasa.http.manager/src/main/java/dev/galasa/http/internal/HttpManagerField.java#L20-L23",
+          "version": "repo-lines-v1:sha256:3129f4cef4e7a9b8288409284b78d8df3caf8095d34d7efe938c862a58d28f0e:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGY3MDE5OTc2MDZmZTE3ZDNmOTVjMDExNjNlNmEwYTRiMjg5ZTI3YTFhYjZhNGM4OTE5M2QzNzExNjU2MGZkNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmY4YWUyMzRkZTAzNmZiODI1OTEyZDVjZjg5ZTU3Mjg2NzVlMzVlODEwNDcwMDA3NDYxZmNlNjc5YmZlMDFkNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_765e0f0fbaf344f199f84142e62e10fa",
+      "statement": "OSGi bundle configuration in bnd.bnd must use Export-Package to export public API packages while excluding internal packages using negation patterns.",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/pkg/embedded/templates/projectCreate/parent-project/manager-project/bnd.bnd#L1-L7",
+          "version": "repo-lines-v1:sha256:e149faeb5bd6fedb720766b0f41a587cf3930dd84702b7d584a9034d0e6b1425:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTc2OTIyOGIxYjc3ODEwOWJmZTgzMWZlOWIxZjc2OWJhMDNjZDFiOTNhYTdiOTRmNzVmZTlhOTk5MTIxNTA0ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjUwZTQ3YjU1YWFjNzYyMzFiMDI5MTA2YWQwNDk4MjU2OGNlYmUxMWE3MDE3ODgzYThlZjE2MjU1MzA0YTE4YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://modules/managers/galasa-managers-parent/galasa-managers-comms-parent/dev.galasa.http.manager/bnd.bnd#L1-L3",
+          "version": "repo-lines-v1:sha256:c5e4adb93f55a0a47b0c71828bf45d8b491aeba9e5c703151ff7611c085e6762:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTc2OTIyOGIxYjc3ODEwOWJmZTgzMWZlOWIxZjc2OWJhMDNjZDFiOTNhYTdiOTRmNzVmZTlhOTk5MTIxNTA0ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmYyMjZkYWM0OTZhZmExMzc4MzMzNjc0NTU5MTA0ZWZiZWE5Zjk0M2Y2MTU0ZDU3MmM2NTBjOWNhY2Y0ZjY5MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmEyNWM2ZWQ4YzkxNzk4NmJjYmQxNjU2MTllN2QxNDE4NjljNGY3ZjI0YmM1ZTdjNWFiMzkzNzg1NjRjZDQzMCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_dfaeb6d5ab3f4738857c33a6de496af6",
+      "statement": "The Import-Package directive should mark build-time annotations like javax.validation.constraints and org.osgi.service.component.annotations as optional using negation to prevent runtime resolution failures.",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/pkg/embedded/templates/projectCreate/parent-project/manager-project/bnd.bnd#L5-L7",
+          "version": "repo-lines-v1:sha256:56c993ee14c44f336b8dd6c5619557dd055c2959361487ac5f814dfa1a3695f8:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmE5ZDJlMDBhMTllYTZjYTFkNjZiOTQzNDZmMzgwMGUwNWQ2ZmYyMGFmY2QxMDk4MDg1ZWRjMjRhYmMyMzFlOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjUwZTQ3YjU1YWFjNzYyMzFiMDI5MTA2YWQwNDk4MjU2OGNlYmUxMWE3MDE3ODgzYThlZjE2MjU1MzA0YTE4YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTMwYjZiYzFiYWIzYjBhZWZlNjkyMDQxNDk5YWEyMDZmMWVjNGNhYTFmMmQzMGFlNmU3MDc4ZjgxMjk2NjNiOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://modules/managers/galasa-managers-parent/galasa-managers-comms-parent/dev.galasa.http.manager/bnd.bnd#L4-L12",
+          "version": "repo-lines-v1:sha256:b5c152491bdc94ec87c82daa11a88a272dd96085ff25af2526138cbc5ad4083d:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGFlNmJlNmVhNTMzMDFjNTQwMGMxN2UyYTNiMGI5YTdlNzM1MWYyN2FmYmE0YzBjMGFkOWM4YmIwN2ViNmNhNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWNhN2RlZDU1Yzc2Mzg0NWUxNzkzNzI5YWU5N2E5YjFiNjZmZGQwMzQ2NzU1ZTI4NWRjZThjODJmZjlmMTFiZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzVlNGFkYjkzZjU1YTBhNDdiMGM3MTgyOGJmNDVkOGI0OTFhZWJhOWU1YzcwMzE1MWZmNzYxMWMwODVlNjc2MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTg2M2EwZTFlNGQ3MTlmMTg0NmVmMmFhZDhiODNjODhhOWE1YzVlNTk4NzFlYzEyYTAwYWIyZWM4NTM4OTM2ZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_3385bf518bc74c8c8b822fa3903fd795",
+      "statement": "The areYouProvisionalDependentOn method returns true for Managers that must provision resources before this Manager, establishing provisioning phase ordering.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/IManager.java#L122-L129",
+          "version": "repo-lines-v1:sha256:5cd240001cb9fd6053081e7cd282faf4be5649e4e50e29227433a1d40a8db722:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzljYmJjNjU0NjlkYjFjYTI4NDJlZmQ5N2RmN2VlMmNlNmNjMTU3MTQ4MmQwMWExOGI3OTBhMTBjN2M1MTBmMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzE0YmYxYjIwODUxM2QxNzcxY2VmNjgzNTQ1OGQ2MWJkN2IwYzhiMTMwMDgzZTEwZDU1YjA5ZmQxOGQzMTZiMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZThhMTI1YzE0N2UxZTEyMjhmZGQ3OGY5M2E4OGJlNzYzMGExZDNmMTAyN2ZlNjQzM2FiYmE2NDkzMjA0ZGU0MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODM1OTk3MzEzZjdlNzk0YTgxY2Y5MjM0NjNiNjI5MGFhNDRkMGI0YWU1MGNjNWNmZmZjOTliMDliOWY0MjhkZiJ9"
+        },
+        {
+          "resource": "repo://modules/managers/galasa-managers-parent/galasa-managers-cloud-parent/dev.galasa.docker.manager/src/main/java/dev/galasa/docker/internal/DockerManagerImpl.java#L130-L136",
+          "version": "repo-lines-v1:sha256:9b49b2a9be9286ef4e95432eda56d69e3521ed1c9be310a7b95e15b6222ede5b:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWRjMmIzMTFhYmU4NzU3MmU4YTdjYzBkOTk2YTY1ODQ0MDc2ZTUyMzJkMjFiN2E4NTQ3NWY5YjQwNTViNzQ5MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTk5YmRlZmVlYWNhNjM0MGUwMjkwZGM4NmU4ODljODlkNWUxODlhYTViYTQ0YjU4NWIzYjcwNzM0ZjRhNjJkOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2I3YTdmZjY2ZTRiMzZlMDczZmRjNDU2NWQyMTU4ODhmYWY5NWI2MWU1MzcyYWEzNGE1YjAxZDk5MDQ0NDUyMiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_569ac881cbb647b5a0fc1849a83a7b6b",
+      "statement": "The IManager interface defines the complete Manager lifecycle including extraBundles, initialise, youAreRequired, provisioning methods (provisionGenerate/Build/Start/Stop/Discard), test execution hooks, and shutdown.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/IManager.java#L33-L232",
+          "version": "repo-lines-v1:sha256:e016e9169c7118807b708886f86c07bac7fdb4bd03318ba1a691d92d1950b47b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAwLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIwYTM3NTY1MjY1YzE4YzIwZWRjZWNlYWVlNzQzYzk5NWU3NTc5Y2M5ZTk5MzIxNDI4NTFmMzc2ZWM1MzQzZWJmIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJhYTJjZjc1NjdhODRhOGY4YjM5NWM0MGUyM2YzYTM0NDY0MzQyMGRkMjFmM2MyM2RkNmEzMWQxZGY4Nzg0NmJjIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIxOTQ3MjNkMjAzMGQ3M2Q5MjhhYjBlMTAxYzBlNWEwZTM0YmVkZWQwNzAzNjMyOTg3NjM0YzgyYjg3ZTA4ZWVlIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJkZGJjODQ5ZGQ1N2Q5MTFiODNiNWFhZjFhNjMxMDU1Y2U1ZjUwYWZmMWI1ZWE2YzBkZDQ4NmFlNWUzZGFiYWI0In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_ba7af462587f4df98cb876a120f07941",
+      "statement": "AbstractManager provides findAnnotatedFields to locate test class fields whose annotations are meta-annotated with the Manager's field annotation, supporting annotation inheritance across test class hierarchy.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/AbstractManager.java#L80-L121",
+          "version": "repo-lines-v1:sha256:b67b40d2eb6f22fc3ff48c0c92b468e2c42a21ef26819214e6d4a6d605ef6b84:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMzNmJmNjFkYjg3NTRjMjFlMGUyODU4OTEzYWNiMTU2OWQzZTk3YmI5M2U3MjBmNzQ1ZDJkNzM3MDZhZGVkN2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNlMzk2Mzc3OGI5ZDgzYmM2MGNiMmNkYTYxYjc3NTU5YWI2MjkwYWI4NWQ1YTRiNDIwOWEyYTI1NmM1ZjMwZGMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ4MjRjNmVjZjFhZDEyZGFlYjdjNDcwNDliYzcxYjdmOTk5MzBlNWUzYjg0ZGIwNGU3MjIwOWU4YWIyY2EwOTkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9a838ec35f424d5987c8cb7b681425f0",
+      "statement": "Resource provisioning throws ResourceUnavailableException to indicate temporary resource shortages, causing test runs to enter waiting state in automated environments for later retry.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/AbstractManager.java#L138-L196",
+          "version": "repo-lines-v1:sha256:0d0c9dce76d5022d2d9a5ac586c461639a412900df53e8409f452d086cf6f128:eyJzZWxlY3RlZExpbmVDb3VudCI6NTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVjMDIzMzZkZjkzZThkNTVlYmE3ZDFkOTdiNWI5YjZjY2M3ZWUyYzYxMWExZmRmNDRhZDY2NDY0YTkzNmVkYjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ1M2JmNDM4NGVlYjg1ZGM3YzIyMTRlNzQ4MTJjODljODg5NTA1ZDg0OTA0NzM3MWM5YWM3NTY3M2UzZjZiYjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVjY2MwM2RjNzgwZjExN2UxYTE5NTQ0ZjAzYzVkZGNhY2RmNDU2NDI0ODExNTQ3YjUxZjcxZjQ5ZDA3MzAzYTgifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/IManager.java#L144-L161",
+          "version": "repo-lines-v1:sha256:3e5d72a4a47db7bf855b94f214e935fd39876edbdf924bbf4ab2ac6f5035433e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5Y2JiYzY1NDY5ZGIxY2EyODQyZWZkOTdkZjdlZTJjZTZjYzE1NzE0ODJkMDFhMThiNzkwYTEwYzdjNTEwZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJhYTIwMjA4YTA5ZTYwODZlY2ZjYzcyNTc3MjQ1YTdkMDZjYThmMTc5NmI3MWIxY2M0MWM4MDUyY2ZmNTY3OGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc0ZWJiNjVmY2VmOTVmMjcwNTZiMDUyM2E2NmExYWM3ZTQ3OTQ5NDUwYzg0ZWFjMmJkZGJhZWVhNTY0NDZjNTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgzNTk5NzMxM2Y3ZTc5NGE4MWNmOTIzNDYzYjYyOTBhYTQ0ZDBiNGFlNTBjYzVjZmZmYzk5YjA5YjlmNDI4ZGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_67d1ef364db8417e8f2cded790e4b58d",
+      "statement": "The galasactl project create command supports creating both Manager and test projects together using --manager --managerName and --features flags, producing a structure similar to SimBank.",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L99-L111",
+          "version": "repo-lines-v1:sha256:4a101eb2d7a25d71b7152fe4263387d80bffe24e4a952e6ccbb4179e03eaecc4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImViYWZhZDgyNjliNGQ2MWFiN2E1OWE2NjkxNGMxNTBlZGZiNGMyMTk2NzM5NDk1OGU2ZDU3MDhlYmFkZTZiMGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYwY2U0NDA2M2JjYmIwZWY5YjAxMzllNDE3MTFmNGVlZWE0MGEwNWNkOGI1NTc3YzJlMmY4YWE3MzBiNTA1OGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVkNzYzNmNjMDE5NDhlZjUxZjI4OGI2NzAwMmEzNWFlMzA4NDIzZDMzMjVmMmY5YjY2Y2MwZjM3YzJkMjY1NWMifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/projectCreate.go#L276-L321",
+          "version": "repo-lines-v1:sha256:6811e4821b981c2326157e7edb437447ee79a742c7d6869fae440c5499563421:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA5NGQyOTc4MzkxMzA4NmU5YWY4ODU3MTU0OTA1YmFkOWVmOWY1YzRjOTVkNGE4MGFlODU4ZGFkOWVjMWEzM2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRkYzc2MDIwYmFlNzA1NzdlNjRiMzMwZGNhODNmZGYyNGYzZDc1OTNhMDE1NGQ4YWJlYzZkYzYzZjU4OTdmZDkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcxYmM4YjIwNzlkYjc0NTdhYTA5MjhjZTMyYzRlNWNkNGZhNmI3YmRiOTk0MDA0MWE5NWUzYzRlOWE2MzljMjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAxMmFmOGU0ZDhjZTE1ZjY1MWI0YzY3MmYyNzk3NWQ5MzFjZDA1YWM3ZWE2ZGU1NjE4MTQ4N2E1ODdmZDVkNDYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5c5aead2e1804e51b22a4ded6701b564",
+      "statement": "Generated Manager Maven pom.xml files use the maven-bundle-plugin with Export-Package and Import-Package instructions to generate the OSGi manifest.",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/pkg/embedded/templates/projectCreate/parent-project/manager-project/pom.xml#L64-L81",
+          "version": "repo-lines-v1:sha256:5c95ae62c78203e091abd8b75cd1aa387292c5468989ca5e4aefb8426f823b69:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJlOWYyNjI5ODVkNTljNTM5OWM0YmQ0OWYyMzU3YjVmOTAzOTQwMTIxNmJiNjllY2Q0ZDY5MzRlYzFkMTcwODAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU4MWQyNjZlNzI0ZTNhYTc5ZDY4NWRhYmJmZmNhNWFmNzRiMzQ3OWM0ZGNjMTU4Y2M0N2Q4Y2JhNTk0OGJmYzYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMxYjMwNGI1YzY5N2FjMzk1N2NlYTQxZmYwMWEwYmI0ZmFhOTYyNGY2ZmZlYTMyOWM0ODVmMGIyMGJhN2JkMGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVkYzc4NDIyMWM0Zjg4NmI4NTkyZGJiNTFlNTc3ZjYxNjE2YTM3MDFiNDlkZTkwNTM5NjVjNjdiMTMyZjU3OGEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e7b0de82821c428584b7e522cde532cf",
+      "statement": "The Manager implementation initialises the Configuration Property Store singleton in the initialise method using framework.getConfigurationPropertyService with the Manager's namespace.",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/pkg/embedded/templates/projectCreate/parent-project/manager-project/internal/ManagerImpl.java#L80-L85",
+          "version": "repo-lines-v1:sha256:95c68eb7fb11574f66d896689435135c9cc77bfbcac1052b1d37ee22952d43d0:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzI5MWRlOGIzNDc5NTQxZWFiYmZhNzZjZjBjNmNjN2Q2NjdlYzI3NzU4NGNhMTRlYzMzY2Q0OGQ3MmZkZTVmMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTZiMDQ0OTE0Njk3MjJlODM2M2E5NGU0MDQ0NTM4ZTAxM2EyYTIxN2UzNmIxZTU2OGJhNjBhY2I3YjRjOGYyZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWQyMGRmNjNkMWU4NGQ5MWY4YTcwOTM3MjQ5NTFhODYyMWVjMDAxNWNiNzY0M2NmNDgwZWMyYjJkYjBkYjQ2NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmNlMGMyZGZiMGU3MTgzMzZlY2I2OGY4YzVmZjUzNGY1ZGQzZWJmODAyMzU2ZGIyM2Y3ZmYzYmNmNjE5OTJlMSJ9"
+        },
+        {
+          "resource": "repo://modules/managers/galasa-managers-parent/galasa-managers-cloud-parent/dev.galasa.docker.manager/src/main/java/dev/galasa/docker/internal/DockerManagerImpl.java#L92-L96",
+          "version": "repo-lines-v1:sha256:38e93387753bd57d94cd811698f782ec3e556db3738b6f5eb3dfaca662d2a7d2:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzg3OGEwN2Y1ZTcwYWEyNTU1NmVhMDBhZWRmZWE0ZGY5ZWY5OWVlODZkMjc0Mjc1ZTAzYjdlOTdiNGZjYWQ0MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTZiMDQ0OTE0Njk3MjJlODM2M2E5NGU0MDQ0NTM4ZTAxM2EyYTIxN2UzNmIxZTU2OGJhNjBhY2I3YjRjOGYyZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzBjMWMxNGFkNWUxZGZjNmM2YzYzYjYyZDM4NDZkNDdlMWUyN2I4YjQ0OWQyZDE5NGZjZTZmODE2ZTY4MDM4YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWI1N2U1ZDVjYzFmNzdkMGRmYWFjZGY1YmIyOTRjMzQ0NjVlMThlMzlkNzlmNzEyN2JhNWRjYzI1Mzk3ODU3OSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.2",
+    "at": "2026-09-21T12:35:12.771Z"
+  }
+}

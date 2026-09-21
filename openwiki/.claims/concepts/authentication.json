@@ -1,0 +1,274 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:c88dc93ab280d0fcaded124f652bf3d57cb7dcacd5a03c4608979fa32cc0d5ac",
+  "claims": [
+    {
+      "id": "claim_f90754ffa8424566ac248e59914fc936",
+      "statement": "Galasa's authentication system integrates OpenID Connect (OIDC) through Dex, an identity service that federates authentication to external providers.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/docs/design/authentication-design.md#L1-L204",
+          "version": "repo-lines-v1:sha256:34c03c4f9576330f3cba4b423f705251a27684b3e0df7b9b08a1320f5e9d2229:eyJzZWxlY3RlZExpbmVDb3VudCI6MjA0LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJkN2FmZGM5Njk0ZWMwZDMwMDk3YzJlZmQ0ZmI2OWU2MDNhYWZjMjE0YTQ3MGMwMWI3NWExYTQ4YTYwMDUyYzIxIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJmMWI5MDE4NDczOTBiMGVkN2UzNzRlN2MxZTQ2NGVjMTdiNDZhNDI3YzQ4N2E1YWQ2Y2JkMjkwNjQwNTA4M2Q1IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.api.authentication/src/main/java/dev/galasa/framework/api/authentication/JwtAuthFilter.java#L62-L70",
+          "version": "repo-lines-v1:sha256:823a4c65ce5b7a6bb8faf16ad840e5797d19fbb2aa06a0589da0c4ac23c3488e:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGUzMDBhZGJiNWJlYmNmZGU4MzRhZjlmYzg2MzBmMmU3MjkzYmQ4NTA4NjY2ZDNiOGJhNjJhMTRkMTAzNmZhMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTZiMDQ0OTE0Njk3MjJlODM2M2E5NGU0MDQ0NTM4ZTAxM2EyYTIxN2UzNmIxZTU2OGJhNjBhY2I3YjRjOGYyZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTgxMjFmYjc3MjdlYWMzYTllZWI5NzA0YWEzNjNjZjcxYzlhN2FmNjhmMTllMWEyZDQxN2U4MjBlZmM2Yzk1ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzY5NDZlMTAxZTVlNzhkOTBhNTEwYzY5ZjI2NmVmNzY1NDBkMzA5YjFiODIyNjk1YjUzMTcyZWQyY2FhMDI1OSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_f10a34f4ea62425da9197a5d9d005074",
+      "statement": "The Web UI performs an OAuth 2.0 authorization code flow by calling GET /auth with a static client ID configured in Dex, then exchanging the returned authorization code for a JWT and refresh token via POST /auth.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/docs/design/authentication-design.md#L3-L45",
+          "version": "repo-lines-v1:sha256:c719b544f750dca3959c9d92badd222ea7893d3b47ee7f0455b24106c36ea767:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBkMzAxNDNlZjVjNGNhMzI3YWUzMWEyZWExZTE4ODJkYzc2NjIwYTRlNWI3ZDljZjNmYzYxODVjZjg1Zjc0NzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YzA2YzU2MWQ1YzMyNzM0MzY4NTI2OGE0NmIzMzkxZjM5OThlZWU4OTBkMmJlNTFmMGQyMWNjNGE1M2FlNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjoyLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE2NTgyYjM5ZDRmYzhkMDQ1MWYyMTRkYzdiYTU2NDNlMDRiOWE1MzM2NmE1MmNmYTg0YjJlYzQ0Njg5OGUzNzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNmZDc0YTAyMTg5YWUxZjMwMzQ2OWQ2M2UwYTJkMDJlNzY2NzcwZGY1OGRiYzZkOTk1YTU0Mjc4ODgwYmEzODEifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.api.authentication/src/main/java/dev/galasa/framework/api/authentication/internal/routes/AuthRoute.java#L96-L148",
+          "version": "repo-lines-v1:sha256:1e9c9b93b7c0c4e2566d9d99be327e8bd7f5459b55a4f2f41d0f53231ad094b6:eyJzZWxlY3RlZExpbmVDb3VudCI6NTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg0MDUwY2I2OWQ1Y2U5ZDIxMWZjNTBlN2Y0Mzk2ZDRlYWE2MmVkNzgwZGM3NzA1ZGUxOWM0YzhhYmVmNjM5ZjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVlMmI5ZTIxZmRjODZmYzJjMmVlNDQ3MjE4NWQ2NzY0NjdiZGQxY2JmMmUyNGI0ZGM2NDRhYjFhYmIzMzI1NDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk1OGI1ZjlkNTQzOGZmYTI5NTgxNjlkYjQxZjdjMmYwZDExZTE4ZGU1ZjZmZDlkNGYyNDM4ZTY1OGRiODQ4OGEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ccc092ae3e374374b2b3349ed92bca94",
+      "statement": "Personal access tokens enable non-interactive authentication and are created through POST /auth/clients, resulting in a new Dex client via gRPC with metadata stored in the auth store.",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L22-L26",
+          "version": "repo-lines-v1:sha256:bcc4cf946d2d50fa2bdff5640de39f4ed67259de28111cd9168ad10b27534243:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzJmOGE2ODczYmEyNDQ5OGE0NDliMDZkOWM1OGU5MTY4ZDYwYjA4OTU2ZmY2OTYwOWJmMjA3MWRjZWJhZTMzNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2M3NzhhN2E4NDM5YmI0Zjg0NjcxNDIwM2YyYmU1MGE4NDc3MjU0MDdlZGEwZDU3ODU4MDA3MmI4NWNiNjY4ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmY2OWMzMjIxOTk2ZDllYzc5NzA5MzZhZmFiNzViNTlmYjkxYTJiZDRjODQyMjA0MGRhY2ZjMzE1YzM5ODRjYyJ9"
+        },
+        {
+          "resource": "repo://modules/framework/docs/design/authentication-design.md#L46-L93",
+          "version": "repo-lines-v1:sha256:e1e517e2e9c1161e9aec937da9378927b804fc52db447ab735e65ada71fdcf66:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZkODMyZTRhYWMyMGQ0NThkMzQ1MDdmYjU3N2M3MTRhMGUxMzVmMDliMTRlYjE0NzFhMmFlMDBjMjk2MTI0MjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YzA2YzU2MWQ1YzMyNzM0MzY4NTI2OGE0NmIzMzkxZjM5OThlZWU4OTBkMmJlNTFmMGQyMWNjNGE1M2FlNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI4YzhiYjhlZjA2ZGY4MDYxMTdkNjQwNjE4YzZhOWJhODI1YjQwMzJmYTcwZjgxNWQ3ZTU0ZjQxYjRhNmU4OGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM5ZGQ2ZWMwYWJkMzFhYWY0MTI5MTQwYWNmNTgyNWE5ZDUyN2RlNWY0ZjYwNjA5ZDlhNDVkNDk1Y2EyMDkxNzIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2a3405d807f445a3b33ccc8e98f01f2b",
+      "statement": "Personal access token metadata is stored in CouchDB's galasa_tokens database including tokenId, dexClientId, description, creationTime, expiryTime, and owner, but not the actual client secret.",
+      "evidence": [
+        {
+          "resource": "repo://modules/extensions/galasa-extensions-parent/dev.galasa.auth.couchdb/src/main/java/dev/galasa/auth/couchdb/internal/CouchdbAuthStore.java#L61-L62",
+          "version": "repo-lines-v1:sha256:ff6f385eb45f8df80d3c1f59e2eb19e4b2b9dc68d02ee109af494d89450842d9:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTNlMmU0YTQzM2QzYjRmMTUzOWNjOTZkM2RlNDE5ODczYjVhYmIxOTExODhjNDRiOGY4MTY4MjQ0YmM0N2IwNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODE0MjFmYTk4YmE2NjJlMmY4ZTk2ZmNiYmM2YmEwMWQxMDBmY2NjNWIxMGZmYTlkYWZmMWNlZDYyNzQwZTRiOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmI5OTkwNjY2MzZjN2JlMDg5OTdlMjUzMjEzY2Y5NjIyZmZkNzc1NTljMWI2NjlkMWY3YmEzZWY4MmFiZmM4NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTZiYzg0NzJkMmJjZTQzNjU5MThhNzM3ZjgxYjA2ZDVmMGNiNmZkNjJlNjBmMDk5ZjgwZDc5ZGZlNDc5NjE2MyJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/auth/IInternalAuthToken.java#L15-L28",
+          "version": "repo-lines-v1:sha256:62ead18987b4b71635fbfdde6a06e002b12ec4d65b6063be0d55c1abe30dc67e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZjMjA2ZTNiYjhmMzM1ODliNTdjMDU5ZWY3OGYzMzNmY2I2ZTg3ZDhlNWE2ZjBkYzhlNDAwZTY2ZWFjMzExNTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNjY2E4NWM1ZjMyOTA1MzdjMjhlN2ZhYzM0MTM2YTkyZWVjNzc0ZTMzNDcxMzM4NDIxZWI5ZDg3NzYxYWI0NjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_97b7bc98ae7c46daa428b00b6045bbd5",
+      "statement": "The default personal access token lifespan is 90 days, configurable from 1-365 days when creating the token, and legacy tokens without expiry times are automatically migrated during auth store initialization.",
+      "evidence": [
+        {
+          "resource": "repo://modules/extensions/galasa-extensions-parent/dev.galasa.auth.couchdb/src/main/java/dev/galasa/auth/couchdb/internal/CouchdbAuthStore.java#L71-L72",
+          "version": "repo-lines-v1:sha256:ffe4b6c7711b7073673af37c4db8b5c5f7e321dd146bfc65f4b53401b3f2a27f:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTVhYzI1Y2Q0OGJjZjU0NDI2MDcyNmNhNGE4NmQ4NWNiOTFiN2QxNjNhZDU2OTMxYjdmODU1YjA0NmRiYmU4NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTNjMGE0MzNjMDFkODg3YTZlNWM4Y2U3MDNjNTcxMTJjOWU5OGYwZTcyMDcyMmY3Zjk1OGZhNDIwNDY5NTQwNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzUzNDJmYmFlMGUwMGJlZThmMDI0ZDYxNzEwNDZlODM0NmQyN2UxZTYxNDI2MGFkODFjN2ZkOWQxNTc3OGU0MyJ9"
+        },
+        {
+          "resource": "repo://modules/extensions/galasa-extensions-parent/dev.galasa.auth.couchdb/src/main/java/dev/galasa/auth/couchdb/internal/CouchdbAuthStore.java#L88-L164",
+          "version": "repo-lines-v1:sha256:9558cafa313865cdbd90a6a7b337a6200d3dc89cc34f97e6d3395a55461f0af8:eyJzZWxlY3RlZExpbmVDb3VudCI6NzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUxNGVjOTBlMzZhZGIwYTczZmVjNmQzNTQ2MGQ3MTAzN2MzMmIxMWNhZDAwY2EyNmM1MzIxMDRiOTlhZGZhOTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcwMDY5MTUwZTg0NmNiYTI3ZTQ3MGJmMTI2Y2ZmNTA5Yzk3NDgwYzQzMTdjZjg5OTExMjc5ZDNjYzY0YWJkODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEzMjhkMTdhYjcyOWZhOGI5MzM3MzNkNTM0NjdmZTUzNzE1MDc1NmEzNDRkYjllODFkOTUzZjFhNDkzNmYzODAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6a6d4912bccd457db2bec0325f8dbc2a",
+      "statement": "The CLI reads personal access tokens from GALASA_TOKEN environment variable or galasactl.properties file in format client_id:refresh_token, exchanges it for a JWT via POST /auth, and caches the JWT in GALASA_HOME.",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L22-L26",
+          "version": "repo-lines-v1:sha256:bcc4cf946d2d50fa2bdff5640de39f4ed67259de28111cd9168ad10b27534243:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzJmOGE2ODczYmEyNDQ5OGE0NDliMDZkOWM1OGU5MTY4ZDYwYjA4OTU2ZmY2OTYwOWJmMjA3MWRjZWJhZTMzNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2M3NzhhN2E4NDM5YmI0Zjg0NjcxNDIwM2YyYmU1MGE4NDc3MjU0MDdlZGEwZDU3ODU4MDA3MmI4NWNiNjY4ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmY2OWMzMjIxOTk2ZDllYzc5NzA5MzZhZmFiNzViNTlmYjkxYTJiZDRjODQyMjA0MGRhY2ZjMzE1YzM5ODRjYyJ9"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/auth/authProperties.go#L20-L54",
+          "version": "repo-lines-v1:sha256:37342278c3b8866023f86e16943662cb9318d85f145048c4ac8c9691d43bfb0d:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQwZDk4NmIwZGY3ZTljNDdhYTc4MmIwNjYwOTQ2OWJjOGVlY2E0NzYxMmI4MzhjZjgyOWRkYTRiY2RkZDMzMjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAwNzE4Y2NmYTQ2ODViZDNhN2U2ZTUyZGE1OWQxMDdhZDRlNTNmNzYxODdkNjMzOTA1ZTE5ZDU5MzdkNzRkMTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY1NjAxNzViODliZTQ0OWM2MjFiNzY2NDNlNTAxYTcwNWVlZjhmNWU2MjE1MTNlNDg4MzQwYmQ5NjVlZDdiMjcifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/auth/authenticator.go#L101-L121",
+          "version": "repo-lines-v1:sha256:5a2d26fe03219e3391e2ead05a077ec22221076205976b25e172f9e6ed6855bf:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBlZGQwNmVkN2U0NTBhNDdjNDBkZjk2ZDMzZDY0YTU4MGJiYmM5MDI2MWFhOTJkNTdiNzk1NjVhMWE3ZmQ5NzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVlNDExMjFjZDkzZTZlNDVlOWVjMDY1MWMxNmQwMjU5MzQxZjRhZjc4YjliNWVlMmFlZWQxNGMxMzNmMThmMzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA1Mzk2ZTQyNDJlNWIwNTYyM2MwN2YyZjVhOGU1NjNiOWUxNDBlMTQ1Y2U3ZThmMmRkMjMzYTA3NGNkYzMyYzUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_857eb6b3199e4c9891e6948b73a05127",
+      "statement": "The JWT cache stores tokens in files named after the API server URL within GALASA_HOME, encrypts them using the personal access token, and automatically discards JWTs within 10 minutes of expiry.",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/pkg/auth/jwtCache.go#L22-L25",
+          "version": "repo-lines-v1:sha256:8f4845e1dd1f5911e5a2e128b535a06c0ea74f4900ccd2a57469a3fb6e498f87:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmQzMmVlYmFiZDYyM2FkODZjZmEzY2M1MGVjNTNiYzMxMmZjZmI0MDk1MGExNjY3ZTEzYjViZjU5ZjZkZDdkMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmFmYmEwNTI3YzM5NTNjNGI2ZTBlNWI1NzM5YmE4MzYxMmY4MDUzYmNkYzk0NjY3MzAxOTNjZDFkNTkwYjQwOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2Y2YjAyZmMxYmFlNTM3ZWM5YjZjZDkwZjY3NmM1NDUwMzFlMTJjZGQxNjllMjkzNjdhOWZkNDNiY2FkMDMyOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGI3NTIxM2RhODgwNjM5Njk0MjgyYjEzMmVkMmYyNDIwYmY2YTkyYWY3MGRhYzMyNGY2NGY0NzM2MDkyY2ZmMSJ9"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/auth/jwtCache.go#L62-L80",
+          "version": "repo-lines-v1:sha256:da374fb7b5195375b926dcb1e6a050c9e1fec723b8dcba27534119e14d422f6b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjljNmE1OTAyYWQ3NzZhNjU0YTgwMTg5Y2Y4NWM1NWIyYmUxMmRjYTE1MTFjOTRmNDkwNzRkYzBmYjNmNjQ1YmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU1YTljOGU5YTg4MDMwZDI3MmU1OGY5NzM5NzYzMzkzNjcyNzI0ODJkMzQzMTEwZDNiMzIzZmIyMWIzYmVjZDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM2NzFjM2JlZTEyZmM5NzYzYTI1MzQ5YzEwZWIxNWFlN2NkYjAxNWIzOTlmZGFkNGE3NzY4Mzg0OTZlMjMzMDQifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/auth/jwtCache.go#L84-L100",
+          "version": "repo-lines-v1:sha256:1ba3748a66c849438ad8ee26cc189721a1a833ba2cec82d4681d2fe0fd1ea576:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRmMjAyN2U0MjAwMWE4ZTIyZGVkNzFmMjAzYzJiN2ZlYTQ5NGI5NzIzZDI4NGRkMzg1ZTliNjFlYjk2ZTNhZGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBkN2QwYTVjZWZjN2NkNWM0OGFhNjAyOTg4YjdlYTIyZmMxZjEwMGI0YjFmNWE1MTIzYjFmMDcxYmE0NTVjNTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM2NzFjM2JlZTEyZmM5NzYzYTI1MzQ5YzEwZWIxNWFlN2NkYjAxNWIzOTlmZGFkNGE3NzY4Mzg0OTZlMjMzMDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFmZjk1MmVjNjYyYWU4YjczZTI1NjNlMzcyMTJjYTU3YmY4NGVjNTNkMzdlNzNkM2EyYmNkYWI5ZGQyNDIxNDkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c613bb68f5fd464283cc242153fcc222",
+      "statement": "The CLI warns users when their personal access token is approaching expiry with a default threshold of 14 days.",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/pkg/auth/authenticator.go#L165-L199",
+          "version": "repo-lines-v1:sha256:70969b817c42ea0470e1ca81491dcbc97d66a57cd6c8183380e283d3dd53df02:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIwYjQ2ZmRlZGI0NzA1MTRkOWE0MTNlZWVlMjQwYzg5ZWUxN2VlOTQ2NGE0OGVhN2MzYjlkNDM3YTdhNjZmZjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3Y2RhODJkYTYwNjIzOGUwNWU2MjM5OTU2OWM1ZWUwMzk5MzQxOTY0OGFlNWQ0M2EyYmY4Y2Q2MzQ3ZjgyNjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUyNTdhYThjMTMyNjdmZjkzMGYyZTM4NGExMWIxYTQyOWI0NzcxNDdlN2Q5NTQzZWFiZjNhOTgzYjExZjg2MDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/auth/authenticator.go#L21-L21",
+          "version": "repo-lines-v1:sha256:8fcdd9e68eed12f1e163bcca77bba6ee4b5a896b6af97fd1b59407c434e3439e:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGZjZGQ5ZTY4ZWVkMTJmMWUxNjNiY2NhNzdiYmE2ZWU0YjVhODk2YjZhZjk3ZmQxYjU5NDA3YzQzNGUzNDM5ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGZjZGQ5ZTY4ZWVkMTJmMWUxNjNiY2NhNzdiYmE2ZWU0YjVhODk2YjZhZjk3ZmQxYjU5NDA3YzQzNGUzNDM5ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNjYjMxNTM3MTA1MTM1MDdlNDNmYWYwYjYxMGRjZmJhMTFlYTFmYjdhMTNkYTY4NTg0MTlmMzFjOTRlNGJmOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjQ3ZjA0OGU4NmE4NTViZDRiMGZkMDgwYWY4NTJjMDcyZWYzYmMwOWYzNzhhNGRjZmFkNDVjOTNlMTUxOTRiZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_5bf88afd838449f9a56a1a61838e9df6",
+      "statement": "The JwtAuthFilter validates bearer tokens on all protected endpoints by extracting tokens from the Authorization header, verifying JWT signatures using Dex's public keys, and validating claims.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.api.authentication/src/main/java/dev/galasa/framework/api/authentication/JwtAuthFilter.java#L119-L135",
+          "version": "repo-lines-v1:sha256:eb8d9266cac27dab673f78d44add94a12a07dd4367122d75fe658b2fd04de487:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5Y2JiYzY1NDY5ZGIxY2EyODQyZWZkOTdkZjdlZTJjZTZjYzE1NzE0ODJkMDFhMThiNzkwYTEwYzdjNTEwZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY1MzI0NmU5ODE4ZGU0OTQ1M2MyYzJmYzIzNDU2MWVlYjJiODQ0ZTFlMmIzNzg5ZWZmYzA3OWEyOWE1Y2E1NjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQxMGIzNmFhNzRhNTliY2Y0YTg4MTg1ODM3ZjY1OGFmYWYzNjQ2ZWZmMmJiMTZjMzkyOGQwZTkzMzVlOTQ1ZDIifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.api.authentication/src/main/java/dev/galasa/framework/api/authentication/JwtAuthFilter.java#L74-L113",
+          "version": "repo-lines-v1:sha256:4329222504d16167cb7208af4308211e84e7122d7050eabfa69f8b8d071310db:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcwNTk0OWZiMjhhY2Y3YjY3ZDcxYzI2YzEyNjFkYmU4ZTA5NmMyMWNiOTlhYjQ5OWFlODMwYjEzY2RhMjE2YTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM2OTQ2ZTEwMWU1ZTc4ZDkwYTUxMGM2OWYyNjZlZjc2NTQwZDMwOWIxYjgyMjY5NWI1MzE3MmVkMmNhYTAyNTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkxZjlmYzAyNTlhM2E0OTNmNWRhYzFlZDkzYmQ0M2QzZDhhYWJmOTQ0YjA0ODVhN2Q3NjNmNmQ4NTUyZTc0NzMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_317fffd3b1b241559948ae47c70f8a0e",
+      "statement": "Galasa implements RBAC with five built-in roles: deactivated (id 0, no access), tester (id 1, can launch tests), admin (id 2, all actions), owner (id 3, all actions, not assignable), and viewer (id 4, view access).",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/rbac/RBACRoles.java#L15-L22",
+          "version": "repo-lines-v1:sha256:0a75cb24686f110a63ddeb847d81e0934746555bc2276e01de5c01fa1938f98b:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODgzZDkyNTQyOGJlMzE4ZGJjNTU3ZDJkY2I5ZGIzOWQwODM2MmE2NzIxNTFmY2ZmNDM4ODk4NzVjZGVhZmNiOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZWExYjYxYjZhMjE4OTQzNDVmZDNiYTI3NTNlYWVlZjgxYWU1YTgyNjcxY2U5YWU4NDQ1MDg0Yjc3MzQ5NjYxZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2NmODk5ZjMxODVkY2ZmY2FlOTBkZTY2NGVhZmE5OTU3YTEwYTM4ZGEwNDlmNmRjOTJiMTI3YjIyYzM4OWY5OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjdmYzFmOTQ2OThjZWFjOTNhNjI4OGQ1NGRjYWRhZWQ5ZjYwYTJkN2FmNDUwNzRhNTZhZTY5NzlkZjVlY2YzMCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_d394cbbb0cc647ec9f0fa4176cae1a24",
+      "statement": "Built-in actions include GENERAL_API_ACCESS, TEST_RUN_LAUNCH, TEST_RUN_SET_USER, RUNS_DELETE_OTHER_USERS, USER_EDIT_OTHER, MONITORS_SET, SECRETS_GET_UNREDACTED_VALUES, SECRETS_SET, SECRETS_DELETE, CPS_PROPERTIES_SET, and CPS_PROPERTIES_DELETE.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/rbac/BuiltInAction.java#L15-L26",
+          "version": "repo-lines-v1:sha256:7e704bd2b55590571af838c7e68b69d2f07ae26ed7a97a860ddc264c6c14381d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyMDE3NzM4OWQyMTJmODg4YjJlYTI0NWMzMDE3MGIzNGQwYTRjYzc3NWIzYzc1OGQ4NTcxZjNjNTZhMzYyMDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYwMmEyNTMyNzAyYjhiNDVjMzk0MmU1Y2I4NWNiNWViZmE0N2VjYTEwNzQwNTA0MzhjOGZkOTA2NGU2MTRmMmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAyODExYTRmYzFkNjY4YWRlZDI2ZjQ2MTEyM2Y0OTFmMWRhNmNjNDc0YWEwNGU4MjQ0NTMxMzk5MjA1ZDM5ZjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgxNTIxYmY3ODI0MGYyYjdkNWQzMTJjOGUyMGYwYmRiMjE4NDk0M2NhMjZkN2YyOTNhZTI5MmJhMTA2NzVmNTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_07697ebdac964ac3bf7f367b7d02d382",
+      "statement": "Owner users are designated through the GALASA_OWNER_LOGIN_IDS environment variable as a comma-separated list, and this role cannot be assigned through the API, providing a failsafe for system administration.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/internal/rbac/RBACServiceImpl.java#L108-L145",
+          "version": "repo-lines-v1:sha256:9a2c9599b595fbe7c9fa3ca635ff42bef9913db4a13ff2838df0c8846f3165c2:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVkYzJiMzExYWJlODc1NzJlOGE3Y2MwZDk5NmE2NTg0NDA3NmU1MjMyZDIxYjdhODU0NzVmOWI0MDU1Yjc0OTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc2NTBlNjc5Y2E5OGQ2NzA1YjY1MzFkNzY1NmNhMzhjYWNiZmUyMDE0NDEzMDI5MWQwZDQ5ZDdmODA4ZDc2YWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZlYzVmNmJjNmJiNDM3ZGFhMTc2ODU4ZThiZjk5MTg0NzYwNzA5ZTU4NDZiYmJkNjZiYTdmZmY5YzQ2NDlhNzEifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/rbac/RBACService.java#L19-L43",
+          "version": "repo-lines-v1:sha256:8ca03c559fe364ca9a855864556e644a52db7d019a2b4eabc214677cf0e8a347:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk4YTU4NTJiMzJjMmI0MGM5YTI4OGQ1Mzk0NzljMjJkOWE4NTVlMGRkZDlmZDQ1ZmEzMzg4ZjllOWY5NDFmNjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA1YjAwNTM5NTZkYzZlNjczNmJjMTViZGRmODE1ZmQwZDg2ZGI5ZWIxYTAwNzFlNDBkMjYzNzA3ZjI4NDQzOWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcwZDU3MzAzNGY5NWE2NjAwNjBmNjllNGVjNjQyOGFlZWY5MjIyYmRmMTQ4MDBjMTYyNTBjMWNhODQ5N2RiYzMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f17f076a43af43479a340e9edfafac8e",
+      "statement": "New users are assigned a default role specified by GALASA_DEFAULT_USER_ROLE environment variable, or default to role ID 2 (admin) if not specified for backward compatibility.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/auth/IUser.java#L14-L18",
+          "version": "repo-lines-v1:sha256:3c7bf5473c090f40601c1079924bd72f179bad1113dadbe1fccd43bd8e8f0d8f:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzU3Y2FmNzdiZTU3ZTI4NjYyZTAyMmQ0NjQxOWJkYmEwZTMwYWM3ZWE4NDM2MTg4OGU5ZTJhNjY4YzVkMjFhNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzU1MDE4ODNiZmVkNWIxN2UxZmY2Yzk5MDM5MDFlNjFlZjBjZjJkNWVjMDFmMzFjYTljZDRjZTY4ODkwNGY3MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGQxMDRlODdjODlmNjYwMWRjM2IyZjNmYzdkODgzMTJlYmEwOTZlYWFlMDY4Y2U0NjA5ODZmYTA2OTUzOTk1MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjQwNmVhYmYwNmMxODJmNzhkOGFhNjdmMTA3NzExZGI4OTI4NWFhOWQ5MTJkNjQzOWY4ZDQ1Y2ZhZjkwY2I1MyJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/rbac/RBACService.java#L13-L18",
+          "version": "repo-lines-v1:sha256:b204fad3c1411a092d02086f629ac675d93355a2291795ec25b3c32a87602642:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzljYmJjNjU0NjlkYjFjYTI4NDJlZmQ5N2RmN2VlMmNlNmNjMTU3MTQ4MmQwMWExOGI3OTBhMTBjN2M1MTBmMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDY3NWE4YTQyMjIwMDRhNTBiNDU4N2U3MzU5MWUxN2U4NWJmMzNiYTgwMGNjOTY1YzMzZjEwZDMwZmU1MGViOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWRhYmJlYWEzYTgzMzExZjQ1NWNlY2EzZjA2MzM3YjgwMTFkZjQzNmFkOWU4OTNiYTE4OTNmOTA3OGI0M2IzZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODJmODEwZWMxNTEyZWQ5MDRhZTFlYWVlYzI0ZWIzNjNiMGMyMzViMTM5YjczYjM0NTdhYTY3OWMzNjM1MWYwYiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_6424af2970004ec7b991fbc4717170d9",
+      "statement": "The CouchdbAuthStore manages two databases: galasa_tokens for personal access token metadata with a loginId-view index, and galasa_users for user records with a loginId-view index using lowercase.",
+      "evidence": [
+        {
+          "resource": "repo://modules/extensions/galasa-extensions-parent/dev.galasa.auth.couchdb/src/main/java/dev/galasa/auth/couchdb/internal/CouchdbAuthStore.java#L243-L249",
+          "version": "repo-lines-v1:sha256:d3f9ef5201fcdbcd6a6fbf288022a0e1c160b05fea06752e353a9fe397806010:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjM1MjVjZTBlYjkyMDVhOTMzMTA2NDQ3YzQ3MzY0OTEzMjg0YThhZTY1ODcxY2FlZDRlNGIzODY1NGY2MTVhZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDkwOTAyMDZkNjJhNDY5MjZjMzk1ZTQxZjI0N2E5MmE3MmFjZTZiNjk5YmJlY2Q4NDI4Y2IxNzNhMDllZDg3YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjE3ODQ5MDg2MmZlZDExOWM4MmEwZGFkZmI4NWEyMzVkMzgzNzExYzhmMjdhMjBmMTkzOWMyMjYxZjc1Mzk1NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2I3NmNlNmNmZDEzODZjMGFmOWJjMTk4NDE2NzI4NjMwODJhNTUyMDgzZjgwMmIzZmRkZmUwNGY5ZjEwYTEwNCJ9"
+        },
+        {
+          "resource": "repo://modules/extensions/galasa-extensions-parent/dev.galasa.auth.couchdb/src/main/java/dev/galasa/auth/couchdb/internal/CouchdbAuthStore.java#L59-L67",
+          "version": "repo-lines-v1:sha256:ad9aba3537445330dcab507b1d7493d4a55e9942d8d172d3ef45801fba9a4bd3:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzIyMzYxMmVjYzAyYzk1Mzk4OGZjMTQ0YWMxOTg5Y2EzMWM4NDczNjliZDg5ZTdhNzY3OWQ5MTUyOGNhMzc3NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjUwZWE4Y2ZmMjUyNmQ2NjcyYmRiY2E2MDA0NWNhODQwMWRkYTgzY2Q5MDdkNDJlMjdiM2FiOGQwYjdiZDJmNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWEyYzgwM2EyNGY2NWZkOGNjYTIxOTcwODFiZmVkYjcyOTAwZjQyOTQ3NzVmNmM0MzEyNzNmZmY5YTQ3NGMyMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTNjMGE0MzNjMDFkODg3YTZlNWM4Y2U3MDNjNTcxMTJjOWU5OGYwZTcyMDcyMmY3Zjk1OGZhNDIwNDY5NTQwNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_be782d3452db4e4eb3746ef937210cc6",
+      "statement": "The auth store provides operations for token management (getTokens, getTokensByLoginId, storeToken, deleteToken, getTokenByDexClientId) and user management (getAllUsers, getUserByLoginId, createUser, updateUser).",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/auth/IAuthStore.java#L10-L100",
+          "version": "repo-lines-v1:sha256:0f6b17a939a93d921fad55f7eddc2c7de83c0690e6a0875616deb32b17aa1f99:eyJzZWxlY3RlZExpbmVDb3VudCI6OTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc4MmViODVhNjQ0NWM4NmRlYzgyY2E2N2QzMzc3OTdlZTI4YjViYzg5ZjQyZWNjYjNlMGI3YjdiMDIzYTJiOTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5MGU0N2U3M2M1ZTIyNmNlYmJlNGRkYmJmMWE4N2NmYTcxYjc2NDlmMmE4NzdlMWVjNzQ2OTVjMWYzMWQ0NTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQxNDE5ZWI2Nzg5ZGFkMjAwMTBlYWE5YTQwMzBlY2JiYTRhYjA1NDk3OTY5ZTBmMTIxMTVmN2JiZWRjYzRjOGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM4MTk5MzhkZjFmMWE5NDg5YjM5NjkzMGUxNDc3ZWIwNzRjM2RmYmQwMzg0YWJhYzA4M2ZkZGY0NzNiZTBjZDAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_27b0186cf4854826aee9ad4b17c3965e",
+      "statement": "The auth store uses basic authentication to access CouchDB with credentials provided via GALASA_AUTHSTORE_TOKEN environment variable as a base64-encoded username:password string.",
+      "evidence": [
+        {
+          "resource": "repo://modules/extensions/galasa-extensions-parent/dev.galasa.auth.couchdb/src/main/java/dev/galasa/auth/couchdb/internal/CouchdbAuthStore.java#L63-L64",
+          "version": "repo-lines-v1:sha256:d0f4c9a5cb111e4bd817af11abf3e9bd587c2d710ee7567b4153ad82172bfcc4:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjViNjhlODk5NDhmMWEyMWYwYzljZmUxMDFlNjRiZDViOWI2ZTI4ZDE2MWQwZDU2OTU2OWJiNjlkZTNmOGRhMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWQxMTY0OGJiODhkMTExODQ2ZDQ4ZTdjMjBhNDFlNjRmMmE1NDlkZWUzMzZkMTQyN2Y1NmYyMjMwNTUxMjEzOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjNkYWJjN2ZlYWU1NDUyNmRlNTQ5ZDQyYTZmNTRiNzcxNGE0ZDNjZmZkMGU2YjI5YTQ3NDY0ZjUzYzBiMDUxZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGYwNTIzZTg3NDZmMzBiOWU3YzVkMjdkMDllNWQ2YWVjNjNkMzhkZjJmNDlkMGU4NWUwOTZjZDJlZjA5MzNhYiJ9"
+        },
+        {
+          "resource": "repo://modules/framework/dev-instructions.md#L44-L55",
+          "version": "repo-lines-v1:sha256:c262d895d98827c1c93cd5022eb73f44d2c9780af372249fa98f8d1eea840534:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyNjg2NDk3MjIzNTEwZmU0Mzc1ZjY0ZWNkZTJkODgyNThhNmIxMDExY2Q1NDBhMTIxZTZjMTYwMjZjZDIwNGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YzA2YzU2MWQ1YzMyNzM0MzY4NTI2OGE0NmIzMzkxZjM5OThlZWU4OTBkMmJlNTFmMGQyMWNjNGE1M2FlNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI0ODBlMTViOTA3NjhkOTE1ZDViNzhjMTEyZDFmNGY5NzZiMjg4NGZlYzJkYWJkZDVhYzIxZGY2ZjY3Y2U2OTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhlOTI0MDVhMGM5MmRmOWQxMjJmZThiMzkwZmExY2U3MDVkOWEwOGMxYmJkNTY4MmFiYWYzNDRlNWNmYWM1M2MifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f36a4a89b5d343b89d2d56361007037c",
+      "statement": "Required environment variables for authentication include GALASA_DEX_ISSUER (Dex issuer URL), GALASA_DEX_GRPC_HOSTNAME (Dex gRPC address), GALASA_AUTHSTORE_TOKEN (CouchDB credentials), and GALASA_EXTERNAL_API_URL (API server URL).",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/dev-instructions.md#L249-L268",
+          "version": "repo-lines-v1:sha256:1761d4b78e2cc11944204bf2d268d21eae3f3d0c0a80481c753e139e993eb87f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVhZWFkOThhNzI2YzkwMWY1OTgxODllNzA1YjJmNWZhNWQ5YzE5NzU5OTkyNTBjN2E3ZThjNzc3YmMxNDg4NjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YzA2YzU2MWQ1YzMyNzM0MzY4NTI2OGE0NmIzMzkxZjM5OThlZWU4OTBkMmJlNTFmMGQyMWNjNGE1M2FlNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFjMTdjNzYyMWVkODU5NGJhYzRmNjYxNTg2Y2Y3M2M2N2IxM2ExYjlmOTljZDUyYTY2M2EwZWI0Y2I3YTM5MDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkxZmQ1NjhlYTdiYzQzMDM3M2FjMTcxMWFkZWZlMzVmNDk2MzIwNzFhNTdkZGQyMTk2MzEzY2FiODhlNTJkNGUifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.api.authentication/src/main/java/dev/galasa/framework/api/authentication/JwtAuthFilter.java#L62-L69",
+          "version": "repo-lines-v1:sha256:3dd9b4ce9525130d483257ee65b9445b41de50bbabff5722b45573390f3e5d82:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGUzMDBhZGJiNWJlYmNmZGU4MzRhZjlmYzg2MzBmMmU3MjkzYmQ4NTA4NjY2ZDNiOGJhNjJhMTRkMTAzNmZhMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzUzZjRmNDdmZTdmODc1OWZkYWZlYzdmOWVmNTU4YjIxYTMwYjJlNDliZmMzYjMyYTJkY2YwOGFmZjM0MGI3OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTgxMjFmYjc3MjdlYWMzYTllZWI5NzA0YWEzNjNjZjcxYzlhN2FmNjhmMTllMWEyZDQxN2U4MjBlZmM2Yzk1ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTk5YmRlZmVlYWNhNjM0MGUwMjkwZGM4NmU4ODljODlkNWUxODlhYTViYTQ0YjU4NWIzYjcwNzM0ZjRhNjJkOCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_822b0fec6a524aa69ae642ccd52a2936",
+      "statement": "Dex configuration defines token expiry settings including idTokens lifetime (default 24h) and refreshTokens validIfNotUsedFor period (default 2160h/90 days), along with static clients and authentication backends.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/dev-instructions.md#L139-L177",
+          "version": "repo-lines-v1:sha256:b63d2ba07b3193fa542070570c662b90a263b7aa9e0f9e9c4936ca52b84f689e:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhjNjdkMDg1NDcyMGE5ZmRlNzVlNGQxZjJkODY5ZWM4NTMwNWI5MTdmOTg5YzZmYjAzYjUyYmUwOTA3YWM1YmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJhMjFjNWIzYmZmMDI5OWMwMTYxNDcwNDY4ZjM1NWU1YjRhZmNmMTdhNWY1OTNhYjY4Mzk0ZWY3YWYzMTljZGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY3MWUwZjNlNzdhNmI4MTJjMTA3NzVkMTAyYjY0M2I0Y2QzNWY3MzY3Y2Y0YWQ0NGM0MDU0NDM2MGIwYjcwNDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNhODliOWY3ZDZjMTk0MTE2ZDFhNzdjODNjMWE0OGIxNTQyNjhhOGI1ZDc4ZDM2MjVjNmEzZGExNTEyMjhiYmMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e4dccc603b2f489a99dbba704fb8d7ad",
+      "statement": "The RBACService provides methods to check if a user is an owner, get roles and actions, check if an action is permitted for a user, and invalidate cached user permissions.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/rbac/RBACService.java#L11-L81",
+          "version": "repo-lines-v1:sha256:1dcef2dd53b979794497e010258a0fe8df6a31e3a0dd9e3dc058276db70f0112:eyJzZWxlY3RlZExpbmVDb3VudCI6NzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhmZmJmZWMxMzE4OGI5ZDNiMmU3YWIxNTMyZGZhNzU1YjY5OWVjMDIwYWJlMTdhOWMxMTdkNTJjZjUxMGIwODQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA3MDc4YjI2OTU3YzhhMzg0YTVhZjM0NTQ4ZTIxNTI1NTZjMjIxOGI1NDg0NDMxMGQzZGU4YmE4MTU4MmUwZGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4b3710bed51d4882bee13f55e4d308b2",
+      "statement": "The Dex gRPC client provides operations to createClient, getClient, deleteClient, and revokeRefreshToken for managing OAuth clients.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.auth.spi/src/main/java/dev/galasa/framework/auth/spi/IDexGrpcClient.java#L11-L16",
+          "version": "repo-lines-v1:sha256:44bdc7810e4b730daa4ff4deab5bcdf0aacd4c4f354b179aab1194bef367d86d:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzZiNWM2ZTUwMDdiZTQ5MDRiYmJmY2NhOWYyOTI1NzJhZWYzY2YxMGIwNWRiNmNhYWY5YTEyY2Y4YTAzYTg5ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzk0OGQyMjRmZmY5NGE2MTUzODA0YzZhNTk3MDMwZGQ1ZTBlOTk4YWUzOGYxYWU5Mzg0NDk3MjM5YzJlZmZmNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.2",
+    "at": "2026-09-21T12:35:12.771Z"
+  }
+}

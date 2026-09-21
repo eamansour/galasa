@@ -1,0 +1,302 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:67482db08c1e4d533804e2ec0ba363463883d2a2e7b5b2475316cc790df2d2fe",
+  "claims": [
+    {
+      "id": "claim_b50ee30e489e4c4592d2d25364204278",
+      "statement": "Galasa provides four core storage services: Configuration Property Store (CPS), Dynamic Status Store (DSS), Result Archive Store (RAS), and Credentials Store, each with separate service and store layer interfaces.",
+      "evidence": [
+        {
+          "resource": "repo://developer-docs/storage-services.md#L8-L13",
+          "version": "repo-lines-v1:sha256:bb6532f91b8c4e9c9fe21c5974f2ea2e2a78bedaf1461cc10410ceb9dece6cdb:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjg1NDkzNTEzMDhkZDU1MmYyMDBjOTA1ZDFjZDQ5ZDU1YThlMGVlNTU2ODgzNTEyY2U1NGZjMGJhNmNjN2U5ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmJlY2ExNGI5MmQ4YTQ3ZjM2N2FjYTUyODczMGI5MWIzMDJkYjAyYjAzYmQyNGZjOTMwMzc2ZTIyMzVkMDFhNiJ9"
+        },
+        {
+          "resource": "repo://modules/obr/javadocs/target/sources/dev/galasa/framework/spi/IConfigurationPropertyStore.java#L14-L24",
+          "version": "repo-lines-v1:sha256:c55cf4cadb1d8e1a2520f1fea1fb984ac17a3e508ca92583ffd851ae5f10ad31:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI5N2VmOTY0MDUxZjU4Yzc4ZGNjYTg1OTY0MzE3ZWJiMjQ4NmJkNDlkM2NhZTQ5MDEwNDg2NzM1OWUzMDQ0NTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5OWY3MWNlZjMwMDM1ZTQ3NTJiZmM4ZmUxN2Y2ZDU5YzNmZjJjODliMzZmMmY3OTAxODljODYyNGQ1YWYzYjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg0ZjU1Zjc1Yjk2ZTJmY2M5Y2YwYTVkMjU0OGVkZTZmZTBkMzQzNDA4MDQ0M2QwNjY0Y2U0OTE0ODQ3YmFjZDgifQ"
+        },
+        {
+          "resource": "repo://modules/obr/javadocs/target/sources/dev/galasa/framework/spi/IDynamicStatusStore.java#L8-L25",
+          "version": "repo-lines-v1:sha256:026ac406b7c471b1a13718714c8eefe55c2c9137ecf3e85f5c7f90211de6f9a2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE5NDBlNzIwMTQ4NDc0ODRkN2ViYzc5OWY5OGIxZmRiNTA0ZWVmYmIxNzFhNTg5ZWRiYTk0YjQ5Y2MxM2RhOGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNkYTRhYmFmMGEzMzQ0MGZmMTAyMDEwODBhZjM2YTUwZjg1MWUxZWU5YTE2OTRjMjY4MjQ2ODZlYmQyM2NkMTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUwOWRhN2M0M2UyNjgwM2YwMzJmMGEyMzIyY2RhOWZlMDdjY2I3ZjVlODkwN2NkYWYxZmYxZDJhZDk5YTA4M2YifQ"
+        },
+        {
+          "resource": "repo://modules/obr/javadocs/target/sources/dev/galasa/framework/spi/IResultArchiveStore.java#L15-L38",
+          "version": "repo-lines-v1:sha256:9d6585d91b6f9cf7bb3aba0de8fe3401eb19ae95e2b7837dae1061f6aee313b2:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNlYmEzMWEwNGQ2ZjYyMmQ0ZTlhM2MzZDVmMDY0MTI2Yzk3NjZlM2ZiOTFlNzdiMzg4NGI3OTU0NmVlNjBmNGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJlOTA4Yjg3NjMzZGY3ZThlNGM2YWExNDA3MzI4ZGY1NDNlMzkyNDFlMWMyMWMxNmIyNGIyNGUyNDRhZGQyMWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYyMjBkMThhZjhhMTRlMWY5YWU3NjRmYTBiOGIwODI0ZjBmMjJmMmMxMjNmYWQ1ZGRiNjM3OWZmOWQ0YzY1MWEifQ"
+        },
+        {
+          "resource": "repo://modules/obr/javadocs/target/sources/dev/galasa/framework/spi/creds/ICredentialsStore.java#L1-L23",
+          "version": "repo-lines-v1:sha256:31ee19667194f6ac73f8aa48e8ad7725f5f4ad19a0093ec745b677c7e0bb4984:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg3MzI3NzVlZWU3NzAwMThkYjdkNzlkMDM1YTAxNjMwMTVhMDE2ZGUxN2ViYmY4ODg0OTAyZWM2ZDFkOWZjZjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_16dd840cbbba42babbc7eea785b338d9",
+      "statement": "IConfigurationPropertyStore defines backend operations including getProperty, setProperty, deleteProperty, getPrefixedProperties, getPropertiesFromNamespace, and getNamespaces for property storage and retrieval.",
+      "evidence": [
+        {
+          "resource": "repo://modules/obr/javadocs/target/sources/dev/galasa/framework/spi/IConfigurationPropertyStore.java#L26-L109",
+          "version": "repo-lines-v1:sha256:d3d42507fbe1eda50d15dfeb85e4ae66c9e9294e9c9a16a8c3595055ac7af2e6:eyJzZWxlY3RlZExpbmVDb3VudCI6ODQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5Y2JiYzY1NDY5ZGIxY2EyODQyZWZkOTdkZjdlZTJjZTZjYzE1NzE0ODJkMDFhMThiNzkwYTEwYzdjNTEwZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ1NzkzYzAyODVhMmM3NzZjMThhODdiZGMwODk1MzdlOGVhZDM4ZmZmM2MyNmNkODg1OGE1OWE4ZTliMzliYzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcxMzI2MWE4NjVkYjg4ODg3YzA1ZmMzZTVhYmY5NmI0OGE3ZjU2NTQ0NjAxMTIxNzM2N2VlZTE2ZDc3OTU3MzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ2NWU2NGQ2ZTI2NWI3MmRjMGYxNTUwOGM1NDQwZTQ4MmEyYzI5ZDQxOWFjZjZlMDBhNjNkYWVlMzI4NTc2NWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a1314e007bdb4d65ab926d2ccdf29097",
+      "statement": "IConfigurationPropertyStoreService implements hierarchical property lookup with namespace and infix-based inheritance, searching from most specific to least specific property paths.",
+      "evidence": [
+        {
+          "resource": "repo://modules/obr/javadocs/target/sources/dev/galasa/framework/internal/cps/FrameworkConfigurationPropertyService.java#L231-L264",
+          "version": "repo-lines-v1:sha256:80c42b30c285fccdd30fa2c2493217046b02764d74aa3a39d7d8691c1845b524:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQxNWJjZWE2NGQ4N2NmODRmYTIxYmMwYTdkYzZiODdiNWM5MTAxMTAzY2VkMGJhZDljOTU5MTI3YjM2NDZmY2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhhY2RhZjRkMmJmYWE1NTg1ZWUwZTk5ODI2ZjE4Yzk5MTExY2RiMTY0YTIwNjAzZjBkNzA3M2E0ZmQwOGViYzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY3NTk1ZGJhYjczNDVmOGJmMGM0N2M3NDc2NWNkMmI5NDNlMjQ4MTJkOTMwMDg0YWJmNDE0ZjQ1MmRhOWEwNDYifQ"
+        },
+        {
+          "resource": "repo://modules/obr/javadocs/target/sources/dev/galasa/framework/internal/cps/FrameworkConfigurationPropertyService.java#L57-L91",
+          "version": "repo-lines-v1:sha256:efcb81c27578ea7c905d1d1ed9c500bf8284a67891ba9eb39ba96903e4d787de:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5Y2JiYzY1NDY5ZGIxY2EyODQyZWZkOTdkZjdlZTJjZTZjYzE1NzE0ODJkMDFhMThiNzkwYTEwYzdjNTEwZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU0MDkzYjYyNDI1ZmRjYzc2OGZiNzAxYzEwMTk0MzFjMjdjZDA4ZGZjNjQxM2ZhMDg3ZmY0NDk0N2U3NTdmZmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgzNTk5NzMxM2Y3ZTc5NGE4MWNmOTIzNDYzYjYyOTBhYTQ0ZDBiNGFlNTBjYzVjZmZmYzk5YjA5YjlmNDI4ZGYifQ"
+        },
+        {
+          "resource": "repo://modules/obr/javadocs/target/sources/dev/galasa/framework/spi/IConfigurationPropertyStoreService.java#L37-L78",
+          "version": "repo-lines-v1:sha256:b59574c534beccc04c707cb6af251189f94873bbc55fedb03539207575fa92fc:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5Y2JiYzY1NDY5ZGIxY2EyODQyZWZkOTdkZjdlZTJjZTZjYzE1NzE0ODJkMDFhMThiNzkwYTEwYzdjNTEwZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ4NTIzYWI1MGU3NTVhN2M3OTAwYzVkYzM0OWE3M2UzNGFiY2QyNjA0N2I3MDNmNmJkM2JlODNkZmM3ODMwZWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzMDAwYmI5M2RhNTM0MmZkOTU2YzdmMzEyYjk1MWQ2NjdhMzY5YTE1YWFkN2VjM2EwMzkxY2RjNDJhYjQxZTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgwOGRmNjFlNDIwZTM0MDUzMTE1ZTk0ZWRiNDkyOGViMzZhZGEyN2Q4M2Y0YzI2ZTc0Y2FjZjg3YWM2NDA2MTkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2a9efca015fb47129fbb0b7174164848",
+      "statement": "FrameworkConfigurationPropertyService constructs ordered key lists by combining namespace, prefix, infixes, and suffix, searching each variant until a property is found.",
+      "evidence": [
+        {
+          "resource": "repo://modules/obr/javadocs/target/sources/dev/galasa/framework/internal/cps/FrameworkConfigurationPropertyService.java#L231-L264",
+          "version": "repo-lines-v1:sha256:80c42b30c285fccdd30fa2c2493217046b02764d74aa3a39d7d8691c1845b524:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQxNWJjZWE2NGQ4N2NmODRmYTIxYmMwYTdkYzZiODdiNWM5MTAxMTAzY2VkMGJhZDljOTU5MTI3YjM2NDZmY2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhhY2RhZjRkMmJmYWE1NTg1ZWUwZTk5ODI2ZjE4Yzk5MTExY2RiMTY0YTIwNjAzZjBkNzA3M2E0ZmQwOGViYzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY3NTk1ZGJhYjczNDVmOGJmMGM0N2M3NDc2NWNkMmI5NDNlMjQ4MTJkOTMwMDg0YWJmNDE0ZjQ1MmRhOWEwNDYifQ"
+        },
+        {
+          "resource": "repo://modules/obr/javadocs/target/sources/dev/galasa/framework/internal/cps/FrameworkConfigurationPropertyService.java#L77-L91",
+          "version": "repo-lines-v1:sha256:c0c7fb38c9a8830a25a7b63134622e8d66225dd525d4dbe9ff4855090098e104:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjMTAzOTA5ZTZiMjQyMTYxNTMxNjUwNGUyOTU0YWI0YWNmZDFlYjI0YTdkYWM5NDMwMGZiMTI4YzE4Mzg5NmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI1NzkxNmU1ZjUxM2NiYjBmNjRjZmU4MzE2OTAxM2M5MmUyNzFkNWIyNjZlOGRmZWQyNDZmNDFhOWY4NDcyZTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgzNTk5NzMxM2Y3ZTc5NGE4MWNmOTIzNDYzYjYyOTBhYTQ0ZDBiNGFlNTBjYzVjZmZmYzk5YjA5YjlmNDI4ZGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_68f1923237b74445a19303f054d247eb",
+      "statement": "Etcd3ConfigurationPropertyStore implements IConfigurationPropertyStore using the jetcd client to interact with etcd clusters via key-value operations.",
+      "evidence": [
+        {
+          "resource": "repo://modules/extensions/galasa-extensions-parent/dev.galasa.cps.etcd/src/main/java/dev/galasa/cps/etcd/internal/Etcd3ConfigurationPropertyStore.java#L31-L77",
+          "version": "repo-lines-v1:sha256:86376ad0e506b4edf9485e592f4b65cebc1339645af632d107344407ccf8ca9f:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVkY2QzNmZjNGFhZDdiOWZmYzA3OGQxZmEwNGU0YWY3OTVhNWI2NWQwNjg4NGFkNmE0MzdkNzc2NmJkMDAwZDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNhYTRkYzc1YjRjYWE0ZjFkMmFlYzdhNWQyYzAxMTU1ODI4NzY0NzU3NDliOWYzNTA0MTI1NGQ3YmZiZjI3MTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_23e146f9175543b19422d49295b5ed83",
+      "statement": "IDynamicStatusStore extends IDynamicStatusStoreKeyAccess and provides operations including put, putSwap, get, getPrefix, delete, deletePrefix, performActions, watch, and watchPrefix for dynamic state management.",
+      "evidence": [
+        {
+          "resource": "repo://modules/obr/javadocs/target/sources/dev/galasa/framework/spi/IDynamicStatusStore.java#L8-L29",
+          "version": "repo-lines-v1:sha256:059d96d74984cf6235b46c39104415f6671604a09a071a61a6fe70a3e2fc7cae:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNkYTRhYmFmMGEzMzQ0MGZmMTAyMDEwODBhZjM2YTUwZjg1MWUxZWU5YTE2OTRjMjY4MjQ2ODZlYmQyM2NkMTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://modules/obr/javadocs/target/sources/dev/galasa/framework/spi/IDynamicStatusStoreKeyAccess.java#L38-L217",
+          "version": "repo-lines-v1:sha256:9aecccead19a5fcb9b0b34cc6b9bb51e694a8208ffdea3dfb2a60cf6526a5b41:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgwLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI1MmY0ZWEwMGEzMjU3MjdmZjMzODM1NDU1NTViZjgzYjU3NmYzYjIzNmJjZjJlMGRkZmQxMmE5MjYwZDIwNDkyIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0MTJjYTM0NWNjZjc1YmY5YzA4MDZiY2U2OTViZThkZTgwOGI3OTk4NDI1MWE3YTU0ZDIwMmNmNjEwMWRkNDUxIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIxOTQ3MjNkMjAzMGQ3M2Q5MjhhYjBlMTAxYzBlNWEwZTM0YmVkZWQwNzAzNjMyOTg3NjM0YzgyYjg3ZTA4ZWVlIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_e9460ce5264943bc90a185bec9c09616",
+      "statement": "DSS putSwap method implements atomic compare-and-swap by checking the current value matches oldValue before updating to newValue, preventing concurrent allocation conflicts.",
+      "evidence": [
+        {
+          "resource": "repo://modules/extensions/galasa-extensions-parent/dev.galasa.cps.etcd/src/main/java/dev/galasa/cps/etcd/internal/Etcd3DynamicStatusStore.java#L209-L248",
+          "version": "repo-lines-v1:sha256:74dd48666bb3c13e4e2ac8078cde1b8de7ad94a5260490f1362d4d21ba7fa769:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJjNDFmNWRmNmE4ZTgzM2FkZjhhZTYxZjIzMzg4NDk2NTIyNDU5ZjJkMjQ3MDQ1NjM3Yjk2YzNlMzJkZGRlYWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVlMmI5ZTIxZmRjODZmYzJjMmVlNDQ3MjE4NWQ2NzY0NjdiZGQxY2JmMmUyNGI0ZGM2NDRhYjFhYmIzMzI1NDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJjNGFhNDkxNjRjOGE3NzhlZjNmNzUzODdkMWNiOTc2YjUyOGNkMzcxZGQyOWU0OGY2NmI0ZjRhMDAzOTRmMmUifQ"
+        },
+        {
+          "resource": "repo://modules/obr/javadocs/target/sources/dev/galasa/framework/spi/IDynamicStatusStoreKeyAccess.java#L76-L101",
+          "version": "repo-lines-v1:sha256:53be590da3b3ce7640fe8de54e901724b04e9397a585543757b853593799df61:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5Y2JiYzY1NDY5ZGIxY2EyODQyZWZkOTdkZjdlZTJjZTZjYzE1NzE0ODJkMDFhMThiNzkwYTEwYzdjNTEwZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYyMWRkY2Q5NmRiMWEwNTJjZDA0YTE1ZTdmOGFjNDQ2OTc4NGIxZTRjMTYzMGNmOWI2N2QyOWY5YWJmMWEzNzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ0NWY5MzM1NTcwZmZhZDgzZGQxZGNhYzM2OWMxNDVmYmFlZTUzM2NjMTU5YzY2OWRkOTYzZWNjMjcyNmUzNjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgzNTk5NzMxM2Y3ZTc5NGE4MWNmOTIzNDYzYjYyOTBhYTQ0ZDBiNGFlNTBjYzVjZmZmYzk5YjA5YjlmNDI4ZGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_348fe00fb03c4385af1c9a1f968f4281",
+      "statement": "DSS performActions method executes atomic multi-key transactions using IDssAction implementations including DssAdd, DssUpdate, DssSwap, DssDelete, and DssDeletePrefix, with all operations succeeding or failing together.",
+      "evidence": [
+        {
+          "resource": "repo://modules/extensions/galasa-extensions-parent/dev.galasa.cps.etcd/src/main/java/dev/galasa/cps/etcd/internal/Etcd3DynamicStatusStore.java#L606-L658",
+          "version": "repo-lines-v1:sha256:d5705f286fc9035337e13c2a7241f10686461563fc22052412ee278562f1bb4e:eyJzZWxlY3RlZExpbmVDb3VudCI6NTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVkYzJiMzExYWJlODc1NzJlOGE3Y2MwZDk5NmE2NTg0NDA3NmU1MjMyZDIxYjdhODU0NzVmOWI0MDU1Yjc0OTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgyYTVkNDdlNTU5YzA1NWI0NDExNjA2ZTAxNzAzYjdiMWUwYjVlNzg5NDBlNDNkNDY3NTAyODgxZTNhYTNiNjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgzMmMzMzM0ZDA5MzY1MmJmYTg1M2JhMzY5ODI0Y2EyZTg3ZjlmNjFiNzM1OGVjOWJiZTVmM2QxZDc3MDdkYzYifQ"
+        },
+        {
+          "resource": "repo://modules/obr/javadocs/target/sources/dev/galasa/framework/spi/IDynamicStatusStoreKeyAccess.java#L159-L167",
+          "version": "repo-lines-v1:sha256:8c6d391f22fd9ec6cb23598af1cade6ad835a2468ccae37354ec68935166f095:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzljYmJjNjU0NjlkYjFjYTI4NDJlZmQ5N2RmN2VlMmNlNmNjMTU3MTQ4MmQwMWExOGI3OTBhMTBjN2M1MTBmMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjFhMGI0ZjE5ZWRkZjVjODNkMGJjYTE3ZDY1ZDQxZjFiYWM2YTRiZmUyYTg3N2RiZjhmYTMxYzU1NGUxNDQ0YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTc0YzM1MThjODZmN2VkZjYwZDIyMDhjZGJhMWNlNzZiNWYwOGE3Mjk1OGU4ZTc0ZmI2YzI1ODFjNWMxMjNlMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODM1OTk3MzEzZjdlNzk0YTgxY2Y5MjM0NjNiNjI5MGFhNDRkMGI0YWU1MGNjNWNmZmZjOTliMDliOWY0MjhkZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_4f81f719183444768f628ae81e2c821a",
+      "statement": "DSS watch and watchPrefix methods enable clients to monitor property changes, receiving notifications for CREATE, MODIFY, and DELETE events through IDynamicStatusStoreWatcher callbacks.",
+      "evidence": [
+        {
+          "resource": "repo://modules/extensions/galasa-extensions-parent/dev.galasa.cps.etcd/src/main/java/dev/galasa/cps/etcd/internal/Etcd3DynamicStatusStore.java#L505-L596",
+          "version": "repo-lines-v1:sha256:44504a5d20b1fccbe295d63b7be21549dc1f203270bcbf3afbd30d0318993fca:eyJzZWxlY3RlZExpbmVDb3VudCI6OTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM3NDk5YjQ3OWE0MDAwMWRkMTI3N2M4YzFmOTE4YzUxYWY1ZDI2ZjQ5Y2JiNGUyNDNjNmQ3YzQ3ZGUwZjkzODEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ5MGM3YjM0YzYwMjhkMWYwMjZlOTEzYjRmMDY2Nzk5NWZiMTU0ZWQwMjAwYWZkODVkNDc4YTBkZTliZTA4Y2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFjNDc1ZGNkNTU1ZGFiNWU5NGE4ODAxODE5OWY4MDVhMzBkOTQ5NzJlNTk0ZTBiZTYzZmZiYWQ5NWUxOWQyZDUifQ"
+        },
+        {
+          "resource": "repo://modules/obr/javadocs/target/sources/dev/galasa/framework/spi/IDynamicStatusStoreKeyAccess.java#L169-L217",
+          "version": "repo-lines-v1:sha256:5b7778c336da97ec4e1cf107a93f58c01fc7a20919df51978edef221172fa526:eyJzZWxlY3RlZExpbmVDb3VudCI6NDksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5Y2JiYzY1NDY5ZGIxY2EyODQyZWZkOTdkZjdlZTJjZTZjYzE1NzE0ODJkMDFhMThiNzkwYTEwYzdjNTEwZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM1ZDI2ZGE0Njg4MjRiZDFjZWFiNzc1MWMzMjc1NGU1ZDIyMDEyZWQ2YTIyMjM1ZWY2ZWE0MmY0MjFlMDNjMGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0a8c744451144220a3e7050e49ce343f",
+      "statement": "DSS supports time-to-live properties through put operations with timeToLiveSecs parameter, using etcd leases to automatically expire keys.",
+      "evidence": [
+        {
+          "resource": "repo://modules/extensions/galasa-extensions-parent/dev.galasa.cps.etcd/src/main/java/dev/galasa/cps/etcd/internal/Etcd3DynamicStatusStore.java#L140-L157",
+          "version": "repo-lines-v1:sha256:cf828eacb7e9728a1b66891aee79b277b24e636f106fe383aebf5c569a6f7a4c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVkYzJiMzExYWJlODc1NzJlOGE3Y2MwZDk5NmE2NTg0NDA3NmU1MjMyZDIxYjdhODU0NzVmOWI0MDU1Yjc0OTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjViMGZiYzhhNjUzN2M3MzQ1MTBmZTA4MzAwZmE5ZGYzMGUxMmY5NmVhODU5YTkxZDAyOTZhOGI4ZTE0YWQ4ZTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJiZmViMTFhNzVhZWVlYmZjNDhjZGNkODVkZjRjNTk1ZmI5NjNjNzA5NmM1NWI4OTA4NzkyNjczNTRmNTFlZGMifQ"
+        },
+        {
+          "resource": "repo://modules/extensions/galasa-extensions-parent/dev.galasa.cps.etcd/src/main/java/dev/galasa/cps/etcd/internal/Etcd3DynamicStatusStore.java#L186-L206",
+          "version": "repo-lines-v1:sha256:92e5d1a63abb7fa6d8d8990c23e8ba07da66b44d6d737ebc6ed0164f8288c084:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVkYzJiMzExYWJlODc1NzJlOGE3Y2MwZDk5NmE2NTg0NDA3NmU1MjMyZDIxYjdhODU0NzVmOWI0MDU1Yjc0OTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZiZmFiNDUyMWE5MTNkOGFjOWMwNTdlMzFkMWQ3MzM2ZTIwM2YyMTc1MGU4NDA3ZjRiY2M1Y2VhZGQ3ZTZiNjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJjNGFhNDkxNjRjOGE3NzhlZjNmNzUzODdkMWNiOTc2YjUyOGNkMzcxZGQyOWU0OGY2NmI0ZjRhMDAzOTRmMmUifQ"
+        },
+        {
+          "resource": "repo://modules/obr/javadocs/target/sources/dev/galasa/framework/spi/IDynamicStatusStoreKeyAccess.java#L58-L74",
+          "version": "repo-lines-v1:sha256:7912554a6f1b29a782f3aebd41c88609c27d33f87a5f794ee28b3172e844cf59:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg1MDM5NzBjMWE1Yzk0MjkyZWFhMTkwYmVjYTBmZGE5MzM1N2JiMzQ4NjQ0MjQ5ZDgzMDIwMTNkOTlkMGQ2ZTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhNDY3Y2RhNTIwMDVhNDAzMTMxMWM0ZjM3MmM1OTBjOTVhYWJiNzNhZDRkYzc4ZWMxMmQ5ZWUzODVjN2M3ZTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ1ZThlNTA5MWI5NzViYWJlMWQ3ZjQ0NGFiNmM2NzU4OTMxYjM5ZDhlMmFhYTU2MzFlZjgzYjNlMzY0ZDM1MDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFjN2NkNTdjYTNmNWJlM2U5MTI4ZjM2ZDE0MTcwMWQ1OWUxOWI0ZmI1NGNmZDMxODM5YmJlNzAyYzIxZmY0ZDEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4fb13bb62bd74e21b763326a654bf7db",
+      "statement": "Etcd3DynamicStatusStore paginates large prefix queries with 10,000 keys per page to avoid hitting gRPC maximum message size limits.",
+      "evidence": [
+        {
+          "resource": "repo://modules/extensions/galasa-extensions-parent/dev.galasa.cps.etcd/src/main/java/dev/galasa/cps/etcd/internal/Etcd3DynamicStatusStore.java#L374-L400",
+          "version": "repo-lines-v1:sha256:50b2066a8caa93c1d444f09afd2048cdd4b239ce14ebe63b4d1a30d6f6b8566b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYzNDFhOGZhMjZlYzNiYzYyZGU3OGZkNmQyYzgzZDMwZWQwOGEyODkxOWZjYmZiNjNjZTRjYTcxNmQ4NjM5NDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmNzQwOTg1ZTcxZjdkYmQ3OTYzYTQwNjhlZjM0NDdiZmI0Y2EzMGMwYzcyYTg5ZDIxNjdlODg1ZjA4NTQyZjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUwMjFkMDJlMjIzYzZjYWY3OTMyMDU2MjNmMzNjMjcwYzdlMmNkMzNhMzY3MmNiNmIxYTkzNTIzNDhhNDJmNmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY0NWRkYzQ2NWE1YWZkMWQxMDUyZTdmYzkyMzZkOTcxN2M5ODBjMTQ3NzQ3MGZjYzBmZWMyNDM0NzIzZTdhZTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ca87f6cf50374f239d7da82608a12c9f",
+      "statement": "IResultArchiveStore provides writeLog, updateTestStructure, createTestStructure, getStoredArtifactsRoot, and retrieveRunLogLineCount methods for persisting test results and artifacts.",
+      "evidence": [
+        {
+          "resource": "repo://modules/obr/javadocs/target/sources/dev/galasa/framework/spi/IResultArchiveStore.java#L40-L108",
+          "version": "repo-lines-v1:sha256:5dbad06f3b2ecef0a82bd52b40ab014ff4beb2a0062962e437f8c193a950ad87:eyJzZWxlY3RlZExpbmVDb3VudCI6NjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5Y2JiYzY1NDY5ZGIxY2EyODQyZWZkOTdkZjdlZTJjZTZjYzE1NzE0ODJkMDFhMThiNzkwYTEwYzdjNTEwZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE3MzgzOTJkOWViOGRhMTA0ZjQyNjdjMjlmZmJmZTdlNmJkYTBiNjQ3N2I3ODcxNjY3YThjMzMyODZkN2Y1MzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f52211abc7e746aaafe6d09c50022fa3",
+      "statement": "FrameworkMultipleResultArchiveStore implements the composite pattern to write to multiple RAS backends simultaneously, delegating all write operations to each registered backend.",
+      "evidence": [
+        {
+          "resource": "repo://modules/obr/javadocs/target/sources/dev/galasa/framework/internal/ras/FrameworkMultipleResultArchiveStore.java#L20-L79",
+          "version": "repo-lines-v1:sha256:c96862626914d8c53fd645cd8bd06515644bd867d4bdb6d23d978c349edb28e1:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdiZjNkYjdlNDIzODJjNTcyNTFjYTA0ZDQ4N2Q3ZGU0OGEwMGY1YWFjOGU3NTM2OGUzMGQwZDgwM2EyNzY4Y2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk4ODk2ODYzYmZlNzE5NTMxZmZhZDc5MWEzMjFmYWVlMzBkZmM0NTRkNjcxOGFhOWEzNDU2MDM0MDk0NmM5YWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c9e402bbb6bd444bb350fe52f3569995",
+      "statement": "FrameworkMultipleResultArchiveStore returns the artifact filesystem root from the first backend only, as multiple RAS artifact filesystem support is not yet implemented during test runs.",
+      "evidence": [
+        {
+          "resource": "repo://modules/obr/javadocs/target/sources/dev/galasa/framework/internal/ras/FrameworkMultipleResultArchiveStore.java#L84-L92",
+          "version": "repo-lines-v1:sha256:dfa59679303ed7a89c814d36082ccb91b0774b619b9ccf6725e1d43913864cc9:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGZlNjQ1YTYwZmFiZjE0ZDYwZjliMWQzMGEzYzVhNGRmMzFlZmIyZWU2MjM4OWZlMTczMGUzOGE5YzNjYjU3MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDI4Y2ZkYjM0MTc3ZDZmMTgxYjA0Njc0OWE4MmZkM2FmMzJjYjNmMDEwNmQxM2E4YjEzY2U2YjlmYjA3MTIwZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODJmODFmZTc5MzA0MWRjNjM3NThlMTBkNDNhZmIxM2E4M2E3ZjgxYzJmN2NlNGQzNjI1OTBlMTljMTY5NmM3ZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_5ddcad87043a47e5b79d82a2bff9ca73",
+      "statement": "CouchdbRasStore uses three CouchDB databases: galasa_run for test structures, galasa_log for log messages, and galasa_artifacts for test artifacts.",
+      "evidence": [
+        {
+          "resource": "repo://modules/extensions/galasa-extensions-parent/dev.galasa.ras.couchdb/src/main/java/dev/galasa/ras/couchdb/internal/CouchdbRasStore.java#L59-L61",
+          "version": "repo-lines-v1:sha256:12539f9082630d39a94dc61fbd7adec06c2b7dee218043ba2f1dd11e2530d2c6:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTZmOTUzMjZlZWExOGY4MDExMDEwOTVmMzY0NDJiY2M3ZWMxNDUzYTVlN2Y1YTkwOWFhM2M0ZjIyMjc2NTBkZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODQxOTVmMmNkOTAzMTlkMDBjZDNhOTkyODc5ZjllYmNlNDRiMDZmMmU5ZjEzZDE3N2FhNTg2MjM0YzYyZGZjOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGNmYjdhZGViYTljZmNmODY1YzI5YWI4MGI1YjJlZjdjZjQ1ZjBkZjZlM2MyOTI5MGZiZTRkMzIzZjA4NGY4MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzMxNWZmNGI4ZjRlNDM3ODNkYTZiZTZiYzFlNGNlYmUxOTc3MGY1Y2U5MmFjNGFkNjRhNWZjODNhMGEzYmMwZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_6974046326374b4da43c192cf91d40e3",
+      "statement": "CouchdbRasStore batches log writes by accumulating 100 lines before flushing to improve write efficiency.",
+      "evidence": [
+        {
+          "resource": "repo://modules/extensions/galasa-extensions-parent/dev.galasa.ras.couchdb/src/main/java/dev/galasa/ras/couchdb/internal/CouchdbRasStore.java#L178-L195",
+          "version": "repo-lines-v1:sha256:2ea86c6bd683221452d2924ea386f01057a33c82633d6fda906e4bbe0299f66b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRlNThhOTcwY2IyZjIyNzFmMzUxMDkxMGRlYTEwOGNmZjQyMTdhNGFjOTRhYTE4MjMwZTk1ZmJjMTJhYjA5NDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM2OTQ2ZTEwMWU1ZTc4ZDkwYTUxMGM2OWYyNjZlZjc2NTQwZDMwOWIxYjgyMjY5NWI1MzE3MmVkMmNhYTAyNTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFkNjJjYzMxZmYyZTQ5YTA4NzNkMmFmYTRjZTBjMTViZTgwMjgyOWZiYjZiOTk2ZGYzNTg1NTBhM2YyNThmMWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_91cc58a3f16f48cb98fb3816f246e1f2",
+      "statement": "ICredentialsStore defines getCredentials, setCredentials, deleteCredentials, getAllCredentials, and shutdown methods for credential lifecycle management.",
+      "evidence": [
+        {
+          "resource": "repo://modules/obr/javadocs/target/sources/dev/galasa/framework/spi/creds/ICredentialsStore.java#L1-L23",
+          "version": "repo-lines-v1:sha256:31ee19667194f6ac73f8aa48e8ad7725f5f4ad19a0093ec745b677c7e0bb4984:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg3MzI3NzVlZWU3NzAwMThkYjdkNzlkMDM1YTAxNjMwMTVhMDE2ZGUxN2ViYmY4ODg0OTAyZWM2ZDFkOWZjZjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a7dec07b7ced4694b4189a39c198e343",
+      "statement": "FrameworkCredentialsService automatically registers retrieved credentials with the confidential text service to prevent passwords and tokens from appearing in logs when configured.",
+      "evidence": [
+        {
+          "resource": "repo://modules/obr/javadocs/target/sources/dev/galasa/framework/internal/creds/FrameworkCredentialsService.java#L46-L99",
+          "version": "repo-lines-v1:sha256:154858447ee79a77d6719974fd61ff653e383adcb6c72e9100c87792921f742e:eyJzZWxlY3RlZExpbmVDb3VudCI6NTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYxZWQyZjI3ZDJhMDdiMDE5MDM4ZDlkYTFhNWE0ZjNhZjJlMDU4YmZlMjdkNTllMGVlMTc4ZTAxMWU1NzEwOTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFhZTQzZGE0MzcyYWNhNzEwYWVhODMyMGRhZWM3YjMxYjUwZTY3MThjMWRlMTRkZGYyM2Q2NjRkZTI0NmQ0MGMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlhMzNiYmJkZjRjMDRlMGE1MzAyYTcyODBjNGNjZjRkYTAwYTExNzI1MDFmMmQ3ODY3NWRlODQ2NDQ5MGI3OGIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_43f6acb31a9648208153915f3086d282",
+      "statement": "Storage service namespaces must be alphanumeric without dots, cannot be null or empty, and are used to prefix all keys to isolate data between managers.",
+      "evidence": [
+        {
+          "resource": "repo://modules/obr/javadocs/target/sources/dev/galasa/framework/internal/cps/FrameworkConfigurationPropertyService.java#L28-L55",
+          "version": "repo-lines-v1:sha256:1d6c58e4a4b725d7caa811d5b702406ae7f52ee3a49d4cf83d1cd69423aa0f93:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM2ZWVmODcwMzEzNTY2MjUyNzc3ZjgyZmVlZWEzMTUwZWQwMzZiZWM2MGU4MDk0ZDI1YzNlYWM3NjA4MTBkYWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE3NjgwYzlmZGI0ZTU0MTAwNmY5ZTQwYmU4NDAyYjZjOTg2NjBiNWJjZDA5MGE4ZDRjODc3ZmU3YTQ3YWM4NWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgzNTk5NzMxM2Y3ZTc5NGE4MWNmOTIzNDYzYjYyOTBhYTQ0ZDBiNGFlNTBjYzVjZmZmYzk5YjA5YjlmNDI4ZGYifQ"
+        },
+        {
+          "resource": "repo://modules/obr/javadocs/target/sources/dev/galasa/framework/internal/dss/FrameworkDynamicStatusStoreService.java#L26-L36",
+          "version": "repo-lines-v1:sha256:f2fee50406cace4d99369074267751095e49475a1d7e07b6d772519c5f7ff0b1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEwMThmNTIzOWE0MzdjOTM3ODA1ZGQyNDc3YWFlZTRhOTAyYmNhYTUxYjhjZWEzMTNmNWRlZWU5YzBhODFlMTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgzNTk5NzMxM2Y3ZTc5NGE4MWNmOTIzNDYzYjYyOTBhYTQ0ZDBiNGFlNTBjYzVjZmZmYzk5YjA5YjlmNDI4ZGYifQ"
+        },
+        {
+          "resource": "repo://modules/obr/javadocs/target/sources/dev/galasa/framework/spi/IFramework.java#L49-L78",
+          "version": "repo-lines-v1:sha256:6815024caae907795eea38d33f4cce8336fc35e8d1178b1d52116e313f546540:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5Y2JiYzY1NDY5ZGIxY2EyODQyZWZkOTdkZjdlZTJjZTZjYzE1NzE0ODJkMDFhMThiNzkwYTEwYzdjNTEwZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ4NTIzYWI1MGU3NTVhN2M3OTAwYzVkYzM0OWE3M2UzNGFiY2QyNjA0N2I3MDNmNmJkM2JlODNkZmM3ODMwZWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQzNWNlYmIyNmIzNWIzY2ZhZDc1OGVjZmM5OTU3Nzc2OWJhOTU4MDI2ODI2NjBkMzdlZDJiMDU4ZDE2MTViNGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgzNTk5NzMxM2Y3ZTc5NGE4MWNmOTIzNDYzYjYyOTBhYTQ0ZDBiNGFlNTBjYzVjZmZmYzk5YjA5YjlmNDI4ZGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bc01dbe10a634a18933f02f4cef001b6",
+      "statement": "Only one CPS and one DSS can be enabled during the lifetime of a Galasa test run or server instance, while multiple RAS backends can be active simultaneously.",
+      "evidence": [
+        {
+          "resource": "repo://modules/obr/javadocs/target/sources/dev/galasa/framework/spi/IConfigurationPropertyStore.java#L15-L23",
+          "version": "repo-lines-v1:sha256:73ad5fedeb82c6f2dfd02486e05ef2896e4af95f1f76f10ddecf2778b303574b:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTllN2NiMGJmZGRiYWY0MzQ4MDE2MzdmMjZmY2ExYzE4OGJiODJhZTZmNjVkMGUyODAwOTYyNzc0MDU4YzdjOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTcyYTQyOTM4MmIyZTE0NzE4ZTBlMzdiMDU3MGE4YTE3MDI5OTFmY2Q4NDk4Y2Q4NDA2MGE4YmY0ZjA1MDE3YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzk0ODkxNWM3MDZhOGVjZThjZWE5MDc0ZGMwOGFhYTU3YzZkYWQyNjU5MWQ0MWNlMmFhNTIwZTk4OGJmMjZjZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDkxNzMwYzg4M2NjZGQwNTI3OGMzZTUxNjNlNjU1ZWY3YjYzNjIwNzY1YjUyMTczNWFkNTViZjBmODQ4N2MyYyJ9"
+        },
+        {
+          "resource": "repo://modules/obr/javadocs/target/sources/dev/galasa/framework/spi/IDynamicStatusStore.java#L8-L20",
+          "version": "repo-lines-v1:sha256:ca4ff4c48866de29d2038db4e6bb7d63ce7fc50d8a89efbeaf187e90d432222e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc5NWUzYWI0ZjAzMWE2MjZkNGY3ZDFlZTA5NWVhZDFhMWU5ZWU3MDgyYzYxZjRiZGZkNzBjYWY4YzcwMzgyYTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNkYTRhYmFmMGEzMzQ0MGZmMTAyMDEwODBhZjM2YTUwZjg1MWUxZWU5YTE2OTRjMjY4MjQ2ODZlYmQyM2NkMTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNiN2VlZjY5NzZmMTZlYWIyNWVhM2E1MGVjOGI4NzU5MTk2MmNlMTRhNjk3ZjJlMDk0NDczZWI1MGU5N2RlZmIifQ"
+        },
+        {
+          "resource": "repo://modules/obr/javadocs/target/sources/dev/galasa/framework/spi/IResultArchiveStoreService.java#L10-L22",
+          "version": "repo-lines-v1:sha256:2a8a8e8eb850740758ff196d5a8c82756249e3033a640414cdd2876eb333e2cc:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQxMmRjMGM2ZjNkOWEyYTUyNjlkYzE5MDI4NjIxZDBkMzNmYjY0NzIyZDA1YmQyZjhhNDY5OTUyMDExNjE2MzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc5NWUzYWI0ZjAzMWE2MjZkNGY3ZDFlZTA5NWVhZDFhMWU5ZWU3MDgyYzYxZjRiZGZkNzBjYWY4YzcwMzgyYTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA5ZjM5YjZjMzhhM2NiMmJmYjA2ODAzODkxNWU1OGE3NDE5MjViY2NiMjA5MzI0MmFkOGIxZDM2NmVlMjg0YTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIxMzE2N2Y1NDNiNzkyZDY1MWNiZTMxZTU2YWY1MTI5NWU2OTFlMWE4ODQ0OWMxNTZmMThiYjIwNjdhYzc5M2EifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_152e1385731b4cd69d4676d9ee176e77",
+      "statement": "The etcd and CouchDB storage extensions are implemented in the galasa-extensions-parent module as OSGi bundles with pluggable backend implementations.",
+      "evidence": [
+        {
+          "resource": "repo://modules/extensions/README.md#L1-L3",
+          "version": "repo-lines-v1:sha256:4a9ef70b85cf4ee490007541d405b407f5532b8a07afd55e035fcec470d8b5f4:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWM3MDg0YzRhM2M0OWYxMmM4OWM5ZjFkYzA5MjUxZjc0MWI1ZTY0Njg0OTM1MTg3NTM1YjI4OWRiYWRlZThlYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2E1OTcyMzgwZTM1MGZmNTNiMGViYTdiM2ZkYmFlZTlhYWM3ZDQzMmJhYmQ5ODY2Y2Q3N2NhZWRlMTc2ZDgyOCJ9"
+        },
+        {
+          "resource": "repo://modules/extensions/galasa-extensions-parent/dev.galasa.cps.etcd/README.md#L1-L3",
+          "version": "repo-lines-v1:sha256:8449b4ebcc13dedda6b1f9fc71d0b5b43634824e53210813d73829433afdc13e:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmMwMzM1MzBhY2ZhZWY5NTk0NGZkMjRkYjY5MzMwYjQ3MTRlNGM5N2I0ZGNkNjAwM2IyYmJiNWY3ZjE4ZmY3ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjI5OTkwNTg1Njg5YWQ5NmIyNzRmNGJhNjhlOWYxZTUyNDMzMjE5OTJkZGFjM2ZhZWYzMTdjNGQ0NDczMzAxZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzhkOTZlMTE4YTA1OWJmMzA0YzlmNzdmMGFlY2I1NjkyMThkNjExY2Q4ZTRhZDQwMjZhMGY5ZWYyMmRjMTZkNyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_907908f568924a389a8d472c7bcd26e8",
+      "statement": "IDynamicStatusStoreService extends IDynamicStatusStoreKeyAccess and adds getDynamicResource and getDynamicRun methods for managing framework-visible resources and run status.",
+      "evidence": [
+        {
+          "resource": "repo://modules/obr/javadocs/target/sources/dev/galasa/framework/spi/IDynamicStatusStoreService.java#L34-L80",
+          "version": "repo-lines-v1:sha256:3f6951176b7d0e5ccffb664dfcda3e2e10418f16cb0715617f70117a6f85880a:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY1NzM2YTU4YzdjNjM5YmY3YjNjZjFjMTQ0MWQxYWRhMzA1NTlkODAyMjM3ZDRlYTU4YWVjM2Y1OGM0OTlmYTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5NDcyM2QyMDMwZDczZDkyOGFiMGUxMDFjMGU1YTBlMzRiZWRlZDA3MDM2MzI5ODc2MzRjODJiODdlMDhlZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.2",
+    "at": "2026-09-21T12:35:12.771Z"
+  }
+}

@@ -1,0 +1,184 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:2cbd34befc8b2accd6c46175648d83839e2e39fa646369a8ee4fb19c3ecd819d",
+  "claims": [
+    {
+      "id": "claim_1740cf871c844b7393df9734ac74b3ff",
+      "statement": "The Galasa REST API server is launched via galasa-boot with the --api flag, which invokes FelixFramework.runWebApiServer() to load Jetty, retrieve the ApiStartup OSGi service, and start the server",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/Launcher.java#L223-L225",
+          "version": "repo-lines-v1:sha256:529d8965e637baa32be3e375d9ef9fe9bd3efbeb4ff381fcc179bbede9418bd8:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGJlZWI1MGJiY2JjNjlhYzQ5NGMxMjljYjNmZDk4YzRmODQ0OGRjMmI1ZGYxMDkzODg0MzY1MzNhM2YwMWFjOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzFhYmRmYzE5OTc5N2E3ZDllZjY3MjA4NjFhNDYxNTQ1ZGI0NTNiMmEyOGJhMDI3MGQzYjhmNzc3ZDVhYjE0NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGZiNDg5NjYxZTUzNGM2YzAwMGJjNWNjZjBjNjc4YmEzMzMxODBkMjM2NmMyMDVkNjJmY2JiNTJmYmJlZTBhYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTNkMDg5YzhiMjQ4MDUxZGM3ZjIyMDBlZGNlOTBmYTZlNmZiNmZiMDY0YmJhNDA5Y2JkYWYzNGZkZmQ0MzFjZSJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/Launcher.java#L70-L70",
+          "version": "repo-lines-v1:sha256:620882849b75ead1f22c5840f09929822691eb94235dcc9969e4e4af98a4feb9:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjIwODgyODQ5Yjc1ZWFkMWYyMmM1ODQwZjA5OTI5ODIyNjkxZWI5NDIzNWRjYzk5NjllNGU0YWY5OGE0ZmViOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjIwODgyODQ5Yjc1ZWFkMWYyMmM1ODQwZjA5OTI5ODIyNjkxZWI5NDIzNWRjYzk5NjllNGU0YWY5OGE0ZmViOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTZjZjk3YTNmZGMzNThhZGM5ODBjNWUzOTc0NjIzZmYxM2FlOWQyMTE2OWNjOGFkN2NhZTNjNGQxMGYxOTVjZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjliYmJiODcwODg5Yjg2MWMxMTNmMmM2NzEyYjFkYmIzNGNjYTkwYjk1ZjA1ZTVjYjk3OWZhMDFhZDdmYWQzMyJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/felix/FelixFramework.java#L740-L789",
+          "version": "repo-lines-v1:sha256:1d62461d50abda0821e5de9c20842e328ad1f2cb2bf2dd10221dd543b1d0bdf1:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhYTUwMjhhMDg5ZDAzZjM5YjhhZDUxODAwNmJmOThjMjZhMDE2ODUxZmI1YzlhODVmNGZhMjgzZGFmYjEwMmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVhOTFjM2EyMjkyOWJhMTQxNTMyODE2MmUyNGViOTIzMzQ5NmMyN2VmMTE2ZTU3OWExZTdlN2VmZDQyNTcyZjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRkNjU5NDZhN2RiYzAxMGFjMWEzNmU5ZDZiZmMyNjdhZTJkNzI4Y2ZkZWEyOTM0ZTAzNThkMTU3ZTQ3ZTg2ZmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_263d36f4c8354bd0b49f33fbea274da4",
+      "statement": "ApiStartup.run() initializes the framework, loads all bundles providing javax.servlet.Servlet services or specified extra bundles, and enters a monitoring loop to keep the server alive",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.api/src/main/java/dev/galasa/framework/api/internal/ApiStartup.java#L136-L183",
+          "version": "repo-lines-v1:sha256:a9025b55c07a9851e190ffee152985ee8a0985328e47a1ad08b79ce910070dff:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyYjM2NTEzN2I1Nzg5ZDc4YzFhZGY5MmQ2MTQ0MGExNTM4OGFlNDI5ODc5YjY0NDZiYmU3ZWY1NjdiNTgxY2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRmYmQwMDkzMTRiYzI3MDg0MTY3MzRhMDJhZTVmZjM5YTFlNDhhMDUwYmU5MWY0M2IyZmFhOTIwMDJjNjJiZmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY0NGVlMzEzMjhhNDU3MWQ3MDA2NDAzZTIxNzMxY2EzZTk2NDFkY2JmYzY2MzI4NTdiOTUxZTFiMWQ0OTU2MzMifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.api/src/main/java/dev/galasa/framework/api/internal/ApiStartup.java#L51-L95",
+          "version": "repo-lines-v1:sha256:ee01ae4445bbd2f8eb027dda399ad7228a07740485173d95444ef87c6dade5b0:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA5NmE3ZTJkNmZkMTU3NGQ1YmU3MTk3MzdjMjIwNmNhYTQxZTE1ODdmZWRhY2IwOWEzNGJlMDhhOTY4MzdhYTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFjNWJjNmEyZGI0MWE0NmVmZjhlMWRjYzEyODQ5YmE5N2JmOTU3ZTA2MjZkNjJhYWE4ZGJhNGZiZGI2Y2RiZjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMzMmNlMjZiNDQzNjAwNzgwNjc2YzExYjQ2MTE5OTVjMTcwODliMDkwMDc2ZDc4YTVkM2EyNzUwNDk4NTgwMWYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f9d3d120b118439694335b76e49a4be7",
+      "statement": "The API server is organized into specialized servlet bundles, each registered with a specific URL pattern (e.g., osgi.http.whiteboard.servlet.pattern=/ras/*) and extending BaseServlet",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.api.authentication/src/main/java/dev/galasa/framework/api/authentication/AuthenticationServlet.java#L46-L48",
+          "version": "repo-lines-v1:sha256:b5f8ec6368090be40e05d66d5aec84c0c76ca8db44299f64fa1c3208be952c10:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTk0NGJkMjI5MzYyYzZkMTA3NDc1ZGMwZDBjZjYyOGQxM2FiODMwZTQwNDU1YjAxMTZkZTlkNzczN2Q0MTgxZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDljYmRmNTMzMWE0ZGIzNzkyYmVjZWVjOWU0YTRiYWYyNmY1NjBkYjNmNzEyY2E3ZDA0MzZjNTZiZjk0YTE3MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2YyY2UyNjhlZGNmNjUzNDgyYjFiYTUyODgwZTJjNGUzMjIxZmQ5YTgwNDJjZjYzMDViNDRiMDYzN2Q4ZjI4OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzIxNzgyNDdhNjE2MzlhZjdmMDBkYzBjZTlmNmYxMDQwYTI5NzU2YTc5M2ZjMjk3M2U2MzkzMTNlODQ3MDU5MSJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.api.ras/src/main/java/dev/galasa/framework/api/ras/internal/RasServlet.java#L37-L39",
+          "version": "repo-lines-v1:sha256:ca28518f385db9ea681202788c33cb12d732e700928b7426b1e8b16bc4f20d08:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTk0NGJkMjI5MzYyYzZkMTA3NDc1ZGMwZDBjZjYyOGQxM2FiODMwZTQwNDU1YjAxMTZkZTlkNzczN2Q0MTgxZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzM0NjI2Nzk2ZjY5NWRhZDI2MmFmYTIyNGFlYmI1MGU5MDM1N2UwYmRjMTA0NWQzNmE2YmM3Njg2YjFhMGJlNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDZhOTdmODYwOTllYzY2YzE5OTVhOTFlODY2NjY2ZGRhNDE5ZGNlNWI3NzMzZGVkYjhlNGJmZDhjMGUxOTA4OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTJhNzQwMjM5ZWM4NGFiZTRlMmVhOWQwNjBiM2IyZTA3MTQ5Mzk0MmExNGU2Nzk3MTVjZTk5Y2Q1NzQ5MDMyNSJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.api.runs/src/main/java/dev/galasa/framework/api/runs/RunsServlet.java#L36-L38",
+          "version": "repo-lines-v1:sha256:5a703857cc75a0f4bcfe3f2516fbe3c53dec11faa2e58c5e32809d1805cbc65c:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTk0NGJkMjI5MzYyYzZkMTA3NDc1ZGMwZDBjZjYyOGQxM2FiODMwZTQwNDU1YjAxMTZkZTlkNzczN2Q0MTgxZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTMwZjE0ODI4YzU3ZDUzY2FiNTYxYTQxNDVjMGRhNTg0MDFmOTE0NjAyNGUwZGY3MTIzMjQyMjg3MTFjMWMxZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjNmMzE4NDIwY2YwYjk3MmIzY2E4YTYwOTNiN2Q0ODViYzZhZDQ2MmZlZTg1NzdlYjY2MzVkNTMwZTRkYjkzMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzIxNzgyNDdhNjE2MzlhZjdmMDBkYzBjZTlmNmYxMDQwYTI5NzU2YTc5M2ZjMjk3M2U2MzkzMTNlODQ3MDU5MSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_04fd68f0aa13434b97775105f41dcef3",
+      "statement": "BaseServlet provides pattern-based routing by matching request paths against registered route patterns and delegating to the appropriate route's HTTP method handler",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.api.common/src/main/java/dev/galasa/framework/api/common/BaseServlet.java#L119-L150",
+          "version": "repo-lines-v1:sha256:92716a867ab345aad4c5204cc7c04487ecf966b115ba752097296f9f3ba6a104:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEzMzNiMDQzZWViZWY0ZGM3NzA1NDU0YTIxZmIzYjlhMTUwNzI2NGRlNDliMjIwZjEzODU3ZDUwZDFjODE3OTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA5ZGJkMmM2OTczMGZmNmY4NGE4MzJiZTg2Mzg0MjM5NDE1ZTJkZmMyZDU2NTM4NzFkZTM3ZTBjYTc4OWRmNzEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQxZWU1NTUyOTk0ZGU0YjM5ZDE3ODVjYmMyOTY5NDdiNmE2Y2M3MGRlNzc2ZWUzZDY3N2JhZjAwNjkwOTgzNmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjczY2ZlMzg4NWQ1YTVkZTA4NWNhZGJkNGUxMjk4YzM5NDZmZmIwMjVhY2NiZGEyMzhmN2RiODUzNDA2Y2ZjZjgifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.api.common/src/main/java/dev/galasa/framework/api/common/BaseServlet.java#L27-L53",
+          "version": "repo-lines-v1:sha256:28f751c268b294d7e2f23245f649c511c65bacbd90d0d6668874a11d84c88438:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZjNDkwNDRjZDQ5NTQ2YmM0Yzg1YmEwMDk5OGZmYjEwZmEwYjA1MjYzMGI4MjJmYzdmMDIzZjc4ZTE1OWVkN2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJlNGE3Zjc3NmE0MjE1NjIyN2ZlNmQzYzZmYzQ3NzU4MTc4ZGI4Y2QxOGU5MzNmZTJlNDRmNmFlNzlhYzdiNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIxNzMxZjA2YjAwMjE4NzExOTllMDJlYTY4ZDRhMmY1NDhhYTAwYjFlOWZkYWE5YmU2NzkxMGYwNmNjMDIyNjAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_354d958be9ca4a2ebf71abd647823035",
+      "statement": "JwtAuthFilter validates JWT bearer tokens for all protected endpoints using OidcProvider.isJwtValid(), which verifies JWT signatures against Dex's JWKS endpoint",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.api.authentication/src/main/java/dev/galasa/framework/api/authentication/JwtAuthFilter.java#L119-L135",
+          "version": "repo-lines-v1:sha256:eb8d9266cac27dab673f78d44add94a12a07dd4367122d75fe658b2fd04de487:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5Y2JiYzY1NDY5ZGIxY2EyODQyZWZkOTdkZjdlZTJjZTZjYzE1NzE0ODJkMDFhMThiNzkwYTEwYzdjNTEwZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY1MzI0NmU5ODE4ZGU0OTQ1M2MyYzJmYzIzNDU2MWVlYjJiODQ0ZTFlMmIzNzg5ZWZmYzA3OWEyOWE1Y2E1NjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQxMGIzNmFhNzRhNTliY2Y0YTg4MTg1ODM3ZjY1OGFmYWYzNjQ2ZWZmMmJiMTZjMzkyOGQwZTkzMzVlOTQ1ZDIifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.api.authentication/src/main/java/dev/galasa/framework/api/authentication/JwtAuthFilter.java#L38-L40",
+          "version": "repo-lines-v1:sha256:19b6dd20fd63075237f0f343c9d4f9468e44ea68338f54b76d3da9621cb01502:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjgzZjI4NGM4OGY5M2NiZmQ4OTQ2NmY0NjhhZjRhMGI2MTczZGNlMDE0MmE0YjFjNGRlNmZjZDY0OTJhYTMxNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTFjYWZlODAzYTNmZWJiM2ZlMTkzZGU4ODA0MWQ5MjI1M2MxOTQ2NmNhODFlNTIxYjI5MDc3MDM1YjEwYmRjOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmU0YTdmNzc2YTQyMTU2MjI3ZmU2ZDNjNmZjNDc3NTgxNzhkYjhjZDE4ZTkzM2ZlMmU0NGY2YWU3OWFjN2I2YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDc0NTZiODk3Yzk5MGJiYmEzMGU1OTcyNWY3YzlkZDM1ZmFlNGJmNTkxMmUyNjc2MjZkMTE0YzU4ZTNkMGMwMyJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.api.authentication/src/main/java/dev/galasa/framework/api/authentication/JwtAuthFilter.java#L74-L113",
+          "version": "repo-lines-v1:sha256:4329222504d16167cb7208af4308211e84e7122d7050eabfa69f8b8d071310db:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcwNTk0OWZiMjhhY2Y3YjY3ZDcxYzI2YzEyNjFkYmU4ZTA5NmMyMWNiOTlhYjQ5OWFlODMwYjEzY2RhMjE2YTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM2OTQ2ZTEwMWU1ZTc4ZDkwYTUxMGM2OWYyNjZlZjc2NTQwZDMwOWIxYjgyMjY5NWI1MzE3MmVkMmNhYTAyNTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkxZjlmYzAyNTlhM2E0OTNmNWRhYzFlZDkzYmQ0M2QzZDhhYWJmOTQ0YjA0ODVhN2Q3NjNmNmQ4NTUyZTc0NzMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6ca1eb145f40403c82edc028f1218847",
+      "statement": "Role-Based Access Control is enforced via RBACValidator.validateActionPermitted(), which checks whether a user's assigned roles grant permission for a specific action ID",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.api.common/src/main/java/dev/galasa/framework/api/common/RBACValidator.java#L16-L40",
+          "version": "repo-lines-v1:sha256:0d3bf4f21a7e0afc3fcd0d5709cf81e2ea0ce644b9b97987cecb6e7e784de612:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNlOTI5YzQ5MzFhZTdjMjg2MTk3OTBiNmFiODI0MzQ2Y2Q3MDRjMGY5ZTRhYTNhZTgwMDVjYzg4NmI2OTljNTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJlZGRmMjkyYTlmOThlOWVlZmYyNTliYTkwMDQxOTBmYWI4YzJlOTgxZTg3MGMwODFiOTgyZjkzNGFjNGJmNjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_82081c6172fa491ea439b43e3cac2f75",
+      "statement": "The API server requires GALASA_DEX_ISSUER, GALASA_DEX_GRPC_HOSTNAME, GALASA_EXTERNAL_API_URL, and GALASA_USERNAME_CLAIMS environment variables to configure Dex integration",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.api.authentication/src/main/java/dev/galasa/framework/api/authentication/AuthenticationServlet.java#L76-L84",
+          "version": "repo-lines-v1:sha256:1206fceac2515a80bed390c99df6dfcd3978c79160f61d81debab775f4db3819:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGI4MTdjM2JmZmY4MDE2ZjBiOTE3ZTc0NGZkMzQ4NWRiNzhkZTM2MjFmMGZjYmIwY2ExN2EyMTRkNWIzM2FkMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzY5NDZlMTAxZTVlNzhkOTBhNTEwYzY5ZjI2NmVmNzY1NDBkMzA5YjFiODIyNjk1YjUzMTcyZWQyY2FhMDI1OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGYxZTZiODNiZGIwYTQxNzlmNjdjMzI2ZWIyOGE3OGJiMDMxOWE5YzQwYTQ1MzQ2ZDA3Y2ZmYTZiODAxYWIwNCJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.api.authentication/src/main/java/dev/galasa/framework/api/authentication/JwtAuthFilter.java#L60-L70",
+          "version": "repo-lines-v1:sha256:b9d590194233e786a85b7637241a7dd9fc1fe465bb35b29e18bdbc7447ec77e8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVkYzJiMzExYWJlODc1NzJlOGE3Y2MwZDk5NmE2NTg0NDA3NmU1MjMyZDIxYjdhODU0NzVmOWI0MDU1Yjc0OTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI5YTM5ZWQ1OGM1MmVmNjBjMTZmOWU4OTJhYjRmYzY0ZGIzNzIzMTBkNmQzNWUzNmNkMGJlMDAyNDVjZDUyNTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM2OTQ2ZTEwMWU1ZTc4ZDkwYTUxMGM2OWYyNjZlZjc2NTQwZDMwOWIxYjgyMjY5NWI1MzE3MmVkMmNhYTAyNTkifQ"
+        },
+        {
+          "resource": "repo://modules/framework/test-api-locally.md#L106-L118",
+          "version": "repo-lines-v1:sha256:6a4136e1af0c4e48c4381ab1a5d263f6612b2f29a98d0e440f59b0c6e9b929a0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlZjdiNTdiOGIwNGNlMmI0MTg2MGMyZmM0NWVkNTEyZWM3N2Q0OTM5MWU2YWQ3MDc4MTdiMTg1MzAzZjkxYWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5MTFjZGRjZjdjYTc1YzVmOWYxNjI3NTM1NWJkNmQ2MGI1YTY0NTk1YTY2MmQ3ODgyOGU5MWZkZWZjOTQ2M2UiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU0Njg0NmQ1NWE5Yjg5NzZkODc5ZThkNWQ0ZjRlYTAzNTE2MDQ4MjdjZjg2YWYyYWY5YWRhNmIwMmQwNjg1NWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUxYjk2YTA2NmNjMTVlZjA0Njc3MTVlYTI5ZGViYWNkNjkwY2UwYjYzMzBlN2YyNTU5NjVjNzJiYmZjOTAzYzEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5030e2c9cd4f452b88111c4f7b5a8e0b",
+      "statement": "Bootstrap properties configure backing stores including framework.config.store for etcd, framework.resultarchive.store for CouchDB, framework.auth.store for authentication data, and framework.extra.bundles/api.extra.bundles to load store implementation bundles",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/dev-instructions.md#L240-L247",
+          "version": "repo-lines-v1:sha256:fceba9751e0fee1fa41a4994b4a9a5849c5e74f21c8c57e0037d5e8b1b5c948a:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWFhM2M5MDRjOWZhMGZhODljOTllMTA0NTBkMWQ2M2NlZmY3OGNiYzJhNWYyMWY0ZGE0NGM2ODVkYjUyNTQxMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDdjMDZjNTYxZDVjMzI3MzQzNjg1MjY4YTQ2YjMzOTFmMzk5OGVlZTg5MGQyYmU1MWYwZDIxY2M0YTUzYWU2ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmEzY2Y1MTkyMzU0ZjcxNjE1YWM1MTAzNGIzZTk3YzIwZWRhOTk2NDNmY2FmNWJiZTZkNDFhZDU5YmQxMjE2NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDNmOGJiOGFhMzQxMjNkMWJjOTI5ZWFkNGQ2ZjhhYjY2ZjA3NDUwN2I4ZmFmMzEwMWJlOWMwM2Y1OWM2NDUyZSJ9"
+        },
+        {
+          "resource": "repo://modules/framework/test-api-locally.md#L143-L161",
+          "version": "repo-lines-v1:sha256:61e8c079cf414d5f8a4848648b3a70adb596f5ce99d2fcb223cbdfa5ea4004a4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YzA2YzU2MWQ1YzMyNzM0MzY4NTI2OGE0NmIzMzkxZjM5OThlZWU4OTBkMmJlNTFmMGQyMWNjNGE1M2FlNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5ZTMxY2I0OTJjZDIzNzEwYWI2NTZmNmQ2NDZmOTIxMGZhZjk0ZGQ5N2Y2NzUzMmI0MWYxM2E4ZWRiN2VkYTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk4ZDQ4YjQ4MGMwMmFjYTViNTU0ZWU0YjZmYzAxYmVjZTBjOTU5ZDk3ZDIxOWMzNmY2NmQ5Yzg3NmIxMWFmODUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9787145e85114e20981b79897e68bea4",
+      "statement": "All servlets use BaseServlet.processRequest() for consistent error handling, which catches InternalServletException for curated errors and unexpected exceptions, converting them into HTTP responses with JSON error payloads",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.api.common/src/main/java/dev/galasa/framework/api/common/BaseServlet.java#L87-L108",
+          "version": "repo-lines-v1:sha256:429f94affd0cf840f21f9df17cf34c22b87add5288f54d91dc2ec9aac4628cbd:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg5MDZkYjMyZWU1MWJjMzIzMDY1ZjU3NTFhYjA4MTI1NmIyYmI4M2NjNjMzMjllY2M2YTk1ZTUwM2NjMmRjN2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMwOTEzOTExYzQwN2IzZDJjMzU2MGE0YmZiMTAyZTZiNGVkYTJlYzFkYjUxODMxMjFmZjQ3NWM1ZGI4MzM1YTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUyNzBjNWQzZmUwZTljNzY1MjBmYjdjZjVmZjM3M2FhZmE4YjhhMGEyMDBlNWMyODY3NjZjM2FmZThiYjU5MTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d3b1196305094f0dabddc3e6b0b08a6e",
+      "statement": "The OpenAPI specification is located at dev.galasa.framework.api.openapi/src/main/resources/openapi.yaml and served via the OpenApiServlet at GET /openapi",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.api.openapi/src/main/resources/openapi.yaml#L1-L10",
+          "version": "repo-lines-v1:sha256:b5f360d7e38fa9436aa934d417c6abb5fee25f59a17d1ac42d78de42872b87ab:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMyYzQ4NThlMjJjYzJjOTY3YjQyMTUwZmE1NTA1NjJhMmM4MzljMmNlYmNhYWI5MWNhYmRmNmY0ZGEwMjAwMjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBmMzZhZTIxNWZhNGE1MzEyNDY0N2Q1NTJlNWNiNGU1ODgyOGRhZmUxMWUyMjllNGFmMzY5NzA1NDdlNzQ1NDYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRjYTQzN2NiMTBhNDgxYWFmOGI2OTA3NTVmODUxMjRlMjQzNWEwMjE3ODVjZjBjM2IyNzNiNzZkNWE5ZTgxZGEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ed7159acc7344c57b9ccafb6e37515b6",
+      "statement": "RasServlet registers routes for run queries (RunQueryRoute), run details (RunDetailsRoute), artifact listing (RunArtifactsListRoute), artifact downloads (RunArtifactsDownloadRoute), run logs (RunLogRoute), result names (ResultNamesRoute), requestors (RequestorRoute), and test classes (TestClassesRoute)",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.api.ras/src/main/java/dev/galasa/framework/api/ras/internal/RasServlet.java#L58-L78",
+          "version": "repo-lines-v1:sha256:fbd70107d8f2c7b2938f52f6c31c3f4cca53c271f93cf28f386088a293ca5446:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYwOGNjMTVkMDc1NGI2ZjIxZjcxZTBiMDNiOWRkNzg2YmM5ODgwMDNiMmI1NzU2NGM2MDUwYTgwMjI1MTdjNWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3Y2RhODJkYTYwNjIzOGUwNWU2MjM5OTU2OWM1ZWUwMzk5MzQxOTY0OGFlNWQ0M2EyYmY4Y2Q2MzQ3ZjgyNjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdmMGQ3MWVlMDdmMTVhYjY3NTRmN2ZiYThmOTIyNjkyNGU4ZmM1Y2QwYTJhMDNmNGEyMTc2MGNkNWEwN2ZjNWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgwNGY4OWZjMGVjOThjOTgyNDE4M2U3OTVkM2VkZDE5ZTkzMGY3YmM0NzFmOTAxMmFhM2Q1MDNiZTJmODk3NGIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_11e63e569e944484b409169e85e20c44",
+      "statement": "RunsServlet registers routes for portfolio submissions (RunsPortfoliosRoute) and group run management (GroupRunsRoute), requiring streams service, credentials service, and RBAC service",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.api.runs/src/main/java/dev/galasa/framework/api/runs/RunsServlet.java#L62-L80",
+          "version": "repo-lines-v1:sha256:738774f00d9b438071da940733be2d099e02d46a11f90db7defd782dd06628b5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVkYzJiMzExYWJlODc1NzJlOGE3Y2MwZDk5NmE2NTg0NDA3NmU1MjMyZDIxYjdhODU0NzVmOWI0MDU1Yjc0OTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRjYzY3MDc1NzliZDQ4NDllM2NjZjYyYzZkNzRmZmQyMTMyMjY2ZTU3ZWY2MTZlY2MyZmE2YWFjMDQ4YjYyZGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZhOTg0NjFiMmRmYWNiNDdiNTAyMTMwYTA2YWFmMGNjMzY5ZDZmOGY3MGU0ODk0MTE5NzgwODU0N2JmOTY1MzAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_be8244fe393b41408629e03f2e74e1a4",
+      "statement": "AuthenticationServlet registers routes for authentication initiation (AuthRoute), OIDC callback handling (AuthCallbackRoute), token management (AuthTokensRoute and AuthTokensDetailsRoute), and client registration (AuthClientsRoute)",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.api.authentication/src/main/java/dev/galasa/framework/api/authentication/AuthenticationServlet.java#L100-L119",
+          "version": "repo-lines-v1:sha256:5e5226413179d996d6983aa3392ab9a4fa665afbee5ed07f278c73801a2db9ff:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhMjgzNDA2ZmM3M2NlYjMwMGZjMGJhMmJkZTgzMTg0MDVlMGMxOGQyNzA0YzZlOTk5NWRlYmVkYmI1ODY2YTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJlZTAyMTI3NDI2OGFkYTVjOTkwYzNhYmNkZDRmNTA4MTYxYjM2ZDE5ODBmYTdlNjYwNmNjNzUwZDY3MjI1YjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQyYzdlNWZhYTQ1MTY5ZWZjNDY2OGJkMjY4YjE4ZmRhYTliZWNhNmRiZjA1NjYxYjVjY2ZmM2VhNDZiYjQ2ZGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc5MDI2NjcwNTBlODA0YWEwNjRkODg0MzkyZmZkYjc4MmIwODZhYTUzNDUxYzIzODYwMjU1NjYyNGM4ZTBmNzYifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.2",
+    "at": "2026-09-21T12:35:12.771Z"
+  }
+}
