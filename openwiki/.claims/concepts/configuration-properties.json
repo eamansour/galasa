@@ -1,0 +1,266 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:cbdbf3e10f8b40f27ba5642ec0dc678488446ee41437c13cc4d0bd79dd2fd695",
+  "claims": [
+    {
+      "id": "claim_629aefdddd55415595cb1754f10442cf",
+      "statement": "IConfigurationPropertyStore is the backend storage interface implemented by different storage providers for persisting and retrieving properties",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/IConfigurationPropertyStore.java#L14-L24",
+          "version": "repo-lines-v1:sha256:c55cf4cadb1d8e1a2520f1fea1fb984ac17a3e508ca92583ffd851ae5f10ad31:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI5N2VmOTY0MDUxZjU4Yzc4ZGNjYTg1OTY0MzE3ZWJiMjQ4NmJkNDlkM2NhZTQ5MDEwNDg2NzM1OWUzMDQ0NTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5OWY3MWNlZjMwMDM1ZTQ3NTJiZmM4ZmUxN2Y2ZDU5YzNmZjJjODliMzZmMmY3OTAxODljODYyNGQ1YWYzYjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg0ZjU1Zjc1Yjk2ZTJmY2M5Y2YwYTVkMjU0OGVkZTZmZTBkMzQzNDA4MDQ0M2QwNjY0Y2U0OTE0ODQ3YmFjZDgifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/IConfigurationPropertyStore.java#L26-L38",
+          "version": "repo-lines-v1:sha256:7c6d7b9ea8b845a82fd80b0b051bb42026dfaae42f2d86cd6953bc99b757c73c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5Y2JiYzY1NDY5ZGIxY2EyODQyZWZkOTdkZjdlZTJjZTZjYzE1NzE0ODJkMDFhMThiNzkwYTEwYzdjNTEwZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI4MGY4ODA0ODZkMGM0ZWI0NzQ2NzZlMjg4YTUwYTE2MWQzMTk1ZTU5YzQyNjI3ODU3OGVlZGQ0YzViNGMwMzYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcxMzI2MWE4NjVkYjg4ODg3YzA1ZmMzZTVhYmY5NmI0OGE3ZjU2NTQ0NjAxMTIxNzM2N2VlZTE2ZDc3OTU3MzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU3Njg5ZjBiMzQzNDNlYjM2YmIwNTJkYTgxYjhlYjM2ODQ1MTQwZGZmNTZjYzA2OTcxMzAzMWY0MTA0Njg3MzAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4f647909d8f942bcab4d082a2d6ba96d",
+      "statement": "IConfigurationPropertyStoreService is the service interface used by managers and tests to access properties with namespace-scoped access and hierarchical property resolution",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/IConfigurationPropertyStoreService.java#L14-L34",
+          "version": "repo-lines-v1:sha256:6cec68a33fdd2a8dadc2dd9e4f36f784e42b1c5758fb4ef269b18be78d9a216c:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3MmE0MjkzODJiMmUxNDcxOGUwZTM3YjA1NzBhOGExNzAyOTkxZmNkODQ5OGNkODQwNjBhOGJmNGYwNTAxN2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5OWY3MWNlZjMwMDM1ZTQ3NTJiZmM4ZmUxN2Y2ZDU5YzNmZjJjODliMzZmMmY3OTAxODljODYyNGQ1YWYzYjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ0NjQyNjRjZGYzY2IzYTEzZGNiYzVlZjA4NjUyMTU3NzMxZmYzY2NkNzlmMzkwOThhNzVmMWUxZDFhMGJiZWYifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/IConfigurationPropertyStoreService.java#L36-L78",
+          "version": "repo-lines-v1:sha256:8b276b50530041608ee909a2193eef5dc016365e2bfc406d80e2a66f0558e417:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ4NTIzYWI1MGU3NTVhN2M3OTAwYzVkYzM0OWE3M2UzNGFiY2QyNjA0N2I3MDNmNmJkM2JlODNkZmM3ODMwZWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYwYWY5ZGRlZDYzNmY3YTk2ODZmNWRkMmEwNjdkZThkYzE1YmY4NGQyY2Q2ZTNmOGVlZmMzNGEwZjVjYTM0MTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgwOGRmNjFlNDIwZTM0MDUzMTE1ZTk0ZWRiNDkyOGViMzZhZGEyN2Q4M2Y0YzI2ZTc0Y2FjZjg3YWM2NDA2MTkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_87f364bae24a41ab97ac37335cc8831d",
+      "statement": "FrameworkConfigurationPropertyService implements namespace-aware property access with hierarchical resolution by searching from most specific to most general property variants",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/internal/cps/FrameworkConfigurationPropertyService.java#L21-L55",
+          "version": "repo-lines-v1:sha256:555edee08d90ab3786a51e33b3e54917bba7cbbd9da3f7012cf6c507bfbac9ef:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIzNDU5ZDU3Zjc3YjRkNzM3YWE5ZTljNDliZmJjNWI0YjljMzE5MTA5Mzc0ZmQ5NDYwZTBiNTUwMTFiNjY0ZmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgzNTk5NzMxM2Y3ZTc5NGE4MWNmOTIzNDYzYjYyOTBhYTQ0ZDBiNGFlNTBjYzVjZmZmYzk5YjA5YjlmNDI4ZGYifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/internal/cps/FrameworkConfigurationPropertyService.java#L231-L242",
+          "version": "repo-lines-v1:sha256:c4c384cd16656f5804cd373a8cb328f9ed43686a47b3c210aec55b989db151e5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQxNWJjZWE2NGQ4N2NmODRmYTIxYmMwYTdkYzZiODdiNWM5MTAxMTAzY2VkMGJhZDljOTU5MTI3YjM2NDZmY2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhhY2RhZjRkMmJmYWE1NTg1ZWUwZTk5ODI2ZjE4Yzk5MTExY2RiMTY0YTIwNjAzZjBkNzA3M2E0ZmQwOGViYzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE5NTFkZmE2ZTgzODFlYjRkNGZiOGY1ZTUwYWU2Y2UwMDdiMTA4YTQ5YjM3YmE0NzE0NzFkMjEzZTYwMzkxNjkifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/internal/cps/FrameworkConfigurationPropertyService.java#L57-L91",
+          "version": "repo-lines-v1:sha256:efcb81c27578ea7c905d1d1ed9c500bf8284a67891ba9eb39ba96903e4d787de:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5Y2JiYzY1NDY5ZGIxY2EyODQyZWZkOTdkZjdlZTJjZTZjYzE1NzE0ODJkMDFhMThiNzkwYTEwYzdjNTEwZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU0MDkzYjYyNDI1ZmRjYzc2OGZiNzAxYzEwMTk0MzFjMjdjZDA4ZGZjNjQxM2ZhMDg3ZmY0NDk0N2U3NTdmZmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgzNTk5NzMxM2Y3ZTc5NGE4MWNmOTIzNDYzYjYyOTBhYTQ0ZDBiNGFlNTBjYzVjZmZmYzk5YjA5YjlmNDI4ZGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c60dfb7f28844e14af08d812e8be1439",
+      "statement": "Property lookup searches overrides first, then the CPS store, recording the property access including its source (overrides, cps, or missing) for diagnostic purposes",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/internal/cps/FrameworkConfigurationPropertyService.java#L200-L216",
+          "version": "repo-lines-v1:sha256:b6f19c2a4c3cf792be75f1027944bac18c756bf4b31b4ec6421a0a0ee66eea43:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkxMDVkMzc4OTEyOWQyNWJlYjU4NTBmYTcwMzcxMjNlYWY4NmFlN2U5OGRkM2M3MDA2YTkzNzJjMjAzM2UzOTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRkMWFiMzRkMzIwNWM0NDA4ZDJlMTgyYjQ4N2E1YjQwMTQ2M2E1Y2JhNWYwZTVhZGNlNzJjYmI2NDU3Y2E1ODgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgzNTk5NzMxM2Y3ZTc5NGE4MWNmOTIzNDYzYjYyOTBhYTQ0ZDBiNGFlNTBjYzVjZmZmYzk5YjA5YjlmNDI4ZGYifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/internal/cps/FrameworkConfigurationPropertyService.java#L308-L311",
+          "version": "repo-lines-v1:sha256:b81ea74b5396ba3bbe0bb7a65e1996fae015d1423b18ff57fe23ea8f78adda24:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmVlNzAwY2EwYzBjNzViN2RjYjBlNjJkMWYzNzMxZTU5NzEwZDI0ZjEzMWNmNTQ5NzgzMjBiZTUxNWMwNGNjNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTczZTQzNTc5MzQwYzI2YjY3MzhkZTk3YzAwODY4ZDllYjA0MTZhYjZhMGEzZjI2OTIxZmUwNTkyMzhlYTcxOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2YxNjQ5OWRkYmUxMDI0ZmE0MWJhNTQ1Zjk3ZWRlZjgxM2JkMmY0Mjk3ZTU3NGM0ZTJlMzBkNGMxMGZjNWIzNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_2ab0329f28ad4cdaa9f9fd374f2dd006",
+      "statement": "The hierarchical property resolution creates ordered key lists by combining namespace, prefix, infixes from most to least specific, and suffix",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/internal/cps/FrameworkConfigurationPropertyService.java#L252-L264",
+          "version": "repo-lines-v1:sha256:e65c009d1419fa1da8df612fb8960c3f1c3fa5979de24e5d022b841c53a82648:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNkMWUxZTI2MGJkYTc3MmZhYTk4MTU1ZDM4MDhmMDk1YzhiZDJhN2U5YTUzNmNiNzdiOWE0N2M3MTQ0NjE2NzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdlMWJiZGU2OGFmMDZkN2FiYWRiODU5NmUyY2IzMWI3NjAwMjc0NWZlYzkwZmZkMWI5ZDkzYjllNTI3ODE5MWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY3NTk1ZGJhYjczNDVmOGJmMGM0N2M3NDc2NWNkMmI5NDNlMjQ4MTJkOTMwMDg0YWJmNDE0ZjQ1MmRhOWEwNDYifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/IConfigurationPropertyStoreService.java#L43-L58",
+          "version": "repo-lines-v1:sha256:e4442da2b4d9e41e9dae224f87b48dc812b184df295ead0cc20804621a69fb00:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk0NWEwM2JlMWY2YzlmNmZlYWJiM2UzNWNkY2RhNjY4YjFiYzAyNWJjNTIxZWYxMWMwYmZiNDdlNWUxODQ4MTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5YTBjNTY5OGVmY2YyNDg0NjE4ZTI5ZDNiMTViMWFlNTgyMDM1YWJjYjY3NmNhZjg2Y2Y3MzY1NTgzNmZmODciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc0NzA5ZWE1NDc1OWQ4ZjE0ZWVhMDY1YTdhOGM0MGI5ZjM3ZDEyYWE4NmU4M2U4NGRkMDMxNDYyMTkxMjU4MGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI4YTRhYjM5NjcwODAxMmNmYjdmODc5YjUxMWEyODUwMjY4YzY2MmJmOTVkN2VlZDgxNjBmNjU3NDE5YjY0MWYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0dff5e61952d4c7fa13555299b4d9879",
+      "statement": "bootstrap.properties configures the framework boot sequence including the CPS backend URI via framework.config.store property",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/temp/home/bootstrap.properties#L10-L16",
+          "version": "repo-lines-v1:sha256:fa3f3795114d048154333ec2dbbae13aad321d508bfe9f35a21850633accf74d:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTVhMDk2ODM2MGM4NGVlZTY0MTg5YjdiZWQ4NjM5YjhjODUyNmQxMTg0NzNiZDM5MjZiZDk2N2NmZGEyMzkxZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzJjNDg1OGUyMmNjMmM5NjdiNDIxNTBmYTU1MDU2MmEyYzgzOWMyY2ViY2FhYjkxY2FiZGY2ZjRkYTAyMDAyMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTU4ZWE3NDM1YzM3NjljODgwZTQyMGQ4NzM2OWRkMDg5OGY3MGM2MGFjYjQ5NzE5NmQ4ZDQyNTAyZWFjOTkxZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWY4OGM4OGU3NTQ4ZjM1OTI2ZGE1ZTJiYjFmNTBkZTBhZGQ4ZDdiNjg1ZmI0ZDlmZTFlZjdjYWRiMWRhMGQ1MSJ9"
+        },
+        {
+          "resource": "repo://modules/framework/temp/home/bootstrap.properties#L44-L48",
+          "version": "repo-lines-v1:sha256:ec82a98d8faca4b53dbbe7c62b92cc781adf16461555d09460320ad460cef5d5:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTllNjE1MzA4NmEzZWViMGFhNWEzNWM0MmQ0ZjAzNGVjNWFiYWEwYzA2MzM0ZWI0OTU0ZjY3NmE1NDY4NTEyNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWVjMTA2ZDM5ZTA4NzFkZmY3OWNmNzBmOWJlOTJhYjNhMDhlYzk2MGU0Nzc0YjRkZjhlY2FmYTdhNjZlNWFkNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmNjNzBkYTRlODlhY2IyYzcxMGRhN2ViN2Y1NTUxMjg5YzQzODJkNTE3OGM4NmU3YzI0MzlhNWQ0NTE0YTM2YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODMwYTM4NzVmMzlkMTY1OWEwNzBkZmVmYzAxOGVkOTlmYjg0NjkyMGZiNTkzMWY1ZTNjY2ZjYjdiOTA1OGZjNyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_85ca5681c32540298ffd75bf2b73c17c",
+      "statement": "The default CPS location is ${GALASA_HOME}/cps.properties if framework.config.store is not specified in bootstrap properties",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/FrameworkInitialisation.java#L443-L465",
+          "version": "repo-lines-v1:sha256:dcf6facbc9d93bfdabeed9dd248258143579f78723247a096da8b99cc9dcd013:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNmOTJhM2JkY2ZmOWViOThjZDdmY2RhYmJiMjRhMTg1MGM1MTg1MTNmMTlkMzUwOTU2YTUwMDQ0YTJjZDg4MjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEyNjQyNWFkN2UyYzIwMzhhMzUwNGM5NmZlMDFkYjM3ZTUzNTczYzg3MWJhY2Q5OWJkZGVjMDNiYzk2NzM5ZDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVmODZmY2YxY2ZiOTViNzQyOTk2MWFkN2E2YTc0ZmVmMzY3NTRmOWU5ZWNhZDFjYjAyZTk3NGI4NmU0Y2Q4NmQifQ"
+        },
+        {
+          "resource": "repo://modules/framework/temp/home/bootstrap.properties#L10-L16",
+          "version": "repo-lines-v1:sha256:fa3f3795114d048154333ec2dbbae13aad321d508bfe9f35a21850633accf74d:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTVhMDk2ODM2MGM4NGVlZTY0MTg5YjdiZWQ4NjM5YjhjODUyNmQxMTg0NzNiZDM5MjZiZDk2N2NmZGEyMzkxZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzJjNDg1OGUyMmNjMmM5NjdiNDIxNTBmYTU1MDU2MmEyYzgzOWMyY2ViY2FhYjkxY2FiZGY2ZjRkYTAyMDAyMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTU4ZWE3NDM1YzM3NjljODgwZTQyMGQ4NzM2OWRkMDg5OGY3MGM2MGFjYjQ5NzE5NmQ4ZDQyNTAyZWFjOTkxZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWY4OGM4OGU3NTQ4ZjM1OTI2ZGE1ZTJiYjFmNTBkZTBhZGQ4ZDdiNjg1ZmI0ZDlmZTFlZjdjYWRiMWRhMGQ1MSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_fb41fa30e4e4478ea0438cc5cbbc6898",
+      "statement": "overrides.properties provides test-specific property overrides that take precedence over CPS values during property lookup",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/BaseTestRunner.java#L139-L143",
+          "version": "repo-lines-v1:sha256:a227e4f20aa2407aec7a0fa305039d74c6bd6c93a51f743468a9344ebddc219c:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmNjZDQ2ODUzZWFjYTNlNTk3MTAxMWVkYzRiZGI4MDg5YzI1OTQzZDljMTM1MWUxZjAzZTZjZjg0Yzk1YmU1YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDRhMmU0OWI1MDE5ZDk1MzIzNWZkYmY1NmUyNjQ1MjNlYjEzYzQyYWE5NzkzNjc2NjcyMzFhMTU3M2E2ZmY1OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODI1Y2Q2YTQ5NTk0NDBhMDdiMzY0YWVlZWFlZjYxMmZmNjhlY2M4YmQxNDc0NmY5YWQzMWE3NWU1NGZkZGE3YiJ9"
+        },
+        {
+          "resource": "repo://modules/framework/temp/home/overrides.properties#L1-L8",
+          "version": "repo-lines-v1:sha256:2785da1658333570bc90b7eecd1cf2e45a3509f20b979a5c98e0b0a85b6b9f23:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzJjNDg1OGUyMmNjMmM5NjdiNDIxNTBmYTU1MDU2MmEyYzgzOWMyY2ViY2FhYjkxY2FiZGY2ZjRkYTAyMDAyMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjY4ZDkyYWE4ZDU2MGRlMjYzNTViYzVhYTk1NTliNmVjZjNjYjUyZGE0NmYxNzRmNDcxNGU3ZTJiOWU0OGIzYiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c44e887378d94e069f0261740b540629",
+      "statement": "GALASA_HOME defaults to ${HOME}/.galasa and can be overridden by GALASA_HOME system property or environment variable",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/README.md#L32-L40",
+          "version": "repo-lines-v1:sha256:e0d627a3db4ef3a7b18333c6520be7ff0ea7fb117e631c84129c31dc69696ae9:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTIwNzE2YzVkYTIwN2NlNzdjZDhjMTU3Y2YxMDFhMWM4NzViMTY0YTUxZDY4MTdjYjZjYzZjNDA0ZDY2YWYxOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjQzYjIwZGFmZTk4NTQyNGJmOGQ1OGRjYzQ4OTIzOGRlNzA2MmUyZjk1N2QwOTE0NTY4Y2U0ZTUwYjI1OGIxNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzQ4ZTQzNjcwYWQ2YWQ3YWIxYTM5Nzg3NjI5YzM4Y2M2ZDAxYmVkMGM0ZWMzMzRkMzBhZDQ4OTExMmQ3MTIwMiJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/FrameworkInitialisation.java#L210-L250",
+          "version": "repo-lines-v1:sha256:2bf3453d51af763cda6d6daf9d8430a5b9bff2b0ec8db669fbdcc65c75cb792a:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhiZDdjMmVmODcwNTc0OGRiMTFjYmE3ZTVkMmFiYzc3YzFjMGJiZTdlZTcyZjA0NTA2MGExN2U2MWM3Y2U3MzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQzN2FiZWIwNGIyODkxNTI0ZTdlNTJlZWNiMmUzMmQ3NGNjNjliNzY5Zjc4MmUwMTI5MWRhMDNmOGY1YThkY2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRhYzJlMmNjYThmMmU1ZTVjN2I4NDA0NDRkNjMyNGJkZDYxNGI0MmJhZTZmMDFlOWU2ZjJiYjE5YjFhYjU4MzEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0b70533e5836419691e1803ed558317b",
+      "statement": "Namespaces must contain only lowercase letters (a-z) and digits (0-9) and are validated against the pattern [a-z0-9]+",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/Framework.java#L185-L198",
+          "version": "repo-lines-v1:sha256:093f763e0e761da8893aa2b8d70c8870cefbb5fdd435b6fde6e9aa7d80ce1a84:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc0N2JhZTllZjQyNTI5NjQwOWRiZGY1NDlmNTgyZjY2ZWRjNmE4MzVhZTRkNmE3YWMxYmYwZjJkNmQzY2Y1OTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIxY2U1ZDdjMzllMGQyN2NiMzkyMGZjNWY4ZDNjN2U0YzEzZWU4Yzc4YTE0MjdkYzdiNDhiZDAwNzBmNzI2YmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVlMmI5ZTIxZmRjODZmYzJjMmVlNDQ3MjE4NWQ2NzY0NjdiZGQxY2JmMmUyNGI0ZGM2NDRhYjFhYmIzMzI1NDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjllZDBjNTgwZWRmZjJmODAwNTkwNjQ5MjY2Yjc0Y2ZlMDllNzJlZDFhMDM1NDcyOTJjMTIyNGU4ZWI0MDcwMjAifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/Framework.java#L61-L63",
+          "version": "repo-lines-v1:sha256:3f3858c9644e63359a8815438423207cfc8f9e3c24a103845d813e351823e288:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmFlNjFjZDFjY2Y1NzA1Y2EwYWU5ZmQzY2Y0NTE1ZGEzYzY4OGNjYjE4OGI3NzVmYWI0ODBlY2I3MTQ4ZjNjZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGYyZWYyMjI1N2QwZTE2NjBmYWM5ZmQ1NWI4ZmM4ZmRmZDBlMzEzYWZhZmFjNDE1ZTYxOTY4ZjI3YWY1YjhhZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmU5ZWJjM2I5OGFlMmZlZTkzOTQ3NjdjZWYwMDNkZmFkNWRlZTdjYjI3OWFlYTQ1YjFmZmFiNzEzMWRhNWJhYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDNmYTA1NTViNjJhMDkzNzJhNDBmY2Y0MjU0YzYyZmQ0NDE4ODE3MWY2NzNiMTJlNzkwYjMyMDMyZGFjNTYzZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a943bf79915746e687d28edf4f6d111c",
+      "statement": "Managers obtain a namespace-scoped CPS service from the framework using getConfigurationPropertyService(namespace)",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/Framework.java#L146-L159",
+          "version": "repo-lines-v1:sha256:34eb234956dcbe82b9e980847543b4d2ae45b6231d20722888e10a244e582623:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhNzk1NTJhMWRlOGM4MTNhZTM1MWQwY2MxODJjZGNkNjMwNmRiODQyNzFiMmU5YmZkM2M5NmE5NmM5YjU5YmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRkZDlmNDgyM2U5OTU1ZjQwZTBjOWY1OTQ2NGFiNThiY2QxNDQ1MDBiNDczNjU3M2NlYjRhYzJmMGZmOTA4ZjIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM2OTQ2ZTEwMWU1ZTc4ZDkwYTUxMGM2OWYyNjZlZjc2NTQwZDMwOWIxYjgyMjY5NWI1MzE3MmVkMmNhYTAyNTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAxZmJmM2EyY2E0ODJhMjIzZDBhZjY5Y2NkZjkyMzAxNWE2MjQ1OTQ1ZjlkYWZhZTg4MjRmNjdmZjA0NjdmMzkifQ"
+        },
+        {
+          "resource": "repo://modules/managers/galasa-managers-parent/galasa-managers-core-parent/dev.galasa.core.manager/src/main/java/dev/galasa/core/manager/internal/CoreManagerImpl.java#L88-L94",
+          "version": "repo-lines-v1:sha256:4df84f19c072159a9e825e7c0d82b2c4c7d643c8519baa8a4bc859c85ef57c92:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzc3ZTJiMTE0MjNlMmVlZmU4NzMyNzI3YzYxNWYxM2Q2NzJhOWEzODRlYWZkOWQyZmFmM2M0MmJlOTA3YmU3YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjRlZmM0OTQxOGQyNmRjZjEyOWIyMmE2YWEyMTEwOGNlZWMzNzY3N2EzMmQwOGU5ZDVmZWUzNWRkYTY2YmI5ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDllM2U5NmE1NzIyNWUzYWRjN2MyYzY4YjZhODk2ZTMwNjE2NmE4ZWZlMTg2NzZmMDQyMTBhMDkwMTUwZTAxNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDI1ZmIwNGQ5NzdiYjhmMGFjNGVjNTM3NDUxM2E2OGRiMDJiOTUyYWVkMzZlMTI3NTc3YmZhNGYwNmQzZDZlMSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_fcd93a672c144b09b4bf9eb754b68ae5",
+      "statement": "The CPS records all property accesses to the Result Archive Store including property names, values, and source annotations (_source suffix)",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/BaseTestRunner.java#L145-L187",
+          "version": "repo-lines-v1:sha256:2c130eac350cf7948a6b7cdf0f778bd647a24ad5c93fd4a0d747479f2137f73e:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAyYWEzOWNiYjM4NDUyZTk5N2RiN2EyMzE5ODZhZDhmNDMxYzA3NTJiODFiYjllZjRkOTg1NTc2ODBjYzc1NTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBiNTQzZmE3YmFiZDA4Mzg5NDRlZTEzMThkMDBhZGY1MTQ3MmQ4ODNjNGNjMzNjZGVhOGRmZmY1ZTEzODUwNDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZhM2NmNTE5MjM1NGY3MTYxNWFjNTEwMzRiM2U5N2MyMGVkYTk5NjQzZmNhZjViYmU2ZDQxYWQ1OWJkMTIxNjcifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/internal/cps/FrameworkConfigurationPropertyService.java#L308-L311",
+          "version": "repo-lines-v1:sha256:b81ea74b5396ba3bbe0bb7a65e1996fae015d1423b18ff57fe23ea8f78adda24:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmVlNzAwY2EwYzBjNzViN2RjYjBlNjJkMWYzNzMxZTU5NzEwZDI0ZjEzMWNmNTQ5NzgzMjBiZTUxNWMwNGNjNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTczZTQzNTc5MzQwYzI2YjY3MzhkZTk3YzAwODY4ZDllYjA0MTZhYjZhMGEzZjI2OTIxZmUwNTkyMzhlYTcxOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2YxNjQ5OWRkYmUxMDI0ZmE0MWJhNTQ1Zjk3ZWRlZjgxM2JkMmY0Mjk3ZTU3NGM0ZTJlMzBkNGMxMGZjNWIzNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c5680bba1c844cc3b16032caa5cc1d5a",
+      "statement": "The etcd CPS implementation uses the JETCD client library and extends Etcd3Store to provide distributed key-value storage",
+      "evidence": [
+        {
+          "resource": "repo://modules/extensions/galasa-extensions-parent/dev.galasa.cps.etcd/src/main/java/dev/galasa/cps/etcd/internal/Etcd3ConfigurationPropertyStore.java#L31-L51",
+          "version": "repo-lines-v1:sha256:bdedfbb175ce862b8eeb1df616dacc52dde1acc4e91494a411e0f9a23a062540:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVkY2QzNmZjNGFhZDdiOWZmYzA3OGQxZmEwNGU0YWY3OTVhNWI2NWQwNjg4NGFkNmE0MzdkNzc2NmJkMDAwZDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBiYTRiYzcwYjQ4ODA2ZjZhYjQyMWNhZDYyOTBlZmUyZjk3ZDUxYWY0Njk3NjUzNjRiYTFiNjc4ODliOWFlYjMifQ"
+        },
+        {
+          "resource": "repo://modules/extensions/galasa-extensions-parent/dev.galasa.cps.etcd/src/main/java/dev/galasa/cps/etcd/internal/Etcd3ConfigurationPropertyStore.java#L59-L77",
+          "version": "repo-lines-v1:sha256:2eb2b2ac0dfb6fae1b8b42d632e9474c17d6fbc471084581d82bbe99ce64047d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVkYzJiMzExYWJlODc1NzJlOGE3Y2MwZDk5NmE2NTg0NDA3NmU1MjMyZDIxYjdhODU0NzVmOWI0MDU1Yjc0OTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc5NTJhNTY0ZmUzNDM5OTRkOTRmNDJhMGEwOWQ4MDJhZmI0NmE2ZDZkYTU1ODdlY2MzZDNlODdhZWUzYjU5ZWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNhYTRkYzc1YjRjYWE0ZjFkMmFlYzdhNWQyYzAxMTU1ODI4NzY0NzU3NDliOWYzNTA0MTI1NGQ3YmZiZjI3MTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a8b5d14543764ac1b944d11461f4841c",
+      "statement": "CpsProperties utility class provides type-safe property access methods including getIntWithDefault, getStringNulled, getStringWithDefault, and getStringList",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/cps/CpsProperties.java#L20-L55",
+          "version": "repo-lines-v1:sha256:91178e7284c3275ec5d57f807320f91ece2aa00ab6e741938d5e86b1e93f1669:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBjODliMGUzYzg4NDYxYzU4MDhkZmJkNGI0MGM4OTgwNDY5OWRiZDlhNjE2YmVhMDJmNzNiMTk1MzAzOGJkMjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY3ZjdmNGM3MTYxYmE1NTRkMWEzNDg3NzIwMTY1MDY2ODYwYTgzMjZhY2NjYTgwYzE4NmU5ZTg4ZjIyMzM1YjYifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/cps/CpsProperties.java#L68-L105",
+          "version": "repo-lines-v1:sha256:167955dfe8c968382186cfcc97ba22eb46c310ac85b7b803e8945de0a6fbf471:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBlMDJmMmYxMGQ4NzBjODQxNjc0NDE2NTQwNTkyOTg2NTE1ZWIzNWExZGU1OGMxYTJjMmI0NTU3ZDAwYmJkMmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE4YjM3NTlmYzNhNzJmMDBlYTU3MGNmOGRjNzBhOGEzMmJmN2FiMDVhZDFiYjg0ZTFkN2RmMTAxYTNjNTUzMjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMyZjA5Y2E5ODg5MTQ3OTM5ODQxZGNhMDBjNzMxYWVjZDY1ZTM4MjNjY2I2ZTg3MzE2ZGFhZWU2OWM1MWE5ZjQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a0bc0ce6450c4323a08b055326a69131",
+      "statement": "reportPropertyVariants returns an array of all property names that would be searched in hierarchical order for diagnostic purposes",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/internal/cps/FrameworkConfigurationPropertyService.java#L149-L154",
+          "version": "repo-lines-v1:sha256:5bbeda248e01d8e690cda31fc5cb8336a5b2ade3199b332ef96187c9a0e3d0c4:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGI3ZWE3MzRhYmY2NjM2ZmY0YmE5MDIxMTBkOGI0Y2EzNDQxMTA3NTJkODExMWUzNDA3Nzk0MjM2ZTNhMWExYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDkzNDk0YjcwYmEzODI0ZWI5Y2ZiZTlkZGQwN2Y0ZjlhNGJlZjQwYTBiMGY0Njc1ZDgzNTJhNjJlZjg1YTU0NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODM1OTk3MzEzZjdlNzk0YTgxY2Y5MjM0NjNiNjI5MGFhNDRkMGI0YWU1MGNjNWNmZmZjOTliMDliOWY0MjhkZiJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/IConfigurationPropertyStoreService.java#L186-L198",
+          "version": "repo-lines-v1:sha256:4ae110e38c676204f4e051729beb488490309bf60f696636c293999bec6cee19:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5Y2JiYzY1NDY5ZGIxY2EyODQyZWZkOTdkZjdlZTJjZTZjYzE1NzE0ODJkMDFhMThiNzkwYTEwYzdjNTEwZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJkZmIzOTI3NjBmYTMzNGQ0MGQyMTkzM2NlNzMzZGEyOGVhMjkxYjkzNmUwZjE1Y2Y5Y2RlMDZmYzc0NzM3ZGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRmZThjZGMyZWU1MjIxYjZkZGY5MTIwMDNhNTRiYzg5OTNlMDlmOTE2MjVmZTg2ZTI2NGVjZjQyZTViZTEzM2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhiMzdhNWRjZjkzYjdhZDhkOWZiNzUxZGMyN2E5NmIzNmU3Yjk2NTEyMjUyMTVmYTFkYmIzZjk0ZWUyYzhiMGIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5d38f323994749558ecdb1927e928f78",
+      "statement": "The CPS is initialized during framework boot by loading bootstrap properties, determining the CPS location, instantiating the backend store, and registering it with the framework",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/FrameworkInitialisation.java#L156-L172",
+          "version": "repo-lines-v1:sha256:cf4742da5ac0bf1a3c16c71bc5bed9ef316c241d035634437035865596c5f7ee:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEzOTA3NmFiMThhYmEzMjJlNWFhZThiZTU4ZTBiYTVjM2UzOTY4ZmIxOGMyZTc2NDZjMmM0ZmIxYjQ0MzdiY2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlNzA5NWM1MWM2Y2M0Nzk2N2Q1NThkZDI2ZTNkMTQzODVlOThkM2QzMTMzNzViNzkwMGZjY2FhNWI3MTBkZmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFhODNlOTA2YzhkM2ZlOTJkMGM5MmVmZGY2OTI2OGZmMmMxNWFjNzY1MjFjMWQwNTNkNTg5YjM5Nzc4MjZjZTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImExZjAxMjY1YzYwNjNkNzI5ZjFhMTE5NmE3NzZhYzQ3MjAwMGMxMGM4MDcxODJmY2JhZjZhNzAwNzkxZjRhMzIifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/FrameworkInitialisation.java#L352-L356",
+          "version": "repo-lines-v1:sha256:2d609cf074fe9a36cad383188ae1a6e909fe7ddc58f2b1dc3ebe7a3eacac132c:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWRjMmIzMTFhYmU4NzU3MmU4YTdjYzBkOTk2YTY1ODQ0MDc2ZTUyMzJkMjFiN2E4NTQ3NWY5YjQwNTViNzQ5MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2U0ODU5NGRiMTEyYzE1ZDYwZGZjMWIzY2MwYTI3YTAyMzRjNDc3YjE3N2ZkN2FlZDg2NzE5MjMyNmViZWU0ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTg4OTY4NjNiZmU3MTk1MzFmZmFkNzkxYTMyMWZhZWUzMGRmYzQ1NGQ2NzE4YWE5YTM0NTYwMzQwOTQ2YzlhZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_790458bfb6ed480c9272fba0dc6060ff",
+      "statement": "getPrefixedProperties retrieves all properties matching a prefix from both overrides and CPS store, with overrides taking precedence",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/internal/cps/FrameworkConfigurationPropertyService.java#L270-L306",
+          "version": "repo-lines-v1:sha256:51c86e20ce5b47a50c7b65cb347071013a4c3a9f679ec10c0d6d2e2065f63bd7:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVkYzJiMzExYWJlODc1NzJlOGE3Y2MwZDk5NmE2NTg0NDA3NmU1MjMyZDIxYjdhODU0NzVmOWI0MDU1Yjc0OTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY3OWE0Mjk1MzA5MjI0MTM1MmU5ODEzMDkzZTMzMDk2YzMyYjljYjU1MzY1NDdhNDkwZGE2ZDg3ODRlZTA4MjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg4MDg1N2EwYTI5YzFlM2RlMmM1NGZlYjYyNWExMWMyYmM5NzNlMmMwYzczZmU0YzE4MzUwNWE1OGYwODE5NjkifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/IConfigurationPropertyStoreService.java#L80-L90",
+          "version": "repo-lines-v1:sha256:9b9bf8281a5583871614139b188da1cc734eb562954fe75798c2a380f5eaa05c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5Y2JiYzY1NDY5ZGIxY2EyODQyZWZkOTdkZjdlZTJjZTZjYzE1NzE0ODJkMDFhMThiNzkwYTEwYzdjNTEwZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQwMTM5ZWRlMzkwOTk0NzU4OWFlZTZlNjRhZDgyODkxNmZlZGQ1NjVhNGJjZTdlNjI3YTA1OGQ4OThmNTQ5N2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVlNjJmYjU4YzBiZmRmNTE0ZGZkYTMyMDNiNjgzYWNmMTI1MmRhMjVkNTU4ODI5MDkyNmJmYThiM2NkYTRiY2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhiMzdhNWRjZjkzYjdhZDhkOWZiNzUxZGMyN2E5NmIzNmU3Yjk2NTEyMjUyMTVmYTFkYmIzZjk0ZWUyYzhiMGIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_52c0f4d49a53444eb9899421caae4533",
+      "statement": "setProperty and setProperties write to the CPS backend store with automatic namespace prefixing, not to overrides",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/internal/cps/FrameworkConfigurationPropertyService.java#L113-L116",
+          "version": "repo-lines-v1:sha256:ba6ba3721d1fa931ca294f159fe412212eecb11b9dceb4383c493adef2d3d128:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTBiNGRhMWRjMjVjMWU4OWI1NGFjM2RlMDc5NGUxNGVlYjhlOGNhZGVmMzBlODQyMGJhYzczNTNlYTEyNDAzNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWJhZjY5ZWRmNGQ4YmQzNDgxNGRhMDVlNGJmZTY4N2NmNWRhMDUzZGM0OTRhNGMyNmNiYTgwYTE4ZmEwYjE1MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODQyZGQzYzY1M2Q5NDk2YjM4NTZhNmU0YjhkZWUxNTIyNmU5YTNkM2Y5NDE3OTY5YjNiZDRhZDc5NDk5NWVkMSJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/internal/cps/FrameworkConfigurationPropertyService.java#L314-L322",
+          "version": "repo-lines-v1:sha256:14b2b2e1b3957baae8c0ad9efa8e861c9c9cbbf8212608fbf5084748c181c5e3:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzViYWYxYmI4ODJlN2U4NDM5NjE4YTI1NTU0ODJiOGZiMmZkMmY0ODM0ZWQ3MTAyMzIyMDFmMDY3NmEwMWM1NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2MzNDE2ZWQzMmZjMTQ4ZDEzODJjNDE5M2EzN2I4NWFlOWU0M2ViODhhODQ3NDM0OWI3NTRlOWUxOTYyMmJkMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzY5NDZlMTAxZTVlNzhkOTBhNTEwYzY5ZjI2NmVmNzY1NDBkMzA5YjFiODIyNjk1YjUzMTcyZWQyY2FhMDI1OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjIsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmVmYTBhZWJmZWY4ZGViYWRhNTUzYzk0MGVlNzk5NjIxMmI0NDRjNTQwNzBlMWE4MGJlOGFhNWE3ZDQ1MzQ5YSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.2",
+    "at": "2026-09-21T12:35:12.771Z"
+  }
+}

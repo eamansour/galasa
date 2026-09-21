@@ -1,0 +1,278 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:20826a6c7119174910142be5d27a1fc2658569cdf5c9f6858839975653ef22d3",
+  "claims": [
+    {
+      "id": "claim_fcd12af4142a496e9bb7c70756cfaf1a",
+      "statement": "The etcd3 CPS backend implements IConfigurationPropertyStore and uses the JETCD client library to connect to etcd servers, supporting read and write operations with namespace-based property organization.",
+      "evidence": [
+        {
+          "resource": "repo://modules/extensions/galasa-extensions-parent/dev.galasa.cps.etcd/README.md#L1-L10",
+          "version": "repo-lines-v1:sha256:2313e9af123e5efb6877bad28c3cb291777839467fa9550d6663fff484f52708:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJjMDMzNTMwYWNmYWVmOTU5NDRmZDI0ZGI2OTMzMGI0NzE0ZTRjOTdiNGRjZDYwMDNiMmJiYjVmN2YxOGZmN2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUyYTJmNDQzMGVmYTUzZTU2NzI4MDdlZWU4OTQwMDRlOGIzNGNkMGU4NDIxZTI5YjM4MjFlODRhYWRhODU1N2IifQ"
+        },
+        {
+          "resource": "repo://modules/extensions/galasa-extensions-parent/dev.galasa.cps.etcd/src/main/java/dev/galasa/cps/etcd/internal/Etcd3ConfigurationPropertyStore.java#L37-L77",
+          "version": "repo-lines-v1:sha256:3ae558bac98b8b5bbd471efc9da128415839b488ca8f9b2b134b6a9701f0137b:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI5OWJmMDg5Mjk5ZTIwY2RmNTc5ZTg1OGViNWZhMmYwNGIwZTBlNzY3ZGQ5YzRhZmY0ZWMyZGY3NzUwNjhkMzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMwMGNiY2NlZThmMGIzNmRhMzk4NmFkNTdlZDI4NWJmOGUwYmJkYTY2NzRkZjA1NWZkMjNiYmQyODk1NjYxZDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNhYTRkYzc1YjRjYWE0ZjFkMmFlYzdhNWQyYzAxMTU1ODI4NzY0NzU3NDliOWYzNTA0MTI1NGQ3YmZiZjI3MTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_32a59aa6a46541418907801e4aad19d9",
+      "statement": "The etcd3 CPS backend is registered when the bootstrap CPS URI uses the 'etcd://' scheme, and the registration component strips the 'etcd:' prefix before creating the store instance.",
+      "evidence": [
+        {
+          "resource": "repo://modules/extensions/galasa-extensions-parent/dev.galasa.cps.etcd/src/main/java/dev/galasa/cps/etcd/internal/Etcd3ConfigurationPropertyRegistration.java#L26-L56",
+          "version": "repo-lines-v1:sha256:3619108e1e3a349bebf388fbabcc8ebf4e10ae99b9814df0a428d24ae0462fc9:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5M2U1ODk0YTY4N2Y0NTA3N2ZlN2RkMjQzNmIzZTI5ZTFkZjM4YTJkNGZhOGZkNTA5MjlhNWU0NWY0NzA0ZjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE3NTZlMDY5NjcxMjgwZDY1NDg3OWYwZjAxZDIwYTAwMDhlOWExYzU3YWMyYzA1OGZkNjBiY2Y4ZWNkODFmNjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRiYWZlMjRkNTQ1MjgxMGY0MGUwZGM0OTlhMmQyMTcyZjkxNGIyMWVhMWQ4NDFiNGNhOTU1N2I0Y2VlMzAxOWEifQ"
+        },
+        {
+          "resource": "repo://modules/extensions/galasa-extensions-parent/dev.galasa.cps.etcd/src/main/java/dev/galasa/cps/etcd/internal/Etcd3ConfigurationPropertyRegistration.java#L68-L70",
+          "version": "repo-lines-v1:sha256:7ae4715a951c95e1e0509fb7178681cff960d83039e493c56e84820ff2c36030:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmJhMWY3YWRmNmVhNWVhMjA4NDlkZTU3MWYxZjAyM2MwNTM1MGQxZTJkNmNhZDM0YjQwNzc3YzM0NWNhNGJkMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2Q2ZTRlMmQ2YjJlNTg2ZTc3Y2NjYTQzMGNlMjBhNzU2NjFhOGFlYTc0YmIwYzY5M2U2YzlmM2E2MDVkZmRmNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ca352de5dea242848a013509c360a407",
+      "statement": "The REST CPS backend is a read-only implementation that translates 'galasacps://' URIs to 'https://' and communicates with remote Galasa ecosystem REST APIs to retrieve shared configuration properties.",
+      "evidence": [
+        {
+          "resource": "repo://modules/extensions/galasa-extensions-parent/dev.galasa.cps.rest/README.md#L1-L8",
+          "version": "repo-lines-v1:sha256:79aee7417e5ac67b5cb0e8bb71a965b6f90868408756c69362674bc27a0c6140:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODMwMDgzZGYyNDJiMjdlM2FhYzAzZjA0NzNlYzA4NWY5YjE3ZTc3ZWEzYjMxYjJhYzhlZTMxOGVhOWFhOTJmZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGY0Y2NhNzYyYmIxOTRhZmE2YWY2OTA4MmFhZTI2MzFkZmZlNTkwMzk1MzBiYTVkOWE2NjVjOTFhYWNjMjI2MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmFkNzVhYTcyNjMzMjM2MjJhN2Y5MmQ1MWVkMTVhMjY5OTcxMjUyNzk2OGQxYmNjZTEyOTkxZWE3MDkyZmVmNCJ9"
+        },
+        {
+          "resource": "repo://modules/extensions/galasa-extensions-parent/dev.galasa.cps.rest/src/main/java/dev/galasa/cps/rest/RestCPS.java#L122-L135",
+          "version": "repo-lines-v1:sha256:06a9cfe8268ddc64fdf93a54e112e559bfee14344f9c1f27fc7c19b1713cbe50:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFlNTEzOGZhMDQyYjg4NWU5MTU2N2JkZmNjYjcxNjlkNmNhMzQyZjZlMDc4Y2NkYmJjNmI5MGU4YWJiZTQ5NGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI1MTI3NDFlMmVlODJiODUyODBjNGZmMWI4YTRkMWQ5MzU5NWZiOTIwYjk5YTk2ODQ0MGRiYzk3YzExYmUzNjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFhNTZlNTdjMTM4NzdiYzdiM2Y4NmY0OGE3YmNlMGI2MTRkYTdjOTU5NDQzY2U2YjBhNzYyMGQ5MDE0NDE5MWMifQ"
+        },
+        {
+          "resource": "repo://modules/extensions/galasa-extensions-parent/dev.galasa.cps.rest/src/main/java/dev/galasa/cps/rest/RestCPS.java#L40-L67",
+          "version": "repo-lines-v1:sha256:f4606606b4b916bd10c59eaab5659630e941dbd8fd538eb353db8552306d5c47:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdjMGE1ODg3NmY0ZWE3ZjQwNWFjNDU3YTQ2Y2JiNTMwMjI5MDQyNzQxMzhjYjE5YzZiMWQzZDc5ZTg0NmUxYjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg0YmMwOTY2NjY0NTFjYTgxYTg4NDE0N2RmNjQ4YWQzMGFhYjNiYWIxM2YwMDExYjBkY2YyMGU1NjFkMzJiNTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjczYzZiYjQ2ZTc2NWVkNTE3MTg0YmM5ZmMwZmU2MmJjODRhNDc5OWQ3MGM2ZjY0N2M4NjZjNzU2MjhiN2M4ZWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ff24a29b03454290b6479f7b53b6845b",
+      "statement": "The REST CPS backend redacts specific properties and namespaces to ensure local test runs use local resources, including 'framework.dynamicstatus.store', 'framework.credentials.store', and the entire 'secure' namespace.",
+      "evidence": [
+        {
+          "resource": "repo://modules/extensions/galasa-extensions-parent/dev.galasa.cps.rest/src/main/java/dev/galasa/cps/rest/RestCPS.java#L148-L190",
+          "version": "repo-lines-v1:sha256:7b57568889bb1d6a3e69ce3606384aa779dcb640db2f43688f7006fa58d60c89:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5Y2JiYzY1NDY5ZGIxY2EyODQyZWZkOTdkZjdlZTJjZTZjYzE1NzE0ODJkMDFhMThiNzkwYTEwYzdjNTEwZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNhOWRmODM1ZDA1M2U1YWRiMDBjMGZiOWZlYzhjNTAzMTBiYjgxOWZkMmNmZDBiMjA3ZTQ4NTllZjkzODdkZmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZlMGNkZDlkZTI2MGU5YTg0NTY0YzAzZTM0ZGI2NDE4NDdhYWRiOTc3MjZjYmZjNjNlOTRiNDYzZTBhYjVhYzgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a5b85d99110c4ab8bb0b3e0709494df2",
+      "statement": "The REST CPS backend supports optional client-side caching controlled by the 'framework.cps.rest.cache.is.enabled' property, with aggressive cache priming that loads all CPS properties at startup when enabled.",
+      "evidence": [
+        {
+          "resource": "repo://modules/extensions/galasa-extensions-parent/dev.galasa.cps.rest/README.md#L24-L28",
+          "version": "repo-lines-v1:sha256:ff968435375510d944cf008e98b5c9966d50d7cc0b17957853f42245193930bd:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGRlZGYwYmVhYjgxNGYyNmU0MTY0OGU0NDg1OGJkOTU1ZDY1OTFlNjgwZjAwZjAxODhlYzg5ZWJjOTRiMGYxMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjZmZjIxNjkzM2RjYmYzNzY4MzIyYTkyMTM1NmU1MzBlYjA2MzMwMWY2MDBmNGZjYjZkYmUyNWUzYjNhMzlkNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjIsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzVhMTFkYTQ0YzgwMjQ4NmJjNmY2NTY0MGFhNDhhNzMwZjBmNjg0YzVjMDdhNDJiYTNjZDE3MzVlYjNmYjA3MCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_6d43cdaf099c4bef9c73052237329d97",
+      "statement": "The etcd3 DSS backend implements IDynamicStatusStore using JETCD Watch and Lease clients, providing atomic operations, transactional updates, and watch capabilities for state change notifications.",
+      "evidence": [
+        {
+          "resource": "repo://modules/extensions/galasa-extensions-parent/dev.galasa.cps.etcd/src/main/java/dev/galasa/cps/etcd/internal/Etcd3DynamicStatusStore.java#L107-L150",
+          "version": "repo-lines-v1:sha256:e55966e46e8d4f4f417e9d4bc798c1b3536f43a93878e0706a9b80eff2536139:eyJzZWxlY3RlZExpbmVDb3VudCI6NDQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVkYzJiMzExYWJlODc1NzJlOGE3Y2MwZDk5NmE2NTg0NDA3NmU1MjMyZDIxYjdhODU0NzVmOWI0MDU1Yjc0OTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzOTBhZDc3ZTczMjc5YWVhZWIxYzQ4ZjlhNGQwMTRjNTg1MWE2NWM1YmRkYjFjZWExNTFiYzY2ZjIyYTQ2NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNlOTUyM2E2YTY0ZDIxMGJmNDk2NmM3ZDkzMDM5MDNlODIxMDE5ZmMzZDI1YmI4NjBmMDllMzVjZjNiZDE3NjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZmOTk1NmY4NTI1OTAwMzYyOGZiMDM0ODcxZGYzMjcxNjNiMGRiYTMzMjhjOGY1N2Y0ZDkzODg4YTEwZTBlYWYifQ"
+        },
+        {
+          "resource": "repo://modules/extensions/galasa-extensions-parent/dev.galasa.cps.etcd/src/main/java/dev/galasa/cps/etcd/internal/Etcd3DynamicStatusStore.java#L64-L98",
+          "version": "repo-lines-v1:sha256:c88f127de48ca7accda63b1b3247821644b8b09da8d6579eaa3672d050585b06:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhhOTkzMDVkMGJjYWQ4N2JjODlmOTIzNTc0ODVhZmQwMzAzZmQ1MWVmNWRkNDAxMWE3NTZmMDBmNTU3OGVlZDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjllM2MwM2Q1MWU0Mzc1YWZhMDVjYzJhYzcwMWI1OTRlYzAzOGMwNDBlYWQyYTg3YzUzOTM2MmI1OWIxOTMyZTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7e1438b6ef2d4ef6a8b2abfecc9effbb",
+      "statement": "The CouchDB RAS backend implements IResultArchiveStoreService and stores test results across three databases: 'galasa_artifacts' for test artifacts, 'galasa_run' for test run metadata, and 'galasa_log' for execution logs.",
+      "evidence": [
+        {
+          "resource": "repo://modules/extensions/galasa-extensions-parent/dev.galasa.ras.couchdb/src/main/java/dev/galasa/ras/couchdb/internal/CouchdbRasStore.java#L54-L70",
+          "version": "repo-lines-v1:sha256:f33e4701201136af7b2a84357080c5dd8ed3db3db793d1e5321a6e7ff383e409:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBjNjIxMTQzYmVjOGY2ZGUwMjAxZTk5NmU5ZTZiYjZmYjcyYmZlYjJlYzUwYTZhYTE3ZjAxZjI3NTI4Y2UwOWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBlYzc2NzEzNmI5ZWY3OTZiMjVhYTc0ZGY0MmQ4ODdmNzBkNWM4MzJhNGZmNTUyY2RjMWI2NmY1YTk0YWRjYzYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFmMjA3Zjg2NDcyZGNlMDM0YTUyMmI5OGJiZDAwNWQ1MTc2YzliOWNhNDAwZWM2Y2Y4NTQ4N2E1YTkyYjljMzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNmMTRlYjA4OGExMDMyOTk2MDM1NjVkNTIzZDZhMzI4NGM5ZmI1ZTgxNWE5NzJmZGVkYTNkOGNmNjcyYTc3ODkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9eae48bec74f4f0099a9ad432e96c475",
+      "statement": "The CouchDB RAS backend batches log writes at 100 lines per document for efficiency and uses a prefix 'cdb-' for run document IDs.",
+      "evidence": [
+        {
+          "resource": "repo://modules/extensions/galasa-extensions-parent/dev.galasa.ras.couchdb/src/main/java/dev/galasa/ras/couchdb/internal/CouchdbRasStore.java#L178-L195",
+          "version": "repo-lines-v1:sha256:2ea86c6bd683221452d2924ea386f01057a33c82633d6fda906e4bbe0299f66b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRlNThhOTcwY2IyZjIyNzFmMzUxMDkxMGRlYTEwOGNmZjQyMTdhNGFjOTRhYTE4MjMwZTk1ZmJjMTJhYjA5NDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM2OTQ2ZTEwMWU1ZTc4ZDkwYTUxMGM2OWYyNjZlZjc2NTQwZDMwOWIxYjgyMjY5NWI1MzE3MmVkMmNhYTAyNTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFkNjJjYzMxZmYyZTQ5YTA4NzNkMmFmYTRjZTBjMTViZTgwMjgyOWZiYjZiOTk2ZGYzNTg1NTBhM2YyNThmMWEifQ"
+        },
+        {
+          "resource": "repo://modules/extensions/galasa-extensions-parent/dev.galasa.ras.couchdb/src/main/java/dev/galasa/ras/couchdb/internal/CouchdbRasStore.java#L70-L70",
+          "version": "repo-lines-v1:sha256:0ec767136b9ef796b25aa74df42d887f70d5c832a4ff552cdc1b66f5a94adcc6:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGVjNzY3MTM2YjllZjc5NmIyNWFhNzRkZjQyZDg4N2Y3MGQ1YzgzMmE0ZmY1NTJjZGMxYjY2ZjVhOTRhZGNjNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGVjNzY3MTM2YjllZjc5NmIyNWFhNzRkZjQyZDg4N2Y3MGQ1YzgzMmE0ZmY1NTJjZGMxYjY2ZjVhOTRhZGNjNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmVkNTlhYmE1OTIyMjA0MzE4YzQxZjQxNDNjN2IxNTM3MThhZGRmZmIzODMyZTZhZTQ5MzAwYjA5NWY5YTE1NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2YxNGViMDg4YTEwMzI5OTYwMzU2NWQ1MjNkNmEzMjg0YzlmYjVlODE1YTk3MmZkZWRhM2Q4Y2Y2NzJhNzc4OSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_99720b43483d4ceb867957e91fb0fc83",
+      "statement": "The CouchDB RAS backend is registered when the result archive store URI uses the 'couchdb://' scheme and validates database connectivity during initialization.",
+      "evidence": [
+        {
+          "resource": "repo://modules/extensions/galasa-extensions-parent/dev.galasa.ras.couchdb/src/main/java/dev/galasa/ras/couchdb/internal/CouchdbRasRegistration.java#L21-L59",
+          "version": "repo-lines-v1:sha256:e1c794de4f07c0a921ff2fd41fd3ad5c7f7826fc48b7f32ac04976e5bc09b6bb:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYwYjAxZjhlNjlmYWQwYjM5NjVkMTBkZGZiYzUwYWIxNGQwNzhjNmE4MWM2YTcyODlkOWIyOTM5NjU3ZTg4ZTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ0OGE2NjY2Yzg3ZDU1M2QxNmQyOTRjMmRjODI0ZTI0ZWEwYTc0ZGM2NDBjN2FjZDQyOWY5MDQ4YmMxNTRhNzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgwNGY4OWZjMGVjOThjOTgyNDE4M2U3OTVkM2VkZDE5ZTkzMGY3YmM0NzFmOTAxMmFhM2Q1MDNiZTJmODk3NGIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0cfb5de733b24e5fb5575ccf17ecff21",
+      "statement": "The CouchDB auth store backend implements IAuthStore and manages user authentication data and token metadata across two databases: 'galasa_tokens' for token metadata and 'galasa_users' for user profiles.",
+      "evidence": [
+        {
+          "resource": "repo://modules/extensions/galasa-extensions-parent/dev.galasa.auth.couchdb/src/main/java/dev/galasa/auth/couchdb/internal/CouchdbAuthStore.java#L46-L67",
+          "version": "repo-lines-v1:sha256:6f779a76ff1df9cb28e1a2bba493adafbb0a2f4e2e058f7d9e4d280bcba6ec8d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI1MGVhOGNmZjI1MjZkNjY3MmJkYmNhNjAwNDVjYTg0MDFkZGE4M2NkOTA3ZDQyZTI3YjNhYjhkMGI3YmQyZjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFlMGM3MjI1M2QxNDg1MWZjZGJjZjc0NzRmZTRmNDE3OTNiYmJiMzdkMTJjZjFmMjA2ODMzM2YwMDAwMzI2MjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkzYzBhNDMzYzAxZDg4N2E2ZTVjOGNlNzAzYzU3MTEyYzllOThmMGU3MjA3MjJmN2Y5NThmYTQyMDQ2OTU0MDQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_df49af13a1074b4d83b36c945762c3ad",
+      "statement": "The CouchDB auth store backend sets a default token lifespan of 90 days and performs legacy token migration on initialization to ensure all tokens have expiry times.",
+      "evidence": [
+        {
+          "resource": "repo://modules/extensions/galasa-extensions-parent/dev.galasa.auth.couchdb/src/main/java/dev/galasa/auth/couchdb/internal/CouchdbAuthStore.java#L71-L164",
+          "version": "repo-lines-v1:sha256:6d1b213b27a4e5c8f5e5d48aceef2a5d2bbc39dc73a7105cc7a5f96ffe04904d:eyJzZWxlY3RlZExpbmVDb3VudCI6OTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU1YWMyNWNkNDhiY2Y1NDQyNjA3MjZjYTRhODZkODVjYjkxYjdkMTYzYWQ1NjkzMWI3Zjg1NWIwNDZkYmJlODQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkzYzBhNDMzYzAxZDg4N2E2ZTVjOGNlNzAzYzU3MTEyYzllOThmMGU3MjA3MjJmN2Y5NThmYTQyMDQ2OTU0MDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEzMjhkMTdhYjcyOWZhOGI5MzM3MzNkNTM0NjdmZTUzNzE1MDc1NmEzNDRkYjllODFkOTUzZjFhNDkzNmYzODAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7ce2b43965ed4e49b9e951bed33d0517",
+      "statement": "The CouchDB auth store backend is registered when the auth store URI uses the 'couchdb://' scheme and requires authentication via the GALASA_AUTHSTORE_TOKEN environment variable.",
+      "evidence": [
+        {
+          "resource": "repo://modules/extensions/galasa-extensions-parent/dev.galasa.auth.couchdb/src/main/java/dev/galasa/auth/couchdb/internal/CouchdbAuthStore.java#L63-L64",
+          "version": "repo-lines-v1:sha256:d0f4c9a5cb111e4bd817af11abf3e9bd587c2d710ee7567b4153ad82172bfcc4:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjViNjhlODk5NDhmMWEyMWYwYzljZmUxMDFlNjRiZDViOWI2ZTI4ZDE2MWQwZDU2OTU2OWJiNjlkZTNmOGRhMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWQxMTY0OGJiODhkMTExODQ2ZDQ4ZTdjMjBhNDFlNjRmMmE1NDlkZWUzMzZkMTQyN2Y1NmYyMjMwNTUxMjEzOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjNkYWJjN2ZlYWU1NDUyNmRlNTQ5ZDQyYTZmNTRiNzcxNGE0ZDNjZmZkMGU2YjI5YTQ3NDY0ZjUzYzBiMDUxZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGYwNTIzZTg3NDZmMzBiOWU3YzVkMjdkMDllNWQ2YWVjNjNkMzhkZjJmNDlkMGU4NWUwOTZjZDJlZjA5MzNhYiJ9"
+        },
+        {
+          "resource": "repo://modules/extensions/galasa-extensions-parent/dev.galasa.auth.couchdb/src/main/java/dev/galasa/auth/couchdb/internal/CouchdbAuthStoreRegistration.java#L28-L93",
+          "version": "repo-lines-v1:sha256:c7dbb18ff8e9d60ddda8a565bcb9b4e98ff4736ad3fc46b81924a5442eac867a:eyJzZWxlY3RlZExpbmVDb3VudCI6NjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM0YTM5ODRhNjZhODJiNGZjMWQ2YTIzZjlmZWQ5ZmFmN2VmNWY1ZjQ1Nzg1OTA2ODg3YjljN2MzNTg0YjBmOWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVmNWY2Yzk5Y2MzN2M0ZTQ0YzczYTBiZmMwNDljYTIwNGRkOTQ5MjU2MWFhZDBlODQ1ZDQwNmY5NGQ2YTkxZDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_686efa0b62744ef9b5c45e9d071e62dd",
+      "statement": "The etcd3 credentials backend implements ICredentialsStore and stores encrypted credentials in the 'secure.credentials.*' namespace using AES-256 encryption with a key from CPS property 'secure.credentials.file.encryption.key'.",
+      "evidence": [
+        {
+          "resource": "repo://modules/extensions/galasa-extensions-parent/dev.galasa.cps.etcd/src/main/java/dev/galasa/cps/etcd/internal/Etcd3CredentialsStore.java#L105-L111",
+          "version": "repo-lines-v1:sha256:145668ca0fdb6277bcdcc547eeb227af286f3b52c354ad368b8d99b095b71c6d:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzc4NDYwNjdhMDU2MDU4OWYwZjE5ZDc3NTMxYWFjZjdiNzlmNGNiZDI2ODA2M2VjZDRjYmNiMmViMGE3MDg3MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWQ2MWZlMDU0ZDMzOWIwNWE4NDE1MjE3MjI1MWZiY2RiZjAzNjhjNDUwZDRhNzgwY2E0NWZjNDdiZDQ3NTM5NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTBhYWM5ZjE0ZDg2Mjg1MWZhZTEzM2EwZmQ5MTY4MDNkMTdlMDI2NjMxZDI5NmI3NTQzNWExZDM0NmY0YjEzOCJ9"
+        },
+        {
+          "resource": "repo://modules/extensions/galasa-extensions-parent/dev.galasa.cps.etcd/src/main/java/dev/galasa/cps/etcd/internal/Etcd3CredentialsStore.java#L39-L80",
+          "version": "repo-lines-v1:sha256:7803fd5312ba683b14f8205b716eb6c746108df78602696b765c61bee7a84377:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYyZGRhYTY3NjA1NDA0YWI5MDZlZmUxYzU4YzhiZTFhZWUxM2IyMjQ3MTU0YmExMTU4YzI5ZWE0OTMzZDU2OGMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUxNjdmY2UyZmZhZjY1NmU0ZGVjM2EwNDAzYjJlNjRiZjZmZmY2M2Q4MmE2N2ZjMzA1Y2ZlMmYzZDJjZTA3ZTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_824ff018629b4105b80fd0891d148e6a",
+      "statement": "The OS credentials backend delegates to platform-specific implementations: MacOsKeychainStore for macOS using the 'security' CLI tool, and WindowsCredentialManagerStore for Windows using JNA to access the Windows Credential Manager API.",
+      "evidence": [
+        {
+          "resource": "repo://modules/extensions/galasa-extensions-parent/dev.galasa.creds.os/README.md#L6-L28",
+          "version": "repo-lines-v1:sha256:5755a8f5b36cf0863147cbcecfe78c75847cf49e965f7267267818a15d32b518:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIzOWFmODhhYmE1MGE1NDhkNDBjOTZkYmI1MDJiNGRmMzRiYWZhNjAxNTg5ZWUzYzlmZjY4NjAyYWY0NDQzNDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ4YzljODllOGJiNTI0MDM2YjdkYjg1Mjg1ODU5ZTAzNmE2Y2U0YjkyNmEzMjQ3ODFhMzJhNjJkZGY4MmViZjQifQ"
+        },
+        {
+          "resource": "repo://modules/extensions/galasa-extensions-parent/dev.galasa.creds.os/src/main/java/dev/galasa/creds/os/internal/OsCredentialsStore.java#L17-L71",
+          "version": "repo-lines-v1:sha256:3ead62ba38e64e66a7c86ef9c96fe651df701930b9c51e11dfdded89750f022d:eyJzZWxlY3RlZExpbmVDb3VudCI6NTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdiZDY0NTBhMTI3ODU4ODA5YzQxN2Y0MzdjOWUwMmYyMGVmODM3NzAxMmYyMTQ3YWIyMDAzZGE5NmU3NDNjZmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYyZjZmMTUzNmE5ZjJkMzZkYzAwYmExMjg3ZDBiN2Q0Njk5ZWJlMGE3ZTVmNGNiM2MzNjAwMjRlZTc4ZGQxNWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d5ec86c78cdf434d849fea54b12603d7",
+      "statement": "The OS credentials backend is registered when the credentials store URI uses the 'os:' scheme with values 'auto', 'macos', 'windows', or 'linux' to determine which OS-specific implementation to use.",
+      "evidence": [
+        {
+          "resource": "repo://modules/extensions/galasa-extensions-parent/dev.galasa.creds.os/README.md#L33-L41",
+          "version": "repo-lines-v1:sha256:54d62be9dd23505d59a1c5bd95f4b6f334aef79744d831f8f967c4064a5f38e6:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmY1ZjMxNGM2NmIwZWVkZmU3OTQzNjE5MmQwZDQxZGFjMTdiZWZhZTZjZTBkMDIyMWM2M2RhNzI5ZTU3ZTA3MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTk2ZWZiZTE4MmY5ZjJiYzJmZmY0YjFmZDhiZTVlZjMwYmI3MTIwMTNkNDZmYmUxMjcxOTJjMTVlOGVjNzI4YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjU3NWNkZWVhMGYyMDhhZjUzYzE4MzJkMGFiZDJhZDBiNjY5MGI5NGRiYmM1MzAyMjA3YzhhMzk1MWRmMjc5NiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_9fc651e1d43c49a983d851f41289fea8",
+      "statement": "The macOS Keychain credentials store supports multiple credential types distinguished by account name format: plain username for username/password, 'username:' prefix for username-only, 'token' for token-only, 'username-token:' prefix for username/token, and 'JSON' for JSON-based credentials including keystores.",
+      "evidence": [
+        {
+          "resource": "repo://modules/extensions/galasa-extensions-parent/dev.galasa.creds.os/src/main/java/dev/galasa/creds/os/internal/macos/MacOsKeychainStore.java#L29-L88",
+          "version": "repo-lines-v1:sha256:7f5da2575caa17de31fd01b28b14922d392a0807933939ada1a85a4cdb7b54f3:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMxOGRlYTVkMzk5MGIwOGYzZmNmZDNjMGUxZWJiNjYxMWFhNDk2ZGU3MjdmYWVlM2JlMTk3NDBlZGI2MDc0MzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjNmQ0YjBlOWVlOGY4YTY4NmZhMzM3OGJlYTkwNDBmYmQ2YjkxOWNhYjFjZDUzODE3YTg0ZGU2YjhiMzQyZjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYyZjZmMTUzNmE5ZjJkMzZkYzAwYmExMjg3ZDBiN2Q0Njk5ZWJlMGE3ZTVmNGNiM2MzNjAwMjRlZTc4ZGQxNWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_786b6d08419e47159fcc179adaf86d7d",
+      "statement": "The Windows Credential Manager store uses the same credential type detection logic as macOS but with 'User Name' instead of 'Account Name', storing credentials with target names formatted as 'galasa.credentials.{CREDENTIALS-ID}'.",
+      "evidence": [
+        {
+          "resource": "repo://modules/extensions/galasa-extensions-parent/dev.galasa.creds.os/src/main/java/dev/galasa/creds/os/internal/windows/WindowsCredentialManagerStore.java#L29-L91",
+          "version": "repo-lines-v1:sha256:bc893f830c2ddb383853795a255fabcf38c34e8e884890d6571b9622a9ebf5d9:eyJzZWxlY3RlZExpbmVDb3VudCI6NjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjNmQ0YjBlOWVlOGY4YTY4NmZhMzM3OGJlYTkwNDBmYmQ2YjkxOWNhYjFjZDUzODE3YTg0ZGU2YjhiMzQyZjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYyZjZmMTUzNmE5ZjJkMzZkYzAwYmExMjg3ZDBiN2Q0Njk5ZWJlMGE3ZTVmNGNiM2MzNjAwMjRlZTc4ZGQxNWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f45217d5d5514990abe2e1b7b34c2324",
+      "statement": "The Kafka events service implements IEventsService and only registers when the CPS URI scheme is 'etcd://', producing events to Kafka topics based on configuration properties like 'kafka.bootstrap.servers' and topic-specific properties.",
+      "evidence": [
+        {
+          "resource": "repo://modules/extensions/galasa-extensions-parent/dev.galasa.events.kafka/README.md#L10-L17",
+          "version": "repo-lines-v1:sha256:bbc866e4d66f3371375c87cfc36e97d2a160aeed61710342ff6946756dd3656d:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmM5M2EwYjAwZGM2NTc3ZTk4ZjFmODAxM2NjMTNhYWQwNWQxMzE3YTI1OGFmNGUyYTE5MWQ5NDE1NjI2ZDIyOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjA4N2FlOGE2MDc2Y2QzYTZlMzlhNGEzMTU1ZWZmZjQyMTk1YTc5MzljYmNjZjY2N2Y4YWEyZTUzY2QyM2RkMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGVkODQzM2U5MTNkNzE4OTc5NTM0NTRlNjg0YzNiNzJkNTE5ZDE2YzczODk2Zjc2ZmQwYWUyMmFjYTJjOWE1MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2UyYjhiYmIxZDllN2ZhOTBhZWIxOTEyOGY1MTQ2M2Y4ZjgxOTlmZTYyYzcwZWY0NWRmNjI0Mjk5ODEwMWQyMSJ9"
+        },
+        {
+          "resource": "repo://modules/extensions/galasa-extensions-parent/dev.galasa.events.kafka/src/main/java/dev/galasa/events/kafka/internal/KafkaEventsServiceRegistration.java#L21-L53",
+          "version": "repo-lines-v1:sha256:78c8422047c9f722f58e54615947a592551fdeb578578baf9348d3be862c3845:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUzM2I0NzU2OGJkMjdjMzlmODgzM2RmYjQwNDNhNGVkNGRiZTFlZmQyOTM5M2RkNjZiNGQzMThkMjg4ZWQzMDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBlNDAwMzExNzYyMTQ1MDliNzQ3Y2Y1ZGNkNjgxMGEzOGVkNTRkYmU1OTI3MGNhNjRiMTI5YjNjZGE1ZDNjZTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgwNGY4OWZjMGVjOThjOTgyNDE4M2U3OTVkM2VkZDE5ZTkzMGY3YmM0NzFmOTAxMmFhM2Q1MDNiZTJmODk3NGIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_51391895f0764616af924439fcbecff7",
+      "statement": "The Kafka events service caches event producers per topic for performance optimization and requires the GALASA_EVENT_STREAMS_TOKEN environment variable for authentication and 'framework.produce.events=true' to activate event production.",
+      "evidence": [
+        {
+          "resource": "repo://modules/extensions/galasa-extensions-parent/dev.galasa.events.kafka/README.md#L13-L16",
+          "version": "repo-lines-v1:sha256:fbe96c5aa30ee7c5c744930ab9078d725f53d11411146d560a04430b5d3fbacd:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzk4MzQzZjAwOTdhZmJhOTU5YTg2MjNkOTc0YTMxNmJjOGVjZTBjNGYyNGVhMzg5MjhlZDc1NzMwYzVkOGY3OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzg3ZDQwODFhMTk2NGIwYWYwMjg3Y2ZlZDUxZWNjZTY4OTMxYzY0NjcwNmVlMGMyYTQ2MGNiNzM0OTEyNjQ0NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjQ1MzAwNDMwYjgzOTEzYTc4OTBjMDg3ZTZlM2UzNWNiMjY1MWQ3MzJkNzE5MzVkMWY2MzgzZGM0YmQ5ZmFkZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWFmYmFjZWZhNjRiYWJkZjIzMzQxNjQyMzc2NWRmMWU5NDEyM2RiNmVlZWM0OGMwMTgwMjI5NTE4YzQxMGI1MiJ9"
+        },
+        {
+          "resource": "repo://modules/extensions/galasa-extensions-parent/dev.galasa.events.kafka/src/main/java/dev/galasa/events/kafka/internal/KafkaEventsService.java#L21-L83",
+          "version": "repo-lines-v1:sha256:5225f2a2ffeda83fb689856f1830bcf3514d8238a34f12daa475186a3868ae2a:eyJzZWxlY3RlZExpbmVDb3VudCI6NjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3Y2FkNjIyOWUxNjI1N2Q0NWQzNDRlM2RkMzNmZTMyNDNiNTQ0NDA0Yjk5NTRhZjljMjI3ODgzMmUzNGZmN2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYzYWQ4ZTg1MzQ5ZmUxMTgxOTg4NTk3NmVmOTZjYmUzZjZmNjVjMjg4YjI5MDcxM2FjYWRiZGY5YTkyODAzODgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ2MGMzYjcwNWU1MTQzMGU2NTc1Y2NlNWE3ZDYwNDk2YTBmNmQ4YTY1YWJlZDhhMjljNzU5MmM2MzBkMjVjY2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2f70e8526cfe49d984b0aa149a11958a",
+      "statement": "All CouchDB-based backends extend the common CouchdbStore base class which handles URI scheme stripping ('couchdb:' prefix removal), HTTP client creation, and common operations like document creation and retrieval.",
+      "evidence": [
+        {
+          "resource": "repo://modules/extensions/galasa-extensions-parent/dev.galasa.extensions.common.couchdb/src/main/java/dev/galasa/extensions/common/couchdb/CouchdbStore.java#L43-L101",
+          "version": "repo-lines-v1:sha256:e161dd0d9771f28ed67e99d7017ebd0cbddb28dc738f5d1debe24286a57a0bb7:eyJzZWxlY3RlZExpbmVDb3VudCI6NTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZmY2M1MzExNjBmNzFkZDc5ZmMyOTEwYWM0YzFmOTU4ZTIzYjdhZjRmNzI2MThjMDgzNzBiNWYyNzczNGI3NWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNhZjk4ZjE4NDQyOWNjN2M3ZTgyYjAwYjU3NjQ4YWQ2Y2MwYWQ5MDdjYmVlMzA0NzgxY2ZkNjkwNzljYmNjNzgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f86ff620ecd14f26a6f49e14b5dd4990",
+      "statement": "Backend registration components use OSGi @Component annotations to register as services and implement registration interfaces that check URI schemes in their initialise() methods to determine whether to register the backend.",
+      "evidence": [
+        {
+          "resource": "repo://modules/extensions/galasa-extensions-parent/dev.galasa.cps.etcd/src/main/java/dev/galasa/cps/etcd/internal/Etcd3ConfigurationPropertyRegistration.java#L13-L27",
+          "version": "repo-lines-v1:sha256:484b23b556477fecb9bedaae5652a37a0e48f61a7bb0f30adf8f80f6b5cecbd6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmZDJmNWM1OTFlMjg1Yjg2YWE1ZTZkNjVlNGVjMzYxN2I0ZTBjNjQwMDE3M2JkZDAyNmUxYzU5MTcxMTcyYmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0ZmJlYWI5YzI4NmNjN2U1Mjk5NjQ0NGY0YjYyZDNlY2QzZjExYjM2MjJjMjg0Njc2OTRkNTQwZWY1ODA2NWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY1MDZmNzQyYWNhZmVjZTljM2EwZGM5YWVhMzQxNzQ4YTU2YTM2ODc1MDM4YzIyMjM5ODUyMTQxY2JiOGE5ZDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlkYjQ3MjhkOTc4MTk5ODg1MzhhM2U2YjAwY2M0N2FlOWExZjRjZTljYmRjYmI3NGYyOGQxMWQ4Mzk2ODcxY2MifQ"
+        },
+        {
+          "resource": "repo://modules/extensions/galasa-extensions-parent/dev.galasa.cps.rest/src/main/java/dev/galasa/cps/rest/RestCPSRegistration.java#L24-L56",
+          "version": "repo-lines-v1:sha256:b8d28f4b072de35900c554a6584c808a66b0773bb1cc7f6c818a46758591df6d:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5M2U1ODk0YTY4N2Y0NTA3N2ZlN2RkMjQzNmIzZTI5ZTFkZjM4YTJkNGZhOGZkNTA5MjlhNWU0NWY0NzA0ZjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVkYzJiMzExYWJlODc1NzJlOGE3Y2MwZDk5NmE2NTg0NDA3NmU1MjMyZDIxYjdhODU0NzVmOWI0MDU1Yjc0OTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVmMjU2YjMyM2JhNzU4ZmQzMmYyMWJhZGZiYjQ4ZDE0MzM4MWExZjIwNGQ4Y2UzNTg0OGVhNjdhODQ4MzkyYmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjliOWEzMDJhM2U2MWYwNWI1MzhmYjZmMjM0NjEyYTZjMzU2ODMzN2UwNzk3MmE3NzdlMmIwMzgyZjQzMjdlOGEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0e47b6a37fc4488ab5a8320c44f916a5",
+      "statement": "The CouchDB RAS backend requires the GALASA_RAS_TOKEN environment variable for authentication and uses Basic authentication type when communicating with the CouchDB server.",
+      "evidence": [
+        {
+          "resource": "repo://modules/extensions/galasa-extensions-parent/dev.galasa.ras.couchdb/src/main/java/dev/galasa/ras/couchdb/internal/CouchdbRasStore.java#L56-L57",
+          "version": "repo-lines-v1:sha256:a6e33133c81c0bc08116b7ab0ff8fa74f2ec80d5b3b1f787dacb3f55fac07f5b:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2Y5NzYyMDg2ZTFjMWJjZjU2ZDQ3YzE5OTI4YzdkMTlhOWQ1NjJjZTE4Nzc4MzQ3N2FmYjY3ZjM1MjI0YzJkMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzQ2ZDliMTc4ZGQ2YmRhNWM5OTk2NmNkMTgzZGZlMzc0YzRjN2RkNmY5NTcyY2FhMmUwNDQ0NjYzMDhmOWU0NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjIxOTI0YTY3ZDViOWIyODZjOTc5MWEyNDdiYTEwYWM4MzRkYzBmODMwMTgzNTNhNTE3ZWNlYjA4MTQ1ZTBmNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjFiZmFmMTI0ZWRhODU1ZjUzZGZlODJlMTg3ZDNlNGUzMjAzMzk5NWUwMTc0MzdjY2NhM2IwMDU0NDE0MDQ3NyJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.2",
+    "at": "2026-09-21T12:35:12.771Z"
+  }
+}

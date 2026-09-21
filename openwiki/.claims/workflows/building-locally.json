@@ -1,0 +1,298 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:3feb51f127da0fbbe3db1d1e655f8e2828b91ba5b1886ad271b33f4adc66feb2",
+  "claims": [
+    {
+      "id": "claim_d099f6074c174f76ada3785bf0ee3303",
+      "statement": "The Galasa repository requires Java 17, Gradle 8.9, Maven 3.9.0, Python 3.11.0, and Go 1.23.5 for local builds",
+      "evidence": [
+        {
+          "resource": "repo://.devcontainer/devcontainer.json#L12-L27",
+          "version": "repo-lines-v1:sha256:be8652e0fc9d35eb63b229c037ef6fced0e2aad5384072f203a9549bfdbcf30c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBjNTY5MmNlNDQzODU0YjY4NzlhMmNiZWU4ODk5NTNlNGU1YTNiZWYyYjc5Yzg3ZmMwNDU4NTYzN2I0NTk5ZjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmMGNkYjk3MmE3YmZiN2VkMjQ2ZjlmZjY3MjM4NWU1NWY0OTY4ZmMxMTA0M2RjNWI2ODRkNTFkZmEzMWRiY2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU3MTkyMDJjMWI3Y2U3ZmJkNjE0YTRjY2Q2ZjlhMDM4NDJiNDMyYTJjYTg1ZmM3MmIzMmRkMjcwNGQwNzQ3MDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUzNDE0ZjdmZTI1ODRjODQyNTlhNDkwMDVmYmJiZTdjODY4MzAwNWNhMzQ2Zjc3YjUwZjNlNTE4YTJlNGQxNWUifQ"
+        },
+        {
+          "resource": "repo://developer-docs/install-pre-req-tools.md#L5-L11",
+          "version": "repo-lines-v1:sha256:d58673372deb914f0588503fcaab230bc3679e02f72e3b629a0d01431b78679d:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjczOGMxNTAzZDM0MmE1MWZiNGYzODliYTI0MTBiNGU4YzcwOWE2OGQ5MzVkOTMwMmI4NDdiMmNkM2Q4NmFkMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTQzNzIxODFiZmQyNjI1NGNkY2EzNjI2NTMxOTQ1YTAzZTBlMjM2MDlhOGFiM2U4ZTgwMjQwZWY5YmRhOTkwOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGU0YzZlNGI1NzQxOWUyZDUwMGE1MGMwMmJkMzgxZDNjMzFiNTVjOWVhOTY4ZGFkY2M0NzlkNTI4ZWFjMzNkMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWFjMjYzMTc2OTdlMDkwZjdlYWNlNGQ1Njg0YjA1NjdhNmQ0OTE1MmJjZTEwZGJkNzE4ZTc5NWE2MTkxNzc2OCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_49ee77f4014d4e46afa0e11281c59cc6",
+      "statement": "The tools/build-locally.sh script orchestrates building all modules in dependency order, starting from platform by default",
+      "evidence": [
+        {
+          "resource": "repo://tools/build-locally.sh#L134-L164",
+          "version": "repo-lines-v1:sha256:db4dd1caa20ee0822e9e5500eecc5214d2fdf2ec265332bbd97bb33caea49a4c:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU1Yjk1NmQ5ZWE3NjRhODdiYzMzMmY5MmU0YTMzY2ViNDgzNzlhMDhmZGE4OTQ3YzMxMmY0NTkzZTNjYjBkMjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQxMTdmYTAwNmJhOTIwODUwMGIyOTMwY2U2OWNiZGU0MzZjNjQ3YWZhOTE3Y2I3Mzk2YTliYzkxMTFhNDZkZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYwMDkxN2NiOTBiNzMzZDkyMDhmNmMxZTE0ODAyNTg4NTExOGU4MjIzMmJjM2YwNmQ3NmQ3MDJkNWEyOWM5MWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkyNjkxM2NiOWU4ZDQ2MDU4OTNhMjNmNWIxNjQwZDVhYjMzNzdiYjAyNzQ0MDNlNzUxY2E1ZWE4Y2E0ZDUzZWYifQ"
+        },
+        {
+          "resource": "repo://tools/build-locally.sh#L192-L208",
+          "version": "repo-lines-v1:sha256:a3f9bcb46d80cfb839caa3cd1fa46ab6dea564435325141b065c773d587c3da9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQzYjA0YjRmYzIyNjZkNTRiMjcxZTBiNmEzYWYzYTZiYjVjODg1MjdjYmFlZGVjNmRjODRlZjU1YWEyMDE2NmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFhOWM3YjU3ODlkNWE1M2JlZDRhZmQ5ZTRmY2U2YmMzZTI3ZGIwNTIzOTg0YmZjOGJkOGIzNWI0MDUzMGZhZmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3ZDBmYWI2OGM5MWQ4NjVjYjQzYTZhOWE2MTZjMDFhZjcyNDkxZjMxMTRlZWM1NjE2ODUwMTVlYWI4M2JhY2QifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f76860b8f225488f8c00ad237a93e773",
+      "statement": "Modules must be built in order: platform, buildutils, wrapping, gradle, maven, framework, extensions, managers, obr, ivts, cli, docs",
+      "evidence": [
+        {
+          "resource": "repo://CONTRIBUTING.md#L57-L59",
+          "version": "repo-lines-v1:sha256:ef5ba970cba59b6a8a0d4b1936c084fdc7d6af80610a4da2d816caebe1aaa96d:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGFlNGM1NGFiZWY3NjE4ZmMxZmI2NDFkNWY0YzE4ZmUxYjc0ZGUzNTg5ZTc2MDgyNTY4ZWU1YzAwNDIzYmVjZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODk4YjE3YTY3MGJjYmNjMDJhNzc1YzAxYzY4YTBhYzVlYTFlM2EwNmExODdkMDdlMmUwOTQ2MTA3YTVmMTkxNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2Q1MWM3M2JlZDZhOTY0YTA3MzkyY2YzNmNkMDA1MTNhMWUxMWY4OGNkMTNhMTQxZTg4OWM2NDVkN2M2ZTllOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTQ3ZTM0NGU2M2U2OTZjNGI1ZTVmZDRiM2I2NDJmN2NjNTI4MmI0YjEwYWMxYjU3NDk4NzkzZTVkM2RhNzkxMyJ9"
+        },
+        {
+          "resource": "repo://tools/build-locally.sh#L192-L208",
+          "version": "repo-lines-v1:sha256:a3f9bcb46d80cfb839caa3cd1fa46ab6dea564435325141b065c773d587c3da9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQzYjA0YjRmYzIyNjZkNTRiMjcxZTBiNmEzYWYzYTZiYjVjODg1MjdjYmFlZGVjNmRjODRlZjU1YWEyMDE2NmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFhOWM3YjU3ODlkNWE1M2JlZDRhZmQ5ZTRmY2U2YmMzZTI3ZGIwNTIzOTg0YmZjOGJkOGIzNWI0MDUzMGZhZmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3ZDBmYWI2OGM5MWQ4NjVjYjQzYTZhOWE2MTZjMDFhZjcyNDkxZjMxMTRlZWM1NjE2ODUwMTVlYWI4M2JhY2QifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d0336d81a69f495fbbcbecb58c8d217b",
+      "statement": "The --module flag specifies which module to start building from, and --chain controls whether to build subsequent modules",
+      "evidence": [
+        {
+          "resource": "repo://tools/build-locally.sh#L138-L163",
+          "version": "repo-lines-v1:sha256:b25e8b3b84e868d37e5e360c39be28a3e464f5096eacae2717466798f9c41391:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxNzkxNDBmMmJjNWU3OTNhYmY5MmQzOWIxZWRlYTA5NWIxY2M4YzdkOGY1Zjc3MjhmNjA0NTNmMmU0Njk1ODkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM0NDE0ZDM3OGUwYmEzNzE3NTVhYjAzNjBmZGNjMTAxZDU3NjEwZWNlMTdjY2VhMDZmOWU3NjJlNjY0Yzg4ZmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjliMjg4Nzc5NDRhZDk2NzI3ZGQzNzEzOGQ4ODE1ZjgxMDIxNTJjYTA3ZTk1ZmVhYjJlMzdlMjg4OTFhMmQxNjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjljYjVlYzdkNTMxODY3YzA5ZDBmMmUyZDZiNThlYTM1NWM5MmFiNWEzMjdhNjJjMjYwMGQyYjQyYmQ2ZTRhZjgifQ"
+        },
+        {
+          "resource": "repo://tools/build-locally.sh#L57-L66",
+          "version": "repo-lines-v1:sha256:341ea8a8a64a1d36228761db7a22f23410b6d80105cc8ca1f28151cb2039b185:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE0YTBiZjgwNWMwY2EzZDAzMjhiM2UyMTQ0M2IyOTVjMzc2MWQzNmZhMDQ2ZTEyYmZiYmQ3ZjU2Mjc5ODgyZWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJhMjFjNWIzYmZmMDI5OWMwMTYxNDcwNDY4ZjM1NWU1YjRhZmNmMTdhNWY1OTNhYjY4Mzk0ZWY3YWYzMTljZGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYxZWU4NDg0NzAyMzFkZDk0NTU2MjkyYTllNGQ2YTE4YzQ2OWI3NTRkNzRjOTk2YWQ3ZTJhZTNlZDQxNDZlOGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY0MmQ5M2RkZWI0Yjc1NDM4MThhMmM3Njc4MjIyODQyNjViNWQ2ZjAzNjNiYWJkN2IzNGExZTcxMTQ2ZWJmNmQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2c0ac11a1fea4d7a982d55e6c47ac308",
+      "statement": "The --docker flag enables building Docker images for modules that produce containers (obr and docs modules)",
+      "evidence": [
+        {
+          "resource": "repo://tools/build-locally.sh#L152-L157",
+          "version": "repo-lines-v1:sha256:6f68bc9d31189db327ed1209265f748760cfa3c5380074a92afc217a0ab13627:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDQ4Zjc3NzU5NDc4MzM1NjcyOGUxM2UzMDNlNzM3NzY1Y2VlNTdkMzQ1NGU0YzIwOGIxYzkzOGFmYzAwYjk1ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTg1MjBiMWJkNzk1YWVlNTMwMWI5NjA3ZjA0NDY3ZDM5Y2Y0N2IzZTZiZmE0ZmVhNDViMDlhZmViNmQ4MGU2YyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWQ1MGQ4MzYwNTFmMDJlMzVjYWM0MzQ5YWUxNjVjY2M2YjkwMDM1YmE0ZTBmYzI3NTNkYTVmYjljOWEzMmMwMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2U5NzBmZGE5NzFmYWVjYTgzN2Y3MDE3YmE5MWE0MjdjZDM2YjNlM2MzZTYwYTFjNWQzOTBkOTY3NTdiYmYxNiJ9"
+        },
+        {
+          "resource": "repo://tools/build-locally.sh#L210-L226",
+          "version": "repo-lines-v1:sha256:ab523e26afa08f22b1170ad74cdefe464a6ae2c9dc26a412eb52107fa31433af:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyOGY1ODk0NGVhNjQzODU1M2EyMTAzYWQ5ZjJmYjg4ZTQxMmM2N2VjYWMxMTY4ODgwOTUxOGZiOTllYWFhMjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzYjg1NDBmZmQwMTkyOTMzZjA1ZTkxMjFiNmM2NjI5ZDI4NDZmOGQ2ZWRlZDg2ZTJhNGQ4MmMwOTg2ZDNlNjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMxOTBiZTMxODk5YzU1NzcxMzhmY2Y0YTA4MzU0NzUzYjc0OTI4ODk1ZWQzYWViYThhMTBhODA2NjNlZjcxMTAifQ"
+        },
+        {
+          "resource": "repo://tools/build-locally.sh#L63-L66",
+          "version": "repo-lines-v1:sha256:33c9b115188a9c2c8434137a46dfcb6c1ba691f68962e361dac198ea89931bcf:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmQ5ZWI0NjRkZTkxN2NiYjAzNmIzMTM5YzZkYzRhYTBmNjM2OGQ5MjIxOWUyZmY1MjY4MzEyYTQ3YTVkMTViZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmEyMWM1YjNiZmYwMjk5YzAxNjE0NzA0NjhmMzU1ZTViNGFmY2YxN2E1ZjU5M2FiNjgzOTRlZjdhZjMxOWNkYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2JlNjQ5ZTUxZjAwMDE5MWU2OGY0ODdiMWUzMzZmZjgyMzhiYzU1ODQ0ZWMyNjdkNDExMjhhMjllZDQwZGI4MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjQyZDkzZGRlYjRiNzU0MzgxOGEyYzc2NzgyMjI4NDI2NWI1ZDZmMDM2M2JhYmQ3YjM0YTFlNzExNDZlYmY2ZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_4108185a7e9545f88456070036bf448d",
+      "statement": "The --minikube flag sets up a local Docker registry for minikube and pushes built images to it",
+      "evidence": [
+        {
+          "resource": "repo://tools/build-locally.sh#L155-L157",
+          "version": "repo-lines-v1:sha256:98f929d0431a7b8747494778518131bb345c12e399fbc7d31657c4e0b836ace9:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjYyZjdkYzlhZjljM2UyOGI0ODk2MzRiNWM4Y2FjMDJkYmM5ZmJhYWZjNTYyNzk0OGI1Zjk2MDc4N2NmYTMxMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTg1MjBiMWJkNzk1YWVlNTMwMWI5NjA3ZjA0NDY3ZDM5Y2Y0N2IzZTZiZmE0ZmVhNDViMDlhZmViNmQ4MGU2YyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGU1NGZjMjViOGQzYzI4Y2FhNGQzMTAxN2I0YTA3OTVmY2YwNGEzNzE1NDEyNzAwYmNlMTA3YzYzODhkOWY1OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2U5NzBmZGE5NzFmYWVjYTgzN2Y3MDE3YmE5MWE0MjdjZDM2YjNlM2MzZTYwYTFjNWQzOTBkOTY3NTdiYmYxNiJ9"
+        },
+        {
+          "resource": "repo://tools/build-locally.sh#L183-L190",
+          "version": "repo-lines-v1:sha256:674c6347ad3ebd63cd2d9840642bbba473e2209d518bd651544dfb6c828eaf74:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTlmNjUwZGQyODFkMmZmZjE5MzdmNjFmYjQ1N2EwMTkwMDc4ZDlkN2Y4NDRhYzNmODg1Mzk1ODNhYWU2NDM2NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2Q2NTJmMDI3Nzk2YzFjMWE2NDgxNDZkOWMyOTAwYmUwZGU5NDYzOGIzNDYxNjJiZmI3MjA0MjkzZTllZTQyYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODMzMTUwMjVlMGFkYjNjYzA5NmMzMmE2ZDEwNmQ2YjM5NjZjMzgxMTBhMmE1NTg5MTc1MzlkN2JlZWE2ZTRmYyJ9"
+        },
+        {
+          "resource": "repo://tools/build-locally.sh#L65-L66",
+          "version": "repo-lines-v1:sha256:29e90c6610f2d5a72ed59788feb89f0698dce87d5f4c8a67a719f936916ff384:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2RlYzc2MTAyZWI5YzE5ODViNjY1NzJlYWVhNWM4Y2M0ODFiN2NmY2VjNmFhNDk1NTdkMmZjYjNlNGZlNWNmOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmEyMWM1YjNiZmYwMjk5YzAxNjE0NzA0NjhmMzU1ZTViNGFmY2YxN2E1ZjU5M2FiNjgzOTRlZjdhZjMxOWNkYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDk2MDFkZWIxY2Q1MmZlMGM2ODA0ZDhhZGE1NDBiMjk4ZDMxOWQwZWE3NGUxMGNlYTI1MzkxYThjNmVkYzY0YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjQyZDkzZGRlYjRiNzU0MzgxOGEyYzc2NzgyMjI4NDI2NWI1ZDZmMDM2M2JhYmQ3YjM0YTFlNzExNDZlYmY2ZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_400510e324da4f7b90dc4b1a8c98cd1b",
+      "statement": "The SOURCE_MAVEN environment variable controls where Maven/Gradle looks for pre-built Galasa artifacts, defaulting to the local .m2 repository",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/build-locally.sh#L130-L139",
+          "version": "repo-lines-v1:sha256:e1912ccd792e98b33eca446b812514552bd119b941477d765699f46a62f32304:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyODMzM2FmMDJkMDFkYWZiMjgyNWY4ZWQ2NTgzZjU0YmE3NDc1MzEwMDAxZDJkOWFmNzhjYjA2ZmI2MDEzYzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRhYTY4MmNkMTlkYjNkYWE4NjZhMzMwMGQ1NTU0MTg2OTkxYzAwYzI5NDkzYzQ4MWU4MWRiOTIyOTUyNjJkNTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM4ODllNGI4NjQ4NGNmZmJhZjI2NWQyY2NlNjNmNzZhNjRiOTBiODMxZWQyM2QzODI2OGQ3ZDZjZDg5MmRkNDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNjZDY4ZGZkZWZmNjkwMmYwYTQ1MzcyMjc2OGZmODliMDg2NGZmMzQxNzJkMTk1N2Q0ZTkwOTE5NTJjNGRiZjgifQ"
+        },
+        {
+          "resource": "repo://modules/framework/build-locally.sh#L76-L83",
+          "version": "repo-lines-v1:sha256:8cd23811f02dad3c20323d9946d78e58509638168b74cfe5ab10a123afc42c67:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzkyMGRiMGFlOWVhZjkwYWNlYzkwMTNmM2M4NjQ0MDk5OWQyZjM5NzdiOTRkMjNmYTQ3YTc3MzYyZjBjMjJlYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTM5ZWY1OWEzNzQzMzliMjYzYjMyMGMwZTUzMzVkZjQ3ZWRmMWMwMTI2ZGM1NDIyMzFjNmZjYWI4YTZhZGI4MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDQ0YTAwNzMxNGYyN2E0YTM5Y2I4ZjBmMGZjYWI2OTgxODc2NDk1MmEyNjEyY2IyMzAzZDU4Y2JhNjZjYmY3ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGU5OTUxOTkyMGQwODBhYWFkNmYyZjdiMGQ3MTBhZTA2ODhlOWNmNDVhMGQwN2U1NGZkOWI3YzBmZTkzYzc2ZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_921254618c134b8fa4d34c5f71eadff9",
+      "statement": "Each module has its own build-locally.sh script that accepts module-specific options like --clean, --delta, and --detectsecrets",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/build-locally.sh#L54-L67",
+          "version": "repo-lines-v1:sha256:9d3c9d2af6d5efb62b7cd50c08c6b6bcbf2451014d829bd1e792056d0a5266e9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE0YTBiZjgwNWMwY2EzZDAzMjhiM2UyMTQ0M2IyOTVjMzc2MWQzNmZhMDQ2ZTEyYmZiYmQ3ZjU2Mjc5ODgyZWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJhMjFjNWIzYmZmMDI5OWMwMTYxNDcwNDY4ZjM1NWU1YjRhZmNmMTdhNWY1OTNhYjY4Mzk0ZWY3YWYzMTljZGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdmYTAzYTczZWU4YWJhMzVjNjA5YjhhNmY4NzQxMThmOWJiMzZlMzEzN2ZiZGExNmQzNzkyM2I2YTZlMzdmOWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBiNzc4MjJkM2FmM2M4YTA3ODBiMWUxNGU1ZDZiYWQwNDE5MWU4NzQxNzM0YTc4ZDAwNDZiNGJlZjkwMjA1MDEifQ"
+        },
+        {
+          "resource": "repo://modules/framework/build-locally.sh#L71-L86",
+          "version": "repo-lines-v1:sha256:611d7f149ab70db3465f92075851b39a9fb51ba143f19d2c7b0ba2f186689d04:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE0YTBiZjgwNWMwY2EzZDAzMjhiM2UyMTQ0M2IyOTVjMzc2MWQzNmZhMDQ2ZTEyYmZiYmQ3ZjU2Mjc5ODgyZWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdmYTAzYTczZWU4YWJhMzVjNjA5YjhhNmY4NzQxMThmOWJiMzZlMzEzN2ZiZGExNmQzNzkyM2I2YTZlMzdmOWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ0NzIxY2RiZGM5MDg5YWE5OTk5MzRkN2Y1ZGI2NDYwMzAzNTI4NzJhMTcyZGFhZjg3NjFkZjJkNmQyOGY1M2QifQ"
+        },
+        {
+          "resource": "repo://modules/platform/build-locally.sh#L65-L73",
+          "version": "repo-lines-v1:sha256:1d62694f721cb655d48f4c3ff337a224881e01e7c2958b53d4b84438b3b98e75:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTRhMGJmODA1YzBjYTNkMDMyOGIzZTIxNDQzYjI5NWMzNzYxZDM2ZmEwNDZlMTJiZmJiZDdmNTYyNzk4ODJlYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmEyMWM1YjNiZmYwMjk5YzAxNjE0NzA0NjhmMzU1ZTViNGFmY2YxN2E1ZjU5M2FiNjgzOTRlZjdhZjMxOWNkYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzI0NTA3OGFhZTc4Njc3NmUwMjRlY2YzNmZlMWFhZDlmNmFmMzc1OTBlZWYxYzcxYTE1YWY3YWU0NDIxYTk2ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDMyMTBhNzc0NjNmNzdjMzliNzA4NTNiMjhjMWIzZDkyNmZkMGVmNTc1OTQ1NjUyZjdiMTBmNGFiMjhhYzcyNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_bc2c2cb5911348e38eb088d52a7dedf2",
+      "statement": "The build-locally.sh script cleans the local Maven repository of Galasa artifacts before starting the build",
+      "evidence": [
+        {
+          "resource": "repo://tools/build-locally.sh#L177-L181",
+          "version": "repo-lines-v1:sha256:e2da74e7d58e5f107694ef2a76927abb0b9642695127d451586776e3fcc900f4:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWZmMDJjMzRmOTRmZjFlNDlhNmNkNThlOTkwY2M5NTFiY2NhYWVlMmQwNWYzNWVlMWUyMzljNDU1NWRmNWJlMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGQwODNlYWNkY2MxMjU1NzlmZjNlZmI4ODVkMDczYzM2NTY2ZDJhNzI4NzE4ZDc2MGEzYzU0ODM2MDI4Njk4OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzBjMzdhNWRiYjA2MDA3Y2FlMzg5MTRjODViZTgzOWU0YWNhYjY1ZWJkM2M2N2Q3NTA5Y2FmODhhN2Q5ZWE5ZSJ9"
+        },
+        {
+          "resource": "repo://tools/build-locally.sh#L277-L277",
+          "version": "repo-lines-v1:sha256:2ec35b61a2f264b3dff52192b5cb1b0c75556af889079edfd8aca4882c7043dd:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmVjMzViNjFhMmYyNjRiM2RmZjUyMTkyYjVjYjFiMGM3NTU1NmFmODg5MDc5ZWRmZDhhY2E0ODgyYzcwNDNkZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmVjMzViNjFhMmYyNjRiM2RmZjUyMTkyYjVjYjFiMGM3NTU1NmFmODg5MDc5ZWRmZDhhY2E0ODgyYzcwNDNkZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2I4OWJjODc2NjgxZjkzOWUyNDU1NmY3YWNkYjQyZGI5MDRiZGI1ZjI2MTc3MzM1ZjQ0MDkyNDZlZTU2ODE5MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWZkMDljMTBlZTg4NTY5ZjExMzI3MjZjZTBkMzE1ZGY1Mjg2MjJmYWFiYzhmYTQxNTUwMmRiM2FkZDdiNWUyNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_b809405f44cf49ada87e72c3f1ab34d2",
+      "statement": "The dev container provides a pre-configured environment with Java 17.0.14, Maven 3.9.0, Gradle 9.0.0, Python 3.11.0, and Go 1.23.5",
+      "evidence": [
+        {
+          "resource": "repo://.devcontainer/devcontainer.json#L12-L27",
+          "version": "repo-lines-v1:sha256:be8652e0fc9d35eb63b229c037ef6fced0e2aad5384072f203a9549bfdbcf30c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBjNTY5MmNlNDQzODU0YjY4NzlhMmNiZWU4ODk5NTNlNGU1YTNiZWYyYjc5Yzg3ZmMwNDU4NTYzN2I0NTk5ZjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmMGNkYjk3MmE3YmZiN2VkMjQ2ZjlmZjY3MjM4NWU1NWY0OTY4ZmMxMTA0M2RjNWI2ODRkNTFkZmEzMWRiY2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU3MTkyMDJjMWI3Y2U3ZmJkNjE0YTRjY2Q2ZjlhMDM4NDJiNDMyYTJjYTg1ZmM3MmIzMmRkMjcwNGQwNzQ3MDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUzNDE0ZjdmZTI1ODRjODQyNTlhNDkwMDVmYmJiZTdjODY4MzAwNWNhMzQ2Zjc3YjUwZjNlNTE4YTJlNGQxNWUifQ"
+        },
+        {
+          "resource": "repo://README.md#L19-L26",
+          "version": "repo-lines-v1:sha256:4388894ec6dc53f1961532760f12d58b96ec3c8a4bcbd81577c1186cf70517b2:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjYxYWVjYmFhMTE2NDk4N2IyZmUyNzBiYWVlNDFkMmUxODQyNTE1Yjc3NmE1MjRhZTgxNDAxY2FlNjQ2MTNjOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTYxZThiN2JhZGQxN2VjYzk3NDNjMTM1YTZiODJjNWJlMGI3OGFlNjRlZWY0MTM4ODk0MmYwN2ZkNmFiYmY3MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzg1YzE3OGJiM2IzM2FlYWZhNjI4NmMwOGRlZTdjNjQzNjgzMTg2MDAyODAyODViNzY2NWNkYjAzMDkwYThkMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODUwNTdhNDczYTlkZmU5NTY4ZmY3MWY4YjU5ZTM1ZjBkNzkwY2IwMjFhM2IxZjIzZDU4MWRhZGM3OTlkMTlhMCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_f647d2e7dc2549498bbe49fa81080461",
+      "statement": "The dev container mounts the local .m2 directory and Docker socket to enable Maven caching and Docker-in-Docker workflows",
+      "evidence": [
+        {
+          "resource": "repo://.devcontainer/devcontainer.json#L35-L38",
+          "version": "repo-lines-v1:sha256:de5fe2a0e108c2e734e015a74992d437104de2ce6aa65137dbc17fa45194b44e:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTJlYmFkNjZiZDJjM2E4N2NiNjgyM2RmOWFhNTE2MTU5ZjBmYzk3YmRjMjI5MDIwZWUyNWNhNzYyYjdlMDJjNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTY0ZDhjMDczNDI5ODkzMTAxNTc2ZDg4ZDk5MTI3ZTg5ZDY4OTFkM2IxN2U4OWRmMDJlYzlhZTcwNzA1ZDhiZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDQ3MDc2NjEzMTk2MjQyYTFmYTkxOTYzM2NiMTQ2N2I0OTg4YWQyZmVlNTBjYTQxY2FjZDUyMzg2MTU4ZmQzNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmE2MmQzMjU0ZTc1NWRiY2Y3Y2MxN2RhM2ViZGU5ZTczZDc1ZTkxYzllNGRhMTgzMTM3ODc1MzY2MDU0MDBmNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_8c34b786a80049ed9e76038f056ff916",
+      "statement": "The dev-container-setup.sh script copies local environment variables GALASA_TOKEN, SOURCE_MAVEN, GALASA_BOOTSTRAP, and GPG_PASSPHRASE into the container",
+      "evidence": [
+        {
+          "resource": "repo://.devcontainer/dev-container-setup.sh#L26-L51",
+          "version": "repo-lines-v1:sha256:ab13ce8d5c4c4935dd43a2d777f8470771a388c49b4475fa05801363c5a4273f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdkM2M3YzJjNWY2NDBmM2MzMTY0MDIxNjhlNGJjOTY4MDIxNmFhZGIzYmI5ZTYxNWM4NWY2MmEwYTRkNDE4NGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkyNjQxNTU5ZmE0NDE3YmU5OTQ1Nzc1M2VkYTdjMTczYTAzNDQyODkxZjI5YmNiY2NmM2I3NGZiYzkxZGQyMDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlmMTQ5YmY4YjFjNWRiNDAzZTRhZTRjMWJjODY0OThiMGI4YTQxZmQ3NGI2MDRiODU1YzVkNWJmNzZmNDllZDEifQ"
+        },
+        {
+          "resource": "repo://.devcontainer/devcontainer.json#L52-L52",
+          "version": "repo-lines-v1:sha256:5c8a3a7122f443c9110daba36bbe8e370d278424318f5c5ea85cb3e82b1d98d2:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWM4YTNhNzEyMmY0NDNjOTExMGRhYmEzNmJiZThlMzcwZDI3ODQyNDMxOGY1YzVlYTg1Y2IzZTgyYjFkOThkMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWM4YTNhNzEyMmY0NDNjOTExMGRhYmEzNmJiZThlMzcwZDI3ODQyNDMxOGY1YzVlYTg1Y2IzZTgyYjFkOThkMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmI4OWFkMDlkNDBjM2RlNDAxZjdiODdkY2Y2OTQ4NDc2NzQ5YTkyYzNiMjE2ZGEwMDY5NDAwMmZlY2Y0YTBkMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_2b2ae636e19c47f89033ff6513881c68",
+      "statement": "Maven configuration requires the Galasa plugin group and repositories pointing to development.galasa.dev or maven central",
+      "evidence": [
+        {
+          "resource": "repo://developer-docs/install-pre-req-tools.md#L147-L199",
+          "version": "repo-lines-v1:sha256:b5f57cf6547faa523f15eaad5927a573e027caf763388194c210d60b71e14699:eyJzZWxlY3RlZExpbmVDb3VudCI6NTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzNDI0ODgwYzZiNTk2MTc2MGUxYmRkMjk1MGMxNzVhY2E2MjBkZTgzYmU3YTIzM2JhYTI0ZTZjZjI3ZjFjZGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE1Y2Y0ZTMzZWNkOWY2MWVlMmQ5ODk3YjI1YzM4OWQwZTY1MmUwY2RlZjMwZWY4NjExYjlmZmUxYzYwNTY0NGEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE1OTcwYmJmOWYyOWM3YTNkYjk4MGQ1Yjg4YjAyNzY1Y2U3YjBiYzQxYzU3MTc2MmZiMDYxMTA4YzYzMzVmNzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJjNjBmYzRmNzgxZTAwZWMxZmVkN2NmZGM5OWNiN2FkZGE2NDg0OTUzZmNjMDgzOTJiYTZkMDQ0NTBhZDg5ZjQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bbf2edca56e24d0f8e6037cfa5f912ef",
+      "statement": "Gradle configuration requires setting org.gradle.java.home and SSL trustStore properties in gradle.properties",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L56-L68",
+          "version": "repo-lines-v1:sha256:dbc6252c3e64049de8a868d91c3c7121eb65734b6de056a3749930a7f0d04782:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxYTBmMTE5NjFhNGZlNTYyZDM1Y2IwZDcxN2MwZGE2ZTQ1ODk4ZjM2YTkzNWYwMGNjMTRiZmVkYjA5ZGY0MGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVmMjI4NTYzNmM1MjAzZDZjMGY1OGVmYzlkZGVhNzUzYTgxMDg4ZTUyZTBmMzk1MjU4ZDdhNGNiMDZmNGQ1MzciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIxNjFjYTU5M2FmMWNiNjY0YmVlNDdjNDljNjNhZWJkNGEwMWQwM2Y1MmI0N2YzZDdlMDY1MjIyYWY0MzliODYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQyMGU3MmNhYWEwMGJlNjE1MDJjMmI4YWYwYzI1YTA5MWU1NWYwZmE2MzU3ZDIyMzdhYmY4OTQyOWRkNGI4ODkifQ"
+        },
+        {
+          "resource": "repo://developer-docs/install-pre-req-tools.md#L117-L134",
+          "version": "repo-lines-v1:sha256:5b5726441cb29b4de8a10be66ef4ad5a6f0cdc13e80efa22ba794044495ddb66:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJhNTBiMWJhMjlmZTgzZjE4OWFkM2Y0MjZmYmNlZTAwNjA4MmM0MzM3MzY0Y2RlMDlmNWNiODVlMzM3OWVjNTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQzMzAxOWIxMTA0ZjAzYzk2YmY4MGU3OWJhMWQxNTk2NjQyYjcwMTA0ZTQ3NjRmNTkzNzUxZTI1ZDhmM2M1ZGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMyZjcyYjE4NTRlNzUyNTZhYjI4OTQ0YTY3MzM0Yzc1NzUyNDM0NWFkMGZjNWU3YmUzNTY5OWNiNzRlZmRjZDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRjODk0OWY1MGMzZGRkMDU0Zjc3ZTY4ZDQ5NGI3ZjEzODU2ZmFiYzc4MmYxZGIwNGFjOTllNTcyOTM2Zjk3MDUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7d7c2d4549c845f68290c422c44d2e65",
+      "statement": "The build script runs detect-secrets.sh after completing all module builds to scan for accidentally committed secrets",
+      "evidence": [
+        {
+          "resource": "repo://tools/build-locally.sh#L284-L284",
+          "version": "repo-lines-v1:sha256:0fec3ca151a7521c86f130bdf3184f58b6677abd31c190da1b7c10589b47d873:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGZlYzNjYTE1MWE3NTIxYzg2ZjEzMGJkZjMxODRmNThiNjY3N2FiZDMxYzE5MGRhMWI3YzEwNTg5YjQ3ZDg3MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGZlYzNjYTE1MWE3NTIxYzg2ZjEzMGJkZjMxODRmNThiNjY3N2FiZDMxYzE5MGRhMWI3YzEwNTg5YjQ3ZDg3MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTBiODBlMDlhYWYwYzM5MTVhZDgwZjZlNDc5ODY4MDliN2MwYzhhODI5N2Y2MDIwMmRkY2Q4OGFkYjM2ODdhZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://tools/detect-secrets.sh#L9-L13",
+          "version": "repo-lines-v1:sha256:e826754360cb387fc4a958cb71ca1f3764029e3ad7dff0a849c8bc5199f7ce5f:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2M0YTdkYTg5YTE2MGM1YTk1YWVjOTllZmJmOTZhYzNhOGMzN2RhNzUzMzYwMTI0YTE2NzU2ZTVmMmEwMTdiOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzJjNDg1OGUyMmNjMmM5NjdiNDIxNTBmYTU1MDU2MmEyYzgzOWMyY2ViY2FhYjkxY2FiZGY2ZjRkYTAyMDAyMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzk4NmRkN2Y0M2EyMTgyMDc1MmNjOTRmMjkzNTlkN2EwY2M4MTkyZTBhNTM2MjE4MTcwZjdkZGZiNTA3NTZiNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTNmOTU5NGYwNDlmMmVhNmI3ZTg0MzJhMGUzMWYzMTg0ZDEwNDFhMTZlMGE5Njk5YTk2YzdiMGJjMTIwMmRhMSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_5184b112267b46b69bff102c39ac6821",
+      "statement": "Module build scripts follow a pattern of parsing arguments, setting up environment, downloading dependencies, executing build tools, publishing artifacts, and running tests",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/build-locally.sh#L54-L139",
+          "version": "repo-lines-v1:sha256:a15f4d41b9f41fc7482aee535e89c8ed6ddde61cc53ead4d357e15ea9f58abe9:eyJzZWxlY3RlZExpbmVDb3VudCI6ODYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE0YTBiZjgwNWMwY2EzZDAzMjhiM2UyMTQ0M2IyOTVjMzc2MWQzNmZhMDQ2ZTEyYmZiYmQ3ZjU2Mjc5ODgyZWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRhYTY4MmNkMTlkYjNkYWE4NjZhMzMwMGQ1NTU0MTg2OTkxYzAwYzI5NDkzYzQ4MWU4MWRiOTIyOTUyNjJkNTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdmYTAzYTczZWU4YWJhMzVjNjA5YjhhNmY4NzQxMThmOWJiMzZlMzEzN2ZiZGExNmQzNzkyM2I2YTZlMzdmOWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNjZDY4ZGZkZWZmNjkwMmYwYTQ1MzcyMjc2OGZmODliMDg2NGZmMzQxNzJkMTk1N2Q0ZTkwOTE5NTJjNGRiZjgifQ"
+        },
+        {
+          "resource": "repo://modules/framework/build-locally.sh#L71-L97",
+          "version": "repo-lines-v1:sha256:45b1e8fa85a1b83502b670e1a4f812047c822ef8a31d897ad9a8a3e766c45a17:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE0YTBiZjgwNWMwY2EzZDAzMjhiM2UyMTQ0M2IyOTVjMzc2MWQzNmZhMDQ2ZTEyYmZiYmQ3ZjU2Mjc5ODgyZWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdmYTAzYTczZWU4YWJhMzVjNjA5YjhhNmY4NzQxMThmOWJiMzZlMzEzN2ZiZGExNmQzNzkyM2I2YTZlMzdmOWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZkZjdjMTZkODc0YzEwNTgwZDIzMWU3YmE2MjdkODRkYjRkYzQ5ZWQ2MTQyMzJmZGY2ZjdkNWE5ZjFkYzYwMzIifQ"
+        },
+        {
+          "resource": "repo://modules/obr/build-locally.sh#L66-L95",
+          "version": "repo-lines-v1:sha256:75363a8642d8f56f04391498990f6220ed6c3cfeaec2d795985f191c346586e0:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE0YTBiZjgwNWMwY2EzZDAzMjhiM2UyMTQ0M2IyOTVjMzc2MWQzNmZhMDQ2ZTEyYmZiYmQ3ZjU2Mjc5ODgyZWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdmYTAzYTczZWU4YWJhMzVjNjA5YjhhNmY4NzQxMThmOWJiMzZlMzEzN2ZiZGExNmQzNzkyM2I2YTZlMzdmOWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRkMTVmOGVlZmNjMWJkMTk0YmZjMGJjNzQzNThhZDE5MDhlNjE3ODQ0ZjhlMWY1MjFjZmViZDFlMjU0Y2M3MGIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_780cf3dce70a4bd6bc3f2c52409616db",
+      "statement": "The build-locally.sh script dynamically discovers module names from the modules/ directory and validates the --module parameter against them",
+      "evidence": [
+        {
+          "resource": "repo://tools/build-locally.sh#L110-L129",
+          "version": "repo-lines-v1:sha256:21893b2074ad88549ec62ecb2bf4da8af1075942acb15caed4c8db163d8454a7:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkxZmM1ZjkyNTg3NjE3NzYyNmE4MDA5NzE2YzhkYmE0NjAyZWE5NzNjOThlNTA4MmMxNzQ5MDM4MDNlODJhNjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRhOGFjNzBlY2EzYmFkMDkwYmQxNGM4ZTY1MmZiNmFhYzA5MDIwZGFmYTE5NTE1MDgxOGUxNmU1MGE0MmVjMGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMxNWEyNzExOTBlOTM0ODIwZjg1OTRhYWIwMzJmYzM3MmE1ZTUxNjY0NmE0OGNmNzI3M2EzMDlkZTI5M2NmN2YifQ"
+        },
+        {
+          "resource": "repo://tools/build-locally.sh#L85-L108",
+          "version": "repo-lines-v1:sha256:55bcabf09c2a9a3c6fd1862aaa55ee66774115d35dabbc9ec4bbd5e2b39ac786:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZlYzI5ODUwMmU5ZmE4YTcwYjU3MjE2MmM2MzcwMGE4MmIwZDc3MmU2YTA4ZDU4MWFiZWZkYTI1NzIyZWQ5YTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIzOTkyOTQwZjQxYWVkMDRmNjc5YmQ0OTg1YTRhNDZmODM2NTA0MDJmODU0ZGRjNjE1ZjMyMjU5MzU1Y2E4MTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY3MWIwYzZjMjgxOTMyY2MwODdiZmFhYzY2MmFmOTBiMTFhNWU4OGFkNWVlMTgyZTY0M2E1ZWRhYWI0MmJlN2MifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_64197a96176d4b54bea5d356c0aa2983",
+      "statement": "Each module's build script invocation includes module-specific arguments determined by get_build_args() based on module requirements",
+      "evidence": [
+        {
+          "resource": "repo://tools/build-locally.sh#L210-L226",
+          "version": "repo-lines-v1:sha256:ab523e26afa08f22b1170ad74cdefe464a6ae2c9dc26a412eb52107fa31433af:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyOGY1ODk0NGVhNjQzODU1M2EyMTAzYWQ5ZjJmYjg4ZTQxMmM2N2VjYWMxMTY4ODgwOTUxOGZiOTllYWFhMjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzYjg1NDBmZmQwMTkyOTMzZjA1ZTkxMjFiNmM2NjI5ZDI4NDZmOGQ2ZWRlZDg2ZTJhNGQ4MmMwOTg2ZDNlNjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMxOTBiZTMxODk5YzU1NzcxMzhmY2Y0YTA4MzU0NzUzYjc0OTI4ODk1ZWQzYWViYThhMTBhODA2NjNlZjcxMTAifQ"
+        },
+        {
+          "resource": "repo://tools/build-locally.sh#L237-L259",
+          "version": "repo-lines-v1:sha256:5e5db832ffcdb48227952e53b559bb2fa68dd101b01aeec66079726555de3e94:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA0YWViMzllZTZiNGY5MTVhMWM5M2ZkMzA3YWIyMmVhZmZkNmY5ZmM4OTBkNzU3Yjk2MGFmNzI3MDRkZjc0ZDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMyNDUwNzhhYWU3ODY3NzZlMDI0ZWNmMzZmZTFhYWQ5ZjZhZjM3NTkwZWVmMWM3MWExNWFmN2FlNDQyMWE5NmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFmNTZlNGFlZmFkMThlZGMyZjViZThlYzIzY2RiNGQ2NDkyNjk1OTgxMDExZWE3NWQ3YTlkNjY2ZDE4NDdlYWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_de41951a03074aacb5bec3105e205c4e",
+      "statement": "The Galasa version is stored in build.properties and maintained by the set-version.sh script",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L42-L48",
+          "version": "repo-lines-v1:sha256:1d507d24696de21f37d79de6c316a4f2c85c17152a79e9a7669e43213cf83f46:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzFkMzMxMGMzYTNmNDY1OTg3NTdmZTFjNjdmNzhiZWEwNGY5MDQzNGFjMmMzMWI1M2FmZjY4N2MwNjRmNWZhOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZWQzNGQ4Mjk5YWE0YTg4NDY3NDUxMzUxNTFhZmU3YTg1ZGUwZTU0YjU0NmJkNmQ5MzZhYzZlY2JlNDhhMDU1YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTk4N2MyYWMzYTEwYjc4ZWM0ODIwZGMyYTZmYWUyZDA1NDQwYTU0NmM5ZDY4YjU2YWM0MDZiODA5MDBkNWYwMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDgxOThjZWI5MGFjYmUzOTgzZDU4NmE5YmJjZmFmMjE2NWQyMWQ3NmNiNmRjMDJhY2E5NzBhYmViMGI2NzVlMyJ9"
+        },
+        {
+          "resource": "repo://build.properties#L1-L3",
+          "version": "repo-lines-v1:sha256:f7c41f25f6d8d320f3a7191af573ef92595ee24e84e3e416c753d70624f79dab:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjNlYWMwZjg2NDEyNzMwMTkyMDE0YjRkZDA5NjIxZjI4Njk5NzJiNGUyNzhjYjU0MGFiZWMyMjE5YmIyYThlMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGU1YWFhNjlkZDc4MGJkN2Y0ZGUxZTY4ZWExNzBiMzNiN2RlYTBhZDhkZjhjZDEzOTgzMTYzMTAxYjAwMTU1ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_bdfbfd3e5a6d49e18f9313f654255a61",
+      "statement": "The setup-minikube-docker-registry.sh script configures a local Docker registry for minikube to pull Galasa images from",
+      "evidence": [
+        {
+          "resource": "repo://tools/setup-minikube-docker-registry.sh#L59-L66",
+          "version": "repo-lines-v1:sha256:ceda41f25eaeaa86e35eb37355c78a1755f3e5d638d538318d10f3364957cf13:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTRhMGJmODA1YzBjYTNkMDMyOGIzZTIxNDQzYjI5NWMzNzYxZDM2ZmEwNDZlMTJiZmJiZDdmNTYyNzk4ODJlYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2ZhMDNhNzNlZThhYmEzNWM2MDliOGE2Zjg3NDExOGY5YmIzNmUzMTM3ZmJkYTE2ZDM3OTIzYjZhNmUzN2Y5ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGQxNWY4ZWVmY2MxYmQxOTRiZmMwYmM3NDM1OGFkMTkwOGU2MTc4NDRmOGUxZjUyMWNmZWJkMWUyNTRjYzcwYiJ9"
+        },
+        {
+          "resource": "repo://tools/setup-minikube-docker-registry.sh#L9-L15",
+          "version": "repo-lines-v1:sha256:25e6e95c8292486f13d293b77a157866e795afa0e21c0d8ca120b248b4938c88:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2M0YTdkYTg5YTE2MGM1YTk1YWVjOTllZmJmOTZhYzNhOGMzN2RhNzUzMzYwMTI0YTE2NzU2ZTVmMmEwMTdiOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzJjNDg1OGUyMmNjMmM5NjdiNDIxNTBmYTU1MDU2MmEyYzgzOWMyY2ViY2FhYjkxY2FiZGY2ZjRkYTAyMDAyMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzk4NmRkN2Y0M2EyMTgyMDc1MmNjOTRmMjkzNTlkN2EwY2M4MTkyZTBhNTM2MjE4MTcwZjdkZGZiNTA3NTZiNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTNmOTU5NGYwNDlmMmVhNmI3ZTg0MzJhMGUzMWYzMTg0ZDEwNDFhMTZlMGE5Njk5YTk2YzdiMGJjMTIwMmRhMSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.2",
+    "at": "2026-09-21T12:35:12.771Z"
+  }
+}

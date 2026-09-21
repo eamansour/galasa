@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:868ad1aa7fcc116c44992ba27e822be5681d584bbffe0cb41c1da27d6137fca9",
+  "claims": [
+    {
+      "id": "claim_69837527140140b9a31560e2c2145d43",
+      "statement": "The dev container uses the Microsoft Java devcontainer base image mcr.microsoft.com/devcontainers/java:17 as specified in devcontainer.json",
+      "evidence": [
+        {
+          "resource": "repo://.devcontainer/devcontainer.json#L8-L9",
+          "version": "repo-lines-v1:sha256:79bb520047b80330298ab88135bb14a8d166f2d0caac5380ca959fca1427ca5e:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTVkYWQwMmY4NjczNWZmNmQwODk2MDJiYzRlMGM2OTY5M2Y2NDE1MTE1M2ZkZjE4N2M4MTllYzkzYjEzYTQzMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmM5MDc0MTM2NDFhMjBmODUyZGYyZmEzM2MzZjkxYjYwMjY3MTc2ZTRmODIxOWI0Y2QzOTc4Yjc2YTA2NGZkYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWM1MzI3OGY0ZGY4NzM1NTExMGVhNWM3ZWUzN2M5NjIwNjdjNjY5Zjg2NjYxY2RjMjM0M2RkNmQ0ZThkMThlYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2U5NDEzMDYxYzQ2ODEzMDJkOTZiNDk3MDFmYzM1OWIwM2ZlZjUyNTdjODNlNGUxZDU2ZWZmNTZiMmI5NGE5YSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_678215c5f39a43b4a55a2408f1e6e4f7",
+      "statement": "The dev container installs Java 17.0.14-sem (Semeru distribution), Maven 3.9.0, and Gradle 9.0.0 through the ghcr.io/devcontainers/features/java:1 feature",
+      "evidence": [
+        {
+          "resource": "repo://.devcontainer/devcontainer.json#L12-L18",
+          "version": "repo-lines-v1:sha256:93988df2dbb11098600947e1ba8f94ca63e1b169f688b755645ae75de78a5183:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGM1NjkyY2U0NDM4NTRiNjg3OWEyY2JlZTg4OTk1M2U0ZTVhM2JlZjJiNzljODdmYzA0NTg1NjM3YjQ1OTlmOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDBhYzU0NzVkYjZjMDZiNzEyM2VmMDI0YWNkZjM4YWFhNWMzMmE4Mjk5YjhkMDRmNDU3NmE2OThmZTlmNzMyMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTcxOTIwMmMxYjdjZTdmYmQ2MTRhNGNjZDZmOWEwMzg0MmI0MzJhMmNhODVmYzcyYjMyZGQyNzA0ZDA3NDcwNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjUyNTk5ZDhmMTk4MTQ1NzNlMmY1OTEyZTViYmZkYmU1MjlhNzU3MDFmODVhMDMwMmI1N2I3NTFkNThkMTZhYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_368d58cbd22d44ceb00d4f7ae4be28a4",
+      "statement": "The dev container installs Python 3.11.0 through the ghcr.io/devcontainers/features/python:1 feature",
+      "evidence": [
+        {
+          "resource": "repo://.devcontainer/devcontainer.json#L21-L23",
+          "version": "repo-lines-v1:sha256:e10eca53254440623891222a5cb19b72f5f972d07b9845562ad89a2a32fd28f7:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGVkYTFlNzM3OGFmNzBkNDIxMGIxMTNmYWNiZDZiODMwYzhhMTQ5Yzk3MzE3YzdjYzYwZjNmZDljZWUzYmNkOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWYwY2RiOTcyYTdiZmI3ZWQyNDZmOWZmNjcyMzg1ZTU1ZjQ5NjhmYzExMDQzZGM1YjY4NGQ1MWRmYTMxZGJjYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjcyN2E0NzNmNzNhNzQyN2JiZDBlZTY0NDIyNTg1ZWQ5OTU0ZTNkZjJlODkzNGM2MTE5OTk0NWM3NmI4MmM3NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjU4YTZhNTVjYjU5NmUzM2U1MTYzY2ZiYWY2NDdkMDE4MzE4NjFmZDU4MDdiOGI3NDEwMDk1NTdlY2I2YjY5NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_07cd4f12a099414fb6e0dcce3a06604b",
+      "statement": "The dev container installs Go 1.23.5 through the ghcr.io/devcontainers/features/go:1 feature",
+      "evidence": [
+        {
+          "resource": "repo://.devcontainer/devcontainer.json#L25-L27",
+          "version": "repo-lines-v1:sha256:09a69b4d191835f02d4d0a404e43b296decc3485986f675ddaf60ff418a4c106:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmI1MDYxNzRjYTFmODFiNDc4OTc3YzZmYjA5MDg4NGFiNzUwNjIzYjUxNDE1NTMyODJiMjNlNDE0YWY4NTk0OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWYwY2RiOTcyYTdiZmI3ZWQyNDZmOWZmNjcyMzg1ZTU1ZjQ5NjhmYzExMDQzZGM1YjY4NGQ1MWRmYTMxZGJjYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTliYTEyYzBkMjM1NzU1MTkyM2E0Zjk1MGQ0ZmZhNzYzNTQ0M2JiZTJiNDBiZGEzMTNkZjM1NmFiOGY3NTQwYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTM0MTRmN2ZlMjU4NGM4NDI1OWE0OTAwNWZiYmJlN2M4NjgzMDA1Y2EzNDZmNzdiNTBmM2U1MThhMmU0ZDE1ZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_d31fec3f7d7841fc8675bdac4b009172",
+      "statement": "The dev container enables Docker-outside-of-Docker via the ghcr.io/devcontainers/features/docker-outside-of-docker:1 feature with Docker version 28.3.3-1",
+      "evidence": [
+        {
+          "resource": "repo://.devcontainer/devcontainer.json#L29-L32",
+          "version": "repo-lines-v1:sha256:aaaa25c740cfea75e42bc83718fa5fa6988e3141f259e05383bb8cdfe3256bc7:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWExZTAwYWFhY2IwYTQ2NDVmN2VmMTliOWZkOGM4ZmUwOGU4YTA4MDE0ZDhiM2E4MWNlOTVhY2U3MzJlYjQ5NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjRlZmM0OTQxOGQyNmRjZjEyOWIyMmE2YWEyMTEwOGNlZWMzNzY3N2EzMmQwOGU5ZDVmZWUzNWRkYTY2YmI5ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDkzOGI0ZDA0ZTMwMTk2Mjc1ODQwYjc3Y2M4MzdmOTc1NTJkNjA5YmNhNWEyMTcxNjk3ZTBkYTk0ZjJmMWU3ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTRiZmNjMzgzOGU5ZTM2YjRjYThmNjA2MzE3ZGUwMzRkODA4MThmMmYyOGJlMmY2ZWJiNzRiZWMzNGEwYzVhOSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a13d4b9ef5c5440792d49033bf2ede2b",
+      "statement": "The dev container mounts the host's .m2 directory at /home/vscode/.m2 to persist Maven artifacts across container rebuilds",
+      "evidence": [
+        {
+          "resource": "repo://.devcontainer/devcontainer.json#L36-L36",
+          "version": "repo-lines-v1:sha256:18503b2edf0af992faf84be3c54e1dd7e74bff485a901c8023946fc1df65f557:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTg1MDNiMmVkZjBhZjk5MmZhZjg0YmUzYzU0ZTFkZDdlNzRiZmY0ODVhOTAxYzgwMjM5NDZmYzFkZjY1ZjU1NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTg1MDNiMmVkZjBhZjk5MmZhZjg0YmUzYzU0ZTFkZDdlNzRiZmY0ODVhOTAxYzgwMjM5NDZmYzFkZjY1ZjU1NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTRiZmNjMzgzOGU5ZTM2YjRjYThmNjA2MzE3ZGUwMzRkODA4MThmMmYyOGJlMmY2ZWJiNzRiZWMzNGEwYzVhOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzY5ZjI0MTFlZDUyODY1ZWYzNDc1NTJkOWUxNWFkNzQ2MDAxYmFlZmFhMzI5NGRkN2VkZGExMzJiM2ZkMGE3YyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c59ac7390efb42978a339e185192bdc6",
+      "statement": "The dev container mounts the host Docker socket at /var/run/docker-host.sock to enable Docker-in-Docker workflows",
+      "evidence": [
+        {
+          "resource": "repo://.devcontainer/devcontainer.json#L37-L37",
+          "version": "repo-lines-v1:sha256:826c799914d1b3f689c0522f99e2b420cbf5e4c281a2090e570ebb92f104b993:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODI2Yzc5OTkxNGQxYjNmNjg5YzA1MjJmOTllMmI0MjBjYmY1ZTRjMjgxYTIwOTBlNTcwZWJiOTJmMTA0Yjk5MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODI2Yzc5OTkxNGQxYjNmNjg5YzA1MjJmOTllMmI0MjBjYmY1ZTRjMjgxYTIwOTBlNTcwZWJiOTJmMTA0Yjk5MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDVhZWJmYWY2NTg3MjBjMTRiYTViMTAxZmYxODNhMTM4YWUzNGIxZTU0YzQxODYxY2E2ZGQ3ZmEzYmJmY2EwNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWQxYWU1N2Q1OWE2YmE1YmE5YTg4MjExOTliNzljYjcyOTk0ZTEzOWMxNGExMTRkYTRiMDU5NTkxYWFmYWQxOSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_36bd4f7f4a014c97a4a9e638b74e904e",
+      "statement": "The dev container automatically installs VSCode extensions for Java (vscjava.vscode-java-pack), Go (golang.go), and ESLint (dbaeumer.vscode-eslint)",
+      "evidence": [
+        {
+          "resource": "repo://.devcontainer/devcontainer.json#L44-L48",
+          "version": "repo-lines-v1:sha256:5ff1237c185040fbadee1437e532c3e15911ef2a723ae762f2d7759f11f98609:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTBjMDM1MDJmYzQxMmI0YjE2OGMwMTY3NjQzODljYTdiYWMwMTZiYjljZmFiMjllYzgwNzQwNDY1ZDBkMjgyNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjQyMjM5YjFiZDgyYjg1ZWQ1MGMxOGFiZTZiOGU5OTc4NzU1ZGFjNmZkODA0MDkyNGM4YTg4MGM1MmYwNjVkMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjhhYWEyMjI0ZTIwNWVlNjE5NGM2OGU0OTBhYzJlOGQ5Nzk0NDRhYjUzZGZlNWZmNjQ1Y2MzZDYyNjQyM2U3NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmI4OWFkMDlkNDBjM2RlNDAxZjdiODdkY2Y2OTQ4NDc2NzQ5YTkyYzNiMjE2ZGEwMDY5NDAwMmZlY2Y0YTBkMCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_b5ed6c58fc8f409ab82db6956ffc26e4",
+      "statement": "The dev container runs dev-container-setup.sh as a postCreateCommand to initialize the environment with local environment variables",
+      "evidence": [
+        {
+          "resource": "repo://.devcontainer/devcontainer.json#L52-L52",
+          "version": "repo-lines-v1:sha256:5c8a3a7122f443c9110daba36bbe8e370d278424318f5c5ea85cb3e82b1d98d2:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWM4YTNhNzEyMmY0NDNjOTExMGRhYmEzNmJiZThlMzcwZDI3ODQyNDMxOGY1YzVlYTg1Y2IzZTgyYjFkOThkMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWM4YTNhNzEyMmY0NDNjOTExMGRhYmEzNmJiZThlMzcwZDI3ODQyNDMxOGY1YzVlYTg1Y2IzZTgyYjFkOThkMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmI4OWFkMDlkNDBjM2RlNDAxZjdiODdkY2Y2OTQ4NDc2NzQ5YTkyYzNiMjE2ZGEwMDY5NDAwMmZlY2Y0YTBkMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_6f1ac40f6fbd415eacd732219cb7b7a7",
+      "statement": "The dev-container-setup.sh script copies four optional environment variables from the host to the container's .bashrc: GALASA_TOKEN, SOURCE_MAVEN, GALASA_BOOTSTRAP, and GPG_PASSPHRASE",
+      "evidence": [
+        {
+          "resource": "repo://.devcontainer/dev-container-setup.sh#L26-L51",
+          "version": "repo-lines-v1:sha256:ab13ce8d5c4c4935dd43a2d777f8470771a388c49b4475fa05801363c5a4273f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdkM2M3YzJjNWY2NDBmM2MzMTY0MDIxNjhlNGJjOTY4MDIxNmFhZGIzYmI5ZTYxNWM4NWY2MmEwYTRkNDE4NGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkyNjQxNTU5ZmE0NDE3YmU5OTQ1Nzc1M2VkYTdjMTczYTAzNDQyODkxZjI5YmNiY2NmM2I3NGZiYzkxZGQyMDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlmMTQ5YmY4YjFjNWRiNDAzZTRhZTRjMWJjODY0OThiMGI4YTQxZmQ3NGI2MDRiODU1YzVkNWJmNzZmNDllZDEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6d24e535b49342abbed6c29325103dd6",
+      "statement": "The README.md documents that the dev container is the recommended setup approach over manual installation",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L19-L19",
+          "version": "repo-lines-v1:sha256:f61aecbaa1164987b2fe270baee41d2e1842515b776a524ae81401cae64613c9:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjYxYWVjYmFhMTE2NDk4N2IyZmUyNzBiYWVlNDFkMmUxODQyNTE1Yjc3NmE1MjRhZTgxNDAxY2FlNjQ2MTNjOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjYxYWVjYmFhMTE2NDk4N2IyZmUyNzBiYWVlNDFkMmUxODQyNTE1Yjc3NmE1MjRhZTgxNDAxY2FlNjQ2MTNjOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzg1YzE3OGJiM2IzM2FlYWZhNjI4NmMwOGRlZTdjNjQzNjgzMTg2MDAyODAyODViNzY2NWNkYjAzMDkwYThkMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGUwZjZjZGI3MDg1NWM2NTRkNGNiOTk2ZjM1YjNiNGU4MmJiMDZkZDRmZTNiNTgyYWRiN2U0NzE5MWI4MDFhOSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a9fc6909514f44bca7a2d50cbe7f4ec6",
+      "statement": "The README.md specifies that Docker Desktop, Rancher Desktop, or Podman can be used as container engines for the dev container",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L24-L24",
+          "version": "repo-lines-v1:sha256:7f75567f84fac3f25af956f043742894773d749572b23e49196f20d4ca73e35c:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2Y3NTU2N2Y4NGZhYzNmMjVhZjk1NmYwNDM3NDI4OTQ3NzNkNzQ5NTcyYjIzZTQ5MTk2ZjIwZDRjYTczZTM1YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2Y3NTU2N2Y4NGZhYzNmMjVhZjk1NmYwNDM3NDI4OTQ3NzNkNzQ5NTcyYjIzZTQ5MTk2ZjIwZDRjYTczZTM1YyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTc1ZTNlYmFkNDQ1NTExNDdjZWIzNTI1NTA2NTM5Yzc1ZTQ2Mzc4ZDAyYWQ2ZDc1YjJhMDkxOGZjYjI0MjdlMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTRmMTA3MjZlN2EwYjk0MjU1ZjE1ZGNkMzJhZmY2NjQxMzMzMWFiYjcwZmI2NTY4YWFiOTA3MWNjNTNmOTBjYiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_0f5a2259211b4d5b81f0c5fa994ae07d",
+      "statement": "The README.md documents that environment variable changes require restarting VSCode to be reflected in the container",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L26-L26",
+          "version": "repo-lines-v1:sha256:a61e8b7badd17ecc9743c135a6b82c5be0b78ae64eef41388942f07fd6abbf72:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTYxZThiN2JhZGQxN2VjYzk3NDNjMTM1YTZiODJjNWJlMGI3OGFlNjRlZWY0MTM4ODk0MmYwN2ZkNmFiYmY3MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTYxZThiN2JhZGQxN2VjYzk3NDNjMTM1YTZiODJjNWJlMGI3OGFlNjRlZWY0MTM4ODk0MmYwN2ZkNmFiYmY3MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDE5NzU1ZGQwNzhjY2JjYjBlMzEzZTQ0NGJjYzgyNjRkYTUwNmVhNTMyNDkzZWI5MTEyMzdiNjI2MTM1MTdjNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODUwNTdhNDczYTlkZmU5NTY4ZmY3MWY4YjU5ZTM1ZjBkNzkwY2IwMjFhM2IxZjIzZDU4MWRhZGM3OTlkMTlhMCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_2d9c426911054999bcf3acf498e89f67",
+      "statement": "The dev container setup requires installing the Dev Containers VSCode extension from Microsoft",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L22-L22",
+          "version": "repo-lines-v1:sha256:9116b94ee1a5ba910c8bd83afbe88eeb68b5af7df7baacfad512067e277c72cc:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTExNmI5NGVlMWE1YmE5MTBjOGJkODNhZmJlODhlZWI2OGI1YWY3ZGY3YmFhY2ZhZDUxMjA2N2UyNzdjNzJjYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTExNmI5NGVlMWE1YmE5MTBjOGJkODNhZmJlODhlZWI2OGI1YWY3ZGY3YmFhY2ZhZDUxMjA2N2UyNzdjNzJjYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzUwZTVmNDFmMWJhOThiOTVkZDgwNmRmZGY5NDJhYjZmOWE4NmI1YzI3Yzg3ZjBlNjY2MmFiZDk0OGYyYzk2ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDE5NzU1ZGQwNzhjY2JjYjBlMzEzZTQ0NGJjYzgyNjRkYTUwNmVhNTMyNDkzZWI5MTEyMzdiNjI2MTM1MTdjNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_1496c64ead3a4c7caa6327b96dab9b82",
+      "statement": "The manual setup alternative requires installing Python 3.11.0, Gradle 8.9, Maven 3.9.0, openjdk 17.0.12, and Go 1.23.5 as documented in install-pre-req-tools.md",
+      "evidence": [
+        {
+          "resource": "repo://developer-docs/install-pre-req-tools.md#L5-L11",
+          "version": "repo-lines-v1:sha256:d58673372deb914f0588503fcaab230bc3679e02f72e3b629a0d01431b78679d:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjczOGMxNTAzZDM0MmE1MWZiNGYzODliYTI0MTBiNGU4YzcwOWE2OGQ5MzVkOTMwMmI4NDdiMmNkM2Q4NmFkMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTQzNzIxODFiZmQyNjI1NGNkY2EzNjI2NTMxOTQ1YTAzZTBlMjM2MDlhOGFiM2U4ZTgwMjQwZWY5YmRhOTkwOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGU0YzZlNGI1NzQxOWUyZDUwMGE1MGMwMmJkMzgxZDNjMzFiNTVjOWVhOTY4ZGFkY2M0NzlkNTI4ZWFjMzNkMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWFjMjYzMTc2OTdlMDkwZjdlYWNlNGQ1Njg0YjA1NjdhNmQ0OTE1MmJjZTEwZGJkNzE4ZTc5NWE2MTkxNzc2OCJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.2",
+    "at": "2026-09-21T12:35:12.771Z"
+  }
+}

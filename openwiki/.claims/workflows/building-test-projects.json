@@ -1,0 +1,326 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:e885ff794c1ce1d2bfab80543684b546aab9554007b399e087cdbc1e6aaad4da",
+  "claims": [
+    {
+      "id": "claim_3cb69ba453bf49539351a2421cb42d28",
+      "statement": "galasactl project create generates test project scaffolding with --package specifying the Java package name, which forms the project name, Maven/Gradle group/artifact ID, and OSGi bundle name",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/pkg/cmd/projectCreate.go#L121-L125",
+          "version": "repo-lines-v1:sha256:1d6440f76918377b1c398eaa3d1636d5fa5d114e78841b6ba794fac989390448:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWIyOTlmMmVhZmQ0MDlmNjcwNzc5MTYxYmVkMjdlNmE4MjViNzAwY2EyMWY5N2ZjYjdjMTM1MDFiMzcyZGNkNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjEzZWNiYjU1ZDgxNDc0YjZhMWVkN2QyZmJlYWQzZGM3M2Y1ODQxY2ZkZTFkYTA5YmU2OTA4OTFlYjg4Mjc1OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWEzZTEwYjZkNTE3NGExMDUzMGE0Mjc5OTVhYzg3YjVmZDJiMGIxYjhjZmIyMDQ4NTBlN2IyNjc0Yzk1MmMyMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTQ4NGVmNDI2YTcwNTk0NjFjNTAyNTg0MDA3MjllZTI2NjljYWE5ZmRiNjY4MWZkZjI2MzZkZjcyN2UzMGFjYiJ9"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/projectCreate.go#L222-L233",
+          "version": "repo-lines-v1:sha256:c242096326e727b9b33307cd42f5c42930158840c76d200c52549a9c9657eb53:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNmMTliZTAxNTAzOGZiMjRmYmFhMGEzNGVjNjMzMGNmMzAxODVhOTAwMGU3ZjRiMTNiZjY0MzFhMTNkMjk0MWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5NjY3NGE3M2NhNDBhMjVhOWRmZTEzNzE1OTMwZTA0OWYwOThkMmUyNTYwNzNhMDllYmU2YmRiYzM1Mjk5MDMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcxN2U1MDZhZjExOGJkYTlhYjE1YmQ1MDJlYmQxZGQ0YTc0NDQ4ZThkM2QxODc2ZTZhZjI2M2E5ZDdjMmIxMTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjViMTdmMTY3MTYxODM2NjdiNzdlNjE1NWM0YTI5MTIxMTFhODYzMWI4MTcxMTM2MmZhN2I5NzBkYmRlNGYyODkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4dda84c1243146c3a18b0c58fcb9f56c",
+      "statement": "The --features flag creates multiple test bundles, one per comma-separated feature name, with each feature becoming a separate OSGi bundle (e.g., package.featureName)",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/pkg/cmd/projectCreate.go#L140-L144",
+          "version": "repo-lines-v1:sha256:c578296a4edacf68dc9a185177fb732c16ff30384f99d4c7da4fc2dbc0715576:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTA5MGY5YjJkMzcwNTYyNDY4ZWFkNDI2OTk4NzI1OWU5ODVjOWJlYzk2ZjQ1ZjFhMjYzNDQ4YWNmMGNkMzMxNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2JmMDczOWMzMTFkODdiZjQyNGE5NWRlYTlkNjMyMGQwZjVlN2M2OWI2NjBiMTRkMjE5OTUwNTYwYjM3MzNlNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGY1OGQ2NjRmZWQ3M2YzN2RkMzQyNjc4Y2U5MzNmZTYzZTY0NmRiZWQ2ZjczNGYwOTEzNzY1MzdkMjNkMTNhMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzA0ODdmYzc2NThiMTQ3YjI4ZTI3MGQ1MmU1ZWE3OTYyZDZmZTllYjU5OTk0MTFhMmM2MjE0MjY3MTFjYWUzNSJ9"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/projectCreate.go#L268-L288",
+          "version": "repo-lines-v1:sha256:6ca0509c7abfbc4ff09ff402b7ad2bbe80b885d156c78087670126c31d568424:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgwNzQ0ZTNiZWI0OTVlMTA1ZjdmMTM1ZmIxYzJjMjMwYjgwMzNjNjlkNmQ2ZGM1MThjYzAwNzk4NTU0N2JhYjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEwZGY4MWIwNDZmNTgwNjU5MzhkNDk0ZWFlMTJlNTdjMDQwMmRlZTU1NjYwZjYwZDM2MDk0NjA2OGVlYzIzYzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQyMzNhM2M2ODc1OWJmOTEyNzU0MTVkNDg2N2Q5YmZmYzU3MTJiZDE2MTBmYzkyNjA2ZTNmMmQ4ZWYxNjY0YTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ2YjFkMjRkNzE4NDYwMTc5NDUzZmI1NDliODE0NDM3YTM2NDU3OTE1OGJlNjBlNGM0YjkzNjdhNzY4NGZiM2YifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/projectCreate.go#L486-L507",
+          "version": "repo-lines-v1:sha256:27c99d8bf1a98a9f0ebc0ea15276392f940b58def3a57c153344b2314928b857:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNlODNhZjQ0YmY3NmJlMzUzNzhhZWJlYThmZmE5ZDgxOGUxODkwOGMxNTM3ZjZiZmIzMTc2N2E3M2EyNzM2M2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRmNTUwNTYzMmUwNTg3ODY5NTdlNWI0YmY5NzVkNTQwNTM4YWEzYmE0ZTVlZGRiZmUyYzczNWE2NmY4ZWYzYzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEwN2ZhMzQwM2M0NWViZjMzNWQxNGU3MTc0NGFiMjZhOTkxNmMyZDUzMzA0NTAyZDc0ZjkxZWNmOTcwOWRmMDIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_dabdafeb5817484ca3c035970b24f32f",
+      "statement": "The --obr flag generates an OSGi Bundle Repository project that packages test bundles together and creates galasa.obr and testcatalog.json files",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/pkg/cmd/projectCreate.go#L131-L131",
+          "version": "repo-lines-v1:sha256:3d9c83ef20695d786dfb64b275e04913e526ad3d63f357a2cf713b1f7b0e0882:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2Q5YzgzZWYyMDY5NWQ3ODZkZmI2NGIyNzVlMDQ5MTNlNTI2YWQzZDYzZjM1N2EyY2Y3MTNiMWY3YjBlMDg4MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2Q5YzgzZWYyMDY5NWQ3ODZkZmI2NGIyNzVlMDQ5MTNlNTI2YWQzZDYzZjM1N2EyY2Y3MTNiMWY3YjBlMDg4MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDExNjA3NGYzYzQ0YTU1ZGY3ZTljYTcwMDhmNDE1ZmU3NTc1NzdkOWQxMmYzYzdjMjU2MTY0MTlhMzVhZmIzNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzc2ZDdiYjdkOGUwMTk0MjI5MTFjMjAxYTZkZWNkM2VmYzhkMmFkMmQ1Y2FlZGZjMzgwODA5ZGExZDQ0NDFmOSJ9"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/projectCreate.go#L309-L320",
+          "version": "repo-lines-v1:sha256:a5b9d54223e288f52d7b00c2ea8ab795e6edaa1796ff70706287bcbd1c8676c0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJhYmMxNTRmZTc0MzNjNzI5OGY2MWUwMjkwNDI3ZmU4ZmM1MWM4YWU4MTcwMjU0MDRhN2YwYWIzYTIzYzAzM2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEwZGY4MWIwNDZmNTgwNjU5MzhkNDk0ZWFlMTJlNTdjMDQwMmRlZTU1NjYwZjYwZDM2MDk0NjA2OGVlYzIzYzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkxYzI1YWE2M2U5ZTU3NDk3MDUxZmNlNmJlZDIwMzQ0ZDcwMzE5N2RhYjRmMjAxNmVjNjBhMjJmZTRiOTBiOTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhiM2ViYjI0MzAyZTlhZWU0OTg4MTYwYzY5YTkwNWJjMjhiNDljMjVjYzNiMjY5Mjg1MjEzNWZkMzNlZTRiMTAifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/projectCreate.go#L551-L578",
+          "version": "repo-lines-v1:sha256:1551f25fc2d3c27a9ca780ff187e96a33353361b3c3be283ceabe2140bc7689b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNmMmE0NjNlODFhMDBkMzRmNGZhNTc2ZDFiZmI0ODQzN2ZhNmQzMjk3Mjc4NjQ0YTRjZDZiZWFiOWQ1NzY0M2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU1N2QzMTBlZTg3NWJiMGM2MDFkM2Y2YThhYjA5NDlkY2UwYTZjODZjMjI4YTMzNDhiNWE5ODhhMGEyYjcwZTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM4YmJiN2YyN2Y5MWM5NDMzMWM1YWFjN2Y3NDFmYzM4ZjQwZjg5ZmI4NWViYzBkZjg2YWM3MzE3ZWY4YTk4Y2QifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8f824210981f4598a1e7f20c09df6018",
+      "statement": "The --maven and --gradle flags control which build system artifacts are generated; if neither is specified, Maven is the default",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L136-L150",
+          "version": "repo-lines-v1:sha256:10870c169565d53ea07e5f3952b2dd79cbec5b7c97b1250ef6fcde4c584e23e0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI2NzhhMmQ1ZTA1YmZmZjQxMDdjZmJmNGUxYmFmMjllZjRhMjAwNGM5MWYwYWE2M2I3OWMyMmNhMDhhNWQzZmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkwOGMwZGI1MmUyNzFmZGRmYzdhYmE5NTc5ZTU5NWRjYmM3N2NkNGY2NTMxMTBiZWYyM2Q1MDc1YTYwMmUzMTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk4MzYyNjk5NmFlY2QxMmRmZTdkYjEyNTA3Njg3YWExNjZlZmVkMzY4ZTE4MjRjNGM3MjYzNDViMjFjYmNhODIifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/projectCreate.go#L146-L150",
+          "version": "repo-lines-v1:sha256:4f60498dc06fbacc3544955661622a2fe1b6a98664058273070e51401473129c:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmFlZWU4MGNhY2U4NDg5NGEwMzgxOGQ4ZmViZGM1MjliYmMwM2MzMGJhNjg2YjYwZGVhNWEyZDQwMjBhODdlNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzJhNGFlMGQxZmU4YzFkMTJlYTk3YWUxZTY2YzYyMmMwMmQ5YjQxNWFiYTAyNDEzNmNkN2E1ZjIwNGQzMTIyOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTVkMzNiZjliODgwZjE4ZGNmODQwYTBkNzE5Nzk3MzYxNTUxYmM0MzBkMTQ1NDQ1MDBjYWQxZDM0MGM0NGVhMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGM3YTVmMDY3NTBiODhlODQwY2M1ZTIzYTk4NWY1ZmZkYzIzYmNhNjE4YmYyNTFkNmEzZjJkYmQ5MzM2N2JlYSJ9"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/projectCreate.go#L239-L242",
+          "version": "repo-lines-v1:sha256:e79c6cfc49375e9aa17f7825323d64107a288dc6d722968f1df8d093701b3709:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDA0ZjRkZjMyNzFiZmI1ZTAzNTk4ODMyNDAxMmNlNzAzMDNlYzA1YTNkODdmZTZlYzY3OWY5OTFjZDkwYWM1MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2Y4ZmE4ZWM5YzdmMTg5NDBkZmVhZmMyNjE0MDViZDA4YWQ5OGRmN2JmMGNmMGM0ZjcwNzViNzgxNzhmZGNlYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmQ1YWRhNmQyNDZmNTQyYmIzMDQzYmQ5NDAzZjAyN2IzOWQ4NmE2N2RhMmQ3YzZjMDBkNTM5NTRiOGY5ODZlYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjQyZDYzMzIzMjNmYzY4ZTJhNzNlZmMzOTE4MDQzY2IzMDFiMzExNDE1MjI1NjUwZTNlMjU0N2JjNzQxMjllZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_0d8ee64f863140b29ebcbd95bda6919e",
+      "statement": "The --development flag configures generated projects to use bleeding-edge Galasa versions from the development Maven repository (https://development.galasa.dev/main/maven-repo/obr)",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/pkg/cmd/projectCreate.go#L128-L128",
+          "version": "repo-lines-v1:sha256:271fee98f1d8277cd3a66b27fe3a2057554c67fdc43d2f0d2c39a52e2a7a2174:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjcxZmVlOThmMWQ4Mjc3Y2QzYTY2YjI3ZmUzYTIwNTc1NTRjNjdmZGM0M2QyZjBkMmMzOWE1MmUyYTdhMjE3NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjcxZmVlOThmMWQ4Mjc3Y2QzYTY2YjI3ZmUzYTIwNTc1NTRjNjdmZGM0M2QyZjBkMmMzOWE1MmUyYTdhMjE3NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2VjYjNhOTYxNjhmNWQ0ZDM3NWEwZGJhNjA3MWY0MWFiMThlYTgxZGRiMTM1MTRmZTI2ZDI0YTM2M2E1NjdmNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2FkNDdhMjljMGM4ZjY5MmY1NDRlZDBmNDJkMTU1OWNmMjUyNTE1YmExNzIzYTVkZDY0NzVkOTgyMjRmYjBhNiJ9"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/embedded/templates/projectCreate/parent-project/pom.xml#L169-L174",
+          "version": "repo-lines-v1:sha256:3ee2f465b0d39350df9ecb94c3d56d0dcd3b3e4b1dccde19bb41b813b31aaba5:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGQ0NWZlZWY2YjU4ODc3MmU2OWRmZTgyOWM0NjA1MjVhYWVjMTMyZTViMDAyYzYwODgwM2ZmNDY1OTBjNjdhNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2YxZTYxMTQzZmExNDllOTVhNmRhMDJmMTNlMjU0NzhhN2M3Y2ZmNDYzNGRkYWM3OWJhM2I5NDdiNDliYmYzYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzM5YzViOGVlMDRjOWNlZTM3OWQwOTIwMWY4NDllOTgxYTNkMDIxODMzMjY3N2M3NGNlOTBmN2MwNGE4MGUwNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTFmN2ZiM2QwYzc2YWJiNzQ3ZjYyNmUzNDZiZGFkZDUyYjA2M2RlOGYzMmMzODNiZWRhOWI2MTlmMzJiODYzNSJ9"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/embedded/templates/projectCreate/parent-project/settings.gradle.template#L20-L30",
+          "version": "repo-lines-v1:sha256:dbc463cba4260bb2a4346c03a34e3a80a658c4f95468e0273eec6738699c0e8e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5N2I1N2E1ZjBmNTc3Y2Y3NjU1ZjVmNjBkZjI1NTQyY2QwYzBkMmMwZTVkZjdmNjIxZjllNjMzY2Y0ZmZlZmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNlNDFmNmQ4M2Q5ZmE4MGFiMjQxYWVkZjU0YTkyMjY3MjhkMTJhZTIzMDNmMGQ1MzYwODRkY2JkNDFkN2JhYTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIzYmEwZTEyZmRiMTkwYzQ0OTFmNjY4NjUwYjc0NjdiZDc1OTkwMTMxZGVkYjQ5NzI1ODVlZmFkYmUwN2M2ZTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ0MjRkNTA1MDcwZmNhYzU2MWI5MTQ5ZmE4OWNkN2FhYWY0M2U4OWFhNmY0MTBiYjQ4M2EzZmQ2MzMzYzdmOTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4d9b52853dc440a983bde73c342ee0fb",
+      "statement": "The --manager flag creates a Galasa manager project instead of test projects, generating manager interfaces, implementation, field injection handler, resource management, and lifecycle methods",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L78-L130",
+          "version": "repo-lines-v1:sha256:1a3b251185af9b90eccca2e0453abc777a21b065da2254477c110ec5c4c96d6e:eyJzZWxlY3RlZExpbmVDb3VudCI6NTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU0Nzk0NTk5ZTZlN2JlOGJlMmQwMTJjNGUxZmUzM2YwZDJhMGM0NmE0NWRlMjE4OGM1YjhkOTc0ZWYwY2RkMjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhkYTJkZTZlNzJmYjMyNTNhNzE0Njc3YmU4OGU3YTJlNzY4ZTIzZGQ3NDMzNTIzZTVjODUxOGQ2MWM3M2Y0NjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYyMzYzZWY0ZTRlNjExOTJiOWIxOGY0NjlmYmE3MDk0MDc4YWQ5Y2RjOGUwNmJlYmU0Y2EyN2Q3MTAwOTRmNDgifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/projectCreate.go#L133-L138",
+          "version": "repo-lines-v1:sha256:f9b99722b69cec8d182fbf6522dacd9ef5a29e4196ba701f76192fce628b50ab:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWIzNTA3Yjg1ZjYxMjUwY2E5NjUxZjljMmJiNWVmZmVmZTM3NjIwNGZhNmEwZjUxZTExMDM4OGM4OGI2NDUyNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWEzZDM2OTFlZTZlZjA2MWViZTNlMmE2Nzc0ZWU5MzMxZmM2NDMxNDU1NWFjY2RiMTEwMzliYzdmYmNhZjU4OSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmMyMDgxNjBmOTc0Yzc1NDBkNGMwNjFkYjQ3MzM0NzY4YTE5MmRmZDVmZWQ5NzQ2NjE4YzU3OTBiNTg4NGVlMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGE3NzIwMDUzNGFlNGY2MWMzMWMzODFlYTMyYTk4ZTI0NTlkMGQ5ZWE5MmQyYWU4ZDExZDI1YjljYzNiNzAwYyJ9"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/projectCreate.go#L809-L873",
+          "version": "repo-lines-v1:sha256:80032970a8ec318df41d4d4258752d5bb24996991b04bb59545d977be2571ddd:eyJzZWxlY3RlZExpbmVDb3VudCI6NjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVkMDIyZjNlNDY5Y2U3ZDBkMjlmNzRhYzRhYWU4MjE3YzRjYzAwODUyNjIyNGM3OThhZTAzYTk0MWYwNDI5M2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU1N2QzMTBlZTg3NWJiMGM2MDFkM2Y2YThhYjA5NDlkY2UwYTZjODZjMjI4YTMzNDhiNWE5ODhhMGEyYjcwZTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY3OGQ2MjI3YjM4ZTM2ODhlYWEyMGUzMjg0YmEyNzZlMzBmZTU3M2E1MzYzYmZkZTJlYjQ1ZDFjYWMyZjBlOTgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d77612cc140a4d08a58bfa2d4ad14aab",
+      "statement": "Manager projects generate implementation classes with lifecycle methods including initialise(), youAreRequired(), provisionGenerate(), and provisionDiscard()",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L118-L123",
+          "version": "repo-lines-v1:sha256:599be159731c4f6cbeeade41b0f5a9146a72ba2960e846d35a7c2deba19d08bb:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDBiOGI0ZTVkNWY4N2YzY2IwZTc0M2U3ZTg3NWYyZjVjNjdlYjgzOWEyYmI3OTFmMmUyZDg0NTAyMGExMjY2YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTFhNzMyNTliYjE2OGNiMzlhNjU2NWY5YmYzNDQ1M2M0ZGY0NzU4YmRkNDdhYmNlZmM1NDRkNDg1NzlhZmU2MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2E5MDQ4ZjczZmRhZGMyYzk1ZmViZmUxNjJlNTE4ZDZiYzgzZDBlYjdlNDliZDkyZTdmMGUxYWM1MjQwZmUwMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzdiOTY4NDhhNmE1MDk3OWQwNGExYWE1ZDcyM2UwOGY4MDRjZmI3MTkyNmUwMDRmNWIwMDY0ZWI4NGFmMDZjNSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_6b8925c274774d2f9f64df0347d2cc3b",
+      "statement": "Maven projects use mvn clean install to compile sources, generate OSGi manifests via maven-bundle-plugin, package bundles, build test catalogs via the bundletestcat goal, and install to local Maven repository",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L148-L148",
+          "version": "repo-lines-v1:sha256:4a35561eb5226fe42c92eabba3428d6e380a1d19a9a4ed5719568eb8455f6746:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGEzNTU2MWViNTIyNmZlNDJjOTJlYWJiYTM0MjhkNmUzODBhMWQxOWE5YTRlZDU3MTk1NjhlYjg0NTVmNjc0NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGEzNTU2MWViNTIyNmZlNDJjOTJlYWJiYTM0MjhkNmUzODBhMWQxOWE5YTRlZDU3MTk1NjhlYjg0NTVmNjc0NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmJiZmQ5NzAzMzRlMjY2ZjIwY2VmNGE4MGRlMzRkZjc4OGJhMzkxZDY5MmIyMzlkMThlOWFjODdlNThmMzdkZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmViNjZhYTg3ZjU0MjVkOTU5OWYxN2U3OTExY2ZmNTU4MWMzNWFkZGViMmRmNTAyODk2M2NiMjdhYTk4MGJmMSJ9"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/embedded/templates/projectCreate/parent-project/pom.xml#L130-L161",
+          "version": "repo-lines-v1:sha256:9f715a975dfb1d0524d7cb0c601b007c26ea85b57fea6e01ce52637bce608726:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYxMWNjZTk5ODMxMDU2ZDQ0YTNlMTFhMTlmYWNjMTFjZmViODI4ZjFmMDA4ZTYzZTI3ODIxOWNjYmJmYmNhOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU4ZmIxYjhmZjkzYzU5ZjBjZjUzMTUzOTQ0YWJmM2Q3ZTE2ZDY3MGE2MWRkN2I2MjkwZjMxNjhmYWIyZDdlYTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ3NGI2MDNkNTg5YjAyMDg2ZmUzNjUwMTA3NTU3ZGQwMDQ3NzVlZDgxOThiOGQ4NjI3ZjA4OWIwZDg3ZDhjYjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFmNDVhMzdlMTIxNDNmZTQ0MjQzZWY2YmU1MDM0NjIzYzNiNWEwZGQ2Njc3MGZmZGFhYWUwOWY0YTYwMzg3ZTkifQ"
+        },
+        {
+          "resource": "repo://modules/maven/README.md#L33-L63",
+          "version": "repo-lines-v1:sha256:1cc2e4e4c233b91f18d96b8f807a6156425ed6b45a8c1f1c6facbba094328f5a:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhkOWNhNzZiZTlmMmQzMmUwZDQxZjlmNzlhZGIzMjhmNTFkMmIzZTM1MjU1ZDk3MjM3YjUzNWZiYTk0Y2Q4NzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YzA2YzU2MWQ1YzMyNzM0MzY4NTI2OGE0NmIzMzkxZjM5OThlZWU4OTBkMmJlNTFmMGQyMWNjNGE1M2FlNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFjZjQxNzQxMjQ3Y2ViODY2OTZhMmU3OGEwMmRhZDcyOWMzMzEyYTFlOWFmOTQ5ODE3ZGQxOTBlYmZiOTM2YWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZjMmI2Y2VmMDM2MjBmOTY2MTZmMTM5OTJkM2JlODFlNzFmYWU5NGFlYTc1NjkzMjk5MzRhZmJkYmU4YjBiMTgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7a327ec254c34be097cac5931eb70786",
+      "statement": "Gradle projects use gradle build publishToMavenLocal to compile sources, generate OSGi manifests from bnd.bnd files via biz.aQute.bnd.builder plugin, build test catalogs via dev.galasa.tests plugin, and publish to local Maven repository",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L150-L150",
+          "version": "repo-lines-v1:sha256:2678a2d5e05bfff4107cfbf4e1baf29ef4a2004c91f0aa63b79c22ca08a5d3fb:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjY3OGEyZDVlMDViZmZmNDEwN2NmYmY0ZTFiYWYyOWVmNGEyMDA0YzkxZjBhYTYzYjc5YzIyY2EwOGE1ZDNmYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjY3OGEyZDVlMDViZmZmNDEwN2NmYmY0ZTFiYWYyOWVmNGEyMDA0YzkxZjBhYTYzYjc5YzIyY2EwOGE1ZDNmYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjdmNmE1NzcwZDQxNzM3YTc2MjFkMzE4MDZjYmIyZTc3ODI4M2JjNGQ3ZDYzYzNjN2M5NmY5OGMxNDNjMTA3OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTgzNjI2OTk2YWVjZDEyZGZlN2RiMTI1MDc2ODdhYTE2NmVmZWQzNjhlMTgyNGM0YzcyNjM0NWIyMWNiY2E4MiJ9"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/embedded/templates/projectCreate/parent-project/test-project/build.gradle.template#L16-L22",
+          "version": "repo-lines-v1:sha256:89735b9818f0ac2f5f83bdbde791292ae2ec70f7d7805dfa4bdd8aa84143a5a0:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmE5MGZiYmM2NDBkNTdhMjc1MGYxNzc2NGQzMDhhZWI1ZjFiNTg0MmMyNGZjNDdiZDA2NjRkNGRiOWJmYjgxZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2ZkYzAyOGZjM2ZmNzhmZjQ0MTQxZDQ4NGY0ZTZhYmIwOWJjM2ZmY2U0ZjkxOTE0ZWU5NTYzNWFjYmYzYzczYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDU1OWVjYjAyZDczODE0ZTdjZWM2MDc1YWQ3OTFmZGJkNDU1MTE0ZmYxMTlmNWFlMTdhMmM5N2QwZGEwMzMzNyJ9"
+        },
+        {
+          "resource": "repo://modules/gradle/README.md#L126-L131",
+          "version": "repo-lines-v1:sha256:de75d2cff95b440a4902bf20387cfe326c5d3b89c7e9db75f7572522afd943fb:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTRlNzgyNzFkYWU4Yjc3NjZhOGJiOTliMDE1OTExMWQ2YjU1MmE2YWQ5YjhmZWQ2NjBmZThhM2NiYWVkYTdlYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjFhNTQ5OWJlYTNkYjNhYzk3NjQyNWIxYWMzMDY5MWZhZDIwZGI4YmZkYjgyZTEyNTZkM2RjOWRhOTNhNWYwYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjFjZGQ4NmQ4OTVjMDY1MjdiZGNlN2ZlNTEwZmU4MTVjMTRiZjU3NDk5MTlhYWRiZDgzNTAyOTQwYmI0ZWI4OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTBmOGQyMzk2NTdmOWUzZGIwOTkwYzY0NDgwYjliZGJmZDZlYWY2ZmFiNjUzZWM5MGUyYmM1NjdjNzBjNTNjNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_37ba4770c9764120ba5bdc9482530514",
+      "statement": "The galasa-maven-plugin bundletestcat goal scans compiled classes for @Test annotations during the package phase and generates testcatalog.json files",
+      "evidence": [
+        {
+          "resource": "repo://modules/maven/README.md#L33-L63",
+          "version": "repo-lines-v1:sha256:1cc2e4e4c233b91f18d96b8f807a6156425ed6b45a8c1f1c6facbba094328f5a:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhkOWNhNzZiZTlmMmQzMmUwZDQxZjlmNzlhZGIzMjhmNTFkMmIzZTM1MjU1ZDk3MjM3YjUzNWZiYTk0Y2Q4NzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YzA2YzU2MWQ1YzMyNzM0MzY4NTI2OGE0NmIzMzkxZjM5OThlZWU4OTBkMmJlNTFmMGQyMWNjNGE1M2FlNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFjZjQxNzQxMjQ3Y2ViODY2OTZhMmU3OGEwMmRhZDcyOWMzMzEyYTFlOWFmOTQ5ODE3ZGQxOTBlYmZiOTM2YWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZjMmI2Y2VmMDM2MjBmOTY2MTZmMTM5OTJkM2JlODFlNzFmYWU5NGFlYTc1NjkzMjk5MzRhZmJkYmU4YjBiMTgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_59d94d20adfd4c3aa6293285be23ba1c",
+      "statement": "The dev.galasa.tests Gradle plugin automatically generates test catalogs for each bundle by scanning for @Test annotations",
+      "evidence": [
+        {
+          "resource": "repo://modules/gradle/README.md#L10-L22",
+          "version": "repo-lines-v1:sha256:df8367496f5f165aaa143b6afab23423fdda53b4d9f16b248a1c6d29170d5173:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc4NTBlNWRhYWQ1MTlhNTlkOWEyMzYyNzU0YzlkYjliYmE3NzZjMGM2NjYxZmMxYWNmNTUxODBmMmU0NzJkNTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhMDkwODkwZjA2MTQ4YTZlM2FkYWYzOWRiYzFkOTRiNjU1OGIzZDc5NGRjMTY1YjVmMDYyMWZkMzc2NmQ5YjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE1YzQxMjQyMzliMWJkYjRiM2E5MTI4ODlmM2E5MTIxZjY3NThjMmI4ODFhYzU0MWJkOGYzMGIyNmY5MTE4MjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE4OTQxODhlZjgzNDFlYjQ5ODRkZjUxZDJmMDIyOWIyYTNiMzdiNGE1MDU5NzJmZTM0YmZhNzQyZWNhMmE4ZWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_356c5026fec841b9be5b9a0062a66870",
+      "statement": "OBR projects merge test catalogs from all bundle dependencies; in Maven this uses galasa-obr packaging, in Gradle it uses the dev.galasa.testcatalog plugin with the mergetestcat task",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/pkg/embedded/templates/projectCreate/parent-project/obr-project/build.gradle.template#L10-L38",
+          "version": "repo-lines-v1:sha256:3e4e52a43e009744283e2cef3b8ed6ffbe2759614423a30f3d4e4476d8453992:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3NzA3YmE3MzZjYjY3NTc2ZDc3MjRmZWNiNWI4ODBkMDEzZGU5NWFlNjFiMTlhOTE5ODgyOTY2YjYxZWJkYTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY5YzdkMzI3ZWRjZjg5YjEwMjk0NzI1ZjkwZDE0YTZjMjM2NTA5M2I3Nzc2ZjA4NjM5YWNkODZhZjgxOTFkMmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImExNGE1ZjNkYzQxY2VlNjlhYTUwNmIxM2ZiZmZjNTFjOGQ2NmE4YTJmODZkMThkZjlmYmQ2ZDhlYmU5NjM5ZTUifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/embedded/templates/projectCreate/parent-project/obr-project/pom.xml#L23-L23",
+          "version": "repo-lines-v1:sha256:05f051657c26cbb640a788a1d13e80f5fc11bbf2f421e5a33a1763c9c74b8bd0:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDVmMDUxNjU3YzI2Y2JiNjQwYTc4OGExZDEzZTgwZjVmYzExYmJmMmY0MjFlNWEzM2ExNzYzYzljNzRiOGJkMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDVmMDUxNjU3YzI2Y2JiNjQwYTc4OGExZDEzZTgwZjVmYzExYmJmMmY0MjFlNWEzM2ExNzYzYzljNzRiOGJkMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTBjMGRkNDFlMjdmNDdkN2IyNTRkMWU3OWFkMjlkM2IxNjI4ZjkxOWU0YTJiMGM4MWQ4MTg0MTk5OGQ5NjU1OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODIzOTgzMGYzODQ2NDM2OTdhNzhlYjcxZjFhYzI0YTU5OWU5ZTNjNDdjZTZiNWZlMTk0ZDYzM2E2NWJjOTE2OCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_5a79399d517b4d4daa071ca4b8aa30b2",
+      "statement": "The galasa-maven-plugin deploytestcat goal uploads test catalogs to a Galasa ecosystem during the deploy phase using galasa.token, galasa.bootstrap, and galasa.test.stream properties",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/pkg/embedded/templates/projectCreate/parent-project/pom.xml#L43-L49",
+          "version": "repo-lines-v1:sha256:892a3240f33d8f39fd9b71bc1de183b2e25b7791e2040774a854eba00c438824:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOThhZTlhM2JlNDcwZDRhMjI1MWJhYzcyMGQ4MDE0ZGM1ZWFlZTA0ZDQ5Mjc2MGQ1MDEyMGQ2MjY5YzJmNDQyMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWJjZDA0MGZjOTE2NzcwODFkZjdmMmVkMDA2NWY4OTVlNWZkM2ZhNmRiYmYxMjRmYTg3MmVkNGQyNzI5ZTE2MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOThhODllODU3YzUxN2Q5OGM0NmIzNDkxN2VkNjE4OGM3ZTQ5Mjc2OWY4NjA3OTA5YjE1N2RjM2FjNTA1NjZjMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmEwOTc3YmE2OGYyNDhlNDdjNzdlNDM0ZWIxYmYwNTg4ZDYzMDNmNjA5YWM3OTE5NjY1MDI5MWM4MTliNDgxYiJ9"
+        },
+        {
+          "resource": "repo://modules/maven/README.md#L71-L102",
+          "version": "repo-lines-v1:sha256:bacdc43229b58c46011b6bde9f3d80d45aefde2016f078c2271a065c1d86307f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc0NTNiZGY5OTdiM2EyNjQzYTA1MTdjYWZmNjA3NjY2NDAwMjdjMDlhZThkYzIyODNiZGIyZmI4NWQ2MDc3OTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YzA2YzU2MWQ1YzMyNzM0MzY4NTI2OGE0NmIzMzkxZjM5OThlZWU4OTBkMmJlNTFmMGQyMWNjNGE1M2FlNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlkMjg3M2YxMzc0MGFkYzgwMzk1NmYzMmFhYTgxNjUzYTViNGI3ZmIwNjU1MDA5ZTE5ZThlNjQxYWQ4YjEyOTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc1MzkwYTI3ZTYyMTRmYmNiNmM0MzMzZmNhNzU0MTVlYTkxNDY2M2RhOWJjNTlhNDQyYTk2YjVjZDA5MTY1OTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_30bd68f7b7a64f51a37ad151ee0f89d9",
+      "statement": "The Gradle deployTestCatalog task for deploying test catalogs directly to ecosystems is deprecated in v0.33.0; the new method uses galasactl properties set to configure test stream location pointing to published catalog URLs",
+      "evidence": [
+        {
+          "resource": "repo://modules/gradle/README.md#L133-L146",
+          "version": "repo-lines-v1:sha256:347da5a9b0874307358da9254673ca23aa8e79103b9e744c6bf71f1252f0b7a8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg4ZWE3MGY2NzdiNTFlMjI0ZDQ0MDY0MDA4ZDk4MjIwOGRmODVkYjkxYWQ5NGU2YTJjOGU0MDE4M2Y2ODQ3N2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk0MzFlZTBiY2EyMjUwYjc3NjM0NzI1YTg0M2U3Y2ZjZDA4ODE1NGYxOTM1MGYxYzc5YWUzZGUwNjVhNDA1MGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjczYmM4YWRkNTkwYmJkMGIyNWE0OGUyMzJlZThmZTkzOWM4YjZiODhhM2E0YTYyODAwY2JlMzgxNzBlZTEyMGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNmZDhlNjBiMzVmYjMxOGIyMzUxNjNmOWVlMGU3ZTU5Nzg2N2RlYzUyYmVmODUxMGVlMDRiN2NhNGMxYTFiMjgifQ"
+        },
+        {
+          "resource": "repo://modules/gradle/README.md#L69-L97",
+          "version": "repo-lines-v1:sha256:4651ad94f9420489018f08f3b77fe65bf889887e1e5a424c1fcaad4615f7f6f4:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM1NGMzOTdjMGUyMTRkMDNhYjcyYWYxNjIxM2EzYzlkYjU4NDNhM2IwY2Q4MTI3ZjU5OWFkY2I5MGE1MGZmY2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1ZjMwY2M5MGQ1ODRiZDRmNjQ2ZWFlMWQ3Zjg5YzkyYjcwZDI4YzNhNjBkMTU2MDA3NWY5MzE5OWI5ZmIyODciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMyZDAyY2M4NjFlNmFiYjU2MTRmOTUwYTU5ZDYwNjEwNDE5OWQ5NjBhZjgxZTc3MTZlYWI4ZDY1MGMwMGEwNDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYxZGEwOTljMmU4YjJmZjY4MDlhMGFmZGRjYTk4NjEyYTAyZjVlZGQyNDZkODliODNhZThmYjdhNjY4MzEyOGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8ae9f879b3704a20bcd8cbf7936e809f",
+      "statement": "Generated parent POMs import galasa-bom for dependency management, configure maven-bundle-plugin with extensions=true for OSGi manifest generation, and define common dependencies on dev.galasa, dev.galasa.core.manager, and dev.galasa.artifact.manager",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/pkg/embedded/templates/projectCreate/parent-project/pom.xml#L129-L162",
+          "version": "repo-lines-v1:sha256:67058467557b4b26111e68827167309a458f89fffaecc76fd9d804a6675a50c6:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU4ZDE2ZjgxNzBmM2M0MjA3YWQ4YThjMjE5ODM2ZDA1OTJmYjgzOGRkMGNhYmQxYTI5OWNiMmRhZTE4ZTU5YTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYyZTg0MTI0MThhMDQ0OWRjODU1ODZiYjRkYTYzNGFiYjRlY2YzZDk5YThlMDhmZDZiODI2YzQyYjgzZDZiOGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk2MGE3OGY4YjYwOGZhNDZkYjE0OTY3YjM5YWFlZGFiMzYwNTFhMjRmNjJmMzVjMDYzZWJkMmJiNDYyMDExZDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ0NDM4MDBmZTUyNGFlZjQ4ZGU2MTE3MjhmMTY5NGVhZDAwMWYyZjQyNGI3OWY4NTU3ZmZiYTFmOTMxZDFiYmYifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/embedded/templates/projectCreate/parent-project/pom.xml#L75-L102",
+          "version": "repo-lines-v1:sha256:4079138e5e7998376723b806f68151f8eca48f02e58e795e8618ede9207b3c27:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJhMWY3NzA5ZWYxMDc0ZmQ1NzdkMWRlMDAxYmVmZjVjNDgzYzE5NWUwMmMxYmE5NzBjNzljODBjZWY0Y2IxODUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA2MGJhYjA0ZjIxOTY1NjZjNGU0ZDQyZjYwNjM3MmMyMzc3ODljODdmNjQ3ZTMwNDcxOTM2NzcwN2E4ODQ0MDkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJjZjYxOGU1ZmY1OGQwNjU0NjlkYzdlYzZkYjRlOGRjMTFkZGRiN2JjNzIzZmZiYWFmYTQxYTkxOWFkY2IzN2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUxMWFiMDYyNWYzOWFiM2E0MDcyN2MyY2NiZjU2YjcyMTBiMWVkZGVkYzJmNzIwNmQ2NWEwNmEyOThlODI5NTgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a47f2c7557cb4424a94ebe2c26b4af00",
+      "statement": "Generated Gradle test bundles apply java, maven-publish, dev.galasa.tests, and biz.aQute.bnd.builder plugins, and import galasa-bom using implementation platform()",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/pkg/embedded/templates/projectCreate/parent-project/test-project/build.gradle.template#L16-L22",
+          "version": "repo-lines-v1:sha256:89735b9818f0ac2f5f83bdbde791292ae2ec70f7d7805dfa4bdd8aa84143a5a0:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmE5MGZiYmM2NDBkNTdhMjc1MGYxNzc2NGQzMDhhZWI1ZjFiNTg0MmMyNGZjNDdiZDA2NjRkNGRiOWJmYjgxZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2ZkYzAyOGZjM2ZmNzhmZjQ0MTQxZDQ4NGY0ZTZhYmIwOWJjM2ZmY2U0ZjkxOTE0ZWU5NTYzNWFjYmYzYzczYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDU1OWVjYjAyZDczODE0ZTdjZWM2MDc1YWQ3OTFmZGJkNDU1MTE0ZmYxMTlmNWFlMTdhMmM5N2QwZGEwMzMzNyJ9"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/embedded/templates/projectCreate/parent-project/test-project/build.gradle.template#L50-L63",
+          "version": "repo-lines-v1:sha256:7f99e1cecc97a41370c8d19e4c7e891c646b84a66599fe953cc685009b140a47:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNiYTMxNDVhZWUwZGEwNTkyNGQzYWQwYjFlZWI0YWRlNzc2MWI2NjdkOGE5NjE0NmRlZWYzOWFiZDFjZTQ4Y2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM2NGU4NzNiN2Q4ZmRlZGI2NjM5OGMxMDBmOWEzM2MwODBkOWE4ZDZjZDdkZTQwNzQ3Yjc1ZWM0NjgxMTk4NzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcyNzBmOGU0Y2U1MWI2NDEzN2Q1OTYyMzEwZTUxMTQ2MmUyMjFkODI2ZWE5YzQ4ZWMxMTNkMjM5MDY0MGZmZjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c777bcf18fa143f1a2ea78461af53c73",
+      "statement": "Gradle projects use bnd.bnd files to define OSGi bundle metadata including Bundle-Version, Bundle-Name, and Import-Package directives, processed by the BND tool",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/pkg/embedded/templates/projectCreate/parent-project/test-project/bnd.bnd",
+          "version": "repo-file-v1:sha256:9c7c72070f3d369809d20e475624bd5001c93025361d9d84fd54c25165546121"
+        }
+      ]
+    },
+    {
+      "id": "claim_a1dec67087d4490cac335154f5cf4228",
+      "statement": "Generated sample test classes demonstrate Galasa @Test annotation at class and method level, and @CoreManager annotation for ICoreManager injection",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/pkg/embedded/templates/projectCreate/parent-project/test-project/src/main/java/TestSimple.java.template#L14-L48",
+          "version": "repo-lines-v1:sha256:df68003215033a2d4c10071ce9493b955eea1ec5c30ee94316749491fa851021:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVjZjM2MzM5ZDgwN2M0ZGQzNTY5NmY3ZjdlNTQ1NTNkZGUxZjY1ODcxMDJkNjg4NTgwYWNmOTMxMzYyNTQzYmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBiMjJjY2IyNjVhMDQxZDE5NDIzODhhOWNhMGRmODM1ODhlZTYwNTg2ODE2NGM3MzZlZDQzNTVjNzQxMTQ4MzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_681f2215726849709e94a7c6f20b7f02",
+      "statement": "When --manager and --features flags are combined, test bundles automatically include a dependency on the manager bundle and sample tests demonstrate using the manager's resource injection",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L99-L110",
+          "version": "repo-lines-v1:sha256:81d47e942188c4265b31cf343e3e726d741078bd333748ad503d9601c1891c89:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImViYWZhZDgyNjliNGQ2MWFiN2E1OWE2NjkxNGMxNTBlZGZiNGMyMTk2NzM5NDk1OGU2ZDU3MDhlYmFkZTZiMGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImExZjQxZWNkOGZhYTZjZjVkMmRkNmVmNDg1ZWQxODk2NTQ3MjAxMmY4N2M5OWViOWRkMWMxMGZlMjI0NDNkYmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYwY2U0NDA2M2JjYmIwZWY5YjAxMzllNDE3MTFmNGVlZWE0MGEwNWNkOGI1NTc3YzJlMmY4YWE3MzBiNTA1OGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ1ODcyM2YwNTkxM2JmNzRkODIzYjRhZmZhZTBkNjQxYTc2NzU1MGRiZjMxZTc2NmQ0ODAyYWE4ZDE1MDY3MzYifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/embedded/templates/projectCreate/parent-project/test-project/pom.xml#L43-L49",
+          "version": "repo-lines-v1:sha256:b672bc56f876e906cc1cc119cc0c1877ea90c083e5780bb17dfd5b9aed0550da:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTg3ZDdkNTQzYWNmOWZhMTExZjk3Nzg2YjdjNzBiYWZjNDU2MmQwZTEyMjdjZGJmYTBjNTVmNTdiMjVmNjI2ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzVhYTA4ZDgxZWFiMTg1MTE2MGMwODcyNzhmN2ZkZjU4ZTUzZjNjYzllZGJiYTdjMTI1ZmNiMjllYjYwYzBkMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzA5MWQxMTRmZGY5YmFkYjcyMTQyMTgzZmJhNWU1MmQzNDU4NjRjZTI0MmRiNDIwZjMzMGVhY2FhZmU1MzYyZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTkxZWNmMDc0YjliYmY4MTRlMzQ4MzhjZTRiNzY3YmUyY2Y5YjdjMTk5NmYxYjYxNzhmNzE5ZjFkYjBjMWYzZSJ9"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/embedded/templates/projectCreate/parent-project/test-project/src/main/java/TestSimple.java.template#L18-L45",
+          "version": "repo-lines-v1:sha256:377d7c1d90747e16b4fe7cc748ab8c8e30be2667aede428ebc89e6ce9f8d7a6c:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQwNzI1MTM2OGNlMDA2MTU1YTNkMjcyZmU3ZGNkNTY5MGFjMDAzNmY5NmQyNTE5N2VkOWEwMTM1MWI2M2Q3OTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ5MmYyZDVkODdmYzcxNmQwYmRjODczYzc2MDRkODcwNWU0MzUxNDE0MGRhMzBjZGI4YTIzNjY0OGUzNWMxYTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRlYWFiZTZmOTMzZjZhNWFkODhmY2EwZmYwNjQ4ZTdiMWFhNmFmNzhlNjI1OTg0MWQ0YTZmOGVhN2Q5YTc1N2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY1M2YzNzRjZjljZjllYTQwNWQ3OGYzMjdjZWVjYmVmMTczYzM2YmFhZWExYWViNjYyODNkYTc1OTk1YjNkZmEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3911f716d5b0440696c6c59f3cf3c45a",
+      "statement": "galasactl project create validates that package names and feature names are valid Java package names, and manager names are valid Java identifiers",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/pkg/cmd/projectCreate.go#L248-L250",
+          "version": "repo-lines-v1:sha256:f68eb3ded833c9618c95f39de72592861cdd3a437439c9f17b504d062cbdd471:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGIwZDBkM2U0MjY1N2NjZmY4NWQ0NjZiNGEyYTViNGNlOGNhOTEyYWVmYmU1NjgwYjFhN2EwYTYyMjExNWE5OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDdlYTlhNjUzMWI3M2IxMWRjZDI2NWMzYjZmYzQ1M2YxODdlZWRiZDIzMDU1ZmFlNDNhNWI4NzQwNzY2ODA5OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDRmMjU3NTQyZTI4ZGMwNDlmZTIyYmNlY2U0ODA3NTEzNTY2ZDcwN2IzNDBmMDhiZDIwZGVhY2NmMTE3N2NjMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzFmZTIxMzRkNzJhMThkMWQwOGUzZmYxNjdkNmU4MzEwM2VlMTA0ODQ0M2NkMzg2ZDNkOGJhNmI4NzNkNDkxZiJ9"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/projectCreate.go#L257-L266",
+          "version": "repo-lines-v1:sha256:76dde53efd50cf3b849275b6e836dbdfb636bea7b1ed17be20285229c86690ab:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI1Yjk2NjEwZjEzMjEwMjY0NjkzMDBiMjU1NDYwNjIyMWE3ZGZhYzdjMDM4ZWNhYjlmYjJhYjRkMjIzZTdkN2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRkYzc2MDIwYmFlNzA1NzdlNjRiMzMwZGNhODNmZGYyNGYzZDc1OTNhMDE1NGQ4YWJlYzZkYzYzZjU4OTdmZDkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQyOWRiNGFlNDU0YmQ2NDY4ODUxNmY3NDhlMmY3MzE2NWEzYTliNTNhMTU3ZmUzNjYwZTQ4ZDI4YmJlY2JhYmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYwMzRiMTFkNWViNWUzMWY3ZDU4NmM1ZTVlYzY1ZTM0YjZjZTg5MjBiNDFlYTZkZTkxNDNhNjU0MGQ0MWY3NGMifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/projectCreate.go#L470-L479",
+          "version": "repo-lines-v1:sha256:6cf532806d6710e89b86ebae66e23a134e194fa13611209d46a7731d436eef36:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlhNjFiNWY2MDk4ODM5NTk0MTExMGQ3NTE2NTdkMmQ2ODVhZDgyZDFjMTA2M2RhNGY5ODFjMDUzYTIxMzZkODAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3Y2RhODJkYTYwNjIzOGUwNWU2MjM5OTU2OWM1ZWUwMzk5MzQxOTY0OGFlNWQ0M2EyYmY4Y2Q2MzQ3ZjgyNjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZkNWFkYTZkMjQ2ZjU0MmJiMzA0M2JkOTQwM2YwMjdiMzlkODZhNjdkYTJkN2M2YzAwZDUzOTU0YjhmOTg2ZWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg0YzkzYWE1Yjc5ZDlhY2VkZGM3N2RhZmFiOWI3MGNjNWUyZjViY2NkMGQxNTcwYzBjNzQxNDVmZTZlMzkwN2UifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1a74bb21948e4e85b8a9b2f1993e17fd",
+      "statement": "Generated manager bundles include public API classes (annotation, interfaces, exception) in the root package and internal implementation classes (manager impl, resource impl, field handler) in an internal subpackage",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/pkg/cmd/projectCreate.go#L875-L976",
+          "version": "repo-lines-v1:sha256:1cc0489c469ee75e4ebf8a3b04e8001abb23b2a8e73a0c315fdb49afde4e3664:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAyLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJhNTE3MjVkNzljNjRkNmVkNTA5ZmE0ODgzZGNjZmQwZGY1NzVhOTg3YWQ4MWM5ODIwZmZhODFlNDY3ZjNjYTczIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0MTJjYTM0NWNjZjc1YmY5YzA4MDZiY2U2OTViZThkZTgwOGI3OTk4NDI1MWE3YTU0ZDIwMmNmNjEwMWRkNDUxIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlNTdkMzEwZWU4NzViYjBjNjAxZDNmNmE4YWIwOTQ5ZGNlMGE2Yzg2YzIyOGEzMzQ4YjVhOTg4YTBhMmI3MGU2IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJiOTJkMjUwY2UyNWM0NmU2NTQ3ZTcxYTY3YzVkOTUwM2VkZjczMGUzZWU5YWNhNDg1ODJjMTAyZTkyM2NiMmIzIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_1562f9ec000c4c12aef17dc4ac51f58d",
+      "statement": "OBR projects in Gradle declare bundle dependencies using the bundle configuration and publish both the galasa.obr file and merged testcatalog.json with classifier testcatalog and extension json",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/pkg/embedded/templates/projectCreate/parent-project/obr-project/build.gradle.template#L24-L51",
+          "version": "repo-lines-v1:sha256:614ee7d0e6ea5d51f36c2b7dccb5f2ef1a1ab0c8f680fc0508aa8e9627d8b049:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI2NmExMDEzNDVhNGQ4ODUwMGVmYzZhYmNlMmExMGI4NDhjY2JhODg2ODAyZGM3ZGFkOWRiNjE1M2MzZjJhMjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBmZTJkMzE1MmUzOGEyYzcxZjdmM2E4MzNhM2FjNGU0YjA2ODQ1ZDJlODdiZTU3MDc2MzgyZmQyNmMzZjU2MTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhkN2UzNTMwMDkwMTMwODRiZDYzMzkyYzI2ZWEzYTJlZmUyZmE1OTM5ODIxYzZiOWE5ZGYwZmI1NmE4N2E5MTQifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.2",
+    "at": "2026-09-21T12:35:12.771Z"
+  }
+}

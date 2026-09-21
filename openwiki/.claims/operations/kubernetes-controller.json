@@ -1,0 +1,288 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:722a9d0216dcccb1a8624af39df850539768e52e07adf4620e7ed676b61eb154",
+  "claims": [
+    {
+      "id": "claim_33b8ee00a1af40c08780bc49e99c74af",
+      "statement": "The Kubernetes Controller is started via the galasa-boot JAR with the --k8scontroller flag",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/Launcher.java#L217-L219",
+          "version": "repo-lines-v1:sha256:2cd27f1e88f49a1fd9c8c768c6f064e9e1511e171a36aae91f0ba3cf55245a9e:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTE2OTUzZjRlNzlhMTJhNWMyMTQxZWEzYzlmMDdjMDQwOGIyZmMwMzY4Y2VmMmE5ZmQ4NzY2ZjkxMjY0ZTBmZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDk2ZmFiNmZmNzVjNDJmOTg3MjNhZGRiMTg3M2ZkMDY1NWU3YmVmNjdhMjEyNDEzZjNkZTMxZjY3ZjliZWU1NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmJiM2VjMTQ5NjZkMzIyMzMyYmYzZDBkODFlNjdjZTVmZGJhNmM0OTdiZWJlYjIyYjMzNmFhOGI4MTQyZDU0NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGZiNDg5NjYxZTUzNGM2YzAwMGJjNWNjZjBjNjc4YmEzMzMxODBkMjM2NmMyMDVkNjJmY2JiNTJmYmJlZTBhYiJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/Launcher.java#L69-L69",
+          "version": "repo-lines-v1:sha256:bd49e1c861afae20f2c817b8aea66c58a5663ef3d3dc510d3a29513868c8bba0:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmQ0OWUxYzg2MWFmYWUyMGYyYzgxN2I4YWVhNjZjNThhNTY2M2VmM2QzZGM1MTBkM2EyOTUxMzg2OGM4YmJhMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmQ0OWUxYzg2MWFmYWUyMGYyYzgxN2I4YWVhNjZjNThhNTY2M2VmM2QzZGM1MTBkM2EyOTUxMzg2OGM4YmJhMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzk2ZDkyYzJlMGIyYTlkMTU4NDcwYTQ0NTFhNmZmNTI1ZDc0ZWYzYmNiZjNkMDA5YjdmZjNiYzRmNzViOGRmNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTliNjM3NTk5ZDI0OGFjYWNkZjI5M2QwNzRlNzgzMTk1ZWI4YzZmOGFkY2FmMTlkNTcxYTk0ZWNlNDUxZjNmMCJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/felix/FelixFramework.java#L801-L849",
+          "version": "repo-lines-v1:sha256:8cd53f8a4985ad774b71741384f9c2917adc93373a4c6d4404c045903cc3a69f:eyJzZWxlY3RlZExpbmVDb3VudCI6NDksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRkMWY0MjgyMDY5NzNhNDRmZWY2MjM0YjM2ZGE0MDI1YWJkMTkwOGQxNmY5YjM2ZTliOTlmNjMxMTM0NDZiY2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFjZDI5MzMzNTc3ODc2ZGVhM2VjNzAwMGY0MjFmOWVlYTFkYjFlMmEwODNiMjU3YWVmN2RjMjM3YjZkOTI0MzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVlMmI5ZTIxZmRjODZmYzJjMmVlNDQ3MjE4NWQ2NzY0NjdiZGQxY2JmMmUyNGI0ZGM2NDRhYjFhYmIzMzI1NDcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_11bba94fca91468b8c2502a2e36b4f11",
+      "statement": "The controller's main responsibility is monitoring the DSS for queued tests and launching Kubernetes pods to execute them",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.k8s.controller/README.md#L3-L5",
+          "version": "repo-lines-v1:sha256:750bc4fb9a1d0a1cae01136609cc88c0bb80195ff285a7db58366791f3f563b3:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzVhNDlhOTQyM2ZhYjBkY2YxZDRmOGFlYWI5MjY0MTZhYTMwODNlZTAzZDk5ZjVjNTgzN2M4NDMwYTIxNWY3ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjVmNDg3NDM2ZGQ4NjViNTE4MjNjYTRlMTlmZDI0MTc2ZDgyZTI4M2U0MGQ2NmQwOGRkZmNjNzIwMDY0NjJjYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjIsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGE2MjE5NDNlNGI0NjYyZjNkNGQ0NzRlYjU1MWM5MmNkMWNhYjk5NzE4YzNlZDI4NzEyMzEwODE2N2E4ZDBiOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODczNDE3OGNmOTU1YTEwOGE4NDc4MjkwOTUxMDUxZGI5YjIxYWUzNmZiNDQ0NDk0YmFkMTA0MTk1ZTgxNTNjYyJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.k8s.controller/src/main/java/dev/galasa/framework/k8s/controller/TestPodScheduler.java#L115-L161",
+          "version": "repo-lines-v1:sha256:1cc44f1a0e9334490700c1ff6d8437e247d59f37560c5ac15a8a865307941f76:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliYjE1ZWE3MzY0YmJlMTQxNDg1Y2IxMDM3MTI1NzRlMmZhMGY2ZDRhY2VlNWJiMzYwY2Q5ZjU4MGUzMDQwOTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM2OTQ2ZTEwMWU1ZTc4ZDkwYTUxMGM2OWYyNjZlZjc2NTQwZDMwOWIxYjgyMjY5NWI1MzE3MmVkMmNhYTAyNTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFhM2QxYjAyYTg4ZWY0OTc4YjI0NGQ3YjVkODE1Njg0NGI3OWExODMwY2I4NDc4ODk0NmEyZjRjNjgwYjA2ODcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5b36bc40b3494c0aa7284ff07d722212",
+      "statement": "The TestPodScheduler polls DSS for queued runs and creates Kubernetes pods with configured resource limits and affinity rules",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.k8s.controller/src/main/java/dev/galasa/framework/k8s/controller/TestPodScheduler.java#L174-L251",
+          "version": "repo-lines-v1:sha256:6e4118ad321c611d3f4a6b22d8f82fac87f725846681bb00ac4d1f10eeceb778:eyJzZWxlY3RlZExpbmVDb3VudCI6NzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2YzcyY2YzMzJhNmQ2MDdkNGI2NjBhZmU5NDYxYmM1ZDM3NTVlZjUxNjAyN2ZmYjY4N2EwMGI5MjE5ZTA1NzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRmYmQwMDkzMTRiYzI3MDg0MTY3MzRhMDJhZTVmZjM5YTFlNDhhMDUwYmU5MWY0M2IyZmFhOTIwMDJjNjJiZmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI5MjJhZjlkODFlZDBmZjllMWU5N2QwYWY5YWZlYjU4YjQ1ZjViOTJlM2MyODE3NWY5YzQ5NzE0MDVhZjhhYWEifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.k8s.controller/src/main/java/dev/galasa/framework/k8s/controller/TestPodScheduler.java#L253-L296",
+          "version": "repo-lines-v1:sha256:fcb702f4d13a889b3e3f51533968c9c88a4858b043d1c4bc7c2bab24462b10ac:eyJzZWxlY3RlZExpbmVDb3VudCI6NDQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkZWM3ZGMwOTJlNzIwNzA2YzU3N2FkMmZjMTBmYzVkNDFlZjEyOGNkNzFmNmZkOTMzNjVhYTEyNmVhYjdjODEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5OWJkZWZlZWFjYTYzNDBlMDI5MGRjODZlODg5Yzg5ZDVlMTg5YWE1YmE0NGI1ODViM2I3MDczNGY0YTYyZDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY3NWY0MmQ3ZjA2NmRhMWFkN2U1YWI5MmIzYWE4NzhjMWVlMWVlODY3Y2ViNGU0MzQ2YzJjNmE1ZDYwZTdmZmQifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.k8s.controller/src/main/java/dev/galasa/framework/k8s/controller/TestPodScheduler.java#L49-L112",
+          "version": "repo-lines-v1:sha256:bb68598749925200779f5aca76ab2cfc7864b5cc5112891028a566e401330157:eyJzZWxlY3RlZExpbmVDb3VudCI6NjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMzZDQ4N2IwNTdjODdjZWFjNjY1ZjQ4YzhiYmRmYjQ1ZWU4OTVhYzZjNzNhODNiZjNhMWFiNWRkNzkwOGJmZmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZmZGM1NGNiZDM3ZGM1NDU5ZWZmYzI5MmZiZDgxZDhmYzE1ZjRjNDRkYTc2ODA3ZDlmMzMwOGE1NTRlMTM0NzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU0ZTU1OWRjYmQ3Yzg2MTQzZGQzMTBmYWU0NWQ4YWYzYTYyNDUwMzA1MTdkYTYzZjc5YzkyMGQ0NmY3NTdhOTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a29b9e7cf32e482cbec25658c4d0c1e4",
+      "statement": "The kube_launch_interval_milliseconds ConfigMap setting controls the delay between successive pod launches to distribute pods across nodes",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.k8s.controller/README.md#L9-L26",
+          "version": "repo-lines-v1:sha256:42d916aad0359fe3205c0180af55f0fd47d61211a1c0936fe4df826e1d3ffdef:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyMzY5YjE3ZGE2MmFhYWFiNzQ0ZGY1YTg3ZGIzYzI1NzE5NWQyYmU4YTc2ZDBjZTMyOGRkZGJlOGY2MWRkN2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZlYjAzYmU5NDQzNmEyOGMwM2M5ZjFjNTY3NGI4NjBmZDQwMzhlODRjM2IzYjAzNTYxMTMzZGE2Y2E5MTMzMGUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg3MzQxNzhjZjk1NWExMDhhODQ3ODI5MDk1MTA1MWRiOWIyMWFlMzZmYjQ0NDQ5NGJhZDEwNDE5NWU4MTUzY2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMyMjc2ZmJlZTAzYmM1OWUzYzg2MWUxNDU4YWNkYjU1ZjYxZTJjMDY1NjdiNTY1ZTlkNDFkMTJiNDJhOTVjODkifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.k8s.controller/src/main/java/dev/galasa/framework/k8s/controller/Settings.java#L217-L217",
+          "version": "repo-lines-v1:sha256:63e8284029c949bd2ac546f86b3d6b505e104b06200c8b8cd1f33783ef084abd:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjNlODI4NDAyOWM5NDliZDJhYzU0NmY4NmIzZDZiNTA1ZTEwNGIwNjIwMGM4YjhjZDFmMzM3ODNlZjA4NGFiZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjNlODI4NDAyOWM5NDliZDJhYzU0NmY4NmIzZDZiNTA1ZTEwNGIwNjIwMGM4YjhjZDFmMzM3ODNlZjA4NGFiZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODc0NjMzYzYwNjEwYmNhZWVmNDJlMGQ2Njc4MGFlYjg0ZjdkZmYyOGEyYWJkZjkwN2Y3Njk3NTkyZmY3ZTAwOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjhhMWYxODI5YjBlNTk3NDNiMDU0ODg0ZTBlZTdlZTg5Yzk5ZjQ2NTViNGI4ZDJhZTU1YTY1YjA2N2FjYmFkYiJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.k8s.controller/src/main/java/dev/galasa/framework/k8s/controller/Settings.java#L74-L74",
+          "version": "repo-lines-v1:sha256:8a624379d147e2982b97b45d1be583edf531d9b537d88dd810995c0f63177293:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGE2MjQzNzlkMTQ3ZTI5ODJiOTdiNDVkMWJlNTgzZWRmNTMxZDliNTM3ZDg4ZGQ4MTA5OTVjMGY2MzE3NzI5MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGE2MjQzNzlkMTQ3ZTI5ODJiOTdiNDVkMWJlNTgzZWRmNTMxZDliNTM3ZDg4ZGQ4MTA5OTVjMGY2MzE3NzI5MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2YwOGI0MWI5N2M5ZDg1NDA4MmYxYWYwZmJhZTczMmI5YmY3YWUwZTM0ZDQ4M2JlMWVlMzU1NDM2Y2NmNjNlZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2Y4MGRmNzRmYTZmODk0MzI3NTliNDU1ODQwYzUxMGYyNmY1ZGMzNDdhZmYyYWNiMmZhMzY0MTg1ZDg5ZmM2OSJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.k8s.controller/src/main/java/dev/galasa/framework/k8s/controller/TestPodScheduler.java#L133-L149",
+          "version": "repo-lines-v1:sha256:df376120d9229231eb51bb4c74c43213ea182e5ad49f28e257a045724a5f9ce9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNiMzU3MzgwNDVhNzVlYzFkYzQ0ZGY2ZjAyNjhjMThiOTg2YzU2MGMyMjIwZGQwMjdhZmJkYzkyYWJkNmY3NDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU3YTVmZmEzZTA5NWRmMDViNmIzMzMzODcxYWJhMWMxYjNlMjVhYjNkYmYxZDQ5MmYxNTRjMmNjMmIxMjJmNTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNhYTQwNDcyY2MxZjBhYWZiYzk3NWRiNDRlYWU3YWFlZWY3ZTU0YmMzOTdkZTFkOTU3NTFmNzc2MTAxZjM4ODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA3NDM2NGEyYzFlM2FhMTIwYzY4MjI3ZmRjM2QzMjgwMGJiMzRlZGMzZmRiMWFhNWVmM2M5ZjkxMzQyZmVmMWYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_568444c11ad245fdb80e92ffe6932220",
+      "statement": "The controller spawns five worker threads using a ScheduledExecutorService: heartbeat, settings refresh, test pod scheduler, pod cleanup, and interrupt handler",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.k8s.controller/src/main/java/dev/galasa/framework/k8s/controller/K8sController.java#L153-L171",
+          "version": "repo-lines-v1:sha256:c28b49077c6e931fae0070d5c332d4eb743c6f027f811b39e28145b11085f6dc:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1NjUzYzExNWY5ODIyZjY4MmUxM2NjYTBjNDg3N2YyMTllNmFkODYwOGUwM2YzNzYyZjUwNjAwYzUyYWJhMDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhYWVhN2RiMmFjYTc3YjFjY2ZmODA0YWFkMGNkODdkZDM5Nzk4MjRmZGIwN2QyMjAyZWFlYjI0ZjdmYjZlMGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ5ZGY1NDcyMDg5NTA1MGJjOTZlZjQwMDY5NGM2MDYwYzIzNGMyMzEyOWE1N2FiY2M0ZGM1NGU0MzI1NWI5OWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdmNDY0ZmIyNjA5MmJjMjkxM2M0NjM4OWFjMGEwZWRmNDE1MTIzYzkwYTYwNzQwYzUwOGI5YzBiNGY2M2Y2NmYifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.k8s.controller/src/main/java/dev/galasa/framework/k8s/controller/K8sController.java#L213-L237",
+          "version": "repo-lines-v1:sha256:5e3f48b89ac53268614063b99d08adf7fd6341a82721877aa366ae5733af0d89:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhkZGUxMGFkNDViYjgwNjgyMDczOGY1ZDYzODRkYzU1ODA4NDY3NTAzYTY2ZTY4ODk4OTFkNGQ3YmU2Njg0OWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIxYTU5ODA2NmRiNDM3ZTViMmI5YTNlYWIwYzZlYmUxNjE3ZTQ3ZmNmNWRjMGIyMDRhMjFmMzU3YWIwYmQwMDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYwODZjNmUxY2I1NDQyZWJjMjk4YmM3MzVjZTQ0NjM3YTI5OTUwNjVjZjc1MGQ5Zjg4NzE5NTNlNDllZDdmMTcifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.k8s.controller/src/main/java/dev/galasa/framework/k8s/controller/K8sController.java#L49-L50",
+          "version": "repo-lines-v1:sha256:2307603866503781564c2f1821810f9cce83c149626e83c6226287bdcffee7a1:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDczMTcyNjVkY2JiYWNlMGU5ZWIwNzAxNGY0YTgwMmJlOTFjMmZjOGM5MDBiZDdhMzE1NzIwMWFhYjcxYjdiYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDgzOGI3ZTlkNWI3NzQxYmJjNjEyYjlmNWQ2YzhhMjM3ODgwZTRiYmVlOGFiNjI0YWQ4OTc3OGZmN2Q5Yzc1YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWQyYTBiYzNiZGJiZDkyZTdlMTdhMDhlOTIzMjQ1YmQzNzM3MzE3ZDhjZjVlZjNiYjhmMjIyZDBjMGM2ZmQwNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDQ5YzVjMmIxOTYzNjVhNTFjODczNmI5NTgzNjIzOTZiYzQ0MGRmZjAyYmRjOWY1NTQ3ZTg3NTEzN2IyMTBkZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_dfee1150abbc4f579ef9799c941e43de",
+      "statement": "The controller manages test run state transitions from queued to allocated by atomically claiming runs using DSS putSwap",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.k8s.controller/src/main/java/dev/galasa/framework/k8s/controller/TestPodScheduler.java#L186-L196",
+          "version": "repo-lines-v1:sha256:66c805064126270377e086463f36eefa21d01ee718c9da382c4962912ef235cd:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI4NjA4ODIwM2NlNzczYTc3Yzg1ZWViODY1ZTU4ZDZkODJlNDQzZWUwNTE5ODM5NDNiYjc0MjcxZmU3YTQ3MjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1MjJjNDJjZDE5YzZkMDNkODA4YzQ1MjcyMDU1MjgyNWI3ZWExYzViNDkxYjIxODUxMWNhYzc0MTVjZjlkOWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRiMmEwNjBlYjMxNGI5ODBiZWNlYmY1ZmMwNTMxYjQ3Y2IxZjJkNTExYjliYmJhYjE1OWMxYTA5YzhiY2YxNDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQyNDk3MzY1N2I4YmFkMzA3ZDEzOTY2YTA0MDQxZTk0ZDRlMzI5NGUzZTJhZmIxZWE5NjNiZDU5YWNhNGMwOTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5dfb06a777ce4463a233ed277cd048c6",
+      "statement": "RunPodCleanup periodically scans for terminated pods and deletes those associated with finished test runs",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.k8s.controller/src/main/java/dev/galasa/framework/k8s/controller/RunPodCleanup.java#L21-L77",
+          "version": "repo-lines-v1:sha256:46166344b7a0d9a0b73d95bc5f3b1ad3fa7419f47a7a2558fb0652627e4d20f2:eyJzZWxlY3RlZExpbmVDb3VudCI6NTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjljOWY1MjExMWVjYTU0ZmE5MjUxMzY1ZjJiNjZjMGMzZDlhMTU0ZWZkMzM4MjUzZDMyNmQ2ZmQwM2YwZjM0NTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI1MTAwOTBhY2Q1MjE4ZjRlNzA4ZTcwZDUzY2FiMDA1MjA5YzlkNmEyMWU4MmJlZmEzMDMxNzQ0ODBjY2U5ODYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0a981e36ce504737b04ba1ff1df4aa55",
+      "statement": "RunInterruptHandler processes cancelled, hung, and requeued test runs by deleting pods and updating run state",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.k8s.controller/src/main/java/dev/galasa/framework/k8s/controller/interruptedruns/RunInterruptEventProcessor.java#L26-L140",
+          "version": "repo-lines-v1:sha256:870d490d68b68760b78c921a82f2885535c813349f7b4654184654fb3cf0ec79:eyJzZWxlY3RlZExpbmVDb3VudCI6MTE1LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI4OTIxNDkwNDUxNWYxNzhiMTQzMTk4YmMwY2ZlYTAwM2JiNTkxMTU2ZWFiYzgzYmQ2MTEzMWE3ODQzYjI4YmYwIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0ODkzZjQwZTM3ODFlYjg5NmM4MmQwNDZhMDgwNjdhMTFlMzVjZGYyZjFkZmFmMjZmZWE5MGI4ZGI2Njc2NDEzIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI3MjFiYWM1ZTk3MTNmYzgzNmYwOWU1ZWFlZTU2M2Q2MGYyODljZWU5NTUwZjBkOWY0NmZlNjhhNDc5OTk2M2IzIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIxZGE2ODA5ZjQxODdmNGFiZTA5NjNjYzhhMDdjNmU4YWIxZDJkMDZiMGMzNWQ1ZmU1OTljNzVjOWVkYzdlNDRhIn0"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.k8s.controller/src/main/java/dev/galasa/framework/k8s/controller/interruptedruns/RunInterruptHandler.java#L17-L53",
+          "version": "repo-lines-v1:sha256:57e7bbd21cc144c379073a0a944e8c7146d93d19e10a8015b36015d40a7511ca:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYzYWQ4ZTg1MzQ5ZmUxMTgxOTg4NTk3NmVmOTZjYmUzZjZmNjVjMjg4YjI5MDcxM2FjYWRiZGY5YTkyODAzODgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYxNzk2NzAxMGI0MTQ2MGZiY2JjMmNjMWUxODZkMGMwZTU2NDNkZjBhYTI2YzdjNmExMjQ2YzhlOTdhODkxNjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a8daaf37397e46ac95d266f82d7045aa",
+      "statement": "PrioritySchedulingService calculates priority scores for queued tests based on time in queue, requestor priority, and tag priority",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.k8s.controller/src/main/java/dev/galasa/framework/k8s/controller/scheduling/PrioritySchedulingService.java#L31-L143",
+          "version": "repo-lines-v1:sha256:07049bb7347cc1842fd465bbedc808d1d70e43e8a10ce628a06eb9407a3fc3ff:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEzLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJlYWYyMmNmMDczMjU5MmMyNDcxNDFjYmU2MWVmYTExMDEyNjEyZjVhMzEyMmI5YWY5YmJhZjUyZjU3MjRkMTk0IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0ODkzZjQwZTM3ODFlYjg5NmM4MmQwNDZhMDgwNjdhMTFlMzVjZGYyZjFkZmFmMjZmZWE5MGI4ZGI2Njc2NDEzIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI0M2VkM2YxOWNjMDY0NWUzMWUzN2RiNDY5MGM0MGY3NDQ3NmRmZjQ0ZDUxMGQ0ODRhNmNkNGRkYjY3NzM0Mzk2IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI1ODM0YTg0ZDM4OGQyZGM0N2U2NmE4NzZlYmQ3YTg5NTA5Y2RmNDQ1N2M5MzdlODFmNDM2OTdjY2E3Y2ZiYzA4In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_49192ffb1d524a5e97904919ae332f1c",
+      "statement": "The Settings component loads configuration from a Kubernetes ConfigMap and refreshes it every 20 seconds",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.k8s.controller/src/main/java/dev/galasa/framework/k8s/controller/Settings.java#L21-L46",
+          "version": "repo-lines-v1:sha256:f9b94e2e260a96687052277292621f71a4bf70c310fa7ab7034bcedd64f5b83f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYxNGM5NTA2NDZiMjA4ZDQ1ODcwYWZlMmI1MTM4YTRjZTFhNGZlYjRjNDIzYjliNDI0ZTY3YjViZDQyZmMxODYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE1YTFlMzRiZTliMmMyYTI2MTMwMDU2MTM4Y2ZhODgzMDI4NTY3ODYxMjg4ZTE2M2JjZGE3YjA2NGNkMDk3N2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE0YjcxNDhkYzA3YTMzZDI3YTZlMDc4MmExYzY1OThlNTQzNWEwNjM5ZmJlZThhNzA0NTZkOTliNDk5MTM3YjgifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.k8s.controller/src/main/java/dev/galasa/framework/k8s/controller/Settings.java#L98-L111",
+          "version": "repo-lines-v1:sha256:b7556228997afbeeb403f1bd166156842849e959cb1a187b91e20b3697cd84d2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVkYzJiMzExYWJlODc1NzJlOGE3Y2MwZDk5NmE2NTg0NDA3NmU1MjMyZDIxYjdhODU0NzVmOWI0MDU1Yjc0OTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU4NzdiMzA5ZTJkY2MwYWFmYTBiOWNjZTg4Njc2NGNiMzk2Zjk3OTA0YzYzMGVlOWRlYzZhY2UyNmNhOTRjYjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEyYzI2Zjk4MGE3Y2ZhNTA5NjllZTkwZDA5OTJkNDQ4YmM4NDcwZDg2MmYzNDg5ZDI5YmYyNWQ1NDBiOWEwYjEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_47210b6b6db047879540c31c205551dc",
+      "statement": "The controller writes heartbeat timestamps to the DSS every 20 seconds for external monitoring",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.k8s.controller/src/main/java/dev/galasa/framework/k8s/controller/Heartbeat.java#L18-L43",
+          "version": "repo-lines-v1:sha256:3bd114481d1305c12eb314c694789c65668ad9b1ad6c3b9a9d1fe4ec34792c0a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYyOTY3ZmY0MmI2OTA3YzI1NzFiYzY0OWVkMThjZmFiMGRmN2ZmOTU5NThmOWQ3NGU0OWE3N2JhZGUzY2ViNjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE4NDgxMDU3MzcxZjUxMTRhMjIzNDAxNWJkOTNkNTdlMzAzNTc1MzllNDIyNGYwNWQ2Nzg5NTVkMzM2MmU3YjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.k8s.controller/src/main/java/dev/galasa/framework/k8s/controller/K8sController.java#L156-L156",
+          "version": "repo-lines-v1:sha256:cd2bc292e5f47918ad5934a45c78d0a90069b2e2fc7cb930bdde36264aef90b1:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2QyYmMyOTJlNWY0NzkxOGFkNTkzNGE0NWM3OGQwYTkwMDY5YjJlMmZjN2NiOTMwYmRkZTM2MjY0YWVmOTBiMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2QyYmMyOTJlNWY0NzkxOGFkNTkzNGE0NWM3OGQwYTkwMDY5YjJlMmZjN2NiOTMwYmRkZTM2MjY0YWVmOTBiMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjMzMjY4MTYzMGYxN2JlMWExYTQ2MWE4YzgyZGI3YzliMmZiZGY0NDUzYjYzYmMzYThhNzBkMjczMmI1NzJlNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDA4MzFhYjNiZTg0NjAwYzBmZDA5YjAzYWVmOWExNDgxMzI1NWYxNWExZmMyOGZjNGZiODRmZDlkZmIzODMwNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_2fb7e5af4615471b8737e2766e5c57ab",
+      "statement": "The max_test_pod_retry_limit ConfigMap setting controls the maximum number of pod creation retry attempts before marking a test as EnvFail",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.k8s.controller/src/main/java/dev/galasa/framework/k8s/controller/Settings.java#L29-L30",
+          "version": "repo-lines-v1:sha256:a9f0128982ab1798c00f7b348edd60641f063c3dd5658f2fa1cb2b2b8674d551:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDUwNWVlNjRlMjRjOWEyYWJiMDA3YmJlM2M3OWZlNGU3YWI4NDgwMTgyNDM2NDY1NzMxNjZmZTU5ZmY1MzczMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjM3NjlhYjA2OTU2NDMwNWYwNTVmZjAyNzEwOGI0MTc3MWMzMTZhZDJkMTg1NzA4MTIxMWZjOWM0ZGExYTE2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmU3MDFjYjA5ZWI4YmFiMDMzMzI2ZDEyNjQyYTFlMTUxNDYwYTFmMTYwYTQ1MjAzNjhlZDJiYTIxNmM5NzFjZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODFjY2VmNmY1ZDUyYzZkNDQ4MjNiOWY1MDg4ZWE4M2I2ODhiNjM5OThmNWIxNzJkMDZjY2YyZDNjOWQzZDM4MCJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.k8s.controller/src/main/java/dev/galasa/framework/k8s/controller/TestPodScheduler.java#L181-L181",
+          "version": "repo-lines-v1:sha256:0ea0a7fc5ce226695b12907ebc9b825b0bdfabfb1fe3b6e6ef573c7a6651837e:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGVhMGE3ZmM1Y2UyMjY2OTViMTI5MDdlYmM5YjgyNWIwYmRmYWJmYjFmZTNiNmU2ZWY1NzNjN2E2NjUxODM3ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGVhMGE3ZmM1Y2UyMjY2OTViMTI5MDdlYmM5YjgyNWIwYmRmYWJmYjFmZTNiNmU2ZWY1NzNjN2E2NjUxODM3ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzE1OTdhY2E0Y2NiNzI2N2M2Zjg2NjM0MDhjNjhjYTdmN2E4MDdjNTcwYjQ4NTQ1NDNmN2E1YzYzZTNiMzhkZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTQ3MWYzZDdlMDE1OGU2Nzc2ZWVjZGExOGU3NGY5NDFiYmUxMTdlMGQxNmU5ZTNlNTNjYTA5ZWU2NTRjYzQ1MiJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.k8s.controller/src/main/java/dev/galasa/framework/k8s/controller/TestPodScheduler.java#L201-L218",
+          "version": "repo-lines-v1:sha256:f8e4d57411887868c090bf2e7975e86c21b18cc89a0e172f7ce24db0c1d58c85:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmZTAwMWEzYzgyOWEzNDk4ZTM3MTlkZDVlNGEzNmNmNWJiY2E1YzZjMjY2MzY3MWQ1ODMyZmE5OTk2M2YxNzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBjNjQ3OWNjMjMwNDQwZmQ0MWU4MjI0MjE4Njc5Njk4NTU5ZDI4OTNiZDY3YjQzODBhZmFiODExYjM4YTU1YWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVlMmZhM2QzYTAwNTUzNmNiZTFjYmU2NGE5OGM0ZTMyOGUyOTk4ZjdjY2VmOTk3ZWFkNTJlYWMyOGVkNzg2OTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVhYThmMjA3ZWVhNTJlOTQ3OTc4YzFlOTM4M2FmZjhhMjRkMGI4ZTEyZDVkZTdmM2Q0Zjk4NWYyOTk5YjVlNWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_357fa64fb5eb40589f1e0d755f033a43",
+      "statement": "The controller supports node affinity rules including node_arch, galasa_node_preferred_affinity, galasa_node_required_affinity, and galasa_node_tolerations",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.k8s.controller/src/main/java/dev/galasa/framework/k8s/controller/Settings.java#L228-L231",
+          "version": "repo-lines-v1:sha256:249e6dd4c0b24f5f2c8b9fb857a021258f5879fda37a4c25deee703d061b6f10:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTlkOTcwZGQzMjM3MTc0ODU4NTdjM2M5MDM2MDZiMjkxNDhmY2U4NGNiYjk1YmE1ZGYyM2ZiMzI4NDI5MjNkNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzIzNTQ0ZDRkMThjMmQ4MDhlYWI4NGM0Yjc2NGE5Y2I4ZWIyZWFhZjZjZDQzYzg1YjYxOWVlZDhiZWZiOTY0MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTg4MjFmYWZlNDg5NzljZmY0ZjY3MTRiNTU0MmQ0YjczNDk4NWFiZjE5ZTNjNzUyMjczNjQyMTQzNmFkZjIxYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjQ3MTZjZWJhMWZiMDlkOWM5MzgwNmUxOGI5NzVhNDliZWJlMmU2ZmVlN2M1NGY5MmVhNTE5M2MxOTkzNWE5OSJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.k8s.controller/src/main/java/dev/galasa/framework/k8s/controller/Settings.java#L58-L61",
+          "version": "repo-lines-v1:sha256:65331eff297101d4fda602dd9ec4022b1eeeb447274dddfa651a499c6be2fe11:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2U5YmM5MzcxZTJiMjE2NDlmMmZhOTI2MTQwMTNkYWMzOGVlYWMzODk2MzRjYmY4NTliZTBiY2Y4MDQ5MWMzMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGE1Njk3MzNkYTY5Mjk1ODdlMjBkNjdiMTQ3NTM4ZjdjNDMxNmQ0ZjU5NzFiNjlhZTYxNGU2NjhjZTU1ZGI0NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWYyMDlmOWQzMGE0YWFmZjBmYTI5Y2IwZmJlZTNhMjZlZjliMDg2ODBjMDNhOGE3MGYyYjFkZmJhOGUyOTVhZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGNhYmQ0NzNhNjVkNmU1NWY1N2EwYzAxMmIwZDRmZmZmNDFiYmRmMjllYmM2ZGVhMzBiMTEyOWM2ZTJlMjliNiJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.k8s.controller/src/main/java/dev/galasa/framework/k8s/controller/TestPodScheduler.java#L276-L319",
+          "version": "repo-lines-v1:sha256:580e6ae965291fc03efd628a86fdb279dd84cc0d03c6802e1786b6994cef64e4:eyJzZWxlY3RlZExpbmVDb3VudCI6NDQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhiNmJkZDkzOWZiYTVkZGZiNzM2NDQ1ZWJmMzdlY2JmYTdlMDNlMDBkMjUzYmQ1MmI3NDM1MTFkNjhiYzQ2ZDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFiZjZjZTdkZGMwNTMxOTU3YWRmMWE2MmM4MjdjZGI4ODdiMmYyN2U2NjUxMWQ1OWJjNzE3MzQ5YWRlZmVhMjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE4MjUxNDAxNTZlNGE5MjQyYjEzMmRlNGUzYjU3NWFjZTkxOWRkYWE0NGI5NTE2NmY2N2QzMzg1NGNmZDE2ODgifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.k8s.controller/src/main/java/dev/galasa/framework/k8s/controller/TestPodScheduler.java#L360-L399",
+          "version": "repo-lines-v1:sha256:bc3077c3d40a3c2ca507a3dcbf3c9268189b08ddf74660d2695f63982be35dbf:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmODU2NDkwN2M0OWM4ZGFiZGUzZTI0Y2FkMjdiMjE4OTJlN2M5NGE3ZmYxZmU2NzBjMDlhMWVmNzllNmNjZjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRiOGVhNWQzZThhMDZjMmEwNjUzZDAwODMxY2QxMzA1ODE2ZTk0NjhlMmQyZWI4ZDQ3ZmY0YjcxODhiMGRiMzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc4YjZjYzk4OWExODg1Mjg3NjY0YzQ0NjkzNWMyMWM2OTI1MWNkZjM2N2JjZGFiYjMyNzgxYTk4MDIwMzBiYzkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4db7debdfa06449dabae40ab0772aea5",
+      "statement": "The controller exposes metrics on port configured by controller.metrics.port CPS property and health on controller.health.port",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.k8s.controller/src/main/java/dev/galasa/framework/k8s/controller/K8sController.java#L149-L150",
+          "version": "repo-lines-v1:sha256:524a5f016ba9e4fdab27f7137d0dac71aeb34ed9bfee2bb1fa310ce6b82e9523:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWEzOTNlZjg1OTY1ZmRiNThlOTllMmRkYjVlZTQ5ZGJiYzE0ZTU5NTIyMmY3YjYwNGQxOTdmNjY1M2E3ZjU2OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTQ1ZTVhYTc0OTUxY2FiMDUwYjlkMzk1ODYwZjQ0NWMzODkyOGFmMWI4YWQ1ZDk5Yzg1YWU2ZTlhYTRkNDk5OSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjAzNTI1NTNhZTUxODYzMGExZTY3YjEwNmNmZjc2ZjI5ZjY2OTE0MDhkMmMxY2E4YjI3ZGY4OWEwNmU3NjRiNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTUxOGU1NjcyNjNjNGFlNTE2NzQyYWU4NDU4NzE2NWU2YWUxMTBkNDVjZmZiZWZhMWFhNTQwOGRhMGE4YTU2MSJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.k8s.controller/src/main/java/dev/galasa/framework/k8s/controller/K8sController.java#L160-L168",
+          "version": "repo-lines-v1:sha256:058306a01a9a0c1da61c5e223f858810103cc5277b03b3189894f83a2fd111ff:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODk0N2MxMWY1ZmZjMzdhMDUwOWJjODE2YzczMjk3YTFkYjNlZjMxODQ1YWRlN2FhNThiNjRjZDc2ODM0MjNjYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2E4MjhlMzNmMWRiMzUxN2UwZDAxMTIzZTZkMGI0NGI3ZmY5ZDkyM2ViZTA2ZGM5M2I3ODBkOTJhZDMyNWFmMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDA4MzFhYjNiZTg0NjAwYzBmZDA5YjAzYWVmOWExNDgxMzI1NWYxNWExZmMyOGZjNGZiODRmZDlkZmIzODMwNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGQxN2Y5MTliOGViODk1YjI2MDMzNmE1Zjg5YzZiMTMxM2VkNDA2OWM4ZDIyNjE4YjRlMWE4MTA0MDJmMzczOSJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.k8s.controller/src/main/java/dev/galasa/framework/k8s/controller/K8sController.java#L286-L302",
+          "version": "repo-lines-v1:sha256:7cc69b6134c15f13c18010a58fd723aa62b37bfafe42c69c3a0e910dc3016caf:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEwNDViOTkxZGNmY2RhZDYyMDliYjI0ZWZjYTQzNDdiOTc0MzJiNWM1ZDZlZTNkNjZlZmViYzFjZjM4MmUwMTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlkNWQzZjlkNDhkNjUwM2FiZmI5YzBlNGExYWI1ZDdlZWUwYmFlOTJhMjJiYTdiMTIwNGI0YWE4M2YwNGFhNjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ0OGU2NTMwOWI5MTRiYzRkNGE2ZTVjOGE4YzFmMDQ5YjNiMDgzYWI5YmJkNGVmODQyOTgzNzc2ZDk4NjhiNDcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_18ed00dcc0284e1884b249d036b73659",
+      "statement": "The interrupted_test_run_cleanup_grace_period_seconds setting provides a grace period before processing interrupted test runs",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.k8s.controller/src/main/java/dev/galasa/framework/k8s/controller/Settings.java#L218-L218",
+          "version": "repo-lines-v1:sha256:4d7cc420a540249e5a89a4aa513022f4b150698cdc652feed1a206830ce132da:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGQ3Y2M0MjBhNTQwMjQ5ZTVhODlhNGFhNTEzMDIyZjRiMTUwNjk4Y2RjNjUyZmVlZDFhMjA2ODMwY2UxMzJkYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGQ3Y2M0MjBhNTQwMjQ5ZTVhODlhNGFhNTEzMDIyZjRiMTUwNjk4Y2RjNjUyZmVlZDFhMjA2ODMwY2UxMzJkYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjU4MDAyN2M3NTQxZDIwNmI0OGZkZDFmNDc0YTJkYjlmMTc4YWMxNWUxMWMxYzhhODFlMTQwNjRjM2E0MDUxYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjFlYmExZjc3OTMwODZjZjQyY2MxNzJlZDU0YzNmN2M3NTJlYzJlMjFkNzZlMTY3OWU0NjI5ZGZhYTNmZjRhYSJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.k8s.controller/src/main/java/dev/galasa/framework/k8s/controller/Settings.java#L32-L33",
+          "version": "repo-lines-v1:sha256:f99e0f341f2ac0404b8a99fd8fbb00dc353571e4c091d541ba376f81b0e30e34:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWI4YTE1NzJmM2Y1YjliYTY2OWEyNTMxNTkzYmJkZDE0YjUwMmQxYzFlZDM3MWUwMzQ3ZjVjYzNkMDcyNzBkYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmMwZTRjMzc4YmJlYzZiYTgyYzYwNGQ3YzZjMTUwMjBiODRlYTE2ZjBlOWFiZTUxMmRkOGIzZjA2NmNkZGU5OSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmEyZjlmMjA2Y2FmOTM4MjIxZDFiOGZjNTJmMWVlMmUyODViMmNiODg0OWFmYjc1MWYxNjA5NDkzNTRiNjY5ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzFmYTQ2NjA2YTA4OGQzYmZhZTViNTU3Y2E0N2M5NTg0YTk0ODk3MzBjNDA0YjA2NjUxNGU0MTQ0ZTE3MzRmMSJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.k8s.controller/src/main/java/dev/galasa/framework/k8s/controller/Settings.java#L75-L75",
+          "version": "repo-lines-v1:sha256:b0cdaa68216fe2786933eed5176077c12ba7cec42c6c4f15d634743fbfb3cac8:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjBjZGFhNjgyMTZmZTI3ODY5MzNlZWQ1MTc2MDc3YzEyYmE3Y2VjNDJjNmM0ZjE1ZDYzNDc0M2ZiZmIzY2FjOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjBjZGFhNjgyMTZmZTI3ODY5MzNlZWQ1MTc2MDc3YzEyYmE3Y2VjNDJjNmM0ZjE1ZDYzNDc0M2ZiZmIzY2FjOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzJmMzU2NzBkNTIzODc0NDhmNWVlMzg5NzI4Yjg4OTg0NDEyYTk3ZmVmY2FkMzgzMTY4ZGJiYTZkMTRmNTc5NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjhlZWM2MWQ3ZGY1Njg2MGE3ODI0NzIwYzZkMTAyODRhYzU3NTgwYjlmMWQ5NzYxMGEwOGZjNjBmOTk5NWJlNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ef7611ffe1254ed19e73793b347b5c81",
+      "statement": "The allocated_test_run_timeout_minutes setting defines the timeout for test runs remaining in allocated state",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.k8s.controller/src/main/java/dev/galasa/framework/k8s/controller/Settings.java#L219-L219",
+          "version": "repo-lines-v1:sha256:09b770517b608b93125baa773d0dd1b0dce4ae2f0642adcd38b84e9a689d3d37:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDliNzcwNTE3YjYwOGI5MzEyNWJhYTc3M2QwZGQxYjBkY2U0YWUyZjA2NDJhZGNkMzhiODRlOWE2ODlkM2QzNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDliNzcwNTE3YjYwOGI5MzEyNWJhYTc3M2QwZGQxYjBkY2U0YWUyZjA2NDJhZGNkMzhiODRlOWE2ODlkM2QzNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTM3OTcwMTIyZWVhNDRjMzE5ODQ1ODBkYzUwZTliNTgzMTc0YmM3NGY5YWViZTFhNjVlODQxYjA5MDhkMmU3YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzlkMjY4OTNhNmM2YjFiZTQ2MzRkMGQzZTliZDhlYTZjZGJlNWYzYTk4N2Q1MjhhMWYwMWY5NTZkYmJiYjUxYiJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.k8s.controller/src/main/java/dev/galasa/framework/k8s/controller/Settings.java#L35-L36",
+          "version": "repo-lines-v1:sha256:e747151fb5b51e93713f4086435e84dc310e26fceb1c36713e7501779eb92aa6:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmIzYTA5NTI4YmU0ODUwMTQyMDIxZmM0NTNiZTVlNTMzOTFhMzgyYTE2N2U0YTIzOWIyYzA0NjM0OTRkNGFjYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmJhOThhM2IwODgwNTQxOWQxYzg2ZGVhZTRiZGIzYjg2Njc3MWRhYzU2MDA5MWFjYzQxMTlhY2JjZTdmMTYwOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTU0NDI4NTBjMDg5YTM1YTdmMWVjZmRhNDJjOTBmYjI1ODMyYzc5MjEzMjgzNzZjNjE2NWIxYWM3Mjc0YjNlYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGM0MjhmNGZiMWQxZmIzNjJiM2YzZjcyMjg4ODMzNDhkMTdlYmYwMTE4ZTFmNWFlZjc0Njk1YjI1MTFjNDNlMSJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.k8s.controller/src/main/java/dev/galasa/framework/k8s/controller/Settings.java#L76-L76",
+          "version": "repo-lines-v1:sha256:3c10190623808d3afa5a29a17ccc05a28746320eb50f133b167e168b1efbc7d9:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2MxMDE5MDYyMzgwOGQzYWZhNWEyOWExN2NjYzA1YTI4NzQ2MzIwZWI1MGYxMzNiMTY3ZTE2OGIxZWZiYzdkOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2MxMDE5MDYyMzgwOGQzYWZhNWEyOWExN2NjYzA1YTI4NzQ2MzIwZWI1MGYxMzNiMTY3ZTE2OGIxZWZiYzdkOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWY2NmE0OTczYTJjYzRiODUwNjk2ZDIyZGE5N2Q3NDdmN2YzZDNkMDZlOTJlOWQwYjBmOWJiZjg2YTE4MmRkMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzI4NGQ4NDcyZGVhYjhkZjNkZTdiNTg1MWVkZjU5MTU4ZDg2MThmZDdiMWY4MTNkYjU0NmZmOTNmM2M5NWQwMiJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.k8s.controller/src/main/java/dev/galasa/framework/k8s/controller/TestPodScheduler.java#L188-L188",
+          "version": "repo-lines-v1:sha256:d3d6d3ef23aacee10e8131c2a0b0f09036ac21b060c47acc8887ea8abad9d7fa:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDNkNmQzZWYyM2FhY2VlMTBlODEzMWMyYTBiMGYwOTAzNmFjMjFiMDYwYzQ3YWNjODg4N2VhOGFiYWQ5ZDdmYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDNkNmQzZWYyM2FhY2VlMTBlODEzMWMyYTBiMGYwOTAzNmFjMjFiMDYwYzQ3YWNjODg4N2VhOGFiYWQ5ZDdmYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzk2YmY2Y2Y5YzEwN2RiMzIyYWFjZmZlODBhMzEwMzllZDE0Y2I3MjAyMjViMDU2YzViMWI1YmI0YzhkOThiMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjM3N2U1Mjk0MDgxODZjMjY2ZGRiZmYxZWQzYjBiMWJmZjY4OTI0ZWU3MjNmMjFjOGJlYWNjYTU5ZGI1NWQ3ZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_eda7cc08b07742229d5b1461f60a87af",
+      "statement": "The controller checks that etcd and RAS pods are ready before scheduling new runs or processing interrupts",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.k8s.controller/src/main/java/dev/galasa/framework/k8s/controller/RunPodCleanup.java#L35-L37",
+          "version": "repo-lines-v1:sha256:19ce62ba8c8b6bb143fa6343031e3d6f142b1fbcac78c896df6ea94afa666929:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmI0NmViZDg1Mzk3NzRhYTg5YzBjNzZhODg2NmFlOTM5ZTRkZDVlOTBhZGE1NDk5OGVmZTRlNTgyMjNkYzQ2MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODY5ODI1MTc5MjRmZThkM2UxNTY2NzExNWIxZjVhMjAxOGUwZDU1Y2U1YTAwMWIxZTJkNWUzMWI4YjI0MTIyYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTRlNTU5ZGNiZDdjODYxNDNkZDMxMGZhZTQ1ZDhhZjNhNjI0NTAzMDUxN2RhNjNmNzljOTIwZDQ2Zjc1N2E5MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2YwYWI4ZGI4MmExNTE0YzcxNDRjNTczNjA0NmNmNmY1MmNiYTY5OGQzZjc5ZmE4YTg0NmMwMDM5YjJlY2VkMyJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.k8s.controller/src/main/java/dev/galasa/framework/k8s/controller/TestPodScheduler.java#L116-L118",
+          "version": "repo-lines-v1:sha256:c4f77a771d7e0e7e1329f6f395205c35a55661834c47c8becf9492a790b04ee7:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmVkM2I5NzAwYjE4NjczMWVjNzYwNGY2Y2FjNTcyMmJiMWI0MmFjOTk3ZmRkMDg2YjQ5YTc5YjEyZmZiN2MwMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODY5ODI1MTc5MjRmZThkM2UxNTY2NzExNWIxZjVhMjAxOGUwZDU1Y2U1YTAwMWIxZTJkNWUzMWI4YjI0MTIyYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTRlNTU5ZGNiZDdjODYxNDNkZDMxMGZhZTQ1ZDhhZjNhNjI0NTAzMDUxN2RhNjNmNzljOTIwZDQ2Zjc1N2E5MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzMzMTk5YjAzOGU3NWUzNjQ3NDk5YWJmNmM3NDM1ZDk2MjRiZTY4OTc2ZDdhZWU2MDJhZTg2NGQzOTNkY2UzYiJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.k8s.controller/src/main/java/dev/galasa/framework/k8s/controller/interruptedruns/RunInterruptEventProcessor.java#L64-L66",
+          "version": "repo-lines-v1:sha256:b1688e8c826ada4b22831d6d339387e679e33fe2401f79c1b3090abb60f25cc8:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTgxMTEzNjJhM2JkYTRkM2FlNDlkNzZiNzE2MDAzMzg1N2NmZDJmMzZkZjk1YmJjNzkwNmIwNTFlYmZmOWFiMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODY5ODI1MTc5MjRmZThkM2UxNTY2NzExNWIxZjVhMjAxOGUwZDU1Y2U1YTAwMWIxZTJkNWUzMWI4YjI0MTIyYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTEwNDA3NWM4NzVhYjJjZTVjNWMxY2UyNjZlNTg1MWI0NmY1ZmRiZTYyZjg5M2M5MDUwY2VlMzFkZjg1Y2NhZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWVkYjVlYTgzNTlmZDY2NDA1MTBmYjE0NjhmMGNjZDM1NTQ0ODNmZjQ0N2YxYWJjYWFhZjZkZjdhZmMxZTgxMyJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.2",
+    "at": "2026-09-21T12:35:12.771Z"
+  }
+}

@@ -1,0 +1,242 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:f6dd69ff4e1f7022a459f75dabb684b2b7f9b1c1097c7195721310dc100645b5",
+  "claims": [
+    {
+      "id": "claim_7d68f145c0ae451c83010aed34b374e4",
+      "statement": "IVTs are Galasa tests that validate Manager functionality by exercising Manager APIs and verifying expected behavior",
+      "evidence": [
+        {
+          "resource": "repo://modules/ivts/README.md#L3-L3",
+          "version": "repo-lines-v1:sha256:93a8444337a746c890245fb8722f52d82ec85b2d8eb89ec4c19f356c8a36c837:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTNhODQ0NDMzN2E3NDZjODkwMjQ1ZmI4NzIyZjUyZDgyZWM4NWIyZDhlYjg5ZWM0YzE5ZjM1NmM4YTM2YzgzNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTNhODQ0NDMzN2E3NDZjODkwMjQ1ZmI4NzIyZjUyZDgyZWM4NWIyZDhlYjg5ZWM0YzE5ZjM1NmM4YTM2YzgzNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjIsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTJhNGQwMDI2ZWQ2NWJiZTgyZGI5MWM2MTYyZTkxZWUyYjgwZTk0YzAzMzBjYjgzMjcyMDMzOTYzOTFkYmM3NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTc4YjgzNGU5ZWU5YTI2ZGEzNDA1MmYyMGI3OGVhOThhODY3NTFhZjZkNmU5MDkxYzI5ZTcyMmI2YTJjNTI2NyJ9"
+        },
+        {
+          "resource": "repo://modules/ivts/galasa-ivts-parent/dev.galasa.ivts/dev.galasa.ivts.core/src/main/java/dev/galasa/ivts/core/CoreManagerIVT.java#L18-L55",
+          "version": "repo-lines-v1:sha256:ee7673d741e5909fc196eab56fff6c42af873e8fee43b32cbf6d86845c7dc4d9:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMwMzQ3MjhhOWVhNTdmYWIwY2ZkMjUxMTc0MDhlM2IxYmQwOGRjNWU0M2E0ODYyNTk3NTY3YTc3YjBlYzMwZWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVkNGU1NDQ5Y2ZlZmI4YzIzMzJkMzc0MGQ4YzI1ODhkYjdjMDUxYThiNWI1MDZhNzBhOGFlZGYzMGRhNzc0ZDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_891d6c41be7c487c9081a23ed78fc243",
+      "statement": "IVTs are organized into two parent bundles: dev.galasa.ivts for tests not requiring mainframe resources and dev.galasa.zos.ivts for tests requiring z/OS resources",
+      "evidence": [
+        {
+          "resource": "repo://modules/ivts/README.md#L31-L33",
+          "version": "repo-lines-v1:sha256:b95e39c9a3452a9adfe46a3985d9e35bd2941b314a1993e903550354aff43ca9:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDhlM2YzZmVmYjdkMmI2NDA0NThhMTRlMzM4OTQ2YmUyNTE0MjNmMDY3NzYyMzJmNzk0Mzc4OWYwMGZmODliZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjFlY2QyYjBiY2YxZDM5OGZmNDhjZjk5NzE2YTBmNzNkZDQ0ZGQ1ZjJlOTU0ZWY2MDdmMzc3ODM1MjI2NGRjNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTNiODg3ZTQyMjg2M2E5ZWFlYTM4M2ZjYjI4YWVjYjg4MDAxYTViMzU2ZjQ2MWEyNjAwYmNhMTBhMmJiYzk4MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzVlZjY0OTQwZGI3MGQ5MmIxNTNmZjJkN2NkZGE2NDVmOWIxNTJmNzc3MTkzYTkwYTc4NjQyMzkyMzQyZDc1MSJ9"
+        },
+        {
+          "resource": "repo://modules/ivts/galasa-ivts-parent/settings.gradle#L18-L19",
+          "version": "repo-lines-v1:sha256:19d4d754faa55b7d36bada7e4ff8a1d765817cd57395f21a3e9ac038ec8d2701:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODYwMmQ3NWM0MDE4MGJmODU4MjU0YzYxYjI4NzM0ODNkYjVhNmJiYzg2ZGZjZTM3M2EzNmJkZjczMjUyNjcyZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGI3ODY5ODY5NWJiZDA0NTE2MzE2M2E4ODViNzE0NjdhOTRhNjA5Zjk2ZGQ2OGNkMDE4YmJmNWEwODk2YmNkZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTQyN2U1NWJmOWJhYjY5ODhmZWIzZDNmYjkzYjdmZmVjZjQzN2E1MDI4NmY0YmIwMDQ4MmRjZjIwNzE0OWM2NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzZmN2NkMTM5OWMyMzM5MGRhZDBjZTI5YjVhY2UwZmEzMGQ5NWM0ZmVmZDlkMjVjYWRkMDZjZjQxMTllNzkwZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_bc6d747c9b774da0a05054b8cf626686",
+      "statement": "The dev.galasa.ivts bundle contains IVTs for Core, Artifact, HTTP, Docker, CECI, CEDA, CEMT, CICS TS, and SDV Managers",
+      "evidence": [
+        {
+          "resource": "repo://modules/ivts/README.md#L10-L18",
+          "version": "repo-lines-v1:sha256:413ccd62472d6fd486cb0ad4324f7fb663c5f82209fa7814aefeb9b7627a8de9:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTg4YjYyY2E5YmIzOGI4ZmUxNDVmY2M2OGRlNDgwNjMwZjA2MmRiNzkzNThmMzNlNjk1OTc5ZGJkZDljZDcwNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2Q3YzQwY2NlNjA1Yzg3OTZlMWVlYWJhMWQ2ZjY0MTA1YTMzMTY3OWExOTVjMzg2MGQ0ZDE2ZjVhNjZmNmNlMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGExZmNjMWZjZjcyZmNkMjgyZjc0OGZiMWIyZGY2NjY5ZTM4ZDYwMjM3YjYxMDdjOTNmMTVlZjgyOTA3NTM5OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTMwOGFjNjI0ZDRhYTUzNGY1MDQ0MzY3OTkxZjkxOTM3NzBiZWNhNzUzMTU5M2EzYTM0NTcxYjM3ODJmZDUxYSJ9"
+        },
+        {
+          "resource": "repo://modules/ivts/galasa-ivts-parent/settings.gradle#L21-L27",
+          "version": "repo-lines-v1:sha256:b688db69e992fc5f7383b6f518b4a146df23f4f6b7f65df80b5026afe590e109:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDI0MDQ2MDIzNGI3NDBhNGU5MDRjYjI0ZTg4M2QzMzRkYWNkMmYxYjg3YmM4ZTZlZTY0NDA5YmU0ZTQ4NmYwZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjQwZDRhOTdjM2Y2ZjRkODA0NTUxNjUwMDU4YmEwZGVlNTM2OGIyZWNiYmE3NTNlZmJkY2RlYWNlMWE2OWM5MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDUzNDJkN2M5YjI3ZDY5Yjk5NjgxNDM2MzMxOWZhZTA4MGIzMTE4MDlkMjZlYzljNDJjMTRiNzdjMTMxNDdkOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODQ3MjU3M2FmM2RjNzAzZTA0ZDgwNzllOGJmMDk1NDIwOGUyZTE1OWVlOGYyMGVmNWNlMzFjZTliZmQwY2NlNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_49b5de1a70414609a2783cd4399d2927",
+      "statement": "The dev.galasa.zos.ivts bundle contains IVTs for z/OS Manager, z/OS Batch, z/OS File (dataset, VSAM), z/OS TSO Command, and z/OS 3270 Terminal Managers",
+      "evidence": [
+        {
+          "resource": "repo://modules/ivts/README.md#L19-L23",
+          "version": "repo-lines-v1:sha256:01b7445d68b736aa11bd0a25f5c529adf3a347b2c941de17e6124d194e4ddf6d:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjczNmFlN2M2MDY3YTE2MGQ5MWFjYzQxY2E0Zjc0YTg2MzZlMGNjOTlhY2JiNWFjMDcxZjM4ZmNhZTMzNGU4YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOThiOTViMDFjY2Q2Mzg3YTQ1ZmNkOTRjOTIwYjk0NTE0ZjE3NTVjMWQ1ZWUxZDdkN2U2NmQwNjg1ODcwMThlYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTAxMGYxZDRhNDdlZmUxNjkwYzgxYzU1NTFhZmU2MmJhMTg1ZjM4Y2UzNWEwZmY0MDdlOTVkNTkxNzY5NTgwZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmUwMjgzYTRiOTU1MzdjZmM0NjNhMTM3Y2QyOTFkN2Q4OGM0NTc1ZjU5ZTRmNDJhMjJhNDdmYWQxM2U2NjVlMiJ9"
+        },
+        {
+          "resource": "repo://modules/ivts/galasa-ivts-parent/settings.gradle#L29-L35",
+          "version": "repo-lines-v1:sha256:6ebb21bd376b75ff66f62efb3ebae5128b2856dca72f378314da978d89174caf:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDExMzRkNmJkNmMzZjI4YjRkNDAyYWVlZDRhYWRjZTI1NjM1NDQyMDJiYjdmZGY2NTdiMGE4ZjM2NzQxMDY1ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjJiNTIwODRmMGU1NTJhNzgxMzYxMzRmYmFjNTdjNDVhOTY0NjQ3MDRmY2U2MDJhYjNlNjM5ZDllOWZlZWQ3ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjc5MjAxN2FkM2E5MDNkYWRjOGViOThiMWE4MDM3MmJkY2I5NTFmOTUzZTVmNjY4NTQ1YWFiMDJkZGNhNDNiMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_5fcf83bfd3b24ae4976e794899a920c1",
+      "statement": "IVTs are built into a test stream called 'ivts' consisting of an OBR and test catalog that can be referenced by the Galasa ecosystem",
+      "evidence": [
+        {
+          "resource": "repo://modules/ivts/README.md#L27-L29",
+          "version": "repo-lines-v1:sha256:72b65bf1119edb0a81a8ddc563db5905f62b1a16396d36ca4f3fd75b042a7c42:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWQ3OTMwYWMwMDdhNWZlYWYyYmU1ZjU5Yzc1NTBhZmM4ZTBlZTkwM2ViZTVkOTcwN2I0ZDA1N2EwYzczZGRjMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjFhYjIxOTcyNjIxZjA5MjNlMmM3OGY1M2ViY2U2MzE1MzAzZDMzNzhiOWQwYTQ0ZWM2Njc2MDY5OTBlZGE0YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmUwMjgzYTRiOTU1MzdjZmM0NjNhMTM3Y2QyOTFkN2Q4OGM0NTc1ZjU5ZTRmNDJhMjJhNDdmYWQxM2U2NjVlMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmM0MWU0OTE3OWZiNWE5NTBlMWI4N2UyYTAzZDc1MWEyMWExNGI0ZGZjZTllOWNkMzAzYjlhYWU2NzMyMTE5ZiJ9"
+        },
+        {
+          "resource": "repo://modules/ivts/galasa-ivts-parent/dev.galasa.ivts.obr/build.gradle#L13-L16",
+          "version": "repo-lines-v1:sha256:cffd810d4e8abd6fb191083b3ba30bd9076086183ff7ac75bc42dbc8d0f80ae0:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2JhMzE0NWFlZTBkYTA1OTI0ZDNhZDBiMWVlYjRhZGU3NzYxYjY2N2Q4YTk2MTQ2ZGVlZjM5YWJkMWNlNDhjYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTVlYTFlMmI3OTNjZWNlMmMzZTNkZWExYzUwNDQ2MjgyM2U2MDIwNjY3MjU1OTU3ODEyMjgxNmU0M2RkZDJmZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDJiNmM5MjczYmU2YWZlNTQyZWNiNmY1ODI3YTYwMmUyM2FhNWJkMTBlMTkwMGViYWM4MDUwY2VlMmZiZTc2OCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_3fc2c216fe0c4178a9a52a5fc33e01f7",
+      "statement": "The IVT module is built by the ivts.yaml GitHub Actions workflow which creates test artifacts, generates OBR and test catalog, and publishes to Maven repositories",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/ivts.yaml#L57-L152",
+          "version": "repo-lines-v1:sha256:06c98bb7389927f70a92e48ee7aa88475842288438d6c6efd8c02090541fc588:eyJzZWxlY3RlZExpbmVDb3VudCI6OTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhMTkxODA0ODA3ODQ3MzBlOWI4NTYyMDQ4NGY3NTk5M2Y3NzJmNmQwMTBmMGJjOGM2MTYyOGZkZDBlNTBkYTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBiZDk3ZWVkMmZlNDllNzlkZDJjYTQ0YTRlODdkN2VhODE0ZWM0MGI4MGM0MWRiZTA0MzFiYzY4NzFiNGEwM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdmOTNhODhmNmEyMTY3MjU0N2EyODg1MDU5ZTY3NTQ3ZGJiY2I3OTJjMTRhYjE5YThkNWNlNGYwNzQ1MGU1ODUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE5NzEzNzdmZDViYTY3ZGYzZGIyOGI0YzY1MGYxZjNjMzhjNTc1ZjNiNmMxYTVkNWIzZTFkYzFkYTEwMzk4ODQifQ"
+        },
+        {
+          "resource": "repo://modules/ivts/README.md#L27-L29",
+          "version": "repo-lines-v1:sha256:72b65bf1119edb0a81a8ddc563db5905f62b1a16396d36ca4f3fd75b042a7c42:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWQ3OTMwYWMwMDdhNWZlYWYyYmU1ZjU5Yzc1NTBhZmM4ZTBlZTkwM2ViZTVkOTcwN2I0ZDA1N2EwYzczZGRjMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjFhYjIxOTcyNjIxZjA5MjNlMmM3OGY1M2ViY2U2MzE1MzAzZDMzNzhiOWQwYTQ0ZWM2Njc2MDY5OTBlZGE0YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmUwMjgzYTRiOTU1MzdjZmM0NjNhMTM3Y2QyOTFkN2Q4OGM0NTc1ZjU5ZTRmNDJhMjJhNDdmYWQxM2U2NjVlMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmM0MWU0OTE3OWZiNWE5NTBlMWI4N2UyYTAzZDc1MWEyMWExNGI0ZGZjZTllOWNkMzAzYjlhYWU2NzMyMTE5ZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_cf4b2fa2250d4c02b1b556f94857f9e1",
+      "statement": "The build-locally.sh script builds IVTs locally and publishes them to the local Maven repository",
+      "evidence": [
+        {
+          "resource": "repo://modules/ivts/README.md#L38-L39",
+          "version": "repo-lines-v1:sha256:719427871a1804a3cfc85728193971958d15a7510152915e174c9c327a4e61fb:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGUzYjJiNWUwOTlmYmZmM2JkYjRlNDkwNzRiMDliYzJlNDAyMTkzNDY0MWNlYzJmNWZlYjczNzI2YjUwOWUxNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjlmYTk5MDNlYWRhNTQ3MTBhN2E5NDlkYTMxZDNkMDAzZGY3ODM3NmUyYWI2ZmEzYjU1YzNkMGYzOGRlOGUyZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWYxZTIyYjk1ZjNhYzg5N2YxNDJkMWU3ZWI5Y2I5YzdlMjZkNmMwNWI4Y2JmMWZmZGRlYjg3MmJiZGE2MGI4NiJ9"
+        },
+        {
+          "resource": "repo://modules/ivts/build-locally.sh#L1-L141",
+          "version": "repo-lines-v1:sha256:6ee3f4110d48b1b490b259905767fffaa7eaf2ba1fdccacfedfeef73af3a1d3e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQxLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI0NDcwZDRmYzk2YzQxMGJkODFkMmZiZWY0NDlkY2Q1NTJiMTE0ODQ4ZDJiYjRmNjMzNThmMzk5ZmIwY2I3YmU5IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIzNzY5ZDIzN2NkNDIwYjlkMzhiOTgxYTBhNGY2NzcwMTkwYTRhODNkY2ExZmU1NmM0ZjViYTFlMmNiYzBlZjc2IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_5dc0f91ac36e4f36acf3327068f935e7",
+      "statement": "IVTs can be run locally using galasactl runs submit local with the --obr, --class, and --log flags",
+      "evidence": [
+        {
+          "resource": "repo://modules/ivts/README.md#L43-L53",
+          "version": "repo-lines-v1:sha256:b44ccc96159ee344aa9874b9a3dd44ac3376ef1eaf7f7c977e7bfee45d8ac4db:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRhN2RkNjk4YzRkNjE1OWVkNjM3M2JkY2ViMTIyOTJhOTM1YzQ3NTY4YzEzYzEwZTkxYTAxMzI2MGQzNWVjNDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YzA2YzU2MWQ1YzMyNzM0MzY4NTI2OGE0NmIzMzkxZjM5OThlZWU4OTBkMmJlNTFmMGQyMWNjNGE1M2FlNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFmMWUyMmI5NWYzYWM4OTdmMTQyZDFlN2ViOWNiOWM3ZTI2ZDZjMDViOGNiZjFmZmRkZWI4NzJiYmRhNjBiODYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMzYWFlOGM1NDYzYzBlZDljYjZmY2E2NDZjMDI3NWEzNWEzMTg4MTI2MGRiZGJkOTljODEwZmM3NTFiNmI5NzcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bf47e2df5a5649c580df3407079e774e",
+      "statement": "IVTs require CPS properties to be configured for the Managers they test, with specific properties documented for each Manager",
+      "evidence": [
+        {
+          "resource": "repo://modules/ivts/README.md#L43-L45",
+          "version": "repo-lines-v1:sha256:6cc092a471cb7c89b667df5b540dc087215bc592d388ce88817f67b636e14c85:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGE3ZGQ2OThjNGQ2MTU5ZWQ2MzczYmRjZWIxMjI5MmE5MzVjNDc1NjhjMTNjMTBlOTFhMDEzMjYwZDM1ZWM0NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDI3MzM3MjA1ODlmNzQ4ZmI5NGE5MGVmYTU3MjQ0YjJjYTU0N2IxMTViNDQ3NGI0MWMyN2E0NWNiMDAyYThkNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWYxZTIyYjk1ZjNhYzg5N2YxNDJkMWU3ZWI5Y2I5YzdlMjZkNmMwNWI4Y2JmMWZmZGRlYjg3MmJiZGE2MGI4NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODczZDgwNWJjNjAwYjc3MWQ4ZDAwZDY3NmM3ZTU1MjhjOTVhZDRjYjA0Njk3MjE0YThjMzQwZjk1M2E2YzNjMiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_7bc0dcb6d5504e0aae31daff99af3ecc",
+      "statement": "The CoreManagerIVT validates that the Core Manager correctly injects Logger, RunName, and CoreManager fields via annotations",
+      "evidence": [
+        {
+          "resource": "repo://modules/ivts/galasa-ivts-parent/dev.galasa.ivts/dev.galasa.ivts.core/src/main/java/dev/galasa/ivts/core/CoreManagerIVT.java#L18-L55",
+          "version": "repo-lines-v1:sha256:ee7673d741e5909fc196eab56fff6c42af873e8fee43b32cbf6d86845c7dc4d9:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMwMzQ3MjhhOWVhNTdmYWIwY2ZkMjUxMTc0MDhlM2IxYmQwOGRjNWU0M2E0ODYyNTk3NTY3YTc3YjBlYzMwZWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVkNGU1NDQ5Y2ZlZmI4YzIzMzJkMzc0MGQ4YzI1ODhkYjdjMDUxYThiNWI1MDZhNzBhOGFlZGYzMGRhNzc0ZDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_85ab974c5fe844e9a9032e09b76e8f5e",
+      "statement": "The HttpManagerIVT tests HTTP Manager functionality including GET/POST requests, authentication, headers, SSL, and response parsing",
+      "evidence": [
+        {
+          "resource": "repo://modules/ivts/galasa-ivts-parent/dev.galasa.ivts/dev.galasa.ivts.http/src/main/java/dev/galasa/ivts/http/HttpManagerIVT.java#L32-L150",
+          "version": "repo-lines-v1:sha256:db05cbd85663476ba3485e351228d6c0f48c095808f057c47ee765916210ffce:eyJzZWxlY3RlZExpbmVDb3VudCI6MTE5LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJjMDM0NzI4YTllYTU3ZmFiMGNmZDI1MTE3NDA4ZTNiMWJkMDhkYzVlNDNhNDg2MjU5NzU2N2E3N2IwZWMzMGVlIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJkODVmNjVkZWFkYjNkNWMzZTFiZDAwNWNmMGE0Yjg1YWE0MGJlMTI0ZmZkOTU5MWYwNzNmYzAxODc5MGFmZDBmIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJhNTRkNDc2MDFjOTYzYzRjYjFmNTRhZDI0OGVkNWVkOTVjZjg4NzM5NmNmMWUxNDQ4Y2I5ZGM5MTMzYWI2OTI2IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIzNDJjNWVhM2IzNDVhZDEzM2QwMTBjNjU1NWEyNmM4ZWQ4YzY0M2Y1MmYxNmQ3MjA0ZDg0OGE4NDhkZTJlMmQ0In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_b555f43f4a49423ead31d63fae461494",
+      "statement": "The ZosManagerIVT validates z/OS image provisioning via @ZosImage annotation and credential retrieval",
+      "evidence": [
+        {
+          "resource": "repo://modules/ivts/galasa-ivts-parent/dev.galasa.zos.ivts/dev.galasa.zos.ivts.zos/src/main/java/dev/galasa/zos/ivts/zos/ZosManagerIVT.java#L19-L43",
+          "version": "repo-lines-v1:sha256:af1f0b4ebbb61a86215d19d621e0aa23aadad1221f005bb802edc966ed4c1e27:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMwMzQ3MjhhOWVhNTdmYWIwY2ZkMjUxMTc0MDhlM2IxYmQwOGRjNWU0M2E0ODYyNTk3NTY3YTc3YjBlYzMwZWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlmODM2YmViMWM4Mzc0ZjViYWZlYjljNjRkODdjZTUwYzY5ZTcwOWJmMmNmMTY3NWRhZGI5NjZmNjIwNTk0NzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9567e7ded77749748df72eadfdd93de4",
+      "statement": "The Zos3270IVT tests 3270 terminal emulation including logon, screen navigation, cursor control, and field operations",
+      "evidence": [
+        {
+          "resource": "repo://modules/ivts/galasa-ivts-parent/dev.galasa.zos.ivts/dev.galasa.zos.ivts.zos3270/src/main/java/dev/galasa/zos/ivts/zos3270/Zos3270IVT.java#L34-L100",
+          "version": "repo-lines-v1:sha256:c5eb27802861a4e1bc8d1877ddc094fcac75d78b9f2ef6409f1eb91ba831232b:eyJzZWxlY3RlZExpbmVDb3VudCI6NjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMwMzQ3MjhhOWVhNTdmYWIwY2ZkMjUxMTc0MDhlM2IxYmQwOGRjNWU0M2E0ODYyNTk3NTY3YTc3YjBlYzMwZWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY1MTIxMjQ2NzlhYjE4ZDY4ZjMwNzk0M2I5NDk4OGFlNTBhZjFiMjQxMTk2ZmQyZWZjNjMwOGFhMWZmZjE3ODIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYzMWU0YjQ2ZDU0OGM4Nzk4YjE2OTMxY2Y3ODM4ZWFiOTliOTBlYjcyMzU2OTY4YjI1YTU0NzEyZmI0M2UzMDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJiYTZjNDY4OGQ0YWM4NjI1NTQ4YWQ4NjBiOTY2YTg3MGU5MmZiOGYwNTc1N2EzMTIyYzYyMjRlN2EzMTlkYzEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c0b337b5c6634eca90247cddcf7f25d7",
+      "statement": "The CECIManagerIVT tests CICS CECI command execution functionality including session management",
+      "evidence": [
+        {
+          "resource": "repo://modules/ivts/galasa-ivts-parent/dev.galasa.zos.ivts/dev.galasa.zos.ivts.ceci/src/main/java/dev/galasa/zos/ivts/ceci/CECIManagerIVT.java#L49-L99",
+          "version": "repo-lines-v1:sha256:3e5961ac26dc354a8b9f494f1d3a174831752d19d43e6a75445d7545876e58a4:eyJzZWxlY3RlZExpbmVDb3VudCI6NTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM2NTlhMTkxOWM0N2Y5Y2M3YjUzMTA1MTRmZTM5ODg4NzJjMWQ4N2RmMGU2Y2E3MzgwNDlhMGNkMTVmN2IyZmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM0MWM0N2EwODhhNzc3NTBiMzQ4MDI0ZmQ3ZWI0NDIwZDAwOTdhNTczYWViYWYyNmE2MDRjMTE3NmZlYmFlNzYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAxMTBjZmFmM2ZlZjMzYmZlZTEzMTFjMDBhOGZiODE4YmJmN2UzZjQxNWE4MjcyYmFlM2M1MjAxMjE4OGYxOGMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMxMzBiNjBmNDg0MDcwM2YyOGMyNzU5YWNmMDUzYTg1MGUzZTc5ZGM4NDUzZGMxNTE3M2NlMjYxOGVjYjg1Y2EifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fa53ba74fc4c45d5a4bc36fbd73ec93e",
+      "statement": "TestCredentialsStoreAccess IVT validates that the Core Manager can retrieve username/password, username-only, token-only, and username-token credentials from the credentials store",
+      "evidence": [
+        {
+          "resource": "repo://modules/ivts/galasa-ivts-parent/dev.galasa.ivts/dev.galasa.ivts.framework/src/main/java/dev/galasa/ivts/framework/TestCredentialsStoreAccess.java#L24-L80",
+          "version": "repo-lines-v1:sha256:a61b71e086c18fd1f90aae12b43131f3aabb58ce08054405cd0d46c2647519f2:eyJzZWxlY3RlZExpbmVDb3VudCI6NTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMwMzQ3MjhhOWVhNTdmYWIwY2ZkMjUxMTc0MDhlM2IxYmQwOGRjNWU0M2E0ODYyNTk3NTY3YTc3YjBlYzMwZWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA1MmMxNWI2MmIxYmM1ZjMwOTA1NTU1MjgzNjM0YjAxNDY0ZmU2MzdjOTQ1MzAzZDVlOTViNzAxNDc0ZWJlN2UiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJmNWJmNTdhY2ZlOTM3ZjJiN2RjN2RlYzFiMTAzM2ViODY4ZGJkZWRmNmQ1Njk0MzAyMzljZTAwZDU3MTM1MTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU4ZWFmM2UxZGIyODRmNmE2ZmQ0ZTA2NmFlMmZiNjU0YWU2OGZkZmNmM2U3ZTRkY2E0YzJkZDIxNGE0OWI5ZDAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7196dfe898cc49d184facdbc3a0f2497",
+      "statement": "The ivts.yaml workflow builds Docker images for IVT Maven repositories (ivts-maven-artefacts and ivts-auth-maven-artefacts) and deploys them to ArgoCD",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/ivts.yaml#L154-L203",
+          "version": "repo-lines-v1:sha256:020919e04551cebb9f45bdee5953f9219230806433faff3140ccdf5d3377db05:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEwNGY0OGFmOGNhZTZmZWQzMzIxZDc3OTc4ZGNkZTFlOGE5N2UwNzM3MmI5NmFiNTE0ZTQ5OTdmMDIzYjM2OGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIxODdjZTRmMDJhYjRmY2Y3Y2Q4MTc2ODMxNTgzNDVjN2ZjNTI0OTc5MzEwMWMxYWVkNWM4NGMxNGViMjg3ZmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkwODQ4YjQ3MGFlNmU0YWIxMDk0YWNiZDE1NmUxZDA5MmVhOGQxYmVhZjAxNWFjOTFjYjVlN2NiMTA1ZWQzMDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM1MTRkMTNlOWNhZjJkNjZiMWRjNzIwYTQ3NWJiNWY3NzJkNTdhZTg4ZTNmOGIxZTdhYjhiNjUzZTkxZjE0YzAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a0dc3ae162a44925895bb3a61f8bdd74",
+      "statement": "The dev.galasa.ivts.obr project generates both an OBR file and a test catalog JSON file that are published as Maven artifacts",
+      "evidence": [
+        {
+          "resource": "repo://modules/ivts/galasa-ivts-parent/dev.galasa.ivts.obr/build.gradle#L13-L43",
+          "version": "repo-lines-v1:sha256:3ef7d3e6eba60afca38ca9ad73ca72683f346a08f68fce7a7dbab220f01bee98:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNiYTMxNDVhZWUwZGEwNTkyNGQzYWQwYjFlZWI0YWRlNzc2MWI2NjdkOGE5NjE0NmRlZWYzOWFiZDFjZTQ4Y2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU1ZWExZTJiNzkzY2VjZTJjM2UzZGVhMWM1MDQ0NjI4MjNlNjAyMDY2NzI1NTk1NzgxMjI4MTZlNDNkZGQyZmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhmOGNmMDAyZDFmNGIyZmMwOWNmOGVkYmVkOTNlYzczNzg4ZTM4OGU5MTZmNzczNWNhZDIyMTI2ZTgwYmE2M2UifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_166e9e1f921a46638e6653680620a001",
+      "statement": "Each IVT subproject is a separate bundle organized under parent bundles dev.galasa.ivts or dev.galasa.zos.ivts, with classes exported from the parent bundle",
+      "evidence": [
+        {
+          "resource": "repo://modules/ivts/galasa-ivts-parent/dev.galasa.ivts/bnd.bnd#L2-L3",
+          "version": "repo-lines-v1:sha256:6995bdf1b144501b8fb8845237a5adc27fba59b6d99f2801f986a67b653c3e31:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmNlZmFiNDlhYWRkNGQwN2QyZTRjOWYxZTY2MDBhODcyZjFhZWFjOTYxZDI2MzhjZTdjMWQzYjgxYjljYWY1YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjk1M2Q3ODM0YmE1ZTAyNjEwZTJhZGM5YTEzMWJiNDQzOGI0MDEzNzA1NzhiNWFiNDcxOTY3MGMxNjljMzAwMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjEsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTc2OTIyOGIxYjc3ODEwOWJmZTgzMWZlOWIxZjc2OWJhMDNjZDFiOTNhYTdiOTRmNzVmZTlhOTk5MTIxNTA0ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://modules/ivts/galasa-ivts-parent/dev.galasa.ivts/build.gradle#L5-L11",
+          "version": "repo-lines-v1:sha256:2482e7ced7f1bdeb1f7630cd0b354368852025b6e67f5b225db44c4473e09b93:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWVlMTk1OWY5YzJjY2JjM2YzMDFiMTJkZDExYzI2NGY5ZTFlNzcxMjgxNTlmNzU4MTI2NWMxODMwZjZlMGQ0NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWFiYzcxMmZmZjMwNGIyMDlhOTg0MDUwMzgyZDJmOTM1ZGNjOWZjYjdhYTg0OTQzYjk3YjAzODJmZDg3YmI3NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTJjYmJmNjViN2Y2ZDc4MzMwMzg4MGE4ZGY5OGM5MDI4ZjMwMmM4ZGE2YzgzNTlmMWMyMDUxNGQwNmNmZWY2MiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a9b9038f2bc74a51927c22142d743100",
+      "statement": "IVTs run daily in automation to test Manager functionality and detect regressions",
+      "evidence": [
+        {
+          "resource": "repo://modules/ivts/README.md#L29-L29",
+          "version": "repo-lines-v1:sha256:21ab21972621f0923e2c78f53ebce6315303d3378b9d0a44ec667606990eda4a:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjFhYjIxOTcyNjIxZjA5MjNlMmM3OGY1M2ViY2U2MzE1MzAzZDMzNzhiOWQwYTQ0ZWM2Njc2MDY5OTBlZGE0YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjFhYjIxOTcyNjIxZjA5MjNlMmM3OGY1M2ViY2U2MzE1MzAzZDMzNzhiOWQwYTQ0ZWM2Njc2MDY5OTBlZGE0YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2YxMTEyMGQ5ZjRkYjNiODcwYzkyNmNkM2ZiYzMzN2U2MTBiMTI0OGFjN2QxYTVkY2M3ZjcxMjZmNjhmYWE0OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmM0MWU0OTE3OWZiNWE5NTBlMWI4N2UyYTAzZDc1MWEyMWExNGI0ZGZjZTllOWNkMzAzYjlhYWU2NzMyMTE5ZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_bfff0dde03334daf98bd4227f3394cac",
+      "statement": "IVTs are being migrated from within the Managers module to a dedicated ivts module to simplify testing organization",
+      "evidence": [
+        {
+          "resource": "repo://modules/ivts/README.md#L7-L8",
+          "version": "repo-lines-v1:sha256:d3f3ecfccd3000f14f5035320a8954084f8570898219fa51a3afca52ad3cfb1d:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTQ1NjAwYjQyM2ZjZDYxMmE4NjgzZDUwMGYwMDk4YzJmNDI1NjU1OWJjNGY3NWE5ZTgzYzM1NTM4MGQwNTliZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTc4YjgzNGU5ZWU5YTI2ZGEzNDA1MmYyMGI3OGVhOThhODY3NTFhZjZkNmU5MDkxYzI5ZTcyMmI2YTJjNTI2NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2VhMWMzN2MyMjgxMzEwNTQwZGRlNzhiMmM5NDAzZDVkZWZlNmY4YThkYmE2ODJkZDQ4OGI5MDlkYzBlZTczZiJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.2",
+    "at": "2026-09-21T12:35:12.771Z"
+  }
+}

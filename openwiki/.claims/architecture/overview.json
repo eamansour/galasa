@@ -1,0 +1,168 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:64287d8fee1cf388754c5dcd51c60fceb8021308e093bdaa371edbcbf7c5716e",
+  "claims": [
+    {
+      "id": "claim_fe85741ddd4f4e3595aa6b852c83bc93",
+      "statement": "The Framework Core implements the IFramework interface and provides access to configuration property service, dynamic status store service, result archive store, auth store, and credentials service through namespace-isolated methods",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/IFramework.java#L25-L147",
+          "version": "repo-lines-v1:sha256:9ac2a86ac55c967373b70867c81a21e61af08ed64f704c85f4732a921ee73525:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIzLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJlYWYyMmNmMDczMjU5MmMyNDcxNDFjYmU2MWVmYTExMDEyNjEyZjVhMzEyMmI5YWY5YmJhZjUyZjU3MjRkMTk0IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI4MmVhMzRiZmQ2ODUzZjg4ODg5NzEzY2Y5M2NiODMxZWIxNzA3OGEzNDEyMGQxZjJkZDAzNDRkYTdiOGNmZGVlIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJjZWJiOTBlNDE3ZTZkNjgxZTcxYzFmZDI2MWY3YWJhMTYzNDFmNTZhOTdiNTRkNGE2OGZiOTc4MDc2ZTc0NzJiIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI4MzU5OTczMTNmN2U3OTRhODFjZjkyMzQ2M2I2MjkwYWE0NGQwYjRhZTUwY2M1Y2ZmZmM5OWIwOWI5ZjQyOGRmIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_873ee1cf650d472f8178babd8ebe4220",
+      "statement": "The IFramework interface provides getConfigurationPropertyService(namespace), getDynamicStatusStoreService(namespace), getResultArchiveStore(), getAuthStore(), getAuthStoreService(), and getCertificateStoreService() methods to access framework services",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/IFramework.java#L76-L147",
+          "version": "repo-lines-v1:sha256:4c8c296ef20555b84793e0e5bf5319b642f2bfb64ca312f4cd9be1045d73edc3:eyJzZWxlY3RlZExpbmVDb3VudCI6NzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5NDUxOGQ0NTlhNDhhZTYzOGRiNDg0MTg0OTdmOTg4ZTEyMWI0YTc4ZDdiZTk5NjM3MTE2N2U3ZjA3Y2JkYzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyZWEzNGJmZDY4NTNmODg4ODk3MTNjZjkzY2I4MzFlYjE3MDc4YTM0MTIwZDFmMmRkMDM0NGRhN2I4Y2ZkZWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU3ZjBhNjZjZDZmODM3MDAzZjg0MzkwOTFmODEyMTRmZTY3ZmMwODRkMjE4Mzc0NjgyMmQ3MTBhNzYyOGNmYTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgzNTk5NzMxM2Y3ZTc5NGE4MWNmOTIzNDYzYjYyOTBhYTQ0ZDBiNGFlNTBjYzVjZmZmYzk5YjA5YjlmNDI4ZGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_192ce223c0804aa7927e6292687bcf80",
+      "statement": "Managers implement the IManager interface which defines a comprehensive lifecycle with methods including initialise(), youAreRequired(), provisionGenerate(), provisionBuild(), provisionStart(), fillAnnotatedFields(), startOfTestClass(), startOfTestMethod(), endOfTestMethod(), endOfTestClass(), provisionStop(), and provisionDiscard()",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/IManager.java#L33-L200",
+          "version": "repo-lines-v1:sha256:36bd721e3b67d5d75576f3d8eb8af42474666e99a00ee76de90008886f7473c3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTY4LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIwYTM3NTY1MjY1YzE4YzIwZWRjZWNlYWVlNzQzYzk5NWU3NTc5Y2M5ZTk5MzIxNDI4NTFmMzc2ZWM1MzQzZWJmIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJiY2JhNzBhM2Q2ZTMxYWQ1ZWExZjJmOWE4ZThhNzJkOTMwNWIxMTMyYTRiMzI2NTdkM2YzNDU3ZjE1ODU0YTFiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIxOTQ3MjNkMjAzMGQ3M2Q5MjhhYjBlMTAxYzBlNWEwZTM0YmVkZWQwNzAzNjMyOTg3NjM0YzgyYjg3ZTA4ZWVlIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI1MWYyMjU0YTllNDUyNjkwZWFiNzZjYTJhM2NlMDFhMWVkODhjMDFjMjEyMDNmYjQzZDE3ODkxMmVjOGIwYWJjIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_3ac4319d24bb48ed80ba822f3b0991c6",
+      "statement": "Managers declare dependencies on other managers through the areYouProvisionalDependentOn() method, which the framework uses to determine the correct provisioning order",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/IManager.java#L122-L129",
+          "version": "repo-lines-v1:sha256:5cd240001cb9fd6053081e7cd282faf4be5649e4e50e29227433a1d40a8db722:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzljYmJjNjU0NjlkYjFjYTI4NDJlZmQ5N2RmN2VlMmNlNmNjMTU3MTQ4MmQwMWExOGI3OTBhMTBjN2M1MTBmMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzE0YmYxYjIwODUxM2QxNzcxY2VmNjgzNTQ1OGQ2MWJkN2IwYzhiMTMwMDgzZTEwZDU1YjA5ZmQxOGQzMTZiMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZThhMTI1YzE0N2UxZTEyMjhmZGQ3OGY5M2E4OGJlNzYzMGExZDNmMTAyN2ZlNjQzM2FiYmE2NDkzMjA0ZGU0MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODM1OTk3MzEzZjdlNzk0YTgxY2Y5MjM0NjNiNjI5MGFhNDRkMGI0YWU1MGNjNWNmZmZjOTliMDliOWY0MjhkZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_5e299c9f263b4fe09c87779b61e8ff7d",
+      "statement": "The TestRunner class extends BaseTestRunner and orchestrates test execution by loading test classes from OSGi bundles, initializing managers, coordinating resource provisioning through multiple phases, and handling test method execution",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/TestRunner.java#L42-L149",
+          "version": "repo-lines-v1:sha256:233b03b60e30df417cca30ac5557e40d3f4c1852d2f780e98abba06790866616:eyJzZWxlY3RlZExpbmVDb3VudCI6MTA4LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJlYWYyMmNmMDczMjU5MmMyNDcxNDFjYmU2MWVmYTExMDEyNjEyZjVhMzEyMmI5YWY5YmJhZjUyZjU3MjRkMTk0IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJiNDFmYzNhOGYyMmYyZTQxNDFjYzZiYzcwZDdjODIwYjhlYzIxNjcxY2Q0YzkxMjEyMGQ3NGYzNWM0NDUxYTI0IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI2NjUzYjE1MmI4ZjkwNzFhNDUzZjQ2YTE2MjNhMWM0NWI0NmQ3ZGNiN2U5NGZmNWExNzNhNjk4NTRmY2FlMmZmIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJkZmI4NGYzYzlkZGE1MWZjMzljYmZiMzcyNTA2YzdlZDQxYzI0MjFiNzg2ZDU5ZDgyY2JiNWQxM2NiMjE2ZjYzIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_a4e93a1a051d496aa4c0bac2c7803b8c",
+      "statement": "The TestRunner distinguishes between different run types (TEST, SHARED_ENVIRONMENT_BUILD, SHARED_ENVIRONMENT_DISCARD) and adjusts execution behavior accordingly, including conditional heartbeat and timeout monitor creation",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/TestRunner.java#L117-L137",
+          "version": "repo-lines-v1:sha256:53071a06f5e64e0c8cdbf52d17f6d1d95c750623bf1f734ac335c31e6d284e07:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZmODk4MDExNjIzZmU0MjNiY2U2YmFhYzY1YWJlZjhkZWMyODkyYjJhMmE5NThlY2FmMTA1MTA3N2I5YWFkMjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1MjJjNDJjZDE5YzZkMDNkODA4YzQ1MjcyMDU1MjgyNWI3ZWExYzViNDkxYjIxODUxMWNhYzc0MTVjZjlkOWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjliZDhmNWMyY2FlYzg5OWZkNDg4MWZjM2E5MWM2Nzk5YmMyYzU2M2MwZWE2MmQ3ZDJjNDdkM2YwZGYwZjc2NmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA4YzczODgyNjU1ZTBiODhkMzgxZmQ4YTM5NWMzOGVhZGIwMjdlMWM5ZDI0NTI1MjMxNzRkMzAyMTVjYzI3ZWIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_55695b2ea1e84cb4af17317f38ccc835",
+      "statement": "The K8sController component is responsible for Kubernetes-based test execution orchestration, monitoring queued runs in the DSS and creating test execution pods through the Kubernetes API",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.k8s.controller/src/main/java/dev/galasa/framework/k8s/controller/K8sController.java#L46-L100",
+          "version": "repo-lines-v1:sha256:701b7042f2226254ab98550747bfbdc8ff894220c45803d92f9526b443076c75:eyJzZWxlY3RlZExpbmVDb3VudCI6NTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE1ZDk0M2NlNDI5ZDZiYTBlN2JlNDk1ZmIyZTc2ZTMzNWM3NjU1NWU1NTNlNThiYmJjNTA5MGU3YjlkZTcwNTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2NjRmOGNjMjAzYThhYjQ3OTdhYTEwZjA5NWZkZTNmMmMwM2I5OGFlNGNhYjQyNWM4MzBjNWE1ZDExMmU4NzIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcxOGY5ODRjMzYyNTA0ZTg0MTUzMzZjNjU4NjIyYjVmOTQwNGMzZTU1ZmI1NDRiMzllZWY0ZjJlNzY2MjU5NzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI2MzgzZGFlY2UwZDFkNGQzYmZmMGU3MmNiYzE1ZWVlNDFiMWFkZjkyMmEzNTA3Y2FlY2IyNGU3YjcwMjVkNWIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8bc733da31b94af8b7ce3769b0db554f",
+      "statement": "The galasa-boot JAR serves as the launcher for various Galasa modes including local test execution (--test), API server (--api), Kubernetes controller (--k8scontroller), and resource management (--resourcemanagement)",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/README.md#L41-L77",
+          "version": "repo-lines-v1:sha256:4c70571836ca215f3a1efbafb6f364d390e4bad28899bbb94f18b6b8c4a0cbb8:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjViNWRjNzAxMWJiNGU3MzIxODM2MDI1MzU2NjQwNjY1NjQ0YTljN2M2Y2YzZTYzYjEyYWFmODdkODg2Y2ZiYzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzNmYxYzEwNWQxMzQxNTc2ZjJiNzllOWE4MGJjZjNhZGMxOWU1OWZkZmYxYTUwZjJmMTU1ZmEzOTgxZGE1YzgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJhMjU2ODJjNGMzYzU5NzFiNDcyZTAxOGZiZjc5NTlhNDVjNGU0NWViODFmMDVmYmU3OWUzNmRlZmE2YWE2N2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNmOWVkZGUyNjc1NmE4ZDU0NjkzN2M1YzNjOGJjNDIwZjFiMDA4NmY3NmE1YmIzYjg1ZjVmYTNmMTc0NjUwNzEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e9786bcc9cd74a85af8526c953296aed",
+      "statement": "In Kubernetes deployment, the API server runs as a Deployment using galasa-boot-embedded with --api flag, exposing HTTP endpoints on port 8080 with health probes and metrics on ports 9010 and 9011",
+      "evidence": [
+        {
+          "resource": "repo://modules/obr/javadocs/target/sources/k8s/server-api.yaml#L1-L100",
+          "version": "repo-lines-v1:sha256:cc5e405e728a72b2532d920a337e3a7b4d7202781ddc4a0fcc0a0d9f097815cf:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAwLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIzMmM0ODU4ZTIyY2MyYzk2N2I0MjE1MGZhNTUwNTYyYTJjODM5YzJjZWJjYWFiOTFjYWJkZjZmNGRhMDIwMDIyIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI5MmU0YjNlNTA5ZWViYzVkYmMyZWNlNzdkNzExZTIyZTFlMDcyYWM0M2IyMzA4NGVkMjMyNmZlNTNmYWY4YzY5IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJhYTQwMzI1MTNhOTg3MDg2NDIyODMwMDZkODJlNWZmMjRiYWJiYTViYjhhZGQ4ZjVkZWMxMWUwNmFkMTUxMzQ2In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_ba9ea47c3cc4421e9f995a7c06c2ec54",
+      "statement": "The Engine Controller runs as a Kubernetes Deployment using galasa-boot-embedded with --k8scontroller flag, with environment variables for BOOTSTRAP_URI, NAMESPACE, and PODNAME to coordinate pod creation",
+      "evidence": [
+        {
+          "resource": "repo://modules/obr/javadocs/target/sources/k8s/server-engine-controller.yaml#L1-L79",
+          "version": "repo-lines-v1:sha256:70e1a7d4dd3c8cec1c1979ee456aacd19329acb27bc8e672bea666a42369a476:eyJzZWxlY3RlZExpbmVDb3VudCI6NzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMyYzQ4NThlMjJjYzJjOTY3YjQyMTUwZmE1NTA1NjJhMmM4MzljMmNlYmNhYWI5MWNhYmRmNmY0ZGEwMjAwMjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJiZDljY2E4MjkxN2Q2ZWViOWMwY2QzMTZhOWJiZjQ4MjBkNTdkOWExOTdkMzVlNDU5ZTM3MTZiMzlkN2MxOWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7c6d93aa8085449fb9c03fe6759ab1b9",
+      "statement": "Galasa architecture is built on four key principles: modularity (independent replaceable components), extensibility (SPI pattern for adding capabilities), separation of concerns (clear component boundaries), and pluggability (dynamic OSGi-based component loading)",
+      "evidence": [
+        {
+          "resource": "repo://developer-docs/architecture-documentation.md#L18-L26",
+          "version": "repo-lines-v1:sha256:ee5148a094186302fc89d737a26ac1246922397fc9dd1fbbe3d7500f0900a6e5:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzcwY2ExODhjODE1OWEwOGFkYzc3MThjY2VjYzEzNDE5NmMzNDgxYzUyYmQ3MDY4MGY0OWQ2MDAwZGY0NTY1OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWQ3OWI4NGY5NmExYWU4ZjU3NjFmMWQzNWU4MTQ4MGM2NWZjNmQ3NmQ2NGJkMTY4YjczYWZjZTM4NzFkNWMzZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTA5NzM2MTYxNjAyNWNlZjUxNzA4MTA0NTBjNTE3NjBlMDhhYjNkNzQxYjdkMmEwMGM4NGMxYWY0NWQ5NDkyOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjhjNGJkYzkwZmM4YzA0YmJjOWM5ZWE4OGJlNDZlYjhmYmI0YjM1MGFlMGJhODcyZTZjNTY4ZmZkMTE1ZTJhMSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_5ec4c780d0304dd0aef26388eaa02230",
+      "statement": "Storage services in Galasa include Configuration Property Store (CPS) for hierarchical configuration, Dynamic Status Store (DSS) for transient runtime state with atomic operations, Result Archive Store (RAS) for test results and artifacts, and Credentials Store for secure credential management",
+      "evidence": [
+        {
+          "resource": "repo://developer-docs/architecture-overview.md#L73-L81",
+          "version": "repo-lines-v1:sha256:36957231097c5cfe1ba8de59f4b4a5add3d3a01f37c62a141671fd5f30ccf3d3:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmEyY2QzYTBiMDk4NjJhNWI3MmYxMTJlMzBkNThmNzBhOWYwODhjMmZjYmFmNWUzYTBlMjk1Yjg4OTcwMmEzYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2UxZDUxMjkwZWFhMmJjMTFhZTFhNDQwYTYwMzNhMDc0MzAyZjViYjIwNzFhMTliZGQ1ODBiNTljN2Q5ODkwYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2YyZjY3ZDk3YjBhNjA0NTAxM2FmNGYwZTVjMTcwNmQzY2MyMWEzYjdmODVhZTAwYjQ2NDdmNjNhZDFhZDUzNyJ9"
+        },
+        {
+          "resource": "repo://developer-docs/storage-services.md#L1-L14",
+          "version": "repo-lines-v1:sha256:7abd1b046c6e8f39a4ba33a74141cf7e0805c52c506eca8afad2a04f03b73e0e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY1ZjhkNzNjODljZmFhZDYwN2U3ZDk2MmU3NDA2ZWFkZmQyNzQxMTVlNzY5N2JlNTViNzYxMTgyMjk1MGM2NGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkxZjU4MTE5ZTRiNTQyOTY2YWVkMWMwZTNmMGIzYmM1NDU0ZDFiMTg1YmYyN2IyMTRjMTgyZGIwMDY1ZTAwOTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE3YTc1Nzk5NzNmYjA2ZGRhM2Y3MGMyMjM4YzQyMWExZTAwZGYxNjIxMGRlMzI2N2RiYWE4MmQ0YWU2ZjYyZGEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ffc6ee3a0a8646f4b9764fe4e9f287d6",
+      "statement": "Managers are organized into four categories: Core Managers (essential functionality), Platform Managers (OS-specific support like zOS, Linux, Windows), Technology Managers (technology-specific like CICS, DB2, JMeter), and Cloud Managers (cloud platform support like Kubernetes, Docker)",
+      "evidence": [
+        {
+          "resource": "repo://developer-docs/architecture-overview.md#L59-L63",
+          "version": "repo-lines-v1:sha256:86357f325096fbf2aff8510353efe6e7cd860e5f58799f6e736d74edc037746f:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWFjN2Y1NjZlNWFhMTc3MDcyOTAxZTE3ZmVlMWMzNzk0YTgwNDUyNzdkNDUxY2QzMzBjNzU1ZjkwZDA2ODE0MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzBhZjdhOTJkNWU4ZDRkZWQxZjdiZjY1OTA5ZTk4ZGNjOWMwOTNiNDFhMmQzZGJjNzg3MmZkZTI1NTliMmIyYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzRkMzM4ZDU2MDYzMjZiYmVkOWUwMGYwMmQ2Mjc3MWVkYzFhMGUxMTlkYTMxZjJhZDM2Y2NlZjk1YzExMjQ0NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODAwNDAyYjhlMzFhNzRmNzE3ODE4MmE5Y2ViMTY2NDBmYjY5YWNjYzk0OGUyZWQzNzQwYTc4ZTU4NTYyZjJmNCJ9"
+        },
+        {
+          "resource": "repo://developer-docs/manager-architecture.md#L115-L123",
+          "version": "repo-lines-v1:sha256:ca112e467a6ab377a46e4f9bed3e50ec6d7842e5cd5646b1d93d48f6c3936142:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjZmNmJjOTQ5ODhkZDdiMzg1ZTk1NjdhZDdiNWI3Y2JkODNlMTIxODA3NGYyOGRmYTkwYWM3MzZjMDk2YmIzYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmUyMDEyNWZkZjUwZDQ2NjY5Mzk5OGJhNWUwYmQ4YTRkYzI4YzMxZTJlZWUyYzNkYTFkMjJlYjEwM2JmMDFiZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzA0NWNiNjk3YTBlNWMzYzFkZDdmNzVhMjc1NWEwODU5ZTM2NzdjNmFmYTJjNGRkODNhOTg1YzE2YzE5MDI0YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_f9fb99b873344806a9da370720897a76",
+      "statement": "Manager lifecycle phases occur in sequence: initialise (examine test class), youAreRequired (dependency resolution), provisionGenerate (resource planning), provisionBuild (resource creation), provisionStart (resource initialization), fillAnnotatedFields (inject into test), test execution support, provisionStop (graceful shutdown), and provisionDiscard (resource deletion)",
+      "evidence": [
+        {
+          "resource": "repo://developer-docs/manager-architecture.md#L52-L69",
+          "version": "repo-lines-v1:sha256:d2bd3d458d450cf16a0048bd2e0c5d710a3c20df8de01da5893985181f088f94:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUxZDE5MDAwNDhiYTg3ZDliNDVmNDExMTEwZWQ4OGE4NjI1NGI3Y2QxM2NjYzdmYWEwYTMzODYzYWFhZDVkNWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFiNGQ0ODc5YWZhOTFlNTkzNzdiZGYyYWE1ODY5YWZiMGE4ZmVjZjc2YmI3N2Y2NTc4YjA0MGEwMGY0MjA3ZjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEzNTM2OTMyMzUzOTI4N2QzYjBhM2RjMjU5ZjUxNmM5NTViZjhjMDkwNzQ1ZmZlZjEzYTEwMmFiM2RiOWE5NGUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_547c050c24ab47c48ca59f2c90c974fe",
+      "statement": "The Framework Core provides namespace-isolated access to configuration and dynamic status storage to prevent managers from interfering with each other's properties and state",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/spi/IFramework.java#L56-L108",
+          "version": "repo-lines-v1:sha256:07b3ceef7248f8db07714ee60c32264c9dde2caf454a0153c3c5025976e584ff:eyJzZWxlY3RlZExpbmVDb3VudCI6NTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY3ZjhiNjk2NDY3ZTBkOTA0NWQ3M2Y0OTE5MGM0OTJjOTRkYmM0MTg1MjhmOTMzMjAyYjdlZjRiOWQ4Y2I1MzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYyMWRkY2Q5NmRiMWEwNTJjZDA0YTE1ZTdmOGFjNDQ2OTc4NGIxZTRjMTYzMGNmOWI2N2QyOWY5YWJmMWEzNzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU3ZmUzMjVmY2RmZTRkZGVjMDc4YmQxYTczYTAzZjZjYzhkN2YzNTY2NjAwOTRiZjZkOTg4MDg3ZGFmMjI0ZmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg0MmRkM2M2NTNkOTQ5NmIzODU2YTZlNGI4ZGVlMTUyMjZlOWEzZDNmOTQxNzk2OWIzYmQ0YWQ3OTQ5OTVlZDEifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.2",
+    "at": "2026-09-21T12:35:12.771Z"
+  }
+}

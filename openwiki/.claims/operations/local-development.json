@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:bfd7522fbb1d00f9751c1b0804106bfb755feda9186427bd84189790576a6628",
+  "claims": [
+    {
+      "id": "claim_e857a843387d45b4870a2dcd4b150dc7",
+      "statement": "The `galasactl local init` command creates the GALASA_HOME directory structure and generates property file templates including bootstrap.properties, cps.properties, credentials.properties, dss.properties, overrides.properties, and galasactl.properties",
+      "evidence": [
+        {
+          "resource": "repo://docs/content/docs/cli-command-reference/initialising-home-folder.md#L40-L54",
+          "version": "repo-lines-v1:sha256:939e8e5d7abf5fc4ad68bea8a7ae7cda583c1cefe30082ccf88c12254df9ea8f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJiNzk1ZjAwZTE0MDVjMjE3ZGM0NWU1NWViMWE3NzhmNDQ4MjU1ZmE0YjA3MDc5MzRiMDhhNTBiNmU2ZTg3OTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YzA2YzU2MWQ1YzMyNzM0MzY4NTI2OGE0NmIzMzkxZjM5OThlZWU4OTBkMmJlNTFmMGQyMWNjNGE1M2FlNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZiNDNiMGU3ODBkOTZkMWJjNzU1YTIxMmIxMWYzM2ZkMThlYWM2ZTMyNGQyZmNhZGJjNWFkZTY1ZDNhZjdiMGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQzMzM5NWVjNjQ4YzAxMjZlNmMzZjJkNGMzMDZjYzcwMGI0MmNiOGQ4M2MxNDg2N2EzZjdjOWM3OWM0ODE5MzYifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/localInit.go#L68-L83",
+          "version": "repo-lines-v1:sha256:45d1280111ca58e112164048509df4775bbcf8aa84affbdc3d5d0d5c0ff4691c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjczZWJmZDRiNWRiZGM3NGFiNzdhMTkyN2FmOGFkMzhmMDA3YWUxNzM2ZjIxNTc2Nzc5MmMxNTdiYjU3NmUyOTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZjYjM0NDAwMmU5MmNiYzM4YzJkNDE2YjEwMjNjY2JiMzVlZDE1ZGJjZTVmMGMwYjg4MWM3MGI1YjRlMTcxNGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE3NWFjOGE4ZDFjNzg0NTBlMjM1ZmIwM2NhZjIxNTE0YzIwODllOWI4OWJjNDFjMmE5NTM1Nzk3NGI4YmI5M2EifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/utils/homeFolderCreator.go#L13-L51",
+          "version": "repo-lines-v1:sha256:cef578bb66219d7b0e56c7c44b60f8b9f27153db47e41e6573cbb9baf29ab0f9:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI0NjRmODZjYmVjOGQ5NDYyZjFjNzI2NjgxZDVlOGRmODQ5OTI3MzljODdlYmE5NGEyYzU2OWQ1MDE5MjIzNmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzY2IzMTUzNzEwNTEzNTA3ZTQzZmFmMGI2MTBkY2ZiYTExZWExZmI3YTEzZGE2ODU4NDE5ZjMxYzk0ZTRiZjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZhMTQ0NDI3Yjc4ZmJkMTIwNjI5ZGM5MjU1Njc3YzZkZDllZmY4NmUzYjcwMDQ0ODYxYTJhMmJjOGIwMmEzMTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b9d7d7d294134c06b6e22a3b2db46ca3",
+      "statement": "GALASA_HOME defaults to ${HOME}/.galasa and can be overridden using the GALASA_HOME environment variable or the --galasahome command-line flag, with the flag taking highest precedence",
+      "evidence": [
+        {
+          "resource": "repo://docs/content/docs/cli-command-reference/initialising-home-folder.md#L8-L33",
+          "version": "repo-lines-v1:sha256:5587e0bddb87d6a414350167fe8fca2dd373259bd90879d89196f962de2f8319:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI3MjI5YjZmOTMyODEyNDYyZDRhYTU3YTAwZTU3ODUyY2JkNGYyN2NhMTk2YzIyZmNhZjUzMzAxYjVlYmYzY2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZlY2U3MjE4MzgxMzlkMTFiZDJiN2MwOTAxNGRkMGZjZmRhZDFjYzlkY2U0Mjg0NGMzYmYwMmY4OTI5NGJkMTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ4NjAyODQzMDhlNjQxZDgzYmI3NDZjNDY2ODdkMzczYzFmY2I3NWY0N2FlZDcyNTBkMWI2NjJjMDkwNDRiZGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBkNTJhMzJkZTNmYzllMGZhNjNiNzFmODI3MTYwMmQwZmI5YTkzZDIzYzNhY2M4N2M2M2UzMjAwYTI1NmM5ZjIifQ"
+        },
+        {
+          "resource": "repo://modules/cli/README.md#L12-L21",
+          "version": "repo-lines-v1:sha256:fe11c315b87c8978ccd97b558ebf5a9f8202a964b523b7906097ad5f35681205:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNiYzRjYTZkNWM4NWUyY2ZmZDEwMGFiMGViMDRhZWEwMzhkYWM4ZTUxNWM5YTg2YWE5NjQ0NTBhMmJjMDM0NjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVhZDFhYmFkZWYzZjQ0ZDhiNDYwNzgyMzBmNGYzN2VmZGFiYTU1ZDNiY2E3N2IxMzViMjJkMGFmMWQ1MDVkODAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU2YTY4NWM0M2UwNDliY2JkYzU4MzNkZTc0MDI4MGE4MWVjODg4MWQxOGYxNWI2OGI0NjJiNTZhMDhjNDYxZGUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_46ff3ecf2f644e96b29935402286401f",
+      "statement": "The bootstrap.properties file configures framework boot sequence and storage backend locations using properties like framework.config.store, framework.dynamicstatus.store, framework.resultarchive.store, framework.credentials.store, and framework.auth.store",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/pkg/embedded/templates/galasahome/bootstrap.properties#L1-L47",
+          "version": "repo-lines-v1:sha256:0d3fb09d5ab2ad66935941324b174167924e259c40dd6c36853399708e772ca9:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjViNDdjNGEzNTI3YTRjODdmZTczZTM3MTliOWRjYjJhNWUyMDI3ODQwNjY0MzcxZWZkNDkzNWJjYTMzOWUzYTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMzNDM1OWI5MGVmZWQ3NWRhNWYwYWRhMWQ1ZTZiMjU2ZjRhNmJkMGFlZTdlYjM5YzBmOTAxODJhMDIxZmZjOGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://modules/framework/dev-instructions.md#L240-L247",
+          "version": "repo-lines-v1:sha256:fceba9751e0fee1fa41a4994b4a9a5849c5e74f21c8c57e0037d5e8b1b5c948a:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWFhM2M5MDRjOWZhMGZhODljOTllMTA0NTBkMWQ2M2NlZmY3OGNiYzJhNWYyMWY0ZGE0NGM2ODVkYjUyNTQxMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDdjMDZjNTYxZDVjMzI3MzQzNjg1MjY4YTQ2YjMzOTFmMzk5OGVlZTg5MGQyYmU1MWYwZDIxY2M0YTUzYWU2ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmEzY2Y1MTkyMzU0ZjcxNjE1YWM1MTAzNGIzZTk3YzIwZWRhOTk2NDNmY2FmNWJiZTZkNDFhZDU5YmQxMjE2NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDNmOGJiOGFhMzQxMjNkMWJjOTI5ZWFkNGQ2ZjhhYjY2ZjA3NDUwN2I4ZmFmMzEwMWJlOWMwM2Y1OWM2NDUyZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_adcb51e7dbb84affbfc638eee6c78a03",
+      "statement": "The cps.properties file contains configuration properties used by managers when running tests locally, using a namespace.prefix.suffix structure where uppercase letters represent variable placeholders",
+      "evidence": [
+        {
+          "resource": "repo://docs/content/docs/cli-command-reference/initialising-home-folder.md#L125-L131",
+          "version": "repo-lines-v1:sha256:1dc0eea3b4b98ac7c35fa34e2d00e178623800680007b66981a8a85e286f9ad9:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWYzZjZjNjZkMDdkYjBjZmRhZjI4M2JlNTEyYTBkNWRlN2UwMmRmZDU0ZmE1MmE2YWVkMWRhMjI0Mzc2Yzc0NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDY5YTA3NDI2NDk2NTRmYWNjNGRjMTUzMWFiN2EwY2ZiNGRlOTdhNzIxMmQyMTZlZGM3ZmIwM2JmODAxMGVmMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjQ1ZThlOWY3YjU5MzcyZTNmNjE2Njg1MTY5Y2QxY2M0NTFjNmVjOTVjOTg3MDA5ZmUyZDU5YTUyMjY4ZWQ0NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTU3MDEwMzVmZjIwYzA1NGQzYTk3ZmM4OTFjNDhiNmJjOGQwMDlmZjVhYjk4ZjI4ZDY1NDEyNWFlZmJkNGJkNyJ9"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/embedded/templates/galasahome/cps.properties#L1-L82",
+          "version": "repo-lines-v1:sha256:4143f368dc7dc66ca1a27b6df6190f6fe8da9e88fda7165553cd826ffd1c3727:eyJzZWxlY3RlZExpbmVDb3VudCI6ODIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjViNDdjNGEzNTI3YTRjODdmZTczZTM3MTliOWRjYjJhNWUyMDI3ODQwNjY0MzcxZWZkNDkzNWJjYTMzOWUzYTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNiMTMwMzUzMDdkYjUzYjAyODhhN2RlYmQ1NWM0ZmE4ODdkODEzNTA3MjNiMDI2YzI0MTNiNjgwZmViNmI2MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_aea36b0666894c97a60b82c89fa43fda",
+      "statement": "The overrides.properties file provides test-specific property overrides that take precedence over CPS values during property lookup",
+      "evidence": [
+        {
+          "resource": "repo://docs/content/docs/cli-command-reference/initialising-home-folder.md#L133-L133",
+          "version": "repo-lines-v1:sha256:82afa45e9f765f43c6bca2fbcb35e36b9f697813c1d9b0524b24e466f865af3a:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODJhZmE0NWU5Zjc2NWY0M2M2YmNhMmZiY2IzNWUzNmI5ZjY5NzgxM2MxZDliMDUyNGIyNGU0NjZmODY1YWYzYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODJhZmE0NWU5Zjc2NWY0M2M2YmNhMmZiY2IzNWUzNmI5ZjY5NzgxM2MxZDliMDUyNGIyNGU0NjZmODY1YWYzYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjExZmU1ZTRlYmU5MzQ3ZDFkNjg5NjRmMzBiODE2ZTQ3NGFmM2FiMzNjY2YxNjlhNzJkNTAyNzRlZDY4ZmVhMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjE0N2IwN2JkNDE3NThkZjY3ZmU5OWNmYzk2NzMxYWNkZTZiY2U4ZjQzNDFlMWI2ZTY2YmZiMzhjMDUyY2NhYyJ9"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/embedded/templates/galasahome/overrides.properties#L1-L34",
+          "version": "repo-lines-v1:sha256:888271232be488b33ae87a4699bf988bc8078ea14c030ccc6285eb95e8dcd7a3:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMyYzQ4NThlMjJjYzJjOTY3YjQyMTUwZmE1NTA1NjJhMmM4MzljMmNlYmNhYWI5MWNhYmRmNmY0ZGEwMjAwMjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyMTczNWJkNzI1ZDE5ZTc4ODBhY2M1YTM0Zjk0NDZiZjZhOGU4YzEzNjFkOTQwOTFiZGFkZjEwODBmYWNjYmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5c4b896b9e184f6ca917106b401af406",
+      "statement": "The dss.properties file tracks dynamic resource state and allocation, and can be safely deleted when no tests are running to reset resource counters and test run numbers",
+      "evidence": [
+        {
+          "resource": "repo://docs/content/docs/cli-command-reference/initialising-home-folder.md#L132-L132",
+          "version": "repo-lines-v1:sha256:94411370e15186b4f4db02cf2b670f8c26bb71492160804c27244921fad0594a:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTQ0MTEzNzBlMTUxODZiNGY0ZGIwMmNmMmI2NzBmOGMyNmJiNzE0OTIxNjA4MDRjMjcyNDQ5MjFmYWQwNTk0YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTQ0MTEzNzBlMTUxODZiNGY0ZGIwMmNmMmI2NzBmOGMyNmJiNzE0OTIxNjA4MDRjMjcyNDQ5MjFmYWQwNTk0YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjFiNTc0MmI3NmEyZGViNTc5YmEyNDg2MjA5Nzk0YmY0ZDU3YzE2M2E0MzJhMTBiZWZjODQ3NDQwNjM0NjIxMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDFhODY2ZGYxNjAyOWRmYjA4OWNjNDVlNDMxZTVhN2RlYjJiM2Q1ODIyZWYyYTU4YTEwOTFiYWM2OTBjY2M1NyJ9"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/embedded/templates/galasahome/dss.properties#L1-L8",
+          "version": "repo-lines-v1:sha256:3af945f30c8a073155b10b85221ed53c051e0a4210fff0ad5af3d34e79c25af3:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzJjNDg1OGUyMmNjMmM5NjdiNDIxNTBmYTU1MDU2MmEyYzgzOWMyY2ViY2FhYjkxY2FiZGY2ZjRkYTAyMDAyMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzM0MzU5YjkwZWZlZDc1ZGE1ZjBhZGExZDVlNmIyNTZmNGE2YmQwYWVlN2ViMzljMGY5MDE4MmEwMjFmZmM4YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_fad797738fa5446fa2e209138dca96ce",
+      "statement": "The credentials.properties file stores test credentials with properties that must start with 'secure.credentials.' and end with '.username', '.password', or '.token'",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/pkg/embedded/templates/galasahome/credentials.properties#L1-L15",
+          "version": "repo-lines-v1:sha256:0aef00a8fd5514baf22b960d8cca9c691f0292d80e380dc35f4910e4b9a53960:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMyYzQ4NThlMjJjYzJjOTY3YjQyMTUwZmE1NTA1NjJhMmM4MzljMmNlYmNhYWI5MWNhYmRmNmY0ZGEwMjAwMjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBmY2ZlZTc0NDg0OTRhMDIxNjk3ZDgxMTBhYjQ1ZDJjYzI1OGFiY2ZkYzhiYjVhMTc0MmY3OWYzM2E3NzA0YTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_af14224d4981406b9f382161a7ffe6cb",
+      "statement": "The framework locates the Configuration Property Store using framework.config.store from bootstrap properties, or defaults to file://${GALASA_HOME}/cps.properties if not specified",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/FrameworkInitialisation.java#L443-L465",
+          "version": "repo-lines-v1:sha256:dcf6facbc9d93bfdabeed9dd248258143579f78723247a096da8b99cc9dcd013:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNmOTJhM2JkY2ZmOWViOThjZDdmY2RhYmJiMjRhMTg1MGM1MTg1MTNmMTlkMzUwOTU2YTUwMDQ0YTJjZDg4MjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEyNjQyNWFkN2UyYzIwMzhhMzUwNGM5NmZlMDFkYjM3ZTUzNTczYzg3MWJhY2Q5OWJkZGVjMDNiYzk2NzM5ZDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVmODZmY2YxY2ZiOTViNzQyOTk2MWFkN2E2YTc0ZmVmMzY3NTRmOWU5ZWNhZDFjYjAyZTk3NGI4NmU0Y2Q4NmQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5b48eb8ea581488f8c98332c55305022",
+      "statement": "The framework locates the Dynamic Status Store using framework.dynamicstatus.store from bootstrap properties or CPS, or defaults to ${GALASA_HOME}/dss.properties if not specified",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/FrameworkInitialisation.java#L470-L505",
+          "version": "repo-lines-v1:sha256:f2861e8432dc7dc253a8e96d81e2161e6f78133227404d8b0f98a62d91bfee9c:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIzNzg2NGEyZTQzYjM1NjNkNmVjNjY3NjdlMmYzMWRhNzdlNjJhMjM5OWMyZmY0OWJlOGI3ZGZlNDIwNzNhY2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI2MzAxY2JjODIxNmRiZDMxN2QyNDdjMzI2ZGVlNTJkYTlkMzg5NWU5Y2FiOTQwNjUxNDE1MTNjODIxYmVhMTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZhM2NmNTE5MjM1NGY3MTYxNWFjNTEwMzRiM2U5N2MyMGVkYTk5NjQzZmNhZjViYmU2ZDQxYWQ1OWJkMTIxNjcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3de05191e3af49758ea4fbeb90032661",
+      "statement": "The framework creates Result Archive Store URIs from framework.resultarchive.store property, or defaults to ${GALASA_HOME}/ras if not specified, with support for multiple RAS locations",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/FrameworkInitialisation.java#L528-L577",
+          "version": "repo-lines-v1:sha256:6e29980ea48cf6a4b5c8203cfca068a4c330f55e5fcf5c56262954e5854ee276:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUwZWVjNDFkYTk2NTkzNjIxMjVmZmQxNWVhNWU5NTczYzBhMjM0ZmIxNTM0MTI3ODBhOTlhMjVjZjRiNmQyYzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRhNmE4ZTdlYWM1Nzc3NDg0OGNhNGUyMGU3NDBkM2RjMDM5YzJiYjJlYzQzNWEyMmY4YjMxNjJlMzY4ZTdlMmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMzYWRmYTNiM2FiNjUwZTNjZmRjMDE5NmNkZTQyM2IyYzk1N2UyMWI3MWZkNjQzOGMxY2MyMWE1NmRjMzY2ZmEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7b582191715942828d3d4f83dc09a0ec",
+      "statement": "The framework locates the Credentials Store using framework.credentials.store from bootstrap properties or CPS, or defaults to ${GALASA_HOME}/credentials.properties if not specified",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/FrameworkInitialisation.java#L588-L621",
+          "version": "repo-lines-v1:sha256:d71023e854429f5f28598e067d1720150523984e424e7642a2cbabbb4d41aafd:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQwYWQ3NmRiM2E1MTM3ZWY1ODNhZGNmMzNkZTRhNWYyNTc5ZjE5M2NhMTk4OWUwMTgzOWJmNDU2YzRmNDJlMGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRhNmE4ZTdlYWM1Nzc3NDg0OGNhNGUyMGU3NDBkM2RjMDM5YzJiYjJlYzQzNWEyMmY4YjMxNjJlMzY4ZTdlMmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZkNGRmMGVhZWJhNjQ2ZWFiZGMyYjQxMDA3MTYwY2RlZTI1ZjRkN2VhOTNhMjY3NzhlZDE3YjNlM2I3ODBiMzcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b009aba96e09499db2a9a2a6189010e0",
+      "statement": "Local test runs are stored in ${GALASA_HOME}/ras/ with directories named using the prefix 'L' by default (e.g., L1, L2), controlled by framework.request.type.LOCAL.prefix property",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/pkg/embedded/templates/galasahome/bootstrap.properties#L44-L46",
+          "version": "repo-lines-v1:sha256:31c7b48d7dd127be377ce2a013d64ebad90deff9eb139bd4f41184577fb97e38:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2NjODI1OTlkOWIxYmYzYTk1NGEzMWU2OGI1ZWI2MmRjMjkzYjA1OWM3YjY1MDVlYzJlMzUwMjNjMzk2NTdkYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmFjYjJmNzg4Y2Y5MTRlOTYzZTlhYjcwZTE5Y2RkZmMyNzU4NDRlNTQ1MzM0ZmI3OWUzOTZlMmFmYzdkYzA0NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGVhYTdjMjMwNjBiMzgxMzZhMDc0YTEwNDdmM2Y5MTZjYjM0ZmExNWZlNTdhMjczM2U4MWZiNjU1ZGU0ZTM4ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzM0MzU5YjkwZWZlZDc1ZGE1ZjBhZGExZDVlNmIyNTZmNGE2YmQwYWVlN2ViMzljMGY5MDE4MmEwMjFmZmM4YiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_7e018b1d41d14908a8e262adbe35ddf4",
+      "statement": "The galasactl local init command with --development flag configures bleeding-edge Galasa repositories in Maven settings for accessing the latest development builds",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L37-L43",
+          "version": "repo-lines-v1:sha256:c921e5118e9328b06e39f7c0af0ae08ed71ac68418832892bd85549468bbbd98:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDZlMDRhZWMzYjQwOTU1MmU1M2E3YzFmODM1MTE3MzUxN2FhNGMzZTAwZmIxYTBkZjIyYWFhNWQ1NzhjMTgzZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzA5YmE0MmI1MzRhNWJmYzBhYjMyMDliZTY3ZjZjZDdkNTI3YWU0YTUzMzEwNGI1NzJjMzdjYzNlZjhlNjkwMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODFlMTFjN2Q2OTc4OGNiMTRlOTU4N2Q3OWM2ZWEyMjUyZGMwOTRhNjMyYzliMTAxMmI4MzNhNTQzNGJmZmY0NCJ9"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/localInit.go#L78-L78",
+          "version": "repo-lines-v1:sha256:18eb5ae49954eee5eaa9d9f94194f415f847b84437fd2d7f9141ca81c9af7050:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMThlYjVhZTQ5OTU0ZWVlNWVhYTlkOWY5NDE5NGY0MTVmODQ3Yjg0NDM3ZmQyZDdmOTE0MWNhODFjOWFmNzA1MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMThlYjVhZTQ5OTU0ZWVlNWVhYTlkOWY5NDE5NGY0MTVmODQ3Yjg0NDM3ZmQyZDdmOTE0MWNhODFjOWFmNzA1MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWEzZTEwYjZkNTE3NGExMDUzMGE0Mjc5OTVhYzg3YjVmZDJiMGIxYjhjZmIyMDQ4NTBlN2IyNjc0Yzk1MmMyMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjFkZDk2MDI0ODlkZmEzYjRjNGI4ODFjY2NhMjM4ZGNiODVkNjk3MjM0NjVmNjQ2OGI0MmI5MGZkMjBmODFiYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_e65f0d03ab44452aaec6a2c187513a5b",
+      "statement": "Local test execution uses galasactl runs submit local command with required flags --obr for bundle repository and --class for test class in format bundle-id/fully-qualified-class-name",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L360-L399",
+          "version": "repo-lines-v1:sha256:d812f5d6e5c9053b695a90e29e68ba3627205d3044bb35ac25224ac34b5af780:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJiZGZkY2M1YjUyMTQ2MzM0MzkzMzY0ZDBkMjEzMzU0ZjMyZjUzMjJjNGQ5NjFlOTI4OWY3MGE0YWExZDE3MzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNjZGQ0MmM1YTA1ZmY5MGUxMjk3M2JhMTE1YzNjMmMyNzdmYTNkNmNiOTk3NjBlODZhMzM4ZDU2YjMwOGUwYTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI2ZmNhOGYzODQzNjkzNzI5YWRmYmE1NWYyNDg5OGRjNzNlOGFlOGQ2ODc5ZjUyNWQ1ODVmMDA3MjdhZTQxYTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJiNzBlZDY5NTk3NmIwZWU3MTgzNjFlZTMwMjE2NWFhMTRmMjMwY2NiODJlZDZkNjk5NTUyMDIyNzdhOGVmZjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6c780a655c8b43e794544106e4f9dcb8",
+      "statement": "Debug mode is enabled with --debug flag on runs submit local command, using default port 2970 and listen mode, configurable via galasactl.jvm.local.launch.debug.port and galasactl.jvm.local.launch.debug.mode properties in bootstrap.properties",
+      "evidence": [
+        {
+          "resource": "repo://docs/content/docs/cli-command-reference/runs-local-debug.md#L10-L30",
+          "version": "repo-lines-v1:sha256:aca86fd997a89e469fb75f107bceda48d1ba7de3a5b30903510df6d3acc7892e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM3M2MxNjE3NDFlNGM1ZTNkNjY0ZDVlYzFmOGRiNjgzN2I1ODIzY2U5ZjEyNGYwZjZlZTYzYjYwNTA0OGZiYzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdhYzdmODE0NGM1MWI4NWEzZjMwMzgwOGE0OGFiYTJjODVhOGYyOGUwZmZiMGZlNjdlMmVkYzM2OWI1MGU4ZWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRmOWVmZDY0OThmMWYyZWRlMDlhZmI5NDg2MWY4ZjZiOTQxODVhODAzNmQ0NmFhNDQ1Y2ViMGE3NGViNDNjZWQifQ"
+        },
+        {
+          "resource": "repo://modules/cli/README.md#L421-L445",
+          "version": "repo-lines-v1:sha256:0a6611ce42153e50a241e465c1b7c8bbab306a81c03c5b6f89a24dc80c7119d0:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMzNDQ3MTNjNTc3MjU3YWFmNDllZDFjNjU0YzMxMWQyODUyNmE2YjY3NjMxMzY1N2Q3YzJlNzQ3YzBhZWZkMTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY3YmIwZmU4NDBjY2VhZGM3MTA0NGRkODJjZmI3NWU1ZDQ1OTg0MWJkM2ZhNDBhOGI3M2RlNDQwZjkzNmVkMDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZlNmUzZjU1YmZiMjIyOGNkYzg1NWI2YmEzYjU2MjhhZTgwMDFmYWU1YjVjNmE5NDAxOGFkNzM0MWFhZjJhYWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJiZDhlYjAwYTRiNmViMmYwNGQ4OThjNDY3YTY4M2EwMjZkMjY4ZWZhZjNjOTJiZTU1OWVjOWJjMmJlODUzMTgifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/embedded/templates/galasahome/bootstrap.properties#L29-L41",
+          "version": "repo-lines-v1:sha256:14bb8d8ed6fc74bf6d4626ea1097de34118e7a2240f3871b4440f1d3417bc485:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZlYjdhNjEzNDMzNTY2MWJhYmZjMjAwNTNkMzY2N2NmNzQyZmRkNTQ3NmE2NGZiMTNlNmM1ZTBiMjA2N2RlMzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ3ZjU1ODNjOWMyZTc1MmEzNmJmMTRiNjdiZjc4YjU1M2ZjNjVkNDNiYzI5MTc2MGM5ZTFmZjA1Y2VjMzFkOGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYwNDM0ODQ1MzcxNzAwYTI0ZTdiMzM3MzYxZWQyNDIzMGJmODgzNGNmNTM4ZTY3YWI5NzE2YWNkZmRkZTY2MjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjExYWE2ZGFjN2IwY2JhMTBlMzBiODJiY2QzMTE3MmQ4ZWM2NmRkNTU1MmY0YTc4ZjE5NDg0YjA0ZjNkNThkYWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_82e85f7ee83b49de888f48d95c5f256c",
+      "statement": "GALASA_BOOTSTRAP environment variable specifies the bootstrap configuration file or URL and can be overridden by the --bootstrap command-line flag",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L9-L10",
+          "version": "repo-lines-v1:sha256:f9dd56af39e00c94ba7871d8e953243a5acf69a794b006e7b6209d87149aa6f5:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTdlYmFkMTQwMjYzYWZmZDU1MzE4MDlhYTllNjM1NDIxNWFjN2EzNzkyMDQ2MjgxM2JlYjMwZGFlZjc5NWIyZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWU5MDQyYTBmNDBiYmRjYTZiYjRmNDVjY2FlOTM4NzA1ZDAyODNmNTFjNWFlMjljYjc0NzVhMDExNWEwMzljNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWFmMzE1NDQ3NzNiODhkZjk2NzNhYzc4YTM4NjA0ZjFhMzYzNDg4OWM0N2U3YWM0MjcwZWM1MzBkMWIwYjM0YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTlmNTk2ZTc3YzBkYmU4NGMyMzc5ZWY4MzIwZDk3NWM2NWJhNmZjMTI0NmY2YzM1NTM0MjNlZjg2MjQxYmRiNSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_46314776e1f9480c8bdccdbc18b7da88",
+      "statement": "GALASA_TOKEN environment variable or galasactl.properties file stores personal access token for authenticating with Galasa ecosystems",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L22-L26",
+          "version": "repo-lines-v1:sha256:bcc4cf946d2d50fa2bdff5640de39f4ed67259de28111cd9168ad10b27534243:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzJmOGE2ODczYmEyNDQ5OGE0NDliMDZkOWM1OGU5MTY4ZDYwYjA4OTU2ZmY2OTYwOWJmMjA3MWRjZWJhZTMzNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2M3NzhhN2E4NDM5YmI0Zjg0NjcxNDIwM2YyYmU1MGE4NDc3MjU0MDdlZGEwZDU3ODU4MDA3MmI4NWNiNjY4ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmY2OWMzMjIxOTk2ZDllYzc5NzA5MzZhZmFiNzViNTlmYjkxYTJiZDRjODQyMjA0MGRhY2ZjMzE1YzM5ODRjYyJ9"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/embedded/templates/galasahome/galasactl.properties#L1-L7",
+          "version": "repo-lines-v1:sha256:7f98d19e9c6723cfa9fcd891f1f857de03a43d1414560effc171cbb82c48d753:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzdjZWI0NmFhMDFmZTdjNTM5OWNlZWQzYjc1ZjYzY2I3YWVhZGNmNDU4ZjJmNGIwMDY4OTk0NmMwMTJjOTUyNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmY1MDI0MTgwMDRjYTg1MWQyNjg1OThjMDVkZGMzYzAxYzYzODBlMTZiMmMyYTcwNGQ1MmRlMGRiNjU4MTI2OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_2005c943c9f248c3a05b4940787b5eda",
+      "statement": "Environment variables can override bootstrap properties for store locations including GALASA_CONFIG_STORE for Configuration Property Store location",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/Launcher.java#L743-L743",
+          "version": "repo-lines-v1:sha256:927ce13948a308f18218aaed0a2c11f8a47e534aecbaf59230f20648d28c3811:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTI3Y2UxMzk0OGEzMDhmMTgyMThhYWVkMGEyYzExZjhhNDdlNTM0YWVjYmFmNTkyMzBmMjA2NDhkMjhjMzgxMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTI3Y2UxMzk0OGEzMDhmMTgyMThhYWVkMGEyYzExZjhhNDdlNTM0YWVjYmFmNTkyMzBmMjA2NDhkMjhjMzgxMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2NjYWRkZGFhYjMwYWMwM2ViZjc0NjgyOGIwMjQwN2Q4ODA0YjNlZTQ2NWI5Mjg5NDcwZmNiODczMzBhOTE5NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjhiNTBiNjY4MDI0ZmM5NWM4ZDNiNjkyYjQxMTllNTNiMmVjYzZkMjdhNzRiZDAzZjA0MTE1ZWIxZmU2MWFmOCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_98ebc48a85bb460ebe68b81ae606572c",
+      "statement": "The framework.extra.bundles property in bootstrap.properties specifies comma-separated list of extra OSGi bundles to load for storage backend implementations like dev.galasa.ras.couchdb and dev.galasa.cps.etcd",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/dev-instructions.md#L245-L246",
+          "version": "repo-lines-v1:sha256:d9201cb65acc3e6f56f9e4777b9f17e0368fc8b1139bdeadd927a8e2020a12a3:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWVjMTA2ZDM5ZTA4NzFkZmY3OWNmNzBmOWJlOTJhYjNhMDhlYzk2MGU0Nzc0YjRkZjhlY2FmYTdhNjZlNWFkNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODk2ZGI0ZTY3OWM1NTk2ZTc5NTI4MThmZDFhOGRkODQ0ZjQ3NGU1MTRiOTk1YjdmYTIyN2IwMzdhMjAxOTA3NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTgzYzU0MjJiMGI3MTQwNDQ3MDk3MjdjZGU4MjA2ZWUzMDI2OGMzYzJmM2FiYjUxYWViOGYwMGVjZDFlMmI0NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTI4ODE5OTdkNjZjN2I4YjBhOGI4MzZlYTZkYTI0NDcyNzdhOTNhNWQyYjFjYzY0MDg5MGRlZmI2ZjUxZmMzMSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_553318fb227347cabff2952164fd6964",
+      "statement": "VSCode Java debugging uses launch.json configuration with type 'java', request 'attach', and port matching the test debug port to connect to Galasa tests in debug mode",
+      "evidence": [
+        {
+          "resource": "repo://docs/content/docs/cli-command-reference/runs-local-debug.md#L50-L86",
+          "version": "repo-lines-v1:sha256:f563e560ebf01230746cb3e52929001f07a186f2fcca75b807b6835104a5cbd9:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc4NDY2ZDQ4MWU2NmIzN2Q2NjVjNWZjMDQ2ZGJkYjlkOGU2MGMyYTIxZTMxMDEwNWE2YTI4NGIwNDBjMjAxOGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJmZjZhNTI0MGQxYWQwZjZhOWY4MWViNzc2YmZmMzc4YjBkODVkNjFlMzAwNjI0MWRiMDg0NGU2Y2Y5NmQ4NzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM3ZWM4ZTZiZTRhYmE1NTE0MmQ3NzhmZDYwYmQxNmU5NWQ2ZTg5M2MyNTljYjE4OTNmZDhiZGU0MDRmNTUxNDQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2a63210a2db64d4aa54f50ff3012891e",
+      "statement": "Recommended VSCode settings for Galasa development disable null analysis, disable automatic build configuration updates, allow debugging on build failures, and configure Java Language Server VM arguments for performance",
+      "evidence": [
+        {
+          "resource": "repo://.vscode/settings.json#L1-L6",
+          "version": "repo-lines-v1:sha256:ca89c41a7ba4188d2eec5665e437b0556368f057cc1aec3793e7bf9bdd0e3b2d:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTZmYjA4ZmRhMWFjYjk1N2I2MTE2YmQzNzgxMWExZmU0MWEwMTYxMWMwNjMxZWRiZjc4NmQ2ODg5YTI3YTU1YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDEwYjM2YWE3NGE1OWJjZjRhODgxODU4MzdmNjU4YWZhZjM2NDZlZmYyYmIxNmMzOTI4ZDBlOTMzNWU5NDVkMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_1aa4d3ecb0b841ad8c8e6b52d62eb329",
+      "statement": "External storage backends like etcd for CPS/DSS and CouchDB for RAS/auth store can be run in Docker for local API server testing, requiring corresponding framework.extra.bundles configuration",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/dev-instructions.md#L196-L247",
+          "version": "repo-lines-v1:sha256:33c0c96db0dbf498765dd8f825e630110d7c8cda021aea922e71c6108bc8bb9e:eyJzZWxlY3RlZExpbmVDb3VudCI6NTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMDNmZTFlYTcyM2Y4OGNiNDlkYTI1ZTk3NTllYTQ5M2M2M2M3Y2E2MWExNzJkZjVkZGE2NWJlMzA2NjMyYmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YzA2YzU2MWQ1YzMyNzM0MzY4NTI2OGE0NmIzMzkxZjM5OThlZWU4OTBkMmJlNTFmMGQyMWNjNGE1M2FlNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFkYzliMTJkZThiMWNjMGEzY2I2NTJkZDM5ODY1MjBhMDZhZjlkOTlmNGRlNDU2MDNiMTdmMTdhODUxYTMyOTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQzZjhiYjhhYTM0MTIzZDFiYzkyOWVhZDRkNmY4YWI2NmYwNzQ1MDdiOGZhZjMxMDFiZTljMDNmNTljNjQ1MmUifQ"
+        },
+        {
+          "resource": "repo://modules/framework/test-api-locally.md#L30-L91",
+          "version": "repo-lines-v1:sha256:0b1ac3381df2b244dd7d7b6d76ed9699ecf16607e12a3703f2633d1c7bbb5083:eyJzZWxlY3RlZExpbmVDb3VudCI6NjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcxNjI5NWJlNTkzYjEwN2UzMWIyMzlhOTcxNjE5N2NlOTJjMTYyYjQxNDFiYTk5YjM5MGUwZTcyMjFiOGVjZmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM5OGE4OTkxN2NhNmFhNzA3NGM1MzRmNDU5NzNkNTYxMjFkNzQ3NmFkZDQ1YTA0ZTU2ZmUwNjMxYjEwYmY2MDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM4Nzk5MjliNGY1Yzk1NTdlNzRiMWNlYjViY2Y0Y2MzZjgyZjMwMWE2NDkzNjU1NWRjMGNkY2JjODkwNDY4NjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3e68142fac8949cea0d4397d52ef93e5",
+      "statement": "The galasactl local init command also creates ~/.m2/settings.xml for Maven configuration if it doesn't already exist, containing Galasa plugin groups and repository configurations",
+      "evidence": [
+        {
+          "resource": "repo://docs/content/docs/cli-command-reference/initialising-home-folder.md#L58-L119",
+          "version": "repo-lines-v1:sha256:0353ba0db4053b7ac2e214003853e77405c64e3a95d565cf9708034c91446bcd:eyJzZWxlY3RlZExpbmVDb3VudCI6NjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdhMWM2MzQyOTU0MzkzYjM5NzNhZTA2YzFmMTY4NmI0ODUzMjM4YTAzMzk0ZmU0YmZhOWIzMTI2NzljNzMxNDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2NjY1ODNhOGE1NzQ0ZjhkYWRlNDVjM2VlMWM3MmRlNDlhOGIzYTUwMmRiYTBiOWZkNDllOTU0MzRhNjQ2ZjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQzMzM5NWVjNjQ4YzAxMjZlNmMzZjJkNGMzMDZjYzcwMGI0MmNiOGQ4M2MxNDg2N2EzZjdjOWM3OWM0ODE5MzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE5NmQ4OTYzMGMxZDNhOGY4ODg0OWZjODUyOTg2NDY2ZjViNDliZmU3N2M1Yzc4YTNlZjc4ZWVkYTEyNjIyYzcifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/localInit.go#L116-L116",
+          "version": "repo-lines-v1:sha256:b09170a0e1dbefb25d2b6467f9ef29d1fe3347563593dbf5c0e914aa644b6079:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjA5MTcwYTBlMWRiZWZiMjVkMmI2NDY3ZjllZjI5ZDFmZTMzNDc1NjM1OTNkYmY1YzBlOTE0YWE2NDRiNjA3OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjA5MTcwYTBlMWRiZWZiMjVkMmI2NDY3ZjllZjI5ZDFmZTMzNDc1NjM1OTNkYmY1YzBlOTE0YWE2NDRiNjA3OSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjgxMjFiZDFhMWI3ZmI4MTRjODgzZjE0NDE1MTkzOTIwM2RhOWRlMTdiOTViMjM2NTViMzczODg0ODIzMTQ5MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjIyYzQ3ZDNiY2M4YWUxNGYzZjVjZDE5ZDIwZGIyOGY3YmNhYTJlZjE4ZTY3N2Q3Y2I2NmNiZWI3N2RhY2Q0NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_f8c7bfe288df463aab6d04c2e3364efc",
+      "statement": "Local test run directories in ${GALASA_HOME}/ras/ contain run.log for execution logs, structure.json for test metadata, artifacts.json for artifact index, and artifacts/ directory for test-generated files",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/temp/home/ras/L1/artifacts.json",
+          "version": "repo-file-v1:sha256:497bd3abcd24fab660fe20de7618e38ab1278eb962103a4e6e8422da4b1013eb"
+        },
+        {
+          "resource": "repo://modules/cli/temp/home/ras/L1/run.log",
+          "version": "repo-file-v1:sha256:4cd5823c31b12a73bf804cbed3127122cd6e9a78429ef5e71b1cda302fa94ded"
+        },
+        {
+          "resource": "repo://modules/cli/temp/home/ras/L1/structure.json",
+          "version": "repo-file-v1:sha256:c52c819bd33609a9d26129f689b658dc3f50733b2e2e879ae5373f2348f83e79"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.2",
+    "at": "2026-09-21T12:35:12.771Z"
+  }
+}

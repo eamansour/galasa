@@ -1,0 +1,286 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:184df2b2c8fddab5f7b51ea789add336b89c8ff4fa6ce279ed7ffa00dc0614fb",
+  "claims": [
+    {
+      "id": "claim_58fe9778cf0947f089d2a23df753fc88",
+      "statement": "Galasa uses Apache Felix as its OSGi framework implementation to load, manage, and isolate bundles at runtime",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/Launcher.java#L32-L32",
+          "version": "repo-lines-v1:sha256:3125477d595ea5464ad10d537c477595aeddc3aea314df9e007b55bf6a61c04f:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzEyNTQ3N2Q1OTVlYTU0NjRhZDEwZDUzN2M0Nzc1OTVhZWRkYzNhZWEzMTRkZjllMDA3YjU1YmY2YTYxYzA0ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzEyNTQ3N2Q1OTVlYTU0NjRhZDEwZDUzN2M0Nzc1OTVhZWRkYzNhZWEzMTRkZjllMDA3YjU1YmY2YTYxYzA0ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTFhNDNhMDYxZWUwNWQ1YzdkNjhlNzFkNTM2ZWZlYzkzNWQ0M2MzNzM5NDRmYTliOWM3MWQ1YTU2ZTZmMmI3MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDdjNDk5NGE4Y2E5ZThiOGNhMjA3NmQ4ZjI2YTFkM2QyODc0MjRhNzBlYzE0NTNhMmVjYWFlYWRhNjdjMzZlZCJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/Launcher.java#L41-L41",
+          "version": "repo-lines-v1:sha256:1f88bddd1934caace0b9588186b58f96f3109d86b568b21bd70a05a07ff33da9:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWY4OGJkZGQxOTM0Y2FhY2UwYjk1ODgxODZiNThmOTZmMzEwOWQ4NmI1NjhiMjFiZDcwYTA1YTA3ZmYzM2RhOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWY4OGJkZGQxOTM0Y2FhY2UwYjk1ODgxODZiNThmOTZmMzEwOWQ4NmI1NjhiMjFiZDcwYTA1YTA3ZmYzM2RhOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGQyYjc5MzgzMjhjMWNmN2RkMjc3MjJiOTE2OTI2YzE5YTI5N2Y0ZjVmNTJiZDI2Zjk3OWE3ZjRjOWZkYjViZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmUwZTI0ODZmNjQyMmJhMGVkZGRlMDViMzVkMzdjMGU5NTYyNmEyZmYzYWUxYmIwNTA5YzQwMmVjNDc3NTVmYiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a79c6b6a163d4451bf691918911ae758",
+      "statement": "OSGi bundles are JAR files with enhanced MANIFEST.MF metadata that declares Bundle-SymbolicName, Bundle-Version, Export-Package, and Import-Package",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/bnd.bnd#L1-L17",
+          "version": "repo-lines-v1:sha256:3e74b92fd8a89b10c8c9bbd073df39c111e57a36e4a025fd660b35322b5a1a65:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2MjEzM2U2MjZkY2UxMmVkM2I2ZWU4NzM5ZWQ5ODQwOWVkZTBjNWU2OGUzODRkYmY4YWMxOWEwM2MwZWM2NjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQwYjY4OWUwYWUxZTMzMmQ0ZGQ5YTg5MGE1M2RkMzkzOTU5ZDhhZjE3NzJhZTQ4NWNkM2MzYTU5NzUwYmUzNmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa/bnd.bnd#L1-L4",
+          "version": "repo-lines-v1:sha256:c92566c6bf022bfac2b19ad5bd5bf6397942712bf9a2fa4a0e6b433a7cbe5d74:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzYyMTMzZTYyNmRjZTEyZWQzYjZlZTg3MzllZDk4NDA5ZWRlMGM1ZTY4ZTM4NGRiZjhhYzE5YTAzYzBlYzY2NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjY3YzhjYzAyNDhkODlkMTFmMWJiNDJlYmU0NDQ3MmJjYzY4MGEwMzM5OTE1OGFlNTNlMDVhMDJkODlmZDcwNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_f273926ac918426fba06f5e860ff49d5",
+      "statement": "Galasa projects use BND tool configuration files (bnd.bnd) to generate OSGi manifest metadata rather than manually editing MANIFEST.MF",
+      "evidence": [
+        {
+          "resource": "repo://docs/content/docs/cli-command-reference/setting-up-galasa-project.md#L178-L193",
+          "version": "repo-lines-v1:sha256:b4535fc07a1729f97b1812003277b9e5a4fa82307c3d9eb5d31e22be77fc5e90:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNmMGQ3OGI1YTdjODM1MjBmNmYzNzJlOWYyMzBiYjVhZjhjNWZmNDNhZDQ5MzJmYzdjOGNhZTRjOThjZDViNjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYwMDJmOWQwNGJjODcxOGI0NjRhNjdhZDViYTUwNDJkYmEzNWFiNTUxODkwZDQyMDM4ZWU3NDA1YTZjNGYxYWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIzZmZmOTFkYmYxYzU2MWQxZmU4MTFiZjE1MDM1NWQ1ZjM4ZWJlOGFjN2YxNzRkZTE1NzZjODU5ZjI0YmU1NjIifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/embedded/templates/projectCreate/parent-project/manager-project/bnd.bnd#L1-L7",
+          "version": "repo-lines-v1:sha256:e149faeb5bd6fedb720766b0f41a587cf3930dd84702b7d584a9034d0e6b1425:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTc2OTIyOGIxYjc3ODEwOWJmZTgzMWZlOWIxZjc2OWJhMDNjZDFiOTNhYTdiOTRmNzVmZTlhOTk5MTIxNTA0ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjUwZTQ3YjU1YWFjNzYyMzFiMDI5MTA2YWQwNDk4MjU2OGNlYmUxMWE3MDE3ODgzYThlZjE2MjU1MzA0YTE4YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_1efca6a15ece455ab94c910bc27c511e",
+      "statement": "Export-Package directive controls which Java packages a bundle makes available to other bundles, using patterns with ! prefix to exclude internal packages",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/bnd.bnd#L3-L3",
+          "version": "repo-lines-v1:sha256:1b1edad6338ffab31700927cd22f5382c81ac5cd9c424587d7eeacfed2b1ac53:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWIxZWRhZDYzMzhmZmFiMzE3MDA5MjdjZDIyZjUzODJjODFhYzVjZDljNDI0NTg3ZDdlZWFjZmVkMmIxYWM1MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWIxZWRhZDYzMzhmZmFiMzE3MDA5MjdjZDIyZjUzODJjODFhYzVjZDljNDI0NTg3ZDdlZWFjZmVkMmIxYWM1MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjIsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmJlNzBhZDc0NzQ4YzJiNDc1YzUzMzEzMTQ3NTczZDU5NzgxYjIwZDg4OTI5NGU0ZDM3Yzg3Y2MwZGQ5ODFmOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODI2YzMzYzU2N2YwMmVlNzYyMTQyNzFmZmIxMTA3OWE2ZDlhMWUwYjVjZjQxMjQ0ODE5ODQ3ZmI1ZDg5NjhkNSJ9"
+        },
+        {
+          "resource": "repo://modules/managers/galasa-managers-parent/galasa-managers-cicsts-parent/dev.galasa.cicsts.manager/bnd.bnd#L3-L5",
+          "version": "repo-lines-v1:sha256:c084204f49f4029f8baefa7aadc98ef702c91bb4ec52e524667466f7601ee7ba:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjgwNmJiMDVjOTRmNTVlNGZhODJjMGE5ODdjZTY2MTY0YTk1NGIyYWFjZDQ4YTAxN2NlYjVjNjdkODEzYWVjNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODNiMTQzMDgxYzIyN2RkZWZiODE3NmM5MGU2YzgzMDYyZGUxYmMyODI0YzQyMDRhYWExZDI1ZTViOTljOTAwZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjIsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDYxMmFmODc5ZTkxY2M3OWM2YTUyNjk5NzdiMjhjMWI4MTY4MDZiZTkzYTQ0Y2Y3MThiZTgwZGY5MTY2ZjE3YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjIsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDA4OGU0MzBjN2U3OThjNWYxYjU4ZWI1YjRhMmJmNzI4NDYwZThlNGFiYTM4NTY2MzBlZWZjODNiNDY0NWYxMiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_101c4528f3814650a42323fa15e28d11",
+      "statement": "Import-Package directive declares dependencies on packages from other bundles, with * wildcard importing all referenced packages and resolution:=optional marking optional dependencies",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/pkg/embedded/templates/projectCreate/parent-project/manager-project/bnd.bnd#L5-L7",
+          "version": "repo-lines-v1:sha256:56c993ee14c44f336b8dd6c5619557dd055c2959361487ac5f814dfa1a3695f8:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmE5ZDJlMDBhMTllYTZjYTFkNjZiOTQzNDZmMzgwMGUwNWQ2ZmYyMGFmY2QxMDk4MDg1ZWRjMjRhYmMyMzFlOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjUwZTQ3YjU1YWFjNzYyMzFiMDI5MTA2YWQwNDk4MjU2OGNlYmUxMWE3MDE3ODgzYThlZjE2MjU1MzA0YTE4YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTMwYjZiYzFiYWIzYjBhZWZlNjkyMDQxNDk5YWEyMDZmMWVjNGNhYTFmMmQzMGFlNmU3MDc4ZjgxMjk2NjNiOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/bnd.bnd#L4-L17",
+          "version": "repo-lines-v1:sha256:7b7f8e8219c7f06fa1d061086df7d15caa9353124807a6c4ea662c5eb8127a9d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImExOGJkNDFiYTAxNzIwZDU4YzNhNWJiMDQ4YmRjNmJhZjFlMDVjYzQwOGFiN2E4NDJiZTQzMzFhZTU4NTFkNjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQwYjY4OWUwYWUxZTMzMmQ0ZGQ5YTg5MGE1M2RkMzkzOTU5ZDhhZjE3NzJhZTQ4NWNkM2MzYTU5NzUwYmUzNmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcwNTg5NWQzNjc5YjE3ZTU0OTA2ZDhiNDkwNTMzZWI3N2I0NzE0NjhlYjg1ZTg5NWM3ODdlYjcxZTZmY2UzNjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ba4b4cf2d8f54a0497616018d6004446",
+      "statement": "The wrapping module contains projects that wrap non-OSGi third-party libraries into OSGi bundles using the Apache Felix maven-bundle-plugin",
+      "evidence": [
+        {
+          "resource": "repo://modules/wrapping/README.md#L1-L2",
+          "version": "repo-lines-v1:sha256:2295257fe4d883e0676a5b4aa15f0dc32692c676d9b1c049987c2dfcd0e75c57:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTZmNjA2OGIyMDU2YjM1ZjkyNDZmZTg4ODhiNDg1ZTY0NjQxOWYzNjI3MzEzY2U3NDkwZmFjNDc3ZDI3ODlkZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWYyMjA0ZGYwNGE4YWM1ZjMxNDdlMjA5YzBkZTJiOGYwODNlMDg5NDgwY2M4MDQ1OWMyYTYwNTZjMjYzNzRhNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDk0NmI1MWI4NmE3ZTg4ZDA2ZDlkY2YwODA4OWFjYjZhYTg0NDYwNTA4ZTI4ODliMzU3YmYwNDY1ODdiMTFjMiJ9"
+        },
+        {
+          "resource": "repo://modules/wrapping/dev.galasa.wrapping.httpclient5/pom.xml#L27-L51",
+          "version": "repo-lines-v1:sha256:932a0d30c96e71d1390777287c5c846d10fd67eeedca94ea9ca167a509be21d7:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYzZjA1MDYxZTExOWMxZjk0M2Q5OGI0NzhmNWJiNTNkN2NkZTRkYjdjMDlmNzA4N2ZkNDQzNGRlNGU2MDg3M2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNiZjVhZDE2NWQ1MTc5ZjhhYTIyNmNlZTMzZDI2ZDJhYjMxYTliY2EzZDdlNDVhOTFiMWFmZWIzMDg1YWM1OWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQzMDk5YjgwOGJkMWNlYWI5YjIwNTBiYTEwMjdjZjdhMzE3YmYxNjE3OTIyZDBkYWEzN2RhZmNkNGNkNzRmYTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlkNGZlZWI1MTllYzA2ZjkyZDgxY2ExYTQ2YThmNTgwNWI5NTY1ZGJhMDM2MDZjMGFhMDMxODJhOTZhZjUzODkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d54047ba2e5440408fceba97cc7739cd",
+      "statement": "Maven Bundle Plugin Embed-Dependency instruction bundles third-party JARs and their transitive dependencies inside an OSGi wrapper bundle",
+      "evidence": [
+        {
+          "resource": "repo://modules/wrapping/dev.galasa.wrapping.httpclient5/pom.xml#L35-L36",
+          "version": "repo-lines-v1:sha256:c8e8b0481ed63e75a685a931f5f4a8853511cfd0d4396f0e64ac58aa22871d34:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGMzMTlhZTg3ZTliNjM3Y2I2OGY5NmJkODgyOWYzMmE1NTgwZjZlY2UxZDQyYmM4ZDNjM2RlMWU2NzMxYzEwNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjE1NjY3NTgwZjQxZWFhY2UxMzNiNTVmYTY3NDU3MDg5YTQwMjMxZTc3ZTc1MDUxZjQ1ZDljNzIzZjBjMzkwZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzA2OGI5OGIzMzczMmY5MGM5YWExMWY1ZjI4NTljNTg1Mjk3MjQ0ODMzYWZjMTQ0M2EzNGI3ZTZlMjUzMjYzZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGQ5OTViYWVhNDQyNzA0MDg1MTliZWRiZmM2MDI0OWIzMWVlODU0Nzk5MzFlZGI5MTc5MTZhZTAzODJlYjUxMiJ9"
+        },
+        {
+          "resource": "repo://modules/wrapping/dev.galasa.wrapping.kafka.clients/pom.xml#L63-L64",
+          "version": "repo-lines-v1:sha256:677c96f88c7bb138de93bdfcf858041960cfd074899a98edaaf5ea1e296cbe28:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTk1ZGNiNDVmMWYxZjQ2NTAyYzcxODFkZjNhOTZhMmYyNDgzYWIwZjI1ZTE1ZmM1ZDgxMjU5MTU3ODU5YWExMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzcyMmJjZmU0MDYwYTI1NWM0ZTY2ZDMwN2JjZjg3Y2E2MTJkOTViMjlhNDg2OGRlOGYwOGVjMjA4YzY4MWUzNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2JkZjU3NGI0YzgxMDJhMDcyNmQ0NjJkMDVjNGM2NjllYzM1MjljM2FmZGI0YWZjZTc4MzE5NDRjNmMzMWNmMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzAxMWYxNzQ3ZjViY2ZmZWEyOTBhMjU2YjdhN2UyMzI5Njk4NjhkMTZhMDA3ZDMxMWI0ZWNmNGZiNDhiNTBlOCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_98362e677a9d41fbadf34d278166910c",
+      "statement": "An OSGi Bundle Repository (OBR) is an XML index file that catalogs available bundles with their metadata, capabilities, requirements, and download URIs",
+      "evidence": [
+        {
+          "resource": "repo://modules/maven/galasa-maven-plugin/src/main/java/dev/galasa/maven/plugin/galasa/BuildOBRResources.java#L19-L24",
+          "version": "repo-lines-v1:sha256:f5c5b8ece86b5223ea1c7a38a55eca67db43f58d11afe336b6f2a910bdd2405e:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMThkMTQ0ZDQwN2Y0YWNlNjI0YjhiNjg2ZDAyMWU4N2YyNmM1MzEwNmJlZDUyY2Q1ZTA3YzczNDQ2MmRkZjFlMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjQ5ZjkzOWQ2MjhhOGY4NjBmODAzMTVlYzVhZGYzYzI1MDg3OWM4Zjk4MDQ3MWE1ZDg1ZjZlNWU0YTJjNGE1MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTdkYmI1YmU3Y2JiOWJlZmVkNTdiMDgyNmM0MjIyODMyMzRhMTc2YjY4ZGIyM2Y0YTk2ZmNkYThiNDJkMGJhMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTEyYjljYWUyMjZmMGI4M2ZkMjVkOGY4MjlkM2VhZDI3ZGUxYzczNDljMWQ1YWEyMTBkMmVkNmYwOWM3N2I0NyJ9"
+        },
+        {
+          "resource": "repo://modules/obr/README.md#L1-L5",
+          "version": "repo-lines-v1:sha256:5b6614fcec51f8d799b9d51afe8fb54b1c572d648e1509837c03377af5a9d6ff:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmU1NGNhZGMzYTNkZjk0ODY1ZTllYjFjMTc2NGM5NzNlNjkwNzQ2ZmYwYjliYjM5NzIxZWI3YjIyNjA3MjQ5MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmQzMjkwYzE1YTk3MTIwNGUzMTU3YjU3YTgzNTA3YWYyMDZjMzAyNTNmYjJkMWU0ZmI0MjJkNDA3YWYzNTQyZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzU5MTJiMDQxNTBjZDVjMmJhZTliYTRhNmEwNTZkNmQ2N2U4MGJkMTE1YWIyM2U0N2ZhZWQ3ZWIzMGNlMTY1YSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_1541eb79ba4c4e4d89307163319ef2dd",
+      "statement": "The Galasa Maven plugin builds OBRs from projects with packaging type galasa-obr by resolving bundle dependencies and generating a repository.obr file",
+      "evidence": [
+        {
+          "resource": "repo://modules/maven/README.md#L1-L3",
+          "version": "repo-lines-v1:sha256:e78f4af3d6e8787d683a3d3e98acc8eee5ed1b4c9aa5fcc69e5cde5610ec9ab2:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDA2MmFmOTA3MWNhYmMwZTU4Mzc3NWM2ZWMyMjI5OTJhYTNmMGFjNzk1OTIzMDFkMzk0NGVjYjY5NTMyZTIwMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZThiMWEyNTZlOGE3MmRkYWIwYzI0ZDJiM2NkNzdlNjU1OWQ0NTc3YjgzODlkOWQ4ODRkMzMzZDA0MzdkNTk3OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDk0NmI1MWI4NmE3ZTg4ZDA2ZDlkY2YwODA4OWFjYjZhYTg0NDYwNTA4ZTI4ODliMzU3YmYwNDY1ODdiMTFjMiJ9"
+        },
+        {
+          "resource": "repo://modules/maven/galasa-maven-plugin/src/main/java/dev/galasa/maven/plugin/galasa/BuildOBRResources.java#L37-L171",
+          "version": "repo-lines-v1:sha256:4081630f05fe32dd8a55f3258daab215d0afe6aa2e2ab791db7b5fa5c5882641:eyJzZWxlY3RlZExpbmVDb3VudCI6MTM1LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJjNjI5OTRlNzdkZjU2ZjlmN2RmM2U3NjIxNjAwNmQ4MWQ2Mzg4MzI2NDFlMmFjOGI5MmQ3ZTk2MTE5YjdkNGZkIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0ODkzZjQwZTM3ODFlYjg5NmM4MmQwNDZhMDgwNjdhMTFlMzVjZGYyZjFkZmFmMjZmZWE5MGI4ZGI2Njc2NDEzIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIyZjI1MWUxY2UzM2IzZGI0ZGY1Y2JkNmIwNDJhODhjNDVmODYzMDk2NmM5MTRhMjk4OTAyODRmYzA0YWVhMTg4IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIyZjAzODllZTQ3ZmE2MThmNTVlYTAwOWZhYzBjNGZkNmUwMDYxNWUzNTQxM2QzODQ5OWExYjQ0YjU5ZGIwN2ZhIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_228338388edf4be9b0e028df7a500531",
+      "statement": "The Maven OBR plugin uses Maven coordinates in mvn: URI format to reference bundles for repository-agnostic distribution",
+      "evidence": [
+        {
+          "resource": "repo://modules/maven/galasa-maven-plugin/src/main/java/dev/galasa/maven/plugin/galasa/BuildOBRResources.java#L220-L230",
+          "version": "repo-lines-v1:sha256:59442cf9c0397ae254b69019f46a114c30dce446c8914df45fa9b7e375b096bd:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFjMmY4OGEwNjk1N2FhYzM4YTE2ZTdkMjQ5ZjMzNDUwMjFmMjRhNGZhNjRhOGJhZWMxMTgyMjdiZGU0M2RmYTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1MjJjNDJjZDE5YzZkMDNkODA4YzQ1MjcyMDU1MjgyNWI3ZWExYzViNDkxYjIxODUxMWNhYzc0MTVjZjlkOWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImViM2Y5MjZjNWM5ZmY5OTVhZjhhZDlkNTRkMjMzODJkMzQ4Nzg4NDk4MzQ5MTY2NTgzYzBkN2E3MDFkODlmY2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJmODAyNDA1OTU4MDhlZjUxYzY0YTAxZmQ2Yjk3MGQ1NjU4YWFlNzk4YjFiMzE0OWM5YTA0ZGU5YjM2NTQyNDMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7f4440f7e83b4091bfc93a3e75646c02",
+      "statement": "The Gradle OBR plugin provides bundle and obr configurations to declare bundles to include, and generates galasa.obr via the genobr task",
+      "evidence": [
+        {
+          "resource": "repo://modules/gradle/README.md#L4-L48",
+          "version": "repo-lines-v1:sha256:dae70f77131e175181bfe32c9f92b9effee41f0949ae0d6f41b84caee7d53d1d:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVjMDJmMzhhZWU3ZmIxM2NkZjMzODAwMTgwYzUwODNhMWFmZGEzNmE2NjdmYjczMDAzYjRjYTY3YjAwMjEyNzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ4MWI5Mzc1NjNhMDE3YjZjODhkNWY5ZTQ0ZTgyY2UyODAzMjA5ODY0Y2M4NWNmMzdhNmJkYmE1ODEyYWUxMWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVlOTEwYTljMjVjNzkyZDc4NDc0N2JlYThlZTI1MzhmOWY0Njk1NTBhODBhZjJkZjY2NmI0ODM3ODFjYmZlMjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU0N2ZlOGRiMzIzYjU1NWU1OWE4MjZmZTkzZWQwZTUwODVjNTJiZGUwNzljN2I4ZmM5YWE1ZmJjZjhiMmNjMjcifQ"
+        },
+        {
+          "resource": "repo://modules/gradle/dev.galasa.gradle.impl/src/main/java/dev/galasa/gradle/obr/ObrBuildTask.java#L48-L93",
+          "version": "repo-lines-v1:sha256:e3f0449779072c02c1dfeb8495a28808b4697837cf8c6fc805ed2b681a6e2950:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI5YTI0YzdiMjdlNDIwNDMxZWMzNDZlNWZhNDFmYWFhZDUwZWM3ZWZlM2NmMzZiODgxZWM5YzA3ZDU0OWFjOGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQwOTFmNzhiZWQ1NTBjMmFhNDJiNjk5ZWQyYTVmOGU4MTY1NTI3NTI2ZTQyYzY2MjM1ZDM0MDFhZWUxMTMwY2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJjOWUzNTRiNWE2OGQ3NzI5ODNkYzIwYzlmM2M5Yzg5NTQ0ZmQ5NmNlYzQwNjY5ZjQ5NjhmZTRjYWQwOWExMDAifQ"
+        },
+        {
+          "resource": "repo://modules/gradle/dev.galasa.gradle.impl/src/main/java/dev/galasa/gradle/obr/ObrPlugin.java#L27-L134",
+          "version": "repo-lines-v1:sha256:a8e12b927c9a4ab29ccb662c2ce1e58e39f133dc0d4363b55d6bf4e77d900bb8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTA4LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI5MzEzYTBhZDI3NzQxNmVkMGRkZGRjMWI5NzBlMDQ2YWY5ZThhMmU1ODRiMDQyOTg1ZWYwNWZkNzlhZDY2MmY0IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0MTJjYTM0NWNjZjc1YmY5YzA4MDZiY2U2OTViZThkZTgwOGI3OTk4NDI1MWE3YTU0ZDIwMmNmNjEwMWRkNDUxIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIxN2RjZDFiMmNlZjE5ZWI3NWJlMjllZTI1NTg1YTA5OTZkYmI3YzQxN2MyYWE2ZmE5MDBmNTIzMzg4NjNiMDU4IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_d21d74be424c4b859b3b50bd1f440895",
+      "statement": "The OBR build process removes execution environment requirements from bundles as a workaround for Apache Felix bug FELIX-575",
+      "evidence": [
+        {
+          "resource": "repo://modules/gradle/dev.galasa.gradle.impl/src/main/java/dev/galasa/gradle/obr/ObrBuildTask.java#L124-L141",
+          "version": "repo-lines-v1:sha256:ba335fe1d8400b86e02292789259a2badc3fe5578316b21ad1c8b23964b6b9e9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdiZTI5ZjNmMDc1ODkzZWUwYWQyOWZkZGZhMGNmYmFkNmQzNDkyMDVjYzFmMzRhOTE3NDFjMWI4MTJkN2VmYWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1MjJjNDJjZDE5YzZkMDNkODA4YzQ1MjcyMDU1MjgyNWI3ZWExYzViNDkxYjIxODUxMWNhYzc0MTVjZjlkOWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg4MjU3NDI4NmFlYzRiNmYzMjQ0YTkwZGViNGYyNWQ1M2MyNmViZjNkOWFkOTc3M2VjZjMwZDhlZmY5ZDU2OTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYwMTdjMDE5MDkzYTFkMTlmNGQ0YzBmOWZiODM3OTIzODU2MWVhMWIxN2JkMDI5MmUyNzA1YzdlZGQ2NGVkZjEifQ"
+        },
+        {
+          "resource": "repo://modules/maven/galasa-maven-plugin/src/main/java/dev/galasa/maven/plugin/galasa/BuildOBRResources.java#L200-L218",
+          "version": "repo-lines-v1:sha256:e340a3c8d2d76796faaee843c38a8a0ca920a9d8df8240df689a08903462a69f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEwN2Y5MDUwMzcwOTRlNTFiMzliNTc5MWY4YTU3MTZhNDI0YTMzODVjOTY1MTBmNmZlNDJmNmJiY2QyOGJiNDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1MjJjNDJjZDE5YzZkMDNkODA4YzQ1MjcyMDU1MjgyNWI3ZWExYzViNDkxYjIxODUxMWNhYzc0MTVjZjlkOWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgwODg1MTVjYzcyMjk3ZTY4ZDZjZmE5ODUxMDQ1NzZhYjA5ZjI3N2E0MmM3ODg5YjgzNTkyYTZkZGRmYjY3MzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc0MTI4YjY4YzQ5MmVkYzk1ZDE2ZWMwNjY0NWM5MTM3OTBhMTAzYzYxMTUzMjQ3NTc2NTg4MjE0YWJmNGZmYzgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4e5a3e22ff9d4f1bbe7965c1b49541b1",
+      "statement": "Test projects require an OBR subproject to package all test bundles for deployment to Maven repositories and resolution by the Galasa ecosystem",
+      "evidence": [
+        {
+          "resource": "repo://docs/content/docs/cli-command-reference/setting-up-galasa-project.md#L241-L264",
+          "version": "repo-lines-v1:sha256:79a92b8dfd8a3b8328ac2d2f6fb55e346552d8c52f90c3f70dc52c0d5ee68453:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkZTRhYTM1ZDA5MTk2ZThjMGNkMTVlMjRhNjlmMGJlZDJmNzQ3MzA0YTZlNWRkMGJhN2Y2NDQxMDRmMGNiNDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJmZDYwN2MyZTU1ZjQ4YTdmMjRhN2NlNWQ0NzAyMGJjYzdmYTIzMjY3ODY0YzViNTJlNzk4YjFhMDUzZWM3ZWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNhMGQ0MzU5MWY1Y2I0ODA5MTVmMGI3NDkxMWJmOTY2ZDE3ZWJiODE0MDE1YjkxMTA3ZGRmYTg3YzNhMjZmNzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNmOTIyZGFjZmRhOTRmMGU0NGNjNjIwZDY3OGYzZDAzZGQ5YTdjZjNjMGQ4ZTdjYTJlZjlhMzIxMmVjNGMyZmYifQ"
+        },
+        {
+          "resource": "repo://modules/gradle/README.md#L24-L48",
+          "version": "repo-lines-v1:sha256:980222021783b21ce05204d1ddc28f38e86a15a3e6e4606b20c8fbb397c23d69:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZkODBhZWZiODU3N2Y3NzMwNzdhZTJkMzdhMjgzNDg2Y2Y0YjcxNWRlMzkzMTAzYWYxNjlkZjIxOWEwYjNmMjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ4MWI5Mzc1NjNhMDE3YjZjODhkNWY5ZTQ0ZTgyY2UyODAzMjA5ODY0Y2M4NWNmMzdhNmJkYmE1ODEyYWUxMWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgyNDU5ZGE4ZWZlMjU0NTY5YjRlM2FjZTA0NTEyNTMwNjM5NDljMTk4NThhOTMxYjliYzlkMmE0MDMwNDIyNzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU0N2ZlOGRiMzIzYjU1NWU1OWE4MjZmZTkzZWQwZTUwODVjNTJiZGUwNzljN2I4ZmM5YWE1ZmJjZjhiMmNjMjcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_26520f242f29430f89d35b73f64eb642",
+      "statement": "The Framework uses FelixRepoAdminOBRAdder to dynamically load bundles from OBR repositories during test execution",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/TestRunner.java#L23-L23",
+          "version": "repo-lines-v1:sha256:9fd971d6b16f3ef9fb14b48178b813a7519d8bbf84a8d1fe8a837f1df7cadec9:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWZkOTcxZDZiMTZmM2VmOWZiMTRiNDgxNzhiODEzYTc1MTlkOGJiZjg0YThkMWZlOGE4MzdmMWRmN2NhZGVjOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWZkOTcxZDZiMTZmM2VmOWZiMTRiNDgxNzhiODEzYTc1MTlkOGJiZjg0YThkMWZlOGE4MzdmMWRmN2NhZGVjOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2FlM2RlNDBhOTMxMDljMzIxYjk3YzIxYmVlYWUyMGMxMTY1OWNiZGNjNDliNTcxYTkwNTc1N2YzYmYxNjcxZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2MzMTM2NjBmMjc2MGMwY2JlNjdjM2M4M2MxMmVhZDBjMDRiNmMwOTRhMWFkZDYyMWE4OGQ4YTNhYTQwOTZhZSJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/TestRunner.java#L99-L99",
+          "version": "repo-lines-v1:sha256:d21c94298ac42ebdcd7844e4840b4b81b8eeea8909011dbc080bb3d38cb7d3dd:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDIxYzk0Mjk4YWM0MmViZGNkNzg0NGU0ODQwYjRiODFiOGVlZWE4OTA5MDExZGJjMDgwYmIzZDM4Y2I3ZDNkZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDIxYzk0Mjk4YWM0MmViZGNkNzg0NGU0ODQwYjRiODFiOGVlZWE4OTA5MDExZGJjMDgwYmIzZDM4Y2I3ZDNkZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTA3MmRkOTM0N2Q5ZWE2YjE1MGMxZjNjY2Q1ODZkYmM5Zjg1OWY4ZTQ5ZjJmN2FmODYwZDkwZmRiZjA0YzY5MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODIxMzYzZTY3M2M2OWY3ZGU4NmU0M2Q0ZTk4MjkxMWMxMThhODJiYjE4M2I4ZmRjM2Q3ZjUxNzdiOWJlYzkyMSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_bbe679be07d64277b09fca09fdc0273d",
+      "statement": "The OSGi Resolver cannot handle reference: URIs which are valid for Felix, requiring special handling in bundle resolution",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/BundleManagement.java#L145-L145",
+          "version": "repo-lines-v1:sha256:5887b991e7c1709303772307a1884d04a0e00717eeaec2fe7eef706f33407a76:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTg4N2I5OTFlN2MxNzA5MzAzNzcyMzA3YTE4ODRkMDRhMGUwMDcxN2VlYWVjMmZlN2VlZjcwNmYzMzQwN2E3NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTg4N2I5OTFlN2MxNzA5MzAzNzcyMzA3YTE4ODRkMDRhMGUwMDcxN2VlYWVjMmZlN2VlZjcwNmYzMzQwN2E3NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTgzYWRkNTE4MWM1NjE4ZWRjZTgyOWEzYzUxNTA4ZWI3MzQ2N2UxYTJlMjVkZWQxYzlkZTE2ODg4YmRhNzhkOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzAxODAxYTYzYjgwYjYzMzkwOTU1NTFlYzVjNjFlMjhlMzFjNDM3MTQwNDM0YjZmMjNhMGI3YjI3ODc4Y2U0ZiJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework/src/main/java/dev/galasa/framework/TestRunManagers.java#L342-L342",
+          "version": "repo-lines-v1:sha256:5887b991e7c1709303772307a1884d04a0e00717eeaec2fe7eef706f33407a76:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTg4N2I5OTFlN2MxNzA5MzAzNzcyMzA3YTE4ODRkMDRhMGUwMDcxN2VlYWVjMmZlN2VlZjcwNmYzMzQwN2E3NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTg4N2I5OTFlN2MxNzA5MzAzNzcyMzA3YTE4ODRkMDRhMGUwMDcxN2VlYWVjMmZlN2VlZjcwNmYzMzQwN2E3NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTgzYWRkNTE4MWM1NjE4ZWRjZTgyOWEzYzUxNTA4ZWI3MzQ2N2UxYTJlMjVkZWQxYzlkZTE2ODg4YmRhNzhkOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzAxODAxYTYzYjgwYjYzMzkwOTU1NTFlYzVjNjFlMjhlMzFjNDM3MTQwNDM0YjZmMjNhMGI3YjI3ODc4Y2U0ZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_56a82f5adfb34e3aafbf64282a0a1f10",
+      "statement": "The dev.galasa.uber.obr project aggregates all Galasa framework, extension, and manager bundles into a single comprehensive OBR",
+      "evidence": [
+        {
+          "resource": "repo://modules/obr/dev.galasa.uber.obr/pom.xml#L1-L916",
+          "version": "repo-lines-v1:sha256:2f4aea77686b6596e58e5f3517d4aefeebac4fa87aba7ec6121c635419aacde2:eyJzZWxlY3RlZExpbmVDb3VudCI6OTE2LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIxMjY3OWRmNjQ0ZTBkMmU0YWU5NjU0OTBiMmM3ZjRlNTY2ZWUxNzk4NWE3ZTgzOGQzMGE5MzNhMzg4NjA2NDQ1IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI4MWRjYjk4YWZjYzk1OWJlOWE5OTBhYTQ0MWEwZGE4MzE0Y2UxNzgxOTk1M2MyNjNkODA2ODlmNDhiZDhmNWVjIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIyY2EwZDg2NDY3ZTgzODFlMTI0NzVhMjMyMzJkYmZiMWE2Y2RhNWYyMzU0OGI2ODYzODU3OThhNzk3MjA3ODVkIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_0f212ebc7bac434f8bc5c4e76366ed58",
+      "statement": "Wrapped bundles use Export-Package to re-export the third-party library packages to make them available to other OSGi bundles",
+      "evidence": [
+        {
+          "resource": "repo://modules/wrapping/dev.galasa.wrapping.httpclient5/pom.xml#L46-L46",
+          "version": "repo-lines-v1:sha256:f701cfa6fd5eb8af49175072525c844f6c8f2624086283e45418d05aafa6c85d:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjcwMWNmYTZmZDVlYjhhZjQ5MTc1MDcyNTI1Yzg0NGY2YzhmMjYyNDA4NjI4M2U0NTQxOGQwNWFhZmE2Yzg1ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjcwMWNmYTZmZDVlYjhhZjQ5MTc1MDcyNTI1Yzg0NGY2YzhmMjYyNDA4NjI4M2U0NTQxOGQwNWFhZmE2Yzg1ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzc1OWM0NDlkMDY0ZTE0YTQyOTA5Y2U2NzRhOGUwZDg5MmYzMjBlODUxYTZkZmExMzQzM2VhNmM3MDJiNTViNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTg3MGExMmYwYTJkZWI3MzQ2ZDhiMWYzN2VmN2U5N2EyMzMwNjM3YjVlZThmZjQ0NjljNDkxODk4NzQ4YjZhYyJ9"
+        },
+        {
+          "resource": "repo://modules/wrapping/dev.galasa.wrapping.kafka.clients/pom.xml#L71-L84",
+          "version": "repo-lines-v1:sha256:8176283e339b3352abc4bb868748473e2fca029f50d59d56215f6b93f7f7c1e2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyY2VhMTgwZDlhZmI3YjAxYTE0MjhkMDgyOGM0ZGQ1YjZjNjcxMGEzYmZmZGYyZDcxYjgyZjQxODk3Zjg0NmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI5ZWU1OWQzNjFhNjgzYWFhYmFhNzdmOThlMjM2N2RjNzY2NTBiYmFkNWE4ZjIxYTVjNTJlNmE4NzgwMDUwZDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYzOTRlYzI3NWUxZjQ1NjQxMzcwYTk2NTUwNjUwMTI2YmM5ZTFhMDdhZDcyMjQ1ZGYwNjFmMDJmNDBhNDgxOTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAxZTFhYjRjY2E5N2JhNDVlN2M4MWY5OGFjYjZhOTFlNzQ1YzI2MDBmZDBiMDQ1MmNlY2JiZDNjYTBkM2U5MDMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b4c07f750f9a4a168611dfa25223e113",
+      "statement": "The Gradle OBR build task processes bundle dependencies by reading OSGi metadata from JAR files and merging existing OBR files",
+      "evidence": [
+        {
+          "resource": "repo://modules/gradle/dev.galasa.gradle.impl/src/main/java/dev/galasa/gradle/obr/ObrBuildTask.java#L159-L198",
+          "version": "repo-lines-v1:sha256:58e9c875a16070bf7d39c13414c2d86dc2505d8dd7dd53fe7a42a33e6d1513b8:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU3OGIyMGIxNzM3ZDZjMmJjNjgyYjUwNGFhMTEzNDIyNmFmOTliMTJlMDJhNTQ5ZmY5NDEyNzlhMTEzN2M3YTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRiOTJmMjI0ZTZiNTljNjZhMjc2NDQxZDY1MjI2YTkzNzhmNTMyOGY1ZjZlMDU3ZTM5MGZiOGRlZGZkYTFmOWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZhM2NmNTE5MjM1NGY3MTYxNWFjNTEwMzRiM2U5N2MyMGVkYTk5NjQzZmNhZjViYmU2ZDQxYWQ1OWJkMTIxNjcifQ"
+        },
+        {
+          "resource": "repo://modules/gradle/dev.galasa.gradle.impl/src/main/java/dev/galasa/gradle/obr/ObrBuildTask.java#L95-L156",
+          "version": "repo-lines-v1:sha256:77924fd0bbe52edd4933530bee6de8c6a29cfa5c83606102536c53aa75b7a0f4:eyJzZWxlY3RlZExpbmVDb3VudCI6NjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM3ZjA3NDhlNTMxNjg1MmJkZGNmYTg0NWU3ZmQ2MTY4YWYwY2EwYTA4NzQ1M2U2Njg5NmYwNmI4OTVmNjNkODAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5OWJkZWZlZWFjYTYzNDBlMDI5MGRjODZlODg5Yzg5ZDVlMTg5YWE1YmE0NGI1ODViM2I3MDczNGY0YTYyZDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ5ODkwNGVjMWY5Yzk1NWUxMzlmOGFjNDI2ZDQ3Yjc3YTg1MTY1N2E5NDUyOWU0ZjhjZDU2N2JmNjIyMDE5MzYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d6cb103396d74b8797910f3ea1a19f25",
+      "statement": "The Maven OBR plugin can merge existing OBR files and process individual bundle JARs to add resources to the repository",
+      "evidence": [
+        {
+          "resource": "repo://modules/maven/galasa-maven-plugin/src/main/java/dev/galasa/maven/plugin/galasa/BuildOBRResources.java#L173-L187",
+          "version": "repo-lines-v1:sha256:2ad2bdf70a72122d84ffb0b7d55288f173a62b6683f3c907d0cfffb9d2e26da9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdhZTM1YWZkNmY5YjBlZTkzZmI2NjJhYjhjNGQ2OWViOWZkZjlkNjkwNjBiNjQzYjkwNTU2OGYwZWJjMmZiOGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5OWJkZWZlZWFjYTYzNDBlMDI5MGRjODZlODg5Yzg5ZDVlMTg5YWE1YmE0NGI1ODViM2I3MDczNGY0YTYyZDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRiZmNmOTA1MzE0YmIyMWFkZDA0OWU3MTgzYjdjMDkwMDJiZjI1MmUzYTA0Yjk4MDcxZmZlNDJhNjM1ZDg4MGIifQ"
+        },
+        {
+          "resource": "repo://modules/maven/galasa-maven-plugin/src/main/java/dev/galasa/maven/plugin/galasa/BuildOBRResources.java#L189-L241",
+          "version": "repo-lines-v1:sha256:273b1fd3984618e0f9bde2a206dcb907c6d061f810fcde717385425b335c85ea:eyJzZWxlY3RlZExpbmVDb3VudCI6NTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA4YmQ5MjcxYmQ1YjZjMTdmNThlMGU1NTgzOGVlNTRlYjcxYWUxNDMyOWJmNDE1ZTMyN2IzODA1ZjFkZjZlZDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5OWJkZWZlZWFjYTYzNDBlMDI5MGRjODZlODg5Yzg5ZDVlMTg5YWE1YmE0NGI1ODViM2I3MDczNGY0YTYyZDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgwNGY4OWZjMGVjOThjOTgyNDE4M2U3OTVkM2VkZDE5ZTkzMGY3YmM0NzFmOTAxMmFhM2Q1MDNiZTJmODk3NGIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7359a8808f4048b38984fdf6b557be2b",
+      "statement": "The Maven OBR plugin supports two URL types for bundle references: file URLs using local file paths and mvn URLs using Maven coordinates",
+      "evidence": [
+        {
+          "resource": "repo://modules/maven/galasa-maven-plugin/src/main/java/dev/galasa/maven/plugin/galasa/BuildOBRResources.java#L40-L43",
+          "version": "repo-lines-v1:sha256:dca1ba5f6346b4a039976b03a9e863f62411c464ad0a6158b76463999e40f0f2:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2FjMGZlYWI2NjMxZDU4ZmI0ZTliMDlkMDIyY2E0ZTkxZjM2ZmUwYjNiOTk3NmZiMTg4NDFjMDdiNTAzZTg0YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTQ2MGIxODg1MGNiOWZlZjg0NWY3ZTc2YjZmYjE1YWQzNDIzYzA3ODMyZGJmNjQ3ZThiMmRmM2YyMzYyZTJiNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDM0YWYwN2YzNjBjMDc2YmMzYzU5YWViMGMzYmY3ZWJmZWEzZjJlOWEwZmZlMjU2ZTMwOTllMjBmYTg0ZDBkNCJ9"
+        },
+        {
+          "resource": "repo://modules/maven/galasa-maven-plugin/src/main/java/dev/galasa/maven/plugin/galasa/BuildOBRResources.java#L54-L55",
+          "version": "repo-lines-v1:sha256:62c6218ee28d6837e7908aa5ce923e8a35f7537637311b1b5d38e103a4dbc953:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTlhZDgzMmUzMWE1ZGIxZmU1OTk1MGQxMjZjY2IzMjU2MTM0YTM0ZmUwNGE4ZTM2MWI4MjRmZDg2MzljMjFjYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjkzMGM2YWMwZWViMDgzZmYwYWVhNWJiMGUzNzkyODUzM2E5YmFhMGE1MDEwMDllZmQ2ZWJlMDkyN2NiZTYyNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWVjNWM3NWI4YzcyMDVkMjNkM2ZjM2QwMTJjZWM2YzY0YzNmYjcyMzMzYzQ4NGZlNjkxMzM5ZmM1OTNjN2MyOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWZjM2Y5MjgyZDNjODQ1OGRiNjU1NTIzZjAwNTAyMzY5YzI0NmQ4ZjQ0ZDllYTk0YjY5NDlhYTEyNTc0YzQ1YiJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.2",
+    "at": "2026-09-21T12:35:12.771Z"
+  }
+}

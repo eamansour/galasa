@@ -1,0 +1,282 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:edcc9b40ce32801159345d45a2955f82951f04216c81ba25316fe76ccdc7079f",
+  "claims": [
+    {
+      "id": "claim_cd88d06b254d4ade877248082d11a0b3",
+      "statement": "The CLI is implemented in Go and uses the Cobra library for command structure",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/go.mod#L8-L8",
+          "version": "repo-lines-v1:sha256:4f235a14dff1746f1c5c50d6ccc0099bba184fd03208685d5e0af98b73fd9faf:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGYyMzVhMTRkZmYxNzQ2ZjFjNWM1MGQ2Y2NjMDA5OWJiYTE4NGZkMDMyMDg2ODVkNWUwYWY5OGI3M2ZkOWZhZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGYyMzVhMTRkZmYxNzQ2ZjFjNWM1MGQ2Y2NjMDA5OWJiYTE4NGZkMDMyMDg2ODVkNWUwYWY5OGI3M2ZkOWZhZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWM3OWFlOTQxOWVkYTg0NzFiNDY4MDM2YTJlZTU3YzUzMDY0MTgyY2YwNDM1OWI1NjkyYTNlMzgyZTY5ZTg1NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjZlNzY3YzBlY2M5ZmVmNjlhMGM0N2FjYjc2ZWIyMTUxNGNhZDg3Yzg0NTVmMTMzMzM1YzFkODNmOTBjZWE5YSJ9"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/root.go#L82-L89",
+          "version": "repo-lines-v1:sha256:685bf7e0bbaea8963e13bfaa5834397286d5ec371993b7b937c99c4e2dfa24dc:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTU4ZjJhYTQ1MDA2ZDgwMzhkNmU5NWRmZjJmMTg3N2Y1MmQzMjkxODFmZjVkYjJmMGE2MTU1YzFiYTYxYWM2ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjRlZmM0OTQxOGQyNmRjZjEyOWIyMmE2YWEyMTEwOGNlZWMzNzY3N2EzMmQwOGU5ZDVmZWUzNWRkYTY2YmI5ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzkxZjRlNmZlN2ViZDQ4OGIzOWJmMTk4NjRkYzk2ZDIzZWMxNWY5MWVmNTJhYzIwODFiYTQ3ZjBmN2E3YzViZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDcwYmQ1ZGExNGFjYzg1ZDc1OGQ5N2IxODY0OTE3NjczMzg1ZDdhNDUxNjE3NjM1NDBkOGYxZWVlNjYyM2I0ZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_9e9c3f88f8e9400c995fc8e7b7c28bdf",
+      "statement": "GALASA_HOME environment variable specifies the folder where Galasa reads and writes configuration files, defaulting to ${HOME}/.galasa",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L12-L20",
+          "version": "repo-lines-v1:sha256:bded881a2ebcaa281fe148b2201ce414267d0976210314eac849f8f26ed2db3b:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2JjNGNhNmQ1Yzg1ZTJjZmZkMTAwYWIwZWIwNGFlYTAzOGRhYzhlNTE1YzlhODZhYTk2NDQ1MGEyYmMwMzQ2NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzZmMTJiZjY5YTMyZWIwYjJhNmI2NTExYTQzNjliOTNjZjEyODdmNzYxY2JhNTE2NDE1ZDc3OTMwYTA5NjA2ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWFkMWFiYWRlZjNmNDRkOGI0NjA3ODIzMGY0ZjM3ZWZkYWJhNTVkM2JjYTc3YjEzNWIyMmQwYWYxZDUwNWQ4MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmU0NmM3NDk2Y2I2ZTQyZGI3NDVjNjM0MjQ0ZGU3YWI3MjE0MzJlMDdjMDIwOWZmM2MzMDAzMjFiNTM4MjExYyJ9"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/utils/galasaHome.go#L21-L48",
+          "version": "repo-lines-v1:sha256:30c0332c6fc8b42b28449bca3d24d0b1b3e0253bd2919d2ac2aed5557d472906:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBmNGMyZDdhNWE0YzJjNGNkYzk1Y2U0OGFmZDY3NmJkMDkzNTBjZTEyOWM0ZTRjMGJkYWE5OWNlNzc4MzA1MmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc2YWU5MmE0NGM4OWZiZmUwNjU2YTk5MjM3ZmIwOTIzYzRjNjA1NGJkNjE1ZWMwZmU3MTliMzRkNDQwNzg1ZDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk1OTYzOTFhMjA2MjI1NmJlN2U4NDQ2NTIzM2Q1NjVjOWJlMWVmZjVhMDRiZGQ4YTRmYTA3MmU0ZjBkYjZlNjcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b31ff0daebb3486b99e28ba0f004c250",
+      "statement": "GALASA_BOOTSTRAP environment variable provides the location of the bootstrap file or URL containing API server configuration",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L9-L10",
+          "version": "repo-lines-v1:sha256:f9dd56af39e00c94ba7871d8e953243a5acf69a794b006e7b6209d87149aa6f5:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTdlYmFkMTQwMjYzYWZmZDU1MzE4MDlhYTllNjM1NDIxNWFjN2EzNzkyMDQ2MjgxM2JlYjMwZGFlZjc5NWIyZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWU5MDQyYTBmNDBiYmRjYTZiYjRmNDVjY2FlOTM4NzA1ZDAyODNmNTFjNWFlMjljYjc0NzVhMDExNWEwMzljNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWFmMzE1NDQ3NzNiODhkZjk2NzNhYzc4YTM4NjA0ZjFhMzYzNDg4OWM0N2U3YWM0MjcwZWM1MzBkMWIwYjM0YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTlmNTk2ZTc3YzBkYmU4NGMyMzc5ZWY4MzIwZDk3NWM2NWJhNmZjMTI0NmY2YzM1NTM0MjNlZjg2MjQxYmRiNSJ9"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/api/bootstrap.go#L145-L160",
+          "version": "repo-lines-v1:sha256:3748a3657d2ca1c55fac3d17efbb93cda80a7457972f8d825c7047f6e9963f9d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM4NDUzMmU1Zjc2MTY4NGMxMzc0NDJkNTE1NzE2OGNhNGQ3ZjRmYTY1OWJjYTNjMGQxMzQ4NjEyZDIyOWFmY2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg0ZTIwMmE5NmQ0ZjdkZTY1N2ZkZWY3MmM4NGE2YTIxYjRmODhmNjNkOGFmYjRmMjE5MmI3MGUzZTc1MGEwYjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk0MTJiYjA2OTE2ZjAwNTM3MWY5YjljNjMyYWM1Nzk5NWRmNWNlNDBlOGE2NGVlNjllZGRmNmUwNjIxNjdlYWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0c0e2c81f6de4eb3a8f560d94fc9127d",
+      "statement": "GALASA_TOKEN environment variable or galasactl.properties file contains the personal access token for ecosystem authentication",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L22-L26",
+          "version": "repo-lines-v1:sha256:bcc4cf946d2d50fa2bdff5640de39f4ed67259de28111cd9168ad10b27534243:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzJmOGE2ODczYmEyNDQ5OGE0NDliMDZkOWM1OGU5MTY4ZDYwYjA4OTU2ZmY2OTYwOWJmMjA3MWRjZWJhZTMzNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2M3NzhhN2E4NDM5YmI0Zjg0NjcxNDIwM2YyYmU1MGE4NDc3MjU0MDdlZGEwZDU3ODU4MDA3MmI4NWNiNjY4ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmY2OWMzMjIxOTk2ZDllYzc5NzA5MzZhZmFiNzViNTlmYjkxYTJiZDRjODQyMjA0MGRhY2ZjMzE1YzM5ODRjYyJ9"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/auth/authProperties.go",
+          "version": "repo-file-v1:sha256:35fb348decbe5b60edb8fb92f6c66cf820bcc1fcd53cd5b6cba1a9b3e222cb4c"
+        }
+      ]
+    },
+    {
+      "id": "claim_3fe6d327f95b4e369565254e51fdd9aa",
+      "statement": "The CLI command hierarchy is built through CommandCollection which assembles root and subcommands into a map",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/pkg/cmd/commandCollection.go#L134-L199",
+          "version": "repo-lines-v1:sha256:d131213757f8bdc2f8fa67ffe6d2f36106d7aaddffb7104f6fc8017df1a1da54:eyJzZWxlY3RlZExpbmVDb3VudCI6NjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlZjQ2NjBjY2E1YzYxNDBmYTMwMzVlZTM1MTBjNWY4MWZmNDM0NjM1YzRhNWMyOTcyMjkwNWIzZTI5NmE1MDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlZDYxZWMxOGIzYzYyNTJlZTVjMDJkNGY1YTNmMTRiYzVmMzJhOWQ3MjFhOGUyOGUxYjI0YmI3Yzc1NGZjYzMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY0Zjc3N2ZkOGY4ZTNlZjEzMzEwNGE5YWE2MDFlYWFkYzNmM2FiYWE3YWZhMmY3ODBhMDkyZWJkZjA3YzdmNjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ4YmY0ZGMxNGVkYjQ3YWQ1MWIwZDQxYzUwOTViODkxMWNkMzUwOTRkODJkNGZiNGRiOWZmYWY0MzRlNzI2YTgifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/commandCollection.go#L30-L87",
+          "version": "repo-lines-v1:sha256:f242e17bc99749e8675619452bd1569813cf815780391abdb46be8eb28c4c96b:eyJzZWxlY3RlZExpbmVDb3VudCI6NTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQwZDk4NmIwZGY3ZTljNDdhYTc4MmIwNjYwOTQ2OWJjOGVlY2E0NzYxMmI4MzhjZjgyOWRkYTRiY2RkZDMzMjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhZmJhMDUyN2MzOTUzYzRiNmUwZTViNTczOWJhODM2MTJmODA1M2JjZGM5NDY2NzMwMTkzY2QxZDU5MGI0MDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU3YjgwYjc1N2Q1ZDViMDYwYmUyZjgyMGE0MTljNThlNDQ2MjFlYzNmZTYzN2U1Yjk1NWVjOTQ4M2ExNmM2NWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZiOGVkYzAxYTE5MWVmZDlkM2NlNGM4NDYzMjM4Y2NjMTZhNWMyZmVmZTY1YmYxZjgzZWU2ODI0ZmFkNzVmYzgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2e728fc4804442249d71561350fd4e2e",
+      "statement": "The main entry point calls Execute which creates a CommandCollection and invokes Cobra command execution",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/cmd/galasactl/main.go#L14-L18",
+          "version": "repo-lines-v1:sha256:3d029d2b3bbb2c21dd70c82fff326a7177562bd4da7454359bc78ab891d4e13c:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzE1ZDY0Zjk3MWIyNGY3MDFkMzRjNzdmMTI1YWQ5M2Q3MGI3YjQwYTAyYzAyMzZiMDQ1MzkzZTI0YmY2YjVmZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGM3NjQ5ZWY2Mjg2NTk1YzBlM2QyZDA1NjJhODA0ODk4MDc2N2JiMjFlNjVlYTk1MmRmZDNiM2ZhNzA4MDIwOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/execute.go#L11-L34",
+          "version": "repo-lines-v1:sha256:3400f15ec4d53479e25833bb65687e996339ba7a5fe9e7c2d3b825ec6e8b3c86:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdkODA4ZWI4ZmRjZjMyYWFjYThlZmU3MGJhMjFlN2Y4NDcwNjkyNzcwZGNhMmUyYTI4YzIzYWMwYTg1ZGVlZDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNiNjhkNzNmZjA2YjQ4OWYwYTU4MWFlNjMzZmMwZmYzNTAyMmJjMWRkM2MzNzRlZTYwZjkzYWRhM2RlODMwNzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_573f8c036d6f4b07a6ac3787b8ddfc92",
+      "statement": "APICommsClient provides retry logic for rate-limited and authentication-failed requests with configurable backoff",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/pkg/api/apiCommsClient.go#L17-L37",
+          "version": "repo-lines-v1:sha256:20efb9cd07f9d6f6742794bad5324b780e0ce86050b621bc116a30a4abb8bdbe:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkxYzJiNGFiMWJmMDdmNDg4OWViN2NiZDljNjZhNjkyNjI5MTdkMDA0MWRhYWQwOTY1NzQ0YzYyNGM1MjRkMWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzY2IzMTUzNzEwNTEzNTA3ZTQzZmFmMGI2MTBkY2ZiYTExZWExZmI3YTEzZGE2ODU4NDE5ZjMxYzk0ZTRiZjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVlNTEzNGE5ZTA5MmRkM2FmYTZlMDAyYzA2NTQ0ZDQyOWRlZWE0ZjcwNTIxNzljYzI0ZDBjMjg4NDFkOWQ0NDkifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/api/apiCommsClient.go#L88-L149",
+          "version": "repo-lines-v1:sha256:abbdd3a863f538adc631284cac63820c3f1481c48a3feb6a4fd084af17834bec:eyJzZWxlY3RlZExpbmVDb3VudCI6NjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YTFkODVhNTQyMWVjNGRmZjZmZDIzOGI5NmIyNzUwNWMwOTU2MDk5NmRhYzI1M2MzMDU5ZGJkYTYyZmE0OWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc0M2JlZTJiNWI3ZDk3ZWUwZDcyYTAzNGZhNjRiMzY4MzViODQzZjdmYTJmN2U1MTYxNzYxZjAwNDI0YjUyMmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjljZTZhMGJlNmJlYzhmYWVmNzU1YTlmNmE4ZDgyNjYzNGNkNzUxZjEwYzEzOWFmMjE2NDQyZTcwYmUyZjgzZjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_af56fbd850f24b05a60f4f00065d3d5a",
+      "statement": "The Authenticator retrieves JWT bearer tokens from cache or logs in with personal access token via the /auth endpoint",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/pkg/auth/authenticator.go#L102-L121",
+          "version": "repo-lines-v1:sha256:80f56ef96023bfa93f3984c5a044664c83b9e2c63ed0584ece85cbb0c6f2506f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU3NDRiNTRjNWNhYzAxYjYxODZiOGFkNDdmZmYyMGVmM2IzMTVlM2ZjZDJjMjEyOWYyYTJhZjRiOWQ4OTg1MmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIxYjQ2MTUxYmFmMDgzYTI2MDU1OTgyODliNDIwNzk2NDU1M2FjYjc4NDQ0NWIwNzQzODI3MmVhY2Q2YzRkMWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA1Mzk2ZTQyNDJlNWIwNTYyM2MwN2YyZjVhOGU1NjNiOWUxNDBlMTQ1Y2U3ZThmMmRkMjMzYTA3NGNkYzMyYzUifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/auth/authenticator.go#L56-L83",
+          "version": "repo-lines-v1:sha256:905f6bf60b1a6869967787cc54185df9a4ef5a11b6d4ccfc665ed91404d2de42:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVjMDUzOTFjNmEyOTMxMDVkZTkzOWRlMGZlNWJjMzA1Y2QzNjg4YjIxZjA2Y2RmZTM1OTIzNWU0MTVmNjQ2YzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY4YmEyNTI5MzE3NDI2YzM3NDJjN2QzN2YyYmY5ZjljMDU0YTE0YTlkNGEwZWQ5NWYyMjhkYjA3ODQyZmUzZjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYxNzhlOWMyNWIxNGMxODU3YzlhZWNiOTg5OTA3YjE0OGRkMGQzMzNiNzdkOWY1NzQ4OTA3YThmMDBiMmY1NjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3ef9cb1abcbf4779b1166ee923755d25",
+      "statement": "Bootstrap loader reads configuration from file paths or HTTP/HTTPS URLs to extract the API server URL",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/pkg/api/bootstrap.go#L19-L33",
+          "version": "repo-lines-v1:sha256:6d1c48289bff5a57791434b434140e31fc11b6a3fee64230e3ae2546a724d77b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQwZDk4NmIwZGY3ZTljNDdhYTc4MmIwNjYwOTQ2OWJjOGVlY2E0NzYxMmI4MzhjZjgyOWRkYTRiY2RkZDMzMjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhZmJhMDUyN2MzOTUzYzRiNmUwZTViNTczOWJhODM2MTJmODA1M2JjZGM5NDY2NzMwMTkzY2QxZDU5MGI0MDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzY2IzMTUzNzEwNTEzNTA3ZTQzZmFmMGI2MTBkY2ZiYTExZWExZmI3YTEzZGE2ODU4NDE5ZjMxYzk0ZTRiZjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJkMjliMTIzYThlZDFjZDcwYmZiYTlkMTY2MWEwMzAyOGE0NTJlNzI0OGM5NWMzYjU0ZmE1MzczODIzOTZjNmUifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/api/bootstrap.go#L98-L143",
+          "version": "repo-lines-v1:sha256:877a33b9fa0cf5191c25b6d179919ec38608f778f2b3ea5c9d733ab4bb3b0871:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBlZWE3NWQ4YmQzZThkZTkxMWNhYWY4YjcxNmY3ZTE0MzQ3NDMzMmYwM2VlNjUxYzMyNGE1NDY4MzFjZjY1MDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNjMWQxMjUxNzNhNGZlYjRjZTExMTg3ZjNlMGZhYTQ5NGE5ODg0MjE2NDdmZGNlMTdkMjAzZjcxYWVmYjUzMjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJhMDU4OTM2NWQxYTY3OTExYmZmMTA1MDEwOTFiOTZlZDUzMTNmODMzZGM3MzVhY2E4Y2I0NzZlYjExZmFjNWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0ddb469d59f24da789c7c88ce974de91",
+      "statement": "The Factory pattern provides real and mock implementations of FileSystem, Environment, Authenticator, and other dependencies for testability",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/pkg/cmd/factory.go#L18-L28",
+          "version": "repo-lines-v1:sha256:8e0321b349a4e656f7de7c80820dca52a86942088ecb1fbc442b4ef075db1fcd:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFkMTYxNjk1ZWNiZDZjY2NmMDA4NjU3ZDQyM2QwMWI0MjM5MTZkM2ViMDEyZDBiNWRlNjYwNjc0Nzc5MTA5MWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM2MjJhNzQ1NmJhMDdkNTJlOGQxMWU1YTFkN2M2YjljNGVhYTNiMTMxNjE1ZWIxZmIxNWI3NjdjODM0YWJjZTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFiZTY2MDMyYTQ2NDE3MzE2NjRmYmUyNTMyZjdmMjMwYThhNmFkMDBkZTNlYjQzOTk2NjJhNDk2YzAxMWYwOGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk1ZmNkMmZmODM3YmI4ZjQxYTIzY2YyZDQ1ZTEyYmZkNTdiODJmYjYxNDhkMzU4ZWEyZjhhNDFlNmFjZGMxOGYifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/spi/factory.go#L14-L28",
+          "version": "repo-lines-v1:sha256:50fd2199a1437d2e9faa22ab72887407ccf787ea50f27489779b2c39fab18e5c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ2M2M5NGM5ZmJiMjBhMzZhOWZjMjgyOWRkMjFjNWFiYTA4M2NiYzVlYzZiZmMxMzUyZTk3ZjcyMjMyNjEwM2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhmNjhmMjFiM2QxNTQyZjZkYTg1ZjIyZWE2ZWIwYjlkNDI2ZjY5YWQ4NGIwNDE1OWUyZDAxYzJjMjE5N2VkY2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_16f65e3569e741e0a7a4ca63af2e5421",
+      "statement": "RemoteLauncher submits and monitors test runs on remote ecosystems via the Galasa REST API",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/pkg/launcher/remoteLauncher.go#L21-L40",
+          "version": "repo-lines-v1:sha256:53789be59825e0b12712579517403c18587a690d3d2ac2b60622cb041808b997:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlZDRjNGJmNmQ2ODNiNDRjNTJiOGJlYTljODgzNTgwODgzZGMzNzRmZDdjNzAwNzlhODQ1YWZiMDEzMGVkZjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU2M2EzZGZlMTg5MjJmMTVhZTY2NDEzNTEyOTJlMmE5NjhhNmMzZWNmZDRlNWJlYTg0MmI3OTk0M2NkNDEyZDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFjMWVlMjY3NjNkNWVkZDAyNGNlZTZmMGYzZDRhMTVkYzU0ZGU1OGI1NTVlMTNkMGQ1YTc1M2U0MzdmZDA4ODYifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/launcher/remoteLauncher.go#L66-L100",
+          "version": "repo-lines-v1:sha256:4ba04e4945b4f0bf1a023c813080e70996c2e0819d1e12c601f17cd047e0683d:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlhNGY4ODkxYzZiOWU2N2RlMWYyMzhiMDM2MWIxN2VhN2FhYTZkNzUzOGJmZGI5NTkwMWZkYjBkNTkyZWFlYjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU0Y2U4NjY0YTkzMWU0NDQzZjExNWZiNGFkYmUzYWQ1Yzk4Y2Y1MjdjNjMzZmFkMWE3NDk0ZmVjOTEyZmFmYjgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE1ZDRjYzQxMTk4OGY4YTgxYjkzMDdhOGRjMzBiYTJhNmNmZmRkZGQzYzA2ZDM4MWM3OWEwN2IzMmI2MmU5MDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBmNDU3YjBmNjIzYTAxMTg5MTc5ZGUyNDExNGJlN2RhNGM2YjJhMTNkYjhjNzg1YjVlYjQ0Y2M4Y2YyMzMwMGQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a5774d9d21b04139bfc80c05b3a4e553",
+      "statement": "JvmLauncher executes tests in a local Java process spawned by the CLI for development purposes",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/pkg/launcher/jvmLauncher.go",
+          "version": "repo-file-v1:sha256:000396f8f1284761d07aabd9ef005c3d04e42fd23de05b13704c4643a8891b34"
+        }
+      ]
+    },
+    {
+      "id": "claim_2ed7015cf10447c18c8fda0cb5b4ba85",
+      "statement": "The runs package provides test submission with throttling, progress reporting, portfolio parsing, and result downloading",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/pkg/runs/portfolio.go",
+          "version": "repo-file-v1:sha256:65faeaa80fb0bf56278405f7c453ed6835c020faf582dd62244d7f51b24af06d"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/runs/runsDownload.go",
+          "version": "repo-file-v1:sha256:37d66019c74cac30b087404d1c38fbab1f4fb093e14b6ed9b501a651f3e3e461"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/runs/submitter.go",
+          "version": "repo-file-v1:sha256:5fb445edb21443377e8d8bac8494e3e5fca39f190075d202a9a80f188a8a29b0"
+        }
+      ]
+    },
+    {
+      "id": "claim_3370974655b348edb62d86ac1d2659a3",
+      "statement": "Configuration precedence is command-line flags, environment variables, configuration files, then defaults",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/pkg/api/bootstrap.go#L145-L160",
+          "version": "repo-lines-v1:sha256:3748a3657d2ca1c55fac3d17efbb93cda80a7457972f8d825c7047f6e9963f9d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM4NDUzMmU1Zjc2MTY4NGMxMzc0NDJkNTE1NzE2OGNhNGQ3ZjRmYTY1OWJjYTNjMGQxMzQ4NjEyZDIyOWFmY2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg0ZTIwMmE5NmQ0ZjdkZTY1N2ZkZWY3MmM4NGE2YTIxYjRmODhmNjNkOGFmYjRmMjE5MmI3MGUzZTc1MGEwYjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk0MTJiYjA2OTE2ZjAwNTM3MWY5YjljNjMyYWM1Nzk5NWRmNWNlNDBlOGE2NGVlNjllZGRmNmUwNjIxNjdlYWMifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/utils/galasaHome.go#L21-L35",
+          "version": "repo-lines-v1:sha256:40cc56e9d0b5b946f9ffa537b8b7f469adb7c3d72122f9e004bcb3e643db36b6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBmNGMyZDdhNWE0YzJjNGNkYzk1Y2U0OGFmZDY3NmJkMDkzNTBjZTEyOWM0ZTRjMGJkYWE5OWNlNzc4MzA1MmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3Y2RhODJkYTYwNjIzOGUwNWU2MjM5OTU2OWM1ZWUwMzk5MzQxOTY0OGFlNWQ0M2EyYmY4Y2Q2MzQ3ZjgyNjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc2YWU5MmE0NGM4OWZiZmUwNjU2YTk5MjM3ZmIwOTIzYzRjNjA1NGJkNjE1ZWMwZmU3MTliMzRkNDQwNzg1ZDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkxNjgzYzk0NDcyMThiNWRlZWU0MDU2NTUxMjQ4ZTViMzUyZjllMmY1MDkxMDkwN2ExMjgwNzA1NmIyNWI4NGQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c6f1c49d67c54c908ae9a8d28ac51662",
+      "statement": "The CLI root command defines persistent flags for log output and galasahome path that are available to all subcommands",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/pkg/cmd/root.go#L100-L112",
+          "version": "repo-lines-v1:sha256:b61236b177c58fdd2fe757ef0cb7d0e56f2b936b51fdc0b5d2f7f23531e658ed:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY4NThlMTEwODhjMDI5ZTk4YWU3MTgyM2VjMGEyNzA4ZGQ0ZTIwYjJlMzg3MDc1YzVlNmIwZjVjMmZkNjJmYmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBhMTQzNjE0OTYzYTQxMDE2YWE1NjVlYzM4YThjYWIyYjI2MzkxMmZhYTkzMzRkYjkwOWQzNzk0ZDllYmMzNGEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNhOTM4MWE0Nzc0YTdlM2ZmZjgxNzEyYTMxZWRmMmNiOGZjYTY3NjVjYzA5ODNiZjc1YTBjODEyM2QwODRhYmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJhYzBmNGQwMjYyY2Q4MmM2OTA3Mjk5OWU4OTVhODhhNDg5MTk3MGFmMDNlNDdkZmRhYWE0YzVjNmJlZGZiZTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_248cb56ef93444959105e70762a8f77e",
+      "statement": "CommsFlagSet provides shared flags for bootstrap location and retry configuration used by ecosystem-interacting commands",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/pkg/cmd/commsFlagSet.go#L18-L28",
+          "version": "repo-lines-v1:sha256:f52c41a9a40bd32731addd38551d5587d99bb6a1ae787dda221fe19ccbbf6fb2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFiNWI1MjA4NmI0M2JiZWI4Njk3YzA2YzhiM2ExMzY3ODNmMGUzMjE2N2Q0ODkyMDU3YzQ4NDUyZTk4MTJlNzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVhMDNiM2RkNTdmNTRiNDIyZjQyNzMzODg1MzhjMjYwMmZiNjU5YmViN2RlNWIzYTZiNWFjMWU3NjE5NjJjZDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA1ODg4MzNhYzM4MzVkMjM5ODlkZGUzNDgyNjVlMTI4YzFhMTE2ZDM1OWZjYTY3M2Q3NDAzMmVhMmUxNjc4MzYifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/commsFlagSet.go#L68-L78",
+          "version": "repo-lines-v1:sha256:b6467b00ddf5e78194a17530fcfe60b0ea09e8c195edcc9abd241df52d200dc6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE3OWQyNjQxNzQyNjA2ZWIyN2QxODZkY2ZkZmY2NzRkZDg5MDgyY2M0OGRiYzYyNGViZGJjYmZlOTI3NTVhNzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU1N2QzMTBlZTg3NWJiMGM2MDFkM2Y2YThhYjA5NDlkY2UwYTZjODZjMjI4YTMzNDhiNWE5ODhhMGEyYjcwZTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d947526ce25e400fb195d2c1f554f118",
+      "statement": "The galasaapi package contains auto-generated Go client code for the Galasa REST API with typed models",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/pkg/galasaapi/client.go",
+          "version": "repo-file-v1:sha256:dacb996f2fc82bd168004adadb42edfbe35584ecbb51fb597ab3f4df09ad1853"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/galasaapi/configuration.go",
+          "version": "repo-file-v1:sha256:e347a05d81a380429e39bf758b8fe192d248525a7b009d3f1ba0c5d13ab631d1"
+        }
+      ]
+    },
+    {
+      "id": "claim_81abdac2a3ca4a83b371f6e090bdf0a1",
+      "statement": "JWT tokens are cached to bearer-token.json in GALASA_HOME to avoid repeated authentication",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L168-L168",
+          "version": "repo-lines-v1:sha256:bd895ee6d4acc4b2e427fbc230fbd4a73aa0fc5e113532f15b28bd8b353826b7:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmQ4OTVlZTZkNGFjYzRiMmU0MjdmYmMyMzBmYmQ0YTczYWEwZmM1ZTExMzUzMmYxNWIyOGJkOGIzNTM4MjZiNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmQ4OTVlZTZkNGFjYzRiMmU0MjdmYmMyMzBmYmQ0YTczYWEwZmM1ZTExMzUzMmYxNWIyOGJkOGIzNTM4MjZiNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODFkMWE0ZWM4NjMxZWQ4MmVkMDUyOTExODhmYjQ1NzdlY2M3YmFmNDgwNjhhNjc2YzZiYjJkYzJmYmNmOGQzYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmE1ODBjZTAzMTk0ZmU5ZjlkNmYxNGZhZWNhMGUwMDE5NTI5MWJlZWQzYzVlNjg5OTkxYmI2ODY2NDgxYWNhMyJ9"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/auth/jwtCache.go",
+          "version": "repo-file-v1:sha256:e41b9e57f6c1fa88ede05eff0adcc7d5a26125f8a276f7277e6af425fe13c8dd"
+        }
+      ]
+    },
+    {
+      "id": "claim_b82795e86a5942f4abd48c5a986e6d04",
+      "statement": "Each command implements the GalasaCommand interface providing Name, CobraCommand, and Values methods",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/pkg/spi/galasaCommand.go#L14-L23",
+          "version": "repo-lines-v1:sha256:3519023305948d2e552183b468767edebc7337d7d93f2e54e8922a340d20cdd3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA4ZjFmOWYxZDVhOTI2MDQxZTkwMzMwZDUwMjU3YzFlMWNhOWZjMTI2ZmZhODg5ZGI4OWQzYzc3MjUxMmM4MjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBlNWFlNTAyZDQwYWE5OWYxYzRiNjNkMWFiNWRkNTFjMjg5MzY5NjU0ZWVlMmIwNzNjYWU2Mzg3YjU3ZmI0ZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8546a818b2a84ddf88a58ddd5e9392a6",
+      "statement": "The project create command generates test projects, manager projects, Maven and Gradle build files, and OBR configurations",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L78-L132",
+          "version": "repo-lines-v1:sha256:4ff07d76869730724bec9d6c34a8a97beb775d9d3f2691e04ba3812b7cd8f3a2:eyJzZWxlY3RlZExpbmVDb3VudCI6NTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU0Nzk0NTk5ZTZlN2JlOGJlMmQwMTJjNGUxZmUzM2YwZDJhMGM0NmE0NWRlMjE4OGM1YjhkOTc0ZWYwY2RkMjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhkYTJkZTZlNzJmYjMyNTNhNzE0Njc3YmU4OGU3YTJlNzY4ZTIzZGQ3NDMzNTIzZTVjODUxOGQ2MWM3M2Y0NjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkwOGMwZGI1MmUyNzFmZGRmYzdhYmE5NTc5ZTU5NWRjYmM3N2NkNGY2NTMxMTBiZWYyM2Q1MDc1YTYwMmUzMTMifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/projectCreate.go",
+          "version": "repo-file-v1:sha256:4573c0a9b28b7326b6cb9b66374e0259bb90866d5cbb16645c1081bd81ce3438"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.2",
+    "at": "2026-09-21T12:35:12.771Z"
+  }
+}

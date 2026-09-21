@@ -1,0 +1,682 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:e7e77ce77b42086b986949ae7a92e6188b72379a5218a738328206a21b4bb24d",
+  "claims": [
+    {
+      "id": "claim_910e10fc3d4a4c04af051eb5a1de20bc",
+      "statement": "The galasactl local init command creates the GALASA_HOME directory structure with essential configuration files including bootstrap.properties, galasactl.properties, cps.properties, credentials.properties, dss.properties, and overrides.properties",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L32-L43",
+          "version": "repo-lines-v1:sha256:f71b76be0856b8a200c3fa1e69e8bf256dc9cf1012f3fa92f4c27302d78f0611:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3MjAwOTY4YjA3YTI0NzMyMzE4NThhZTFiNWY2OWZhMjUwNWVhMGVhMzYwMTExNzYzZmEzYWNjOThmNjhmZmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ2ZTA0YWVjM2I0MDk1NTJlNTNhN2MxZjgzNTExNzM1MTdhYTRjM2UwMGZiMWEwZGYyMmFhYTVkNTc4YzE4M2UiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI1NGEyZDhkYzlhZWY0ODUwMTgyNDA0OTEwODljY2Q5NDM0NGEyMzZmYjNmYzRmY2NmZDlmYTVjZDAwN2QyZTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgxZTExYzdkNjk3ODhjYjE0ZTk1ODdkNzljNmVhMjI1MmRjMDk0YTYzMmM5YjEwMTJiODMzYTU0MzRiZmZmNDQifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/localInit.go#L68-L119",
+          "version": "repo-lines-v1:sha256:cffc0b801beee22669cac3476e66d631120f02d683d0e65f7a0d82d07a477608:eyJzZWxlY3RlZExpbmVDb3VudCI6NTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjczZWJmZDRiNWRiZGM3NGFiNzdhMTkyN2FmOGFkMzhmMDA3YWUxNzM2ZjIxNTc2Nzc5MmMxNTdiYjU3NmUyOTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlZDYxZWMxOGIzYzYyNTJlZTVjMDJkNGY1YTNmMTRiYzVmMzJhOWQ3MjFhOGUyOGUxYjI0YmI3Yzc1NGZjYzMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZjYjM0NDAwMmU5MmNiYzM4YzJkNDE2YjEwMjNjY2JiMzVlZDE1ZGJjZTVmMGMwYjg4MWM3MGI1YjRlMTcxNGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9098dcda202e49aaabec04763b09d4de",
+      "statement": "The galasactl local init --development flag configures the CLI to use snapshot Maven repositories and creates ${HOME}/.m2/settings.xml if it doesn't exist",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L37-L40",
+          "version": "repo-lines-v1:sha256:632165f28f86665fc7be1698e24ad17f6f25d15fa39f5749b5bea7f3bbb04401:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGFhMDVkMDM5NTFmOWNhOWEyOWY2MDg3NDhkNzM1NDExNGZhMzY1OGEyMTllOTE3OGNhZGIzNDM0ODRiNTY5OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzA5YmE0MmI1MzRhNWJmYzBhYjMyMDliZTY3ZjZjZDdkNTI3YWU0YTUzMzEwNGI1NzJjMzdjYzNlZjhlNjkwMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGNjZTdjOTBmNTUyN2NiZGU3MTA0NDYzYzI2ODQxMTc3NTdjYWJlN2RjZjgyZTVlNmQxNGYyYmUzOTlmZDcyYiJ9"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/localInit.go#L78-L78",
+          "version": "repo-lines-v1:sha256:18eb5ae49954eee5eaa9d9f94194f415f847b84437fd2d7f9141ca81c9af7050:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMThlYjVhZTQ5OTU0ZWVlNWVhYTlkOWY5NDE5NGY0MTVmODQ3Yjg0NDM3ZmQyZDdmOTE0MWNhODFjOWFmNzA1MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMThlYjVhZTQ5OTU0ZWVlNWVhYTlkOWY5NDE5NGY0MTVmODQ3Yjg0NDM3ZmQyZDdmOTE0MWNhODFjOWFmNzA1MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWEzZTEwYjZkNTE3NGExMDUzMGE0Mjc5OTVhYzg3YjVmZDJiMGIxYjhjZmIyMDQ4NTBlN2IyNjc0Yzk1MmMyMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjFkZDk2MDI0ODlkZmEzYjRjNGI4ODFjY2NhMjM4ZGNiODVkNjk3MjM0NjVmNjQ2OGI0MmI5MGZkMjBmODFiYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_3aa80c52d5fe443aaa19243452b5c0d0",
+      "statement": "The CLI uses three key environment variables: GALASA_HOME for configuration and test results directory (default ${HOME}/.galasa), GALASA_BOOTSTRAP for bootstrap file or URL location, and GALASA_TOKEN for personal access token authentication",
+      "evidence": [
+        {
+          "resource": "repo://developer-docs/cli-architecture.md#L138-L153",
+          "version": "repo-lines-v1:sha256:5316841d59f319fbbd1c5169a5605f40897f5f0bd1062398781789dac59ee28b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUwYjk0ZmUwODEyMjQ4Mjc1MDBkM2ZkYjcxYjVkMTBiOGYyMGFiNWQzZmIxOTU2ZTllMzQyMzQ4ODA5M2U4YjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIzYTdjNDEyM2M4YzJiYzM0NjI1MDZlNTc2MzdkYTBhZmExM2YxZThmNTg3N2FkZTY4OWUwM2UyY2E2YmMzMTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImExN2E4NDlmYzc5YzUwNWQwNmI4NDFiZDYyMTk0YjI0YzlhYTIzODQ4MmQxYjFkM2M2ZjMxNzVmZjQ1NmVlZDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE0YjBjZGZiNjJmNGYyNmJhYjAxZGFmMDg3MmU3NGUwZDNmMGRhNTEzOTc0ZTFkZjFlM2EzMDQyYjk4YmM1ZmIifQ"
+        },
+        {
+          "resource": "repo://modules/cli/README.md#L7-L26",
+          "version": "repo-lines-v1:sha256:bf36d87618fb6c4506fd60b57572de892729469ade568b08ecfa932444deb675:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhjY2IyMGRiNzJiNDI4MGQ5ZTZjMzQ5YmFjZjJlYTNjNmU0ODgzNmI2N2NjMWEzZDUyNTEwZDA1NDkxYzcwN2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQwOThjZTFiM2U5ZmQ0YjUxYWE2M2MwMzQ1YmFlMjgxZjlmNDI1ZThmY2Y0NzYyZmQzYzUxMzVkMTA4YWIyMDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJmNjljMzIyMTk5NmQ5ZWM3OTcwOTM2YWZhYjc1YjU5ZmI5MWEyYmQ0Yzg0MjIwNDBkYWNmYzMxNWMzOTg0Y2MifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0e79d0fec6864b3d9bd0b51aecd3f2fa",
+      "statement": "The galasactl auth login command authenticates with a Galasa ecosystem using a personal access token and creates bearer-token.json in GALASA_HOME containing a JWT bearer token for subsequent API requests",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L154-L170",
+          "version": "repo-lines-v1:sha256:4e8da739f06b11131b52d294e227b51276509f5b466ce7e1e7494e7a2b37592a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBiOGNlMTJhOWI4NjEyZTgzMDU4N2RlMzlhMzQ5ZDMwYWUzN2EzOWVkY2Q4YTg5ODAzYmI0OWMyYzE1YzZjNjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ1OTMwN2Y0YWJmZDRkM2E2NWZmNWIzMThmYjY3NDc3MjA1NTAxMmJhNmIwZGYwYTYyMTZlMTVlYjYxNWE5ZWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk4MzYyNjk5NmFlY2QxMmRmZTdkYjEyNTA3Njg3YWExNjZlZmVkMzY4ZTE4MjRjNGM3MjYzNDViMjFjYmNhODIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM3YzdlODUyNTc3NmJhZDAyM2UyMDk5ZjQ3ZTM3MTYwNTM1NzM4MWUxOTYzMTBlNDYzZDU5ZjkyYTgyZmEwMmQifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/authLogin.go",
+          "version": "repo-file-v1:sha256:ebecde8f4345f8866cd70733c948b1c60d4a76e3e38bf139ab5f4db372297749"
+        }
+      ]
+    },
+    {
+      "id": "claim_ca2c07f84c924899b7df88cbd56e98b3",
+      "statement": "The galasactl auth tokens get command lists all personal access tokens for the authenticated user, showing tokenid, creation date, expiry date, user, and description",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L198-L215",
+          "version": "repo-lines-v1:sha256:399fefa4c6167d2ebeae2cf01004bd9830514691064215c61decf0bb1b1507d2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5MWI5NjAwNzU1M2VhODVmMTk1YzhjYTY4ZjQ1NzYzMzY3Mzc4NzVkNTI1YTA1YTIwZmZhZTYwMDBlYWJjNDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliOTQ1MmNlNDdjMTgyM2E4MzJkMDE0ZDFmODFlNjg2YTIzMWQwNGUwODMwNWUyOTZiNWMyYTNjYTg3YTMzY2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU3Y2NjN2Y0ZWMwZTdhZTYxMmRjYTVlNjVlMzkxNGRiMTQ5NDRjMDJjMTNmZmJkZjM1MDRkYjE4ZDExNTc0NmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY3NjgyMzJmNjVlMzEzZGQzMzhhMzQyNjg2MTZhM2ZiZWU4OTVkOWFmZDI2NDYwMDEwYzRkNDMzNjE5OWM3ZTQifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/authTokensGet.go",
+          "version": "repo-file-v1:sha256:991cab8277e874b1b2f07288a0bf5703a01a8a25265a744ba8937c7253b8a5a4"
+        }
+      ]
+    },
+    {
+      "id": "claim_6475b278690e475b88137911d04ad611",
+      "statement": "The galasactl auth tokens delete command revokes a personal access token by token ID, preventing it from being used for authentication",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L218-L232",
+          "version": "repo-lines-v1:sha256:0802fb3d0e21292ec2b09f2af5cf2ceda3989759841f0b20dbdb7d5ec2793fcb:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVmNmEyMzFiNzhlNmIzZGIzNDAyZDFiZGQzMWI1MDllNjEwNzIxNTZlYjE0NTZmYjM4NTY1MTkwMjYwZTE0MTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRiOTNhMjBiMzBhOWE0YjJjMmRiZDMwZTUwYTRiNDM2Y2Y3ODBkNjg3Yjg5YzM0ZWZhNDM2NjQ2YzZkZGRiMDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEzMjNiN2E5YTVjYTIxNWQ3ZTQzMTUwNGNjMzc1ZDljMmNhMTZiNzhjMWFlNjIzYTkyODY4M2QxOGNiZGE4OTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZhM2NmNTE5MjM1NGY3MTYxNWFjNTEwMzRiM2U5N2MyMGVkYTk5NjQzZmNhZjViYmU2ZDQxYWQ1OWJkMTIxNjcifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/authTokensDelete.go",
+          "version": "repo-file-v1:sha256:c57e15dbdfd535f227ce33f705ec26eebe82d7d842cd7e56d680aa5c1df69ec2"
+        }
+      ]
+    },
+    {
+      "id": "claim_19f1626a083b4c33bebc267860bcbbbc",
+      "statement": "The galasactl runs submit local command executes tests in a local JVM without ecosystem infrastructure, accepting parameters --obr for Maven coordinates of test bundles, --class for test class specification, and --log for log output",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L360-L398",
+          "version": "repo-lines-v1:sha256:a9bbc7826e944bf5b513b08eed9ff0bb8525a1c8da3f0da92d68069cf5d64368:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJiZGZkY2M1YjUyMTQ2MzM0MzkzMzY0ZDBkMjEzMzU0ZjMyZjUzMjJjNGQ5NjFlOTI4OWY3MGE0YWExZDE3MzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJmNGZiZDFkOThmNmIwMDQwMmVkMmQzMzYxYzZiMjVkYTk0YTJiYjkwNzlhZGNmMWMzYTBlYjg1MDFkMzk0ZjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI2ZmNhOGYzODQzNjkzNzI5YWRmYmE1NWYyNDg5OGRjNzNlOGFlOGQ2ODc5ZjUyNWQ1ODVmMDA3MjdhZTQxYTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAxZTg2ZTgzMTM1NDY5NzU0NjkwZmM4N2Y2MmE4NzE0YjE1ZGY4NzAyOTRkODYyMDVlZTIyOTZlMzY4ZWNkMjEifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/runsSubmitLocal.go#L88-L96",
+          "version": "repo-lines-v1:sha256:2a53b81124020f337f79693bdd107b01f0705b754bd44b1f1a411811668b1b63:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWY2NTE0ODg5NDk0MjFiYmRlZWY1MzAxY2I2OTIzOWZhNDVmZDVhMzNiOGY2ODFiMzQxZGUwMmQxMzc3NDgzNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWJhZDdjYzJkZmFmYzIxNzVmYTJkOTcwNGUwMjAyZjk0MDgzYTlkYTY5YTU4NWIwYjE4YzQ4YmVhMjM2Mjc1ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzVkNzdmOGU1MjVlZjMxZjYxZTZmOTdjMWI0YTEyM2U1Y2UzZjUxNGY4MTNjNjE5MGEwMDIyZGU1MTRjODFhZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmQyMGVhYzM3ZjQ4MjM5MmNiOWMxNzMwNzI1NjRkMWI0OThmNDllOGYzNjBiZDE5MWVjOTk1N2ZlM2ViMWY3NCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_4338a783cbd84df1b832f834eeea33b8",
+      "statement": "The galasactl runs submit local command supports --methods flag to run specific test methods within a class, with method names starting with letters, containing letters/numbers/underscores, and not being Java reserved keywords",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L376-L387",
+          "version": "repo-lines-v1:sha256:771b4a35150d7cfcec56e54b87fcbdb2a96704528c25d88e1148793a78aa1382:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ0NmRmYjZkMmRhZjNjMzRlOWU1NTUxNjY1ZDc2OTdmZTk3NzBkNGEyMzBkODZiYTAyZjlmMmJjODMxZDZlMjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YzA2YzU2MWQ1YzMyNzM0MzY4NTI2OGE0NmIzMzkxZjM5OThlZWU4OTBkMmJlNTFmMGQyMWNjNGE1M2FlNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNkMzU4MDA4M2NiNDgxM2M2MGQ0OTE1ZjczNzJiZGVhYTBkOTZhMmFkYTgxMzJjMmFmMzQyZjRiOWNiMzE5ODUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVlZDcxZWM3MTIzOTdmNGU3YjIxYmUwYjU5YTA3ZGJkNTNjYmYyNzQ5Nzk5NDFiNTUzOTA5MWE2ZDg1OTNjMjMifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/runsSubmitLocal.go#L146-L150",
+          "version": "repo-lines-v1:sha256:d96912304e210f541653e9a095055cc1542b888f8ec505ac213888eae817f182:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTMwZGY5Yzk0ZTYzMWRkMWU3M2E3ZGEyZWE2ODI1ZWU5MjkxM2YxNTgzNGY3YzNhZTBlZWExNGM0ZDMyNDJiYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmUyMTljNjlhNzJkYTViMDNkYmYzNGJjMGNkMTAzZDllZWZiOThmMzA4MTZmOWY1MmEyYjQ1NGFmMGQ2YmRlZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDAxOWNjOWQ3ZTc1NDg4MzE4NWYwZDg0OTk4ZWY1MDJlZTJiM2FhMWFjMGQxYjVhNzg2Mjg5ZTQ2MzhhZDI0OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmJmMWE3ODI1NmE5OGRlYzAxOTVjNDgyYjIxNmJlYmQ5YmNlYmFmYTJiMWY3NjJjZGNiZmI3NzgwMWJhYTEwYiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_bf837c31c7d644028750132e581174cd",
+      "statement": "The galasactl runs submit local command supports --gherkin flag to execute Gherkin feature files with a file URL ending in .feature extension",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L389-L402",
+          "version": "repo-lines-v1:sha256:e9767fef8d4c2b519819cb3d84a3a8e8f6208e20158c4d75ece6ad306b86bab0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlkYjNhYmQzMWEwYzUwYTc3NjRhNzBhNzM0NzA5ZjQwNTdjNjQ2NDkwMDk1NWRlM2NkOWY1YWI3YjFkY2RkZjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVmNmM0Nzc1MzMyZGZiMzlmYzY1YTgwNWMwNzNkNzY3YjkwZjRlYjg2NzQzYzE0ZTM2ODEwNDAwMTgyNmE0ZWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhlZDIzMGUxOGFmYTg5MjlmZmM2YjVjN2YyZTdjOGNkZWQwYjZmNTE3OGU2YjNlYTIzOWQ0ZTRiNTgwMzUzNDIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f672d233345a407bb2c9cab9eafd35b4",
+      "statement": "The galasactl runs submit local --offline flag prevents the JVM from contacting remote Maven repositories during bundle resolution, requiring all bundles to be present in the local Maven cache",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L407-L418",
+          "version": "repo-lines-v1:sha256:c66f3d1445ae88b344d4708fab936fd0fe874445e0017b38cc8576a72e0ecd2c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQwNmQwZTFjZjBlNTFhZTc3M2EzMGQ4YzkwZTk2YTc5YjE4N2Q4NzEwMWY5N2RhM2I1ZDAyNjkxNGE4MzI1NjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA3ZDkxY2E1YmE4MjA1OTA1NzY2NjU3YzVhY2ZlMGVjOWQzM2IzNjg2NTYzMDY1OTZkOTMyODIxYzY4MzBlNDAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdiYzczYTBjYjNlMTFlNjZkMzk3YTYwMzVjYTA2MTZmM2RlNGFlYWM5YWRmNTk4MDRiNjJlMDUxYzgyNWQ2OTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQyNzQ1YzUxZmE4MjcxYTk0MmJiOWI5ZmUwMDdkNWE2M2YwNzYzNGY2ZDM5NzQwOTA0ZGFiZTQ1ZjA1MmE4NzEifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/runsSubmitLocal.go#L142-L144",
+          "version": "repo-lines-v1:sha256:f95754c02f282878d242e3a2bb16502b22b6ddfb727fbfc9bbaba42faf442880:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmQxMDE2ZjI0Y2YzN2RiNmJlMTdmZDg0NTYxN2IxYjRjODFiNzU0NGU1YjUxNTcyZmFmMWY4YzZjYmQ5MGE5YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDUzZWYyMzE4N2IzNWVkNDMxN2Q1YjcwMGI5MmJjNjZkNmIwZDJjOTI4Yzg2YzY1MDU5MDg5YjU1YzFmNDk5NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTU4ZjEyZGMwZDg1ZjQ2ZjQzMGQxODBlZTc5MmM3MjkxZDViN2U3NWJiMzRmNzViMTRhZjRjNGFmMjA4M2FkNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTAwYTg0YTdmOGJiM2VlMzc4YmY2MjAwN2FjMWFlYTVhNGU1MWJjMjJhMDE5MDM5MGNmOTU0NjExNjk1YWMzNSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_8b820e3ea7f341ca936ea4c6e1e8016b",
+      "statement": "The galasactl runs prepare local command pre-fetches all OSGi bundle dependencies for OBRs to the local Maven cache without running tests, preparing for offline test execution",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L571-L593",
+          "version": "repo-lines-v1:sha256:4e713b7a217339ef7c44863f465bdf0a9f24b8ca2cefabd66cd11d6d6f5b35f5:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU1Njg0MTAxNDJhNmFjM2EwYzU5ZGUwMzZhMGRkNjhlZDg4NGIyMmE0OTdkNzE4MWViOTNjNmRmOWRmMjFiMDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNmN2UyN2QwMTk4MDcxNWFjYzI1YTNkMDIwN2NlZWU0NWVjYjAwZjVkZWI5MDlkNjFkNDQzZDQ0OGE2NzcxMDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJiNGZiNWY0YmY5YmRlZWU4NTU0YWJlMzQzYzk4Mzc1YTQyM2JmMDRiYWIzZmQ1YWYwZmIyYzYyMGFlZmU3ZWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcyYTUyYjdlZDBkOGM2ZGI1ODRjNzRhZjM3MTU0M2M5YjY3MWRkMmY4Yzg4NmIxYTcxYTkzYjBiNGU0YzUyYWQifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/runsPrepareLocal.go",
+          "version": "repo-file-v1:sha256:494b95bfe8f2a134e8a8b42d596e05049eb56d81d2e4b30ae65a5340cbd23732"
+        }
+      ]
+    },
+    {
+      "id": "claim_406bc819d8a94adb94e329253f152b29",
+      "statement": "The galasactl runs submit local command supports debug mode with --debug, --debugMode (listen or attach), and --debugPort parameters to enable Java debugger attachment",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L420-L456",
+          "version": "repo-lines-v1:sha256:16007c90a970b33877b3a397962c51ee7dbb5f9aa68ee194c9897ad0ea87d401:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2NjBmNzUyM2YyYzNlNzc5MTViZDI4Njg2MDkwNzUyYzc0ZDYyNjc2ODBjZGM2NjJmZDMyOGY1MGQxYmMzNDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ2YmQ5NGY2MDA0YzNmMjZkYjdjNTFlNTJiY2JlNzZiODA3OTY0MWJhYzU0YjFlMWQwNzhmNTMxMDQ5NTIyOGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFjZjE3NDQ3MjJhNDJmMzBkMGNkNjlmODFlYTg5ODI3OWMwY2NlNzAxNGYwYzY0MTM0YmJiZjgwYzZkNmQwZjkifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/runsSubmitLocal.go#L120-L140",
+          "version": "repo-lines-v1:sha256:559a1920dc50b1b243e3df93a9bf426d5aaaac20088b737c117e64afc3c86ac8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYzMzliYTgxYzk4ZDEwMTA4NjBhMDU0YWMwN2RlNjM4OGFiNGYyMjU0ODBlMzE3MmVjNmNkZTdkZGFhZDBlNmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNmYWMxOGEzYjU0OTg2OTA0YzI3NzhhNDBjZjVkZWM0ZmViYzU2MmNlNWRhOThlNTY3MmMxZWM2NzY5YWI2MTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk1NjUzMTZlOTlkZmQzMjgxNDVhNGI4NTFlMzA3MTdlYmY3Yjc4YmZmY2ZkOWFmNDc5YWExZDc4MGNiOGIzMjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQxOWE3Y2Q4YWZkZWVkYjhlYTliZGUwOTA3YTdkYmQ5NmMxNThhM2NhYTUxNjAxYTU1MmE2ZGFmMDIxMDdmYjMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0d5eb3c11c3a4bb281b150792b0b94d9",
+      "statement": "The galasactl runs submit command submits tests to a Galasa ecosystem for remote execution, with the run requestor set to the personal access token owner and optional --user flag to specify the associated user",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L312-L358",
+          "version": "repo-lines-v1:sha256:3e7f3cec903c5fe187b7801118b576b55c0c510b0491dbee6d49f30838c59b54:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUwNDQwNGU3ZjJiZjYzNWQ5ZDU0MzNlNWI1Y2RlNGU4NWVjZjFkZTZmODI5OGM1MTYzNzhjNGNkYjNiMjBiNjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YzA2YzU2MWQ1YzMyNzM0MzY4NTI2OGE0NmIzMzkxZjM5OThlZWU4OTBkMmJlNTFmMGQyMWNjNGE1M2FlNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI5MWZkYjIwY2QxYWM5MjJkNWViNGFkMzEyNDA2NGFjNTJiOGJiMDA4NGIzZWY3MTk3NWZkMGM2NzVmZWZlNTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU0MTkxYTFlMDdhYmFhMDAzNzc0YjEwYmFhN2M5YzliMWE1ODU5NzA2ZDZjNTQxMmEzZjRiNGJiODNmZTc1ZWQifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/runsSubmit.go",
+          "version": "repo-file-v1:sha256:ef9af306c098f92e86e15ab813b49d5784dcd87decbdba9c8ce98cc6f2fd96c8"
+        }
+      ]
+    },
+    {
+      "id": "claim_083f813637ed40eaa6a0764573fe959f",
+      "statement": "The galasactl runs prepare command builds test portfolios from test streams with parameters --portfolio for output file, --stream for test stream, --package for test packages, --override for property overrides, and --append to add to existing portfolios",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L236-L310",
+          "version": "repo-lines-v1:sha256:455b84f86e9c5afafdb905bc45d1d7552c7475ee04d254e45bed76e9e2820e8a:eyJzZWxlY3RlZExpbmVDb3VudCI6NzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM3ZTFjZDFhODY2YzQwZDkzZmI5OTliOGRhYzQzOWQ4NzAxOWQwNGZmY2NjZTdkYjdiOGFhMGE5YmY4MGE0MTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YzA2YzU2MWQ1YzMyNzM0MzY4NTI2OGE0NmIzMzkxZjM5OThlZWU4OTBkMmJlNTFmMGQyMWNjNGE1M2FlNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZhM2NmNTE5MjM1NGY3MTYxNWFjNTEwMzRiM2U5N2MyMGVkYTk5NjQzZmNhZjViYmU2ZDQxYWQ1OWJkMTIxNjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIzYTViNGRhZmRhOWUwOTFhMDY2NGQ3N2FiZGZhMTliMWJjMTQ1MWJhNDMzNjMwZmFiZTgwNDIyY2Y0ZWE3ZDkifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/runsPrepare.go",
+          "version": "repo-file-v1:sha256:ef27332b3058df21de33c41d38f7678a7325af12546b452e6824481b4bc36ecf"
+        }
+      ]
+    },
+    {
+      "id": "claim_2ec0d17faad649af91f66418d1849f77",
+      "statement": "The galasactl runs get command retrieves information about test runs with --name parameter and --format option supporting summary, details, and raw output formats",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L458-L468",
+          "version": "repo-lines-v1:sha256:fc41009b819c2204eac41b4bf6580d7dfd7e1ed1a520d4ee4a004b2bc60857db:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNmYjJkOTI3YTYzY2MwYzliYWEyZWEwZDBmNGNlNGQ0ZWQwNjhiZjU5ZDNmN2Q2NjhhZDVkN2FlODFmOTljZDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNmN2MxZTEzOTFmNzY3MDg0OTQ4MmRkNTI3ZDk4NzI1MTc3ZWExMDViZTVlNmNiZGM3YjU1MDRhMTkwYTZhNzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMxYmYzOTY3MTU5Y2Q3ZDljNjdmMmFhMzIyMGNkNjcxMjY0NjllNmE5ODQ3N2RlZmY5NGMxNDg2YTJkYjI4MzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZmOTYzMjkwZDM4M2FlN2U5NDFjYTEzNWIwZjY5Zjk4NjA0MWYzMjZjZTExNjQ2MjU0ZWVhMDI2YzI0Nzg2ODUifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/runsGet.go",
+          "version": "repo-file-v1:sha256:958a2bb958959ec9a556ecc467c84cd1289ffd8a86333f7ad85d3a24df9989c4"
+        }
+      ]
+    },
+    {
+      "id": "claim_d700dac7c51e4142ae47b5ba479b0239",
+      "statement": "The galasactl runs download command downloads all artifacts for a test run to a directory named after the run name, with --destination to specify custom location and --force to overwrite existing artifacts",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L484-L511",
+          "version": "repo-lines-v1:sha256:92cf2bf3b4b776209223bec1964c1e28115d4c334fa447b5399319ab0f802f1f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlYzMzYTZlN2QyNGEyMDVlODNhZTI2ZjExNDE3ZTI1NGVmZTRkN2ZiZWZiZmQ0NGJjZTBhZmE3OGU4NTJjODEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZkM2ViMDMwYzMwZWE2OTQyZGNlNGUzMWJmZjNhYjQxYzc3YjA4ZjBlNmMwMmYxMzRhOWI0MGYyMGYxZTk5YjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEwNzIyZGQyMjI5YWE0OGM1ODc4NmQ4OGVlZDRjMDY5MDNmZWE3NjBiMmY3OGE3ODlkY2M1YTdhY2NmYWRmZGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZhMzU4Y2U5ZTYwNDA3ZTE5NjI2YTE1YmNkNWNhZTk4ZDNmZjRkOTc0ZDVlMmI2NWQ5MjYwNWIyYTBiMjI3ZGUifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/runsDownload.go",
+          "version": "repo-file-v1:sha256:e9e97f51d04a043ad155149801349431c987e5915484505dc607abf2a757f3ed"
+        }
+      ]
+    },
+    {
+      "id": "claim_c0a8a1ec726c43a29178f78ea232dde8",
+      "statement": "The galasactl runs reset command resets a stuck or looping test in the ecosystem by requeuing it, with the server accepting the request asynchronously",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L514-L525",
+          "version": "repo-lines-v1:sha256:6cef0bc05985dd506de85d184f78e0b080238ad6b43f495decb80977cce69e4f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVjMGNiMWU0ZmEzYWQyNzk1ZmQwYWMxMzNhYmIxNjM2YjQ3YzY3NmU1NjZmN2E4YmNkZDY5YWM3NGJjZWJkYjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YzA2YzU2MWQ1YzMyNzM0MzY4NTI2OGE0NmIzMzkxZjM5OThlZWU4OTBkMmJlNTFmMGQyMWNjNGE1M2FlNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNhODU5MTI1NjgxZTJjNjFlYTYyZjAzZTlhNGI2ZjBjNWYyOWNhNDgxYjg3ZWVjZjhkMDM3OWZhOWQwMGNhZGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZiZjYxMGU4YjY5NWE3MTI4OTI4MTI4ODVjOGM3NTkzNTBiNDIzZjNlODkyOGNlY2IwM2RkODJmNGI1YTMwNmQifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/runsReset.go",
+          "version": "repo-file-v1:sha256:471f361166945c9e6bf4d42f5e372966fd96e3505c483e398522dd324c6aebf6"
+        }
+      ]
+    },
+    {
+      "id": "claim_4f9ecbc8fa014c33b425bc37b1835dcb",
+      "statement": "The galasactl runs cancel command cancels a running test in the ecosystem while preserving RAS data already recorded, with the server accepting the request asynchronously",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L528-L540",
+          "version": "repo-lines-v1:sha256:7aa7ffd9cbaf4c5bd7730eddd08c96c36cae25a4b3ce22a40b088393b49397d4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg1ZTk1ZWUxMzYzOTNlM2ZiNDA4N2VjZTkxZmJkMzdjZmJlOTdjZTY3ZGJhYzQxN2IwNjc0NGJhYmU1YWZhYjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YzA2YzU2MWQ1YzMyNzM0MzY4NTI2OGE0NmIzMzkxZjM5OThlZWU4OTBkMmJlNTFmMGQyMWNjNGE1M2FlNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNhODliOWY3ZDZjMTk0MTE2ZDFhNzdjODNjMWE0OGIxNTQyNjhhOGI1ZDc4ZDM2MjVjNmEzZGExNTEyMjhiYmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg0OGY5YjM3NzkyNWE4ODhmMTYxOWYyYjcwNWNmNjc2NmMxZTYwZjQ3MzM4NWY3YmY5MjQ0N2RlOTVjNjE5YTQifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/runsCancel.go",
+          "version": "repo-file-v1:sha256:eeb817ea01a6d598f0a886d522c98bd7848029e512bfa432348442453473e266"
+        }
+      ]
+    },
+    {
+      "id": "claim_a44f7efbada542ee8559030d295b6037",
+      "statement": "The galasactl runs delete command deletes a test run and all associated artifacts from the ecosystem's RAS",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L470-L482",
+          "version": "repo-lines-v1:sha256:fa8441c74c9a8015b29e93bb2d9d6b80cf7358591dd61fed024cad263f58fe19:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg5ZmE1N2QzNjNlNzZhN2JlNTdmMWQyY2M5ZDhkODRiYTkwYzI3ZGQ3NmU0MzMyMmZlY2E5NWE4ZGM4NDJjMjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ0ODc3ZjFjNjczODMwNzc0ODUzNzg4YTRhYmE3NDdhZjU3OTc0MmQ4MTdmNzY0OGYyNTVlYjVkZjBiMTQ3YTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ1NGFhYzQwZjNmOTFiOGEyMjM4YmEyYjQzYTg5YzBmYzAyODMyZjY2MDhmZTdkMTMxMmUzMjM2YWEzMmZkYmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY0MzNiMTBkOGVhOTVmMDAxYWVkOWY0Y2I4ZTAxMjFjODVmOThhYTQ5ZDkxZjkwNzMxMDQyN2FlNWJjMmNkYzUifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/runsDelete.go",
+          "version": "repo-file-v1:sha256:f74c555419ade3245fc088e772406592ac41e41017a38044183643ad73598299"
+        }
+      ]
+    },
+    {
+      "id": "claim_6e0ff194dea94e5fbf3b15f17ec8d631",
+      "statement": "The galasactl runs cleanup local command executes resource management providers in a local JVM to clean up provisioned resources, accepting --obr for provider bundles, --includes-pattern and --excludes-pattern for glob-based provider selection",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L542-L569",
+          "version": "repo-lines-v1:sha256:1c185abd81a0fdd9b25c874da1114279b3541dfdc3db49aea650405db6f4f41f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVmMDk1NTgyZTJiMjdmNTlhYTFmYjNjMGMwMjU0MWNmMWJiMDFhNTEyYTA5ODc4YmRmMDExNDVlN2UwNjFhZTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YzA2YzU2MWQ1YzMyNzM0MzY4NTI2OGE0NmIzMzkxZjM5OThlZWU4OTBkMmJlNTFmMGQyMWNjNGE1M2FlNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjViODkzNTgwN2I2ZDRlZGIyMzQyNWNlMjI0ZTU0MzViZTI5ZDAyYmVkOWM3ZWEwMTk3YTUzOTZlZjg2ZjVlNzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNkMTE3NzgxY2E2NjI3ZTc2MTM4Mjk5NThlNjI5ZjY5MmE5YzIwNzMwNWJiOWRjODlhOWRmZWJjZTRjNDE2NGUifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/runsCleanupLocal.go",
+          "version": "repo-file-v1:sha256:fb122f3ebe182ce0e855d8cac6ec5f043546f9666a7d88d2805e105d3b259791"
+        }
+      ]
+    },
+    {
+      "id": "claim_7f90b8c731e340908410172823d86d56",
+      "statement": "The galasactl properties get command retrieves properties from a namespace with filtering by --prefix, --infix, --suffix, or --name, and supports summary, raw, and yaml output formats",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L637-L702",
+          "version": "repo-lines-v1:sha256:d2329a0d38879038281bf360ad217706503f2da0eccda3a97c71336a24112299:eyJzZWxlY3RlZExpbmVDb3VudCI6NjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI4MjY3ZTNiM2MyYzE4OTVjODQyMDRjNWE3NzA0YmUzMzliYjYwZTljM2M2N2NmZGNkNDdmYjY4NDNjMmVhZWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YzA2YzU2MWQ1YzMyNzM0MzY4NTI2OGE0NmIzMzkxZjM5OThlZWU4OTBkMmJlNTFmMGQyMWNjNGE1M2FlNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJhZDNlMmQ1MjgzMTVmN2I4ZWVlNDg2NDc5NWFhNGRjMDI3YWZlMTIyZDdmMWIyMmJkNDY4MzY3NmU1OTQyNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRlZDcxZDU3NWRmZDA5MzJlYjdiOGIxYWRiNGFjYzFlNTIwMDExM2VlN2Q3MmU1NDdiY2I1MDE5ZWNhYzQxMzIifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/propertiesGet.go",
+          "version": "repo-file-v1:sha256:4578366c6045e24575f0be1196c8f3b1737c33010b6e83dde2f1f63186ae22bc"
+        }
+      ]
+    },
+    {
+      "id": "claim_b6bd474ab3a446b6a4955e451aca69d6",
+      "statement": "The galasactl properties set command creates or updates a property in a namespace using --name and --value parameters",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L704-L713",
+          "version": "repo-lines-v1:sha256:c3209424dce9f72d56fc8681a9ec074d539ccf274deb7e72d91d68b3b020e774:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1NTBhZGNlNTUyYWIxMGU2YjM3OGVlZTRiYjZlNzUxMzhlNTZiNDA2ZTlmOGZhZjA4OTE2NGI1MDhjYmYxNGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImExNWNkY2RlZWUxOWE3NDk5ZDg2MjcyNDRlOTUwYWM5NDFiZmM4MjBmMWFiZTk3ZTQxM2RlN2JhZDcyNDFkYWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVjNGJiYmVhY2VkMmM0Y2I0MjMzYWMyMzFmZjYyYzE4OWJmNWFlMzJlMzU0NDYzY2UzYjUyNDYxODBjOThkZGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ1OGExMTRlNzJkMGQwMzhlZWI3ZGY1MmZmYmZlNTc4ZDRmMmFkYjBhMjI1ODNjOWUxYWYxNThlOGVjYjY0ZjcifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/propertiesSet.go",
+          "version": "repo-file-v1:sha256:6a9f7b21e4da4ed80664bebde72fbdaae09aa0124a53f7e92ddbdbe901e58d5c"
+        }
+      ]
+    },
+    {
+      "id": "claim_eeb4236921b941cf9831cc897696acb3",
+      "statement": "The galasactl properties delete command removes a property from a namespace using the --name parameter",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L716-L725",
+          "version": "repo-lines-v1:sha256:05d18ddac5d8ae794ec1a2200625c2bbd7727396f829307b9fe37fc9408fe075:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVkYjhhOGRiNWZmNzZhZjhhZmFjOGI1YzFhYWIwYjcxZWI2OTdmYjFjMWFlM2RlNzNlM2RjNjZhMzQ2MjJlZDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1NTgyNDJjOGMwYmYyNDZjODE0YzU5MTUzMmE3Y2Y3YmNiMDBkNDc5ZGEyMGZmYzY5NzM1NDk1MjUwNjAzNTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJlNTRlMGQ2NWFjMTMyNGUwMjI5OTc5MmZmNGQwNTE2YWNmMTAyOWY4NWQ3NjEyZjNlNDhjYjIxNDA0YTNhOTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZkZDUzZDBiNzYwZjEyNTNhYTg2NmJlMDUzMjdhZTdjOTQwMWFhODc3ZGQxZDI0ZDZlZTg5NWEzYWMzNDkxZGQifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/propertiesDelete.go",
+          "version": "repo-file-v1:sha256:e258fc503927b44f1c64c20ef5818a04efc901b3c0178e63051f2c7c6178f434"
+        }
+      ]
+    },
+    {
+      "id": "claim_8336b4f111704cd1812e9c2d31610f21",
+      "statement": "The galasactl properties namespaces get command lists all CPS namespaces with summary and raw output format support",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L728-L759",
+          "version": "repo-lines-v1:sha256:4c0c12c74d786e964b0ad5a8420ca5bd765068fefd658bc056c9b97edf3efe4c:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI4ZjIyZGMwMWJmYTBlOTgzYzNjZTk3MmUzNjU1MjcxMThmZGRmMzg3ZTNkNDliNWE3YzRkYjc3MmRiYjM5ZWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YzA2YzU2MWQ1YzMyNzM0MzY4NTI2OGE0NmIzMzkxZjM5OThlZWU4OTBkMmJlNTFmMGQyMWNjNGE1M2FlNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU0NjcxMTMwYmU0NDFjOTI4YjY2NzkxZDEyYmVmMTU4ZDM4ZjcwNjY1NDJhMTlhMTRkMWQyMzUzMmUwMmJkZTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZhM2NmNTE5MjM1NGY3MTYxNWFjNTEwMzRiM2U5N2MyMGVkYTk5NjQzZmNhZjViYmU2ZDQxYWQ1OWJkMTIxNjcifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/propertiesNamespaceGet.go",
+          "version": "repo-file-v1:sha256:d8fe1d5d2631c6ad50e0ca8829f1ad08273ed81bff014b3d67357f3c1af22ab2"
+        }
+      ]
+    },
+    {
+      "id": "claim_6fd278c70e4c41ad965d9c7817e1c809",
+      "statement": "The galasactl resources apply command creates or updates resources from a YAML file, creating resources that don't exist and updating those that do",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L763-L773",
+          "version": "repo-lines-v1:sha256:c21c7972e84a9a2cde72812c8d27cba27a8e9e0ad083c4f780eb2e9d465a46c2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRhYTE0ZmEzNDNlOTYwY2U2MmI4YjdiMDM2MjI2YzQyMzY0YjA0ZTI2NjQ4MjE2ZmQ3MTE0YjU0YjlhN2IyZWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhMTI4NjgyNjg3MjdkODUyZWQ5NTg3YWY5NDE3NzA0OTNjN2QwZDE0NTUzNmNmOGMwZTM5NjhhZTFmNDUxY2EiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZhM2NmNTE5MjM1NGY3MTYxNWFjNTEwMzRiM2U5N2MyMGVkYTk5NjQzZmNhZjViYmU2ZDQxYWQ1OWJkMTIxNjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYyODViZDQyMzUzZDZlOWE4ZTgyNWZkNzQ0NmFkYzkzNTRhZmY1MTMzNmFlYjMzMmQ1NGVlMGYxMTNjYTVlMzAifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/resourcesApply.go",
+          "version": "repo-file-v1:sha256:dc5153d9395bc6a3e00a2a4457401ead103db57fd048312481956b4b4a9e0f53"
+        }
+      ]
+    },
+    {
+      "id": "claim_ae089dce30bb4e0d8d2765ef5c09a257",
+      "statement": "The galasactl resources create command creates new resources from a YAML file, failing if resources already exist",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L775-L785",
+          "version": "repo-lines-v1:sha256:21b5ee55da1544b537d44b95f751c7a50e8679e7de624d7c60dd2582fa2218e8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJiNjY0ZjMyZWExZTQ1N2VlZmIxNWNhYWFiYjA2OTk2N2Y2OTM4YmVjN2E2ZGE4NzJkZTlhMzRmN2I1YjE2M2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkNGM1ZGE0ZjhhZTFmYTU0ZmE4ODZhYWJmZjNiYzFlYmZhYjk5ZjQ3NTgyOGJmZDg5ZDA4OWFkYmYwY2I1MjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIyMGM3NGUwNWY5NGU5ZTRiNWQ2NDUyM2NjYmFiYzdhOTQxMjZkMzg0YzdiOGQzYzM0NjJmYWFlYzY3NjAwODciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJkMTAwY2QyN2NmYjhlZDFmYWIwNTdmY2Y5MjEwNzVhZWU0NDdhNzYyZGU4YjNmMzhkZjdhMDcyMTkxNmYyMzEifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/resourcesCreate.go",
+          "version": "repo-file-v1:sha256:b28887cb9fad5542ba213350a21c93fd2f133233de48b7096c6fe7ee4b0ac8dd"
+        }
+      ]
+    },
+    {
+      "id": "claim_c7648739c0e1446e8653c491ebc5f485",
+      "statement": "The galasactl resources update command updates existing resources from a YAML file, failing if resources don't exist",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L787-L797",
+          "version": "repo-lines-v1:sha256:53e206ee12f0bd4f9c4ade484565269219ebfdcdd4d1cb93d55711b7005b84e4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1MDQ5ZDEyY2ZiZTVlMGM3OTQ2NzQ1OTk4Yzk3OTIxMTBiZGM4ODM1YTlhMGM2YTU2YzZmNDY3N2IwYWZlMDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwODNhMzgwYzc4NGMxMDViYWQ2ZGYwODIyYjQ4NWI2YmM4MjgzMzM2NGIyNzExM2RmODM3NmVhNmJjN2Y2NjIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEyOWZkYjQ0MDg5MzA5Y2ZjYWQ4ZWM4YzQzYWExOWUyZGU1OTJjNGFkZDcyMTc1OWM1NzFhYzJhZjY0NzRhYzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFiMWMxYzYxODJmZGM4NzViNzA4ZmZkMGUzMzZiNTdiMzA0MzVmYjE4NGU0MzM3ZjJmZmQ0NzgwYTQ3NzBmMDcifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/resourcesUpdate.go",
+          "version": "repo-file-v1:sha256:5a64540336bbf3d455cbd105d060c6076be15399d9e332a1771c5725992d42d0"
+        }
+      ]
+    },
+    {
+      "id": "claim_fb24467490d74aed933f070308be9c65",
+      "statement": "The galasactl resources delete command removes resources defined in a YAML file from the ecosystem",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L799-L809",
+          "version": "repo-lines-v1:sha256:26dbc6d45c940b39e67487379195cf2a5c83ab5df3ffb5d9cb44a5eaf84c50ac:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVmNjIzMDY5NjZjMTEwODJmZjFhYTJlNWNiZjYzMjY2YjFlNDFiMGJiYzlhZDhhMDIzOWNjZjU0YTM4YzkyMTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3MTg3MWVmNjY1ZDU5NzZjYzY0MDQ4NjdlMjQxNWYwNTk4NDc0ZTQ5OWYwZWEwOThjZDA2ZGE2MTcwNzRlNTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE4YjJlZDc5Yzc5NDNlZTg3NjM5ZWM2YWQ3N2U2ZTIwZDFkM2Q3MDAxZGIxNzU4MzQ4OTdiMjFhNDVlYzBhYWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE5ZjVhYjU1OTIyZjg1YWI2NGYzNzViNjg2MDE0ZGY3OTQ5ZDNmMGY0ZjU3ODcyZDFkNWMwMzc5MTljNDJlYmEifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/resourcesDelete.go",
+          "version": "repo-file-v1:sha256:a2f53bd535ddf7ca93ec1fad9edc39d0cddb780bdb63e10acc6b2310b9b51f18"
+        }
+      ]
+    },
+    {
+      "id": "claim_0963c8155b2e41669f2d9d2922257bd9",
+      "statement": "The galasactl secrets get command retrieves secrets from the ecosystem's credentials store with optional --name parameter for specific secrets and --format parameter supporting summary and yaml output",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L811-L835",
+          "version": "repo-lines-v1:sha256:95e592834058780ce759f3a08e1b5f091b79bc18eecb431135dee2a11749765a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZkYTQ5OTI3YmUyY2JiNDg2Njg2MTQwOWI4ZjI0YmIyMmY1NGI5ZjgwOGNkNGNjNTcwNjdkMGUyZDlkMjk2MzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0M2Y3ZTJmZTY0NDNmMWY2ZDBmOGUyZGQ2MjQyNGVhY2JiZTNkMDJhM2ZjNDQzNzBjYjc5NGQ5ZTVmODMxZjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE5ZDhmNTlhMzY2ZDVmMGNiYmNlMWRjNDUyODVlYzU1NTg3MmRiNjUyZTE1ODlhYjhhMDFlMGEzOTkyOTExOGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE1MzAxZmJlMjFhMDg0OTAzMzA3OTNjNDBhNjljZmEwNzEzNDY3NDg4NTU1NzY3MWE2MTMwY2U1NmY0MzdiZGUifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/secretsGet.go",
+          "version": "repo-file-v1:sha256:67cd483526664212ba7fab9c1b4f21f7994713ba9e443915ae53f4cc96cedfee"
+        }
+      ]
+    },
+    {
+      "id": "claim_1e8c968da7d04ebaa4a0552e97125d4a",
+      "statement": "The galasactl secrets set command creates or updates secrets with support for username/password/token combinations using --username, --password, --token flags and their base64-encoded variants --base64-username, --base64-password, --base64-token",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L837-L882",
+          "version": "repo-lines-v1:sha256:afe5e0f70462fad0a0d894f167f56d36299ee0ca2b7a47ad4b0d3e3f3b16b602:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2MDE0YjI5NmVmNzQwOGE0YmY4MDY5MDZjZmJhNWIzODZkZWIxZDQ3YzYyZjA4MjNhMDRhOTdjYmRlZmY1MGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YzA2YzU2MWQ1YzMyNzM0MzY4NTI2OGE0NmIzMzkxZjM5OThlZWU4OTBkMmJlNTFmMGQyMWNjNGE1M2FlNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNhZjk0YTQwOWIzODY2OWJiMmEwMGY5MmRmY2YwM2EyMWJkNmMxNjhlY2FhYTI2MDRmOGJiNDYzNTZhYzdkZDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVhZTFkNTdkMGIxYTBmNGQyZjNiY2YyZGVmNGEyZmY0MjUyYzliYWZiYjYwMWQyNjJjMjY4YTg4NGM2MjYwNTcifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/secretsSet.go",
+          "version": "repo-file-v1:sha256:b09c8ec3f706dc547a3433eef91aa0e3401d548768a6df46bf022c3a44664486"
+        }
+      ]
+    },
+    {
+      "id": "claim_07ae57b2cc564cefbf0793189bacb33f",
+      "statement": "The galasactl secrets set command supports keystore secrets (JKS or PKCS12) with --keystore-file for file path, --password for keystore password, --keystore-type for format, and --base64-keystore-encoded for pre-encoded data",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L884-L920",
+          "version": "repo-lines-v1:sha256:c2826e60624ee894420f3c31b457d5da28ea45e3a1c6dcfaa37effe71001ebd1:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjViMTdlZjYzMmI2NDI4ZmY3N2QxZDUwNjQyYzA3OGY0MzBlMzAxNGRlNDRkMmFjN2NmNmFkNjhlOWVjNmVjNDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YzA2YzU2MWQ1YzMyNzM0MzY4NTI2OGE0NmIzMzkxZjM5OThlZWU4OTBkMmJlNTFmMGQyMWNjNGE1M2FlNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNhMjU2NjI2YmVjN2U1Mjk3NWZlZTg2NDVkNzlkYTVhMjIyODNlOGQ4MzhlMWU5YzE3ZmY0ZjQ1YmE1NmU5YjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjllMmZiZTI5N2M4N2ExMDhiYzI1MGNiMWQ4MDZmYWMxODE4NjQ0YWMzYjdjMDgwZGU2YTg3YmM1MDk0ZGI5NWIifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/secretsSet.go",
+          "version": "repo-file-v1:sha256:b09c8ec3f706dc547a3433eef91aa0e3401d548768a6df46bf022c3a44664486"
+        }
+      ]
+    },
+    {
+      "id": "claim_74ee14e2414b40a89daae40a0c354fe1",
+      "statement": "The galasactl secrets set command supports opaque secrets for arbitrary binary data using --secret-file or --base64-secret, with a maximum raw file size of 760 KB that expands to approximately 1,013 KB when base64-encoded",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L922-L948",
+          "version": "repo-lines-v1:sha256:2dec0d7029702c83600b078c5cff57445b5b078884354c301c486ba47cd38c07:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc0NTgxNzFjMjFlOGZkZTAzZjNhZGFjM2M2Y2E3Yzk4ZDJlOTIzZTk2ZjA0Y2VlMmNjYjE2NzEyYjcyYTNjYWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YzA2YzU2MWQ1YzMyNzM0MzY4NTI2OGE0NmIzMzkxZjM5OThlZWU4OTBkMmJlNTFmMGQyMWNjNGE1M2FlNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc4OTg3YzIyNWM0Yjg2OGI0ZGQ2OGRjMWY0NDYyMjg4ZjJlMTY1MzE0M2JhNGJmNWVlNDAwN2VhOTk3OTg1YWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgxYTc3N2RhMjJlZGMyNDI0ZDgzODE2MjQzNjJlYWMyMjUwNmFkNTIyOTAzYTc2YWVmZjBjY2RiZWUyYTE5ZjEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_50ea0a16552a411aba0c8f7b6c3f299f",
+      "statement": "The galasactl secrets set command supports changing secret types using the --type flag, requiring all credentials for the new type to be provided",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L950-L961",
+          "version": "repo-lines-v1:sha256:7a80f6e558b628d07aae1144e5bec945433b89de8a5ed226c7a8045ad827eda1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ2OGEyMmZkY2IwYjRhNzRmOGJjMzVmZGMwNzBkMzA4NzZmMjlkY2Q3N2NiZjY3NjFhMjZjNzJkOWFhZDkzYjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxZGMxZjI0Y2Q3ZmRhOTYyNzQxMGQ5YmE0MGFhZTEzYTEyZTM0NjY4Zjk4NDJiN2YxZGZjODY2NzgwNmJkMjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5NTZkNDU1ZDY0ODljMjkzNjc4YjhhODhiZWY1MmM4MjZhOWZkODA1YWI4MmQwOTRmMDRlNmYyZGJkY2JmOWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ3NDhjYTBmM2QwYTc2NzUwMDI2YWNlYjRkMGI2MzMwNDIwZDE1ZjhkYzFmMWY3NmI2NTI3YTA2M2RiNWMxY2YifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/secretsSet.go",
+          "version": "repo-file-v1:sha256:b09c8ec3f706dc547a3433eef91aa0e3401d548768a6df46bf022c3a44664486"
+        }
+      ]
+    },
+    {
+      "id": "claim_6a00db7a99434feb9ffdd0b0fc5a45d3",
+      "statement": "The galasactl secrets delete command removes a secret from the credentials store using the --name parameter",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L963-L975",
+          "version": "repo-lines-v1:sha256:a894219725d167f2ed7ba2a3d7aa0e6e0fad9d7f10fef6d93fbc1bdc11b74788:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU0ZDllOTM2OGViYzcwYzc2OTAxN2NjNGQzNWNjNjVlMDU4NDk5NDc2YjExNjdhNmY5N2JiZDlhMDA2NzYxMmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdhMTJhMjFlZGZhMTZkNGU5NzEzNTU3YzNkMmJjZTA4MTEyNjFjOTNmYWM2NzRmMzM1ODA0N2ZiNzYwZjUzOWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg1ZTdmY2QzMTFiMmUyNDAyMjFiMTgwMzBlODBhOWI4NmMwNDUzOGUzMzdhNmJkMmNhNTIwYmJjYjBkNDMxZTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ5OTM1MTZmMmMzMTIyMTg1YmJkOGM2OTgxMzk5MzlkMTAwODU4OGUxZDk5ZTU5MTM1MTEwYWQ1ZGEwNTQxMDEifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/secretsDelete.go",
+          "version": "repo-file-v1:sha256:c9f8fd4b5f8cb734ad925d35e2042fc4be3fd3820faaade10dcf11ce9c84faf4"
+        }
+      ]
+    },
+    {
+      "id": "claim_c9cc107725034f7c88793f7c0e9cc48c",
+      "statement": "The galasactl streams get command retrieves test streams from the Galasa service with optional --name parameter for specific streams and --format parameter supporting summary and yaml output",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/docs/generated/galasactl_streams_get.md",
+          "version": "repo-file-v1:sha256:7a0ad5108d70e511ad2059becd6590adb70d0dcdaf6e6dd3e738b26e238b483e"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/streamsGet.go#L85-L105",
+          "version": "repo-lines-v1:sha256:f13e60eda95fa318555be64b929703f96f818a3fce818acf1bfa026540f3db36:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlmODk2ZDMxZTQ4ZjUyYWNhYWU1N2VhOWY1OWQzNDUwNDVkMDgzYzQwZDAxYmJlMTI5ZjljMGJkZWFkYjQxN2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJhZGQ2ODkwZDQ4MThmM2Y3NWRmNDA3NTYwODk3Njc2MTg2M2Y2MWUyMGRkZjgwMWY3YTQ5ZGUyNWRkNGRiYzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjViZDhhZWYwYzU0NGNkMmQwZDE2YzE1OWM5MDM0M2EzZjhiODljNjQ4MGE0NzVjM2MzNjI1M2JjYjYxOWZlNzQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2e8c11a89ee14d4fb078a1470dde2d47",
+      "statement": "The galasactl streams set command creates or updates test streams with --name, --description, and --obr parameters",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/docs/generated/galasactl_streams_set.md",
+          "version": "repo-file-v1:sha256:40bf27a1cdc43b4bcd4f576a1e971b565bf62d39242395f42908258e34e44bbe"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/streamsSet.go",
+          "version": "repo-file-v1:sha256:87f30decdf69a29505e399149c954b2802d7cfc2f7c44bdfff684f0e68af1009"
+        }
+      ]
+    },
+    {
+      "id": "claim_a2594232b25a4f04b25351c3082aedc9",
+      "statement": "The galasactl streams delete command removes a test stream by name",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/docs/generated/galasactl_streams_delete.md",
+          "version": "repo-file-v1:sha256:ed0e803905807b509aed97a5371938fa226603f2fe11c4fbfa83dd2957d275dc"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/streamsDelete.go",
+          "version": "repo-file-v1:sha256:9497ba3e21b47ea9cc8db66a2662be30fecb9e97678f9e90070dd840a52aeefa"
+        }
+      ]
+    },
+    {
+      "id": "claim_9155aaac2e454130b095333adb1657a5",
+      "statement": "The galasactl tags get command retrieves tags from the configuration property store with optional --name parameter and --format parameter supporting summary and yaml output",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L977-L1001",
+          "version": "repo-lines-v1:sha256:3ca0ca3c03c57714f4fdb21bba9a0d7170ff8c9b4847835be13499c311db10f7:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUzZGU5ZTNjMGY3NTU1MmUwMDlhOWFiOTY5Y2VhMjRlYzc4MDg1NWNlMjIyMzBjMjZkYmRkZjdlNWUzZmRkNDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYyYTU5YmFjYmFkYjg1MzQzYjMyNGIwNDFhNDJiZmZmMmI3NTMwMzkzOGUwZjliZTZiYTk4NGVmMDllZWU5NjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhkYzllYWMwMGMyZDljNDNhZjBmMWM0NjIzMTkwZmQ0MTA5NmIzYjM0ZWNlZTdjMmJiOTU0MzhmY2I4MTBkMmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVlYTVhZDMwNGIxNWE5ODIzNzZhNDE1MzA5Y2I5M2RkMjZiNjQ3MWYwYTE3YzlmN2IxZWNiZTA4OGMxYWM2YjMifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/tagsGet.go",
+          "version": "repo-file-v1:sha256:c5e8b7d4b4bb5d2f9323bbe092afcc80134aceb8b5bba60c3d2b4cce8e36fbae"
+        }
+      ]
+    },
+    {
+      "id": "claim_c6b7da84e656492da6e4d91258b42193",
+      "statement": "The galasactl tags set command creates or updates tags with --name, --description, and --priority parameters",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L1017-L1029",
+          "version": "repo-lines-v1:sha256:625b46538e242ca7da4a45ff4313b9a88b72a0edd8ea177565c062624c6f14a2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzZjFkMjhjYjI5NjQzYmVjZTdmMmFkOTM0MjBiMTZkYWJjNTE0NWRhZWFlM2YzYjk0MGQ1MTJjMGVhNjNkMWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIwOWJhMmFmMTkzYTU0Mjk1MWQ3NWY1NWFhMDA1NTUwZmM5YTEwZTkyNzA1NmM3ZmU0YzZkYmNlMWVkZjE4ZjgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRhMDEyZjY3MDExMzYxOTQ1ZTA2ODNlNGUwMTI0NTc0ZmJjYzFhMzAwNjIzYjU3NDRhMjliOTY4N2Q1NmU2NGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRhOTRkMzk4OGY1ZWJkMmY0ZmMyMTdjZTY5OTRjMzdkYWRmZWEzMDdjNzYyNjM5YmYwOWJhMmE2NjE0MjAzYWYifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/tagsSet.go",
+          "version": "repo-file-v1:sha256:490f9e35b14521d18cd28f7f840507d79db41175ea19bedb9024698faf17ff8c"
+        }
+      ]
+    },
+    {
+      "id": "claim_4bacf096f1c24cea820cbfad932ea76c",
+      "statement": "The galasactl tags delete command removes a tag by name",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L1003-L1015",
+          "version": "repo-lines-v1:sha256:b80c051ab06b19cc1590715a3dc1a536dfb02f61379f2b5d7c2aad3b9b73acee:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5Yzk4MDhhYjBlMDg3OGM4YTQ4YWRlODEwMmU2ZjFlMWE3OTI3M2IwODI0N2FhY2M4MGYzZDkwNWY2MmY3MDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRhMzY2NTcxODAwMWI1M2I2NjMxOTQ2N2NiNjk4Y2RkNDRkZmU1YTQxYWI0MzY4YWMzNTRlMjVkMzY5Y2E2ZWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM2NjE5ZjcxYjJiMjY3MmM0ODE4ZWE5OWQ4MDU1ODdkNzM2MzQ3Mjg5NzllMjRmNmFiZmE4YmJhMzRmNmY2ZmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFjOWI2MmMwZTJjZTEwNGRiMmE5ZjFmZTEyYTY4NmMyZmE1YTRhMmQ4ZjlhZTEwNmE3ZTY1NTQ5YTk1Nzg1NTAifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/tagsDelete.go",
+          "version": "repo-file-v1:sha256:d1e38a7e93b4916ad3e8d4f61839b4a85d145ec969f19c11ee50bffae8a4e3cd"
+        }
+      ]
+    },
+    {
+      "id": "claim_96d5e698cf6c4d269b56e31b9ad044fc",
+      "statement": "The galasactl monitors get command retrieves resource cleanup monitors with optional --name parameter and --format parameter for different output formats",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L615-L635",
+          "version": "repo-lines-v1:sha256:de6f8dfed62bc211f48e03c592b56b0490f94f98f5c20df3205d62fb1f73bd41:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzMjM5YzRkMWE0OGU5NjY4NTMwMmFmYWIyMWFkZmRkNDFkY2YzZWNjMjVlMjkyM2MxNjVjNjRkYTQwY2JmYmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBhMWFkYWI3MWI1MjYzZWU0NmViNmE0MjM0NjJhYTk1NTkwYTA3N2NhNGRiYWFhZWNhMGFhNjczZGIzYTY4MWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEyMThiMTk1ZTY3OGU2MjlhNzMwNGE4NDc4YjExZTY5OWU3MjMwM2YzYzAzNjIxZjgyYzJlYTBjNjdhMzc1MzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ0MGExYmE4NzdjMTc0NDdiZGQ5MTZkZmZiMWYzZWQ4OTM2MGJhZmVmNjVkMmJkZWMzNzg4YjQ1ODI2YzI0NWYifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/monitorsGet.go",
+          "version": "repo-file-v1:sha256:2281c3c10d30bf6080700b997e8c24467cddbf282fe98d4ed6eb040a07e9393c"
+        }
+      ]
+    },
+    {
+      "id": "claim_c4bf25dd088e405e9099206cc1ca8234",
+      "statement": "The galasactl monitors set command enables or disables monitors using --name and --is-enabled parameters",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L595-L613",
+          "version": "repo-lines-v1:sha256:23badb6bb0b6b77f44173ed9ca5002db75edca541ff2abbd8a550709715bfc57:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJkMDZkYzNlNWVjOTc3ZWRlNWFiNDU3ZjhlNmJhMmM5YjMzZDJiYWFjZmZmNzBhZWM2ZDk4NjYwZGFiMGQ2MTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0YTM4ZDM1YjFkYmYzN2Y1YmU4MTJmYmU3MTM0M2VmZjdlYmE3ZDg1ZjY4ZTZmZmJmMWY5NjE0N2M4YmY4ODgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM3YjU4ZTkwNTRlYzQzNDgyZWEzMWU3ZjU2M2I5ZGUzMWJmYzI2ZTRkODJmMGRlNmQ2YmI1MTE3NzRiNDZlZDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE3NTdmMDFkYjU0YzhjMTAxNWQ3NTRlYjM2Njk4NWI4NWNkNGVhMGNlYjcxNjJjNTZmMDBlNzA4ZTRhYmIwZmMifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/monitorsSet.go",
+          "version": "repo-file-v1:sha256:1b0503dd950e5abd9c3330ab77915a1cccb1c33585e6d2f13527e8d88ab4ca95"
+        }
+      ]
+    },
+    {
+      "id": "claim_d58e9e8678c04668b8de1170b82a1a54",
+      "statement": "The galasactl users get command lists users in the ecosystem showing login-id, role, web-last-login, and rest-api-last-login, with optional --login-id parameter for specific users",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L1064-L1084",
+          "version": "repo-lines-v1:sha256:5b946005335c23d82e7d0ed2eb3c9275c5838bb04c63850034bdd2bea76bbc4d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYzNDY5ZDQxZWQyZWRjZTUwZDU4ODQzOGUzYjczYmZmYmQ0Y2UyNjdjNWMxNmFhMzVhMTY5MmNmZmQ0YjRjZWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YzA2YzU2MWQ1YzMyNzM0MzY4NTI2OGE0NmIzMzkxZjM5OThlZWU4OTBkMmJlNTFmMGQyMWNjNGE1M2FlNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJhNDVkYWQzNDFkYWEwMGI4NmY5NWNhYmE2YTZmMGZiYjhmNmNmODIwNTBjMDM1ZWJiZDY3M2MwMGIyMTVhOTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk3OWE3NDA1ZWUwMDUxZTM3OThmZmY4Zjg4ZjY2MTdkZjUzMTgyM2Q4N2FmODA0MjM3MGNmMTFiNmUwMTRiOTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a0bbed69c1fa4525b263ca23a4a4c69f",
+      "statement": "The galasactl users set command allows administrators to change user roles with --login-id and --role parameters, and user priorities with --login-id and --priority parameters",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L1086-L1094",
+          "version": "repo-lines-v1:sha256:507a8100e7fb39e457f8b764bfa466fee66f54e88342299dbf5faa3b9b24366c:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzdhOGYxNGMxMjZmOTg5MGRjYmNhY2RhNGZjNDg2Mzg3MWE0ZTFkMGJjOWUwODA2ZTBiOGM5OTczZGI2OGI3MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDdjMDZjNTYxZDVjMzI3MzQzNjg1MjY4YTQ2YjMzOTFmMzk5OGVlZTg5MGQyYmU1MWYwZDIxY2M0YTUzYWU2ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGI0NjE0ZTFkNGZkODI4ZWQ0OTliZGY5MWFiNTEyY2QwMWVkN2VmMDdkMTA3NTBjMWU1MjcwNWI0ODFmMjQzNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWQwZGQ0MjViOTMxNjFlOGQwNTc5MDYyYmZjZTE4NzQzMTBmOGZhZTZjMTE1MmYwY2YxNmIwYWZhNzIwZjU3NCJ9"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/usersSet.go",
+          "version": "repo-file-v1:sha256:f4e0ef6f31154983aa2ad80483c246f8f4169d66664553c2fdb36f5db64c971f"
+        }
+      ]
+    },
+    {
+      "id": "claim_042c68cd5d7c4b13ab321847a4e5a923",
+      "statement": "The galasactl roles get command lists available roles in the ecosystem showing name and description, with optional --name and --format parameters, but roles are read-only and cannot be modified through the CLI",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L1031-L1062",
+          "version": "repo-lines-v1:sha256:419eef03e0ad133f95251a1e5ffdbc9dba5385faaafc2acc9b1ce9d2bd5a4742:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlMTJhZDZhYjFlZWVmNjY2MTI0MmM4YTQ4Y2JkOGNhNDYxNTliMTZlM2Q1YTM5ZDZlYTM1MzU2ZTUwNWQ1ZmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YzA2YzU2MWQ1YzMyNzM0MzY4NTI2OGE0NmIzMzkxZjM5OThlZWU4OTBkMmJlNTFmMGQyMWNjNGE1M2FlNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE4NDU1YjM5NjA0YmVmZDViNWI0OWE0MDdmYjc1NTlmN2FmMjFmYjAzN2MyODY4M2E5ZTUyZTY3YTUwOTY5NDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI4NDU4MDMzOGUxNDlkNmE5MTQ2M2U5NmE3NThkZjMzMDRlNzFkMDE3OTNiMDVkOTBmOWNkMWFkMWQ2NDdmYzUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_dedc6064ba114b1191415421be020398",
+      "statement": "The galasactl project create command generates skeleton test projects with --package for package name, --features for multiple feature bundles, --obr to include OBR configuration, and build system options --maven and --gradle",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L46-L151",
+          "version": "repo-lines-v1:sha256:b168f78e9e4f935e9a4a94f327cf7113504cce1e6ac6c4702efefd91ef3806a9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTA2LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI0NWI0ZWUxZjE3Y2I5NTkwYTBhYTMxOWI4NjVhNWJjNGVlN2E0ZDdjNGJjMDY3OTQ0Y2U1YjQ5MDM2YmU3NGJhIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI1YTQ3OWQwMGQ1MmNkMTZhNzcxNWU5MzA2Njk5NzExMTFjNzdkZWQ3ZmJhYTVjOTc4ZWRmYWJlYTQ4NTQyZDc0IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI0ZjU3MWY2OTYzYzljNTAxZTc3YjE0MTVjZDc4OWJmZGNlYzE4ZGYzNTM4NjdmMzZhYzZiZTRmOTcwNGVhYWM1In0"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/projectCreate.go",
+          "version": "repo-file-v1:sha256:4573c0a9b28b7326b6cb9b66374e0259bb90866d5cbb16645c1081bd81ce3438"
+        }
+      ]
+    },
+    {
+      "id": "claim_f6a1cf7667954230a78e7f057ab05481",
+      "statement": "The galasactl project create command supports --manager flag to create Galasa manager projects with optional --managerName, generating manager interfaces, implementations, resource interfaces, field handlers, exceptions, and unit tests",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L78-L131",
+          "version": "repo-lines-v1:sha256:96e1e2645fff5866571080915f350e5bad2d602d82a00b4a6f66a6b0f966e5b7:eyJzZWxlY3RlZExpbmVDb3VudCI6NTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU0Nzk0NTk5ZTZlN2JlOGJlMmQwMTJjNGUxZmUzM2YwZDJhMGM0NmE0NWRlMjE4OGM1YjhkOTc0ZWYwY2RkMjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU0MjE3MTVkOGRlMzY1NzVhZWYzNDM1OTVmYmQ0MDQwNTQxMjM0YWVjMDU0YzVhNjFhYTJiOGFmNDI1ZTExMTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhkYTJkZTZlNzJmYjMyNTNhNzE0Njc3YmU4OGU3YTJlNzY4ZTIzZGQ3NDMzNTIzZTVjODUxOGQ2MWM3M2Y0NjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZmMDNkNzMyODY3MzUxMzU5OThhNTE1NDc5NzMwMjg0OTVlMDVhMTBjMjFjNjJlMmY3MTRiYjMyOTQxOTRmZTQifQ"
+        },
+        {
+          "resource": "repo://modules/cli/pkg/cmd/projectCreate.go",
+          "version": "repo-file-v1:sha256:4573c0a9b28b7326b6cb9b66374e0259bb90866d5cbb16645c1081bd81ce3438"
+        }
+      ]
+    },
+    {
+      "id": "claim_c413427f3e3d429ba1a0cb90eb37b017",
+      "statement": "Local tests can use shared configuration from a remote Galasa ecosystem by setting framework.config.store=galasacps://<host>/api and framework.extra.bundles=dev.galasa.cps.rest in bootstrap.properties, requiring authentication with galasactl auth login",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L1141-L1155",
+          "version": "repo-lines-v1:sha256:b59e0a09db0038ac7a0e0bbb54cf662c14edccfe7f3533ef97d1e419ace82c0d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlMTJkMGJkMThkMTJkMjEwM2ZkMWY3ZTM4ZjQ3ZGY1M2M2MjBmNjBlZWEyZTBlMzIxMWExMWI0MmU5ZTcwZWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFiZGNhMTRjZjQxNTRiODA3ZjI1Y2IwNmE4MmI1MjU4NzI5MGU4ZTQ3MWVhMGE1ZGEwZjI4MTk5YTUxZWI1NTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ1YzcyNzgwZWMyYzIwMzU3MjdmOTAzODQwMTIxZTBjYTE5ZjExYWU3ZTAwMWNjZmY0NDFlODhkNjdiY2EzMzMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNkOTk3MWQ5M2ZhOTAxOGNlM2NiZjk2YmY5YTQ1ODY1M2FiZjk3YmZlNGM2ZTM0ZDc0NDBhMjk2MzVkMGJmZDEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_58599b57b97c4877bb2d77bb5487a741",
+      "statement": "The CLI is available as pre-built binaries for darwin-x86_64, darwin-arm64, linux-x86_64, linux-s390x, and windows-x86_64 platforms from GitHub releases and as Docker images at ghcr.io/galasa-dev/galasactl-x86_64:main",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L1109-L1139",
+          "version": "repo-lines-v1:sha256:4a1ec017cec872ee5e01f8406617fa0a6dcc884523aefaa5525e508c6cb0d7f9:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEyOWI4N2YxMjBmMjUzYjY5MzhhMjM3YTQ2ZWZjNTA3NDk4OWJmNTM0MzI2MzllMTYxZWM0MGI4ZmYwOGEzNjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YzA2YzU2MWQ1YzMyNzM0MzY4NTI2OGE0NmIzMzkxZjM5OThlZWU4OTBkMmJlNTFmMGQyMWNjNGE1M2FlNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQzYjAxZGU2ZTY5Zjk1Mjk1OTMxOTE4YjNjMTVmNzU4NzJmODY4MTc2MGFlOTY0NTlmNDgzMDZmYmM0M2M1ZTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQzZmY2N2QyMjI0Yzg0MDFhOGQ0ZWEyOGJjNjk0YWQ1NmViZGNiMzM1MTY1ZjQ0ZTcwNmUxMTM1YzQ2YTVlZTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_023d61bdefdd4dedb6476ee8858ca8cc",
+      "statement": "The CLI implements exit code 0 for success and non-zero exit codes for failures, with machine-readable output formats (JSON/YAML) and non-interactive execution mode designed for CI/CD integration",
+      "evidence": [
+        {
+          "resource": "repo://developer-docs/cli-architecture.md#L196-L212",
+          "version": "repo-lines-v1:sha256:8897d5a5266fea6b5bac660deb4dfcf8a4e730db0742ede9635d8a8bc5e4e8f8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMzMjYxNDAxOGFkYzQ3Nzc5YWQ1ZTVkYmQyMTllMzVkZjJlZTRmYmM5YTUzNWJmYjFhNGFlY2IzOTNjNTA1OGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YzA2YzU2MWQ1YzMyNzM0MzY4NTI2OGE0NmIzMzkxZjM5OThlZWU4OTBkMmJlNTFmMGQyMWNjNGE1M2FlNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ4OWIzOGY2MmFkYTQyZGMxZDYwZTE2ZjZhMGJiZjk3NWVlOTk1NjMxYTcwYTVjNmVmZDRhNzk2ZWViYmY3M2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU0MTI2MDEwZThjNzE2NmNiMTlmOTVhM2VjMjc0NzM1YjJkZjM5YTc0ZTY3ZjVlMDM1MDc0MWQzMWY5NTBkYzEifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.2",
+    "at": "2026-09-21T12:35:12.771Z"
+  }
+}

@@ -1,0 +1,356 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:97509317a1559062854543cbad171cf4f6314d809a45cc561312fc31e7ea307b",
+  "claims": [
+    {
+      "id": "claim_cbdde0ab3a4a4729aa3ec3cc133782a5",
+      "statement": "galasactl runs submit local executes tests in a local JVM without ecosystem infrastructure, taking --obr for OSGi Bundle Repository coordinates, --class in format osgi-bundle-id/fully-qualified-class-name, and --log for output control",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L360-L374",
+          "version": "repo-lines-v1:sha256:cb6df42858591ce65eeafe7dca63fc0dd0baa393890054740e2e5c75d8fd9ee0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJiZGZkY2M1YjUyMTQ2MzM0MzkzMzY0ZDBkMjEzMzU0ZjMyZjUzMjJjNGQ5NjFlOTI4OWY3MGE0YWExZDE3MzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YzA2YzU2MWQ1YzMyNzM0MzY4NTI2OGE0NmIzMzkxZjM5OThlZWU4OTBkMmJlNTFmMGQyMWNjNGE1M2FlNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI2ZmNhOGYzODQzNjkzNzI5YWRmYmE1NWYyNDg5OGRjNzNlOGFlOGQ2ODc5ZjUyNWQ1ODVmMDA3MjdhZTQxYTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxNjY0MjExNTI0NzY4ZmI0NDcxMThkMzM2NjY4ZDFmNDQ1Mzg0NGMzZWNmMjAxOTYzNTg5NjM4MDliNzQyZGYifQ"
+        },
+        {
+          "resource": "repo://modules/ivts/README.md#L47-L53",
+          "version": "repo-lines-v1:sha256:98552be7931428e6c5537609aaddd1174de121b2d6b8aefadeb4bfa743e116b6:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDUxMThjMzI0ODAyNDEzZTIyOTAzMmRiMGNmOGEzMTUxM2Q1M2NhMDI3MTdmZGRmMDE3OWMxYWVjYjVmODhkNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDdjMDZjNTYxZDVjMzI3MzQzNjg1MjY4YTQ2YjMzOTFmMzk5OGVlZTg5MGQyYmU1MWYwZDIxY2M0YTUzYWU2ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjJlYzQ0MWNkNjU2NTkwZmQ5Yjg5ZDJkMjc4YWJmZjkxZTM5OTA3NTkyMWY0NjQzODRhYTEzMWY2ZjZmZGQ5NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzNhYWU4YzU0NjNjMGVkOWNiNmZjYTY0NmMwMjc1YTM1YTMxODgxMjYwZGJkYmQ5OWM4MTBmYzc1MWI2Yjk3NyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a1ae4b2fe2f047f6912fb9786f366214",
+      "statement": "The --methods flag on galasactl runs submit local filters execution to specific test methods within a test class, allowing selective test execution",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L376-L387",
+          "version": "repo-lines-v1:sha256:771b4a35150d7cfcec56e54b87fcbdb2a96704528c25d88e1148793a78aa1382:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ0NmRmYjZkMmRhZjNjMzRlOWU1NTUxNjY1ZDc2OTdmZTk3NzBkNGEyMzBkODZiYTAyZjlmMmJjODMxZDZlMjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YzA2YzU2MWQ1YzMyNzM0MzY4NTI2OGE0NmIzMzkxZjM5OThlZWU4OTBkMmJlNTFmMGQyMWNjNGE1M2FlNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNkMzU4MDA4M2NiNDgxM2M2MGQ0OTE1ZjczNzJiZGVhYTBkOTZhMmFkYTgxMzJjMmFmMzQyZjRiOWNiMzE5ODUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVlZDcxZWM3MTIzOTdmNGU3YjIxYmUwYjU5YTA3ZGJkNTNjYmYyNzQ5Nzk5NDFiNTUzOTA5MWE2ZDg1OTNjMjMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_326985fc9e3940779f7c8926489071fd",
+      "statement": "galasactl runs submit local supports Gherkin feature files via --gherkin flag accepting file:// URLs to .feature files",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L389-L393",
+          "version": "repo-lines-v1:sha256:5632ee84ae50276b9520c5f8e67d375d4da875e0f081f58bcaa6193b31625311:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWRiM2FiZDMxYTBjNTBhNzc2NGE3MGE3MzQ3MDlmNDA1N2M2NDY0OTAwOTU1ZGUzY2Q5ZjVhYjdiMWRjZGRmOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDdjMDZjNTYxZDVjMzI3MzQzNjg1MjY4YTQ2YjMzOTFmMzk5OGVlZTg5MGQyYmU1MWYwZDIxY2M0YTUzYWU2ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWY2YzQ3NzUzMzJkZmIzOWZjNjVhODA1YzA3M2Q3NjdiOTBmNGViODY3NDNjMTRlMzY4MTA0MDAxODI2YTRlYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWM2YTBiYWQ5MzgyN2IzNDRhZjdmNGFiZmQ4MWMzYWZiOThkMjY4MWIyYmQzNDcwOTFhZWM0ZGU1NTJjNmFiMiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_0ac1c3cf84ba4f8e9190c4e3b4eaf7a1",
+      "statement": "Bootstrap properties configure framework and storage backends, provided via --bootstrap flag or GALASA_BOOTSTRAP environment variable, with flag taking precedence",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L9-L10",
+          "version": "repo-lines-v1:sha256:f9dd56af39e00c94ba7871d8e953243a5acf69a794b006e7b6209d87149aa6f5:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTdlYmFkMTQwMjYzYWZmZDU1MzE4MDlhYTllNjM1NDIxNWFjN2EzNzkyMDQ2MjgxM2JlYjMwZGFlZjc5NWIyZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWU5MDQyYTBmNDBiYmRjYTZiYjRmNDVjY2FlOTM4NzA1ZDAyODNmNTFjNWFlMjljYjc0NzVhMDExNWEwMzljNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWFmMzE1NDQ3NzNiODhkZjk2NzNhYzc4YTM4NjA0ZjFhMzYzNDg4OWM0N2U3YWM0MjcwZWM1MzBkMWIwYjM0YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTlmNTk2ZTc3YzBkYmU4NGMyMzc5ZWY4MzIwZDk3NWM2NWJhNmZjMTI0NmY2YzM1NTM0MjNlZjg2MjQxYmRiNSJ9"
+        },
+        {
+          "resource": "repo://modules/framework/README.md#L59-L59",
+          "version": "repo-lines-v1:sha256:81d842d89a07a25610153c93a404d1708bfd06b79fb2e9be74884d908b2b9d1a:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODFkODQyZDg5YTA3YTI1NjEwMTUzYzkzYTQwNGQxNzA4YmZkMDZiNzlmYjJlOWJlNzQ4ODRkOTA4YjJiOWQxYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODFkODQyZDg5YTA3YTI1NjEwMTUzYzkzYTQwNGQxNzA4YmZkMDZiNzlmYjJlOWJlNzQ4ODRkOTA4YjJiOWQxYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjRjZTNkNmNmNjk3YjcyMzdiZmY5YTk5Njc2NTZmNDVlYjVmM2I4YTNkNDczZjBkMTg5NWI1NDQyNDJhZDBiMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTg1MjdjOWMxNmVjYjY1MzNjMmMxNTU5NzQ1MWM0OGU5ODMzYjVlNzdjMTM5YzIxYzA2MWVlYjdhZjMzNGQ3NyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_9dcab8ba24fa4d3a9f5900d2ac0f8680",
+      "statement": "Override properties change CPS values for specific test runs, supplied via --override flags (format name=value) or --overridefile pointing to properties files, with command-line overrides taking precedence over file-based overrides",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L282-L291",
+          "version": "repo-lines-v1:sha256:8400deb87b729b6a69a6d3caf80370e01e7246a5f703c7e101410fb27d3539b8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ4N2Y4NWNjYjQ2MmMyYzIzNDkwNWU5MDU0ZDZkYjgyOThlYmIwMmI3NjllZDEzZTQwZGQxZmY1MDAzMzQ0ZTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YzA2YzU2MWQ1YzMyNzM0MzY4NTI2OGE0NmIzMzkxZjM5OThlZWU4OTBkMmJlNTFmMGQyMWNjNGE1M2FlNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNhODliOWY3ZDZjMTk0MTE2ZDFhNzdjODNjMWE0OGIxNTQyNjhhOGI1ZDc4ZDM2MjVjNmEzZGExNTEyMjhiYmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU1YWU4YTFkNDFmNjNmYTg3MWZhY2QxYmEwZTE4M2ZhM2VmZDg5NmE4OTY2YzQzZDliMWQ0OWY3MTczMWIyMzUifQ"
+        },
+        {
+          "resource": "repo://modules/cli/build/cli-docs/galasactl_runs_submit_local.md#L39-L40",
+          "version": "repo-lines-v1:sha256:3055b3752fe2d8fe41d1ea9195aa527ff2558bb9e274ab3d666874be189440a0:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDcwZDZhMjY4M2NkNGZkNTczMmY5ZDI4MmY5NmU5NTAzNTBjZTRhNDI0ZTA0NDg3MWY0ZmVjMjQ5MTA2MjE3YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjIzNTIxZWViNjI1YjZlOWNjYWEyNWVkODkxNDhkNDA1MjcwNGJjYWM0OTA1ZGZkYjdmMTY0NmI2OGY1NzNiYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjZlOGIxMDg2NTA1MTEwOGIxYjU3OWViOTZjNTc5YmVkZDBhNGI0NDE1ODZjODBhZTZjMzlmOTQ0YmM1NTgyZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDMwM2UwN2I1MThjMjE3NjcxZWY3NDZiOGQ0OWZmMzhiMmI4ZWQ0ODE1NTcwNDNmYWFhYjcyMDhmYjRhNDNiZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_5df99d8b947f4d8682182edbfc406ae3",
+      "statement": "galasactl runs prepare local pre-fetches OSGi bundle dependencies to local Maven cache for subsequent offline execution using galasactl runs submit local --offline",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L571-L591",
+          "version": "repo-lines-v1:sha256:88fc44a582c6aaa70d50383d5dda71a34eee474dd3c4c1d81c7081628e362a4a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU1Njg0MTAxNDJhNmFjM2EwYzU5ZGUwMzZhMGRkNjhlZDg4NGIyMmE0OTdkNzE4MWViOTNjNmRmOWRmMjFiMDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YzA2YzU2MWQ1YzMyNzM0MzY4NTI2OGE0NmIzMzkxZjM5OThlZWU4OTBkMmJlNTFmMGQyMWNjNGE1M2FlNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJiNGZiNWY0YmY5YmRlZWU4NTU0YWJlMzQzYzk4Mzc1YTQyM2JmMDRiYWIzZmQ1YWYwZmIyYzYyMGFlZmU3ZWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3YjU4ZTkwNTRlYzQzNDgyZWEzMWU3ZjU2M2I5ZGUzMWJmYzI2ZTRkODJmMGRlNmQ2YmI1MTE3NzRiNDZlZDcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6a06ddacf4cc4bbbb68f06fa5ab049dc",
+      "statement": "The --offline flag prevents network access during bundle resolution, requiring all dependencies to be present in local Maven cache",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L407-L418",
+          "version": "repo-lines-v1:sha256:c66f3d1445ae88b344d4708fab936fd0fe874445e0017b38cc8576a72e0ecd2c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQwNmQwZTFjZjBlNTFhZTc3M2EzMGQ4YzkwZTk2YTc5YjE4N2Q4NzEwMWY5N2RhM2I1ZDAyNjkxNGE4MzI1NjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA3ZDkxY2E1YmE4MjA1OTA1NzY2NjU3YzVhY2ZlMGVjOWQzM2IzNjg2NTYzMDY1OTZkOTMyODIxYzY4MzBlNDAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdiYzczYTBjYjNlMTFlNjZkMzk3YTYwMzVjYTA2MTZmM2RlNGFlYWM5YWRmNTk4MDRiNjJlMDUxYzgyNWQ2OTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQyNzQ1YzUxZmE4MjcxYTk0MmJiOWI5ZmUwMDdkNWE2M2YwNzYzNGY2ZDM5NzQwOTA0ZGFiZTQ1ZjA1MmE4NzEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_08b3c00c82224b45a428e7fe427de762",
+      "statement": "The --throttle option controls local test parallelism, where --throttle 1 runs tests sequentially and higher values enable parallel execution",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L403-L403",
+          "version": "repo-lines-v1:sha256:5ccb0965ccd079d40771138f72b1babe37f36e35c29b759da8cb73ee0d7436f2:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWNjYjA5NjVjY2QwNzlkNDA3NzExMzhmNzJiMWJhYmUzN2YzNmUzNWMyOWI3NTlkYThjYjczZWUwZDc0MzZmMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWNjYjA5NjVjY2QwNzlkNDA3NzExMzhmNzJiMWJhYmUzN2YzNmUzNWMyOWI3NTlkYThjYjczZWUwZDc0MzZmMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmI3MGVkNjk1OTc2YjBlZTcxODM2MWVlMzAyMTY1YWExNGYyMzBjY2I4MmVkNmQ2OTk1NTIwMjI3N2E4ZWZmOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2JjNzNhMGNiM2UxMWU2NmQzOTdhNjAzNWNhMDYxNmYzZGU0YWVhYzlhZGY1OTgwNGI2MmUwNTFjODI1ZDY5OCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_3d25eff99a674f80af8df03814e7aa35",
+      "statement": "Local JVM testing does not provide centralized resource management, contention arbitration, automatic retry on ResourceUnavailableException, or centralized RAS storage that ecosystem-based execution provides",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L363-L367",
+          "version": "repo-lines-v1:sha256:67248e8df5c0fcf49f5ef01a82eee39b78d2c9b8f5d77a7bce312bd7111a7803:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTg5MzI5OTc1NDYzM2Y1ZjA3MzAyZmQwMDk3ZjhhYjllODJjZmYxMGEzYWI0OTkxMDEyNWRlZmI5NTFiZGQ5NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWNjYWY5MzU4Nzg3Nzk2MTM2NDllMjMwM2RiNzVhNmI3NjllNzg4MDQ2NTEyMjgwMDQyYjIzOTNjZDEwNTVkZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmFiY2Q4YWRmOGM0NDk3MmU2YzMyY2MzODlkM2RkYzg0MWM5MjRjMzBiN2E0ZGQxNjBkOTNhOGQ4ZjU1ZTkxMSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_8e8604ec9b104546bfaff4435856909a",
+      "statement": "The galasa-boot JAR provides direct JVM test execution with --test for test class (format bundle/class), --obr for OBRs to load, --bootstrap and --overrides for property URLs, and --run for run naming",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/README.md#L41-L78",
+          "version": "repo-lines-v1:sha256:be0322c9ac22ac9e78f9f93b7fe6665e884a38dfa5a3e18245a87c305b8a57fe:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjViNWRjNzAxMWJiNGU3MzIxODM2MDI1MzU2NjQwNjY1NjQ0YTljN2M2Y2YzZTYzYjEyYWFmODdkODg2Y2ZiYzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJhMjU2ODJjNGMzYzU5NzFiNDcyZTAxOGZiZjc5NTlhNDVjNGU0NWViODFmMDVmYmU3OWUzNmRlZmE2YWE2N2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVkMjkwMWI3NWJlNWQ3ZDY0ODcxZGU4N2VmZGNjMmIzMjA4ZDg2N2MyMzk3Y2E3YTBkZDUyOGQ5M2Y4NGM5YWMifQ"
+        },
+        {
+          "resource": "repo://modules/framework/test-api-locally.md#L124-L127",
+          "version": "repo-lines-v1:sha256:d0c21fdbc1fd5fc6e119f2aeba0eb7bb21eab741db65f75167bd2bcf1f265087:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzdkZjgyNmE4NmUyOGM1YjE1NzJkZmRhOTRlYWM0ZWI3ZDhmN2IyMmM2ODY2YTViMzU3NmM3MzhiZjcwNTE4NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2E4OWVjOTQ5MTMxZDBmMzQ3NTIxZWZhODNlNDEyNzQ3OTBjMzljMjk4OWFlZjY2NzZlN2U2MTUzNDA1NTU4ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWQyYmYwNzJlZWE3OTk0YTJiOTk2MDQ2ODVjNDViYTJiMTRjYzg0NzJlNTM0YjNlOTIxMmQ5NDMyY2M3MWMwZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_99999da57a6246b1addeb4541d60337c",
+      "statement": "galasa-boot JAR location after building framework module is galasa/modules/framework/galasa-parent/galasa-boot/build/libs/galasa-boot-{version}.jar",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/README.md#L45-L45",
+          "version": "repo-lines-v1:sha256:b8e14cfb40e449b1dec782a7602a9d76450da9681025616860101d88ca59210c:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjhlMTRjZmI0MGU0NDliMWRlYzc4MmE3NjAyYTlkNzY0NTBkYTk2ODEwMjU2MTY4NjAxMDFkODhjYTU5MjEwYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjhlMTRjZmI0MGU0NDliMWRlYzc4MmE3NjAyYTlkNzY0NTBkYTk2ODEwMjU2MTY4NjAxMDFkODhjYTU5MjEwYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGYyNjhjZmRmY2JiMjg3MDUwODFiMDY1NDZkM2NkNDgzZWFkZDhkYTVhZjVlMzIzNGMwZGUwOTZhMGYzMTMwYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDc3N2YxZWU3YzQ5MWU3YjM3ODY2M2FjMTlkZDA1OWJiMjg3MDU3ZDQzYTBmYTY2OGQyOThjMWU4Yjg0ZjQzMSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_aaacd233ff7144978e766a7285e64a50",
+      "statement": "The framework.jvm.local.launch.options bootstrap property accepts a space-separated list of JVM options applied when launching local test processes",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L405-L405",
+          "version": "repo-lines-v1:sha256:625f88ce309e185509e3684081267d2f41672cc810e1ae33b3fb6d6ca259c0e5:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjI1Zjg4Y2UzMDllMTg1NTA5ZTM2ODQwODEyNjdkMmY0MTY3MmNjODEwZTFhZTMzYjNmYjZkNmNhMjU5YzBlNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjI1Zjg4Y2UzMDllMTg1NTA5ZTM2ODQwODEyNjdkMmY0MTY3MmNjODEwZTFhZTMzYjNmYjZkNmNhMjU5YzBlNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjE4YmIzZTQ3YjBhNTMxOTkyNTIxOGUxYTZiN2I5YmUzYmQzNGQ2ZjAwZGE3ZGEwYmRhNjFlZTQ0Y2RlZmRhNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWZjMjkwOTFlNTlkODRlMmRlMWUwMmRkNzM2YWY2YmE2MjEzMDEyNDM4M2UwZjllMGRmNDliMTU4OWM2YjliOCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_1c471bd3fdd242e2adac03cf4ccb611c",
+      "statement": "galasactl runs submit submits tests to remote Galasa ecosystem requiring GALASA_BOOTSTRAP environment variable or --bootstrap flag and authentication via personal access token",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L154-L170",
+          "version": "repo-lines-v1:sha256:4e8da739f06b11131b52d294e227b51276509f5b466ce7e1e7494e7a2b37592a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBiOGNlMTJhOWI4NjEyZTgzMDU4N2RlMzlhMzQ5ZDMwYWUzN2EzOWVkY2Q4YTg5ODAzYmI0OWMyYzE1YzZjNjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ1OTMwN2Y0YWJmZDRkM2E2NWZmNWIzMThmYjY3NDc3MjA1NTAxMmJhNmIwZGYwYTYyMTZlMTVlYjYxNWE5ZWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk4MzYyNjk5NmFlY2QxMmRmZTdkYjEyNTA3Njg3YWExNjZlZmVkMzY4ZTE4MjRjNGM3MjYzNDViMjFjYmNhODIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM3YzdlODUyNTc3NmJhZDAyM2UyMDk5ZjQ3ZTM3MTYwNTM1NzM4MWUxOTYzMTBlNDYzZDU5ZjkyYTgyZmEwMmQifQ"
+        },
+        {
+          "resource": "repo://modules/cli/README.md#L312-L320",
+          "version": "repo-lines-v1:sha256:511c99939c9efff407156e98bf882236eef35b8823e16569d43d036a64532832:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTA0NDA0ZTdmMmJmNjM1ZDlkNTQzM2U1YjVjZGU0ZTg1ZWNmMWRlNmY4Mjk4YzUxNjM3OGM0Y2RiM2IyMGI2OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTJlMzQ0MjUyMTVlNjBjMzE1ZTVkMDNiMTVhM2U4NThhYmIxZWNjYmEwOTExMWMzNDBhMGFiN2ZiMjdiYzI5MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjkxZmRiMjBjZDFhYzkyMmQ1ZWI0YWQzMTI0MDY0YWM1MmI4YmIwMDg0YjNlZjcxOTc1ZmQwYzY3NWZlZmU1NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzdjN2U4NTI1Nzc2YmFkMDIzZTIwOTlmNDdlMzcxNjA1MzU3MzgxZTE5NjMxMGU0NjNkNTlmOTJhODJmYTAyZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_18538ce34bf6445499feeb105c1f152e",
+      "statement": "Test stream submission uses --stream to specify named test collections configured in ecosystem CPS, with filters like --package, --bundle, --tag, and --test to select specific tests",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L261-L269",
+          "version": "repo-lines-v1:sha256:958fd7d7d9a97debf91ca0598b8bc2a8626d150d537f6189222d50c73bd7f63c:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGM4MmNhN2E1OGU3Yzc5Yjk2YzE0MWQyMTY1NTE3OGEyOTVjMTM5Y2U1ZWYxNTAyMDZkNGMxNDVlOGQ2ZDlhZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDdjMDZjNTYxZDVjMzI3MzQzNjg1MjY4YTQ2YjMzOTFmMzk5OGVlZTg5MGQyYmU1MWYwZDIxY2M0YTUzYWU2ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2E4OWI5ZjdkNmMxOTQxMTZkMWE3N2M4M2MxYTQ4YjE1NDI2OGE4YjVkNzhkMzYyNWM2YTNkYTE1MTIyOGJiYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTUzNzI3OTc0YjFjYTFiNTYzNTE0NDZhYjgzZDk4ZjJhNWQ4MWU1Y2Y1YWRjNWE5MGU4YTQxMGQ0OTJlNzVjYyJ9"
+        },
+        {
+          "resource": "repo://modules/ivts/README.md#L27-L29",
+          "version": "repo-lines-v1:sha256:72b65bf1119edb0a81a8ddc563db5905f62b1a16396d36ca4f3fd75b042a7c42:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWQ3OTMwYWMwMDdhNWZlYWYyYmU1ZjU5Yzc1NTBhZmM4ZTBlZTkwM2ViZTVkOTcwN2I0ZDA1N2EwYzczZGRjMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjFhYjIxOTcyNjIxZjA5MjNlMmM3OGY1M2ViY2U2MzE1MzAzZDMzNzhiOWQwYTQ0ZWM2Njc2MDY5OTBlZGE0YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmUwMjgzYTRiOTU1MzdjZmM0NjNhMTM3Y2QyOTFkN2Q4OGM0NTc1ZjU5ZTRmNDJhMjJhNDdmYWQxM2U2NjVlMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmM0MWU0OTE3OWZiNWE5NTBlMWI4N2UyYTAzZDc1MWEyMWExNGI0ZGZjZTllOWNkMzAzYjlhYWU2NzMyMTE5ZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_9c404f8a10464a4095a439efb2a002f8",
+      "statement": "galasactl runs prepare builds test portfolios from multiple test streams with specific overrides, stored in YAML files for submission via galasactl runs submit --portfolio",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L236-L310",
+          "version": "repo-lines-v1:sha256:455b84f86e9c5afafdb905bc45d1d7552c7475ee04d254e45bed76e9e2820e8a:eyJzZWxlY3RlZExpbmVDb3VudCI6NzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM3ZTFjZDFhODY2YzQwZDkzZmI5OTliOGRhYzQzOWQ4NzAxOWQwNGZmY2NjZTdkYjdiOGFhMGE5YmY4MGE0MTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YzA2YzU2MWQ1YzMyNzM0MzY4NTI2OGE0NmIzMzkxZjM5OThlZWU4OTBkMmJlNTFmMGQyMWNjNGE1M2FlNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZhM2NmNTE5MjM1NGY3MTYxNWFjNTEwMzRiM2U5N2MyMGVkYTk5NjQzZmNhZjViYmU2ZDQxYWQ1OWJkMTIxNjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIzYTViNGRhZmRhOWUwOTFhMDY2NGQ3N2FiZGZhMTliMWJjMTQ1MWJhNDMzNjMwZmFiZTgwNDIyY2Y0ZWE3ZDkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f4e013121947407f9500a78224fbdc45",
+      "statement": "The --poll flag sets status update polling interval in seconds, --progress sets progress update interval in minutes, and --throttle limits maximum concurrent test runs when submitting to ecosystem",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L335-L340",
+          "version": "repo-lines-v1:sha256:c1492917cb0cd4008bf24f00955e8e8e5c1eda899bd427f41d225fbaec0bd246:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDcyYzc4YTY1NWI4ZWZmMjhhYzE0ZGU5N2M0YjYwMTZmZTNmY2NjODgzMjA4MzkwNDI4ODE1NzcyODU0M2M0MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDdjMDZjNTYxZDVjMzI3MzQzNjg1MjY4YTQ2YjMzOTFmMzk5OGVlZTg5MGQyYmU1MWYwZDIxY2M0YTUzYWU2ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjZjODBkMGYyMzdiMzFlMWVhYmE1MTllNjc2NTIwZmJhYjA2MTA3YmQyOWE2NzBmMGYwN2QyYzI5MWIyNjVlOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2Q0OWZmOGEyZWE4ZDU2MmI3NDIyNzQ1MzIyMWUyZThjZGY2M2JjNGMzYTI0MGFiNGE4MzVkMGU4MWFjZTM2NiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_0729ca9864034f9f8986920b2f9ebb9c",
+      "statement": "The --user flag associates a different user with test runs when the requestor (personal access token owner) differs from the actual user, useful for automation scenarios",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L320-L320",
+          "version": "repo-lines-v1:sha256:92e34425215e60c315e5d03b15a3e858abb1eccba09111c340a0ab7fb27bc291:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTJlMzQ0MjUyMTVlNjBjMzE1ZTVkMDNiMTVhM2U4NThhYmIxZWNjYmEwOTExMWMzNDBhMGFiN2ZiMjdiYzI5MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTJlMzQ0MjUyMTVlNjBjMzE1ZTVkMDNiMTVhM2U4NThhYmIxZWNjYmEwOTExMWMzNDBhMGFiN2ZiMjdiYzI5MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTgyNTdiY2FmNTdhOGY5ZDc1ZjBjMDM2MDM3ZTgyNmNmYzllNTZjZWRkNDNmZDUzZmJlMjJkMTczNDcwNzk2NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzdjN2U4NTI1Nzc2YmFkMDIzZTIwOTlmNDdlMzcxNjA1MzU3MzgxZTE5NjMxMGU0NjNkNTlmOTJhODJmYTAyZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ef41d79b39774fd38514a2d468bb67e1",
+      "statement": "Local test results are stored in ${GALASA_HOME}/ras/ directory with run names prefixed by default, accessible via file system",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L12-L20",
+          "version": "repo-lines-v1:sha256:bded881a2ebcaa281fe148b2201ce414267d0976210314eac849f8f26ed2db3b:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2JjNGNhNmQ1Yzg1ZTJjZmZkMTAwYWIwZWIwNGFlYTAzOGRhYzhlNTE1YzlhODZhYTk2NDQ1MGEyYmMwMzQ2NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzZmMTJiZjY5YTMyZWIwYjJhNmI2NTExYTQzNjliOTNjZjEyODdmNzYxY2JhNTE2NDE1ZDc3OTMwYTA5NjA2ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWFkMWFiYWRlZjNmNDRkOGI0NjA3ODIzMGY0ZjM3ZWZkYWJhNTVkM2JjYTc3YjEzNWIyMmQwYWYxZDUwNWQ4MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmU0NmM3NDk2Y2I2ZTQyZGI3NDVjNjM0MjQ0ZGU3YWI3MjE0MzJlMDdjMDIwOWZmM2MzMDAzMjFiNTM4MjExYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_dfb092d9f07f464f913473eeb95dfff3",
+      "statement": "galasactl runs get retrieves test run information from ecosystem RAS with --name for specific runs and --format for output style (summary, details, raw)",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L458-L468",
+          "version": "repo-lines-v1:sha256:fc41009b819c2204eac41b4bf6580d7dfd7e1ed1a520d4ee4a004b2bc60857db:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNmYjJkOTI3YTYzY2MwYzliYWEyZWEwZDBmNGNlNGQ0ZWQwNjhiZjU5ZDNmN2Q2NjhhZDVkN2FlODFmOTljZDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNmN2MxZTEzOTFmNzY3MDg0OTQ4MmRkNTI3ZDk4NzI1MTc3ZWExMDViZTVlNmNiZGM3YjU1MDRhMTkwYTZhNzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMxYmYzOTY3MTU5Y2Q3ZDljNjdmMmFhMzIyMGNkNjcxMjY0NjllNmE5ODQ3N2RlZmY5NGMxNDg2YTJkYjI4MzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZmOTYzMjkwZDM4M2FlN2U5NDFjYTEzNWIwZjY5Zjk4NjA0MWYzMjZjZTExNjQ2MjU0ZWVhMDI2YzI0Nzg2ODUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7655ffcd12b84783a7d94e67bf03eb78",
+      "statement": "galasactl runs download retrieves all test artifacts from ecosystem RAS, creating a directory named after the run with --destination to specify location and --force to overwrite existing directories",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L484-L511",
+          "version": "repo-lines-v1:sha256:92cf2bf3b4b776209223bec1964c1e28115d4c334fa447b5399319ab0f802f1f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlYzMzYTZlN2QyNGEyMDVlODNhZTI2ZjExNDE3ZTI1NGVmZTRkN2ZiZWZiZmQ0NGJjZTBhZmE3OGU4NTJjODEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZkM2ViMDMwYzMwZWE2OTQyZGNlNGUzMWJmZjNhYjQxYzc3YjA4ZjBlNmMwMmYxMzRhOWI0MGYyMGYxZTk5YjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEwNzIyZGQyMjI5YWE0OGM1ODc4NmQ4OGVlZDRjMDY5MDNmZWE3NjBiMmY3OGE3ODlkY2M1YTdhY2NmYWRmZGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZhMzU4Y2U5ZTYwNDA3ZTE5NjI2YTE1YmNkNWNhZTk4ZDNmZjRkOTc0ZDVlMmI2NWQ5MjYwNWIyYTBiMjI3ZGUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c02328a4e05a4260b43bf03de30791c9",
+      "statement": "Galasa managers require CPS properties configured in ${GALASA_HOME}/cps.properties for local testing or set via galasactl properties set for ecosystem testing",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/dev-instructions.md#L307-L308",
+          "version": "repo-lines-v1:sha256:86dd2a3d65f01c765b002d6df906c22854554a018944d7580bd368f20c3c2241:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjk4NGY1NzE0MzZjNjBkZmIyOTliNmU1MGQ3MjE2OWNlYTgwYmIzNTdkOGM4YjM1ZDRhZDY4ZDUzYmM1MmU1NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTc5ZmU3ZTdmZjNiYWM5ZjA3OWNmNmFmYzAxN2E0ZjU1YzMwMGJhOTEyMTllZjUxNjMyN2ZlZGZhNjgwOWUwYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2VlMTM3ZmJlNTdiZTFjZmU1NTU5MGJmMzcwZTUyZWMzMWYxOGI5YmQ4OTQxYzVjMzM1ZWQyZGVjYWU3MGY1YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTBkYjQ4ODEwNzAwMmQyMmI2MDY4NWU0Yzg3YzRjYzM5NzU3MzI5OWVkMGNhY2NmYzY3NjYyYWQyOWM2ZWE1NyJ9"
+        },
+        {
+          "resource": "repo://modules/ivts/README.md#L43-L45",
+          "version": "repo-lines-v1:sha256:6cc092a471cb7c89b667df5b540dc087215bc592d388ce88817f67b636e14c85:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGE3ZGQ2OThjNGQ2MTU5ZWQ2MzczYmRjZWIxMjI5MmE5MzVjNDc1NjhjMTNjMTBlOTFhMDEzMjYwZDM1ZWM0NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDI3MzM3MjA1ODlmNzQ4ZmI5NGE5MGVmYTU3MjQ0YjJjYTU0N2IxMTViNDQ3NGI0MWMyN2E0NWNiMDAyYThkNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWYxZTIyYjk1ZjNhYzg5N2YxNDJkMWU3ZWI5Y2I5YzdlMjZkNmMwNWI4Y2JmMWZmZGRlYjg3MmJiZGE2MGI4NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODczZDgwNWJjNjAwYjc3MWQ4ZDAwZDY3NmM3ZTU1MjhjOTVhZDRjYjA0Njk3MjE0YThjMzQwZjk1M2E2YzNjMiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_d2bd5d3576794ab29f99ad585af463fb",
+      "statement": "Manager credentials and configuration for local testing use property files in GALASA_HOME including cps.properties for configuration and bootstrap.properties for framework settings",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/test-api-locally.md#L142-L177",
+          "version": "repo-lines-v1:sha256:8fc9f57136b9d39a0001b3fd991071e630abcc2faffdcc705eb2514756622927:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMxYzE4NDdjNjYyZTQ0NWFiMTljMWFhZjQ1NGQ4OWIxZGZhOTRlMDVmMWY1NzdjMzQ1Y2Y5NzE5NjZkZGVlMDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YzA2YzU2MWQ1YzMyNzM0MzY4NTI2OGE0NmIzMzkxZjM5OThlZWU4OTBkMmJlNTFmMGQyMWNjNGE1M2FlNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRhMDZkMDg3NTNjMzI1M2NkZmY1NTU4MDIzMzY4ZDM4YWFhZTEwODAwZjhhMjRiMjU1NmE3OTZmOTFhMDJlMDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEzMjU2M2NmYzgzZjhiYWRkZWJkODBhMjdiZGU0OWVjOGU3NzEzODBmODk2MmNhMWFhMGY3M2U0MzBhOWMwMzgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c16babaf6eba4768b8bd12973bf0c4d5",
+      "statement": "The --debug flag enables debug mode for local tests with --debugPort specifying connection port (default 2970) and --debugMode controlling connection as listen (JVM waits) or attach (JVM connects)",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L420-L450",
+          "version": "repo-lines-v1:sha256:c62d400e580b74d33b10bcb2209ce4684e12d3f976f829297d496c1732adf328:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2NjBmNzUyM2YyYzNlNzc5MTViZDI4Njg2MDkwNzUyYzc0ZDYyNjc2ODBjZGM2NjJmZDMyOGY1MGQxYmMzNDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVhNDI4ZWVjMmI4N2Y4MmVlOGExZmNkMjdmN2Q4ZWQ3NTUwZGQ0ZmY3Y2FkNjYxMWY0ODlmNDk2MzZjZDgyNGUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ2YmQ5NGY2MDA0YzNmMjZkYjdjNTFlNTJiY2JlNzZiODA3OTY0MWJhYzU0YjFlMWQwNzhmNTMxMDQ5NTIyOGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIyYWY3OGRmYWVhMzJkZjMzYWNkMjk3NGU4NTRmNDhkOWNmODM3ZWFlYTcxNDFlMGFhYzQyMThlNDk2NWMyNGEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_03c7e78861434c72a464ee767e89e707",
+      "statement": "galasactl.jvm.local.launch.debug.port and galasactl.jvm.local.launch.debug.mode bootstrap properties configure default debug settings, overridden by command-line flags",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L424-L446",
+          "version": "repo-lines-v1:sha256:63b99084a3beafb38c53b7e4f99e4764b601309928435be7e2c79243614ad4f3:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI5MjMzYjFlMjU2MTlkM2ZhYmZhYjViZGQ2Yjk0YWY5M2FlYzJjM2FlMDIyNDFiZDFiNGI2MjE5NDE2ZDU2NGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRiODU0NDk3M2M5OWMyNzkyZWQxYjk5NzcxYmNlMWZlNjExMzZiMWIxZTczZWMxNWRlMGRiYmZhNDMwMmVlMjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNlYWYzMzIwNWE1MDU4ZTIzNzE5Y2E0N2EyNmNjMjdiNjYzYTg1OGFlN2JiMGNhNTcwM2M2M2Y5OGQwYzU2OWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7a833dcf49ba4a75bf3bb331afa71ecf",
+      "statement": "galasactl runs reset requeues a stuck or looping test in the ecosystem by accepting the run name and returning immediately after server accepts the request",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L514-L525",
+          "version": "repo-lines-v1:sha256:6cef0bc05985dd506de85d184f78e0b080238ad6b43f495decb80977cce69e4f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVjMGNiMWU0ZmEzYWQyNzk1ZmQwYWMxMzNhYmIxNjM2YjQ3YzY3NmU1NjZmN2E4YmNkZDY5YWM3NGJjZWJkYjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YzA2YzU2MWQ1YzMyNzM0MzY4NTI2OGE0NmIzMzkxZjM5OThlZWU4OTBkMmJlNTFmMGQyMWNjNGE1M2FlNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNhODU5MTI1NjgxZTJjNjFlYTYyZjAzZTlhNGI2ZjBjNWYyOWNhNDgxYjg3ZWVjZjhkMDM3OWZhOWQwMGNhZGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZiZjYxMGU4YjY5NWE3MTI4OTI4MTI4ODVjOGM3NTkzNTBiNDIzZjNlODkyOGNlY2IwM2RkODJmNGI1YTMwNmQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d5a7b6749b7e47c79d7296838e3bd7ab",
+      "statement": "galasactl runs cancel stops a running test execution in ecosystem while preserving RAS data, returning immediately after server accepts the cancellation request",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L528-L540",
+          "version": "repo-lines-v1:sha256:7aa7ffd9cbaf4c5bd7730eddd08c96c36cae25a4b3ce22a40b088393b49397d4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg1ZTk1ZWUxMzYzOTNlM2ZiNDA4N2VjZTkxZmJkMzdjZmJlOTdjZTY3ZGJhYzQxN2IwNjc0NGJhYmU1YWZhYjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YzA2YzU2MWQ1YzMyNzM0MzY4NTI2OGE0NmIzMzkxZjM5OThlZWU4OTBkMmJlNTFmMGQyMWNjNGE1M2FlNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNhODliOWY3ZDZjMTk0MTE2ZDFhNzdjODNjMWE0OGIxNTQyNjhhOGI1ZDc4ZDM2MjVjNmEzZGExNTEyMjhiYmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg0OGY5YjM3NzkyNWE4ODhmMTYxOWYyYjcwNWNmNjc2NmMxZTYwZjQ3MzM4NWY3YmY5MjQ0N2RlOTVjNjE5YTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c1e675acf83a4c97880814e64b27896f",
+      "statement": "galasactl runs delete permanently removes a test run and all associated artifacts from the ecosystem RAS",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L470-L482",
+          "version": "repo-lines-v1:sha256:fa8441c74c9a8015b29e93bb2d9d6b80cf7358591dd61fed024cad263f58fe19:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg5ZmE1N2QzNjNlNzZhN2JlNTdmMWQyY2M5ZDhkODRiYTkwYzI3ZGQ3NmU0MzMyMmZlY2E5NWE4ZGM4NDJjMjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ0ODc3ZjFjNjczODMwNzc0ODUzNzg4YTRhYmE3NDdhZjU3OTc0MmQ4MTdmNzY0OGYyNTVlYjVkZjBiMTQ3YTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ1NGFhYzQwZjNmOTFiOGEyMjM4YmEyYjQzYTg5YzBmYzAyODMyZjY2MDhmZTdkMTMxMmUzMjM2YWEzMmZkYmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY0MzNiMTBkOGVhOTVmMDAxYWVkOWY0Y2I4ZTAxMjFjODVmOThhYTQ5ZDkxZjkwNzMxMDQyN2FlNWJjMmNkYzUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3e78fdf2bc5645be925afa859c840d3e",
+      "statement": "galasactl runs cleanup local executes resource management providers in local JVM to clean up resources from terminated test runs, using --obr for provider bundles, --includes-pattern and --excludes-pattern for glob-based provider filtering",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L542-L569",
+          "version": "repo-lines-v1:sha256:1c185abd81a0fdd9b25c874da1114279b3541dfdc3db49aea650405db6f4f41f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVmMDk1NTgyZTJiMjdmNTlhYTFmYjNjMGMwMjU0MWNmMWJiMDFhNTEyYTA5ODc4YmRmMDExNDVlN2UwNjFhZTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YzA2YzU2MWQ1YzMyNzM0MzY4NTI2OGE0NmIzMzkxZjM5OThlZWU4OTBkMmJlNTFmMGQyMWNjNGE1M2FlNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjViODkzNTgwN2I2ZDRlZGIyMzQyNWNlMjI0ZTU0MzViZTI5ZDAyYmVkOWM3ZWEwMTk3YTUzOTZlZjg2ZjVlNzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNkMTE3NzgxY2E2NjI3ZTc2MTM4Mjk5NThlNjI5ZjY5MmE5YzIwNzMwNWJiOWRjODlhOWRmZWJjZTRjNDE2NGUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fdb8c4874e2945bfa68481ca0dc686b5",
+      "statement": "The --localmaven flag specifies local Maven repository location defaulting to ~/.m2/repository, while --remotemaven specifies remote repositories defaulting to Maven Central",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L399-L399",
+          "version": "repo-lines-v1:sha256:3cdd42c5a05ff90e12973ba115c3c2c277fa3d6cb99760e86a338d56b308e0a2:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2NkZDQyYzVhMDVmZjkwZTEyOTczYmExMTVjM2MyYzI3N2ZhM2Q2Y2I5OTc2MGU4NmEzMzhkNTZiMzA4ZTBhMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2NkZDQyYzVhMDVmZjkwZTEyOTczYmExMTVjM2MyYzI3N2ZhM2Q2Y2I5OTc2MGU4NmEzMzhkNTZiMzA4ZTBhMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmJiODZkNGVhMzg2ZGE4OTBiMzI3YTE2YjdjZjUyMTliMTcwNTg2NDM2YTRhYThhNjAyZWZmYWJkZDQ0MzU5NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmI3MGVkNjk1OTc2YjBlZTcxODM2MWVlMzAyMTY1YWExNGYyMzBjY2I4MmVkNmQ2OTk1NTIwMjI3N2E4ZWZmOCJ9"
+        },
+        {
+          "resource": "repo://modules/framework/README.md#L71-L72",
+          "version": "repo-lines-v1:sha256:658ddb0ad285a55bb5e40588a223dfad9770a62a31bb09e4c62449abf122dec5:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzBkMWNiYjg2NWYwNzhjNTNhY2VhMTFlYzk4NjkxOTZjNzIxNDZkMTU1YWUzNDlhN2UxZDhmM2Y5MDI2MjliMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2VlZmU2N2YwNDI2ODE3ZjM5MTIxODM0NDg1N2QyMDdjN2M5MDFlZDNmODk0MGQwMDA0Yjg5ZWVkZTkxZDQ1YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDdlNGM4ODk2ZmY3ZTZmZmIxMzVhNTUwYTgyYWY1N2M1YzE1YjIxNjQ1M2M4NzJhMGZmMmUyZmQyMmY4MjA5OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjA2NGY2NmI5NDgyY2ZhMjIyYjQ3Y2MyMmJiOWIzYzY1ZWZjNzFjZGIxOWRmM2M4ZjU3ZGQ3MTEwZTI2NTIyNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_5ee6e159713b401aa5421a6866e7057f",
+      "statement": "GALASA_HOME environment variable overrides default ${HOME}/.galasa location, further overridden by --galasahome command-line flag on per-call basis",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L12-L20",
+          "version": "repo-lines-v1:sha256:bded881a2ebcaa281fe148b2201ce414267d0976210314eac849f8f26ed2db3b:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2JjNGNhNmQ1Yzg1ZTJjZmZkMTAwYWIwZWIwNGFlYTAzOGRhYzhlNTE1YzlhODZhYTk2NDQ1MGEyYmMwMzQ2NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzZmMTJiZjY5YTMyZWIwYjJhNmI2NTExYTQzNjliOTNjZjEyODdmNzYxY2JhNTE2NDE1ZDc3OTMwYTA5NjA2ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWFkMWFiYWRlZjNmNDRkOGI0NjA3ODIzMGY0ZjM3ZWZkYWJhNTVkM2JjYTc3YjEzNWIyMmQwYWYxZDUwNWQ4MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmU0NmM3NDk2Y2I2ZTQyZGI3NDVjNjM0MjQ0ZGU3YWI3MjE0MzJlMDdjMDIwOWZmM2MzMDAzMjFiNTM4MjExYyJ9"
+        },
+        {
+          "resource": "repo://modules/framework/README.md#L32-L39",
+          "version": "repo-lines-v1:sha256:dd1b02068db8d6e5e538966f3c5adf8da958b9fa737f8de2a77d0e845a5744d4:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTIwNzE2YzVkYTIwN2NlNzdjZDhjMTU3Y2YxMDFhMWM4NzViMTY0YTUxZDY4MTdjYjZjYzZjNDA0ZDY2YWYxOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2Y2NDI0N2JiMjY4YzRkMWNhZWE2NjYyYjMxYjcxOWY1MWIwZTM2NmRiOWFhZmYyNTFlNDllZjRmOTAyNGNjNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjQzYjIwZGFmZTk4NTQyNGJmOGQ1OGRjYzQ4OTIzOGRlNzA2MmUyZjk1N2QwOTE0NTY4Y2U0ZTUwYjI1OGIxNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzYxNmNiNjRkM2Q3MjE5ZWI0ZWU5YWJlODdhODAwMmM1ZDMzNzYzYjhhMzM4NTZhZmY5YmQ2YWQ0YzFhMGUxZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_9873f18d7ce54139a8d5927ec80fabd1",
+      "statement": "The JAVA_HOME environment variable must be set to reference the JVM used to launch local test execution",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L398-L398",
+          "version": "repo-lines-v1:sha256:2f4fbd1d98f6b00402ed2d3361c6b25da94a2bb9079adcf1c3a0eb8501d394f3:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmY0ZmJkMWQ5OGY2YjAwNDAyZWQyZDMzNjFjNmIyNWRhOTRhMmJiOTA3OWFkY2YxYzNhMGViODUwMWQzOTRmMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmY0ZmJkMWQ5OGY2YjAwNDAyZWQyZDMzNjFjNmIyNWRhOTRhMmJiOTA3OWFkY2YxYzNhMGViODUwMWQzOTRmMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjNiNDlkMDk0NWZhZjY3NjMzNjZmZDM2ZjFhOGY4MWViZDY1OTI3MDlmYmI1YWUyMmRiYjJlYjg3MmMwNTY2YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDFlODZlODMxMzU0Njk3NTQ2OTBmYzg3ZjYyYTg3MTRiMTVkZjg3MDI5NGQ4NjIwNWVlMjI5NmUzNjhlY2QyMSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.2",
+    "at": "2026-09-21T12:35:12.771Z"
+  }
+}

@@ -1,0 +1,358 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:2222279c90e274059047a86fdbaf7a207cd90aa5cc792540b911113aa0d1fbea",
+  "claims": [
+    {
+      "id": "claim_76b0674d954c4ae9bae7141247ff404e",
+      "statement": "The Main Build Orchestrator (pushes.yaml) executes on pushes to main branch and workflow_dispatch, building modules sequentially according to their dependency graph starting with set-build-properties and check-required-secrets-configured",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/pushes.yaml#L8-L51",
+          "version": "repo-lines-v1:sha256:412b892cf406be67019603e905f2a9c051decbc5f5c1ab5b6de61474f929a890:eyJzZWxlY3RlZExpbmVDb3VudCI6NDQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5NmRjNDgxNDlmNWE4M2QxZWQ2ZGJiMzliYmM3ZTJiOTAyYWEzZDM0ZDZiZDVhZTRiMjkxYjY4ZGYwY2E3OWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdiMjE5ZjAxMDdkM2Q4NTEzMTA4ZDZlZDcyNTcyMTYzYzljMmRhOTU5MmM3NDkxNzRjOTExOWJmYjRjZjQ4ZDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNmMWRiNDZlMDdiNTliM2E5ZmI3ODk3ZGQ4MzliZTM3ZDRhZjU0MmU0YzRkYjVlYzY5NDY0NWMxZjcwYzQ1NTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2941116b2dbd4ba595e516dd04d6902b",
+      "statement": "The Main Build Orchestrator builds modules in dependency order: platform and buildutils in parallel, then wrapping and gradle (depend on platform), maven (depends on gradle), framework (depends on buildutils, wrapping, maven), extensions and managers (depend on framework), obr (depends on extensions and managers), ivts (depends on obr), cli (depends on obr), test-creds-store (depends on ivts and cli), and docs (depends on cli and test-creds-store)",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/pushes.yaml#L52-L263",
+          "version": "repo-lines-v1:sha256:0c1985fb088c846058c972745a57e2c94b98d62401c39b1dfcf0fd8842261bb9:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEyLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI4NGJkZWZlZDQ3OGNhMzkwNDRlNmQxYTMyMTQxZWNjYWM1MmU3ZmRkMmQxMWY1MGU4ZWEyODczNWQwYzM2NWY5IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI2M2UzNDI1Y2JhOTllMmUxMGI5MDNhZGM2NTQyMDNlNjc2NDhhM2VjNzgzMTkzMmYyMjZiYzg3YTNkYjMyZmFkIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJjMTk2YTU1MDdhNTY5NGY4MDI3Yzk2M2ZiZjdkNmZjOWU2ZmNlMjkzYWE1NDdiODhkMWVkNTZlNjZlZTAwY2EwIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_7d31bb65b16d4339955435ae4d5154f9",
+      "statement": "The Pull Request Build Orchestrator (pull-requests.yaml) detects changed modules using get-changed-modules-pull-request.sh script and selectively rebuilds only changed modules while downloading unchanged artifacts from the last successful Main Build Orchestrator run",
+      "evidence": [
+        {
+          "resource": "repo://.github/scripts/get-changed-modules-pull-request.sh#L178-L196",
+          "version": "repo-lines-v1:sha256:cf4a5acda094ba65d98163e9990540a0a80939cf0f11b9f6894082de487b4671:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYxNzY5ZWNlZmRkNDYzYzY0YmM5ZmZhMGVmNDhmNTdkNmI0MzJiM2ZmZGI2YTA0ZTg0ODRmODM3ZjRlNDQ4NzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhkMDgzZWFjZGNjMTI1NTc5ZmYzZWZiODg1ZDA3M2MzNjU2NmQyYTcyODcxOGQ3NjBhM2M1NDgzNjAyODY5ODgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcxODBhYjczYTExZDc1ZWViMDBhM2I4YmJjYzYzZmFmZTVhN2I2ZDBiMmExYjAwYzFjOTBjM2E3YzA4NzU4ODYifQ"
+        },
+        {
+          "resource": "repo://.github/workflows/pull-requests.yaml#L53-L104",
+          "version": "repo-lines-v1:sha256:48655e777158291253dd805f01285caf973829f8046c761fa52aa5e5d44fbac2:eyJzZWxlY3RlZExpbmVDb3VudCI6NTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA5OTQ1OTU2ZTU0ZWUyMjVmM2ZiZGQyNjZjMTNjNjJkMzNlZTA3ZjY4MGYzY2MwZmZkMWVhMTZiZjc1NjhmZjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5MzE2YmUxOWRjMzIxZDAxNzQzOGM3MDQ5MjkyYTZiMmM2OGU0YWI0OTUzN2I1MmZmZWVhMDk0YzE0NjNmMWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJjNmFhZDk2NDQyMmM0ZGFiNmVjYTFhOTI1NTVhNzUxODczMDkyOWNmZWE4ZmY0ZjYzZTkwNDhlNjliZWYzY2EifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_798458f2f64f46c68ffc614f70a4f879",
+      "statement": "PR workflows use a fallback artifact download strategy with continue-on-error to download from current workflow run first, then fall back to last successful main build using run-id parameter if the artifact is not found",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/pr-framework.yaml#L64-L150",
+          "version": "repo-lines-v1:sha256:7c2507c160258984f52b8eaecbc5f6e40da649fa86d78d34424e92ab4ee38129:eyJzZWxlY3RlZExpbmVDb3VudCI6ODcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjExMTM1YjMwNjY2MTQ0Nzg4NmVlMGI5MTY4Y2VkNDFhNjFjYWZiZTgyYjBkZjM0MDU2ZWMzODU5MDgxY2ZjMzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRlNzJkY2IxOWIyM2IwNjM3YTcxOTNlZjQzZDA3ZTEwMjk0MzgwMmQ3ZmVmZTgzOWVlOGQ4YjEyOTdlMjg5ZTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM1MTRhZjMxM2MxZTVlZTg0Y2Q2OWMxYjlhZTI3MjhjNTRkOGFkMTNmN2M3OTYwN2Y1ZDVjNmM5ZmVhNmFmYTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE4NWQ0NDczYjg1NzFjY2IyZWMzMmUyOThmZWRlMGU3ZWM4OTUwNzI2NDg0YTc4YWU3ZDEzODcxYjAyZTJkM2UifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c43ae92011d948d0af6c4071f1ba0850",
+      "statement": "Module-specific workflows are reusable workflows using workflow_call that accept inputs for changed status, artifact-id, jacoco_enabled, sign_artifacts, and galasa-version depending on the workflow",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/framework.yaml#L9-L20",
+          "version": "repo-lines-v1:sha256:2e5b863608fc8c58054a1e20d4f2c7acc127ea2af3d834145ec5ea2616ed71d8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYxOTExMWVlZWM3YTc4NGQ5ZGI5NDhhZjU0MjQxY2Q1OGE1YzI3MWMwZjYyOWI4YTQxZjEzMzAxOWZmN2ZiMmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMyMzFjMjM2NTdjZTU1Zjc1YjU2ZTA1ZmYwNjVkYTIyODljNzVkZTc4MTBjMjAwZThlMjcxM2Y5OGQxMTVhYWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcyZTRlMjk0MWJmODE2NGVkMWZiMGI4ZDk0MjQzODg2MGU4YWZjNTI3NmUxMjc2NWYxZWY2YWIyZWI3ZGNiMGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg3NmNhOWRmYmQyM2JlMDY2YzhmZTc4ZTU5NWUyNjBjZGNiNmQ4NjgzOTJhZmIwNDcxMTBlYWEzNjdlZDQ2NzUifQ"
+        },
+        {
+          "resource": "repo://.github/workflows/obr.yaml#L9-L15",
+          "version": "repo-lines-v1:sha256:8b71a854e570dd68d65d7dd9905d31567a5d3238114690e0e9018c711478bd9c:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjE5MTExZWVlYzdhNzg0ZDlkYjk0OGFmNTQyNDFjZDU4YTVjMjcxYzBmNjI5YjhhNDFmMTMzMDE5ZmY3ZmIyYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmQ1NWZlNmRlNmQ0OWFlNjA4MzQ0NDIzZDAxMGI1YTU2YjM0NDQ3MTU5MjRhZDU4M2U3OWExMjRmOGNkNzdiNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzlhZTg1ZTgzY2IzZTYzM2JiNTZhNTdkYzY3MjQ2ZDk2NDAxOTEyNmU0M2Y4MjY4NDM4ZjBiMDE2ODlhNDQ1YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODc2Y2E5ZGZiZDIzYmUwNjZjOGZlNzhlNTk1ZTI2MGNkY2I2ZDg2ODM5MmFmYjA0NzExMGVhYTM2N2VkNDY3NSJ9"
+        },
+        {
+          "resource": "repo://.github/workflows/pr-framework.yaml#L9-L18",
+          "version": "repo-lines-v1:sha256:64f5fdcafb3f26c88b0c7cccaea1549985d093f8cd1cd1773b187fe81f4ccfa3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYxOTExMWVlZWM3YTc4NGQ5ZGI5NDhhZjU0MjQxY2Q1OGE1YzI3MWMwZjYyOWI4YTQxZjEzMzAxOWZmN2ZiMmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMyMzFjMjM2NTdjZTU1Zjc1YjU2ZTA1ZmYwNjVkYTIyODljNzVkZTc4MTBjMjAwZThlMjcxM2Y5OGQxMTVhYWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY1NWNjOWU4N2E4Mzk0NzhiNWM4YmU3NTlmN2YyMTA1YmU1NmZiNTgxNjM0MzhmYmMwZmYwMjUyYjU3NGVkYTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3ZDU3YTE4NjFiNDdlMWM3ZjQ0NzRiMmM5ZjNlOWVlYThkZWI2YzA2MjE2MmQyNzUzNmU4MjkzZTQ5MTBhNTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5acba774d1c14f75bca5c44ced8ac21b",
+      "statement": "The framework module uses the openapi2beans Docker image from buildutils to generate Java servlet beans from the OpenAPI YAML specification before building with Gradle",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/framework.yaml#L72-L78",
+          "version": "repo-lines-v1:sha256:5b6da614651d49cc7ef2e55f9330e62b5ae4bc17fc070d51de697669fd769b27:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTA3NDE1MTM3MjhmYmJjOTdkM2Q5OGI5ODIxOTNlNmE3N2MxMzJlY2Y4NzViMTcyYjU4MmUxNmNjYzg2MGE4NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzdhOGQxM2FlYmE3ODkzYmZmZmEwZmJkMTY1MDIyZWRmMjM5YTgwOTVjMjcxODkwZjY1MDViYmQzZDljYjI5ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzY5N2E3YzAxNzVkYTNjYmRkYzk0ZjM3NTUxY2E4YWFlNGRlNWNhN2MzYmNlYTU2YTUwZGQxOGVhMDkyZGM4OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmQ1ZjU3NjE5MmZlMmMwMTljZTZkM2JiMTllMDcyOTU0ODA5YWRkZjI2MWEzYjhiN2MxYTkxYjVjNjE4MDdmMiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_845025d33e2d4e07aa8e43804470b38c",
+      "statement": "The obr module uses the galasabld-amd64 Docker image to generate the Galasa BOM pom.xml from release.yaml metadata files and to generate the Galasa OBR pom.xml",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/obr.yaml#L184-L186",
+          "version": "repo-lines-v1:sha256:1f780128cd25eb920f48772185c6b24e732f147efd9079c690c24064521c0975:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTFhY2JlZTI5OWMyOTJkOWZlOGU0NzYyMjRjMDdkZWMwMDI0YjRhMmFmOWYwM2NhMGJkMWE2Y2JjNTAxZTIxOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmIyNzgzOGYwZDEzMDA3NjRlMTQ3MDhmYmZlNDU0OTA5OTEwMmUxMjcwMWFhM2MzMTdkYjBiNTQ0NDNkMDJiMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzY5N2E3YzAxNzVkYTNjYmRkYzk0ZjM3NTUxY2E4YWFlNGRlNWNhN2MzYmNlYTU2YTUwZGQxOGVhMDkyZGM4OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzJkNjI0ZWY0NDcwYzlhYjMwYzA2MTI4MTRhNGQzZTRkMGQ4N2E0YjBlZDI4YWMwMWZlMTJjYTJhZDA3NzlkZiJ9"
+        },
+        {
+          "resource": "repo://.github/workflows/obr.yaml#L92-L94",
+          "version": "repo-lines-v1:sha256:01fd864f4ef023eed184dee322a99947ef8557275da675f4b490671056a0fcb3:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjE4ZDkyOWM5NGE0NzZkZTMwMGJmMDI0ZWNjNTUyZTc2NGZjMmMyZWI5NDQ2Y2QzYTc2MmFlMmM3Mzk1MzdkNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjgwMTlkNzc5MTZjYWYzMDk3MTIyNGIzNTMzOTcxZGFlNDA1NmRhNzYxMjE4ODZhZWQyOWJhNjI2OWY0OTViYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzY5N2E3YzAxNzVkYTNjYmRkYzk0ZjM3NTUxY2E4YWFlNGRlNWNhN2MzYmNlYTU2YTUwZGQxOGVhMDkyZGM4OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODRiMWZmZmE0MDkzNmNjYjJhMDZlZjg4YTY1ZTQ5MzYzZGZmMzllNDgzZTkwODQ3MjM5YTdlZDliY2U1ZWQ0MiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_00e783090583415b81a6e28ef2c1242f",
+      "statement": "The IVT workflow builds IVT artifacts, creates Docker images (ivts-maven-artefacts and ivts-auth-maven-artefacts) for development Maven registry, builds compilation test images for isolated and MVP distributions, and deploys to ArgoCD for continuous verification",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/ivts.yaml#L164-L183",
+          "version": "repo-lines-v1:sha256:44005588d7904c8ead59f2db321df9441bafa87bbacaa704e57b34f43ce93813:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImViZTg0YWEwNzAwMjNhODFjZTU2NWNiMDE0NjJiOTE0MWM1ZTlkYjBiZDA5MTEyOTMxM2EyZTEwYzZiM2M2NzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQwNzVjZDQ2MDI3OWI3YWRmMjA2NDc1Nzc4ZDQ5NGMxOWVlYmYwODIzMzUwMjQ2MmUzYjYwZDg3MzY0YWJjYjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVjMWJjNmIyNmVlZGViYTFjZTlmYmQyNzlmYjYyZTg4MDU4ZDAzNDMxNzkwMjBlMzRiYzJjZTc0OGVmYmNmYmYifQ"
+        },
+        {
+          "resource": "repo://.github/workflows/ivts.yaml#L226-L291",
+          "version": "repo-lines-v1:sha256:6370e9600b704ccde720f8646acfcfff9a47dc53852e2528ac5d99f564054929:eyJzZWxlY3RlZExpbmVDb3VudCI6NjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI5Njc2ZjEyNTI5Njg2ZDU3MDkyNDEwNzE1Yzg2OWU1MzE1MzU0M2UwOGI1ODJkMWJlZDA5NjY4Yjg4NzQ5NGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIxODdjZTRmMDJhYjRmY2Y3Y2Q4MTc2ODMxNTgzNDVjN2ZjNTI0OTc5MzEwMWMxYWVkNWM4NGMxNGViMjg3ZmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ5ZjhmMWQwM2E5NTE0ZDZlZWNlMTk4Mzk3M2Y0ZmM5OGNjODJhYjYxMjU1YmJmZjc4MWEwOTM2Y2E1MzNmOWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgzNzg1Yjk3NzJkYTA4MDQ5YWVlMzBkZmM4ZTQzYjRkYmUzMWIxMWQyOThiMWM3MmY4NGE0MjJiZDIzMzBjM2UifQ"
+        },
+        {
+          "resource": "repo://.github/workflows/ivts.yaml#L293-L356",
+          "version": "repo-lines-v1:sha256:a65854e326b2e9d834f78f1db0258f50f99ad88bb9d01fa003e44186f81a2abe:eyJzZWxlY3RlZExpbmVDb3VudCI6NjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkOTlkYmUwYTU5NzJiNDBiMTA3M2RiNzYxZmU4Mjc0ZjBmNmQ5MjFmYzY5MjlmZmMxZTU0MWNjNDkyYTllZDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ5ZjhmMWQwM2E5NTE0ZDZlZWNlMTk4Mzk3M2Y0ZmM5OGNjODJhYjYxMjU1YmJmZjc4MWEwOTM2Y2E1MzNmOWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNiOWNkNWViYjVhYzE2MGM4YWEyZDczYTc3MDQxYWZmMmI2ZDI4MWNlODNiMTFlZWNmN2M2ZjgzZTBjOWJhM2QifQ"
+        },
+        {
+          "resource": "repo://.github/workflows/ivts.yaml#L57-L153",
+          "version": "repo-lines-v1:sha256:adcfb3a11c534d0f6c736f36620337212e6f8040bacd8a37c0aab5a3f71da118:eyJzZWxlY3RlZExpbmVDb3VudCI6OTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhMTkxODA0ODA3ODQ3MzBlOWI4NTYyMDQ4NGY3NTk5M2Y3NzJmNmQwMTBmMGJjOGM2MTYyOGZkZDBlNTBkYTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdmOTNhODhmNmEyMTY3MjU0N2EyODg1MDU5ZTY3NTQ3ZGJiY2I3OTJjMTRhYjE5YThkNWNlNGYwNzQ1MGU1ODUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYzOWJmNTJhYzk5MTVhMDg2NmM0MzZlMWIyZGZkMDYzMTUyNzk2MWYwNWZmODRjNDc2NjdjMmYwYjdmMTgzOTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f616ec1b88fc41f9be6202e8a4dfe21c",
+      "statement": "Built artifacts are uploaded using actions/upload-artifact with module-specific names (platform, framework, obr, etc.) to Maven repository structure paths like modules/<module-name>/repo",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/framework.yaml#L134-L138",
+          "version": "repo-lines-v1:sha256:a9ac309a64f70ab2aec2b79b1979e0c272a8625f4e2ad844bb57ac191aa3a229:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjUxNGRhOGM1MzJkNTFiZjczM2FjZjQxMmU4OGNhMTAzMjU0MDY0NDZlNWM0ZjZjY2VlNGU1ODBlNmVlYmZhMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzU3YmE5ODgwOWQ4ODkzZjRlMjAxYTZjZTM5MDUzYjVkMGI1NzcyMGI4YjE2NzlmM2ZhYTg0ZjBkZWM4NDQ0NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjQ2NzBmYjdiOGZlMDk3OGUxMmQwYTc1NTQwYTRmYjRiZjkzZmU3M2ZhNDBjZDJkNDgyZWEwODE3ZTRjMzhiYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzg1ZTcwNDRjYjUzYWQxYjNhOTJmYWQ2YWFlMmY2MDRkNjExMGFmMDU0NDUwYzE1NzUwYzRlMzQ4ZjE4YjNlYSJ9"
+        },
+        {
+          "resource": "repo://.github/workflows/obr.yaml#L148-L153",
+          "version": "repo-lines-v1:sha256:d1aa9a143acaae72206a8c0ededc754b1f7cae1b65b1ab96b6deb9fe3871f5e9:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTBhOWZiMTdlYzI4ZmM2YmY0MmZjZDVhMjdhYmJlOWNjMmQxOGM3MGNkZmI3ZTA5ZjU0NTAyZTBhODQ0MzgwOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmI0ODUzNGQ4OGQ1NjkxMDNlZDEzMzZhZGQ0ZTJlYjMxODZlOGJmMGVhNGM0MjliMTk5ZmUzMzIyNmQ4MDRhMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTliMGNhMDEyMjcwMTE2ZmE3ZGU5ZDVhZGQyMjBjNWFkYTIwYTZhMmNhNDdiNzAyYzNjNmVhMzYxODk4MWRiYSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ea9e3c5339ef4da2a89e7b60cf0a89e3",
+      "statement": "The check-required-secrets-configured workflow is a reusable workflow that validates the presence of required repository secrets (WRITE_GITHUB_PACKAGES_TOKEN, GPG_KEY, GPG_KEYID, GPG_PASSPHRASE) and variables (WRITE_GITHUB_PACKAGES_USERNAME) based on caller-specified inputs",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/check-required-secrets-configured.yaml#L14-L161",
+          "version": "repo-lines-v1:sha256:0b913d7fddf9367523fb3fcb6d17b7dbbeef522aa81e15276104d9f34a206e6f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQ4LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI2MTkxMTFlZWVjN2E3ODRkOWRiOTQ4YWY1NDI0MWNkNThhNWMyNzFjMGY2MjliOGE0MWYxMzMwMTlmZjdmYjJhIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIyMTg3Y2U0ZjAyYWI0ZmNmN2NkODE3NjgzMTU4MzQ1YzdmYzUyNDk3OTMxMDFjMWFlZDVjODRjMTRlYjI4N2ZiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI3NTJhNGY3YTlhZmYwMWQ5ZGE5YjhjMDg2YjA0MWM0NmUzNjViMmFjZGU1NmY5YzNkYzYxOGU4ZTJiYTFkYTBjIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_c33b891311d446bd927a843615d89977",
+      "statement": "Gradle-based modules include platform, gradle, framework, extensions, managers, and ivts; Maven-based modules include wrapping, maven, and obr; Go-based modules include buildutils and cli",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/buildutils.yaml#L28-L31",
+          "version": "repo-lines-v1:sha256:cce3ea10f40fafd8a5762a4a3e95cdb92c2f80b01aae273a1477838477a9b2ff:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODdiZThhN2ZlNGZkZDJlMDhlNWVhZmJiODIwNDcwY2MzMzI2ZmJkYjliNTgzYjk2Y2RjYTRlNTc5MzliOGI1OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDE5N2E2MWQ1ODU1OTYwMjBjZTY0ZGYwMzkyZGM1ZjlhNjMwYTU3YjI1ZGJmZDZlNzIyZDRlMGMwY2YyNDA1ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTdhMWJjNzBhMDU0ZjkyZTA3ODg3NjQ5Zjc3OTVmZTdmYmM1YTc2N2Y1M2UwZmFlMzMzMzQ0ODI2NWQ5NWM5OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOThiYWMxMzcxNjdlMzYyNWY4N2E2YzJhNTE0NmEzYmM3MmNiOWIwMmU4YmQ0OTU0MWE0NGRmMTA0NTkwMjU1MiJ9"
+        },
+        {
+          "resource": "repo://.github/workflows/cli.yaml#L36-L40",
+          "version": "repo-lines-v1:sha256:5eb3d0341ccbc7534a8fb067100138b2fb9b6f809827b8205ab4235a694af285:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2QyMjI2M2ViYzAyMGQzZTUxNzY5MjU3ZGE0OWY5MDA0NjQ1OWUxMjUyODI0YWFjYmVhNGZjNjMwMWYyNThjZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTQ2MmYzYzA4MjMyNjQ5Y2YxODRiOTUxNzFkMzI3YTNjZjU1N2IzNDQ1MWNlNjIzMDBmNzAxYWMxZGQ2YjAwZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWEwYTZmYzQ2ODZkZDNhOWFlNGMwNmQwZTczYzE4NDNkYzgyYzhlOGI2MDkwOGE2NWUwODkzZTk2YTFkNzUxMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWIxYWM5NDg0OWNiNTgwNTkwODI1MTAxOWU1NzM2MWU5NTYxMjk3ZDA0NGIwZWUxY2VjNjY0ZjNkZjUyY2M1NyJ9"
+        },
+        {
+          "resource": "repo://.github/workflows/framework.yaml#L54-L56",
+          "version": "repo-lines-v1:sha256:49a645e27bb0c7b709260f3fb35f17d891604cd6cbd1ae59b922397327037fce:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmY3OTY4MjkzY2IyMjY2M2M5ZDkxODU0M2MzMGM3N2YzOWNlMzM4NWMwOWYyYWMwYThkNTg4ZjEwNWFkNmQwMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTIwNjQ0ZWE4MWMyMTYxOWVhMzExN2IzNDdkYTRlMjRhOTY2NDNmOTcwNWFiZGUyMDIxMGQwZDJjM2M4OTk2OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDY1YzQ0YWFlOWU2MzE3Y2ZhM2VhY2EzZDlmZDY1NzMyNjNhZjU2NTJiZGUzMmUyYzU3MzlmMjFiMTM2Y2ZjOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjMzN2EyNGQxM2E0ZjMwZWRjOGU5YzYyNWEzYjdiNTM3NDg4MjRjY2I3ZmY3NTI2Y2JmZWJlZmM4NGFiNTU5MSJ9"
+        },
+        {
+          "resource": "repo://.github/workflows/obr.yaml#L46-L50",
+          "version": "repo-lines-v1:sha256:17889e837e02ea82a166140a28262860c4a8ec00deb68a6dd28d93739a6522a0:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTk2NWY3MzA1MjVmN2U5NzgzNmE3MGM2OTgyMThjZmU5MmUzM2ZlNzU4ZTRkNWY1ZTRlMzc4YTYyOTRlNmY0NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDQ5MjU4YzQ2MmMzZGEyZGJlODY5ZjkyMzcxNTQ4YzE4MjBhZWEwZjNlZDEzYTBjNTIzNDFkNDdkZjBjYjRkNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTc1MjI1YTI4OWY3ZTg1NTc4M2JhYzQ2YjYyNWM2Nzk5YWJhNTUxODQxMDRkOWFmZWUzZTA4MGQzNzMzY2ZhMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2U4N2ZhOTAzNjI1NmRiODFjZDdhNjAzMDQwMzM2NTNhYTc4ZWIxZDY1ZjFlNDNjMTgwZWU2ZDQ0MzM5YmRhZSJ9"
+        },
+        {
+          "resource": "repo://.github/workflows/platform.yaml#L38-L56",
+          "version": "repo-lines-v1:sha256:bc3be6951aa90ba8277adb993745a036fb78928bac243772ebad9ce87e3918f0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM4OTk5MTEwM2Y2YmE4ODhlM2RlNzY1MWM1YTMwNWM3N2U1NTQ3Njc3M2FiYTgzOTU5MWVjYzViZDBmMmFiMWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyZDYxZWQwNzg3MzRlMzM2ZGIyYWU5YjIyYTY4ZjNmOTZlNGUxMTQ3MDE3YmQxZDZlNzg5NDAwOTYwYzc3OTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVjNzljODIwYTYxNzk4Nzk2NTYzNTE0MmE1ZTIwOWQwNmRlZWI2NjhmYzdhN2NhNGQwYmVmYTZhOTNkMjEyZjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkyZGRlMDA1NTgxZjkxNzM3MDM5MDc0ODExYmFlMDNkMGU5YzE5N2M3NDViMzA0NjFlN2QwZTUwMzIyYjcxNjIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a995f4cad1b34b2398512743cc922adb",
+      "statement": "After successful main builds, the orchestrator triggers workflows in downstream repositories (helm in automation repo, integratedtests, simplatform, webui, and isolated) using gh workflow run commands with GALASA_TEAM_GITHUB_TOKEN",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/pushes.yaml#L108-L141",
+          "version": "repo-lines-v1:sha256:2c490c0fcd6c7c1673416af351050a2f5fa77fc5be345eaef65257d248355ae3:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRjNzU2YTMyNzhjNWQxNDE4NjEzNTIzMTk1ZjdlMDBkYTRiMjU1YTBlMmFlZGQyMTA2ZTAzM2YwMWZhZTFmOWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM2Zjg5MGIxYTIyNjA2OGVhYjE4NjkwYzliZDZjZWMyNGQyNzcwMThiOWRkOWE1ZTNhMzdiY2FhOTIyMzUyM2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc1NDY0YTYyNDYzYjdiNTZhNWEzZWExN2RlMTQ3OWQ2ODdjOTRhZDhjMjA0OTIwMjkwNDZlMDQyYjg3ZDRmMDkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9f63ed9988f84b0d9b2ea8482c0894e8",
+      "statement": "CodeQL Java scanning runs on PRs when Java modules change and weekly on Sundays at 13:41 UTC, downloading all-artifacts for dependency resolution and using build-mode none",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/codeql-java.yml#L14-L90",
+          "version": "repo-lines-v1:sha256:d0180c1a6f60d38ebd5fc59050a147fd2316f0e3160047951161506c4a4951cf:eyJzZWxlY3RlZExpbmVDb3VudCI6NzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM3OWZmYjI5NWM1ZjNjZjZiYmI4NTY3MWZlNDMxY2JjODE2OTI2ZWIwODc2MjdlMjU3MGRiMGUxMGU0ZjQ1YTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3MzhiMDY3YTI3Y2M3M2JjNDRlYjg1NmFhYTk2YWJiOTlkNmFkMTBlNWU5ZjM0NjFhYjM0N2RjMTlmMWY2MjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFmN2M5MDY3M2ZiODcwMzVjNWU0ZThkMWFkZjE2ODU3NmZlM2IwM2Y3ODg3YmRlOTQ2ZTUzMTQ4YzczOGI4YjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFmMDZmYmQ5ZGNhZWZmNDE0YWYxYjhjMGFiMjQyZWE1NjIyNGI5NzRiZjhlNDVjOTQ3ZTJiOTE0NzA4Mzg4MjUifQ"
+        },
+        {
+          "resource": "repo://.github/workflows/pull-requests.yaml#L360-L380",
+          "version": "repo-lines-v1:sha256:006011f6afa6fd60bb780419fa9d51fb028bfaa5d631947790b3401a8eaff432:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY1ZDk3MDg3OTYwNWY2YmViZWYyZTZkMDRkY2EzNjc3YzNlOTMwMWI3MmFlMTAyOGY0MmVmZTBhNmZlZDEwMGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYyMmU1Yjc5YjJhNWUyMTA1YmE3NWQ2ZDlmY2VlYzBlNDA3OWZhN2U5ZmNlOTcyYWIzYzMxNGUxZDU1MGNiNWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImExOTA2N2UxNWIyZWY4ODZlYjYyY2RlMTA4Y2JmZWFhODk3OWUzYTQ3ZmE1NTBlZTNhYjc4NzBmOWU4NTExMWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRjOTJkYzA0NjBiYWYzNWY3ZDM5NzBhZDI1YjA2YTBkYzE0MTA5Zjk3YTMyZDYzYmVjZTkwMmU4Y2E5ZDNjYWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_112a82a2d6284bf099481435da5cca06",
+      "statement": "CodeQL Go scanning runs on PRs when buildutils or cli modules change",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/pull-requests.yaml#L382-L395",
+          "version": "repo-lines-v1:sha256:50019654d7dfe4e09797c177a2c12d57b2a3c23f628a6c9044d50e436d9dfc36:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE4MmFjMzljOTIwOTBiOWYwZjU2NTBiMTBjZTI2YzlkZjBiYWJlZWEzMjgxNWRjMTMyNTZmMGVlYjQ3OTQ5ZGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYyMmU1Yjc5YjJhNWUyMTA1YmE3NWQ2ZDlmY2VlYzBlNDA3OWZhN2U5ZmNlOTcyYWIzYzMxNGUxZDU1MGNiNWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM1MTRjNTdhODRlYWU0OWZjMDY5NTEzZjMwMTZlYjc1MmVlOTlkZGQwNTUzODI2Y2M5MmY0ZTM4MDdlYjllYjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk5YmJmZTA5ODg3Yzc0MTE3ZDYxNDQzMWUwMmY5MTBiNzZjYjQ2NzNjNWUwYTIzYWYxYzMxNTMwZTYxMTI3MzMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1b8666bed74349418cef04c1ed05c826",
+      "statement": "The Release Build Orchestrator (releases.yaml) is manually triggered via workflow_dispatch and accepts jacoco_enabled (default false) and sign_artifacts (default true) inputs, only running on galasa-dev organization",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/releases.yaml#L8-L69",
+          "version": "repo-lines-v1:sha256:5b77af2c8e1a45c96eb39eaa894e7e8bb666ed86b802363d94940cbda787fc5b:eyJzZWxlY3RlZExpbmVDb3VudCI6NjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5NmRjNDgxNDlmNWE4M2QxZWQ2ZGJiMzliYmM3ZTJiOTAyYWEzZDM0ZDZiZDVhZTRiMjkxYjY4ZGYwY2E3OWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNhMmEwZDAyYmJlYWM1OGZkNWQ2MGRmYjNhMDNkNjA2NGFmMGRkZDVjODA2OThkMjQxMTY5MTE3ZjRmYTQ4OGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjExYmIyNjE4MGNjYmNjN2JkZmNhNmZjMjYyYmZlY2EyY2U5MTYwYjlkZmVhY2ViMGI0YzBiYTU3ZTAwYzc3NDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEwNzdkYmI2ZGQ5NWFkN2FmOTg3NWU3NTZiN2FkZmU1OGMxZDY2OTUzMzk0NWJiOGI3MjAzZThmOTM0ZTI0ZjIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cac4d453d62d4efb96591b7ba91920df",
+      "statement": "The test-creds-store workflow tests credential storage on Windows using Windows Credential Manager (cmdkey) and macOS using Keychain (security add-generic-password), running TestCredentialsStoreAccess IVT with GALASA_CREDENTIALS_STORE=os:auto",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/test-creds-store.yaml#L18-L96",
+          "version": "repo-lines-v1:sha256:42fa468e4475d7fff6145abe5dfecbb894b7ff20f9afddaa0c82e8defb6a33ec:eyJzZWxlY3RlZExpbmVDb3VudCI6NzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJhOGQyNmRiZmYxN2NkZmE5MTYwYmM1OTY3NTI2NTVhMDc1YmUyZTE4NWRjNGRhYzFhNjMxZmIwMTBkMzEwY2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgxMDljMjc1YmMzOTRhYTg3OGEzYzBhNDZlNzQ1MWU4ZjE5ZjVmNWZkY2U2NzU2NDVkNjBjMjI0MDcwMzcwNDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI0N2M4NTVmNjE5MGQ4YTA0MWYyYjg0ZjEyNzY0ZGY3YjExNTVmYWVmYmJkOGI0M2E1N2VmNDU1MTJhNzBiMTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9e10bae9ed9f43ad9ea0375a530320cb",
+      "statement": "The get-changed-modules-pull-request.sh script uses associative arrays to map modules to path prefixes and flag lists, determining which modules need rebuilding based on PR file changes and setting output flags like PLATFORM_CHANGED, FRAMEWORK_CHANGED, etc.",
+      "evidence": [
+        {
+          "resource": "repo://.github/scripts/get-changed-modules-pull-request.sh#L122-L169",
+          "version": "repo-lines-v1:sha256:ec5a5ed184f3c3cd0c187c8aec8640ef7960a114b64fa4942437ef079dee0edf:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA2OGQ1NjJhMTk3OWRjOTc2ZmU0NTIyNmY0MmU5YjgzNmJjNWM5ZmY1MjgzNjZlYjVlN2FlOTIwNmJlNzdmNGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJjMDcyZDc4OGRiOTZlOWVmM2NlYWI2ZTg1MmZkZDBiOThjMTRhN2JlYTUxMmY3OWYwZDA5MzkxZDMzNWYyMDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM4ODllNGI4NjQ4NGNmZmJhZjI2NWQyY2NlNjNmNzZhNjRiOTBiODMxZWQyM2QzODI2OGQ3ZDZjZDg5MmRkNDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU5M2VhYTNmNzA1ZmYwM2Y5Y2UwOGNjN2ZmNjA2YTI4MWQ1ZmQwZDY1NmMwMGZkMTEwMzc4Yjc3YWEzNGMxMWIifQ"
+        },
+        {
+          "resource": "repo://.github/scripts/get-changed-modules-pull-request.sh#L187-L196",
+          "version": "repo-lines-v1:sha256:f9ee309089961591b0c15fc70b63b02dd9ad441e00738fda9ae8b70bba480d54:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE1MmViYzc5Y2JiODhjNjQ5YmFkM2Q4YjVhYzg3MTQ3MjIwMWNkYmNlY2ZmMGNjNDI2MmU2NDU5MDg4YWNmOTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcxNGY4OGY3N2VlNzQ5ZmFjZGM3NTVhNGFiNTBlYjExODA1NDczNjMwZGQ1YzhlZDQ1YzZjY2Y5NWJlNjk0YzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcxODBhYjczYTExZDc1ZWViMDBhM2I4YmJjYzYzZmFmZTVhN2I2ZDBiMmExYjAwYzFjOTBjM2E3YzA4NzU4ODYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_85385154d4a24189b3aa15065601b4f3",
+      "statement": "Changes to platform module trigger rebuilds of wrapping, gradle, maven, framework, extensions, managers, and obr modules due to transitive dependencies",
+      "evidence": [
+        {
+          "resource": "repo://.github/scripts/get-changed-modules-pull-request.sh#L142-L142",
+          "version": "repo-lines-v1:sha256:e6c3ae66b8520a69acf61d80f32df11ff8eb0e09dd3865c3c66e46d943d4708a:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTZjM2FlNjZiODUyMGE2OWFjZjYxZDgwZjMyZGYxMWZmOGViMGUwOWRkMzg2NWMzYzY2ZTQ2ZDk0M2Q0NzA4YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTZjM2FlNjZiODUyMGE2OWFjZjYxZDgwZjMyZGYxMWZmOGViMGUwOWRkMzg2NWMzYzY2ZTQ2ZDk0M2Q0NzA4YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjA5OWM0Y2M0ZTdiZGVlYTU2YzExN2E3MjM5OTQwMjljZGFkMGM3OTJmYmJjOWExOGE1MjllMjcxZDFlYTRmNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzdkMDQxMDYyZmUwZWExNzM2NDdjODNjNDM3ZGU3YzAwODhkNmVjNjNlOTZjMmY1NTFhODU5ZmQ4YWU5MDY3NyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_7222ee1562414c49a11b663650fceca2",
+      "statement": "Failed builds on galasa-dev organization report to Slack using the galasabld-ibm Docker image's slackpost command with workflow details and SLACK_WEBHOOK secret",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/framework.yaml#L140-L151",
+          "version": "repo-lines-v1:sha256:e939b186a4a8e065f1ad4ad6fedf5d122106e6550ce8c489e227991596886ad2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ4NGM0NjNlODQ0YTVmODJkODY3YTVmNjNkODQ5YTUwNGRhZmQ4YjQwNTlmM2FmMzA5MzYzYTkxOTQ1OTJjMGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFjN2FlOGQ5ZmE1ZmQwN2ZlOGJjY2NkNzk4N2IzNDU0Zjc5Yzk4YzlkM2I2N2NmYzdhNjA5YTc3OTllNGI5M2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU1NzljOTA4ZGVkZjM4ZmJiNTlmMGI2NjZhNTEwZjFiYzYwZWI2M2Y2OGE5ZWYzMDVjYWY0MDcwNzRjNGVjMTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVlYzJiZjNiZGIzMTVkZTg1MzczOTZhZTFkODQyMTBmYzU5Y2Y1ZWM3NGRlOTNiYjRhNDI5Nzg5NjRkNWE4MmYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e21f615ff46c4d5f873a3bd1f36a577b",
+      "statement": "The IVT workflow deploys Docker images to ArgoCD by recycling deployments using argocdcli Docker image and waiting for application health with retry logic up to 10 attempts",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/ivts.yaml#L184-L224",
+          "version": "repo-lines-v1:sha256:f8e5c4f6fdfe5c97e87e9bf426500e633e72cae34599aaf74e7ea2732c6ce46c:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImExMjIxNWYyZDA0YzM0NDY2NWNiMGVkMzYwMjgwZGUwYTJhNDI0OTZhMmIwMTQ1YzRiOGI5OGY3ZDhjMjUwYjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIxODdjZTRmMDJhYjRmY2Y3Y2Q4MTc2ODMxNTgzNDVjN2ZjNTI0OTc5MzEwMWMxYWVkNWM4NGMxNGViMjg3ZmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk2ZTM0ZmEzMmM1YWRiZjIzOWMwZGU1ZGY2OWIzMjA0MDdkMDY1Y2MzMWY1OTgxMWI2ZTJjOTFlNWNhNGZkZTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNiYmY5YTNhM2RjOTJkZWZmMTUxMDY5ZTQ4NDE4M2I1MjAwNTNkY2Y5ZWViNzVkYzZiZmVhZjUyNGZkNWE3YWIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e2e1c3893cec4f81b81d84ac5d2dfc71",
+      "statement": "The check-client-java-version workflow runs daily at 9 AM UTC to check Maven Central for new Kubernetes client-java versions and automatically creates PRs with version updates and documentation changes when newer versions are available",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/check-client-java-version.yaml#L10-L12",
+          "version": "repo-lines-v1:sha256:8ef7765c9763db7b3d28b2f837505ae050ed4aa6f7d3a4964b093109602e36b8:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTI4ODQwYTZiN2U2MDMwM2Q4N2JlNGQ0ZDgyYTUwYjMzMjg0MjkwZGVjNGUzNDI4ZDQ3ZDkzZmJlZmQxYzU5MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2YwZWQwYTQ0MmQxZWY0MzgwMjJmNDM2NDRiMWM1MzQwZjQzMzIwNGFhOTRjYTM3ZDcxODQxMTU1YTEyN2FhNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDM2ODMxMGE0YzhmNjQyZTdkMWNlYTM2OGRiM2JlMGRjODBiZGFmNmM0ZTcxZTAzYzllNGUxM2M1ZDc3NGQ1OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDdlMGZkNGYxOTQ0NTFjY2NlZGM0NzdkZDM2M2JmM2ZkMmQ4MmFlMWYzMzI3NjgzYjUyZjEyNGY2YzdlZDkzNiJ9"
+        },
+        {
+          "resource": "repo://.github/workflows/check-client-java-version.yaml#L26-L144",
+          "version": "repo-lines-v1:sha256:07b5072c6735a170082c5f6000e088e63824fa6e1ac352762b2f2d9cd56175f5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTE5LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI0NzkyYTJjY2M2MDEyNDA0YjcxMzk3NGIwNjhkMTYwNTA5ODVjZTZiNDZiNWUwZmMyYmQzNDc3MGVjOTYzNjJmIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI1NTIyYzQyY2QxOWM2ZDAzZDgwOGM0NTI3MjA1NTI4MjViN2VhMWM1YjQ5MWIyMTg1MTFjYWM3NDE1Y2Y5ZDliIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJhNzNmYWViYzEzNzVlMzU4NzNhNDhlZjk0OTE3ZmJiMmRhMmI0ODFmNDc0ZDU5MWM3MGQ4M2ZlNjhlNDkwYzY2IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIyZDgwZWQwMDliM2RlNjhhZmExMDRhOTAwMWJmMjI3ZDM4YmJjYzM0MTAzNTkzMmUxZmRkNzEyZWE1ZDMwNzA4In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_3954255d08344bd2a9b8f7ac1eecefc0",
+      "statement": "The set-build-properties job extracts GALASA_VERSION from build.properties file using sparse checkout and makes it available as an output variable for downstream jobs",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/pushes.yaml#L17-L36",
+          "version": "repo-lines-v1:sha256:f472082f3a6fe3b97a541e025ec3a90cda14880ad2f7a479b7925e7281aa1bde:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUxZmNhMmYwMjJmZTQxODI3ZDFlYjM4ZWExODM3ZjU4NGU0ZDgxNTg3ZGRkN2JjMGYzNjZlOTZmNmFhOTk1ZDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcxZDc1YWFmZjFhOGE2OGUwOGI4NDZhY2QyYmJjYTRhYWE3ZWFmZDllYjFmNjRhMzg5ZTZlMWM5Y2I3YmNjNjEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bb826caf20024f4c8359430a7289e225",
+      "statement": "PR workflows conditionally skip or run jobs based on module change detection, with end-pull-request-build and end-codeql-scanning jobs required for merge despite upstream job skipping",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/pull-requests.yaml#L424-L445",
+          "version": "repo-lines-v1:sha256:4699d1e36e5834cb093ab5a6b0db6d89a2d7a7b39949910d0dd88b48a7e83f4d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxZTM0OTE5N2NjYWVjODcyYTc2YzZkYjgwM2E1OGVkZDZlYzhmZGFhODExNGM1YzU2ZDFmY2I5NGU3Y2ZmOWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRhYTg1NDM5NmIwNGUzMWY4NTNkNjJkNTVkMGVjZWJmYmY1MjQ2ZjEyMGMyMTg3YWIxM2Y0YjM1OTliNjczYjIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJlOGUyOGNmYTYzYTMyODgyMDVkN2Y3NGUxMzAzNmYwMTM2OGViYmE5OWE2OGYyOGFiMTQ3YjVjNzdlNzJkZTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_442ddf0ceebf4f3ea2f412980525d016",
+      "statement": "All module workflows use sparse checkout to only check out specific module directories, reducing checkout time and disk usage",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/cli.yaml#L31-L34",
+          "version": "repo-lines-v1:sha256:643a9ec81d83134512c050e38ef04d167516e248ee035cf9f91a3e0a230abf1e:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGYxMzRiY2RiZGIxYjg4YTQ5M2ZkZjUzZjgyYmRhYjFlODM2MDdjYmM4YTc0M2FjYzNjYjBlYzNjNGFkOGE4MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmE1N2I2OGI4M2M2ZmQxNmU2NTllNjc2MTNhNjU1YmE3NzE0Y2U2MDRmYTlmOWNhYzBiZWQ3ZDA3Nzk5ZWE0MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGUzZDAzODllOWMzNDhmOWMyYWQ1ODBlNzJlMzdiZTcwY2ViNzE1OTI1YzhmODZhYWYxNjkyYTJiMGU2ZjQ2MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWU0ZGZlNDZmOTQ3MzIwOGY3YTI2NmJhZjVlNzlhZGY1NWFlYmE3ZmUzZTE5MWQ2Y2NjYzFjMTc3MDcxOGU5YiJ9"
+        },
+        {
+          "resource": "repo://.github/workflows/framework.yaml#L42-L45",
+          "version": "repo-lines-v1:sha256:ed3abc0d76eae7b18e18b0dc70c6d657c3514df9f8288ad72f4818175d0a8d1f:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGYxMzRiY2RiZGIxYjg4YTQ5M2ZkZjUzZjgyYmRhYjFlODM2MDdjYmM4YTc0M2FjYzNjYjBlYzNjNGFkOGE4MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDhhNTYzMDY2NGVmMDIyZDdkYTgxMWQ0YTg0Y2I5OTBkOTA5ZWY3MjBiN2ZkZjU2YjlkOTRmNThjNzUzOGQzOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTFjOTE5NzU2OTYyMjEwZmI2YmQ1OWZmOWUxMzMwODM5NTlkM2Y5ODQyN2UzMDZlM2NhNWYwM2JhODU1M2Y0YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjQwYjQ2NDliZWJlNmZkMGExNzIxODAzMDcxNDEzNzY1YzE1MzQ0MzI3ODFlYzllY2FjZDhjZDdiNGM3MmVkMyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_504509d217da419b8feb684b8a156234",
+      "statement": "The CLI workflow generates Go client code from OpenAPI YAML using the openapi Docker image and runs fix-generated-code.sh to adjust the generated code",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/cli.yaml#L120-L136",
+          "version": "repo-lines-v1:sha256:291ab28894edd7bd980e796008c2f7cbd6b102f62198b92cf8a6843307219ae4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJmYzJlNTk3OGJkMjZhNGQyNTlkODM4YzI5YjBmZmY0ZGRkYzU2OGRkMGZmZGJmNzdlMWFmZDdmNmMzZTNjYmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlkMjY2NGExNTA4Y2QwYzliNTFmYTY4YjYyZGNiYjMxOGUxZDMzYzAzM2RkOThiOGU4MGEwOTJmMDIwYzA1NmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhhM2Q0MmYwYzQ3YjY2ZTE4ZTQyNjdlZmMzMmU1OWJlMDM2MGZhNDM0NzViOTc0ZTBlMDRmNmVhNWFjMzE3NzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM2ZjBiYWVmN2MyOWQzNjE0MTE4ZTI1YTMwNWRhZjdhMDQ5MjU3ZmQwNWI4NTk3YTJhZDEwOTViNTBmNDY4YjMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_211f37d1b822495a88cd0effdc32e3e3",
+      "statement": "The buildutils workflow builds galasabld using Go and Makefile, creates and tests galasabld-amd64 and galasabld-ibm Docker images, and pushes them to GitHub Container Registry",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/buildutils.yaml#L17-L140",
+          "version": "repo-lines-v1:sha256:17bc0cd67b77433d5aa8bea8e4a614d09f33467bd67bf41859666cc9e6865c54:eyJzZWxlY3RlZExpbmVDb3VudCI6MTI0LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI2ZDZlOGE5MDBjMzQxZDkxNmNmM2VlZmM2MDFkNGFhNGMxNGZiZWYwZGY3MmZhMmIzYmIzZThjMDE3OTZkMzVhIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0Nzc3ODNhNjFjYWZlMDRhNzlkNjRiOTExMjc3ZmI4MmY4YmMyY2M0MmJhMDVlODk4YWFmYjU1MTE4OThhNzc2IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlMWZjYTJmMDIyZmU0MTgyN2QxZWIzOGVhMTgzN2Y1ODRlNGQ4MTU4N2RkZDdiYzBmMzY2ZTk2ZjZhYTk5NWQyIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIyMDg0NzM0YmE5NWY1ZjBlNjRjMTY5MTg5YTI3NDllNTRlZGI2YzJjODdlZGNlMjQzZjViODkxNjg4N2Y0NDVjIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_aab5550776434d1d8e548c00c86215d5",
+      "statement": "Module workflows that require Docker image access (framework, obr, ivts) authenticate to GitHub Container Registry using WRITE_GITHUB_PACKAGES_USERNAME and WRITE_GITHUB_PACKAGES_TOKEN",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/framework.yaml#L62-L70",
+          "version": "repo-lines-v1:sha256:73acf733cce4c91228743d4205af79ec2514972b7d84f962da1546b7f55a3622:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTA0ZjQ4YWY4Y2FlNmZlZDMzMjFkNzc5NzhkY2RlMWU4YTk3ZTA3MzcyYjk2YWI1MTRlNDk5N2YwMjNiMzY4YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzE0MDU4ZmI4ZDdlMGUyYTQ5ZWVmYjk3ZDBjNzM4MGRhM2RiM2U1MTc1YTUzNTBiMjRmOGViNWM5NGFkYzZiOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWE5ZmM3YmVmOGJkMzY1NGQ5YjAxOTIxYmNkZWY5Y2Y3OGQxMWZhODc4ZmZiOWZhMjVhZDg0NzYwYTExYzBkNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjM2MjkzYjUzNWZhNjkyZmZiNTE5YjE3MmQzMmJmZmI2NGRlZTRlOGM0OTY3ODkxNjBkY2ZiOGFkMTQxMjIxYSJ9"
+        },
+        {
+          "resource": "repo://.github/workflows/obr.yaml#L82-L90",
+          "version": "repo-lines-v1:sha256:73acf733cce4c91228743d4205af79ec2514972b7d84f962da1546b7f55a3622:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTA0ZjQ4YWY4Y2FlNmZlZDMzMjFkNzc5NzhkY2RlMWU4YTk3ZTA3MzcyYjk2YWI1MTRlNDk5N2YwMjNiMzY4YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzE0MDU4ZmI4ZDdlMGUyYTQ5ZWVmYjk3ZDBjNzM4MGRhM2RiM2U1MTc1YTUzNTBiMjRmOGViNWM5NGFkYzZiOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjc2MmE0OGQ2NGFjYjgyZjk1OWFiYmFhMDcwZGM5MzJkMmZiODM2NjQyMGI0NDlhYTNhZjIzY2I2ODg5NjA0MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWNhNDM1ZGU2NDJhZGQ2Yzk0YTFmNjk4YWE4MzNhMTVlNzdmYzFiMzk3MjQ0MDM4MjBhZTcyOWU0ODdjYzBlMSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_8c5b311874ed42be89cf486dac95c99a",
+      "statement": "The Main Build Orchestrator consolidates all module artifacts into a single all-artifacts bundle by downloading individual module artifacts to /home/runner/.m2/repository and uploading the combined dev/galasa directory",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/pushes.yaml#L149-L222",
+          "version": "repo-lines-v1:sha256:2bae5a126d14f42e9f5f43be337df13c73b3b8c5d68af902285f26a795a4942b:eyJzZWxlY3RlZExpbmVDb3VudCI6NzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliZGQwZDJhYTNmOGJiNmM0MDFiN2FkMGIwZmVmMzRjMTY2NzJlYzc1NjM1MTIyZDI5MDIwMjc0NmJjZGY2YzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1Y2IxM2I1MjllNTMzMzI2MzRiYWY2YmYwZjI5MjBiOTdjNjQ0NjdjMzliZjNiNzJmYjUyMjI2MjRkYTk1MDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBlODhhNWNlMjA0M2U5OTFlMTEyNzdhMjczMjUwMGRkYmIyZjlmZDY4NzdiNmU2OGQ0NTUxOTQxZWNkZGU0MmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZhYjM4MzZlZWI4ZTJkMmU3ZGVmZjlhNTQwOTBiMjM3MjAwMWM1MThlMGQwZjFhYTc0YzZkZWZkOGE2MjQ2M2QifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.2",
+    "at": "2026-09-21T12:35:12.771Z"
+  }
+}

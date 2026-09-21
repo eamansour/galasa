@@ -1,0 +1,248 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:64997d0861c1e191ff168e4b7e96bdabf4699b058e13bfaaca6586ea9830150a",
+  "claims": [
+    {
+      "id": "claim_2b02a927d15f41b7a6484ec210a11802",
+      "statement": "The Galasa REST API server is launched using the galasa-boot launcher with the --api flag, which loads the Felix OSGi framework, starts Jetty, and invokes the ApiStartup service to initialize the framework and load servlet bundles.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/Launcher.java#L223-L225",
+          "version": "repo-lines-v1:sha256:529d8965e637baa32be3e375d9ef9fe9bd3efbeb4ff381fcc179bbede9418bd8:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGJlZWI1MGJiY2JjNjlhYzQ5NGMxMjljYjNmZDk4YzRmODQ0OGRjMmI1ZGYxMDkzODg0MzY1MzNhM2YwMWFjOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzFhYmRmYzE5OTc5N2E3ZDllZjY3MjA4NjFhNDYxNTQ1ZGI0NTNiMmEyOGJhMDI3MGQzYjhmNzc3ZDVhYjE0NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGZiNDg5NjYxZTUzNGM2YzAwMGJjNWNjZjBjNjc4YmEzMzMxODBkMjM2NmMyMDVkNjJmY2JiNTJmYmJlZTBhYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTNkMDg5YzhiMjQ4MDUxZGM3ZjIyMDBlZGNlOTBmYTZlNmZiNmZiMDY0YmJhNDA5Y2JkYWYzNGZkZmQ0MzFjZSJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/Launcher.java#L70-L70",
+          "version": "repo-lines-v1:sha256:620882849b75ead1f22c5840f09929822691eb94235dcc9969e4e4af98a4feb9:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjIwODgyODQ5Yjc1ZWFkMWYyMmM1ODQwZjA5OTI5ODIyNjkxZWI5NDIzNWRjYzk5NjllNGU0YWY5OGE0ZmViOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjIwODgyODQ5Yjc1ZWFkMWYyMmM1ODQwZjA5OTI5ODIyNjkxZWI5NDIzNWRjYzk5NjllNGU0YWY5OGE0ZmViOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTZjZjk3YTNmZGMzNThhZGM5ODBjNWUzOTc0NjIzZmYxM2FlOWQyMTE2OWNjOGFkN2NhZTNjNGQxMGYxOTVjZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjliYmJiODcwODg5Yjg2MWMxMTNmMmM2NzEyYjFkYmIzNGNjYTkwYjk1ZjA1ZTVjYjk3OWZhMDFhZDdmYWQzMyJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/felix/FelixFramework.java#L740-L789",
+          "version": "repo-lines-v1:sha256:1d62461d50abda0821e5de9c20842e328ad1f2cb2bf2dd10221dd543b1d0bdf1:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhYTUwMjhhMDg5ZDAzZjM5YjhhZDUxODAwNmJmOThjMjZhMDE2ODUxZmI1YzlhODVmNGZhMjgzZGFmYjEwMmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVhOTFjM2EyMjkyOWJhMTQxNTMyODE2MmUyNGViOTIzMzQ5NmMyN2VmMTE2ZTU3OWExZTdlN2VmZDQyNTcyZjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRkNjU5NDZhN2RiYzAxMGFjMWEzNmU5ZDZiZmMyNjdhZTJkNzI4Y2ZkZWEyOTM0ZTAzNThkMTU3ZTQ3ZTg2ZmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_afcaa9fd5c534d8fad5596233dd0cb1c",
+      "statement": "The run-locally.sh script in the framework module automates launching CouchDB, etcd, Dex, and the API server for local development, setting up Docker containers with appropriate configurations and environment variables.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/run-locally.sh#L196-L217",
+          "version": "repo-lines-v1:sha256:8df96e8de2b255c4313c5c8571f21c013e4ddfe84e81e323e9ca0ac16d15965e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE4ZDEwYWJkZTEzYWQ2NjFhNGYzNTJkZGYxZDczNGY2NzZjNGY0ODUxNzlmZDQ2ZjE3NTY1N2Q5MmU4MzA5NWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZhM2NmNTE5MjM1NGY3MTYxNWFjNTEwMzRiM2U5N2MyMGVkYTk5NjQzZmNhZjViYmU2ZDQxYWQ1OWJkMTIxNjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU3NGI2NzA5MDYyNDY2MjkxMjY3YmVlMDk2MjUyYTA0N2YwZDgzZWQwNzJiMjcyYTlhZGRiNDY2ZmI2NjllZTQifQ"
+        },
+        {
+          "resource": "repo://modules/framework/run-locally.sh#L233-L269",
+          "version": "repo-lines-v1:sha256:d91e6b11751be98673f700e8b4787a352c68d2882fe0b6f468f2f78cd0b60bab:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAzZWJmY2MwNmI1NzBjY2U3NGI1NGQ2ZDc2NDcwNTQyNmY3Y2UyNTZhZmZiYjUyNDVlMGQ2MDUxNzBmYjBiOWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc4YWUyNjIzMjMxZGE3YzdiMDRkODI2ZGZlOWM0N2MyYjc0MjVhNmI1ZjBmYTczZTIwZjlmNWM3ODg3NGUyNjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRiMjAyNTVkZTJlOTM0MTYxMTRiOWYwNzNlOTcxMzJjYWVkZDlmYzFkNGU4MmE3ZDE0YmYxNjk5OGQ2ZjY5ZWUifQ"
+        },
+        {
+          "resource": "repo://modules/framework/run-locally.sh#L272-L303",
+          "version": "repo-lines-v1:sha256:f9a130f5cb0a9ceaceae47a7e7f382550320cf2dd3fcdcf9010b2a433d5d6d29:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ1ZTE1NzNhYTAxNjgyNjRjMTViNDAyYzNiMjA2ZjMxNTQ1YjhiOTg0M2I5ZTMwMjcyOTI0ZGM4MDczMzdiMDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA5ZjkzMDgzYzE5NzEyMWI5ODI3MDBiYThhZmFiZDE3MjJjZjFkM2U3NDA0NTA5ZTgwZWZhMjcyNDdmNjJmMDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQyM2ZiZTgwNTI0MTUwNjhjZjk2YWMxNDBmMjA3MTUzNGZiNzc0ODEwMmM3ZjIxZTAxNjk1MzhhYWNhYTBmMDgifQ"
+        },
+        {
+          "resource": "repo://modules/framework/run-locally.sh#L305-L431",
+          "version": "repo-lines-v1:sha256:1ef363ffb0ec4b67f7a7e75266dd3accbed8fa9bf3127f4669950e5c93571359:eyJzZWxlY3RlZExpbmVDb3VudCI6MTI3LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI0Zjk2ZjY3MWNmZTU3YTUyOGQ1Mzc5MWM2ODYxZjgwMDhlYTBiM2YzYmI4ZDM4ZDgwOTUwMWQ0MmU5M2I0YjE5IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0MTJjYTM0NWNjZjc1YmY5YzA4MDZiY2U2OTViZThkZTgwOGI3OTk4NDI1MWE3YTU0ZDIwMmNmNjEwMWRkNDUxIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJhNGI1ZjczZGI5OWQzMmRjZDIyNGE4YmRmNzU1YmY4ZmY1NTYwMzM3NjM1YWY1N2RiNDIyYzE4NWFjNzQ0MjZlIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIwYWUxMGZmNDMzYzgxYjg3YzU3YmNlYmQ3MmY5NzNlOGM1YzE2YTJlZjAyMGNhNzAwZWM3NThiMDNhZTMwZTdlIn0"
+        },
+        {
+          "resource": "repo://modules/framework/run-locally.sh#L58-L75",
+          "version": "repo-lines-v1:sha256:7b88009545f358ead3f0ef63a596c446974de688773718db51fa2688940b83f2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE0YTBiZjgwNWMwY2EzZDAzMjhiM2UyMTQ0M2IyOTVjMzc2MWQzNmZhMDQ2ZTEyYmZiYmQ3ZjU2Mjc5ODgyZWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYxZWU4NDg0NzAyMzFkZDk0NTU2MjkyYTllNGQ2YTE4YzQ2OWI3NTRkNzRjOTk2YWQ3ZTJhZTNlZDQxNDZlOGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQxYzhjYmNlMjg3MzQxOTZjYTNhZWFlODZhY2I2ZTc3NzFjMjFkNGU1ODgxOGZlYmVmMTg5ODBmODk4NzhmNDAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a2592455559b47e9ae16f367345955b9",
+      "statement": "CouchDB version 3.3.3 is used as the Result Archive Store (RAS) and authentication store for local API development, requiring basic authentication via COUCHDB_USER and COUCHDB_PASSWORD environment variables.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/dev-instructions.md#L30-L59",
+          "version": "repo-lines-v1:sha256:be22afddd91564fafda155685723d47f889eb0ebee7a05682455039b7396aab8:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFiMDY5ZTc2ZjE0MzUwMDJlNDAzNTE1ZjRkMjJlMjM1YmY0MzNiMGJiNTBmMmRkZmFkOGI2MjU5YTgyNjllNWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ2ZDYwM2M2NjMzMDQ2ODlmMzEyMDkwNzliZTM2YzY4ZjEzZThkYWEyOTI2YmQwNTM0NTU3YWQ4ZDQ2MjEzYzQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY2YTA3ZTdlZWNiMmJlMzJiYzE4YTM4MDBmNTZhNTJkZWUxODJlZTI3YWExZGZiNWUwNzAyMWRmZDRjMTNhMzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMzYTRiNDcwYjM4OTFlNTFkODhhNjFiN2M4NDg5ZTVhNjdhYjVjZDkxMWVlYTZmMDdmZDc3OWNkNzU5ZTk4YmUifQ"
+        },
+        {
+          "resource": "repo://modules/framework/run-locally.sh#L235-L235",
+          "version": "repo-lines-v1:sha256:e457802f6f364db25832c5c6325cb64c4409eddcda33e654e81095a8ea89eb1d:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTQ1NzgwMmY2ZjM2NGRiMjU4MzJjNWM2MzI1Y2I2NGM0NDA5ZWRkY2RhMzNlNjU0ZTgxMDk1YThlYTg5ZWIxZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTQ1NzgwMmY2ZjM2NGRiMjU4MzJjNWM2MzI1Y2I2NGM0NDA5ZWRkY2RhMzNlNjU0ZTgxMDk1YThlYTg5ZWIxZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTZjOGJhMGEyYWE0YTVkOTIwOTg3ZDAwYmQyNzJkMTc3NjdiZDhjMTc2YjUxOWYxNWY3ZDZhZDE0YWEyZWYxNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTM1ZmEyNGRjODU2NGE1MzQ5YjY1YzNjM2Y4NmZkMWExNzRjN2M3ZWMyM2E3ZDYxOTRiNDdlYjgzZDAxMjYyYyJ9"
+        },
+        {
+          "resource": "repo://modules/framework/temp/home/bootstrap.properties#L44-L44",
+          "version": "repo-lines-v1:sha256:e9e6153086a3eeb0aa5a35c42d4f034ec5abaa0c06334eb4954f676a54685126:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTllNjE1MzA4NmEzZWViMGFhNWEzNWM0MmQ0ZjAzNGVjNWFiYWEwYzA2MzM0ZWI0OTU0ZjY3NmE1NDY4NTEyNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTllNjE1MzA4NmEzZWViMGFhNWEzNWM0MmQ0ZjAzNGVjNWFiYWEwYzA2MzM0ZWI0OTU0ZjY3NmE1NDY4NTEyNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmNjNzBkYTRlODlhY2IyYzcxMGRhN2ViN2Y1NTUxMjg5YzQzODJkNTE3OGM4NmU3YzI0MzlhNWQ0NTE0YTM2YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTFkOWM5MGViZGMxZDJlYWMxYmVmMWQ2NDQ1MGVhNDAxNjVlNzFhYTYyMTA0YThlNTgzYjgwNTQ0YzQzYzE4ZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_bf2cbe6adf83403390de7973eafc3fbf",
+      "statement": "etcd version 3.3.27 provides the Configuration Property Store (CPS), credentials store, and dynamic status store for local API development, running in a Docker container with ALLOW_NONE_AUTHENTICATION enabled.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/dev-instructions.md#L196-L236",
+          "version": "repo-lines-v1:sha256:b4cd5b42425f3a4afb1365246db1153bcf05dec1298ea52576c37c25738216d8:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMDNmZTFlYTcyM2Y4OGNiNDlkYTI1ZTk3NTllYTQ5M2M2M2M3Y2E2MWExNzJkZjVkZGE2NWJlMzA2NjMyYmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YzA2YzU2MWQ1YzMyNzM0MzY4NTI2OGE0NmIzMzkxZjM5OThlZWU4OTBkMmJlNTFmMGQyMWNjNGE1M2FlNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFkYzliMTJkZThiMWNjMGEzY2I2NTJkZDM5ODY1MjBhMDZhZjlkOTlmNGRlNDU2MDNiMTdmMTdhODUxYTMyOTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZhM2NmNTE5MjM1NGY3MTYxNWFjNTEwMzRiM2U5N2MyMGVkYTk5NjQzZmNhZjViYmU2ZDQxYWQ1OWJkMTIxNjcifQ"
+        },
+        {
+          "resource": "repo://modules/framework/run-locally.sh#L276-L297",
+          "version": "repo-lines-v1:sha256:1293feac08500a7b5ad3732ded77f8a75d38e7dde536555bcd5d0f601f1ee271:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZlOGVmZDcwZGIyZTJlZTlmZmNjY2FiYWM4NmRiZjk4YmU5YWFkMTAwNGU3NjEwZmRhN2NkNmJiZDczNjMyYWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjczMDAxMzVkYThiZGQ4ODMzNTk2YWQyNzQyNWI4ZjJmMjg2YTgxMmFiNDEzMWMxMWU3YzViNWVmY2IxZGFkOTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVlYzRmNTZmYjhkZWYyYWJjYzViMmZkZjQzOGQ4ODkxYzFlNTk2MTA4YzZjNmEwNzViMjM1ZTdhNDA0OThhODQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU1ZTg1ZGM5Y2Q3MTdjYjdhZTRmZWZlMmU3YTk5NmNmYWRlNTAzNWM3M2FjZTlkOTA3ZGU1ZDY0NzA2NGE2ZjAifQ"
+        },
+        {
+          "resource": "repo://modules/framework/temp/home/bootstrap.properties#L45-L45",
+          "version": "repo-lines-v1:sha256:beea5075c6fe646d9b54092205285242ce8f58e984dd74aba8ad80c157cb1c95:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmVlYTUwNzVjNmZlNjQ2ZDliNTQwOTIyMDUyODUyNDJjZThmNThlOTg0ZGQ3NGFiYThhZDgwYzE1N2NiMWM5NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmVlYTUwNzVjNmZlNjQ2ZDliNTQwOTIyMDUyODUyNDJjZThmNThlOTg0ZGQ3NGFiYThhZDgwYzE1N2NiMWM5NSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTM5MTliYjRjOTc2OTU1MGEwZTQ1MDk2ODU4YWM3ZWNjNGQ0MGViOTcxZDg5ZDZjY2Q0NjI4YWYwYWY1NjZmNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTQ3MWFkYzUyNzZhZGY1ZjkzODg5ZDA1MjJiODc5ZThmZjhiMWRiYzEwOTUwYTZhOTNmOWQ5MGJlYjhlMzhmZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_48551e0b03ee4dafbd7b62ba185fb7cd",
+      "statement": "Dex version 2.38.0 provides OpenID Connect authentication for the local API server, requiring GALASA_DEX_ISSUER and GALASA_DEX_GRPC_HOSTNAME environment variables that must match the issuer and grpc.addr values in the Dex configuration.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/dev-instructions.md#L258-L265",
+          "version": "repo-lines-v1:sha256:d546daf4d87bb10ef8e0a2062849b3fbbe50baec52cfe4625d739db510188cd3:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDY5MGE4ZTExZGUwM2I0MzczZWI4YzY0YTNlOWZlNWQ1NmViZjQxZTFhYTZiNjI4MmY5YTc5MzA1YWI3OThlZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjBkODRjODQwM2Y1Y2JjMDNmZjUwMDI3YmUzNGJlNjI1YjNkMGMyYTEzNjAxMzQ2YzUyMTM4ZWMwZmExNWFmNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2M3OGE1Njg4MmFjNTY3NmU4ZjgxNWZjNDAwYWFmZjMxNWM5MzlhOWM2MjMxMzNmZTZlNWYzOGUwYTQ2Njc3YSJ9"
+        },
+        {
+          "resource": "repo://modules/framework/dev-instructions.md#L93-L194",
+          "version": "repo-lines-v1:sha256:2235e70e1366c9960ba8fad3ed5a7ce21b161f061458f98aef6bdff70369afc2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAyLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI0YjMxODg3NThmM2RiMTg2NjIzYTg2YTM1YjQ2YTEwOWQ3MmNiNzE0YzdkM2IzMWFjZTY3NDgyNTk1NzUwNDNiIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0N2MwNmM1NjFkNWMzMjczNDM2ODUyNjhhNDZiMzM5MWYzOTk4ZWVlODkwZDJiZTUxZjBkMjFjYzRhNTNhZTZkIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI4YWJmNmZiNjEwMDBkMTIzYzQ2YTMxZjJlZmYxMDU3NGJkZWQ0ZGQ2NDQ1OGI3ODI0NmFlMzRkNDA1ZWNiOTA2IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI0NGY1ZDI5ZGUzNjgyOWQzYzNhMGU2MTVkNmIwMzYwODMyOTliZmMyOTJmMWEwNjJjZGQ0YmNhMTA4MTAwZjE0In0"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.api.common/src/main/java/dev/galasa/framework/api/common/EnvironmentVariables.java#L23-L31",
+          "version": "repo-lines-v1:sha256:c53bc45520b4fb4b1e8d817215a88b9a0ce2163a5e185cbf9152febe1186205f:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzljYmJjNjU0NjlkYjFjYTI4NDJlZmQ5N2RmN2VlMmNlNmNjMTU3MTQ4MmQwMWExOGI3OTBhMTBjN2M1MTBmMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2Q2ZmVlYjBjYjlkZDk5NGQxMzhjYjFmNzVmOWFhMTZiNThkM2Q1ODM5NTM3YTAxN2M2ZDI4YWM1YmQxNDY1ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDlhN2E4MThhNzYyMmYxMzk0NWFiNDQyMTM0MmI4MTg0MjBiMTRhM2FlYWM4OTMyMTk0YjdmZDYzYjRhYzlmMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmRhM2I3MjFkNTgzZTMyMDUwMTE1M2EwOWZmMmE4ZmE0ZjE1YjA5ZGRiYjM2ZWJiY2RlOTY1ZTcxNmZkYzNlMSJ9"
+        },
+        {
+          "resource": "repo://modules/framework/run-locally.sh#L308-L428",
+          "version": "repo-lines-v1:sha256:baf307d104bf4084dc9945182bef0d94dadfdfcf5002530b63b5667eaa572adf:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIxLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJiZGZmODM5Y2JiNWZjZmMwZjk5NmMzMzg1OTc1YzM4ZGUzZjU4NmYxZDlmOWNhMGY5YjcxYmVlOTM1ZmE4MDI3IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI3MzI0OGNkYzliOTZjNjZlY2YwYmNhNjE3NDlkOTBlNTdhYTMzOGQzYmM1NmY5NTJiOGY5ZGM4ODRhZWVjMDMxIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI1NDg0NGIzZmY3NTNhYTQ3MTQyOTFhZTFjZDlhMjVhYzM5NjdiNjJiNWZkMjRiZjhjYzIxYTYwNTQyNjQwODAwIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJhNDY0MGM3MjI3ODRhODUzYjZlZTBlYjI1NDQ1MGI4NTk0MDMxMGJlM2E0NjU2MzEwNjVmZmQ2MzY0NmM3ZDE1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_5e259b5b014144c18100a0ccde7051dc",
+      "statement": "The bootstrap.properties file configures storage backend URIs including framework.resultarchive.store, framework.config.store, framework.auth.store, framework.dynamicstatus.store, and framework.credentials.store, pointing to local CouchDB and etcd instances.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/dev-instructions.md#L240-L247",
+          "version": "repo-lines-v1:sha256:fceba9751e0fee1fa41a4994b4a9a5849c5e74f21c8c57e0037d5e8b1b5c948a:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWFhM2M5MDRjOWZhMGZhODljOTllMTA0NTBkMWQ2M2NlZmY3OGNiYzJhNWYyMWY0ZGE0NGM2ODVkYjUyNTQxMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDdjMDZjNTYxZDVjMzI3MzQzNjg1MjY4YTQ2YjMzOTFmMzk5OGVlZTg5MGQyYmU1MWYwZDIxY2M0YTUzYWU2ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmEzY2Y1MTkyMzU0ZjcxNjE1YWM1MTAzNGIzZTk3YzIwZWRhOTk2NDNmY2FmNWJiZTZkNDFhZDU5YmQxMjE2NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDNmOGJiOGFhMzQxMjNkMWJjOTI5ZWFkNGQ2ZjhhYjY2ZjA3NDUwN2I4ZmFmMzEwMWJlOWMwM2Y1OWM2NDUyZSJ9"
+        },
+        {
+          "resource": "repo://modules/framework/run-locally.sh#L160-L167",
+          "version": "repo-lines-v1:sha256:3e972f727b6047f957ceafe6b9de00839bc0174a04eb8057649e6e8f9062c919:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTllNjE1MzA4NmEzZWViMGFhNWEzNWM0MmQ0ZjAzNGVjNWFiYWEwYzA2MzM0ZWI0OTU0ZjY3NmE1NDY4NTEyNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGRmNTk5Y2QyZWEwODhhMjMwODM0YmE2YTYyNDk0NjBmN2ZkZThkYjlkMzhiYTJjZDM3OTI0Yjc1MmJjMDQzNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2JmM2E2NTA0ZjU4YmJkNjI0MTRkZTM3ZWQyMDJjZTFjNDE3ZmI4YzZmNzFlNWMyZjcxYzVjNWMxMzJlNTMzNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjNhNTljMjQwN2Q4MWI5ZmFjODdiYzM4NWQwOWM5YmVlZDBjOTNhZjIzNTUwZWQzOTY2YzY5ZDk5MTc4YWYxMSJ9"
+        },
+        {
+          "resource": "repo://modules/framework/temp/home/bootstrap.properties#L44-L51",
+          "version": "repo-lines-v1:sha256:3e972f727b6047f957ceafe6b9de00839bc0174a04eb8057649e6e8f9062c919:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTllNjE1MzA4NmEzZWViMGFhNWEzNWM0MmQ0ZjAzNGVjNWFiYWEwYzA2MzM0ZWI0OTU0ZjY3NmE1NDY4NTEyNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGRmNTk5Y2QyZWEwODhhMjMwODM0YmE2YTYyNDk0NjBmN2ZkZThkYjlkMzhiYTJjZDM3OTI0Yjc1MmJjMDQzNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmNjNzBkYTRlODlhY2IyYzcxMGRhN2ViN2Y1NTUxMjg5YzQzODJkNTE3OGM4NmU3YzI0MzlhNWQ0NTE0YTM2YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_dfbc82f17f364d80a513961878002053",
+      "statement": "The framework.extra.bundles bootstrap property specifies OSGi bundles to load for storage backends (e.g., dev.galasa.ras.couchdb, dev.galasa.cps.etcd), while api.extra.bundles specifies additional bundles required only for the API server (e.g., dev.galasa.auth.couchdb).",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/felix/FelixFramework.java#L158-L163",
+          "version": "repo-lines-v1:sha256:9f08fb9a735e52dd4150a3cb7ba04b3aa3248501b51cdd35941136c05835ce5e:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2YwOWNmZjY1ZDk3NmI2NzE2MWY2OWFhMDFmMzAzNTUwNzk1NTBkNDU1ODkyMGMyMTg5NWZjMTVjN2YwYzNhMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTk5YmRlZmVlYWNhNjM0MGUwMjkwZGM4NmU4ODljODlkNWUxODlhYTViYTQ0YjU4NWIzYjcwNzM0ZjRhNjJkOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2JkZWJjZDM1ODNhYzA4ZTg4YWYwZGNiYTc0MTMwYzZhZDQwMDczZTU3ZTRiMjFmNzMwMTVmMTgyMGY0YjljMyJ9"
+        },
+        {
+          "resource": "repo://modules/framework/run-locally.sh#L164-L164",
+          "version": "repo-lines-v1:sha256:aec106d39e0871dff79cf70f9be92ab3a08ec960e4774b4df8ecafa7a66e5ad4:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWVjMTA2ZDM5ZTA4NzFkZmY3OWNmNzBmOWJlOTJhYjNhMDhlYzk2MGU0Nzc0YjRkZjhlY2FmYTdhNjZlNWFkNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWVjMTA2ZDM5ZTA4NzFkZmY3OWNmNzBmOWJlOTJhYjNhMDhlYzk2MGU0Nzc0YjRkZjhlY2FmYTdhNjZlNWFkNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTFkOWM5MGViZGMxZDJlYWMxYmVmMWQ2NDQ1MGVhNDAxNjVlNzFhYTYyMTA0YThlNTgzYjgwNTQ0YzQzYzE4ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODMwYTM4NzVmMzlkMTY1OWEwNzBkZmVmYzAxOGVkOTlmYjg0NjkyMGZiNTkzMWY1ZTNjY2ZjYjdiOTA1OGZjNyJ9"
+        },
+        {
+          "resource": "repo://modules/framework/temp/home/bootstrap.properties#L47-L48",
+          "version": "repo-lines-v1:sha256:2cc24fb4369fec3f2d678ff6f712e1875d97fb8e5269a8bfe2d693b9c61f177c:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODk2ZGI0ZTY3OWM1NTk2ZTc5NTI4MThmZDFhOGRkODQ0ZjQ3NGU1MTRiOTk1YjdmYTIyN2IwMzdhMjAxOTA3NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWVjMTA2ZDM5ZTA4NzFkZmY3OWNmNzBmOWJlOTJhYjNhMDhlYzk2MGU0Nzc0YjRkZjhlY2FmYTdhNjZlNWFkNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGU0YjBjNmMzNGQ5YTRhM2ExMjIzNmYxNWIxN2Q4YzkwNzIyZWZhMmQ0MjYxNzA0ZTVhZGE3MGE5MDhmNmRlZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODMwYTM4NzVmMzlkMTY1OWEwNzBkZmVmYzAxOGVkOTlmYjg0NjkyMGZiNTkzMWY1ZTNjY2ZjYjdiOTA1OGZjNyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ddc6aebb571045e994c3078e411403a7",
+      "statement": "The API server startup invokes FelixFramework.runWebApiServer which loads Jetty bundles, retrieves the ApiStartup service, and invokes its run method with bootstrap and override properties to initialize the framework and load servlet bundles.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/Launcher.java#L223-L225",
+          "version": "repo-lines-v1:sha256:529d8965e637baa32be3e375d9ef9fe9bd3efbeb4ff381fcc179bbede9418bd8:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGJlZWI1MGJiY2JjNjlhYzQ5NGMxMjljYjNmZDk4YzRmODQ0OGRjMmI1ZGYxMDkzODg0MzY1MzNhM2YwMWFjOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzFhYmRmYzE5OTc5N2E3ZDllZjY3MjA4NjFhNDYxNTQ1ZGI0NTNiMmEyOGJhMDI3MGQzYjhmNzc3ZDVhYjE0NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGZiNDg5NjYxZTUzNGM2YzAwMGJjNWNjZjBjNjc4YmEzMzMxODBkMjM2NmMyMDVkNjJmY2JiNTJmYmJlZTBhYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTNkMDg5YzhiMjQ4MDUxZGM3ZjIyMDBlZGNlOTBmYTZlNmZiNmZiMDY0YmJhNDA5Y2JkYWYzNGZkZmQ0MzFjZSJ9"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/felix/FelixFramework.java#L740-L789",
+          "version": "repo-lines-v1:sha256:1d62461d50abda0821e5de9c20842e328ad1f2cb2bf2dd10221dd543b1d0bdf1:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhYTUwMjhhMDg5ZDAzZjM5YjhhZDUxODAwNmJmOThjMjZhMDE2ODUxZmI1YzlhODVmNGZhMjgzZGFmYjEwMmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVhOTFjM2EyMjkyOWJhMTQxNTMyODE2MmUyNGViOTIzMzQ5NmMyN2VmMTE2ZTU3OWExZTdlN2VmZDQyNTcyZjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRkNjU5NDZhN2RiYzAxMGFjMWEzNmU5ZDZiZmMyNjdhZTJkNzI4Y2ZkZWEyOTM0ZTAzNThkMTU3ZTQ3ZTg2ZmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3a9fac6237e64d758cfa141722fc9d86",
+      "statement": "ApiStartup.run initializes the framework by setting up bootstrap configuration, initializing framework services including the auth store, and loading API bundles that provide javax.servlet.Servlet services, then enters a monitoring loop until shutdown.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.api/src/main/java/dev/galasa/framework/api/internal/ApiStartup.java#L136-L182",
+          "version": "repo-lines-v1:sha256:393d287ae1e7dcae612d75a3f5c607bc3de797d7a66136b34a2ef3dfbeb63401:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyYjM2NTEzN2I1Nzg5ZDc4YzFhZGY5MmQ2MTQ0MGExNTM4OGFlNDI5ODc5YjY0NDZiYmU3ZWY1NjdiNTgxY2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRmYmQwMDkzMTRiYzI3MDg0MTY3MzRhMDJhZTVmZjM5YTFlNDhhMDUwYmU5MWY0M2IyZmFhOTIwMDJjNjJiZmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRmYmQwMDkzMTRiYzI3MDg0MTY3MzRhMDJhZTVmZjM5YTFlNDhhMDUwYmU5MWY0M2IyZmFhOTIwMDJjNjJiZmMifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.api/src/main/java/dev/galasa/framework/api/internal/ApiStartup.java#L51-L95",
+          "version": "repo-lines-v1:sha256:ee01ae4445bbd2f8eb027dda399ad7228a07740485173d95444ef87c6dade5b0:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA5NmE3ZTJkNmZkMTU3NGQ1YmU3MTk3MzdjMjIwNmNhYTQxZTE1ODdmZWRhY2IwOWEzNGJlMDhhOTY4MzdhYTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFjNWJjNmEyZGI0MWE0NmVmZjhlMWRjYzEyODQ5YmE5N2JmOTU3ZTA2MjZkNjJhYWE4ZGJhNGZiZGI2Y2RiZjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMzMmNlMjZiNDQzNjAwNzgwNjc2YzExYjQ2MTE5OTVjMTcwODliMDkwMDc2ZDc4YTVkM2EyNzUwNDk4NTgwMWYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_672bfd95f7244d0aba123b63ae490f83",
+      "statement": "The API server loads all bundles that provide javax.servlet.Servlet services by searching OSGi bundle repositories for resources with service capabilities matching javax.servlet.Servlet, unless specific bundles are requested via the extraBundles parameter.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.api/src/main/java/dev/galasa/framework/api/internal/ApiStartup.java#L136-L182",
+          "version": "repo-lines-v1:sha256:393d287ae1e7dcae612d75a3f5c607bc3de797d7a66136b34a2ef3dfbeb63401:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyYjM2NTEzN2I1Nzg5ZDc4YzFhZGY5MmQ2MTQ0MGExNTM4OGFlNDI5ODc5YjY0NDZiYmU3ZWY1NjdiNTgxY2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRmYmQwMDkzMTRiYzI3MDg0MTY3MzRhMDJhZTVmZjM5YTFlNDhhMDUwYmU5MWY0M2IyZmFhOTIwMDJjNjJiZmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRmYmQwMDkzMTRiYzI3MDg0MTY3MzRhMDJhZTVmZjM5YTFlNDhhMDUwYmU5MWY0M2IyZmFhOTIwMDJjNjJiZmMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a914f5d2a23e4e18a8d9a7a41dea4934",
+      "statement": "The API server provides a /health endpoint that returns HTTP 200 with 'Ok' when the Galasa framework is initialized, or HTTP 503 if the framework is not installed or not initialized.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.api.health/src/main/java/dev/galasa/framework/api/health/internal/Health.java#L34-L65",
+          "version": "repo-lines-v1:sha256:2abe3b9cce5454cd5070bc65ca9a98310c6af79721487530ff283d7ed12bfa81:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE5NDRiZDIyOTM2MmM2ZDEwNzQ3NWRjMGQwY2Y2MjhkMTNhYjgzMGU0MDQ1NWIwMTE2ZGU5ZDc3MzdkNDE4MWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5NDcyM2QyMDMwZDczZDkyOGFiMGUxMDFjMGU1YTBlMzRiZWRlZDA3MDM2MzI5ODc2MzRjODJiODdlMDhlZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA0ZmVlMjY2MTA5Y2RlOTBmMGU4YTdmNjYxYjdkOTdhODhkOWJjODkxNGVlZTMwN2I1MjRmZmRkMjNkZmM3NzUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0b92f4ff52004612a96013ec4a8f19c4",
+      "statement": "The RAS servlet provides a /ras/health endpoint that checks Result Archive Store health by querying directory services and returns HTTP 200 with status 'ok' if at least one directory service is healthy, or HTTP 503 if RAS is unavailable.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.api.ras/src/main/java/dev/galasa/framework/api/ras/internal/routes/RasHealthRoute.java#L31-L84",
+          "version": "repo-lines-v1:sha256:e57934ec3cdf6a8adb8f056efd1ccde727b09a3ee9f53f9d569b1a056f8a7f92:eyJzZWxlY3RlZExpbmVDb3VudCI6NTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRlODMzYzdkZTljYzQ2ZDRiNDlmM2E3YjgyYmQxOGFkZjA2YWQwOTk3MWQ4MDlmY2IyNmQxYTE3YWRkZTZkOTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVmMTExZGVmMGYxNmQ1NzMyMzAxMmYxMGVjNmY0YjQ1OTEyNzgxMzYyOGU1ZGQ0MTM1Nzc2YWMyMTk1N2MxNDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3704f5d2d4fa4014af642b039395d65d",
+      "statement": "The API server requires GALASA_EXTERNAL_API_URL, GALASA_USERNAME_CLAIMS, GALASA_ALLOWED_ORIGINS, GALASA_DEX_ISSUER, and GALASA_DEX_GRPC_HOSTNAME environment variables for authentication configuration and CORS handling.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/dev-instructions.md#L249-L265",
+          "version": "repo-lines-v1:sha256:e131cf1d7cb49679535e0ac3dbfa4ecfdc74c09e15ce44c999797408531da8cc:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVhZWFkOThhNzI2YzkwMWY1OTgxODllNzA1YjJmNWZhNWQ5YzE5NzU5OTkyNTBjN2E3ZThjNzc3YmMxNDg4NjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFjMTdjNzYyMWVkODU5NGJhYzRmNjYxNTg2Y2Y3M2M2N2IxM2ExYjlmOTljZDUyYTY2M2EwZWI0Y2I3YTM5MDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNjNzhhNTY4ODJhYzU2NzZlOGY4MTVmYzQwMGFhZmYzMTVjOTM5YTljNjIzMTMzZmU2ZTVmMzhlMGE0NjY3N2EifQ"
+        },
+        {
+          "resource": "repo://modules/framework/galasa-parent/dev.galasa.framework.api.common/src/main/java/dev/galasa/framework/api/common/EnvironmentVariables.java#L13-L47",
+          "version": "repo-lines-v1:sha256:b415c4d7b99b0879b238f10b87d403e74c3391d265f50a5b0dbac8e930601735:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5Y2JiYzY1NDY5ZGIxY2EyODQyZWZkOTdkZjdlZTJjZTZjYzE1NzE0ODJkMDFhMThiNzkwYTEwYzdjNTEwZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhkOTA4ZmM0YmM0NWIwZTczZTY5N2JkODhjNDJiZTNmZWI0Y2ZmODk0ZGQ3MWE4NGYwZWU0NTRhZjg3MDMyNTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVkZGY4ODYxMjM5OTdkYWVjZmI2MGNhYzM1NDU1NTVlOGU3NTZlMDcxMDU0NGFkZjcyZjM5Y2Y2ZjFkN2RlM2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        },
+        {
+          "resource": "repo://modules/framework/run-locally.sh#L173-L188",
+          "version": "repo-lines-v1:sha256:66ce4c707a43c7bb0836b277ff87ddd60d08a6939755ffb3060440f7b0d7d3d0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYyNzNlNzUxYTU5OTcwMDc0YzMzNDUxNTBmNTkwMjI1ZWVhYTlkNzQyOTc3ZmZlZjE1MzhiYzYyN2RlOTM1MTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZjNDQ2MWUzMjAxNmQ3YjlmNjhiODU1ZjYwMjI3NGFiODk3ZjQzZTgxYjg1N2RhNmRhZDUxMTEwZTdkMWYxY2EiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBmYzVkOGVjN2Q1M2E5MTkzMzI1NjYzZGMwZTdjYmZiZDgzZTg3ZGY3N2UxYzk2NmI2NjU3ZmU2NTc4NDBlMGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFiZDliZGFhNzc4NzcxOGNjODZlOGJiYmFhNWQzOGZiMjdhZTkyODg4OWM3ZjM0MjBjM2JlNzcyYWIyODUxODAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0855eb11d3e84d0d9937973bc097f13a",
+      "statement": "The galasa-boot launcher is invoked with --api, --localmaven, --remotemaven, and --obr parameters to start the API server, specifying Maven repositories and the OSGi Bundle Repository containing framework bundles.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/dev-instructions.md#L272-L278",
+          "version": "repo-lines-v1:sha256:c92f7dfac52cdcc6e9a2ebc8bb236549fe7aadc692e8010493964067d0282249:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWRlMmY1MzI4ZWU2ZTgwNTBlOGFhZmQ4ZGM4NjlhMDY5Y2Q5NTg0ZWRhYWY1NGZlNTg5ZDczYzNiN2RjZDc5OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDdjMDZjNTYxZDVjMzI3MzQzNjg1MjY4YTQ2YjMzOTFmMzk5OGVlZTg5MGQyYmU1MWYwZDIxY2M0YTUzYWU2ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTFmZDU2OGVhN2JjNDMwMzczYWMxNzExYWRlZmUzNWY0OTYzMjA3MWE1N2RkZDIxOTYzMTNjYWI4OGU1MmQ0ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjVjMDkyYWNlNjgxZDMwODVlMjAyNGVlNTVkZWYzYzNiYWM4NjQ2OTZhOTZiNWI3ODdhYWY0NTdmMTMwM2MyMiJ9"
+        },
+        {
+          "resource": "repo://modules/framework/run-locally.sh#L201-L207",
+          "version": "repo-lines-v1:sha256:671e14a80444a62553485f67a264385083a0b6e5831740de0d92585db3ef1dc9:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODFjZDkwNjhhODlhOGQ4NDY4OTRiNjRjMzY1MTQzMmVhOTE4MjYxNWY1MTU5N2NmMzZiYzhlNmRhNWRkMGJlZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTNkOTk2YzFkMTRlZTVhNGFjMTA0NzhiODRkN2I4Y2Q4MmM2NDA0MTA3MjViYmE4ZDViMWQ5MGQxNTljYTgxOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWE1N2U5YWU0ZDNhN2M1ZmZkODUxN2ZjMmM1NjlhNWU0ZjMwOTUwMjk3MmMwZDBjMzY1M2UxYWI0MTJmOWQwMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjUyMTgyZmFiZGZlYTg4MzRhZDE0NTFjMGYyNjJiNDk4OGE5MDNhM2RhYTcxN2Y3MzM3OWNjMjVhZjMzOWRlZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_9d983edbca01420e9088dce572fea0ff",
+      "statement": "The run-locally.sh script creates a temporary GALASA_HOME directory and generates a bootstrap.properties file with local service URIs for CouchDB, etcd, and storage backend bundle specifications.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/run-locally.sh#L145-L171",
+          "version": "repo-lines-v1:sha256:9de3010b3501c7288168fc59dd38d604a31ae8820eddd1b8818187ab7b023aaa:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNjYjY4MjZjZDAwZjY5MzQ2ZTM4MTIyYzRjNzAyMmQ1MzA2M2ZiNDRiNTI2ZGVkMzJiYzI1ZGVlYjkwNjI2MjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMyNDUwNzhhYWU3ODY3NzZlMDI0ZWNmMzZmZTFhYWQ5ZjZhZjM3NTkwZWVmMWM3MWExNWFmN2FlNDQyMWE5NmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc2MzY1Yjg0OGQ5MWFjZjg1YWM2ZThiZjY2NmViY2U2ZDczNjM5NzUxMGU1OGVhMTUyZDNjMTZiNGNmMTU2MWEifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.2",
+    "at": "2026-09-21T12:35:12.771Z"
+  }
+}

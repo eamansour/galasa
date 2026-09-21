@@ -1,0 +1,196 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:49abbe5ff9b7acc6a442d8723053f8ad2bd40f4b7fd2f7b6d6029c05e3e40964",
+  "claims": [
+    {
+      "id": "claim_b8f09146c40b45dda0ca88caf674ad6e",
+      "statement": "The Galasa repository consists of eleven modules organized under the modules/ directory: platform, buildutils, wrapping, gradle, maven, framework, extensions, managers, obr, ivts, and cli.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L9-L9",
+          "version": "repo-lines-v1:sha256:2cf19e35e856d172c2c23d5ea8108b94f8003129d154b8929c4d93a2aa9627cd:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmNmMTllMzVlODU2ZDE3MmMyYzIzZDVlYTgxMDhiOTRmODAwMzEyOWQxNTRiODkyOWM0ZDkzYTJhYTk2MjdjZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmNmMTllMzVlODU2ZDE3MmMyYzIzZDVlYTgxMDhiOTRmODAwMzEyOWQxNTRiODkyOWM0ZDkzYTJhYTk2MjdjZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmIzODA3MjI5NmQ5ZTBlMDg0NzgzMGZhOTg4NDMyMzZhMDliMGVjYmQ5MjQ5YmZlYzQ1MTg2MWUyYTNmYWJmZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWJmNDg3ZDJjMTU0OWM4MjZjMWNkMTFmZDIzNGNiNjVhNzMzYzc2Y2JkMThmOTcxMmRmNWY4ZjQ5ODhmZDk3YSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ae88deebe08c4c72844ed8a0fb559c12",
+      "statement": "The recommended setup approach for local development is using a VSCode development container, which provides pre-configured tools including Java 17, Maven 3.9.0, Gradle 9.0.0, Python 3.11.0, and Go 1.23.5.",
+      "evidence": [
+        {
+          "resource": "repo://.devcontainer/devcontainer.json#L8-L33",
+          "version": "repo-lines-v1:sha256:a06f7a41317da38c39e5e6923a48c76a541e187afed12c563fc7684fe11f4be4:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1ZGFkMDJmODY3MzVmZjZkMDg5NjAyYmM0ZTBjNjk2OTNmNjQxNTExNTNmZGYxODdjODE5ZWM5M2IxM2E0MzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRkNWNkMmZiNGYzZGY4ODQ1MTUyNTViMzk1MjNmMmY4YjU0NzJiZWVhOWY1NjZmZmNhMjA0ZGI4MDI1NjEwNDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFjNTMyNzhmNGRmODczNTUxMTBlYTVjN2VlMzdjOTYyMDY3YzY2OWY4NjY2MWNkYzIzNDNkZDZkNGU4ZDE4ZWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA1YWViZmFmNjU4NzIwYzE0YmE1YjEwMWZmMTgzYTEzOGFlMzRiMWU1NGM0MTg2MWNhNmRkN2ZhM2JiZmNhMDQifQ"
+        },
+        {
+          "resource": "repo://README.md#L19-L26",
+          "version": "repo-lines-v1:sha256:4388894ec6dc53f1961532760f12d58b96ec3c8a4bcbd81577c1186cf70517b2:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjYxYWVjYmFhMTE2NDk4N2IyZmUyNzBiYWVlNDFkMmUxODQyNTE1Yjc3NmE1MjRhZTgxNDAxY2FlNjQ2MTNjOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTYxZThiN2JhZGQxN2VjYzk3NDNjMTM1YTZiODJjNWJlMGI3OGFlNjRlZWY0MTM4ODk0MmYwN2ZkNmFiYmY3MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzg1YzE3OGJiM2IzM2FlYWZhNjI4NmMwOGRlZTdjNjQzNjgzMTg2MDAyODAyODViNzY2NWNkYjAzMDkwYThkMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODUwNTdhNDczYTlkZmU5NTY4ZmY3MWY4YjU5ZTM1ZjBkNzkwY2IwMjFhM2IxZjIzZDU4MWRhZGM3OTlkMTlhMCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_8fe94576374e4bf0a4edf4169e662651",
+      "statement": "The build-locally.sh script supports building all modules in a chain or starting from a specific module, with options to enable Docker image building and minikube registry setup.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L38-L39",
+          "version": "repo-lines-v1:sha256:85a1574444e6d80716dcd11f25a061d0ada348ce24867266bd7d1674a07d0c4a:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmI0YWM2NGIwYTNjYTYyZTU4MjMzN2UxNTA4MTRhYzlhMjdhM2NkNmU0NDQ4ZDVjMjhjMzgyNmEwNjU1MmRkZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjAwN2EzOGY0NTNlOTI0MjNkYTk4YTdmNmY2MjkzOThlYjc2NzhlMzM2NjRlYzQ1MDYyY2Y2YmM4MjhjYzVlYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTJkNzA1ZWU5NGZlNjE0NmE0ODE0MmFkZGE1ZmVkODI2NzRjZWFlMzI5NTA3NmQyNTMzZmQ1NzgwYjc5YzU3NSJ9"
+        },
+        {
+          "resource": "repo://tools/build-locally.sh#L57-L67",
+          "version": "repo-lines-v1:sha256:389d9268f4aed80d6774f176e5e4aac4cbd3e13d69691a7cd8668edfc7d5efc9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE0YTBiZjgwNWMwY2EzZDAzMjhiM2UyMTQ0M2IyOTVjMzc2MWQzNmZhMDQ2ZTEyYmZiYmQ3ZjU2Mjc5ODgyZWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYxZWU4NDg0NzAyMzFkZDk0NTU2MjkyYTllNGQ2YTE4YzQ2OWI3NTRkNzRjOTk2YWQ3ZTJhZTNlZDQxNDZlOGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI2MDgxOTI5ODNhZWU5ZmMxMGI3NzdhMjM0NzM0YWQ4NmI4YzRlNTA2ODBhMjUzNDFhNzFkOTc4NjVhYTA5Y2YifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ae6a6e3818744ced9f1f440c3fcf8b21",
+      "statement": "The build-locally.sh script dynamically discovers modules from the modules/ directory and can build them in dependency order when chaining is enabled.",
+      "evidence": [
+        {
+          "resource": "repo://tools/build-locally.sh#L85-L108",
+          "version": "repo-lines-v1:sha256:55bcabf09c2a9a3c6fd1862aaa55ee66774115d35dabbc9ec4bbd5e2b39ac786:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZlYzI5ODUwMmU5ZmE4YTcwYjU3MjE2MmM2MzcwMGE4MmIwZDc3MmU2YTA4ZDU4MWFiZWZkYTI1NzIyZWQ5YTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIzOTkyOTQwZjQxYWVkMDRmNjc5YmQ0OTg1YTRhNDZmODM2NTA0MDJmODU0ZGRjNjE1ZjMyMjU5MzU1Y2E4MTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY3MWIwYzZjMjgxOTMyY2MwODdiZmFhYzY2MmFmOTBiMTFhNWU4OGFkNWVlMTgyZTY0M2E1ZWRhYWI0MmJlN2MifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_213358aa0bc640e99794e0ad0bfaa7c2",
+      "statement": "All contributions to the Galasa project require signed commits using GPG keys with both -s and -S flags, and must comply with the Developer Certificate of Origin (DCO).",
+      "evidence": [
+        {
+          "resource": "repo://CONTRIBUTING.md#L27-L27",
+          "version": "repo-lines-v1:sha256:c419f5fb260f4f5a681bc773dfe5a28b7dce9c7dc63b7abfa77185c89d50f2f9:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzQxOWY1ZmIyNjBmNGY1YTY4MWJjNzczZGZlNWEyOGI3ZGNlOWM3ZGM2M2I3YWJmYTc3MTg1Yzg5ZDUwZjJmOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzQxOWY1ZmIyNjBmNGY1YTY4MWJjNzczZGZlNWEyOGI3ZGNlOWM3ZGM2M2I3YWJmYTc3MTg1Yzg5ZDUwZjJmOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWJhZDYxZGZlNWE4ZDgzYmQ0ZGQ5NGQ3ZjcwOGMyNzFmZGY1MGJhN2Q0ZmYzNGJmYzA2NTY5OThhYWUyMDU4MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTA4MzExMmE4NmEyZGVhMmU5NjA0YTgxOWY0ODVhMDViOWQxYjc2ZmFlNTRkZTI2ZWQzM2FjOTVkNjcxZmRjZCJ9"
+        },
+        {
+          "resource": "repo://CONTRIBUTING.md#L35-L45",
+          "version": "repo-lines-v1:sha256:2dcafb04bd0b8f0b3f0447f601abff5851ff034a6901d0fe7f3cd63f84109b0a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM1YzQ0NDQ0NzBjNTQzMzk0NGQ0NWNmZmFmYTM3NjY1YWM2MTVlNGQ0YjhkZWE2NWJmYjAxZDBmMjE2MmRkYjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdjODY0ZTU5YTgzYzYzNmJmZDIyYzNmMGU2NDk2YmJlNWE4MTFmN2I4YWM2OTFlN2IyMzlmNWFlNzdjNWIyNGUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRkOWU1MmZlNzJiZjc0ZDBhNjRmOWNmOTA1YzBkOWZkYTZmY2ViZGM0NmYyZWY0OWIxZjQ5Y2RiNWQ4YmM1NzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMwNDM3YmU2OTk2MmJmZTVmNWYzODRiMmMwN2JjOTE1ZTI3YjA1ZjNhY2RiZDBjMWM5OThkMDYyZWMxOWJhODgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bb2f0e76632549b1932250dfffe09887",
+      "statement": "Fork repository builds require configuration of GitHub secrets and variables including GPG_KEY, GPG_KEYID, GPG_PASSPHRASE, WRITE_GITHUB_PACKAGES_TOKEN, and WRITE_GITHUB_PACKAGES_USERNAME.",
+      "evidence": [
+        {
+          "resource": "repo://CONTRIBUTING.md#L66-L111",
+          "version": "repo-lines-v1:sha256:70debb3cd54bdc495b67df4d3edc5e9d535b1d838d3c934b3ccec5eb03144811:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU1OTRjNDVmOGNkYjkwYmQxNzk0OTIzOTQ2MjU0Yzg0ODI3ODRkNTI4ZWVlN2FlN2U0MzE5NDg2MDM4MTU4MDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVkMWYwZmQ1ZWY3ZTAwOTQ0ODVlYTgwN2Y0Y2FmNGRjN2IxNTMxZGZjOTJiODY3OGE0ODlmN2M1YTY1NWVmMjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_483de7b46c6e4706b055be1d243e8781",
+      "statement": "The galasactl CLI tool provides commands for local environment initialization, test project creation, and test execution through the 'galasactl local init', 'galasactl project create', and 'galasactl runs submit' commands.",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L32-L44",
+          "version": "repo-lines-v1:sha256:5ef21b5242bdf68c17a7b98530e7adc25bcfb72733fd039c31b31397ca4f7647:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3MjAwOTY4YjA3YTI0NzMyMzE4NThhZTFiNWY2OWZhMjUwNWVhMGVhMzYwMTExNzYzZmEzYWNjOThmNjhmZmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI1NGEyZDhkYzlhZWY0ODUwMTgyNDA0OTEwODljY2Q5NDM0NGEyMzZmYjNmYzRmY2NmZDlmYTVjZDAwN2QyZTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIzZjQxNGUxNGJjZTE2OWNkNmVlZmVmNzg1YmViOTEzZjU1NGZkMWI1MGQwOTlmY2JjMGY4OGM1ZTc1NGRmMDkifQ"
+        },
+        {
+          "resource": "repo://modules/cli/README.md#L52-L76",
+          "version": "repo-lines-v1:sha256:faf931fb7c55f70b477fe9a20876a6b7e03959a06d8ff0066c4f389acfb07140:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA3ZTFjOGIwNzRjMWY2YjBhN2IyNzU1NDllNTVmODVmMmM5NTY3ZmQ3MDdlMTgwZDA5ZDVjYjdkMDQ1YjhkMDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YzA2YzU2MWQ1YzMyNzM0MzY4NTI2OGE0NmIzMzkxZjM5OThlZWU4OTBkMmJlNTFmMGQyMWNjNGE1M2FlNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk1MGExMGYzMzNhMDY3NzUyNGFkMzVmYzY0YjY0NjdhZTdiZmIyY2UyOTlkMWE3ODc4MjY2YzM1MjMwODY1ODgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUxOGJiOGM5M2NhMGEwYzZmY2Q5ZjQ0ZDc5ZDBmNTcyNDA3Yzc0Nzc3ZTUxMDU4OTk4MTgwMzJkN2JiMDc3YjIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_dd09c9fb27764b67a183339c6c55b679",
+      "statement": "The Framework module contains the core test orchestration logic, Kubernetes controller for test scheduling, REST API server, metrics service, and resource management functionality, all launchable through the galasa-boot JAR.",
+      "evidence": [
+        {
+          "resource": "repo://modules/framework/README.md#L1-L4",
+          "version": "repo-lines-v1:sha256:25c76377cd4af22b74a41f25082abc42e0a41f8050c3141c88f29dc793c1c13e:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTRiYTdjMjIwZTcxY2FmMjFjMGFiM2U2NTg1NWU1ZmYxMTFlNGU2MGU5ZDNmMGVkMmI1ZWY1NzA2NmRiNzc1YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzA3NDlmMzYwYTgyZWY3ZDdmMjg3Y2FiYzYzNTI2ZGE5NDk3ZjE3MGU1MTU1NmQwN2JhZmNmNDg0Y2UyMzM1MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDk0NmI1MWI4NmE3ZTg4ZDA2ZDlkY2YwODA4OWFjYjZhYTg0NDYwNTA4ZTI4ODliMzU3YmYwNDY1ODdiMTFjMiJ9"
+        },
+        {
+          "resource": "repo://modules/framework/README.md#L42-L77",
+          "version": "repo-lines-v1:sha256:5c3e3e6a3734c75e45b70ea7601c8b66ba4d51784656539bdaca527267e8f0a5:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzNmYxYzEwNWQxMzQxNTc2ZjJiNzllOWE4MGJjZjNhZGMxOWU1OWZkZmYxYTUwZjJmMTU1ZmEzOTgxZGE1YzgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI5Yzg0YzA2YmU2MTE3YjEyMzBhYWQzY2Q0NmJkYjM4Yjc0YjgxNTNhZDBiZjI5Nzc3ODViOGM2ZDM4M2IxNDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNmOWVkZGUyNjc1NmE4ZDU0NjkzN2M1YzNjOGJjNDIwZjFiMDA4NmY3NmE1YmIzYjg1ZjVmYTNmMTc0NjUwNzEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d07baa90159d4a15968e8fcbd4dfa4c2",
+      "statement": "Managers are pluggable components that provide technology-specific capabilities and are organized hierarchically in the galasa-managers-parent folder, grouped by type such as core, cloud, communication, and z/OS managers.",
+      "evidence": [
+        {
+          "resource": "repo://modules/managers/README.md#L1-L5",
+          "version": "repo-lines-v1:sha256:fc89e89f4bd39185626f94ed38065808d1120ff151378676f96d734aac70eec8:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGY2MzYyNjUxOGRkOWYzYjYxY2EwMzhlMDllZjUxMDk4NmFlNmYyYjI0MDc2YTEzMzFmYzE0MTE4ZjQ1MjA2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWQ1NDU1NTNhZWYyZWZiODVhMDQwYzA0ZWFlY2NiN2I1ZmQ1ZDNmYmNlOTM4NjgwZDhlNWY1MzY2NjY0YzJhOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2ZmZmZkOWNkNDc1ZTk1OGE2MGJjODY2MGFhZTk1MzIzNTY4NTM3ZTE4OGQwYzY4MTlmYzY2OGMyZjRkYWJiNyJ9"
+        },
+        {
+          "resource": "repo://modules/managers/README.md#L36-L96",
+          "version": "repo-lines-v1:sha256:95849198a87f7672718c0c726c8caf8c58d3dcc0f34b6d77552335089d256bb4:eyJzZWxlY3RlZExpbmVDb3VudCI6NjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVkZjhkMDEwNWUwM2U0ZjBmZjA1YmJjZDgwZWNjYWI4MmZiNTMwZDIwNmUwYjQ1YzI3YTc0YTc3YWVhNDIzNDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkY2Y5MzdhZmIxNjAyMTM1MTc2ODVkOTdmNGFmYTkyOTkwODg3NzA3ZTQ0ZDU0YTRhNzdlYmIzMTBjMDU2MTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE3MDgwY2NiZjIxNjBmYjdhMDQyNTY1YTA4OTI3ZWQ2OTYwZjMyZWI4ZjczN2UxNWI4MjNjYjAxMTkyNTY4M2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVlYjA4MDI1OGFjZTUyYWExMDVjMDkwZjE3OTA0MTgzZjYxZGZlZTcwNjUzNDBkYTMzYzRjMTk4ODViOWFhMzEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_73998f85a18e4668a78f9a7a9575c374",
+      "statement": "The required tools for manual local development setup include Java 17 (Semeru 17.0.12), Gradle 8.9, Maven 3.9.0, Go 1.23.5, and Python 3.11.0, managed through SDKman for Java toolchain components.",
+      "evidence": [
+        {
+          "resource": "repo://developer-docs/install-pre-req-tools.md#L5-L11",
+          "version": "repo-lines-v1:sha256:d58673372deb914f0588503fcaab230bc3679e02f72e3b629a0d01431b78679d:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjczOGMxNTAzZDM0MmE1MWZiNGYzODliYTI0MTBiNGU4YzcwOWE2OGQ5MzVkOTMwMmI4NDdiMmNkM2Q4NmFkMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTQzNzIxODFiZmQyNjI1NGNkY2EzNjI2NTMxOTQ1YTAzZTBlMjM2MDlhOGFiM2U4ZTgwMjQwZWY5YmRhOTkwOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGU0YzZlNGI1NzQxOWUyZDUwMGE1MGMwMmJkMzgxZDNjMzFiNTVjOWVhOTY4ZGFkY2M0NzlkNTI4ZWFjMzNkMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWFjMjYzMTc2OTdlMDkwZjdlYWNlNGQ1Njg0YjA1NjdhNmQ0OTE1MmJjZTEwZGJkNzE4ZTc5NWE2MTkxNzc2OCJ9"
+        },
+        {
+          "resource": "repo://developer-docs/install-pre-req-tools.md#L56-L145",
+          "version": "repo-lines-v1:sha256:7b24b5f03215b8231c5eb9383b83367e3783fe5ec08faa356441d128c5cf5117:eyJzZWxlY3RlZExpbmVDb3VudCI6OTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YzA2YzU2MWQ1YzMyNzM0MzY4NTI2OGE0NmIzMzkxZjM5OThlZWU4OTBkMmJlNTFmMGQyMWNjNGE1M2FlNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMxZmEwOTJjZWRiMmI1OTFkMjAwYmMxOWIwYjNmZDZkNTU2MWRhMWYwNTA1MzZkOWFlYzY1Yzk3MjY2MTc5NWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkzNzQ4NTdkMzg4YjUzMDI0M2EwOTMwMDgwOWJiMDA4NWVjZjE3ZWM5NDU5YTk2Y2M2YWFjYzI5NjVjYWJmYTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_38ec5d8b7a474090a152817c3e7bed0a",
+      "statement": "Test runs progress through lifecycle states including queued, allocated, started, building, provstart, generating, up, running, rundone, ending, and finished, with a waiting state for resource acquisition back-off.",
+      "evidence": [
+        {
+          "resource": "repo://developer-docs/test-run-lifecycle.md#L1-L34",
+          "version": "repo-lines-v1:sha256:e92ecf770589bec867ea0b41aef4363623650a78e9bbb83cbb8c2596b173c1ac:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYzNDQ1MzRhMzQ5NGFiMzkzNjQzNjM0ZTExMzBlM2RhMzVmNWIyMzM3M2I3MzNkYjU5YmYzZTg3YzcxZGZkYjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2d3bfd7a69044685a0d507c79858b82b",
+      "statement": "The repository structure includes modules/ for source code, tools/ for build scripts and utilities, docs/ for documentation website source, and developer-docs/ for contributor technical notes.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L8-L11",
+          "version": "repo-lines-v1:sha256:7fd4e2169461dff36ab9efaef848f65865d8aa6d64a1f3f6478fe4da33fc6831:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzYyYzk4ZDYxNGU0NTI5MjYyNGQxOTljNGNkYjc3NWU1MTNiNWEwY2IwMjdiMWIzMmI4YzZlNWVkNWU2NmE1YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDJlNTZjNGViM2QzOGU3Mjg4YWYxODMxZTFmZGJhMDNkN2ViNzlmNzNiZDA4YjU3ZDg4MzgyNjYxYjFmYjkyZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmRmYmRlYTRjOWIyZWQwMzJjYzBjMjBjNWI4NDQwMmRhODRmYzcwN2RlODM4NWFjMzA4NTdhNTY3MDMzZmYwZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2ExMmI4ZDYyMThiZDM4NmEyOWU3NjJlM2JiNWI0MWZjMzg5NzgyYjQ4YTMxZTI2NDE4NmZkNmU1YWU0MzM3YyJ9"
+        },
+        {
+          "resource": "repo://developer-docs/README.md#L1-L7",
+          "version": "repo-lines-v1:sha256:695d9bc5ace2517ac616e7e0000e3a1c0f27edfc0fdc5fbdc016bda07ba63ab5:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjIyMmNmNzJhMWUyNWE1OWJjYTVhZDU5ZDE0YmU3NjU4ZTQ3MDg1ZDk1YjZkYjQwY2NhZTVhMzVkM2QwZTg5MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWI5ZTdhNTRhMzA5NWU2OGFhNTY0YzkxNTZmODdlYTYzNjgzMWY3NzNhZTE0YWE4ZjQyOWU4M2UwODNiYzBiZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_9742684fbf96474bbfc2fe93cfeb79c4",
+      "statement": "The set-version.sh script enables setting the Galasa version throughout the repository, used for version management across modules.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L42-L48",
+          "version": "repo-lines-v1:sha256:1d507d24696de21f37d79de6c316a4f2c85c17152a79e9a7669e43213cf83f46:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzFkMzMxMGMzYTNmNDY1OTg3NTdmZTFjNjdmNzhiZWEwNGY5MDQzNGFjMmMzMWI1M2FmZjY4N2MwNjRmNWZhOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZWQzNGQ4Mjk5YWE0YTg4NDY3NDUxMzUxNTFhZmU3YTg1ZGUwZTU0YjU0NmJkNmQ5MzZhYzZlY2JlNDhhMDU1YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTk4N2MyYWMzYTEwYjc4ZWM0ODIwZGMyYTZmYWUyZDA1NDQwYTU0NmM5ZDY4YjU2YWM0MDZiODA5MDBkNWYwMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDgxOThjZWI5MGFjYmUzOTgzZDU4NmE5YmJjZmFmMjE2NWQyMWQ3NmNiNmRjMDJhY2E5NzBhYmViMGI2NzVlMyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_75f92d0513d84e9697c88adbaa21feec",
+      "statement": "The GALASA_HOME environment variable controls the location of local test environment files, defaulting to ${HOME}/.galasa and respected by galasactl commands through the --galasahome flag override.",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L12-L20",
+          "version": "repo-lines-v1:sha256:bded881a2ebcaa281fe148b2201ce414267d0976210314eac849f8f26ed2db3b:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2JjNGNhNmQ1Yzg1ZTJjZmZkMTAwYWIwZWIwNGFlYTAzOGRhYzhlNTE1YzlhODZhYTk2NDQ1MGEyYmMwMzQ2NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzZmMTJiZjY5YTMyZWIwYjJhNmI2NTExYTQzNjliOTNjZjEyODdmNzYxY2JhNTE2NDE1ZDc3OTMwYTA5NjA2ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWFkMWFiYWRlZjNmNDRkOGI0NjA3ODIzMGY0ZjM3ZWZkYWJhNTVkM2JjYTc3YjEzNWIyMmQwYWYxZDUwNWQ4MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmU0NmM3NDk2Y2I2ZTQyZGI3NDVjNjM0MjQ0ZGU3YWI3MjE0MzJlMDdjMDIwOWZmM2MzMDAzMjFiNTM4MjExYyJ9"
+        },
+        {
+          "resource": "repo://modules/framework/README.md#L32-L39",
+          "version": "repo-lines-v1:sha256:dd1b02068db8d6e5e538966f3c5adf8da958b9fa737f8de2a77d0e845a5744d4:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTIwNzE2YzVkYTIwN2NlNzdjZDhjMTU3Y2YxMDFhMWM4NzViMTY0YTUxZDY4MTdjYjZjYzZjNDA0ZDY2YWYxOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2Y2NDI0N2JiMjY4YzRkMWNhZWE2NjYyYjMxYjcxOWY1MWIwZTM2NmRiOWFhZmYyNTFlNDllZjRmOTAyNGNjNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjQzYjIwZGFmZTk4NTQyNGJmOGQ1OGRjYzQ4OTIzOGRlNzA2MmUyZjk1N2QwOTE0NTY4Y2U0ZTUwYjI1OGIxNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzYxNmNiNjRkM2Q3MjE5ZWI0ZWU5YWJlODdhODAwMmM1ZDMzNzYzYjhhMzM4NTZhZmY5YmQ2YWQ0YzFhMGUxZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_b1f6e3606d0d4322a259dae13025e213",
+      "statement": "Manager projects can be created using galasactl with the --manager flag, specifying package name and optional manager name, similar to test project creation but generating manager infrastructure code.",
+      "evidence": [
+        {
+          "resource": "repo://modules/cli/README.md#L78-L97",
+          "version": "repo-lines-v1:sha256:f4cd73e792800963ed72843a33214c8f9fd4f3ed4b0dd7e150f8dbea256284b7:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU0Nzk0NTk5ZTZlN2JlOGJlMmQwMTJjNGUxZmUzM2YwZDJhMGM0NmE0NWRlMjE4OGM1YjhkOTc0ZWYwY2RkMjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YzA2YzU2MWQ1YzMyNzM0MzY4NTI2OGE0NmIzMzkxZjM5OThlZWU4OTBkMmJlNTFmMGQyMWNjNGE1M2FlNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhkYTJkZTZlNzJmYjMyNTNhNzE0Njc3YmU4OGU3YTJlNzY4ZTIzZGQ3NDMzNTIzZTVjODUxOGQ2MWM3M2Y0NjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlmMWY4OTE5ZmRlMTRmNWExMzllMDcyZGI5YzQ1YWVmZDYxY2Q4YWUzYzM3M2QxMmZmNjMwODlkMDU1ZmNjYjkifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.2",
+    "at": "2026-09-21T12:35:12.771Z"
+  }
+}
