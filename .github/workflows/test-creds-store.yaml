@@ -104,6 +104,7 @@ jobs:
       - name: Download CLI binary from development server
         if: ${{ steps.download-cli-binaries.outcome == 'failure' }}
         run: |
+          mkdir -p tools/galasactl
           curl -fLo tools/galasactl/galasactl-darwin-x86_64 \
             https://development.galasa.dev/main/binary/cli/galasactl-darwin-x86_64
 
