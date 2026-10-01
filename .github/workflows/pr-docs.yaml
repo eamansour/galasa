@@ -12,10 +12,6 @@ on:
         description: 'True if this module has been changed and should be rebuilt'
         required: true
         type: string
-      artifact-id:
-        description: 'The Workflow Run ID of the last workflow containing artifacts to download'
-        required: true
-        type: string
 
 jobs:
   log-unchanged:
@@ -57,18 +53,7 @@ jobs:
           name: cli
           path: /home/runner/.m2/repository
 
-      # The cli module wasn't changed, so download artifacts
-      # from the last successful workflow.
-      - name: Download cli from last successful workflow
-        if: ${{ steps.download-cli.outcome == 'failure' }}
-        uses: actions/download-artifact@v4
-        with:
-          name: cli
-          path: /home/runner/.m2/repository
-          github-token: ${{ github.token }}
-          run-id: ${{ inputs.artifact-id }}
-
-      # # We can download the zipped rest api doc from the framework module build 
+      # # We can download the zipped rest api doc from the framework module build
       # # and placed in the maven repository.
       # - name: Download rest api docs artifacts into this workflow
       #   id: download-rest-api-docs
@@ -100,18 +85,7 @@ jobs:
           name: javadoc
           path: /home/runner/.m2/repository
 
-      # The javadoc doc wasn't available/changed, so download artifacts
-      # from the last successful workflow.
-      - name: Download javadoc from last successful workflow
-        if: ${{ steps.download-javadoc.outcome == 'failure' }}
-        uses: actions/download-artifact@v4
-        with:
-          name: javadoc
-          path: /home/runner/.m2/repository
-          github-token: ${{ github.token }}
-          run-id: ${{ inputs.artifact-id }}
-
-      # We can download the framework openapi.yaml if it has changed. 
+      # We can download the framework openapi.yaml if it has changed.
       - name: Download openapi.yaml so we can show it in documentation
         id: download-openapi-yaml
         continue-on-error: true
@@ -119,17 +93,6 @@ jobs:
         with:
           name: framework
           path: /home/runner/.m2/repository
-
-      # The cli module wasn't changed, so download artifacts
-      # from the last successful workflow.
-      - name: Download openapi.yaml from main as it wasn't changed.
-        if: ${{ steps.download-openapi-yaml.outcome == 'failure' }}
-        uses: actions/download-artifact@v4
-        with:
-          name: framework
-          path: /home/runner/.m2/repository
-          github-token: ${{ github.token }}
-          run-id: ${{ inputs.artifact-id }}
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
@@ -155,7 +118,7 @@ jobs:
           set -o pipefail
           gradle publish --info --warning-mode all \
           --no-daemon --console plain \
-          -PsourceMaven=/home/runner/.m2/repository \
+          -PsourceMaven=${{ (steps.download-cli.outcome == 'success' || steps.download-javadoc.outcome == 'success' || steps.download-openapi-yaml.outcome == 'success') && '/home/runner/.m2/repository' || 'https://development.galasa.dev/main/maven-repo/obr' }} \
           -PcentralMaven=https://repo.maven.apache.org/maven2/ \
           -PtargetMaven=${{ github.workspace }}/docs/repo 2>&1 | tee build-docs.log      
 

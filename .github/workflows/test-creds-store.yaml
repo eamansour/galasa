@@ -7,11 +7,6 @@ name: Test Credentials Store Implementations
 
 on:
   workflow_call:
-    inputs:
-      artifact-id:
-        description: 'The Workflow Run ID of the last workflow containing artifacts to download'
-        required: false
-        type: string
   workflow_dispatch:
 
 jobs:
@@ -35,20 +30,11 @@ jobs:
           name: cli-binaries
           path: tools/galasactl
 
-      - name: Download CLI binaries from last successful workflow
+      - name: Download CLI binary from development server
         if: ${{ steps.download-cli-binaries.outcome == 'failure' }}
-        uses: actions/download-artifact@v4
-        with:
-          name: cli-binaries
-          path: tools/galasactl
-          github-token: ${{ github.token }}
-          run-id: ${{ inputs.artifact-id }}
-
-      - name: Download All 'dev.galasa' Artifacts
-        uses: actions/download-artifact@v4
-        with:
-          name: all-artifacts
-          path: modules/artifacts/dev/galasa
+        run: |
+          curl -fLo tools/galasactl/galasactl-windows-x86_64.exe \
+            https://development.galasa.dev/main/binary/cli/galasactl-windows-x86_64.exe
 
       - name: Set up JDK
         uses: actions/setup-java@v4
@@ -92,7 +78,7 @@ jobs:
           GALASA_EXTRA_BUNDLES: dev.galasa.creds.os
         run: |
           $galasaVersion = (Get-Content build.properties | Select-String '^GALASA_VERSION=').ToString().Split('=')[1]
-          galasactl.exe runs submit local --localMaven file:///${{ github.workspace }}/modules/artifacts --class dev.galasa.ivts/dev.galasa.ivts.framework.TestCredentialsStoreAccess --obr "mvn:dev.galasa/dev.galasa.ivts.obr/$galasaVersion/obr" --log -
+          galasactl.exe runs submit local --localMaven https://development.galasa.dev/main/maven-repo/obr --class dev.galasa.ivts/dev.galasa.ivts.framework.TestCredentialsStoreAccess --obr "mvn:dev.galasa/dev.galasa.ivts.obr/$galasaVersion/obr" --log -
 
   test-macos-credentials-store:
     name: Run TestCredentialsStoreAccess on macOS Runner
@@ -114,20 +100,11 @@ jobs:
           name: cli-binaries
           path: tools/galasactl
 
-      - name: Download CLI binaries from last successful workflow
+      - name: Download CLI binary from development server
         if: ${{ steps.download-cli-binaries.outcome == 'failure' }}
-        uses: actions/download-artifact@v4
-        with:
-          name: cli-binaries
-          path: tools/galasactl
-          github-token: ${{ github.token }}
-          run-id: ${{ inputs.artifact-id }}
-
-      - name: Download All 'dev.galasa' Artifacts
-        uses: actions/download-artifact@v4
-        with:
-          name: all-artifacts
-          path: modules/artifacts/dev/galasa
+        run: |
+          curl -fLo tools/galasactl/galasactl-darwin-x86_64 \
+            https://development.galasa.dev/main/binary/cli/galasactl-darwin-x86_64
 
       - name: Set up JDK
         uses: actions/setup-java@v4
@@ -191,7 +168,7 @@ jobs:
           GALASA_EXTRA_BUNDLES: dev.galasa.creds.os
         run: |
           galasaVersion=$(grep '^GALASA_VERSION=' build.properties | cut -d'=' -f2)
-          galasactl runs submit local --localMaven file:///${{ github.workspace }}/modules/artifacts --class dev.galasa.ivts/dev.galasa.ivts.framework.TestCredentialsStoreAccess --obr "mvn:dev.galasa/dev.galasa.ivts.obr/$galasaVersion/obr" --log -
+          galasactl runs submit local --localMaven https://development.galasa.dev/main/maven-repo/obr --class dev.galasa.ivts/dev.galasa.ivts.framework.TestCredentialsStoreAccess --obr "mvn:dev.galasa/dev.galasa.ivts.obr/$galasaVersion/obr" --log -
 
   report-failure:
     if: ${{ failure() && github.repository_owner == 'galasa-dev' && github.event_name == 'push' }}

@@ -12,10 +12,6 @@ on:
         description: 'True if this module has been changed and should be rebuilt'
         required: true
         type: string
-      artifact-id:
-        description: 'The Workflow Run ID of the last workflow containing artifacts to download'
-        required: true
-        type: string
 
 env:
   REGISTRY: ghcr.io
@@ -63,17 +59,6 @@ jobs:
           name: platform
           path: /home/runner/.m2/repository
 
-      # For any modules that weren't changed in this PR,
-      # download artifacts from the last successful workflow.
-      - name: Download platform from last successful workflow
-        if: ${{ steps.download-platform.outcome == 'failure' }}
-        uses: actions/download-artifact@v4
-        with:
-          name: platform
-          path: /home/runner/.m2/repository
-          github-token: ${{ github.token }}
-          run-id: ${{ inputs.artifact-id }}
-
       - name: Download wrapping artifacts from this workflow
         id: download-wrapping
         continue-on-error: true
@@ -81,17 +66,6 @@ jobs:
         with:
           name: wrapping
           path: /home/runner/.m2/repository
-
-      # The wrapping module wasn't changed, so download artifacts
-      # from the last successful workflow.
-      - name: Download wrapping from last successful workflow
-        if: ${{ steps.download-wrapping.outcome == 'failure' }}
-        uses: actions/download-artifact@v4
-        with:
-          name: wrapping
-          path: /home/runner/.m2/repository
-          github-token: ${{ github.token }}
-          run-id: ${{ inputs.artifact-id }}
 
       - name: Download gradle artifacts from this workflow
         id: download-gradle
@@ -101,17 +75,6 @@ jobs:
           name: gradle
           path: /home/runner/.m2/repository
 
-      # The gradle module wasn't changed, so download artifacts
-      # from the last successful workflow.
-      - name: Download gradle from last successful workflow
-        if: ${{ steps.download-gradle.outcome == 'failure' }}
-        uses: actions/download-artifact@v4
-        with:
-          name: gradle
-          path: /home/runner/.m2/repository
-          github-token: ${{ github.token }}
-          run-id: ${{ inputs.artifact-id }}
-
       - name: Download maven artifacts from this workflow
         id: download-maven
         continue-on-error: true
@@ -119,17 +82,6 @@ jobs:
         with:
           name: maven
           path: /home/runner/.m2/repository
-
-      # The maven module wasn't changed, so download artifacts
-      # from the last successful workflow.
-      - name: Download maven from last successful workflow
-        if: ${{ steps.download-maven.outcome == 'failure' }}
-        uses: actions/download-artifact@v4
-        with:
-          name: maven
-          path: /home/runner/.m2/repository
-          github-token: ${{ github.token }}
-          run-id: ${{ inputs.artifact-id }}
 
       - name: Download framework artifacts from this workflow
         id: download-framework
@@ -139,17 +91,6 @@ jobs:
           name: framework
           path: /home/runner/.m2/repository
 
-      # For any modules that weren't changed in this PR,
-      # download artifacts from the last successful workflow.
-      - name: Download framework artifacts from last successful workflow
-        if: ${{ steps.download-framework.outcome == 'failure' }}
-        uses: actions/download-artifact@v4
-        with:
-            name: framework
-            path: /home/runner/.m2/repository
-            github-token: ${{ github.token }}
-            run-id: ${{ inputs.artifact-id }}
-
       - name: Download managers artifacts from this workflow
         id: download-managers
         continue-on-error: true
@@ -157,17 +98,6 @@ jobs:
         with:
           name: managers
           path: /home/runner/.m2/repository
-
-      # The managers module wasn't changed, so download artifacts
-      # from the last successful workflow.
-      - name: Download managers artifacts from last successful workflow
-        if: ${{ steps.download-managers.outcome == 'failure' }}
-        uses: actions/download-artifact@v4
-        with:
-            name: managers
-            path: /home/runner/.m2/repository
-            github-token: ${{ github.token }}
-            run-id: ${{ inputs.artifact-id }}
 
       - name: Download obr artifacts from this workflow
         id: download-obr
@@ -177,17 +107,6 @@ jobs:
           name: obr
           path: /home/runner/.m2/repository
 
-      # For any modules that weren't changed in this PR,
-      # download artifacts from the last successful workflow.
-      - name: Download obr artifacts from last successful workflow
-        if: ${{ steps.download-obr.outcome == 'failure' }}
-        uses: actions/download-artifact@v4
-        with:
-            name: obr
-            path: /home/runner/.m2/repository
-            github-token: ${{ github.token }}
-            run-id: ${{ inputs.artifact-id }}
-
       # Pull down dependencies with Gradle and put them in the right places.
       - name: Gather dependencies using Gradle
         working-directory: ./modules/cli
@@ -195,7 +114,7 @@ jobs:
           set -o pipefail
           gradle installJarsIntoTemplates --info \
           --no-daemon --console plain \
-          -PsourceMaven=/home/runner/.m2/repository \
+          -PsourceMaven=${{ (steps.download-obr.outcome == 'success' || steps.download-platform.outcome == 'success') && '/home/runner/.m2/repository' || 'https://development.galasa.dev/main/maven-repo/obr' }} \
           -PcentralMaven=https://repo.maven.apache.org/maven2/ \
           -PtargetMaven=${{ github.workspace }}/repo 2>&1 | tee build.log
 
@@ -266,9 +185,9 @@ jobs:
           set -o pipefail
           gradle publish --info --warning-mode all \
           --no-daemon --console plain \
-          -PsourceMaven=/home/runner/.m2/repository \
+          -PsourceMaven=${{ (steps.download-obr.outcome == 'success' || steps.download-platform.outcome == 'success') && '/home/runner/.m2/repository' || 'https://development.galasa.dev/main/maven-repo/obr' }} \
           -PcentralMaven=https://repo.maven.apache.org/maven2/ \
-          -PtargetMaven=${{ github.workspace }}/modules/cli/repo 2>&1 | tee build-docs.log      
+          -PtargetMaven=${{ github.workspace }}/modules/cli/repo 2>&1 | tee build-docs.log
 
       - name: Upload CLI docs build log
         if: failure()
