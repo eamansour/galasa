@@ -32,9 +32,10 @@ jobs:
 
       - name: Download CLI binary from development server
         if: ${{ steps.download-cli-binaries.outcome == 'failure' }}
+        shell: powershell
         run: |
-          curl -fLo tools/galasactl/galasactl-windows-x86_64.exe \
-            https://development.galasa.dev/main/binary/cli/galasactl-windows-x86_64.exe
+          New-Item -ItemType Directory -Force -Path tools/galasactl | Out-Null
+          Invoke-WebRequest -Uri https://development.galasa.dev/main/binary/cli/galasactl-windows-x86_64.exe -OutFile tools/galasactl/galasactl-windows-x86_64.exe
 
       - name: Set up JDK
         uses: actions/setup-java@v4
@@ -103,6 +104,7 @@ jobs:
       - name: Download CLI binary from development server
         if: ${{ steps.download-cli-binaries.outcome == 'failure' }}
         run: |
+          mkdir -p tools/galasactl
           curl -fLo tools/galasactl/galasactl-darwin-x86_64 \
             https://development.galasa.dev/main/binary/cli/galasactl-darwin-x86_64
 
