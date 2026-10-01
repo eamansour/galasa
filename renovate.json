@@ -13,8 +13,10 @@
       ]
     },
     {
-      "matchPackagePatterns": ["^dev\\.galasa:"],
-      "enabled": false
+      "enabled": false,
+      "matchPackageNames": [
+        "/^dev\\.galasa:/"
+      ]
     }
   ],
   "hostRules": [
