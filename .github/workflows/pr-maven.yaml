@@ -12,10 +12,6 @@ on:
         description: 'True if this module has been changed and should be rebuilt'
         required: true
         type: string
-      artifact-id:
-        description: 'The Workflow Run ID of the last workflow containing artifacts to download'
-        required: true
-        type: string
 
 jobs:
 
@@ -66,27 +62,6 @@ jobs:
           name: gradle
           path: modules/artifacts
 
-      # For any modules that weren't changed in this PR,
-      # download artifacts from the last successful workflow.
-
-      - name: Download platform from last successful workflow
-        if: ${{ steps.download-platform.outcome == 'failure' }}
-        uses: actions/download-artifact@v4
-        with:
-          name: platform
-          path: modules/artifacts
-          github-token: ${{ github.token }}
-          run-id: ${{ inputs.artifact-id }}
-
-      - name: Download gradle artifacts from last successful workflow
-        if: ${{ steps.download-gradle.outcome == 'failure' }}
-        uses: actions/download-artifact@v4
-        with:
-          name: gradle
-          path: modules/artifacts
-          github-token: ${{ github.token }}
-          run-id: ${{ inputs.artifact-id }}
-      
       - name: Cache Maven dependencies
         uses: actions/cache@v4
         with:
@@ -102,7 +77,7 @@ jobs:
         run: |
           mvn -f galasa-maven-plugin/pom.xml deploy -X \
           -Dgpg.skip=true \
-          -Dgalasa.source.repo=file:${{ github.workspace }}/modules/artifacts \
+          -Dgalasa.source.repo=${{ (steps.download-gradle.outcome == 'success' || steps.download-platform.outcome == 'success') && format('file:{0}/modules/artifacts', github.workspace) || 'https://development.galasa.dev/main/maven-repo/obr' }} \
           -Dgalasa.central.repo=https://repo.maven.apache.org/maven2/ \
           -Dgalasa.release.repo=file:${{ github.workspace }}/modules/maven/repo \
           --batch-mode --errors --fail-at-end \
