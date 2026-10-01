@@ -12,10 +12,6 @@ on:
         description: 'True if this module has been changed and should be rebuilt'
         required: true
         type: string
-      artifact-id:
-        description: 'The Workflow Run ID of the last workflow containing artifacts to download'
-        required: true
-        type: string
       galasa-version:
         description: 'The version of Galasa we are building. FOr example: 0.42.0'
         required: true
@@ -130,81 +126,6 @@ jobs:
           name: managers
           path: modules/artifacts
 
-      # For any modules that weren't changed in this PR,
-      # download artifacts from the last successful workflow.
-
-      - name: Download galasabld artifacts from last successful workflow
-        if: ${{ steps.download-galasabld.outcome == 'failure' }}
-        uses: actions/download-artifact@v4
-        with:
-          name: galasabld
-          path: modules/artifacts/galasabld
-          github-token: ${{ github.token }}
-          run-id: ${{ inputs.artifact-id }}
-
-      - name: Download platform from last successful workflow
-        if: ${{ steps.download-platform.outcome == 'failure' }}
-        uses: actions/download-artifact@v4
-        with:
-          name: platform
-          path: modules/artifacts
-          github-token: ${{ github.token }}
-          run-id: ${{ inputs.artifact-id }}
-
-      - name: Download wrapping artifacts from last successful workflow
-        if: ${{ steps.download-wrapping.outcome == 'failure' }}
-        uses: actions/download-artifact@v4
-        with:
-            name: wrapping
-            path: modules/artifacts
-            github-token: ${{ github.token }}
-            run-id: ${{ inputs.artifact-id }}
-
-      - name: Download gradle artifacts from last successful workflow
-        if: ${{ steps.download-gradle.outcome == 'failure' }}
-        uses: actions/download-artifact@v4
-        with:
-            name: gradle
-            path: modules/artifacts
-            github-token: ${{ github.token }}
-            run-id: ${{ inputs.artifact-id }}
-
-      - name: Download maven artifacts from last successful workflow
-        if: ${{ steps.download-maven.outcome == 'failure' }}
-        uses: actions/download-artifact@v4
-        with:
-            name: maven
-            path: modules/artifacts
-            github-token: ${{ github.token }}
-            run-id: ${{ inputs.artifact-id }}
-
-      - name: Download framework artifacts from last successful workflow
-        if: ${{ steps.download-framework.outcome == 'failure' }}
-        uses: actions/download-artifact@v4
-        with:
-            name: framework
-            path: modules/artifacts
-            github-token: ${{ github.token }}
-            run-id: ${{ inputs.artifact-id }}
-
-      - name: Download extensions artifacts from last successful workflow
-        if: ${{ steps.download-extensions.outcome == 'failure' }}
-        uses: actions/download-artifact@v4
-        with:
-          name: extensions
-          path: modules/artifacts
-          github-token: ${{ github.token }}
-          run-id: ${{ inputs.artifact-id }}
-
-      - name: Download managers artifacts from last successful workflow
-        if: ${{ steps.download-managers.outcome == 'failure' }}
-        uses: actions/download-artifact@v4
-        with:
-            name: managers
-            path: modules/artifacts
-            github-token: ${{ github.token }}
-            run-id: ${{ inputs.artifact-id }}
-
       - name:  Generate Galasa BOM
         if: ${{ steps.download-galasabld.outcome == 'success' }}
         run: |
@@ -214,7 +135,10 @@ jobs:
       - name:  Generate Galasa BOM
         if: ${{ steps.download-galasabld.outcome == 'failure' }}
         run: |
-          docker run --rm -v ${{ github.workspace }}/modules:/var/root/ ghcr.io/${{ env.NAMESPACE }}/galasabld-amd64:main template --releaseMetadata var/root/framework/release.yaml --releaseMetadata /var/root/extensions/release.yaml --releaseMetadata /var/root/managers/release.yaml --releaseMetadata /var/root/obr/release.yaml --template /var/root/obr/galasa-bom/pom.template --output /var/root/obr/galasa-bom/pom.xml --bom
+          curl -fLo modules/artifacts/galasabld/galasabld-linux-amd64 \
+            https://development.galasa.dev/main/binary/bld/galasabld-linux-amd64
+          chmod +x ./modules/artifacts/galasabld/galasabld-linux-amd64
+          ./modules/artifacts/galasabld/galasabld-linux-amd64 template --releaseMetadata ${{ github.workspace }}/modules/framework/release.yaml --releaseMetadata ${{ github.workspace }}/modules/extensions/release.yaml --releaseMetadata ${{ github.workspace }}/modules/managers/release.yaml --releaseMetadata ${{ github.workspace }}/modules/obr/release.yaml --template ${{ github.workspace }}/modules/obr/galasa-bom/pom.template --output ${{ github.workspace }}/modules/obr/galasa-bom/pom.xml --bom
           
       - name: Display Galasa BOM pom.xml
         run: |
@@ -236,7 +160,7 @@ jobs:
           set -o pipefail
           mvn -f galasa-bom/pom.xml deploy -X \
           -Dgpg.skip=true \
-          -Dgalasa.source.repo=file:${{ github.workspace }}/modules/artifacts \
+          -Dgalasa.source.repo=${{ (steps.download-managers.outcome == 'success' || steps.download-platform.outcome == 'success') && format('file:{0}/modules/artifacts', github.workspace) || 'https://development.galasa.dev/main/maven-repo/obr' }} \
           -Dgalasa.central.repo=https://repo.maven.apache.org/maven2/ \
           -Dgalasa.release.repo=file:${{ github.workspace }}/modules/obr/repo \
           --batch-mode --errors --fail-at-end \
@@ -259,7 +183,7 @@ jobs:
       - name:  Generate Galasa OBR
         if: ${{ steps.download-galasabld.outcome == 'failure' }}
         run: |
-          docker run --rm -v ${{ github.workspace }}/modules:/var/root/ ghcr.io/${{ env.NAMESPACE }}/galasabld-amd64:main template --releaseMetadata var/root/framework/release.yaml --releaseMetadata /var/root/extensions/release.yaml --releaseMetadata /var/root/managers/release.yaml --releaseMetadata /var/root/obr/release.yaml --template /var/root/obr/dev.galasa.uber.obr/pom.template --output /var/root/obr/dev.galasa.uber.obr/pom.xml --obr
+          ./modules/artifacts/galasabld/galasabld-linux-amd64 template --releaseMetadata ${{ github.workspace }}/modules/framework/release.yaml --releaseMetadata ${{ github.workspace }}/modules/extensions/release.yaml --releaseMetadata ${{ github.workspace }}/modules/managers/release.yaml --releaseMetadata ${{ github.workspace }}/modules/obr/release.yaml --template ${{ github.workspace }}/modules/obr/dev.galasa.uber.obr/pom.template --output ${{ github.workspace }}/modules/obr/dev.galasa.uber.obr/pom.xml --obr
           
       - name: Display Galasa OBR pom.xml
         run: |
@@ -271,7 +195,7 @@ jobs:
           set -o pipefail
           mvn -f dev.galasa.uber.obr/pom.xml deploy -X \
           -Dgpg.skip=true \
-          -Dgalasa.source.repo=file:${{ github.workspace }}/modules/artifacts \
+          -Dgalasa.source.repo=${{ (steps.download-managers.outcome == 'success' || steps.download-platform.outcome == 'success') && format('file:{0}/modules/artifacts', github.workspace) || 'https://development.galasa.dev/main/maven-repo/obr' }} \
           -Dgalasa.central.repo=https://repo.maven.apache.org/maven2/ \
           -Dgalasa.release.repo=file:${{ github.workspace }}/modules/obr/repo \
           --batch-mode --errors --fail-at-end \
@@ -422,82 +346,6 @@ jobs:
             name: managers
             path: modules/artifacts
 
-      # For any modules that weren't changed in this PR,
-      # download artifacts from the last successful workflow.
-
-      - name: Download galasabld artifacts from last successful workflow
-        if: ${{ steps.download-galasabld.outcome == 'failure' }}
-        uses: actions/download-artifact@v4
-        with:
-          name: galasabld
-          path: modules/artifacts/galasabld
-          github-token: ${{ github.token }}
-          run-id: ${{ inputs.artifact-id }}
-
-      # Commented out for now as there are no historical runs with Platform artifacts.
-      - name: Download platform from last successful workflow
-        if: ${{ steps.download-platform.outcome == 'failure' }}
-        uses: actions/download-artifact@v4
-        with:
-          name: platform
-          path: modules/artifacts
-          github-token: ${{ github.token }}
-          run-id: ${{ inputs.artifact-id }}
-
-      - name: Download wrapping artifacts from last successful workflow
-        if: ${{ steps.download-wrapping.outcome == 'failure' }}
-        uses: actions/download-artifact@v4
-        with:
-            name: wrapping
-            path: modules/artifacts
-            github-token: ${{ github.token }}
-            run-id: ${{ inputs.artifact-id }}
-
-      - name: Download gradle artifacts from last successful workflow
-        if: ${{ steps.download-gradle.outcome == 'failure' }}
-        uses: actions/download-artifact@v4
-        with:
-            name: gradle
-            path: modules/artifacts
-            github-token: ${{ github.token }}
-            run-id: ${{ inputs.artifact-id }}
-
-      - name: Download maven artifacts from last successful workflow
-        if: ${{ steps.download-maven.outcome == 'failure' }}
-        uses: actions/download-artifact@v4
-        with:
-            name: maven
-            path: modules/artifacts
-            github-token: ${{ github.token }}
-            run-id: ${{ inputs.artifact-id }}
-
-      - name: Download framework artifacts from last successful workflow
-        if: ${{ steps.download-framework.outcome == 'failure' }}
-        uses: actions/download-artifact@v4
-        with:
-            name: framework
-            path: modules/artifacts
-            github-token: ${{ github.token }}
-            run-id: ${{ inputs.artifact-id }}
-
-      - name: Download extensions artifacts from last successful workflow
-        if: ${{ steps.download-extensions.outcome == 'failure' }}
-        uses: actions/download-artifact@v4
-        with:
-          name: extensions
-          path: modules/artifacts
-          github-token: ${{ github.token }}
-          run-id: ${{ inputs.artifact-id }}
-
-      - name: Download managers artifacts from last successful workflow
-        if: ${{ steps.download-managers.outcome == 'failure' }}
-        uses: actions/download-artifact@v4
-        with:
-            name: managers
-            path: modules/artifacts
-            github-token: ${{ github.token }}
-            run-id: ${{ inputs.artifact-id }}
-
       - name: Build Galasa Javadoc
         if: ${{ steps.download-galasabld.outcome == 'success' }}
         run: |
@@ -507,7 +355,10 @@ jobs:
       - name: Build Galasa Javadoc
         if: ${{ steps.download-galasabld.outcome == 'failure' }}
         run: |
-          docker run --rm -v ${{ github.workspace }}/modules:/var/root/ ghcr.io/${{ env.NAMESPACE }}/galasabld-amd64:main template --releaseMetadata var/root/framework/release.yaml --releaseMetadata /var/root/extensions/release.yaml --releaseMetadata /var/root/managers/release.yaml --releaseMetadata /var/root/obr/release.yaml --template /var/root/obr/javadocs/pom.template --output /var/root/obr/javadocs/pom.xml --javadoc
+          curl -fLo modules/artifacts/galasabld/galasabld-linux-amd64 \
+            https://development.galasa.dev/main/binary/bld/galasabld-linux-amd64
+          chmod +x ./modules/artifacts/galasabld/galasabld-linux-amd64
+          ./modules/artifacts/galasabld/galasabld-linux-amd64 template --releaseMetadata ${{ github.workspace }}/modules/framework/release.yaml --releaseMetadata ${{ github.workspace }}/modules/extensions/release.yaml --releaseMetadata ${{ github.workspace }}/modules/managers/release.yaml --releaseMetadata ${{ github.workspace }}/modules/obr/release.yaml --template ${{ github.workspace }}/modules/obr/javadocs/pom.template --output ${{ github.workspace }}/modules/obr/javadocs/pom.xml --javadoc
 
       - name: Display Galasa Javadoc pom.xml 
         run: |
@@ -531,7 +382,7 @@ jobs:
           mkdir -p ${{ github.workspace }}/modules/obr/javadocs/temp
           mvn -f pom.xml deploy -X \
           -Dgpg.skip=true \
-          -Dgalasa.source.repo=file:${{ github.workspace }}/modules/artifacts \
+          -Dgalasa.source.repo=${{ (steps.download-managers.outcome == 'success' || steps.download-platform.outcome == 'success') && format('file:{0}/modules/artifacts', github.workspace) || 'https://development.galasa.dev/main/maven-repo/obr' }} \
           -Dgalasa.central.repo=https://repo.maven.apache.org/maven2/ \
           -Dgalasa.release.repo=file:${{ github.workspace }}/modules/obr/javadocs/temp \
           -Dmaven.javadoc.failOnError=false \
