@@ -8,8 +8,13 @@
       "matchDatasources": ["maven"],
       "registryUrls": [
         "https://maven-central.storage-download.googleapis.com/maven2/",
-        "https://repo.maven.apache.org/maven2"
+        "https://repo.maven.apache.org/maven2",
+        "https://plugins.gradle.org/m2/"
       ]
+    },
+    {
+      "matchPackagePatterns": ["^dev\\.galasa:"],
+      "enabled": false
     }
   ],
   "hostRules": [
