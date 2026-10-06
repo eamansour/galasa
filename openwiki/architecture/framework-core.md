@@ -37,7 +37,7 @@ sources:
     resource: repo://modules/framework/galasa-parent/settings.gradle
   - id: openwiki-source-19c289d51521684350e01d7c
     resource: repo://modules/framework/README.md
-generated: { by: "openwiki/0.5.2", at: "2026-09-21T12:35:12.771Z" }
+generated: { by: "openwiki/0.7.0", at: "2026-10-05T15:23:02.491Z" }
 ---
 
 # Framework Core Architecture
@@ -423,7 +423,11 @@ A separate resource management process monitors DSS for abandoned resources:
 
 ## Related Components
 
+<!-- openwiki: broken internal link [/openwiki/architecture/storage-services.md] link "/openwiki/architecture/storage-services.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - **[Storage Services](/openwiki/architecture/storage-services.md)**: CPS, DSS, RAS, and credentials store implementations
+<!-- openwiki: broken internal link [/openwiki/architecture/managers.md] link "/openwiki/architecture/managers.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - **[Managers](/openwiki/architecture/managers.md)**: Pluggable components that provision and manage resources
+<!-- openwiki: broken internal link [/openwiki/concepts/test-execution-lifecycle.md] link "/openwiki/concepts/test-execution-lifecycle.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - **[Test Execution Lifecycle](/openwiki/concepts/test-execution-lifecycle.md)**: Detailed test execution flow
+<!-- openwiki: broken internal link [/openwiki/operations/galasa-boot.md] link "/openwiki/operations/galasa-boot.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - **[Galasa Boot](/openwiki/operations/galasa-boot.md)**: Bootstrap launcher and command-line options

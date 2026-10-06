@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:bfd7522fbb1d00f9751c1b0804106bfb755feda9186427bd84189790576a6628",
+  "pageVersion": "sha256:3c8f7cc4b6fd05ad54ea672a225528b30e6fa12e216814edd9e0c1af505d3fd0",
   "claims": [
     {
       "id": "claim_e857a843387d45b4870a2dcd4b150dc7",
@@ -294,17 +294,41 @@
         },
         {
           "resource": "repo://modules/cli/temp/home/ras/L1/run.log",
-          "version": "repo-file-v1:sha256:4cd5823c31b12a73bf804cbed3127122cd6e9a78429ef5e71b1cda302fa94ded"
+          "version": "repo-file-v1:sha256:6d227113e80ea24f8407480f0779876db4bbf8f1517d8c6d49e8e4c8d4a1b2d0"
         },
         {
           "resource": "repo://modules/cli/temp/home/ras/L1/structure.json",
-          "version": "repo-file-v1:sha256:c52c819bd33609a9d26129f689b658dc3f50733b2e2e879ae5373f2348f83e79"
+          "version": "repo-file-v1:sha256:af970ab36f1b46ac3dbc362fac1b4e0fb9ab4c1137956fc931012bfe6570d7f6"
+        },
+        {
+          "resource": "repo://modules/cli/temp/home/ras/L2/artifacts.json",
+          "version": "repo-file-v1:sha256:497bd3abcd24fab660fe20de7618e38ab1278eb962103a4e6e8422da4b1013eb"
+        },
+        {
+          "resource": "repo://modules/cli/temp/home/ras/L2/run.log",
+          "version": "repo-file-v1:sha256:5d420f3b91a4a4d4998adc56583a4f1d7521215ac1d46bc3ceb3ee5bc6231ed3"
+        },
+        {
+          "resource": "repo://modules/cli/temp/home/ras/L2/structure.json",
+          "version": "repo-file-v1:sha256:a61adbca34dcc743f7c6d743076bfed26c12be69a374deb5d261c8748e980bc9"
+        },
+        {
+          "resource": "repo://modules/cli/temp/home/ras/L3/artifacts.json",
+          "version": "repo-file-v1:sha256:497bd3abcd24fab660fe20de7618e38ab1278eb962103a4e6e8422da4b1013eb"
+        },
+        {
+          "resource": "repo://modules/cli/temp/home/ras/L3/run.log",
+          "version": "repo-file-v1:sha256:5b6e60ab41b0b1ad3f196b7bd42ce33bf86a9ec3ca64e76e18865485a26eb52e"
+        },
+        {
+          "resource": "repo://modules/cli/temp/home/ras/L3/structure.json",
+          "version": "repo-file-v1:sha256:0d3da221867bde207bbabe76f7c18e45629b349508c4ee597ebdfaf9800437c7"
         }
       ]
     }
   ],
   "verification": {
-    "by": "openwiki/0.5.2",
-    "at": "2026-09-21T12:35:12.771Z"
+    "by": "openwiki/0.7.0",
+    "at": "2026-10-05T15:23:02.491Z"
   }
 }

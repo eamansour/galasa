@@ -29,7 +29,7 @@ sources:
     resource: repo://modules/obr/javadocs/target/sources/k8s/server-api.yaml
   - id: openwiki-source-67c239f7e90988f71b682011
     resource: repo://modules/obr/javadocs/target/sources/k8s/server-engine-controller.yaml
-generated: { by: "openwiki/0.5.2", at: "2026-09-21T12:35:12.771Z" }
+generated: { by: "openwiki/0.7.0", at: "2026-10-05T15:23:02.491Z" }
 ---
 
 # Galasa Architecture Overview
@@ -345,8 +345,13 @@ Galasa provides well-defined extension points for customization:
 
 ## Related Documentation
 
+<!-- openwiki: broken internal link [/openwiki/architecture/framework-core.md] link "/openwiki/architecture/framework-core.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - [Framework Core Architecture](/openwiki/architecture/framework-core.md) - Detailed framework internals
+<!-- openwiki: broken internal link [/openwiki/architecture/managers.md] link "/openwiki/architecture/managers.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - [Manager Architecture](/openwiki/architecture/managers.md) - Manager lifecycle and development
+<!-- openwiki: broken internal link [/openwiki/architecture/storage-services.md] link "/openwiki/architecture/storage-services.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - [Storage Services](/openwiki/architecture/storage-services.md) - CPS, DSS, RAS, and Credentials Store
+<!-- openwiki: broken internal link [/openwiki/architecture/cli.md] link "/openwiki/architecture/cli.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - [CLI Architecture](/openwiki/architecture/cli.md) - Command-line interface design
+<!-- openwiki: broken internal link [/openwiki/concepts/test-execution-lifecycle.md] link "/openwiki/concepts/test-execution-lifecycle.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - [Test Execution Lifecycle](/openwiki/concepts/test-execution-lifecycle.md) - Complete test run state machine

@@ -35,7 +35,7 @@ sources:
     resource: repo://modules/managers/galasa-managers-parent/galasa-managers-comms-parent/dev.galasa.http.manager/src/main/java/dev/galasa/http/internal/HttpManagerField.java
   - id: openwiki-source-99a2f95b2a80bf064687a53c
     resource: repo://modules/managers/galasa-managers-parent/galasa-managers-comms-parent/dev.galasa.http.manager/src/main/java/dev/galasa/http/internal/HttpManagerImpl.java
-generated: { by: "openwiki/0.5.2", at: "2026-09-21T12:35:12.771Z" }
+generated: { by: "openwiki/0.7.0", at: "2026-10-05T15:23:02.491Z" }
 ---
 
 # Creating a Custom Galasa Manager
@@ -59,6 +59,8 @@ Before creating a Manager, ensure you have:
 - Galasa CLI (`galasactl`) installed and initialized
 - Java 17 or later
 - Maven 3.6+ or Gradle 7+ (depending on your build preference)
+<!-- openwiki: broken internal link [/openwiki/concepts/manager-lifecycle.md] link "/openwiki/concepts/manager-lifecycle.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
+<!-- openwiki: broken internal link [/openwiki/architecture/managers.md] link "/openwiki/architecture/managers.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - Understanding of the [Manager lifecycle](/openwiki/concepts/manager-lifecycle.md) and [architecture](/openwiki/architecture/managers.md)
 
 ## Step 1: Generate Manager Skeleton
@@ -1103,7 +1105,11 @@ public void provisionBuild() throws ManagerException, ResourceUnavailableExcepti
 
 ## Next Steps
 
+<!-- openwiki: broken internal link [/modules/managers/] link "/modules/managers/" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - Study [existing Managers](/modules/managers/) for patterns and examples
+<!-- openwiki: broken internal link [/openwiki/concepts/manager-lifecycle.md] link "/openwiki/concepts/manager-lifecycle.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - Review the [Manager lifecycle documentation](/openwiki/concepts/manager-lifecycle.md)
+<!-- openwiki: broken internal link [/openwiki/architecture/managers.md] link "/openwiki/architecture/managers.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - Understand [Manager architecture](/openwiki/architecture/managers.md)
+<!-- openwiki: broken internal link [/openwiki/workflows/building-test-projects.md] link "/openwiki/workflows/building-test-projects.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - Learn about [building test projects](/openwiki/workflows/building-test-projects.md) that use your Manager

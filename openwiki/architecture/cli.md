@@ -4,8 +4,8 @@ title: CLI Architecture and Structure
 description: Architecture of galasactl command-line tool, its Go implementation, command structure, and API communication patterns
 tags: [cli, galasactl, golang, cobra, architecture, api-client, authentication]
 verified:
-  - by: openwiki/0.5.2
-    at: 2026-09-21T12:35:12.771Z
+  - by: openwiki/0.7.0
+    at: 2026-10-05T15:23:02.491Z
 sources:
   - id: openwiki-source-be0cdf9734b7674d36ba718e
     resource: repo://modules/cli/cmd/galasactl/main.go

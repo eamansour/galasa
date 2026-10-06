@@ -3,9 +3,6 @@ type: operations-guide
 title: Local Development Environment Setup
 description: Complete guide to setting up a local Galasa development environment including GALASA_HOME structure, property files, local storage backends, and debugging configuration.
 tags: [local-development, environment-setup, galasa-home, properties, storage-backends, debugging]
-verified:
-  - by: openwiki/0.5.2
-    at: 2026-09-21T12:35:12.771Z
 sources:
   - id: openwiki-source-74c80f790cd0bc057e9a4e99
     resource: repo://.vscode/settings.json
@@ -37,6 +34,18 @@ sources:
     resource: repo://modules/cli/temp/home/ras/L1/run.log
   - id: openwiki-source-8e285b9482179bb3ff00560d
     resource: repo://modules/cli/temp/home/ras/L1/structure.json
+  - id: openwiki-source-b0e9d4952020132c3533a00e
+    resource: repo://modules/cli/temp/home/ras/L2/artifacts.json
+  - id: openwiki-source-cea9d082d6a7c21d9baa9439
+    resource: repo://modules/cli/temp/home/ras/L2/run.log
+  - id: openwiki-source-9c7626668ed2cc0452abd4ca
+    resource: repo://modules/cli/temp/home/ras/L2/structure.json
+  - id: openwiki-source-aa04ffe916bd944ea32c7a48
+    resource: repo://modules/cli/temp/home/ras/L3/artifacts.json
+  - id: openwiki-source-e43ca3a1b6486d093a4868ce
+    resource: repo://modules/cli/temp/home/ras/L3/run.log
+  - id: openwiki-source-643c2e2d65865ab51eb7c163
+    resource: repo://modules/cli/temp/home/ras/L3/structure.json
   - id: openwiki-source-f888fdbbee1c3e79c1e1b105
     resource: repo://modules/framework/dev-instructions.md
   - id: openwiki-source-9904ee682e3d8cb87c6ba678
@@ -45,7 +54,10 @@ sources:
     resource: repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/Launcher.java
   - id: openwiki-source-2f0af65214aca74a6cff299a
     resource: repo://modules/framework/test-api-locally.md
-generated: { by: "openwiki/0.5.2", at: "2026-09-21T12:35:12.771Z" }
+generated: { by: "openwiki/0.7.0", at: "2026-10-05T15:23:02.491Z" }
+verified:
+  - by: openwiki/0.7.0
+    at: 2026-10-05T15:23:02.491Z
 ---
 
 # Local Development Environment Setup
@@ -929,7 +941,11 @@ Recommended settings for Galasa development in `.vscode/settings.json`:
 
 ## Related Documentation
 
+<!-- openwiki: broken internal link [/openwiki/concepts/configuration-properties.md] link "/openwiki/concepts/configuration-properties.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - [Configuration Property System (CPS)](/openwiki/concepts/configuration-properties.md) - Detailed CPS architecture and usage
+<!-- openwiki: broken internal link [/openwiki/integrations/storage-backends.md] link "/openwiki/integrations/storage-backends.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - [Storage Backend Implementations](/openwiki/integrations/storage-backends.md) - External storage backend setup
+<!-- openwiki: broken internal link [/openwiki/operations/galasa-boot.md] link "/openwiki/operations/galasa-boot.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - [Galasa Boot JAR](/openwiki/operations/galasa-boot.md) - Boot JAR parameters and operation
+<!-- openwiki: broken internal link [/openwiki/architecture/cli.md] link "/openwiki/architecture/cli.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - [CLI Architecture](/openwiki/architecture/cli.md) - CLI command structure and implementation

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:edcc9b40ce32801159345d45a2955f82951f04216c81ba25316fe76ccdc7079f",
+  "pageVersion": "sha256:89bccc2c71c7d505f18688fd3c49b09f0dd511e3cb28acdcb0d6bcb574117ca0",
   "claims": [
     {
       "id": "claim_cd88d06b254d4ade877248082d11a0b3",
@@ -228,11 +228,11 @@
       "evidence": [
         {
           "resource": "repo://modules/cli/pkg/galasaapi/client.go",
-          "version": "repo-file-v1:sha256:dacb996f2fc82bd168004adadb42edfbe35584ecbb51fb597ab3f4df09ad1853"
+          "version": "repo-file-v1:sha256:6ffa38416a1d4f91ed63c61ad67011424684db7a6df856590a4f2bdf0f6f5653"
         },
         {
           "resource": "repo://modules/cli/pkg/galasaapi/configuration.go",
-          "version": "repo-file-v1:sha256:e347a05d81a380429e39bf758b8fe192d248525a7b009d3f1ba0c5d13ab631d1"
+          "version": "repo-file-v1:sha256:4cc32566bbbac7c87e3131a6dfcb25b0c64f3606b9be0e6bdf6ef530a409a168"
         }
       ]
     },
@@ -276,7 +276,7 @@
     }
   ],
   "verification": {
-    "by": "openwiki/0.5.2",
-    "at": "2026-09-21T12:35:12.771Z"
+    "by": "openwiki/0.7.0",
+    "at": "2026-10-05T15:23:02.491Z"
   }
 }

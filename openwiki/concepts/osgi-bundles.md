@@ -4,8 +4,8 @@ title: OSGi Bundle Architecture and OBRs
 description: Explains OSGi bundles, bundle metadata, and the OSGi Bundle Repository (OBR) system used for packaging and distributing Galasa components and tests.
 tags: [osgi, bundles, obr, packaging, build, dependencies, modularity]
 verified:
-  - by: openwiki/0.5.2
-    at: 2026-09-21T12:35:12.771Z
+  - by: openwiki/0.7.0
+    at: 2026-10-05T15:23:02.491Z
 sources:
   - id: openwiki-source-8f6d0fdde8a443bdfbd9179a
     resource: repo://docs/content/docs/cli-command-reference/setting-up-galasa-project.md
@@ -45,7 +45,7 @@ sources:
     resource: repo://modules/wrapping/dev.galasa.wrapping.kafka.clients/pom.xml
   - id: openwiki-source-65dec544d823b137b4381ee9
     resource: repo://modules/wrapping/README.md
-generated: { by: "openwiki/0.5.2", at: "2026-09-21T12:35:12.771Z" }
+generated: { by: "openwiki/0.7.0", at: "2026-10-05T15:23:02.491Z" }
 ---
 
 # OSGi Bundle Architecture and OBRs
@@ -297,14 +297,14 @@ OBRs serve several purposes in Galasa:
 An OBR file (`repository.obr` or `galasa.obr`) is an XML document listing bundles and their capabilities:
 
 ```xml
-<repository name="dev.galasa:dev.galasa.uber.obr:1.1.1" lastmodified="20240115-143022">
-    <resource id="dev.galasa.framework/1.1.1" 
+<repository name="dev.galasa:dev.galasa.uber.obr:1.1.2" lastmodified="20240115-143022">
+    <resource id="dev.galasa.framework/1.1.2" 
               symbolicname="dev.galasa.framework" 
-              version="1.1.1"
-              uri="mvn:dev.galasa/dev.galasa.framework/1.1.1/jar">
+              version="1.1.2"
+              uri="mvn:dev.galasa/dev.galasa.framework/1.1.2/jar">
         <capability name="package">
             <p n="package" v="dev.galasa.framework"/>
-            <p n="version" t="version" v="1.1.1"/>
+            <p n="version" t="version" v="1.1.2"/>
         </capability>
         <require name="package">
             <p n="package" v="org.apache.commons.io"/>
@@ -319,6 +319,20 @@ Each `<resource>` represents a bundle with:
 - **Requirements**: Packages and services the bundle needs
 - **URI**: Location to download the bundle (Maven coordinates or file path)
 
+### The Uber OBR
+
+The `dev.galasa.uber.obr` project is the primary OBR that aggregates all Galasa framework, extension, and manager bundles into a comprehensive repository. This uber OBR includes:
+
+- **Core Framework**: `dev.galasa`, `dev.galasa.framework`, and framework subsystems (auth, metrics, resource management)
+- **Extensions**: Storage implementations (CouchDB, etcd), credential stores, event publishers
+- **Managers**: All platform managers (CICS, Docker, Kubernetes, Linux, Windows, z/OS, etc.)
+- **Manager Fragments**: Platform-specific implementations (z/OSMF, RSE API)
+- **API Server Bundles**: Framework REST API components for the Galasa ecosystem
+- **Wrapped Dependencies**: OSGi-wrapped third-party libraries (HttpClient5, Kafka, Selenium, gRPC, etc.)
+- **Third-Party OSGi Bundles**: Commons libraries, Apache Felix components, logging frameworks
+
+This single OBR allows the Galasa CLI and ecosystem to resolve all framework and manager dependencies from one source.
+
 ### Building OBRs with Maven
 
 The Galasa Maven plugin builds OBRs from Maven projects with `<packaging>galasa-obr</packaging>`:
@@ -327,7 +341,7 @@ The Galasa Maven plugin builds OBRs from Maven projects with `<packaging>galasa-
 <project>
     <groupId>dev.galasa</groupId>
     <artifactId>dev.galasa.uber.obr</artifactId>
-    <version>1.1.1</version>
+    <version>1.1.2</version>
     <packaging>galasa-obr</packaging>
 
     <dependencies>
@@ -366,7 +380,7 @@ The Galasa Gradle OBR plugin provides similar functionality for Gradle projects:
 
 ```groovy
 plugins {
-    id 'dev.galasa.obr' version '1.1.1'
+    id 'dev.galasa.obr' version '1.1.2'
     id 'maven-publish'
 }
 
