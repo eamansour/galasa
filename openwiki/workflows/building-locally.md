@@ -33,7 +33,7 @@ sources:
     resource: repo://tools/detect-secrets.sh
   - id: openwiki-source-1f749f25c6e2e134e6cf2640
     resource: repo://tools/setup-minikube-docker-registry.sh
-generated: { by: "openwiki/0.5.2", at: "2026-09-21T12:35:12.771Z" }
+generated: { by: "openwiki/0.7.0", at: "2026-10-05T15:23:02.491Z" }
 ---
 
 # Building the Repository Locally
@@ -46,6 +46,7 @@ Before building Galasa locally, ensure your system has all required tools instal
 
 ### Option 1: Development Container (Recommended)
 
+<!-- openwiki: broken internal link [/openwiki/operations/dev-container.md] link "/openwiki/operations/dev-container.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 The development container provides a pre-configured environment with all required tools. See the [Development Container Setup](/openwiki/operations/dev-container.md) guide for complete instructions.
 
 **Prerequisites:**
@@ -711,8 +712,11 @@ Local builds use the same scripts and build logic as CI/CD, ensuring consistency
 
 ## Related Documentation
 
+<!-- openwiki: broken internal link [/openwiki/concepts/modules.md] link "/openwiki/concepts/modules.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - [Repository Module Structure](/openwiki/concepts/modules.md) - Detailed module architecture
+<!-- openwiki: broken internal link [/openwiki/operations/dev-container.md] link "/openwiki/operations/dev-container.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - [Development Container Setup](/openwiki/operations/dev-container.md) - Setting up the dev container
+<!-- openwiki: broken internal link [/openwiki/operations/local-development.md] link "/openwiki/operations/local-development.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - [Local Development Environment](/openwiki/operations/local-development.md) - Configuring GALASA_HOME
 - [Contributing Guidelines](repo://CONTRIBUTING.md) - How to contribute code
 

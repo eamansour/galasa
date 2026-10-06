@@ -15,7 +15,7 @@ sources:
     resource: repo://developer-docs/install-pre-req-tools.md
   - id: openwiki-source-23775c3de52f3ab95a13cb8b
     resource: repo://README.md
-generated: { by: "openwiki/0.5.2", at: "2026-09-21T12:35:12.771Z" }
+generated: { by: "openwiki/0.7.0", at: "2026-10-05T15:23:02.491Z" }
 ---
 
 # Development Container Setup
@@ -220,7 +220,9 @@ All terminals opened in VSCode while connected to the dev container run inside t
 
 ## Related Documentation
 
+<!-- openwiki: broken internal link [/openwiki/operations/local-development.md] link "/openwiki/operations/local-development.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - **[Local Development](/openwiki/operations/local-development.md)** - Manual setup alternative without containers
+<!-- openwiki: broken internal link [/openwiki/workflows/building-locally.md] link "/openwiki/workflows/building-locally.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - **[Building Locally](/openwiki/workflows/building-locally.md)** - Build scripts and workflow details
 
 ## Configuration Files

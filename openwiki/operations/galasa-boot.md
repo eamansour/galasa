@@ -17,7 +17,7 @@ sources:
     resource: repo://modules/framework/galasa-parent/galasa-boot/src/main/java/dev/galasa/boot/ResourceManagementConfiguration.java
   - id: openwiki-source-19c289d51521684350e01d7c
     resource: repo://modules/framework/README.md
-generated: { by: "openwiki/0.5.2", at: "2026-09-21T12:35:12.771Z" }
+generated: { by: "openwiki/0.7.0", at: "2026-10-05T15:23:02.491Z" }
 ---
 
 # Galasa Boot JAR
@@ -460,6 +460,7 @@ java -jar galasa-boot-0.36.0.jar \
 
 ## Related Components
 
+<!-- openwiki: broken internal link [/openwiki/architecture/framework-core.md] link "/openwiki/architecture/framework-core.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - **[Framework Core Architecture](/openwiki/architecture/framework-core.md)** – The framework services initialized by the boot JAR
 - **Felix OSGi Framework** – The underlying OSGi container managed by galasa-boot
 - **OBR (OSGi Bundle Repository)** – Bundle repositories loaded by the launcher

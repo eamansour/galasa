@@ -33,7 +33,7 @@ sources:
     resource: repo://modules/ivts/galasa-ivts-parent/settings.gradle
   - id: openwiki-source-4677f6fb5194da8fd9898ef0
     resource: repo://modules/ivts/README.md
-generated: { by: "openwiki/0.5.2", at: "2026-09-21T12:35:12.771Z" }
+generated: { by: "openwiki/0.7.0", at: "2026-10-05T15:23:02.491Z" }
 ---
 
 # Installation Verification Tests (IVTs)
@@ -545,6 +545,7 @@ IVTs play a crucial role in the Manager development lifecycle:
 - IVT code demonstrates proper annotation usage and API calls
 - IVTs validate that documented behavior matches actual behavior
 
+<!-- openwiki: broken internal link [/openwiki/architecture/managers.md] link "/openwiki/architecture/managers.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 See the [Managers architecture documentation](/openwiki/architecture/managers.md) for more information on Manager readiness levels and testing requirements.
 
 ## Troubleshooting IVT Failures
@@ -604,9 +605,13 @@ Manager-specific logs may provide additional context:
 
 ## Related Documentation
 
+<!-- openwiki: broken internal link [/openwiki/architecture/managers.md] link "/openwiki/architecture/managers.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - [Managers Architecture](/openwiki/architecture/managers.md) - Comprehensive guide to Manager design and lifecycle
+<!-- openwiki: broken internal link [/openwiki/concepts/test-execution-lifecycle.md] link "/openwiki/concepts/test-execution-lifecycle.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - [Test Execution Lifecycle](/openwiki/concepts/test-execution-lifecycle.md) - How tests move through states from submission to completion
+<!-- openwiki: broken internal link [/openwiki/concepts/modules.md] link "/openwiki/concepts/modules.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - [Modules Overview](/openwiki/concepts/modules.md) - Overview of the IVTs module structure
+<!-- openwiki: broken internal link [/openwiki/operations/github-workflows.md] link "/openwiki/operations/github-workflows.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - [GitHub Workflows](/openwiki/operations/github-workflows.md) - CI/CD pipeline that builds and deploys IVTs
 
 ## Further Reading

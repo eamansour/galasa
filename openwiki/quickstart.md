@@ -27,7 +27,7 @@ sources:
     resource: repo://README.md
   - id: openwiki-source-d9cc689740542a78d804536c
     resource: repo://tools/build-locally.sh
-generated: { by: "openwiki/0.5.2", at: "2026-09-21T12:35:12.771Z" }
+generated: { by: "openwiki/0.7.0", at: "2026-10-05T15:23:02.491Z" }
 ---
 
 # Galasa Repository Quickstart
@@ -50,29 +50,40 @@ Galasa is an open-source test automation framework designed for enterprise-scale
 
 Start with these pages to build a mental model of how Galasa works:
 
+<!-- openwiki: broken internal link [/openwiki/architecture/overview.md] link "/openwiki/architecture/overview.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 1. **[Architecture Overview](/openwiki/architecture/overview.md)** - High-level component relationships and architectural principles
+<!-- openwiki: broken internal link [/openwiki/concepts/modules.md] link "/openwiki/concepts/modules.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 2. **[Module Structure](/openwiki/concepts/modules.md)** - Organization of the repository's eleven modules
+<!-- openwiki: broken internal link [/openwiki/architecture/framework-core.md] link "/openwiki/architecture/framework-core.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 3. **[Framework Core Architecture](/openwiki/architecture/framework-core.md)** - Central orchestrator that manages test execution
+<!-- openwiki: broken internal link [/openwiki/architecture/managers.md] link "/openwiki/architecture/managers.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 4. **[Manager Architecture](/openwiki/architecture/managers.md)** - Pluggable components that provide technology-specific capabilities
+<!-- openwiki: broken internal link [/openwiki/concepts/test-execution-lifecycle.md] link "/openwiki/concepts/test-execution-lifecycle.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 5. **[Test Execution Lifecycle](/openwiki/concepts/test-execution-lifecycle.md)** - How tests progress from submission to completion
 
 **Key Concepts:**
+<!-- openwiki: broken internal link [/openwiki/concepts/osgi-bundles.md] link "/openwiki/concepts/osgi-bundles.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - [OSGi Bundles and OBRs](/openwiki/concepts/osgi-bundles.md) - Packaging and deployment model
+<!-- openwiki: broken internal link [/openwiki/concepts/configuration-properties.md] link "/openwiki/concepts/configuration-properties.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - [Configuration Property System](/openwiki/concepts/configuration-properties.md) - Hierarchical configuration mechanism
+<!-- openwiki: broken internal link [/openwiki/architecture/storage-services.md] link "/openwiki/architecture/storage-services.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - [Storage Services](/openwiki/architecture/storage-services.md) - CPS, DSS, RAS, and Credentials Store
 
 ### 🔨 I want to build the code locally
 
 Follow this path to set up your development environment and build Galasa:
 
+<!-- openwiki: broken internal link [/openwiki/workflows/building-locally.md] link "/openwiki/workflows/building-locally.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 1. **[Building Locally](/openwiki/workflows/building-locally.md)** - Comprehensive guide to building all modules
    - Prerequisites and tool installation
    - Using `build-locally.sh` script
    - Module build order and dependencies
    - Common build scenarios
 
+<!-- openwiki: broken internal link [/openwiki/operations/dev-container.md] link "/openwiki/operations/dev-container.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 2. **[Development Container Setup](/openwiki/operations/dev-container.md)** *(Recommended)* - Pre-configured VSCode environment with all tools
 
+<!-- openwiki: broken internal link [/openwiki/operations/local-development.md] link "/openwiki/operations/local-development.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 3. **[Local Development Environment](/openwiki/operations/local-development.md)** - Setting up GALASA_HOME and property files
 
 **Quick Build Commands:**
@@ -101,6 +112,7 @@ Follow this path to set up your development environment and build Galasa:
 
 Follow the contribution workflow to submit your changes:
 
+<!-- openwiki: broken internal link [/openwiki/workflows/contributing-code.md] link "/openwiki/workflows/contributing-code.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 1. **[Contributing Code](/openwiki/workflows/contributing-code.md)** - Complete contribution process
    - Forking the repository
    - Setting up GitHub Actions secrets and variables
@@ -108,8 +120,10 @@ Follow the contribution workflow to submit your changes:
    - Opening pull requests
    - DCO requirements
 
+<!-- openwiki: broken internal link [/openwiki/concepts/build-dependencies.md] link "/openwiki/concepts/build-dependencies.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 2. **[Build Dependencies](/openwiki/concepts/build-dependencies.md)** - Understanding dependency management and versioning
 
+<!-- openwiki: broken internal link [/openwiki/operations/github-workflows.md] link "/openwiki/operations/github-workflows.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 3. **[GitHub Workflows](/openwiki/operations/github-workflows.md)** - CI/CD pipeline and PR validation
 
 **Before You Start:**
@@ -121,18 +135,22 @@ Follow the contribution workflow to submit your changes:
 
 Learn how to create test projects and run them in various environments:
 
+<!-- openwiki: broken internal link [/openwiki/workflows/using-galasactl.md] link "/openwiki/workflows/using-galasactl.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 1. **[Using galasactl CLI](/openwiki/workflows/using-galasactl.md)** - Command-line tool for test management
    - Initializing local environment (`galasactl local init`)
    - Creating test projects
    - Running tests locally
 
+<!-- openwiki: broken internal link [/openwiki/workflows/building-test-projects.md] link "/openwiki/workflows/building-test-projects.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 2. **[Building Test Projects](/openwiki/workflows/building-test-projects.md)** - Creating and building test bundles with Maven or Gradle
 
+<!-- openwiki: broken internal link [/openwiki/workflows/running-tests.md] link "/openwiki/workflows/running-tests.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 3. **[Running Tests](/openwiki/workflows/running-tests.md)** - Three execution modes:
    - Local JVM (direct execution)
    - Local ecosystem (full framework)
    - Remote ecosystem (deployed service)
 
+<!-- openwiki: broken internal link [/openwiki/testing/ivts.md] link "/openwiki/testing/ivts.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 4. **[Installation Verification Tests (IVTs)](/openwiki/testing/ivts.md)** - Manager validation test suite
 
 **Quick Test Commands:**
@@ -152,27 +170,37 @@ galasactl runs submit local --class dev.galasa.example.banking/TestBanking
 Jump directly to module-specific documentation:
 
 #### CLI Module
+<!-- openwiki: broken internal link [/openwiki/architecture/cli.md] link "/openwiki/architecture/cli.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - **[CLI Architecture](/openwiki/architecture/cli.md)** - Go-based command-line tool structure
+<!-- openwiki: broken internal link [/openwiki/workflows/using-galasactl.md] link "/openwiki/workflows/using-galasactl.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - **[Using galasactl](/openwiki/workflows/using-galasactl.md)** - Command reference and workflows
 - **Location:** `modules/cli/`
 - **Build Tool:** Go + Docker
 
 #### Framework Module
+<!-- openwiki: broken internal link [/openwiki/architecture/framework-core.md] link "/openwiki/architecture/framework-core.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - **[Framework Core Architecture](/openwiki/architecture/framework-core.md)** - Test orchestration and lifecycle management
+<!-- openwiki: broken internal link [/openwiki/operations/galasa-boot.md] link "/openwiki/operations/galasa-boot.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - **[Galasa Boot JAR](/openwiki/operations/galasa-boot.md)** - Launch modes and command-line options
+<!-- openwiki: broken internal link [/openwiki/operations/kubernetes-controller.md] link "/openwiki/operations/kubernetes-controller.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - **[Kubernetes Controller](/openwiki/operations/kubernetes-controller.md)** - Test scheduling in K8s
+<!-- openwiki: broken internal link [/openwiki/operations/testing-api-locally.md] link "/openwiki/operations/testing-api-locally.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - **[Testing API Locally](/openwiki/operations/testing-api-locally.md)** - REST API development setup
 - **Location:** `modules/framework/`
 - **Build Tool:** Gradle
 
 #### Managers Module
+<!-- openwiki: broken internal link [/openwiki/architecture/managers.md] link "/openwiki/architecture/managers.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - **[Manager Architecture](/openwiki/architecture/managers.md)** - Plugin system and lifecycle
+<!-- openwiki: broken internal link [/openwiki/concepts/manager-lifecycle.md] link "/openwiki/concepts/manager-lifecycle.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - **[Manager Lifecycle Methods](/openwiki/concepts/manager-lifecycle.md)** - Detailed phase documentation
+<!-- openwiki: broken internal link [/openwiki/workflows/creating-a-manager.md] link "/openwiki/workflows/creating-a-manager.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - **[Creating a Custom Manager](/openwiki/workflows/creating-a-manager.md)** - Step-by-step implementation guide
 - **Location:** `modules/managers/`
 - **Build Tool:** Gradle
 
 #### Extensions Module
+<!-- openwiki: broken internal link [/openwiki/integrations/storage-backends.md] link "/openwiki/integrations/storage-backends.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - **[Storage Backend Implementations](/openwiki/integrations/storage-backends.md)** - Concrete CPS, DSS, RAS implementations
 - **Location:** `modules/extensions/`
 - **Build Tool:** Gradle
@@ -189,14 +217,17 @@ Jump directly to module-specific documentation:
 
 Managers extend Galasa's capabilities for specific technologies. Follow this workflow:
 
+<!-- openwiki: broken internal link [/openwiki/workflows/creating-a-manager.md] link "/openwiki/workflows/creating-a-manager.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 1. **[Creating a Custom Manager](/openwiki/workflows/creating-a-manager.md)** - Complete implementation guide
    - Manager interface implementation
    - Lifecycle method hooks
    - Annotation processing and field injection
    - Dependency management
 
+<!-- openwiki: broken internal link [/openwiki/concepts/manager-lifecycle.md] link "/openwiki/concepts/manager-lifecycle.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 2. **[Manager Lifecycle Methods](/openwiki/concepts/manager-lifecycle.md)** - When each method is called
 
+<!-- openwiki: broken internal link [/openwiki/architecture/managers.md] link "/openwiki/architecture/managers.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 3. **[Manager Architecture](/openwiki/architecture/managers.md)** - Design patterns and best practices
 
 **Quick Start:**
@@ -209,30 +240,45 @@ galasactl project create --package dev.galasa.example.docker --manager --manager
 
 Dive deeper into fundamental Galasa concepts:
 
+<!-- openwiki: broken internal link [/openwiki/concepts/configuration-properties.md] link "/openwiki/concepts/configuration-properties.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - **[Configuration Properties](/openwiki/concepts/configuration-properties.md)** - Hierarchical namespace system (CPS)
+<!-- openwiki: broken internal link [/openwiki/concepts/osgi-bundles.md] link "/openwiki/concepts/osgi-bundles.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - **[OSGi Bundles](/openwiki/concepts/osgi-bundles.md)** - Runtime module system and OBR packaging
+<!-- openwiki: broken internal link [/openwiki/concepts/authentication.md] link "/openwiki/concepts/authentication.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - **[Authentication](/openwiki/concepts/authentication.md)** - Personal access tokens and RBAC
+<!-- openwiki: broken internal link [/openwiki/concepts/build-dependencies.md] link "/openwiki/concepts/build-dependencies.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - **[Build Dependencies](/openwiki/concepts/build-dependencies.md)** - Version management across modules
+<!-- openwiki: broken internal link [/openwiki/concepts/test-execution-lifecycle.md] link "/openwiki/concepts/test-execution-lifecycle.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - **[Test Execution Lifecycle](/openwiki/concepts/test-execution-lifecycle.md)** - State transitions and resource provisioning
+<!-- openwiki: broken internal link [/openwiki/concepts/manager-lifecycle.md] link "/openwiki/concepts/manager-lifecycle.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - **[Manager Lifecycle](/openwiki/concepts/manager-lifecycle.md)** - Detailed phase documentation
 
 ### 🔗 I want to integrate with Galasa services
 
 Learn how to interact with deployed Galasa instances:
 
+<!-- openwiki: broken internal link [/openwiki/architecture/rest-api.md] link "/openwiki/architecture/rest-api.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - **[REST API Architecture](/openwiki/architecture/rest-api.md)** - Server structure and endpoints
+<!-- openwiki: broken internal link [/openwiki/operations/testing-api-locally.md] link "/openwiki/operations/testing-api-locally.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - **[Testing API Locally](/openwiki/operations/testing-api-locally.md)** - Setting up local API server with dependencies
+<!-- openwiki: broken internal link [/openwiki/concepts/authentication.md] link "/openwiki/concepts/authentication.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - **[Authentication](/openwiki/concepts/authentication.md)** - Creating and using personal access tokens
+<!-- openwiki: broken internal link [/openwiki/operations/kubernetes-controller.md] link "/openwiki/operations/kubernetes-controller.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - **[Kubernetes Controller](/openwiki/operations/kubernetes-controller.md)** - Test scheduling in K8s ecosystems
 
 ### ⚙️ I want operational knowledge
 
 Understand deployment, versioning, and operational aspects:
 
+<!-- openwiki: broken internal link [/openwiki/operations/versioning.md] link "/openwiki/operations/versioning.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - **[Version Management](/openwiki/operations/versioning.md)** - Using `set-version.sh` and galasabld
+<!-- openwiki: broken internal link [/openwiki/operations/github-workflows.md] link "/openwiki/operations/github-workflows.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - **[GitHub Workflows](/openwiki/operations/github-workflows.md)** - CI/CD pipeline orchestration
+<!-- openwiki: broken internal link [/openwiki/operations/galasa-boot.md] link "/openwiki/operations/galasa-boot.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - **[Galasa Boot JAR](/openwiki/operations/galasa-boot.md)** - Launching framework services
+<!-- openwiki: broken internal link [/openwiki/operations/dev-container.md] link "/openwiki/operations/dev-container.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - **[Development Container](/openwiki/operations/dev-container.md)** - Pre-configured development environment
+<!-- openwiki: broken internal link [/openwiki/operations/local-development.md] link "/openwiki/operations/local-development.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - **[Local Development Environment](/openwiki/operations/local-development.md)** - GALASA_HOME setup and configuration
 
 ## Common Development Tasks
@@ -246,7 +292,9 @@ Understand deployment, versioning, and operational aspects:
    ```
 
 2. **Choose your environment:**
+<!-- openwiki: broken internal link [/openwiki/operations/dev-container.md] link "/openwiki/operations/dev-container.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
    - **Recommended:** Open in VSCode and use the dev container (see [Dev Container Setup](/openwiki/operations/dev-container.md))
+<!-- openwiki: broken internal link [/openwiki/workflows/building-locally.md] link "/openwiki/workflows/building-locally.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
    - **Alternative:** Install tools manually (see [Building Locally](/openwiki/workflows/building-locally.md))
 
 3. **Run your first build:**
@@ -264,6 +312,7 @@ Understand deployment, versioning, and operational aspects:
 
 1. **Find an issue:** Check the [Kanban board](https://github.com/orgs/galasa-dev/projects/3) for issues tagged `good first issue`
 
+<!-- openwiki: broken internal link [/openwiki/workflows/contributing-code.md] link "/openwiki/workflows/contributing-code.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 2. **Fork and set up:** Follow [Contributing Code](/openwiki/workflows/contributing-code.md) to configure secrets
 
 3. **Make changes:** Build and test locally with `./tools/build-locally.sh --module <name>`
@@ -281,14 +330,18 @@ Understand deployment, versioning, and operational aspects:
    - Test runs: `~/.galasa/ras/`
    - Framework logs: Check console output or RAS artifacts
 
+<!-- openwiki: broken internal link [/openwiki/concepts/test-execution-lifecycle.md] link "/openwiki/concepts/test-execution-lifecycle.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 3. **Understand lifecycle:** Review [Test Execution Lifecycle](/openwiki/concepts/test-execution-lifecycle.md)
 
 ### Working with Storage Services
 
+<!-- openwiki: broken internal link [/openwiki/operations/local-development.md] link "/openwiki/operations/local-development.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 1. **Local file-based stores:** Default for local development (see [Local Development](/openwiki/operations/local-development.md))
 
+<!-- openwiki: broken internal link [/openwiki/architecture/storage-services.md] link "/openwiki/architecture/storage-services.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 2. **Remote stores:** Configure bootstrap properties to point to CouchDB/etcd (see [Storage Services](/openwiki/architecture/storage-services.md))
 
+<!-- openwiki: broken internal link [/openwiki/integrations/storage-backends.md] link "/openwiki/integrations/storage-backends.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 3. **Implementation details:** See [Storage Backend Implementations](/openwiki/integrations/storage-backends.md)
 
 ## Module Build Order
@@ -327,8 +380,13 @@ Each module depends on artifacts from previous modules. Use `--module <name>` to
 
 Based on your primary interest, jump to one of these starting points:
 
+<!-- openwiki: broken internal link [/openwiki/architecture/overview.md] link "/openwiki/architecture/overview.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - **Learning Architecture:** Start with [Architecture Overview](/openwiki/architecture/overview.md)
+<!-- openwiki: broken internal link [/openwiki/workflows/building-locally.md] link "/openwiki/workflows/building-locally.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - **Building Code:** Go to [Building Locally](/openwiki/workflows/building-locally.md)
+<!-- openwiki: broken internal link [/openwiki/workflows/contributing-code.md] link "/openwiki/workflows/contributing-code.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - **Contributing:** Begin with [Contributing Code](/openwiki/workflows/contributing-code.md)
+<!-- openwiki: broken internal link [/openwiki/workflows/using-galasactl.md] link "/openwiki/workflows/using-galasactl.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - **Writing Tests:** See [Using galasactl](/openwiki/workflows/using-galasactl.md)
+<!-- openwiki: broken internal link [/openwiki/workflows/creating-a-manager.md] link "/openwiki/workflows/creating-a-manager.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - **Creating Managers:** Read [Creating a Custom Manager](/openwiki/workflows/creating-a-manager.md)

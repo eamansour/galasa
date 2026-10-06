@@ -25,7 +25,7 @@ sources:
     resource: repo://modules/framework/run-locally.sh
   - id: openwiki-source-d9f3463fff13810e11c7291b
     resource: repo://modules/framework/temp/home/bootstrap.properties
-generated: { by: "openwiki/0.5.2", at: "2026-09-21T12:35:12.771Z" }
+generated: { by: "openwiki/0.7.0", at: "2026-10-05T15:23:02.491Z" }
 ---
 
 # Testing the REST API Locally
@@ -618,6 +618,9 @@ The Dex configuration includes a static client for the Web UI with the appropria
 
 ## Related Documentation
 
+<!-- openwiki: broken internal link [/openwiki/architecture/rest-api.md] link "/openwiki/architecture/rest-api.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - [REST API Architecture](/openwiki/architecture/rest-api.md) - Detailed API server architecture and request routing
+<!-- openwiki: broken internal link [/openwiki/integrations/storage-backends.md] link "/openwiki/integrations/storage-backends.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - [Storage Backend Implementations](/openwiki/integrations/storage-backends.md) - CouchDB, etcd, and other storage backends
+<!-- openwiki: broken internal link [/openwiki/operations/local-development.md] link "/openwiki/operations/local-development.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - [Local Development](/openwiki/operations/local-development.md) - General local development setup and workflows

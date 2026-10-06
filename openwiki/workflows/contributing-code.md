@@ -21,7 +21,7 @@ sources:
     resource: repo://CONTRIBUTIONS.md
   - id: openwiki-source-23775c3de52f3ab95a13cb8b
     resource: repo://README.md
-generated: { by: "openwiki/0.5.2", at: "2026-09-21T12:35:12.771Z" }
+generated: { by: "openwiki/0.7.0", at: "2026-10-05T15:23:02.491Z" }
 ---
 
 # Contributing Code to Galasa
@@ -31,8 +31,11 @@ This guide provides comprehensive instructions for contributing code to the Gala
 ## Prerequisites
 
 Before contributing code, familiarize yourself with:
+<!-- openwiki: broken internal link [/CODE_OF_CONDUCT.md] link "/CODE_OF_CONDUCT.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - The [Code of Conduct](/CODE_OF_CONDUCT.md) - Community behavior expectations
+<!-- openwiki: broken internal link [/CONTRIBUTIONS.md] link "/CONTRIBUTIONS.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - The [Developer Certificate of Origin](/CONTRIBUTIONS.md) (DCO) - Legal framework for contributions
+<!-- openwiki: broken internal link [/openwiki/workflows/building-locally.md] link "/openwiki/workflows/building-locally.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - [Building Locally](/openwiki/workflows/building-locally.md) - How to build and test your changes
 
 ## Ways to Contribute
@@ -362,6 +365,7 @@ cd modules/framework
 gradle test
 ```
 
+<!-- openwiki: broken internal link [/openwiki/workflows/building-locally.md] link "/openwiki/workflows/building-locally.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 See [Building Locally](/openwiki/workflows/building-locally.md) for detailed build instructions.
 
 ### 2. Commit with Conventional Commits
@@ -471,6 +475,7 @@ Click **Create pull request**. The automated checks will begin:
 
 ## Understanding the PR Build Process
 
+<!-- openwiki: broken internal link [/openwiki/operations/github-workflows.md#pull-request-build-orchestrator-pull-requestsyaml] link "/openwiki/operations/github-workflows.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 When you open a pull request, the [Pull Request Build Orchestrator](/openwiki/operations/github-workflows.md#pull-request-build-orchestrator-pull-requestsyaml) executes:
 
 ### 1. Change Detection
@@ -669,9 +674,13 @@ git push origin issue-123/add-authentication-feature --force
 ## Additional Resources
 
 ### Documentation
+<!-- openwiki: broken internal link [/CODE_OF_CONDUCT.md] link "/CODE_OF_CONDUCT.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - [Code of Conduct](/CODE_OF_CONDUCT.md) - Community guidelines
+<!-- openwiki: broken internal link [/CONTRIBUTIONS.md] link "/CONTRIBUTIONS.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - [Developer Certificate of Origin](/CONTRIBUTIONS.md) - Contribution legal terms
+<!-- openwiki: broken internal link [/openwiki/workflows/building-locally.md] link "/openwiki/workflows/building-locally.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - [Building Locally](/openwiki/workflows/building-locally.md) - Local development guide
+<!-- openwiki: broken internal link [/openwiki/operations/github-workflows.md] link "/openwiki/operations/github-workflows.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - [GitHub Actions Workflows](/openwiki/operations/github-workflows.md) - CI/CD system details
 
 ### External Resources

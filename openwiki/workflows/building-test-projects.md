@@ -31,7 +31,7 @@ sources:
     resource: repo://modules/gradle/README.md
   - id: openwiki-source-4b4fa74b099fc828fc2dcf8f
     resource: repo://modules/maven/README.md
-generated: { by: "openwiki/0.5.2", at: "2026-09-21T12:35:12.771Z" }
+generated: { by: "openwiki/0.7.0", at: "2026-10-05T15:23:02.491Z" }
 ---
 
 # Creating and Building Test Projects
@@ -696,6 +696,9 @@ You should see:
 
 ## Related Documentation
 
+<!-- openwiki: broken internal link [/openwiki/concepts/osgi-bundles.md] link "/openwiki/concepts/osgi-bundles.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - [OSGi Bundle Architecture and OBRs](/openwiki/concepts/osgi-bundles.md) - Deep dive into OSGi bundles and OBR structure
+<!-- openwiki: broken internal link [/openwiki/workflows/building-locally.md] link "/openwiki/workflows/building-locally.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - [Building Locally](/openwiki/workflows/building-locally.md) - Building the entire Galasa framework locally
+<!-- openwiki: broken internal link [/openwiki/architecture/cli.md] link "/openwiki/architecture/cli.md" is root-absolute, which no real consumer resolves against the repository root (not a coding agent reading the page, not GitHub's Markdown renderer, not a local viewer); use a path relative to this file instead. Fix the href or restore the target, then delete this comment. -->
 - [CLI Overview](/openwiki/architecture/cli.md) - Complete galasactl command reference

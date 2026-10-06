@@ -33,16 +33,16 @@ Each module has its own `AGENTS.md` with module-specific coding conventions, pat
 - **Conventional Commits**: Commit messages should follow `type(scope): description` (e.g., `feat(cli): add command`, `fix(framework): resolve lifecycle issue`, `docs: update guides`).
 - Pull requests target `main` and should follow [`.github/pull_request_template.md`](.github/pull_request_template.md).
 
-## Agent Constraints & Safety
-- Do not edit generated OpenWiki pages in `openwiki/` directly; let the scheduled OpenWiki workflow regenerate them.
-- Reference `.agents/skills/galasa-user/` for domain knowledge on Galasa concepts and CLI usage.
-
 <!-- OPENWIKI:START -->
 
 ## OpenWiki
 
 This repository has a generated `openwiki/` evidence index. It is optional just-in-time context, not required startup reading.
 
+- Do not enumerate, preload, or search wikis at task start. Use retrieval when the user asks for it, when unfamiliar architecture or dependency behavior materially affects the task, or when source inspection leaves an important uncertainty. Stop once the question is grounded.
+- When those conditions apply and OpenWiki retrieval tools are available, use `openwiki_search` for just-in-time context and `openwiki_read` for the relevant complete sections. If search returns `workspace_required`, ask which listed workspace to use and retry with its ID.
+- Use `openwiki_list_workspaces` or `openwiki_list_wikis` when workspace membership itself needs to be discovered.
+- If the retrieval tools are unavailable, read `openwiki/quickstart.md` and follow its links to the relevant pages.
 - Treat source code and tests as authoritative. A brief's unknowns and review items are verification gaps, not automatic requirements.
 - Prefer the narrowest quiet validation that proves the changed behavior. Preserve complete failure output.
 
