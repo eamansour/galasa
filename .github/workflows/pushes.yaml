@@ -272,11 +272,9 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh api \
-            --method PATCH \
-            -H "Accept: application/vnd.github+json" \
-            repos/${{ github.repository }}/actions/variables/LAST_SUCCESSFUL_MAIN_BUILD_RUN_ID \
-            -f value="${{ github.run_id }}"
+          gh variable set LAST_SUCCESSFUL_MAIN_BUILD_RUN_ID \
+            --repo ${{ github.repository }} \
+            --body "${{ github.run_id }}"
 
   trigger-isolated:
     # Skip this job for forks
