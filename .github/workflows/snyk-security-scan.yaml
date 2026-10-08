@@ -27,26 +27,13 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Find Artifacts from the last successful Main Build
-        id: find-artifacts
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          echo "workflow_for_artifact_download_id=$(gh run list \
-            --repo ${{ github.repository }} \
-            --workflow 'Main Build Orchestrator' \
-            --branch main \
-            --status success \
-            --limit 1 \
-            --json databaseId | jq '.[0].databaseId')" >> $GITHUB_OUTPUT
-
       - name: Download All 'dev.galasa' Artifacts
         uses: actions/download-artifact@v4
         with:
           name: all-artifacts
           path: /home/runner/.m2/repository/dev/galasa
           github-token: ${{ github.token }}
-          run-id: ${{ steps.find-artifacts.outputs.workflow_for_artifact_download_id }}
+          run-id: ${{ vars.LAST_SUCCESSFUL_MAIN_BUILD_RUN_ID }}
 
       - name: Setup Snyk
         uses: snyk/actions/setup@master

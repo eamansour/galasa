@@ -261,15 +261,32 @@ jobs:
     uses: ./.github/workflows/docs.yaml
     secrets: inherit
 
+  record-successful-build:
+    name: Record successful build run ID
+    needs: [build-docs, build-ivts]
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+      - name: Write run ID to repository variable
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api \
+            --method PATCH \
+            -H "Accept: application/vnd.github+json" \
+            repos/${{ github.repository }}/actions/variables/LAST_SUCCESSFUL_MAIN_BUILD_RUN_ID \
+            -f value="${{ github.run_id }}"
+
   trigger-isolated:
     # Skip this job for forks
     if: ${{ github.repository_owner == 'galasa-dev' }}
     name: Trigger Isolated
-    needs: [build-docs]
+    needs: [record-successful-build]
     runs-on: ubuntu-latest
     steps:
       - name: Triggering Isolated
         env:
           GH_TOKEN: ${{ secrets.GALASA_TEAM_GITHUB_TOKEN }}
         run: |
-          gh workflow run build.yaml --repo https://github.com/galasa-dev/isolated --ref ${{ env.BRANCH }}
+          gh workflow run build.yaml --repo https://github.com/galasa-dev/isolated --ref ${{ env.BRANCH }} --field artifact-run-id=${{ github.run_id }}
