@@ -4,6 +4,7 @@ plugins {
     id 'maven-publish'
     id 'signing'
 }
+// Test change
 
 // Note: The following version number is updated using the set-version.sh tool.
 // It is used as the version number of the managers bundle, which contains a yaml
