@@ -88,6 +88,11 @@ jobs:
     outputs:
       workflow_for_artifact_download_id: ${{ vars.LAST_SUCCESSFUL_MAIN_BUILD_RUN_ID }}
 
+    steps:
+      - name: Report the workflow run ID being used
+        run: |
+          echo "Downloading artifacts from workflow run: ${{ vars.LAST_SUCCESSFUL_MAIN_BUILD_RUN_ID }}"
+
   pr-build-platform:
     name: Build the 'platform' module
     needs: [get-changed-modules, find-artifacts]
