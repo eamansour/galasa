@@ -265,12 +265,10 @@ jobs:
     name: Record successful build run ID
     needs: [build-docs, build-ivts]
     runs-on: ubuntu-latest
-    permissions:
-      actions: write
     steps:
       - name: Write run ID to repository variable
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GALASA_TEAM_GITHUB_TOKEN }}
         run: |
           gh variable set LAST_SUCCESSFUL_MAIN_BUILD_RUN_ID \
             --repo ${{ github.repository }} \
